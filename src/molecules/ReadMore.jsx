@@ -15,7 +15,7 @@ import { View, Text } from '../'
   <ListItem>
     <ReadMore>
       <Text>
-        Testing a longer text with a defaultHeight 80vw! Lorem ipsum
+        Testing a longer text with a cropAtHeight 80vw! Lorem ipsum
         dolor sit amet, consectetur adipiscing elit. Maecenas
         dignissim sem in elit mollis consequat. Suspendisse potenti.
         Maecenas a velit vel dolor mollis viverra. Praesent ex diam,
@@ -35,7 +35,7 @@ class ReadMore extends React.Component {
     children: PropTypes.node,
     initiallyCollapsed: PropTypes.bool,
     readMoreLabel: PropTypes.string,
-    defaultHeight: PropTypes.oneOfType(PropTypes.string, PropTypes.number),
+    cropAtHeight: PropTypes.oneOfType(PropTypes.string, PropTypes.number),
     threshold: PropTypes.number,
     onToggle: PropTypes.func,
   }
@@ -43,7 +43,7 @@ class ReadMore extends React.Component {
   static defaultProps = {
     initiallyCollapsed: true,
     readMoreLabel: 'Read more...',
-    defaultHeight: '20vh',
+    cropAtHeight: '20vh',
     threshold: 0, // We fance a treshold value of 80 very often...
     onToggle: () => {},
   }
@@ -91,7 +91,7 @@ class ReadMore extends React.Component {
   toggleCollapse = () => {
     const { current } = this.childRef
     if (!this.state.collapsed) {
-      current.style.height = this.props.defaultHeight
+      current.style.height = this.props.cropAtHeight
       this.setState({ collapsed: true })
       // signal new state for the parent
       this.props.onToggle(true)
@@ -111,19 +111,19 @@ class ReadMore extends React.Component {
 
     // Let's check for viewport dimensions in here and convert them to px...
     const regex = /(vw|vh)$/
-    if (regex.test(this.props.defaultHeight)) {
-      if (this.props.defaultHeight.match(/(vh)/)) {
+    if (regex.test(this.props.cropAtHeight)) {
+      if (this.props.cropAtHeight.match(/(vh)/)) {
         defaultWrapperHeight =
           (window.innerHeight / 100) *
-          parseInt(this.props.defaultHeight.replace(regex, ''))
+          parseInt(this.props.cropAtHeight.replace(regex, ''))
       }
-      if (this.props.defaultHeight.match(/(vw)/)) {
+      if (this.props.cropAtHeight.match(/(vw)/)) {
         defaultWrapperHeight =
           (window.innerWidth / 100) *
-          parseInt(this.props.defaultHeight.replace(regex, ''))
+          parseInt(this.props.cropAtHeight.replace(regex, ''))
       }
     } else {
-      defaultWrapperHeight = this.props.defaultHeight
+      defaultWrapperHeight = this.props.cropAtHeight
     }
     defaultWrapperHeight = defaultWrapperHeight + this.props.threshold
 

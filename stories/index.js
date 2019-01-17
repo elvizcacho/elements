@@ -120,14 +120,14 @@ storiesOf('Icons', module)
               </ReadMore>
             </ListItem>
             <ListItem>
-              <ReadMore defaultHeight={10}>
-                <Text>Testing a short text with a defaultHeight 10px!...</Text>
+              <ReadMore cropAtHeight={10}>
+                <Text>Testing a short text with a cropAtHeight 10px!...</Text>
               </ReadMore>
             </ListItem>
             <ListItem>
-              <ReadMore defaultHeight="80vw">
+              <ReadMore cropAtHeight="80vw">
                 <Text>
-                  Testing a longer text with a defaultHeight 80vw! Lorem ipsum
+                  Testing a longer text with a cropAtHeight 80vw! Lorem ipsum
                   dolor sit amet, consectetur adipiscing elit. Maecenas
                   dignissim sem in elit mollis consequat. Suspendisse potenti.
                   Maecenas a velit vel dolor mollis viverra. Praesent ex diam,
