@@ -35,7 +35,7 @@ class ReadMore extends React.Component {
     children: PropTypes.node,
     initiallyCollapsed: PropTypes.bool,
     readMoreLabel: PropTypes.string,
-    cropAtHeight: PropTypes.oneOfType(PropTypes.string, PropTypes.number),
+    cropAtHeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     threshold: PropTypes.number,
     onToggle: PropTypes.func,
   }
