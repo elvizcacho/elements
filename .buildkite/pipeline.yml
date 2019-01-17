@@ -3,6 +3,7 @@ steps:
     label: ":rocket: building + deploying documentation"
     branches: "master"
     async: true
+    timeout_in_minutes: 60
     build:
       branch: "$BUILDKITE_BRANCH"
       message: "$BUILDKITE_PIPELINE_SLUG / $BUILDKITE_MESSAGE"

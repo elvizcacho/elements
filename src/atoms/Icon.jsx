@@ -99,6 +99,7 @@ export const Icons = [
   'pet-paw-filled',
   'phone',
   'phone-filled',
+  'picture-filled',
   'plus',
   'plus-filled',
   'plus-light',
@@ -198,9 +199,9 @@ export default class Icon extends React.Component {
     this.loadIcon(this.props.name)
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.name !== nextProps.name) {
-      this.loadIcon(nextProps.name)
+  componentDidUpdate(prevProps) {
+    if (this.props.name !== prevProps.name) {
+      this.loadIcon(this.props.name)
     }
   }
 

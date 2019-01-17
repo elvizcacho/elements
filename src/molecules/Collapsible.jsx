@@ -4,87 +4,36 @@ import { css } from 'glamor'
 import { View, Icon, Text } from '../'
 import { ColorPalette, alpha } from '@allthings/colors'
 
-/**
- *   A Collapsible is a simple container, that makes it possible to change between collapsed and extended states, and this way hiding and showing the children passed in.
- * ```example
- * <ThemeProvider>
- *   <ResourceProvider>
- *     <Card
- *       {...css({
- *         width: '300px',
- *         margin: '10px 10px 10px 10px',
- *       })}
- *     >
- *       <Collapsible
- *         title="Address"
- *         hasBottomBorder
- *         initiallyCollapsed={false}
- *         tabIndex={1}
- *       >
- *         <View
- *           direction="row"
- *           {...css({
- *             width: '300px',
- *             padding: '5px 10px 10px 10px',
- *           })}
- *         >
- *           <Icon
- *             name="house"
- *             color="grey"
- *             {...css({ margin: '0px 20px 0px 30px' })}
- *           />
- *           <View direction="column">
- *             <Text {...css({ width: '150px', margin: '2px 0px' })}>
- *               Kaiser Joseph Str. 260
- *             </Text>
- *             <Text {...css({ width: '150px', margin: '2px 0px' })}>
- *               Freiburg Im Breisgau
- *             </Text>
- *           </View>
- *         </View>
- *       </Collapsible>
- *       <Collapsible
- *         title="Contact"
- *         initiallyCollapsed={true}
- *         tabIndex={2}
- *       >
- *         <View
- *           direction="column"
- *           {...css({
- *             width: '300px',
- *             padding: '0px 10px 10px 10px',
- *           })}
- *         >
- *           <View direction="row" {...css({ margin: '5px 0px' })}>
- *             <Icon
- *               name="phone"
- *               color="grey"
- *               {...css({ margin: '0px 20px 0px 30px' })}
- *               size="s"
- *             />
- *             <Text {...css({ width: '150px', margin: '2px 0px' })}>
- *               1(23) 456-7890
- *             </Text>
- *           </View>
- *           <View direction="row" {...css({ margin: '5px 0px' })}>
- *             <Icon
- *               name="email"
- *               color="grey"
- *               {...css({ margin: '0px 20px 0px 30px' })}
- *               size="s"
- *             />
- *             <Text {...css({ width: '150px', margin: '2px 0px' })}>
- *               your@email.com
- *             </Text>
- *           </View>
- *         </View>
- *       </Collapsible>
- *     </Card>
- *   </ResourceProvider>
- * </ThemeProvider>
- *  ```
- **/
+const tick = () => new Promise(resolve => setTimeout(resolve, 0))
 
+/**
+ * A Collapsible is a simple container, that makes it possible to change between collapsed and extended states, and this way hiding and showing the children passed in.
+ * ```js
+ * <ThemeProvider>
+ *  <Card>
+ *    <Collapsible
+ *      title="Address"
+ *      hasBottomBorder
+ *      initiallyCollapsed={false}
+ *      tabIndex={1}
+ *    >
+ *      <CardContent>
+ *        <Text>Kaiser Joseph Str. 260</Text>
+ *      </CardContent>
+ *    </Collapsible>
+ *    <Collapsible
+ *        title="Contact"
+ *        initiallyCollapsed={true}
+ *        tabIndex={2}
+ *    >
+ *      <CardContent>
+ *        <Text>1(23) 456-7890</Text>
+ *      </CardContent>
+ *    </Collapsible>
+ *  </Card>
+ * </ThemeProvider>
+ * ```
+ **/
 class Collapsible extends React.Component {
   static propTypes = {
     title: PropTypes.string,
@@ -92,44 +41,58 @@ class Collapsible extends React.Component {
     initiallyCollapsed: PropTypes.bool,
     hasBottomBorder: PropTypes.bool,
     tabIndex: PropTypes.number,
-    toggleCallback: PropTypes.func,
+    onToggle: PropTypes.func,
   }
 
   static defaultProps = {
     initiallyCollapsed: true,
     hasBottomBorder: false,
-    tabindex: -1,
-    toggleCallback: () => {},
+    tabIndex: null,
+    onToggle: () => {},
   }
 
-  state = { collapsed: this.props.initiallyCollapsed }
+  state = {
+    collapsed: this.props.initiallyCollapsed,
+    overflow: this.props.initiallyCollapsed ? 'hidden' : null,
+  }
 
-  componentDidMount() {
-    if (this.childRef.current) {
+  async componentDidMount() {
+    const { current } = this.childRef
+
+    if (current) {
       if (!this.props.initiallyCollapsed) {
-        this.childRef.current.style.height = `${
-          this.childRef.current.scrollHeight
-        }px`
+        current.style.height = `${current.scrollHeight}px`
+        await tick()
+        current.style.height = 'auto'
       } else {
-        this.childRef.current.style.height = `0px`
+        current.style.height = `0px`
       }
     }
   }
 
   childRef = React.createRef()
 
-  toggleCollapse = () => {
+  toggleCollapse = async () => {
     const { current } = this.childRef
     if (current.style.height !== '0px') {
+      current.style.height = `${current.scrollHeight}px`
+      await tick()
       current.style.height = '0px'
-      this.setState({ collapsed: true })
+      this.setState({ collapsed: true, overflow: 'hidden' })
       // signal new state for the parent
-      this.props.toggleCallback(true)
+      this.props.onToggle(true)
     } else {
       current.style.height = `${current.scrollHeight}px`
       this.setState({ collapsed: false })
       // signal new state for the parent
-      this.props.toggleCallback(false)
+      this.props.onToggle(false)
+    }
+  }
+
+  handleTransitionEnd = () => {
+    if (!this.state.collapsed) {
+      this.childRef.current.style.height = 'auto'
+      this.setState({ overflow: null })
     }
   }
 
@@ -137,13 +100,14 @@ class Collapsible extends React.Component {
 
   render() {
     const { title, children, hasBottomBorder, tabIndex } = this.props
+
+    const { collapsed, overflow } = this.state
     return (
       <View
         direction="column"
         {...css({
-          borderBottom: hasBottomBorder
-            ? `1px solid ${ColorPalette.lightGrey}`
-            : '',
+          borderBottom:
+            hasBottomBorder && `1px solid ${ColorPalette.lightGrey}`,
           width: '100%',
         })}
       >
@@ -200,9 +164,7 @@ class Collapsible extends React.Component {
               tabIndex={tabIndex}
             >
               <Icon
-                name={
-                  this.state.collapsed ? 'arrow-down-filled' : 'arrow-up-filled'
-                }
+                name={collapsed ? 'arrow-down-filled' : 'arrow-up-filled'}
                 size={10}
                 color="lightGreyIntense"
               />
@@ -212,10 +174,11 @@ class Collapsible extends React.Component {
         {/* Child */}
         <View
           onRef={this.childRef}
+          onTransitionEnd={this.handleTransitionEnd}
           {...css({
             transitionProperty: 'height',
             transition: 'height 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
-            overflow: 'hidden',
+            overflow,
             transformOrigin: 'top',
           })}
         >
