@@ -43,8 +43,8 @@ class ReadMore extends React.Component {
   static defaultProps = {
     initiallyCollapsed: true,
     readMoreLabel: 'Read more...',
-    cropAtHeight: '20vh',
-    threshold: 0, // We fance a treshold value of 80 very often...
+    cropAtHeight: '17vh', // we already use 60vh for imgs
+    threshold: 40, // We fancy a treshold value of 80 very often...
     onToggle: () => {},
   }
 
