@@ -24,6 +24,7 @@ import ResourceProvider from '../src/behaviour/ResourceProvider'
 import List from '../src/molecules/List/List'
 import ListItem from '../src/molecules/List/ListItem'
 import Input from '../src/atoms/Input'
+import Button from '../src/molecules/Button'
 import ConfirmStory from './ConfirmStory'
 
 storiesOf('Animations', module)
@@ -53,7 +54,18 @@ storiesOf('Forms', module)
     )
   })
   .add('Typeahead', () => <TypeaheadStory />)
-
+storiesOf('Button', module)
+  .addDecorator(createViewportDecorator())
+  .add('with text', () => (
+    <ThemeProvider>
+      <Button>Hello</Button>
+    </ThemeProvider>
+  ))
+  .add('in progress', () => (
+    <ThemeProvider>
+      <Button inProgress>Hello</Button>
+    </ThemeProvider>
+  ))
 storiesOf('FloatingButton', module)
   .addDecorator(createViewportDecorator())
   .add('with text', () => (
@@ -75,6 +87,49 @@ storiesOf('FloatingButton', module)
             placeholder="Your email"
             required
           />
+        </Form>
+      </FormValidityProvider>
+    </ThemeProvider>
+  ))
+  .add('disabled', () => (
+    <ThemeProvider>
+      <FormValidityProvider
+        validity={{
+          valueMissing: 'YEYYYY, NOPEEEEEEEE!',
+        }}
+      >
+        <Form onSubmit={_ => _}>
+          <FloatingButton disabled type="submit" onClick={action('clicked')}>
+            <Text strong size="s" color="white">
+              Hello Button
+            </Text>
+          </FloatingButton>
+          <TextInput
+            name="email"
+            type="email"
+            placeholder="Your email"
+            required
+          />
+        </Form>
+      </FormValidityProvider>
+    </ThemeProvider>
+  ))
+  .add('in progress', () => (
+    <ThemeProvider>
+      <FormValidityProvider
+        validity={{
+          valueMissing: 'YEYYYY, NOPEEEEEEEE!',
+        }}
+      >
+        <Form onSubmit={_ => _}>
+          <Text align="center" strong size="xxl">
+            Scroll Down!
+          </Text>
+          <FloatingButton inProgress type="submit" onClick={action('clicked')}>
+            <Text strong size="s" color="white">
+              Hello Button
+            </Text>
+          </FloatingButton>
         </Form>
       </FormValidityProvider>
     </ThemeProvider>
@@ -107,7 +162,7 @@ storiesOf('Icons', module)
       </ResourceProvider>
     </ThemeProvider>
   ))
-  storiesOf('ReadMore', module)
+storiesOf('ReadMore', module)
   .addDecorator(createViewportDecorator())
   .add('read more...', () => {
     return (
