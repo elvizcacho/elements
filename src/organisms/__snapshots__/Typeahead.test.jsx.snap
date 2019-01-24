@@ -653,7 +653,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
       role="listbox"
     >
       <div
-        aria-selected={false}
+        aria-selected={true}
         data-css-18=""
         data-css-17=""
         id="downshift-1-item-0"
@@ -1863,7 +1863,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
       role="listbox"
     >
       <div
-        aria-selected={false}
+        aria-selected={true}
         data-css-18=""
         data-css-17=""
         id="downshift-2-item-0"
@@ -2290,7 +2290,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       role="listbox"
     >
       <div
-        aria-selected={false}
+        aria-selected={true}
         data-css-16=""
         data-css-15=""
         id="downshift-3-item-0"
