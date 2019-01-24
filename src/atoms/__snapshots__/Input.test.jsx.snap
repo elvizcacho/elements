@@ -46,6 +46,7 @@ exports[`Input component should render with all props 1`] = `
 .css-2:-webkit-autofill ~ .checkmark,
 [data-css-2]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
+  top: 8px;
 }
 
 .css-2:-webkit-autofill,
@@ -116,7 +117,6 @@ exports[`Input component should render with all props 1`] = `
     minLength={1}
     name="name"
     onChange={[Function]}
-    onInvalid={[Function]}
     pattern="pattern"
     required={true}
     type="tel"
@@ -233,6 +233,7 @@ exports[`Input component should render with required props only 1`] = `
 .css-3:-webkit-autofill ~ .checkmark,
 [data-css-3]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
+  top: 8px;
 }
 
 .css-3:-webkit-autofill,
@@ -256,7 +257,6 @@ exports[`Input component should render with required props only 1`] = `
     data-css-3=""
     name="name"
     onChange={[Function]}
-    onInvalid={[Function]}
     required={false}
     type="text"
   />

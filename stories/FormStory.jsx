@@ -1,4 +1,5 @@
 import React from 'react'
+import { action } from '@storybook/addon-actions'
 import {
   Button,
   Card,
@@ -28,11 +29,11 @@ export default class FormStory extends React.Component {
             <TitleBar>
               <SquareIconButton icon="login-key" iconColor="white" />
               <Text strong color="white">
-                Create new account
+                Create new account!
               </Text>
             </TitleBar>
             <SimpleLayout>
-              <Form>
+              <Form onSubmit={action('onSubmit')}>
                 <Card>
                   <List>
                     <TextInput
@@ -54,6 +55,7 @@ export default class FormStory extends React.Component {
                     />
                     <TextInput
                       name="email"
+                      patternMismatch="Lol email"
                       label="E-Mail"
                       type="email"
                       pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"

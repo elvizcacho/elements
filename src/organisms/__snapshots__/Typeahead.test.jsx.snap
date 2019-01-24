@@ -98,6 +98,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
 .css-8:-webkit-autofill ~ .checkmark,
 [data-css-8]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
+  top: 8px;
 }
 
 .css-8:-webkit-autofill,
@@ -183,7 +184,6 @@ exports[`Test the typeahead component should be a simple static one - in depth t
           data-css-8=""
           name="hint"
           onChange={[Function]}
-          onInvalid={[Function]}
           required={false}
           tabIndex={-1}
           type="text"
@@ -230,13 +230,12 @@ exports[`Test the typeahead component should be a simple static one - in depth t
         aria-labelledby="downshift-0-label"
         aria-required={false}
         autoComplete="off"
-        data-css-8=""
         data-css-4=""
+        data-css-8=""
         id="downshift-0-input"
         name="typed"
         onBlur={[Function]}
         onChange={[Function]}
-        onInvalid={[Function]}
         onKeyDown={[Function]}
         placeholder="Select Nick's Pokemon"
         required={false}
@@ -347,6 +346,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
 .css-6:-webkit-autofill ~ .checkmark,
 [data-css-6]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
+  top: 8px;
 }
 
 .css-6:-webkit-autofill,
@@ -551,7 +551,6 @@ exports[`Test the typeahead component should be a simple static one which auto o
           data-css-6=""
           name="hint"
           onChange={[Function]}
-          onInvalid={[Function]}
           required={false}
           tabIndex={-1}
           type="text"
@@ -605,7 +604,6 @@ exports[`Test the typeahead component should be a simple static one which auto o
         onBlur={[Function]}
         onChange={[Function]}
         onClick={[Function]}
-        onInvalid={[Function]}
         onKeyDown={[Function]}
         placeholder="Select Nick's Pokemon"
         required={false}
@@ -981,6 +979,7 @@ exports[`Test the typeahead component should render differently when loading 1`]
 .css-8:-webkit-autofill ~ .checkmark,
 [data-css-8]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
+  top: 8px;
 }
 
 .css-8:-webkit-autofill,
@@ -1066,7 +1065,6 @@ exports[`Test the typeahead component should render differently when loading 1`]
           data-css-8=""
           name="hint"
           onChange={[Function]}
-          onInvalid={[Function]}
           required={false}
           tabIndex={-1}
           type="text"
@@ -1113,14 +1111,13 @@ exports[`Test the typeahead component should render differently when loading 1`]
         aria-labelledby="downshift-7-label"
         aria-required={false}
         autoComplete="off"
-        data-css-8=""
         data-css-4=""
+        data-css-8=""
         id="downshift-7-input"
         name="typed"
         onBlur={[Function]}
         onChange={[Function]}
         onClick={[Function]}
-        onInvalid={[Function]}
         onKeyDown={[Function]}
         placeholder="Select Nick's Pokemon"
         required={false}
@@ -1262,6 +1259,7 @@ exports[`Test the typeahead component should render differently when loading 2`]
 .css-8:-webkit-autofill ~ .checkmark,
 [data-css-8]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
+  top: 8px;
 }
 
 .css-8:-webkit-autofill,
@@ -1347,7 +1345,6 @@ exports[`Test the typeahead component should render differently when loading 2`]
           data-css-8=""
           name="hint"
           onChange={[Function]}
-          onInvalid={[Function]}
           required={false}
           tabIndex={-1}
           type="text"
@@ -1394,14 +1391,13 @@ exports[`Test the typeahead component should render differently when loading 2`]
         aria-labelledby="downshift-7-label"
         aria-required={false}
         autoComplete="off"
-        data-css-8=""
         data-css-4=""
+        data-css-8=""
         id="downshift-7-input"
         name="typed"
         onBlur={[Function]}
         onChange={[Function]}
         onClick={[Function]}
-        onInvalid={[Function]}
         onKeyDown={[Function]}
         placeholder="Select Nick's Pokemon"
         required={false}
@@ -1560,6 +1556,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
 .css-6:-webkit-autofill ~ .checkmark,
 [data-css-6]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
+  top: 8px;
 }
 
 .css-6:-webkit-autofill,
@@ -1764,7 +1761,6 @@ exports[`Test the typeahead component should use the limit property 1`] = `
           data-css-6=""
           name="hint"
           onChange={[Function]}
-          onInvalid={[Function]}
           required={false}
           tabIndex={-1}
           type="text"
@@ -1818,7 +1814,6 @@ exports[`Test the typeahead component should use the limit property 1`] = `
         onBlur={[Function]}
         onChange={[Function]}
         onClick={[Function]}
-        onInvalid={[Function]}
         onKeyDown={[Function]}
         placeholder="Select Nick's Pokemon"
         required={false}
@@ -1987,6 +1982,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
 .css-6:-webkit-autofill ~ .checkmark,
 [data-css-6]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
+  top: 8px;
 }
 
 .css-6:-webkit-autofill,
@@ -2192,7 +2188,6 @@ exports[`Test the typeahead component should use the top placement property 1`] 
           data-css-6=""
           name="hint"
           onChange={[Function]}
-          onInvalid={[Function]}
           required={false}
           tabIndex={-1}
           type="text"
@@ -2246,7 +2241,6 @@ exports[`Test the typeahead component should use the top placement property 1`] 
         onBlur={[Function]}
         onChange={[Function]}
         onClick={[Function]}
-        onInvalid={[Function]}
         onKeyDown={[Function]}
         placeholder="Select Nick's Pokemon"
         required={false}
