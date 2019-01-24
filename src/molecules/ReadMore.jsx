@@ -64,7 +64,7 @@ class ReadMore extends React.Component {
     // I'm not sure about the right place for this functionality tho since it's
     // maybe better to be implemented into the mother component? Or maybe provide
     // a withObserver method?
-    if(window.MutationObserver){
+    if (window.MutationObserver) {
       const { current } = this.childRef
       this.observer = new MutationObserver(this.toggleCollapseLink)
       this.observer.observe(current, {
@@ -80,7 +80,7 @@ class ReadMore extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.toggleCollapseLink)
-    if(window.MutationObserver){
+    if (window.MutationObserver) {
       this.observer.disconnect()
     }
   }

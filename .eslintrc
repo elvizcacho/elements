@@ -6,16 +6,18 @@
     "prettier/react"
   ],
   "globals": {
-    "React": true,
     "describe": true,
     "expect": true,
     "fetch": false,
+    "fromDOMNode": true,
     "graphql": false,
     "it": true,
     "jest": true,
     "mount": true,
-    "shallow": true,
-    "MutationObserver": true
+    "MutationObserver": true,
+    "React": true,
+    "render": true,
+    "shallow": true
   },
   "parser": "babel-eslint",
   "plugins": ["react", "jest", "import"],

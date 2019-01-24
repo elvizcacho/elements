@@ -24,6 +24,7 @@ import ResourceProvider from '../src/behaviour/ResourceProvider'
 import List from '../src/molecules/List/List'
 import ListItem from '../src/molecules/List/ListItem'
 import Input from '../src/atoms/Input'
+import EditableTextStory from './EditableTextStory'
 import Button from '../src/molecules/Button'
 import ConfirmStory from './ConfirmStory'
 
@@ -162,6 +163,11 @@ storiesOf('Icons', module)
       </ResourceProvider>
     </ThemeProvider>
   ))
+
+storiesOf('Text', module)
+  .addDecorator(createViewportDecorator())
+  .add('EditableText', () => <EditableTextStory />)
+
 storiesOf('ReadMore', module)
   .addDecorator(createViewportDecorator())
   .add('read more...', () => {

@@ -1,14 +1,17 @@
-<!-- 
-This is an auto-generated markdown. 
+<!--
+This is an auto-generated markdown.
 You can change it in "src/organisms/Typeahead.jsx" and run build:docs to update this file.
 -->
+
 # Typeahead
 
 ## Usage
-| Name        | Type           | Description  |
-| ----------- |:--------------:| ------------:|
-|autoOpen|bool|Forces the menu to be opened when clicking in the input.
-|clearOnSelect|bool|Automatically clears the selection. Must not be used with controlled
+
+| Name          | Type |                                                          Description |
+| ------------- | :--: | -------------------------------------------------------------------: |
+| autoOpen      | bool |             Forces the menu to be opened when clicking in the input. |
+| clearOnSelect | bool | Automatically clears the selection. Must not be used with controlled |
+
 and uncontrolled components.
 |defaultValue|string|The default value of the component, without making it controlled.
 |isLoading|bool|The loading state of the component, e.g when externally fetching some

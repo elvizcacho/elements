@@ -34,6 +34,5 @@ describe('<RadioButtonSet />', () => {
     fireEvent.click(getByLabelText('Gray', { selector: 'input' }))
     // @todo The current implementation of RadioButtonSet triggers handleChange twice
     expect(handleChange).toHaveBeenCalled()
-
   })
 })
