@@ -46,6 +46,7 @@ exports[`Input component should render with all props 1`] = `
 .css-2:-webkit-autofill ~ .checkmark,
 [data-css-2]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
+  top: 8px;
 }
 
 .css-2:-webkit-autofill,
@@ -111,17 +112,15 @@ exports[`Input component should render with all props 1`] = `
   <input
     aria-required={true}
     data-css-2=""
-    defaultValue="string"
+    defaultValue="defaultValue"
     maxLength={1}
     minLength={1}
-    name="string"
+    name="name"
     onChange={[Function]}
-    onInvalid={[Function]}
-    onKeyUp={[Function]}
-    pattern="string"
+    pattern="pattern"
     required={true}
-    type="text"
-    value="string"
+    type="tel"
+    value="value"
   />
   <div
     className="label"
@@ -138,7 +137,7 @@ exports[`Input component should render with all props 1`] = `
       data-css-8=""
       data-css-9=""
     >
-      string
+      label
        
       *
     </div>
@@ -174,7 +173,7 @@ exports[`Input component should render with all props 1`] = `
       data-css-10=""
       data-css-8=""
     >
-      6
+      5
       /
       1
     </div>
@@ -234,6 +233,7 @@ exports[`Input component should render with required props only 1`] = `
 .css-3:-webkit-autofill ~ .checkmark,
 [data-css-3]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
+  top: 8px;
 }
 
 .css-3:-webkit-autofill,
@@ -255,9 +255,8 @@ exports[`Input component should render with required props only 1`] = `
   <input
     aria-required={false}
     data-css-3=""
-    name="string"
-    onInvalid={[Function]}
-    onKeyUp={[Function]}
+    name="name"
+    onChange={[Function]}
     required={false}
     type="text"
   />

@@ -6,7 +6,6 @@
     "prettier/react"
   ],
   "globals": {
-    "React": true,
     "describe": true,
     "expect": true,
     "fetch": false,
@@ -15,6 +14,8 @@
     "it": true,
     "jest": true,
     "mount": true,
+    "MutationObserver": true,
+    "React": true,
     "render": true,
     "shallow": true
   },
