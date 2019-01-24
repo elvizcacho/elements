@@ -16,9 +16,8 @@ const simple = backgroundColor =>
     height: '100%',
   })
 
-const paddedCss = (paddedVertical, paddedHorizontal, pullDown) =>
+const paddedCss = (paddedVertical, paddedHorizontal) =>
   css({
-    transform: `translateY(${pullDown}px)`,
     [createMQ('tablet', 'desktop')]: {
       paddingLeft: paddedHorizontal && '25px',
       paddingRight: paddedHorizontal && '25px',
@@ -135,9 +134,9 @@ class SimpleLayout extends React.PureComponent {
                 {...simple(colorize(backgroundColor))}
                 {...paddedCss(
                   padded === true || padded === 'vertical',
-                  padded === true || padded === 'horizontal',
-                  value.x
+                  padded === true || padded === 'horizontal'
                 )}
+                style={{ transform: `translateY(${value.x}px)` }}
                 onScroll={this.handleScroll}
                 // for e2e-tests, to scroll down on pages (id is taken for cross browser selector compat)
                 id="scroll-container"
