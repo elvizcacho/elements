@@ -70,6 +70,7 @@ exports[`TextInput renders 1`] = `
 .css-3:-webkit-autofill ~ .checkmark,
 [data-css-3]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
+  top: 8px;
 }
 
 .css-3:-webkit-autofill,
@@ -130,8 +131,7 @@ exports[`TextInput renders 1`] = `
       aria-required={true}
       data-css-3=""
       name="email"
-      onInvalid={[Function]}
-      onKeyUp={[Function]}
+      onChange={[Function]}
       placeholder="E-Mail"
       required={true}
       type="email"

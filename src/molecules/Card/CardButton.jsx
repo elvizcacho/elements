@@ -9,6 +9,9 @@ const style = backgroundColor =>
   css({
     border: 'none',
     backgroundColor,
+    ':focus': {
+      outline: 'none',
+    },
     overflow: 'visible',
     color: 'inherit',
     font: 'inherit',

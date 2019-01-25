@@ -2,6 +2,14 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import TextInput from './TextInput'
 
+function createNodeMock() {
+  return {
+    value: '',
+    length: 0,
+    setCustomValidity: _ => _,
+  }
+}
+
 test('TextInput renders', () => {
   const tree = renderer
     .create(
@@ -11,7 +19,8 @@ test('TextInput renders', () => {
         type="email"
         placeholder="E-Mail"
         required
-      />
+      />,
+      { createNodeMock }
     )
     .toJSON()
   expect(tree).toMatchSnapshot()

@@ -36,7 +36,7 @@ export class Viewport extends React.Component {
 
   state = {
     width: 320,
-    height: 630,
+    height: 500,
     padding: false,
     shiftPressed: false,
   }

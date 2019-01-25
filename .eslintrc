@@ -6,14 +6,17 @@
     "prettier/react"
   ],
   "globals": {
-    "React": true,
     "describe": true,
     "expect": true,
     "fetch": false,
+    "fromDOMNode": true,
     "graphql": false,
     "it": true,
     "jest": true,
     "mount": true,
+    "MutationObserver": true,
+    "React": true,
+    "render": true,
     "shallow": true
   },
   "parser": "babel-eslint",
@@ -28,7 +31,7 @@
     "react/jsx-curly-spacing": [2, "never"],
     "react/jsx-first-prop-new-line": [2, "multiline-multiprop"],
     "react/jsx-indent-props": 0,
-    "react/jsx-no-bind": 2,
+    "react/jsx-no-bind": 0,
     "react/jsx-no-target-blank": 0,
     "react/no-array-index-key": 2,
     "react/no-multi-comp": [1, { "ignoreStateless": true }],

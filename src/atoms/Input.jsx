@@ -23,6 +23,7 @@ const styles = {
       },
       '&:-webkit-autofill ~ .checkmark': {
         opacity: '1 !important',
+        top: 8,
       },
       '&:-webkit-autofill': {
         paddingTop: '10px !important',
@@ -42,17 +43,6 @@ const styles = {
         color: 'red',
       },
     }),
-  error: css({
-    backgroundColor: '#c1392b',
-    position: 'absolute',
-    bottom: '100%',
-    left: '0',
-    zIndex: 40,
-    width: '100%',
-    padding: '12px 15px 15px',
-    borderRadius: '2px',
-    boxShadow: '0 1px 2px 1px rgba(0,0,0,.25)',
-  }),
   arrow: css({
     position: 'absolute',
     bottom: '-10px',
@@ -92,16 +82,18 @@ const styles = {
   }),
 }
 
-const InputError = ({ children, ...props }) => (
-  <View {...styles.error} {...props}>
-    <Text color="textOnBackground">{children}</Text>
-    <View {...styles.arrow} />
-  </View>
-)
-
-InputError.propTypes = {
-  children: PropTypes.string.isRequired,
-}
+const validityStates = [
+  'badInput',
+  'customError',
+  'patternMismatch',
+  'rangeOverflow',
+  'rangeUnderflow',
+  'stepMismatch',
+  'tooLong',
+  'tooShort',
+  'typeMismatch',
+  'valueMissing',
+]
 
 /**
  * TextInputs are used to allow users to enter information like names, numbers, urls, email addresses or passwords.
@@ -151,7 +143,6 @@ class Input extends React.Component {
   state = {
     value: '',
     visible: true,
-    message: null,
     length: (this.props.value && this.props.value.length) || 0,
   }
 
@@ -162,47 +153,62 @@ class Input extends React.Component {
     type: 'text',
   }
 
-  handleInvalid = e => {
-    e.preventDefault()
-    const { STATES, validity } = this.context
-    const message = e.target.validationMessage
-    let hasState = false
-    if (STATES) {
-      for (const state of STATES) {
-        if (e.target.validity[state]) {
-          this.setState({ message: validity[state] || message })
-          hasState = true
-          break
-        }
+  input = React.createRef()
+
+  setValidity = target => {
+    let customValidity = ''
+    validityStates.forEach(state => {
+      if (
+        customValidity === '' &&
+        this.props[state] &&
+        target.validity[state]
+      ) {
+        customValidity = this.props[state]
       }
-    }
-    !hasState && this.setState({ message })
+    })
+
+    target &&
+      target.setCustomValidity &&
+      target.setCustomValidity(customValidity)
   }
 
-  setInput = input => {
+  componentDidMount() {
+    const input = this.input.current
     if (input) {
       this.setState({ length: input.value && input.value.length })
-      input.addEventListener('invalid', this.handleInvalid)
-    } else if (this.input) {
-      this.input.removeEventListener('invalid', this.handleInvalid)
+      this.props.onInputRef(input)
+      this.setValidity(input)
     }
-    this.input = input
-    this.props.onInputRef(input)
   }
 
   handleChange = e => {
+    this.setValidity(e.target)
     this.setState({
       value: e.target.value,
-      message: null,
       length: e.target.value.length,
     })
     this.props.onChange && this.props.onChange(e)
   }
 
-  handleMessageClick = () => this.setState({ message: null })
-
   render() {
-    const { required, onInputRef, lines, label, pattern, ...props } = this.props
+    const {
+      required,
+      onInputRef,
+      lines,
+      label,
+      pattern,
+      badInput,
+      customError,
+      patternMismatch,
+      rangeOverflow,
+      rangeUnderflow,
+      stepMismatch,
+      tooLong,
+      tooShort,
+      typeMismatch,
+      valueMissing,
+      ...props
+    } = this.props
     const currentValue = this.props.value || this.state.value
     const labelVisible = currentValue.length > 0
     const showLabel = label && currentValue.length > 0
@@ -217,28 +223,23 @@ class Input extends React.Component {
       <Theme>
         {({ theme, colorize }) => (
           <Relative style={{ width: '100%' }}>
-            {this.state.message && (
-              <InputError onClick={this.handleMessageClick}>
-                {this.state.message}
-              </InputError>
-            )}
             {lines === 1 ? (
               <input
-                ref={this.setInput}
+                ref={this.input}
                 {...styles.input(showLabel)}
                 required={required}
                 aria-required={required}
                 {...props}
                 onInvalid={this.handleInvalid}
-                onKeyUp={this.handleChange}
+                onChange={this.handleChange}
                 pattern={pattern}
               />
             ) : (
               <textarea
+                ref={this.input}
                 {...styles.area(theme.secondaryText, lines, showLabel)}
                 required={required}
                 {...props}
-                ref={onInputRef}
                 onChange={this.handleChange}
               />
             )}
@@ -276,11 +277,6 @@ class Input extends React.Component {
       </Theme>
     )
   }
-}
-
-Input.contextTypes = {
-  validity: PropTypes.object,
-  STATES: PropTypes.array,
 }
 
 export default Input
