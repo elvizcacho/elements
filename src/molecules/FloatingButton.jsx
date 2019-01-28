@@ -15,7 +15,6 @@ const buttonStyle = css({
   height: '100%',
   background: 'transparent',
   border: 0,
-  transition: '250ms ease-in-out',
   ':active': {
     background: 'rgba(0, 0, 0, 0.15)',
   },
@@ -65,6 +64,7 @@ class FloatingButton extends React.Component {
             cursor: isDisabled ? 'default' : 'pointer',
             height: 50,
             overflow: 'hidden',
+            transition: '250ms ease-in-out',
             width: '100%',
             ':hover': {
               background: disabled ? disabledColor : col(color, lightness(-10)),

@@ -14,11 +14,8 @@ exports[`Floating button renders without error 1`] = `
   height: 100%;
   background: transparent;
   border: 0;
-  transition: 250ms ease-in-out;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -webkit-transition: 250ms ease-in-out;
-  -moz-transition: 250ms ease-in-out;
 }
 
 .css-0:active,
@@ -42,7 +39,10 @@ exports[`Floating button renders without error 1`] = `
   cursor: pointer;
   height: 50px;
   overflow: hidden;
+  transition: 250ms ease-in-out;
   width: 100%;
+  -webkit-transition: 250ms ease-in-out;
+  -moz-transition: 250ms ease-in-out;
 }
 
 .css-7:hover,
