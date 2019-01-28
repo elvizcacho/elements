@@ -30,9 +30,9 @@ exports[`CardButton renders custom color 1`] = `
 [data-css-1] {
   background-color: #f0f0f0;
   border: none;
-  transition: 500ms ease-in-out;
-  -webkit-transition: 500ms ease-in-out;
-  -moz-transition: 500ms ease-in-out;
+  transition: 250ms ease-in-out;
+  -webkit-transition: 250ms ease-in-out;
+  -moz-transition: 250ms ease-in-out;
 }
 
 .css-1:focus,
@@ -64,9 +64,9 @@ exports[`CardButton renders without error 1`] = `
 [data-css-0] {
   background-color: #3598db;
   border: none;
-  transition: 500ms ease-in-out;
-  -webkit-transition: 500ms ease-in-out;
-  -moz-transition: 500ms ease-in-out;
+  transition: 250ms ease-in-out;
+  -webkit-transition: 250ms ease-in-out;
+  -moz-transition: 250ms ease-in-out;
 }
 
 .css-0:focus,
