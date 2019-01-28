@@ -151,8 +151,8 @@ Snapshot Diff:
     box-sizing: border-box;
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
-+ }
-+ 
+  }
+  
 + .css-4,
 + [data-css-4] {
 +   border-bottom: 1px dashed #e84c3d;
@@ -163,8 +163,8 @@ Snapshot Diff:
 + .css-4[data-simulate-focus],
 + [data-css-4][data-simulate-focus] {
 +   border-bottom: 1px solid #e84c3d;
-  }
-  
++ }
++ 
   <div
 -   data-css-5=""
 +   data-css-1=""
