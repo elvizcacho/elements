@@ -399,6 +399,11 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.1.5.tgz#20b7d5e7e1811ba996f8a868962ea7dd2bfcd2fc"
   integrity sha512-WXKf5K5HT6X0kKiCOezJZFljsfxKV1FpU8Tf1A7ZpGvyd/Q4hlrJm2EwoH2onaUq3O4tLDp+4gk0hHPsMyxmOg==
 
+"@babel/parser@^7.1.3":
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.3.1.tgz#8f4ffd45f779e6132780835ffa7a215fa0b2d181"
+  integrity sha512-ATz6yX/L8LEnC3dtLQnIx4ydcPxhLcoy9Vl6re00zb2w5lG6itY6Vhnr1KFRPq/FHNsgl/gh2mjNN20f9iJTTA==
+
 "@babel/parser@^7.1.6":
   version "7.1.6"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.1.6.tgz#16e97aca1ec1062324a01c5a6a7d0df8dd189854"
@@ -2561,15 +2566,15 @@ assign-symbols@^1.0.0:
   resolved "https://registry.yarnpkg.com/assign-symbols/-/assign-symbols-1.0.0.tgz#59667f41fadd4f20ccbc2bb96b8d4f7f78ec0367"
   integrity sha1-WWZ/QfrdTyDMvCu5a41Pf3jsA2c=
 
-ast-types@0.10.1:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.10.1.tgz#f52fca9715579a14f841d67d7f8d25432ab6a3dd"
-  integrity sha512-UY7+9DPzlJ9VM8eY0b2TUZcZvF+1pO0hzMtAyjBYKhOmnvRlqYNYnWdtsMj0V16CGaMlpL0G1jnLbLo4AyotuQ==
-
 ast-types@0.11.5:
   version "0.11.5"
   resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.11.5.tgz#9890825d660c03c28339f315e9fa0a360e31ec28"
   integrity sha512-oJjo+5e7/vEc2FBK8gUalV0pba4L3VdBIs2EKhOLHLcOd2FgQIVQN9xb0eZ9IjEWyAL7vq6fGJxOvVvdCHNyMw==
+
+ast-types@0.11.7:
+  version "0.11.7"
+  resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.11.7.tgz#f318bf44e339db6a320be0009ded64ec1471f46c"
+  integrity sha512-2mP3TwtkY/aTv5X3ZsMpNAbOnyoC/aMJwJSoaELPkHId0nSQgFcnU4dRW3isxiz7+zBexk0ym3WNVjMiQBnJSw==
 
 astral-regex@^1.0.0:
   version "1.0.0"
@@ -2985,11 +2990,6 @@ babel-runtime@6.x.x, babel-runtime@^6.11.6, babel-runtime@^6.23.0, babel-runtime
   dependencies:
     core-js "^2.4.0"
     regenerator-runtime "^0.11.0"
-
-babylon@~5.8.3:
-  version "5.8.38"
-  resolved "https://registry.yarnpkg.com/babylon/-/babylon-5.8.38.tgz#ec9b120b11bf6ccd4173a18bf217e60b79859ffd"
-  integrity sha1-7JsSCxG/bM1Bc6GL8hfmC3mFn/0=
 
 bail@^1.0.0:
   version "1.0.3"
@@ -3814,7 +3814,7 @@ core-js@^1.0.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
   integrity sha1-ZSKUwUZR2yj6k70tX/KYOk8IxjY=
 
-core-js@^2.4.0, core-js@^2.4.1:
+core-js@^2.4.0:
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.3.tgz#8acc38345824f16d8365b7c9b4259168e8ed603e"
   integrity sha1-isw4NFgk8W2DZbfJtCWRaOjtYD4=
@@ -9047,18 +9047,18 @@ react-dev-utils@^6.1.0:
     strip-ansi "4.0.0"
     text-table "0.2.0"
 
-react-docgen@2.21.0:
-  version "2.21.0"
-  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-2.21.0.tgz#e8f9caf50e15510096616850771f243fadbb9d7d"
-  integrity sha512-8xNPTrmvHLGNfqlsCYPdXmSkagP1njI5unP3t8WrjTJ4/5hHuP5nb3XH69CnF67HPV5zTkPoafcRBDGSQO6S6A==
+react-docgen@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-3.0.0.tgz#79c6e1b1870480c3c2bc1a65bede0577a11c38cd"
+  integrity sha512-2UseoLWabFNXuk1Foz4VDPSIAkxz+1Hmmq4qijzUmYHDq0ZSloKDLXtGLpQRcAi/M76hRpPtH1rV4BI5jNAOnQ==
   dependencies:
+    "@babel/parser" "^7.1.3"
+    "@babel/runtime" "^7.0.0"
     async "^2.1.4"
-    babel-runtime "^6.9.2"
-    babylon "~5.8.3"
-    commander "^2.9.0"
+    commander "^2.19.0"
     doctrine "^2.0.0"
     node-dir "^0.1.10"
-    recast "^0.12.6"
+    recast "^0.16.0"
 
 react-docgen@^3.0.0-rc.1:
   version "3.0.0-rc.1"
@@ -9341,23 +9341,22 @@ realpath-native@^1.0.2:
   dependencies:
     util.promisify "^1.0.0"
 
-recast@^0.12.6:
-  version "0.12.9"
-  resolved "https://registry.yarnpkg.com/recast/-/recast-0.12.9.tgz#e8e52bdb9691af462ccbd7c15d5a5113647a15f1"
-  integrity sha512-y7ANxCWmMW8xLOaiopiRDlyjQ9ajKRENBH+2wjntIbk3A6ZR1+BLQttkmSHMY7Arl+AAZFwJ10grg2T6f1WI8A==
-  dependencies:
-    ast-types "0.10.1"
-    core-js "^2.4.1"
-    esprima "~4.0.0"
-    private "~0.1.5"
-    source-map "~0.6.1"
-
 recast@^0.15.0:
   version "0.15.3"
   resolved "https://registry.yarnpkg.com/recast/-/recast-0.15.3.tgz#5fc1fd1c8e2d4d027ee3977a176bbb8d1c83305e"
   integrity sha512-xqnagxQH7mL4+UpcCVMObPPdjCEE2dmfGcTwcdpyNgZOd9W0rfdLRF3+smoA+AQqMw6xK6G4021dAQK8XfPYIQ==
   dependencies:
     ast-types "0.11.5"
+    esprima "~4.0.0"
+    private "~0.1.5"
+    source-map "~0.6.1"
+
+recast@^0.16.0:
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/recast/-/recast-0.16.2.tgz#3796ebad5fe49ed85473b479cd6df554ad725dc2"
+  integrity sha512-O/7qXi51DPjRVdbrpNzoBQH5dnAPQNbfoOFyRiUwreTMJfIHYOEBzwuH+c0+/BTSJ3CQyKs6ILSWXhESH6Op3A==
+  dependencies:
+    ast-types "0.11.7"
     esprima "~4.0.0"
     private "~0.1.5"
     source-map "~0.6.1"
