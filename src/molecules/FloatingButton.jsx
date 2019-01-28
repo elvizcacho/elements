@@ -3,6 +3,7 @@ import Absolute from '../atoms/Absolute'
 import { withTheme } from '../behaviour/ThemeProvider'
 import PropTypes from 'prop-types'
 import { css } from 'glamor'
+import { color as col, lightness } from 'kewler'
 import View from '../atoms/View'
 import ListSpinner from './List/ListSpinner'
 
@@ -14,6 +15,7 @@ const buttonStyle = css({
   height: '100%',
   background: 'transparent',
   border: 0,
+  transition: '250ms ease-in-out',
   ':active': {
     background: 'rgba(0, 0, 0, 0.15)',
   },
@@ -64,6 +66,9 @@ class FloatingButton extends React.Component {
             height: 50,
             overflow: 'hidden',
             width: '100%',
+            ':hover': {
+              background: disabled ? disabledColor : col(color, lightness(-10)),
+            },
           })}
         >
           <button {...buttonStyle} {...props} disabled={isDisabled}>
