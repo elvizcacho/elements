@@ -9,7 +9,7 @@ const style = backgroundColor =>
   css({
     backgroundColor,
     border: 'none',
-    transition: '500ms ease-in-out',
+    transition: '250ms ease-in-out',
     ':focus': {
       outline: 'none',
     },
