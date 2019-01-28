@@ -5,7 +5,6 @@ import {
   Card,
   FloatingButton,
   Form,
-  FormValidityProvider,
   ReadMore,
   SimpleLayout,
   Text,
@@ -34,27 +33,23 @@ storiesOf('Animations', module)
 
 storiesOf('Forms', module)
   .addDecorator(createViewportDecorator())
+  .add('Full form', () => <FormStory />)
   .add('Confirm', () => <ConfirmStory />)
-  .add('SimpleForm', () => <FormStory />)
   .add('RadioButton', () => <RadioButtonStory />)
   .add('PhoneInput', () => {
     return (
       <ThemeProvider>
-        <Form>
-          <PhoneInput
-            placeholder="hello, this is a placeholder"
-            defaultValue="49017632"
-            name="phone"
-            id="phone"
-          />
-          <FloatingButton>
-            <Text>get phone input value</Text>
-          </FloatingButton>
-        </Form>
+        <PhoneInput
+          placeholder="hello, this is a placeholder"
+          defaultValue="49017632"
+          name="phone"
+          id="phone"
+        />
       </ThemeProvider>
     )
   })
   .add('Typeahead', () => <TypeaheadStory />)
+
 storiesOf('Button', module)
   .addDecorator(createViewportDecorator())
   .add('with text', () => (
@@ -71,68 +66,50 @@ storiesOf('FloatingButton', module)
   .addDecorator(createViewportDecorator())
   .add('with text', () => (
     <ThemeProvider>
-      <FormValidityProvider
-        validity={{
-          valueMissing: 'YEYYYY, NOPEEEEEEEE!',
-        }}
-      >
-        <Form onSubmit={_ => _}>
-          <FloatingButton type="submit" onClick={action('clicked')}>
-            <Text strong size="s" color="white">
-              Hello Button
-            </Text>
-          </FloatingButton>
-          <TextInput
-            name="email"
-            type="email"
-            placeholder="Your email"
-            required
-          />
-        </Form>
-      </FormValidityProvider>
+      <Form onSubmit={_ => _}>
+        <FloatingButton type="submit" onClick={action('clicked')}>
+          <Text strong size="s" color="white">
+            Hello Button
+          </Text>
+        </FloatingButton>
+        <TextInput
+          name="email"
+          type="email"
+          placeholder="Your email"
+          required
+        />
+      </Form>
     </ThemeProvider>
   ))
   .add('disabled', () => (
     <ThemeProvider>
-      <FormValidityProvider
-        validity={{
-          valueMissing: 'YEYYYY, NOPEEEEEEEE!',
-        }}
-      >
-        <Form onSubmit={_ => _}>
-          <FloatingButton disabled type="submit" onClick={action('clicked')}>
-            <Text strong size="s" color="white">
-              Hello Button
-            </Text>
-          </FloatingButton>
-          <TextInput
-            name="email"
-            type="email"
-            placeholder="Your email"
-            required
-          />
-        </Form>
-      </FormValidityProvider>
+      <Form onSubmit={_ => _}>
+        <FloatingButton disabled type="submit" onClick={action('clicked')}>
+          <Text strong size="s" color="white">
+            Hello Button
+          </Text>
+        </FloatingButton>
+        <TextInput
+          name="email"
+          type="email"
+          placeholder="Your email"
+          required
+        />
+      </Form>
     </ThemeProvider>
   ))
   .add('in progress', () => (
     <ThemeProvider>
-      <FormValidityProvider
-        validity={{
-          valueMissing: 'YEYYYY, NOPEEEEEEEE!',
-        }}
-      >
-        <Form onSubmit={_ => _}>
-          <Text align="center" strong size="xxl">
-            Scroll Down!
+      <Form onSubmit={_ => _}>
+        <Text align="center" strong size="xxl">
+          Scroll Down!
+        </Text>
+        <FloatingButton inProgress type="submit" onClick={action('clicked')}>
+          <Text strong size="s" color="white">
+            Hello Button
           </Text>
-          <FloatingButton inProgress type="submit" onClick={action('clicked')}>
-            <Text strong size="s" color="white">
-              Hello Button
-            </Text>
-          </FloatingButton>
-        </Form>
-      </FormValidityProvider>
+        </FloatingButton>
+      </Form>
     </ThemeProvider>
   ))
 

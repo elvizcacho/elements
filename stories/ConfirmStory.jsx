@@ -8,26 +8,30 @@ export default class FormStory extends React.Component {
   }
 
   handleClick = async () => {
+    const backgroundColor =
+      this.state.backgroundColor === 'white' ? 'black' : 'white'
+
     const response = await confirm({
-      message: 'Turn the background red?',
+      message: `Turn the background ${backgroundColor}?`,
       acceptButtonLabel: 'Okidoki',
       cancelButtonLabel: 'Nope',
     })
-    const backgroundColor = response ? 'red' : 'white'
-
-    this.setState({ backgroundColor })
+    if (response) {
+      this.setState({ backgroundColor })
+    }
   }
 
   render() {
     return (
       <View
-        {...css({
-          backgroundColor: this.state.backgroundColor,
-          height: '100vh',
-        })}
+        fill
+        direction="column"
+        alignH="center"
+        alignV="center"
+        {...css({ backgroundColor: this.state.backgroundColor })}
       >
         <ThemeProvider>
-          <Button onClick={this.handleClick}>Show a confirm</Button>
+          <Button onClick={this.handleClick}>Show a confirm dialog</Button>
         </ThemeProvider>
       </View>
     )
