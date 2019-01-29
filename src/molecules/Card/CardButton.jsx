@@ -15,9 +15,9 @@ const style = backgroundColor =>
     },
     ':hover': {
       cursor: 'pointer',
-      background: backgroundColor.includes('rgb')
-        ? backgroundColor
-        : color(backgroundColor, lightness(-10)),
+      background: backgroundColor.includes('#')
+        ? color(backgroundColor, lightness(-10))
+        : backgroundColor,
     },
   })
 

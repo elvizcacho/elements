@@ -69,9 +69,9 @@ class FloatingButton extends React.Component {
             ':hover': {
               background: disabled
                 ? disabledColor
-                : color.includes('rgb')
-                ? color
-                : col(color, lightness(-10)),
+                : color.includes('#')
+                ? col(color, lightness(-10))
+                : color,
             },
           })}
         >

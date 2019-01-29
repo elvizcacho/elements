@@ -34,9 +34,9 @@ function styles(
     ':hover': {
       background: disabled
         ? disabledBackgroundColor
-        : backgroundColor.includes('rgb')
-        ? backgroundColor
-        : col(backgroundColor, lightness(-10)),
+        : backgroundColor.includes('#')
+        ? col(backgroundColor, lightness(-10))
+        : backgroundColor,
     },
   })
 }
