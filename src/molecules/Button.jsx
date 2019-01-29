@@ -34,7 +34,7 @@ function styles(
     ':hover': {
       background: disabled
         ? disabledBackgroundColor
-        : backgroundColor.includes('#')
+        : backgroundColor.indexOf('#') !== -1
         ? col(backgroundColor, lightness(-10))
         : backgroundColor,
     },

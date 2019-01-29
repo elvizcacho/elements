@@ -15,9 +15,10 @@ const style = backgroundColor =>
     },
     ':hover': {
       cursor: 'pointer',
-      background: backgroundColor.includes('#')
-        ? color(backgroundColor, lightness(-10))
-        : backgroundColor,
+      background:
+        backgroundColor.indexOf('#') !== -1
+          ? color(backgroundColor, lightness(-10))
+          : backgroundColor,
     },
   })
 
