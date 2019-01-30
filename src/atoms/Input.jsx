@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import View from '../atoms/View'
 import { css } from 'glamor'
-import Theme from '../behaviour/Theme'
 import PropTypes from 'prop-types'
 import Relative from '../atoms/Relative'
 import Text, { createTextStyles } from '../atoms/Text'
