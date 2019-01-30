@@ -221,9 +221,9 @@ class Input extends React.Component {
 
     const isCheckmarkActive =
       (pattern || props.minLength || props.maxLength || required) &&
-      this.input &&
-      this.input.validity &&
-      this.input.validity.valid
+      this.input.current &&
+      this.input.current.validity &&
+      this.input.current.validity.valid
 
     return (
       <Theme>
