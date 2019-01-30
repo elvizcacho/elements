@@ -54,6 +54,7 @@ export default class FormStory extends React.Component {
                       required
                     />
                     <TextInput
+                      icon="email"
                       name="email"
                       patternMismatch="Lol email"
                       label="E-Mail"
@@ -63,6 +64,7 @@ export default class FormStory extends React.Component {
                       required
                     />
                     <TextInput
+                      icon="login-key"
                       type="password"
                       label="Password"
                       name="password"

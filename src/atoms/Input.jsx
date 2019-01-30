@@ -1,19 +1,20 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import View from '../atoms/View'
 import { css } from 'glamor'
-import Theme from '../behaviour/Theme'
 import PropTypes from 'prop-types'
 import Relative from '../atoms/Relative'
 import Text, { createTextStyles } from '../atoms/Text'
-import Icon from '../atoms/Icon'
+import Icon, { Icons as AvailableIcons } from '../atoms/Icon'
+import Absolute from './Absolute'
 
 const styles = {
-  input: showLabel =>
+  input: (showLabel, translated) =>
     css(createTextStyles({ size: 'm' }), {
       boxSizing: 'border-box',
       height: 50,
       width: '100%',
       padding: '0 15px',
+      paddingLeft: translated && 40,
       paddingTop: showLabel ? 10 : 0,
       transition: 'padding-top .225s ease-out',
       border: 0,
@@ -29,7 +30,7 @@ const styles = {
         paddingTop: '10px !important',
       },
     }),
-  area: (textColor, lines, showLabel) =>
+  area: (lines, showLabel) =>
     css(createTextStyles({ size: 'm' }), {
       boxSizing: 'border-box',
       transition: 'padding-top .225s ease-out',
@@ -68,13 +69,14 @@ const styles = {
     position: 'absolute',
     right: 10,
   }),
-  label: css({
-    position: 'absolute',
-    left: 15,
-    fontSize: 10,
-    opacity: 0,
-    transition: 'all .225s ease-out',
-  }),
+  label: translated =>
+    css({
+      position: 'absolute',
+      left: translated ? 40 : 15,
+      fontSize: 10,
+      opacity: 0,
+      transition: 'all .225s ease-out',
+    }),
   placeholder: css({
     position: 'absolute',
     bottom: 2,
@@ -109,6 +111,8 @@ class Input extends React.Component {
     defaultValue: PropTypes.string,
     /** Indicates that this field is required */
     required: PropTypes.bool,
+    /** Icon shown on the left of the input field (See `Icon` component for all possible values) **/
+    icon: PropTypes.oneOf(AvailableIcons),
     /** The name of this input field */
     name: PropTypes.string.isRequired,
     /** The label of the input */
@@ -124,7 +128,7 @@ class Input extends React.Component {
       'date',
       'datetime-local',
     ]),
-    /** Called, when the users changes something */
+    /** Called, when the user changes something */
     onChange: PropTypes.func,
     /** The value, makes this component a controlled component */
     value: PropTypes.string,
@@ -207,6 +211,7 @@ class Input extends React.Component {
       tooShort,
       typeMismatch,
       valueMissing,
+      icon,
       ...props
     } = this.props
     const currentValue = this.props.value || this.state.value
@@ -215,66 +220,72 @@ class Input extends React.Component {
 
     const isCheckmarkActive =
       (pattern || props.minLength || props.maxLength || required) &&
-      this.input &&
-      this.input.validity &&
-      this.input.validity.valid
+      this.input.current &&
+      this.input.current.validity &&
+      this.input.current.validity.valid
 
     return (
-      <Theme>
-        {({ theme, colorize }) => (
-          <Relative style={{ width: '100%' }}>
-            {lines === 1 ? (
-              <input
-                ref={this.input}
-                {...styles.input(showLabel)}
-                required={required}
-                aria-required={required}
-                {...props}
-                onInvalid={this.handleInvalid}
-                onChange={this.handleChange}
-                pattern={pattern}
-              />
-            ) : (
-              <textarea
-                ref={this.input}
-                {...styles.area(theme.secondaryText, lines, showLabel)}
-                required={required}
-                {...props}
-                onChange={this.handleChange}
-              />
-            )}
-            {label && (
-              <View
-                className="label"
-                {...styles.label}
-                style={{
-                  opacity: labelVisible ? 1 : 0,
-                  top: labelVisible ? 8 : 12,
-                }}
+      <Relative style={{ width: '100%' }}>
+        {lines === 1 ? (
+          <Fragment>
+            {icon && (
+              <Absolute
+                {...css({ pointerEvents: 'none' })}
+                top={0}
+                bottom={0}
+                left={15}
+                alignV="center"
+                direction="row"
               >
-                <Text color="secondaryText" size="xs">
-                  {label} {required && '*'}
-                </Text>
-              </View>
+                <Icon color="secondaryText" name={icon} size={16} />
+              </Absolute>
             )}
-
-            <View
-              className="checkmark"
-              {...styles.checkmark(isCheckmarkActive)}
-            >
-              <Icon name="check-filled" size="xs" color="lightGrey" />
-            </View>
-
-            {props.maxLength && (
-              <View {...styles.placeholder}>
-                <Text color="secondaryText" size="s">
-                  {this.state.length}/{props.maxLength}
-                </Text>
-              </View>
-            )}
-          </Relative>
+            <input
+              ref={this.input}
+              {...styles.input(showLabel, !!icon)}
+              required={required}
+              aria-required={required}
+              {...props}
+              onChange={this.handleChange}
+              pattern={pattern}
+            />
+          </Fragment>
+        ) : (
+          <textarea
+            ref={this.input}
+            {...styles.area(lines, showLabel)}
+            required={required}
+            {...props}
+            onChange={this.handleChange}
+          />
         )}
-      </Theme>
+        {label && (
+          <View
+            className="label"
+            {...styles.label(!!icon && lines === 1)}
+            style={{
+              opacity: labelVisible ? 1 : 0,
+              top: labelVisible ? 8 : 12,
+            }}
+          >
+            <Text color="secondaryText" size="xs">
+              {label} {required && '*'}
+            </Text>
+          </View>
+        )}
+
+        <View className="checkmark" {...styles.checkmark(isCheckmarkActive)}>
+          <Icon name="check-filled" size="xs" color="lightGrey" />
+        </View>
+
+        {props.maxLength && (
+          <View {...styles.placeholder}>
+            <Text color="secondaryText" size="s">
+              {this.state.length}/{props.maxLength}
+            </Text>
+          </View>
+        )}
+      </Relative>
     )
   }
 }

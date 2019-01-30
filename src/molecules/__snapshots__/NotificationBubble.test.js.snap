@@ -153,7 +153,6 @@ exports[`NotificationBubble renders without error 1`] = `
           }
         }
         data-css-2=""
-        size={32.5}
         style={
           Object {
             "fill": "white",
