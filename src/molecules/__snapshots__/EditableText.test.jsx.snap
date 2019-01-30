@@ -84,7 +84,6 @@ exports[`Test the editable text component should be editable 1`] = `
       }
       data-css-0=""
       data-css-7=""
-      size={12}
       style={
         Object {
           "fill": false,
@@ -126,7 +125,7 @@ Snapshot Diff:
     align-items: center;
     display: -webkit-box;
     display: -moz-box;
-@@ -37,45 +25,57 @@
+@@ -37,44 +25,56 @@
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
     -webkit-flex: 0 0 auto;
@@ -189,7 +188,6 @@ Snapshot Diff:
         data-css-0=""
 -       data-css-7=""
 +       data-css-3=""
-        size="12"
         style="width: 12px; height: 12px; stroke: #000000;"
       />
     </div>

@@ -9,13 +9,13 @@ import Icon, { Icons as AvailableIcons } from '../atoms/Icon'
 import Absolute from './Absolute'
 
 const styles = {
-  input: (showLabel, withIcon) =>
+  input: (showLabel, translated) =>
     css(createTextStyles({ size: 'm' }), {
       boxSizing: 'border-box',
       height: 50,
       width: '100%',
       padding: '0 15px',
-      paddingLeft: withIcon && 40,
+      paddingLeft: translated && 40,
       paddingTop: showLabel ? 10 : 0,
       transition: 'padding-top .225s ease-out',
       border: 0,
@@ -31,7 +31,7 @@ const styles = {
         paddingTop: '10px !important',
       },
     }),
-  area: (textColor, lines, showLabel) =>
+  area: (lines, showLabel) =>
     css(createTextStyles({ size: 'm' }), {
       boxSizing: 'border-box',
       transition: 'padding-top .225s ease-out',
@@ -226,74 +226,67 @@ class Input extends React.Component {
       this.input.current.validity.valid
 
     return (
-      <Theme>
-        {({ theme, colorize }) => (
-          <Relative style={{ width: '100%' }}>
-            {lines === 1 ? (
-              <Fragment>
-                {icon && (
-                  <Absolute
-                    top={0}
-                    bottom={0}
-                    left={15}
-                    alignV="center"
-                    direction="row"
-                  >
-                    <Icon color={theme.secondaryText} name={icon} size={16} />
-                  </Absolute>
-                )}
-                <input
-                  ref={this.input}
-                  {...styles.input(showLabel, !!icon)}
-                  required={required}
-                  aria-required={required}
-                  {...props}
-                  onInvalid={this.handleInvalid}
-                  onChange={this.handleChange}
-                  pattern={pattern}
-                />
-              </Fragment>
-            ) : (
-              <textarea
-                ref={this.input}
-                {...styles.area(theme.secondaryText, lines, showLabel)}
-                required={required}
-                {...props}
-                onChange={this.handleChange}
-              />
-            )}
-            {label && (
-              <View
-                className="label"
-                {...styles.label(!!icon && lines === 1)}
-                style={{
-                  opacity: labelVisible ? 1 : 0,
-                  top: labelVisible ? 8 : 12,
-                }}
+      <Relative style={{ width: '100%' }}>
+        {lines === 1 ? (
+          <Fragment>
+            {icon && (
+              <Absolute
+                {...css({ pointerEvents: 'none' })}
+                top={0}
+                bottom={0}
+                left={15}
+                alignV="center"
+                direction="row"
               >
-                <Text color="secondaryText" size="xs">
-                  {label} {required && '*'}
-                </Text>
-              </View>
+                <Icon color="secondaryText" name={icon} size={16} />
+              </Absolute>
             )}
-
-            <View
-              className="checkmark"
-              {...styles.checkmark(isCheckmarkActive)}
-            >
-              <Icon name="check-filled" size="xs" color="lightGrey" />
-            </View>
-
-            {props.maxLength && (
-              <View {...styles.placeholder}>
-                <Text color="secondaryText" size="s">
-                  {this.state.length}/{props.maxLength}
-                </Text>
-              </View>
-            )}
-          </Relative>
+            <input
+              ref={this.input}
+              {...styles.input(showLabel, !!icon)}
+              required={required}
+              aria-required={required}
+              {...props}
+              onChange={this.handleChange}
+              pattern={pattern}
+            />
+          </Fragment>
+        ) : (
+          <textarea
+            ref={this.input}
+            {...styles.area(lines, showLabel)}
+            required={required}
+            {...props}
+            onChange={this.handleChange}
+          />
         )}
-      </Theme>
+        {label && (
+          <View
+            className="label"
+            {...styles.label(!!icon && lines === 1)}
+            style={{
+              opacity: labelVisible ? 1 : 0,
+              top: labelVisible ? 8 : 12,
+            }}
+          >
+            <Text color="secondaryText" size="xs">
+              {label} {required && '*'}
+            </Text>
+          </View>
+        )}
+
+        <View className="checkmark" {...styles.checkmark(isCheckmarkActive)}>
+          <Icon name="check-filled" size="xs" color="lightGrey" />
+        </View>
+
+        {props.maxLength && (
+          <View {...styles.placeholder}>
+            <Text color="secondaryText" size="s">
+              {this.state.length}/{props.maxLength}
+            </Text>
+          </View>
+        )}
+      </Relative>
     )
   }
 }
