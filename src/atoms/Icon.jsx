@@ -257,7 +257,7 @@ export default class Icon extends React.Component {
   }
 
   render() {
-    const { children, color, name, ...props } = this.props
+    const { children, color, name, size, ...props } = this.props
     const iconName = this.getIconName(name)
     const isFilled = iconName.indexOf('Filled') !== -1
     const { width, height } = {
