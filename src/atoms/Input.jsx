@@ -142,6 +142,26 @@ class Input extends React.Component {
     maxLength: PropTypes.number,
     /** Called with the input field a reference */
     onInputRef: PropTypes.func,
+    /** Error message for bad input */
+    badInput: PropTypes.string,
+    /** Error message for customError */
+    customError: PropTypes.string,
+    /** Error message for patternMismatch */
+    patternMismatch: PropTypes.string,
+    /** Error message for rangeOverflow */
+    rangeOverflow: PropTypes.string,
+    /** Error message for rangeUnderflow */
+    rangeUnderflow: PropTypes.string,
+    /** Error message for stepMismatch */
+    stepMismatch: PropTypes.string,
+    /** Error message for tooLong */
+    tooLong: PropTypes.string,
+    /** Error message for tooShort */
+    tooShort: PropTypes.string,
+    /** Error message for typeMismatch */
+    typeMismatch: PropTypes.string,
+    /** Error message for valueMissing */
+    valueMissing: PropTypes.string,
   }
 
   state = {
