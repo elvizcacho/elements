@@ -14,6 +14,7 @@ You can change it in "src/organisms/Typeahead.jsx" and run build:docs to update 
 
 and uncontrolled components.
 |defaultValue|string|The default value of the component, without making it controlled.
+|placement|enum|If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards<br>Default: 'bottom'
 |isLoading|bool|The loading state of the component, e.g when externally fetching some
 data.
 |items **(required)**|arrayOf|The items passed to component as an array of objects.
