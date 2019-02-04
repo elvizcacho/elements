@@ -17,6 +17,7 @@ import FormStory from './FormStory'
 import createViewportDecorator from './createViewportDecorator'
 import RadioButtonStory from './RadioButtonStory'
 import CollapsibleStory from './CollapsibleStory'
+import SimpleLayoutStory from './SimpleLayoutStory'
 import TypeaheadStory from './TypeaheadStory'
 import Icon, { Icons } from '../src/atoms/Icon'
 import ResourceProvider from '../src/behaviour/ResourceProvider'
@@ -30,6 +31,7 @@ import ConfirmStory from './ConfirmStory'
 storiesOf('Animations', module)
   .addDecorator(createViewportDecorator())
   .add('HorizontalView', () => <HorizontalView />)
+  .add('SimpleLayout', () => <SimpleLayoutStory />)
 
 storiesOf('Forms', module)
   .addDecorator(createViewportDecorator())
