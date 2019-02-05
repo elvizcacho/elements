@@ -1,14 +1,15 @@
 import React from 'react'
-
-import Collapsible from '../src/molecules/Collapsible'
-import ThemeProvider from '../src/behaviour/ThemeProvider'
-import ResourceProvider from '../src/behaviour/ResourceProvider'
-import Inset from '../src/atoms/Inset'
-import Input from '../src/atoms/Input'
-import Spacer from '../src/atoms/Spacer'
+import {
+  Inset,
+  Input,
+  Spacer,
+  DateInput,
+  Dropdown,
+  Collapsible,
+  ThemeProvider,
+  ResourceProvider,
+} from '../src/'
 import { ColorPalette } from '@allthings/colors'
-import DateInput from '../src/organisms/DateInput'
-import Calendar from '../src/molecules/Calendar'
 
 export default class FilterStory extends React.Component {
   state = {
@@ -32,7 +33,30 @@ export default class FilterStory extends React.Component {
                 placeholder="Filter by asset name"
                 icon="search-filled"
               />
-              <Spacer background={ColorPalette.background.bright} height={1} />
+              <Spacer background={ColorPalette.background.bright} height={2} />
+              <Dropdown
+                icon="list-bullets-filled"
+                menuHeight={200}
+                onSelect={item => this.setState({ simpleDropdown: item })}
+                items={[
+                  {
+                    label: 'Rooms',
+                    value: 'Rooms',
+                  },
+                  {
+                    label: 'Furnitures',
+                    value: 'Furnitures',
+                  },
+                  {
+                    label: 'Lab equipment',
+                    value: 'Lab equipment',
+                  },
+                ]}
+                clearable
+                placeholder="Select a category"
+                label="Category"
+              />
+              <Spacer background={ColorPalette.background.bright} height={2} />
               <DateInput
                 name="select-date"
                 locale="de-DE"

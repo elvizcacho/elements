@@ -19,6 +19,7 @@ import RadioButtonStory from './RadioButtonStory'
 import CollapsibleStory from './CollapsibleStory'
 import SimpleLayoutStory from './SimpleLayoutStory'
 import TypeaheadStory from './TypeaheadStory'
+import DropdownStory from './DropdownStory'
 import Icon, { Icons } from '../src/atoms/Icon'
 import ResourceProvider from '../src/behaviour/ResourceProvider'
 import List from '../src/molecules/List/List'
@@ -52,7 +53,7 @@ storiesOf('Forms', module)
     )
   })
   .add('Typeahead', () => <TypeaheadStory />)
-
+  .add('Dropdown', () => <DropdownStory />)
 storiesOf('Button', module)
   .addDecorator(createViewportDecorator())
   .add('with text', () => (
