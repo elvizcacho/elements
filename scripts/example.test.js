@@ -40,7 +40,7 @@ describe('Component Examples', async () => {
                 : '</View></ResourceProvider></ThemeProvider>'
             const result = transform(
               themeTagStart + stringExample + themeTagEnd,
-              { presets: ['react'] }
+              { presets: ['@babel/react'] }
             )
 
             try {
