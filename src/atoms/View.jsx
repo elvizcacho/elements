@@ -23,6 +23,7 @@ import { css } from 'glamor'
 class View extends Component {
   static propTypes = {
     children: PropTypes.node,
+    htmlElement: PropTypes.string,
 
     /** horizontal alignment */
     alignH: PropTypes.oneOf([
@@ -38,7 +39,12 @@ class View extends Component {
     alignV: PropTypes.oneOf(['none', 'start', 'center', 'end', 'stretch']),
 
     /** direction */
-    direction: PropTypes.oneOf(['row', 'column']),
+    direction: PropTypes.oneOf([
+      'row',
+      'column',
+      'row-reverse',
+      'column-reverse',
+    ]),
 
     /** Passing true, will make the view fill out available space */
     fill: PropTypes.bool,
@@ -87,12 +93,13 @@ class View extends Component {
     onClick: PropTypes.func,
 
     /** @deprecated */
-    onRef: PropTypes.func,
+    onRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   }
 
   static defaultProps = {
     alignH: 'start',
     alignV: 'stretch',
+    htmlElement: 'div',
     fill: false,
     flex: 'none',
     onRef: _ => _,
@@ -148,6 +155,7 @@ class View extends Component {
       alignH,
       alignV,
       children,
+      htmlElement,
       direction,
       fill,
       flex,
@@ -196,10 +204,14 @@ class View extends Component {
       styles.flex = this.getCssFlexValue(flex)
     }
 
-    return (
-      <div ref={onRef} {...css(styles)} {...restProps}>
-        {children}
-      </div>
+    return React.createElement(
+      htmlElement,
+      {
+        ref: onRef,
+        ...css(styles),
+        ...restProps,
+      },
+      children
     )
   }
 }

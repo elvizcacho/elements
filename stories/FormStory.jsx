@@ -1,20 +1,23 @@
 import React from 'react'
+import { action } from '@storybook/addon-actions'
 import {
-  ThemeProvider,
   Button,
   Card,
-  View,
   Checkbox,
-  TitleBar,
-  SquareIconButton,
-  PhoneInput,
-  Text,
-  SimpleLayout,
+  Form,
   List,
   ListItem,
-  TextInput,
+  PhoneInput,
   ResourceProvider,
-  Form,
+  RadioButtonSet,
+  RadioButton,
+  SimpleLayout,
+  SquareIconButton,
+  Text,
+  TextInput,
+  TitleBar,
+  ThemeProvider,
+  View,
 } from '../src'
 
 export default class FormStory extends React.Component {
@@ -26,11 +29,11 @@ export default class FormStory extends React.Component {
             <TitleBar>
               <SquareIconButton icon="login-key" iconColor="white" />
               <Text strong color="white">
-                Create new account
+                Create new account!
               </Text>
             </TitleBar>
             <SimpleLayout>
-              <Form>
+              <Form onSubmit={action('onSubmit')}>
                 <Card>
                   <List>
                     <TextInput
@@ -51,7 +54,9 @@ export default class FormStory extends React.Component {
                       required
                     />
                     <TextInput
+                      icon="email"
                       name="email"
+                      patternMismatch="Lol email"
                       label="E-Mail"
                       type="email"
                       pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
@@ -59,6 +64,7 @@ export default class FormStory extends React.Component {
                       required
                     />
                     <TextInput
+                      icon="login-key"
                       type="password"
                       label="Password"
                       name="password"
@@ -78,6 +84,18 @@ export default class FormStory extends React.Component {
                       label="Hereby I accept the terms & blablabla"
                       labelSize="s"
                     />
+
+                    <ListItem>
+                      <RadioButtonSet
+                        name="drinks"
+                        label="Like to drink?"
+                        direction="horizontal"
+                      >
+                        <RadioButton value="coffe">Coffe</RadioButton>
+                        <RadioButton value="tee">Tee</RadioButton>
+                        <RadioButton value="beer">Beer</RadioButton>
+                      </RadioButtonSet>
+                    </ListItem>
 
                     <ListItem alignH="center">
                       <Button type="submit">Create my account</Button>

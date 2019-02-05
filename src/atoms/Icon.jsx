@@ -99,6 +99,8 @@ export const Icons = [
   'pet-paw-filled',
   'phone',
   'phone-filled',
+  'picture-add-filled',
+  'picture-filled',
   'plus',
   'plus-filled',
   'plus-light',
@@ -198,9 +200,9 @@ export default class Icon extends React.Component {
     this.loadIcon(this.props.name)
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.name !== nextProps.name) {
-      this.loadIcon(nextProps.name)
+  componentDidUpdate(prevProps) {
+    if (this.props.name !== prevProps.name) {
+      this.loadIcon(this.props.name)
     }
   }
 
@@ -255,7 +257,7 @@ export default class Icon extends React.Component {
   }
 
   render() {
-    const { children, color, name, ...props } = this.props
+    const { children, color, name, size, ...props } = this.props
     const iconName = this.getIconName(name)
     const isFilled = iconName.indexOf('Filled') !== -1
     const { width, height } = {

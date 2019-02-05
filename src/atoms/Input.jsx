@@ -1,19 +1,20 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import View from '../atoms/View'
 import { css } from 'glamor'
-import Theme from '../behaviour/Theme'
 import PropTypes from 'prop-types'
 import Relative from '../atoms/Relative'
 import Text, { createTextStyles } from '../atoms/Text'
-import Icon from '../atoms/Icon'
+import Icon, { Icons as AvailableIcons } from '../atoms/Icon'
+import Absolute from './Absolute'
 
 const styles = {
-  input: showLabel =>
+  input: (showLabel, translated) =>
     css(createTextStyles({ size: 'm' }), {
       boxSizing: 'border-box',
       height: 50,
       width: '100%',
       padding: '0 15px',
+      paddingLeft: translated && 40,
       paddingTop: showLabel ? 10 : 0,
       transition: 'padding-top .225s ease-out',
       border: 0,
@@ -23,12 +24,13 @@ const styles = {
       },
       '&:-webkit-autofill ~ .checkmark': {
         opacity: '1 !important',
+        top: 8,
       },
       '&:-webkit-autofill': {
         paddingTop: '10px !important',
       },
     }),
-  area: (textColor, lines, showLabel) =>
+  area: (lines, showLabel) =>
     css(createTextStyles({ size: 'm' }), {
       boxSizing: 'border-box',
       transition: 'padding-top .225s ease-out',
@@ -42,17 +44,6 @@ const styles = {
         color: 'red',
       },
     }),
-  error: css({
-    backgroundColor: '#c1392b',
-    position: 'absolute',
-    bottom: '100%',
-    left: '0',
-    zIndex: 40,
-    width: '100%',
-    padding: '12px 15px 15px',
-    borderRadius: '2px',
-    boxShadow: '0 1px 2px 1px rgba(0,0,0,.25)',
-  }),
   arrow: css({
     position: 'absolute',
     bottom: '-10px',
@@ -78,13 +69,14 @@ const styles = {
     position: 'absolute',
     right: 10,
   }),
-  label: css({
-    position: 'absolute',
-    left: 15,
-    fontSize: 10,
-    opacity: 0,
-    transition: 'all .225s ease-out',
-  }),
+  label: translated =>
+    css({
+      position: 'absolute',
+      left: translated ? 40 : 15,
+      fontSize: 10,
+      opacity: 0,
+      transition: 'all .225s ease-out',
+    }),
   placeholder: css({
     position: 'absolute',
     bottom: 2,
@@ -92,16 +84,18 @@ const styles = {
   }),
 }
 
-const InputError = ({ children, ...props }) => (
-  <View {...styles.error} {...props}>
-    <Text color="textOnBackground">{children}</Text>
-    <View {...styles.arrow} />
-  </View>
-)
-
-InputError.propTypes = {
-  children: PropTypes.string.isRequired,
-}
+const validityStates = [
+  'badInput',
+  'customError',
+  'patternMismatch',
+  'rangeOverflow',
+  'rangeUnderflow',
+  'stepMismatch',
+  'tooLong',
+  'tooShort',
+  'typeMismatch',
+  'valueMissing',
+]
 
 /**
  * TextInputs are used to allow users to enter information like names, numbers, urls, email addresses or passwords.
@@ -117,6 +111,8 @@ class Input extends React.Component {
     defaultValue: PropTypes.string,
     /** Indicates that this field is required */
     required: PropTypes.bool,
+    /** Icon shown on the left of the input field (See `Icon` component for all possible values) **/
+    icon: PropTypes.oneOf(AvailableIcons),
     /** The name of this input field */
     name: PropTypes.string.isRequired,
     /** The label of the input */
@@ -132,7 +128,7 @@ class Input extends React.Component {
       'date',
       'datetime-local',
     ]),
-    /** Called, when the users changes something */
+    /** Called, when the user changes something */
     onChange: PropTypes.func,
     /** The value, makes this component a controlled component */
     value: PropTypes.string,
@@ -146,12 +142,31 @@ class Input extends React.Component {
     maxLength: PropTypes.number,
     /** Called with the input field a reference */
     onInputRef: PropTypes.func,
+    /** Error message for bad input */
+    badInput: PropTypes.string,
+    /** Error message for customError */
+    customError: PropTypes.string,
+    /** Error message for patternMismatch */
+    patternMismatch: PropTypes.string,
+    /** Error message for rangeOverflow */
+    rangeOverflow: PropTypes.string,
+    /** Error message for rangeUnderflow */
+    rangeUnderflow: PropTypes.string,
+    /** Error message for stepMismatch */
+    stepMismatch: PropTypes.string,
+    /** Error message for tooLong */
+    tooLong: PropTypes.string,
+    /** Error message for tooShort */
+    tooShort: PropTypes.string,
+    /** Error message for typeMismatch */
+    typeMismatch: PropTypes.string,
+    /** Error message for valueMissing */
+    valueMissing: PropTypes.string,
   }
 
   state = {
     value: '',
     visible: true,
-    message: null,
     length: (this.props.value && this.props.value.length) || 0,
   }
 
@@ -162,125 +177,137 @@ class Input extends React.Component {
     type: 'text',
   }
 
-  handleInvalid = e => {
-    e.preventDefault()
-    const { STATES, validity } = this.context
-    const message = e.target.validationMessage
-    let hasState = false
-    if (STATES) {
-      for (const state of STATES) {
-        if (e.target.validity[state]) {
-          this.setState({ message: validity[state] || message })
-          hasState = true
-          break
-        }
+  input = React.createRef()
+
+  setValidity = target => {
+    let customValidity = ''
+    validityStates.forEach(state => {
+      if (
+        customValidity === '' &&
+        this.props[state] &&
+        target.validity[state]
+      ) {
+        customValidity = this.props[state]
       }
-    }
-    !hasState && this.setState({ message })
+    })
+
+    target &&
+      target.setCustomValidity &&
+      target.setCustomValidity(customValidity)
   }
 
-  setInput = input => {
+  componentDidMount() {
+    const input = this.input.current
     if (input) {
       this.setState({ length: input.value && input.value.length })
-      input.addEventListener('invalid', this.handleInvalid)
-    } else if (this.input) {
-      this.input.removeEventListener('invalid', this.handleInvalid)
+      this.props.onInputRef(input)
+      this.setValidity(input)
     }
-    this.input = input
-    this.props.onInputRef(input)
   }
 
   handleChange = e => {
+    this.setValidity(e.target)
     this.setState({
       value: e.target.value,
-      message: null,
       length: e.target.value.length,
     })
     this.props.onChange && this.props.onChange(e)
   }
 
-  handleMessageClick = () => this.setState({ message: null })
-
   render() {
-    const { required, onInputRef, lines, label, pattern, ...props } = this.props
+    const {
+      required,
+      onInputRef,
+      lines,
+      label,
+      pattern,
+      badInput,
+      customError,
+      patternMismatch,
+      rangeOverflow,
+      rangeUnderflow,
+      stepMismatch,
+      tooLong,
+      tooShort,
+      typeMismatch,
+      valueMissing,
+      icon,
+      ...props
+    } = this.props
     const currentValue = this.props.value || this.state.value
     const labelVisible = currentValue.length > 0
     const showLabel = label && currentValue.length > 0
 
     const isCheckmarkActive =
       (pattern || props.minLength || props.maxLength || required) &&
-      this.input &&
-      this.input.validity &&
-      this.input.validity.valid
+      this.input.current &&
+      this.input.current.validity &&
+      this.input.current.validity.valid
 
     return (
-      <Theme>
-        {({ theme, colorize }) => (
-          <Relative style={{ width: '100%' }}>
-            {this.state.message && (
-              <InputError onClick={this.handleMessageClick}>
-                {this.state.message}
-              </InputError>
-            )}
-            {lines === 1 ? (
-              <input
-                ref={this.setInput}
-                {...styles.input(showLabel)}
-                required={required}
-                aria-required={required}
-                {...props}
-                onInvalid={this.handleInvalid}
-                onChange={this.handleChange}
-                pattern={pattern}
-              />
-            ) : (
-              <textarea
-                {...styles.area(theme.secondaryText, lines, showLabel)}
-                required={required}
-                {...props}
-                ref={onInputRef}
-                onChange={this.handleChange}
-              />
-            )}
-            {label && (
-              <View
-                className="label"
-                {...styles.label}
-                style={{
-                  opacity: labelVisible ? 1 : 0,
-                  top: labelVisible ? 8 : 12,
-                }}
+      <Relative style={{ width: '100%' }}>
+        {lines === 1 ? (
+          <Fragment>
+            {icon && (
+              <Absolute
+                {...css({ pointerEvents: 'none' })}
+                top={0}
+                bottom={0}
+                left={15}
+                alignV="center"
+                direction="row"
               >
-                <Text color="secondaryText" size="xs">
-                  {label} {required && '*'}
-                </Text>
-              </View>
+                <Icon color="secondaryText" name={icon} size={16} />
+              </Absolute>
             )}
-
-            <View
-              className="checkmark"
-              {...styles.checkmark(isCheckmarkActive)}
-            >
-              <Icon name="check-filled" size="xs" color="lightGrey" />
-            </View>
-
-            {props.maxLength && (
-              <View {...styles.placeholder}>
-                <Text color="secondaryText" size="s">
-                  {this.state.length}/{props.maxLength}
-                </Text>
-              </View>
-            )}
-          </Relative>
+            <input
+              ref={this.input}
+              {...styles.input(showLabel, !!icon)}
+              required={required}
+              aria-required={required}
+              {...props}
+              onChange={this.handleChange}
+              pattern={pattern}
+            />
+          </Fragment>
+        ) : (
+          <textarea
+            ref={this.input}
+            {...styles.area(lines, showLabel)}
+            required={required}
+            {...props}
+            onChange={this.handleChange}
+          />
         )}
-      </Theme>
+        {label && (
+          <View
+            className="label"
+            {...styles.label(!!icon && lines === 1)}
+            style={{
+              opacity: labelVisible ? 1 : 0,
+              top: labelVisible ? 8 : 12,
+            }}
+          >
+            <Text color="secondaryText" size="xs">
+              {label} {required && '*'}
+            </Text>
+          </View>
+        )}
+
+        <View className="checkmark" {...styles.checkmark(isCheckmarkActive)}>
+          <Icon name="check-filled" size="xs" color="lightGrey" />
+        </View>
+
+        {props.maxLength && (
+          <View {...styles.placeholder}>
+            <Text color="secondaryText" size="s">
+              {this.state.length}/{props.maxLength}
+            </Text>
+          </View>
+        )}
+      </Relative>
     )
   }
-}
-
-Input.contextTypes = {
-  validity: PropTypes.object,
-  STATES: PropTypes.array,
 }
 
 export default Input

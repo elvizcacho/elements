@@ -32,6 +32,7 @@ class ColumnLayout extends React.Component {
     return (
       <View flex="flex" direction="row">
         {React.Children.map(children, (child, i) => (
+          // eslint-disable-next-line
           <Column {...layout(i)} key={i}>
             {child}
           </Column>

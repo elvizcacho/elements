@@ -18,31 +18,55 @@ exports[`Floating button renders without error 1`] = `
   -webkit-justify-content: center;
 }
 
-.css-1,
-[data-css-1] {
+.css-0:active,
+[data-css-0]:active,
+.css-0[data-simulate-active],
+[data-css-0][data-simulate-active] {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.css-0:disabled,
+[data-css-0]:disabled,
+.css-0[data-simulate-disabled],
+[data-css-0][data-simulate-disabled] {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.css-7,
+[data-css-7] {
   background-color: #3598db;
   box-shadow: 0px -2px 10px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   height: 50px;
   overflow: hidden;
+  transition: 250ms ease-in-out;
   width: 100%;
+  -webkit-transition: 250ms ease-in-out;
+  -moz-transition: 250ms ease-in-out;
 }
 
-.css-2,
-[data-css-2] {
+.css-7:hover,
+[data-css-7]:hover,
+.css-7[data-simulate-hover],
+[data-css-7][data-simulate-hover] {
+  background: #227dbf;
+}
+
+.css-11,
+[data-css-11] {
   box-sizing: border-box;
   flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
 }
 
-.css-3,
-[data-css-3] {
+.css-12,
+[data-css-12] {
   position: absolute;
   bottom: 0;
 }
 
-.css-4,
-[data-css-4] {
+.css-13,
+[data-css-13] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -66,10 +90,10 @@ exports[`Floating button renders without error 1`] = `
 }
 
 <div
-  data-css-2=""
+  data-css-11=""
 >
   <div
-    data-css-2=""
+    data-css-11=""
     style={
       Object {
         "height": 50,
@@ -77,12 +101,13 @@ exports[`Floating button renders without error 1`] = `
     }
   />
   <div
-    data-css-1=""
-    data-css-4=""
-    data-css-3=""
+    data-css-7=""
+    data-css-13=""
+    data-css-12=""
   >
     <button
       data-css-0=""
+      disabled={false}
     >
       Hello World
     </button>

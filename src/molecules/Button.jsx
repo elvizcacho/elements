@@ -4,6 +4,7 @@ import { css } from 'glamor'
 import Text from '../atoms/Text'
 import { withTheme } from '../behaviour/ThemeProvider'
 import { color, colorCode } from '../propTypes/color'
+import { color as col, lightness } from 'kewler'
 
 const baseStyle = {
   position: 'relative',
@@ -26,6 +27,17 @@ function styles(
     background: disabled ? disabledBackgroundColor : backgroundColor,
     color: disabled ? disabledColor : color,
     cursor: disabled ? 'not-allowed' : 'pointer',
+    transition: '250ms ease-in-out',
+    ':focus': {
+      outline: 'none',
+    },
+    ':hover': {
+      background: disabled
+        ? disabledBackgroundColor
+        : backgroundColor.indexOf('#') !== -1
+        ? col(backgroundColor, lightness(-10))
+        : backgroundColor,
+    },
   })
 }
 
@@ -118,7 +130,11 @@ class Button extends React.Component {
         name={restProps.name || type || null}
         onClick={this.handleClick}
       >
-        {typeof children === 'string' ? <Text color={color}>{children}</Text> : children}
+        {typeof children === 'string' ? (
+          <Text color={color}>{children}</Text>
+        ) : (
+          children
+        )}
       </button>
     )
   }
