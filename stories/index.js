@@ -27,6 +27,7 @@ import Input from '../src/atoms/Input'
 import EditableTextStory from './EditableTextStory'
 import Button from '../src/molecules/Button'
 import ConfirmStory from './ConfirmStory'
+import FilterStory from './FilterStory'
 
 storiesOf('Animations', module)
   .addDecorator(createViewportDecorator())
@@ -118,6 +119,7 @@ storiesOf('FloatingButton', module)
 storiesOf('Containers', module)
   .addDecorator(createViewportDecorator())
   .add('Collapsible', CollapsibleStory)
+  .add('Filters', () => <FilterStory />)
 
 storiesOf('Icons', module)
   .addDecorator(createViewportDecorator())
