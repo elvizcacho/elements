@@ -14,6 +14,7 @@ import {
   SimpleLayout,
   SquareIconButton,
   Text,
+  CreditCardInput,
   TextInput,
   TitleBar,
   ThemeProvider,
@@ -53,6 +54,7 @@ export default class FormStory extends React.Component {
                       placeholder="What's your last name?"
                       required
                     />
+                    <CreditCardInput />
                     <TextInput
                       icon="email"
                       name="email"
