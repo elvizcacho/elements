@@ -19,6 +19,9 @@
     "react-media": "1.9.2",
     "react-motion": "0.5.2"
   },
+  "resolutions": {
+    "terser": "3.14"
+  },
   "peerDependencies": {
     "react": "^16.3",
     "react-dom": "^16.3",
@@ -38,8 +41,7 @@
     "test": "NODE_ENV=development jest src/",
     "prettier": "prettier --no-semi --single-quote --trailing-comma es5 --write",
     "lint": "eslint --cache --ext .js,.jsx src",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006"
   },
   "devDependencies": {
     "@babel/cli": "7.2.3",
@@ -109,7 +111,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "pretty-quick --staged && yarn build:docs && git add doc  "
     }
   },
   "jest": {

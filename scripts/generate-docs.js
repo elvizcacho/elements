@@ -53,12 +53,12 @@ ${docs.description}
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
 ${
-          docs.props
-            ? Object.keys(docs.props)
-                .map(propToRow(docs.props))
-                .join('\n')
-            : '*No properties to pass*'
-        }
+  docs.props
+    ? Object.keys(docs.props)
+        .map(propToRow(docs.props))
+        .join('\n')
+    : '*No properties to pass*'
+}
 `,
       }
     })

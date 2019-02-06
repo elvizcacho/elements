@@ -29,6 +29,7 @@ import EditableTextStory from './EditableTextStory'
 import Button from '../src/molecules/Button'
 import ConfirmStory from './ConfirmStory'
 import FilterStory from './FilterStory'
+import ButtonStory from './ButtonStory'
 
 storiesOf('Animations', module)
   .addDecorator(createViewportDecorator())
@@ -54,6 +55,8 @@ storiesOf('Forms', module)
   })
   .add('Typeahead', () => <TypeaheadStory />)
   .add('Dropdown', () => <DropdownStory />)
+  .add('Button', () => <ButtonStory />)
+
 storiesOf('Button', module)
   .addDecorator(createViewportDecorator())
   .add('with text', () => (

@@ -1,43 +1,69 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { css } from 'glamor'
-import Text from '../atoms/Text'
+import { createTextStyles } from '../atoms/Text'
 import { withTheme } from '../behaviour/ThemeProvider'
 import { color, colorCode } from '../propTypes/color'
 import { color as col, lightness } from 'kewler'
 
 const baseStyle = {
   position: 'relative',
-  padding: '8px 14px',
+  padding: '10px 16px',
   borderRadius: '2px',
+  border: 'none',
   userSelect: 'none',
   outline: 'none',
-  border: 'none',
 }
+
+const primary = ({
+  disabled,
+  disabledColor,
+  disabledBackgroundColor,
+  backgroundColor,
+}) => ({
+  color: 'white',
+  background: disabled ? disabledBackgroundColor : backgroundColor,
+})
+
+const secondary = ({ disabled, disabledColor, backgroundColor }) => ({
+  background: 'transparent',
+  color: disabled ? disabledColor : backgroundColor,
+  margin: 2,
+})
 
 function styles(
   backgroundColor,
   color,
   disabled,
   disabledColor,
-  disabledBackgroundColor
+  disabledBackgroundColor,
+  isSecondary
 ) {
+  const props = {
+    color,
+    disabled,
+    disabledBackgroundColor,
+    disabledColor,
+    backgroundColor,
+  }
   return css({
     ...baseStyle,
-    background: disabled ? disabledBackgroundColor : backgroundColor,
-    color: disabled ? disabledColor : color,
+    ...(isSecondary ? secondary(props) : primary(props)),
     cursor: disabled ? 'not-allowed' : 'pointer',
     transition: '250ms ease-in-out',
     ':focus': {
       outline: 'none',
     },
-    ':hover': {
-      background: disabled
-        ? disabledBackgroundColor
-        : backgroundColor.indexOf('#') !== -1
-        ? col(backgroundColor, lightness(-10))
-        : backgroundColor,
-    },
+    ':hover': isSecondary
+      ? !disabled && { color: col(backgroundColor, lightness(-20)) }
+      : {
+          color: 'white',
+          background: disabled
+            ? disabledBackgroundColor
+            : backgroundColor.indexOf('#') !== -1
+            ? col(backgroundColor, lightness(-10))
+            : backgroundColor,
+        },
   })
 }
 
@@ -74,6 +100,8 @@ class Button extends React.Component {
     children: PropTypes.node.isRequired,
     /** Called when the button is clicked */
     onClick: PropTypes.func,
+    /** If the button is used for a secondary option */
+    secondary: PropTypes.bool,
     /** Type of the button (deprecated) */
     type: PropTypes.oneOf(['reset', 'button', 'submit']),
     /** Disable button state to indicate it's not touchable */
@@ -106,6 +134,7 @@ class Button extends React.Component {
       backgroundColor,
       color,
       disabledColor,
+      secondary,
       disabledBackgroundColor,
       css: cssProp,
       ...restProps
@@ -117,7 +146,8 @@ class Button extends React.Component {
         color,
         disabled,
         disabledColor,
-        disabledBackgroundColor
+        disabledBackgroundColor,
+        secondary
       ),
       cssProp
     )
@@ -127,14 +157,11 @@ class Button extends React.Component {
         type={type}
         {...allStyles}
         {...restProps}
+        {...createTextStyles({ size: 'l' })}
         name={restProps.name || type || null}
         onClick={this.handleClick}
       >
-        {typeof children === 'string' ? (
-          <Text color={color}>{children}</Text>
-        ) : (
-          children
-        )}
+        {children}
       </button>
     )
   }
@@ -143,6 +170,7 @@ class Button extends React.Component {
 Button.defaultProps = {
   type: 'button',
   disabled: false,
+  secondary: false,
   color: 'white',
   backgroundColor: 'purple',
   disabledColor: 'darkgray',

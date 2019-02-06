@@ -33,6 +33,7 @@ To have an icon as button-label, just add the icon-component as children.
 | ----------- |:--------------:| ------------:|
 |children **(required)**|node|Just text most of the time
 |onClick|func|Called when the button is clicked
+|secondary|bool|If the button is used for a secondary option<br>Default: false
 |type|enum|Type of the button (deprecated)<br>Default: 'button'
 |disabled|bool|Disable button state to indicate it's not touchable<br>Default: false
 |backgroundColor|string|Color of the button, theme primary color by default<br>Default: 'purple'
