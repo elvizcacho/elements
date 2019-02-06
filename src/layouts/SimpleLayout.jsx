@@ -136,7 +136,11 @@ class SimpleLayout extends React.PureComponent {
                   padded === true || padded === 'vertical',
                   padded === true || padded === 'horizontal'
                 )}
-                style={{ transform: `translateY(${value.x}px)` }}
+                style={
+                  value && value.x
+                    ? { transform: `translateY(${value.x}px)` }
+                    : {}
+                }
                 onScroll={this.handleScroll}
                 // for e2e-tests, to scroll down on pages (id is taken for cross browser selector compat)
                 id="scroll-container"
