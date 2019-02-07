@@ -1,12 +1,9 @@
-<!--
-This is an auto-generated markdown.
+<!-- 
+This is an auto-generated markdown. 
 You can change it in "src/molecules/ReadMore.jsx" and run build:docs to update this file.
 -->
-
 # ReadMore
-
 A ReadMore is a simple container, to show / (hide) content. It will automatically decide whether to show the `read more` link or not.
-
 ```example
 <Card>
   <ListItem>
@@ -29,15 +26,13 @@ A ReadMore is a simple container, to show / (hide) content. It will automaticall
     </ReadMore>
   </ListItem>
 </Card>
-```
-
+ ```
 ## Usage
-
-| Name               |  Type  |                 Description |
-| ------------------ | :----: | --------------------------: |
-| children           |  node  |
-| initiallyCollapsed |  bool  |           <br>Default: true |
-| readMoreLabel      | string | <br>Default: 'Read more...' |
-| cropAtHeight       | union  |         <br>Default: '17vh' |
-| threshold          | number |             <br>Default: 40 |
-| onToggle           |  func  |       <br>Default: () => {} |
+| Name        | Type           | Description  |
+| ----------- |:--------------:| ------------:|
+|children|node|
+|initiallyCollapsed|bool|<br>Default: true
+|readMoreLabel|string|<br>Default: 'Read more...'
+|cropAtHeight|union|<br>Default: '17vh'
+|threshold|number|<br>Default: 40
+|onToggle|func|<br>Default: () => {}

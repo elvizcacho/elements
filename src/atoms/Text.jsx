@@ -24,16 +24,11 @@ const availableSizes = {
   giant: 24,
 }
 
-export const createTextStyles = ({
-  block,
-  italic,
-  strong,
-  size,
-  underline,
-  lineThrough,
-  align,
-  autoBreak,
-}) => {
+export const createTextStyles = (
+  { block, italic, strong, size, underline, lineThrough, align, autoBreak } = {
+    size: 'm',
+  }
+) => {
   return css({
     display: block ? 'block' : 'inline',
     fontFamily: '"Open Sans", Helvetica, Arial, sans-serif',
