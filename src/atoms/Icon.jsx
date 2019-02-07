@@ -183,7 +183,7 @@ export default class Icon extends React.Component {
 
   static defaultProps = {
     color: 'primary',
-    size: 32.5,
+    size: 'm',
   }
 
   static contextTypes = {

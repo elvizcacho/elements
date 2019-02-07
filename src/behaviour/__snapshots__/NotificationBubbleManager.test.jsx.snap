@@ -159,9 +159,9 @@ exports[`NotificationBubbleManager renders the bubble 1`] = `
           style={
             Object {
               "fill": "white",
-              "height": 32.5,
+              "height": 27.5,
               "stroke": false,
-              "width": 32.5,
+              "width": 27.5,
             }
           }
         />
