@@ -30,6 +30,7 @@ import EditableTextStory from './EditableTextStory'
 import Button from '../src/molecules/Button'
 import ConfirmStory from './ConfirmStory'
 import FilterStory from './FilterStory'
+import ButtonStory from './ButtonStory'
 
 storiesOf('Animations', module)
   .addDecorator(createViewportDecorator())
@@ -55,6 +56,8 @@ storiesOf('Forms', module)
   })
   .add('Typeahead', () => <TypeaheadStory />)
   .add('Dropdown', () => <DropdownStory />)
+  .add('Button', () => <ButtonStory />)
+
 storiesOf('Button', module)
   .addDecorator(createViewportDecorator())
   .add('with text', () => (
@@ -105,16 +108,20 @@ storiesOf('FloatingButton', module)
   ))
   .add('in progress', () => (
     <ThemeProvider>
-      <Form onSubmit={_ => _}>
-        <Text align="center" strong size="xxl">
-          Scroll Down!
-        </Text>
-        <FloatingButton inProgress type="submit" onClick={action('clicked')}>
-          <Text strong size="s" color="white">
-            Hello Button
-          </Text>
-        </FloatingButton>
-      </Form>
+      <SimpleLayout>
+        <Form onSubmit={_ => _}>
+          {new Array(50).fill(1).map(item => (
+            <Text key={Math.random()} align="center" strong size="xxl">
+              Scroll Down!
+            </Text>
+          ))}
+          <FloatingButton inProgress type="submit" onClick={action('clicked')}>
+            <Text strong size="s" color="white">
+              Hello Button
+            </Text>
+          </FloatingButton>
+        </Form>
+      </SimpleLayout>
     </ThemeProvider>
   ))
 
