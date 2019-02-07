@@ -102,14 +102,12 @@ exports[`Test the typeahead component should be a simple static one - in depth t
 }
 
 .css-8:-webkit-autofill,
-[data-css-8]:-webkit-autofill,
-.css-8[data-simulate-webkitautofill],
-[data-css-8][data-simulate-webkitautofill] {
+[data-css-8]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
-.css-12,
-[data-css-12] {
+.css-10,
+[data-css-10] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -120,15 +118,15 @@ exports[`Test the typeahead component should be a simple static one - in depth t
   -moz-transition: opacity .225s;
 }
 
-.css-13,
-[data-css-13] {
+.css-11,
+[data-css-11] {
   position: absolute;
   top: 0;
   right: 20px;
 }
 
-.css-14,
-[data-css-14] {
+.css-12,
+[data-css-12] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -191,7 +189,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
         />
         <div
           className="checkmark"
-          data-css-12=""
+          data-css-10=""
           data-css-6=""
         >
           <div
@@ -243,7 +241,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
       />
       <div
         className="checkmark"
-        data-css-12=""
+        data-css-10=""
         data-css-6=""
       >
         <div
@@ -265,8 +263,8 @@ exports[`Test the typeahead component should be a simple static one - in depth t
       </div>
     </div>
     <div
-      data-css-13=""
-      data-css-14=""
+      data-css-11=""
+      data-css-12=""
       data-css-5=""
     />
   </div>
@@ -348,14 +346,12 @@ exports[`Test the typeahead component should be a simple static one which auto o
 }
 
 .css-6:-webkit-autofill,
-[data-css-6]:-webkit-autofill,
-.css-6[data-simulate-webkitautofill],
-[data-css-6][data-simulate-webkitautofill] {
+[data-css-6]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
-.css-10,
-[data-css-10] {
+.css-8,
+[data-css-8] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -366,15 +362,15 @@ exports[`Test the typeahead component should be a simple static one which auto o
   -moz-transition: opacity .225s;
 }
 
-.css-11,
-[data-css-11] {
+.css-9,
+[data-css-9] {
   position: absolute;
   top: 0;
   right: 20px;
 }
 
-.css-12,
-[data-css-12] {
+.css-10,
+[data-css-10] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -397,8 +393,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
   -webkit-flex: 0 0 auto;
 }
 
-.css-13,
-[data-css-13] {
+.css-11,
+[data-css-11] {
   align-items: stretch;
   background: transparent;
   border: none;
@@ -418,8 +414,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
   -webkit-flex-direction: column;
 }
 
-.css-14,
-[data-css-14] {
+.css-12,
+[data-css-12] {
   background: transparent;
   border: none;
   border-bottom: 1px solid #bec3c7;
@@ -430,8 +426,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
   height: 50px;
 }
 
-.css-15,
-[data-css-15] {
+.css-13,
+[data-css-13] {
   box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
   max-height: 300px;
   overflow-x: hidden;
@@ -441,8 +437,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
   z-index: 9999;
 }
 
-.css-16,
-[data-css-16] {
+.css-14,
+[data-css-14] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -465,8 +461,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
   -webkit-flex: 0 0 auto;
 }
 
-.css-17,
-[data-css-17] {
+.css-15,
+[data-css-15] {
   padding: 10px 15px;
   min-height: 50px;
   border-bottom: 1px solid #ecf0f1;
@@ -474,8 +470,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
   background-color: white;
 }
 
-.css-18,
-[data-css-18] {
+.css-16,
+[data-css-16] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -499,8 +495,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
   -webkit-flex: 0 0 auto;
 }
 
-.css-19,
-[data-css-19] {
+.css-17,
+[data-css-17] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -509,8 +505,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
   color: #333333;
 }
 
-.css-20,
-[data-css-20] {
+.css-18,
+[data-css-18] {
   position: absolute;
   right: 15px;
   bottom: 15px;
@@ -521,7 +517,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
   aria-haspopup="listbox"
   aria-labelledby="downshift-1-label"
   aria-owns="downshift-1-menu"
-  data-css-13=""
+  data-css-11=""
   role="combobox"
 >
   <div
@@ -556,7 +552,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
         />
         <div
           className="checkmark"
-          data-css-10=""
+          data-css-8=""
           data-css-4=""
         >
           <div
@@ -595,7 +591,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
         aria-required={false}
         autoComplete="off"
         data-css-6=""
-        data-css-14=""
+        data-css-12=""
         id="downshift-1-input"
         name="typed"
         onBlur={[Function]}
@@ -609,7 +605,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
       />
       <div
         className="checkmark"
-        data-css-10=""
+        data-css-8=""
         data-css-4=""
       >
         <div
@@ -631,8 +627,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
       </div>
     </div>
     <div
-      data-css-11=""
-      data-css-12=""
+      data-css-9=""
+      data-css-10=""
       data-css-3=""
     />
   </div>
@@ -642,16 +638,16 @@ exports[`Test the typeahead component should be a simple static one which auto o
   >
     <div
       aria-labelledby="downshift-1-label"
-      data-css-15=""
-      data-css-16=""
+      data-css-13=""
+      data-css-14=""
       id="downshift-1-menu"
       onScroll={[Function]}
       role="listbox"
     >
       <div
         aria-selected={true}
-        data-css-18=""
-        data-css-17=""
+        data-css-16=""
+        data-css-15=""
         id="downshift-1-item-0"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -664,7 +660,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
         }
       >
         <div
-          data-css-19=""
+          data-css-17=""
           data-css-4=""
         >
           Abomasnow
@@ -672,8 +668,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
       </div>
       <div
         aria-selected={false}
-        data-css-18=""
-        data-css-17=""
+        data-css-16=""
+        data-css-15=""
         id="downshift-1-item-1"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -686,7 +682,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
         }
       >
         <div
-          data-css-19=""
+          data-css-17=""
           data-css-4=""
         >
           Abra
@@ -694,8 +690,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
       </div>
       <div
         aria-selected={false}
-        data-css-18=""
-        data-css-17=""
+        data-css-16=""
+        data-css-15=""
         id="downshift-1-item-2"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -708,7 +704,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
         }
       >
         <div
-          data-css-19=""
+          data-css-17=""
           data-css-4=""
         >
           Absol
@@ -716,8 +712,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
       </div>
       <div
         aria-selected={false}
-        data-css-18=""
-        data-css-17=""
+        data-css-16=""
+        data-css-15=""
         id="downshift-1-item-3"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -730,7 +726,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
         }
       >
         <div
-          data-css-19=""
+          data-css-17=""
           data-css-4=""
         >
           Accelgor
@@ -738,8 +734,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
       </div>
       <div
         aria-selected={false}
-        data-css-18=""
-        data-css-17=""
+        data-css-16=""
+        data-css-15=""
         id="downshift-1-item-4"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -752,7 +748,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
         }
       >
         <div
-          data-css-19=""
+          data-css-17=""
           data-css-4=""
         >
           Aegislash
@@ -760,8 +756,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
       </div>
       <div
         aria-selected={false}
-        data-css-18=""
-        data-css-17=""
+        data-css-16=""
+        data-css-15=""
         id="downshift-1-item-5"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -774,7 +770,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
         }
       >
         <div
-          data-css-19=""
+          data-css-17=""
           data-css-4=""
         >
           Aerodactyl
@@ -782,8 +778,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
       </div>
       <div
         aria-selected={false}
-        data-css-18=""
-        data-css-17=""
+        data-css-16=""
+        data-css-15=""
         id="downshift-1-item-6"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -796,7 +792,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
         }
       >
         <div
-          data-css-19=""
+          data-css-17=""
           data-css-4=""
         >
           Aggron
@@ -804,8 +800,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
       </div>
       <div
         aria-selected={false}
-        data-css-18=""
-        data-css-17=""
+        data-css-16=""
+        data-css-15=""
         id="downshift-1-item-7"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -818,7 +814,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
         }
       >
         <div
-          data-css-19=""
+          data-css-17=""
           data-css-4=""
         >
           Aipom
@@ -826,8 +822,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
       </div>
       <div
         aria-selected={false}
-        data-css-18=""
-        data-css-17=""
+        data-css-16=""
+        data-css-15=""
         id="downshift-1-item-8"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -840,7 +836,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
         }
       >
         <div
-          data-css-19=""
+          data-css-17=""
           data-css-4=""
         >
           Alakazam
@@ -848,8 +844,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
       </div>
       <div
         aria-selected={false}
-        data-css-18=""
-        data-css-17=""
+        data-css-16=""
+        data-css-15=""
         id="downshift-1-item-9"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -862,7 +858,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
         }
       >
         <div
-          data-css-19=""
+          data-css-17=""
           data-css-4=""
         >
           Alomomola
@@ -870,7 +866,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
       </div>
       <div
         data-css-4=""
-        data-css-20=""
+        data-css-18=""
       />
     </div>
   </div>
@@ -979,14 +975,12 @@ exports[`Test the typeahead component should render differently when loading 1`]
 }
 
 .css-8:-webkit-autofill,
-[data-css-8]:-webkit-autofill,
-.css-8[data-simulate-webkitautofill],
-[data-css-8][data-simulate-webkitautofill] {
+[data-css-8]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
-.css-12,
-[data-css-12] {
+.css-10,
+[data-css-10] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -997,15 +991,15 @@ exports[`Test the typeahead component should render differently when loading 1`]
   -moz-transition: opacity .225s;
 }
 
-.css-13,
-[data-css-13] {
+.css-11,
+[data-css-11] {
   position: absolute;
   top: 0;
   right: 20px;
 }
 
-.css-14,
-[data-css-14] {
+.css-12,
+[data-css-12] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -1068,7 +1062,7 @@ exports[`Test the typeahead component should render differently when loading 1`]
         />
         <div
           className="checkmark"
-          data-css-12=""
+          data-css-10=""
           data-css-6=""
         >
           <div
@@ -1121,7 +1115,7 @@ exports[`Test the typeahead component should render differently when loading 1`]
       />
       <div
         className="checkmark"
-        data-css-12=""
+        data-css-10=""
         data-css-6=""
       >
         <div
@@ -1143,8 +1137,8 @@ exports[`Test the typeahead component should render differently when loading 1`]
       </div>
     </div>
     <div
-      data-css-13=""
-      data-css-14=""
+      data-css-11=""
+      data-css-12=""
       data-css-5=""
     />
   </div>
@@ -1257,14 +1251,12 @@ exports[`Test the typeahead component should render differently when loading 2`]
 }
 
 .css-8:-webkit-autofill,
-[data-css-8]:-webkit-autofill,
-.css-8[data-simulate-webkitautofill],
-[data-css-8][data-simulate-webkitautofill] {
+[data-css-8]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
-.css-12,
-[data-css-12] {
+.css-10,
+[data-css-10] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -1275,15 +1267,15 @@ exports[`Test the typeahead component should render differently when loading 2`]
   -moz-transition: opacity .225s;
 }
 
-.css-13,
-[data-css-13] {
+.css-11,
+[data-css-11] {
   position: absolute;
   top: 0;
   right: 20px;
 }
 
-.css-14,
-[data-css-14] {
+.css-12,
+[data-css-12] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -1346,7 +1338,7 @@ exports[`Test the typeahead component should render differently when loading 2`]
         />
         <div
           className="checkmark"
-          data-css-12=""
+          data-css-10=""
           data-css-6=""
         >
           <div
@@ -1399,7 +1391,7 @@ exports[`Test the typeahead component should render differently when loading 2`]
       />
       <div
         className="checkmark"
-        data-css-12=""
+        data-css-10=""
         data-css-6=""
       >
         <div
@@ -1421,8 +1413,8 @@ exports[`Test the typeahead component should render differently when loading 2`]
       </div>
     </div>
     <div
-      data-css-13=""
-      data-css-14=""
+      data-css-11=""
+      data-css-12=""
       data-css-5=""
     >
       <svg
@@ -1552,14 +1544,12 @@ exports[`Test the typeahead component should use the limit property 1`] = `
 }
 
 .css-6:-webkit-autofill,
-[data-css-6]:-webkit-autofill,
-.css-6[data-simulate-webkitautofill],
-[data-css-6][data-simulate-webkitautofill] {
+[data-css-6]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
-.css-10,
-[data-css-10] {
+.css-8,
+[data-css-8] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -1570,15 +1560,15 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   -moz-transition: opacity .225s;
 }
 
-.css-11,
-[data-css-11] {
+.css-9,
+[data-css-9] {
   position: absolute;
   top: 0;
   right: 20px;
 }
 
-.css-12,
-[data-css-12] {
+.css-10,
+[data-css-10] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -1601,8 +1591,8 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-13,
-[data-css-13] {
+.css-11,
+[data-css-11] {
   align-items: stretch;
   background: transparent;
   border: none;
@@ -1622,8 +1612,8 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   -webkit-flex-direction: column;
 }
 
-.css-14,
-[data-css-14] {
+.css-12,
+[data-css-12] {
   background: transparent;
   border: none;
   border-bottom: 1px solid #bec3c7;
@@ -1634,8 +1624,8 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   height: 50px;
 }
 
-.css-15,
-[data-css-15] {
+.css-13,
+[data-css-13] {
   box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
   max-height: 300px;
   overflow-x: hidden;
@@ -1645,8 +1635,8 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   z-index: 9999;
 }
 
-.css-16,
-[data-css-16] {
+.css-14,
+[data-css-14] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -1669,8 +1659,8 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-17,
-[data-css-17] {
+.css-15,
+[data-css-15] {
   padding: 10px 15px;
   min-height: 50px;
   border-bottom: 1px solid #ecf0f1;
@@ -1678,8 +1668,8 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   background-color: white;
 }
 
-.css-18,
-[data-css-18] {
+.css-16,
+[data-css-16] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -1703,8 +1693,8 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-19,
-[data-css-19] {
+.css-17,
+[data-css-17] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -1713,8 +1703,8 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   color: #333333;
 }
 
-.css-20,
-[data-css-20] {
+.css-18,
+[data-css-18] {
   position: absolute;
   right: 15px;
   bottom: 15px;
@@ -1725,7 +1715,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   aria-haspopup="listbox"
   aria-labelledby="downshift-2-label"
   aria-owns="downshift-2-menu"
-  data-css-13=""
+  data-css-11=""
   role="combobox"
 >
   <div
@@ -1760,7 +1750,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
         />
         <div
           className="checkmark"
-          data-css-10=""
+          data-css-8=""
           data-css-4=""
         >
           <div
@@ -1799,7 +1789,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
         aria-required={false}
         autoComplete="off"
         data-css-6=""
-        data-css-14=""
+        data-css-12=""
         id="downshift-2-input"
         name="typed"
         onBlur={[Function]}
@@ -1813,7 +1803,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
       />
       <div
         className="checkmark"
-        data-css-10=""
+        data-css-8=""
         data-css-4=""
       >
         <div
@@ -1835,8 +1825,8 @@ exports[`Test the typeahead component should use the limit property 1`] = `
       </div>
     </div>
     <div
-      data-css-11=""
-      data-css-12=""
+      data-css-9=""
+      data-css-10=""
       data-css-3=""
     />
   </div>
@@ -1846,16 +1836,16 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   >
     <div
       aria-labelledby="downshift-2-label"
-      data-css-15=""
-      data-css-16=""
+      data-css-13=""
+      data-css-14=""
       id="downshift-2-menu"
       onScroll={[Function]}
       role="listbox"
     >
       <div
         aria-selected={true}
-        data-css-18=""
-        data-css-17=""
+        data-css-16=""
+        data-css-15=""
         id="downshift-2-item-0"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -1868,7 +1858,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
         }
       >
         <div
-          data-css-19=""
+          data-css-17=""
           data-css-4=""
         >
           Abomasnow
@@ -1876,8 +1866,8 @@ exports[`Test the typeahead component should use the limit property 1`] = `
       </div>
       <div
         aria-selected={false}
-        data-css-18=""
-        data-css-17=""
+        data-css-16=""
+        data-css-15=""
         id="downshift-2-item-1"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -1890,7 +1880,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
         }
       >
         <div
-          data-css-19=""
+          data-css-17=""
           data-css-4=""
         >
           Abra
@@ -1898,7 +1888,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
       </div>
       <div
         data-css-4=""
-        data-css-20=""
+        data-css-18=""
       />
     </div>
   </div>
@@ -1976,14 +1966,12 @@ exports[`Test the typeahead component should use the top placement property 1`] 
 }
 
 .css-6:-webkit-autofill,
-[data-css-6]:-webkit-autofill,
-.css-6[data-simulate-webkitautofill],
-[data-css-6][data-simulate-webkitautofill] {
+[data-css-6]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
-.css-10,
-[data-css-10] {
+.css-8,
+[data-css-8] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -1994,15 +1982,15 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   -moz-transition: opacity .225s;
 }
 
-.css-11,
-[data-css-11] {
+.css-9,
+[data-css-9] {
   position: absolute;
   top: 0;
   right: 20px;
 }
 
-.css-12,
-[data-css-12] {
+.css-10,
+[data-css-10] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -2025,8 +2013,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   -webkit-flex: 0 0 auto;
 }
 
-.css-13,
-[data-css-13] {
+.css-11,
+[data-css-11] {
   align-items: stretch;
   background: transparent;
   border: none;
@@ -2046,8 +2034,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   -webkit-flex-direction: column;
 }
 
-.css-14,
-[data-css-14] {
+.css-12,
+[data-css-12] {
   background: transparent;
   border: none;
   border-bottom: 1px solid #bec3c7;
@@ -2058,8 +2046,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   height: 50px;
 }
 
-.css-15,
-[data-css-15] {
+.css-13,
+[data-css-13] {
   padding: 10px 15px;
   min-height: 50px;
   border-bottom: 1px solid #ecf0f1;
@@ -2067,8 +2055,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   background-color: white;
 }
 
-.css-16,
-[data-css-16] {
+.css-14,
+[data-css-14] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -2092,8 +2080,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   -webkit-flex: 0 0 auto;
 }
 
-.css-17,
-[data-css-17] {
+.css-15,
+[data-css-15] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -2102,8 +2090,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   color: #333333;
 }
 
-.css-18,
-[data-css-18] {
+.css-16,
+[data-css-16] {
   box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
   max-height: 300px;
   overflow-x: hidden;
@@ -2114,8 +2102,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   z-index: 9999;
 }
 
-.css-19,
-[data-css-19] {
+.css-17,
+[data-css-17] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -2138,8 +2126,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   -webkit-flex: 0 0 auto;
 }
 
-.css-20,
-[data-css-20] {
+.css-18,
+[data-css-18] {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -2150,7 +2138,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   aria-haspopup="listbox"
   aria-labelledby="downshift-3-label"
   aria-owns="downshift-3-menu"
-  data-css-13=""
+  data-css-11=""
   role="combobox"
 >
   <div
@@ -2185,7 +2173,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
         />
         <div
           className="checkmark"
-          data-css-10=""
+          data-css-8=""
           data-css-4=""
         >
           <div
@@ -2224,7 +2212,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
         aria-required={false}
         autoComplete="off"
         data-css-6=""
-        data-css-14=""
+        data-css-12=""
         id="downshift-3-input"
         name="typed"
         onBlur={[Function]}
@@ -2238,7 +2226,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       />
       <div
         className="checkmark"
-        data-css-10=""
+        data-css-8=""
         data-css-4=""
       >
         <div
@@ -2260,8 +2248,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       </div>
     </div>
     <div
-      data-css-11=""
-      data-css-12=""
+      data-css-9=""
+      data-css-10=""
       data-css-3=""
     />
   </div>
@@ -2271,16 +2259,16 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   >
     <div
       aria-labelledby="downshift-3-label"
-      data-css-18=""
-      data-css-19=""
+      data-css-16=""
+      data-css-17=""
       id="downshift-3-menu"
       onScroll={[Function]}
       role="listbox"
     >
       <div
         aria-selected={true}
-        data-css-16=""
-        data-css-15=""
+        data-css-14=""
+        data-css-13=""
         id="downshift-3-item-0"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -2293,7 +2281,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
         }
       >
         <div
-          data-css-17=""
+          data-css-15=""
           data-css-4=""
         >
           Abomasnow
@@ -2301,8 +2289,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       </div>
       <div
         aria-selected={false}
-        data-css-16=""
-        data-css-15=""
+        data-css-14=""
+        data-css-13=""
         id="downshift-3-item-1"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -2315,7 +2303,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
         }
       >
         <div
-          data-css-17=""
+          data-css-15=""
           data-css-4=""
         >
           Abra
@@ -2323,8 +2311,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       </div>
       <div
         aria-selected={false}
-        data-css-16=""
-        data-css-15=""
+        data-css-14=""
+        data-css-13=""
         id="downshift-3-item-2"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -2337,7 +2325,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
         }
       >
         <div
-          data-css-17=""
+          data-css-15=""
           data-css-4=""
         >
           Absol
@@ -2345,8 +2333,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       </div>
       <div
         aria-selected={false}
-        data-css-16=""
-        data-css-15=""
+        data-css-14=""
+        data-css-13=""
         id="downshift-3-item-3"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -2359,7 +2347,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
         }
       >
         <div
-          data-css-17=""
+          data-css-15=""
           data-css-4=""
         >
           Accelgor
@@ -2367,8 +2355,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       </div>
       <div
         aria-selected={false}
-        data-css-16=""
-        data-css-15=""
+        data-css-14=""
+        data-css-13=""
         id="downshift-3-item-4"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -2381,7 +2369,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
         }
       >
         <div
-          data-css-17=""
+          data-css-15=""
           data-css-4=""
         >
           Aegislash
@@ -2389,8 +2377,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       </div>
       <div
         aria-selected={false}
-        data-css-16=""
-        data-css-15=""
+        data-css-14=""
+        data-css-13=""
         id="downshift-3-item-5"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -2403,7 +2391,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
         }
       >
         <div
-          data-css-17=""
+          data-css-15=""
           data-css-4=""
         >
           Aerodactyl
@@ -2411,8 +2399,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       </div>
       <div
         aria-selected={false}
-        data-css-16=""
-        data-css-15=""
+        data-css-14=""
+        data-css-13=""
         id="downshift-3-item-6"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -2425,7 +2413,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
         }
       >
         <div
-          data-css-17=""
+          data-css-15=""
           data-css-4=""
         >
           Aggron
@@ -2433,8 +2421,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       </div>
       <div
         aria-selected={false}
-        data-css-16=""
-        data-css-15=""
+        data-css-14=""
+        data-css-13=""
         id="downshift-3-item-7"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -2447,7 +2435,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
         }
       >
         <div
-          data-css-17=""
+          data-css-15=""
           data-css-4=""
         >
           Aipom
@@ -2455,8 +2443,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       </div>
       <div
         aria-selected={false}
-        data-css-16=""
-        data-css-15=""
+        data-css-14=""
+        data-css-13=""
         id="downshift-3-item-8"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -2469,7 +2457,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
         }
       >
         <div
-          data-css-17=""
+          data-css-15=""
           data-css-4=""
         >
           Alakazam
@@ -2477,8 +2465,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       </div>
       <div
         aria-selected={false}
-        data-css-16=""
-        data-css-15=""
+        data-css-14=""
+        data-css-13=""
         id="downshift-3-item-9"
         onClick={[Function]}
         onMouseDown={[Function]}
@@ -2491,14 +2479,14 @@ exports[`Test the typeahead component should use the top placement property 1`] 
         }
       >
         <div
-          data-css-17=""
+          data-css-15=""
           data-css-4=""
         >
           Alomomola
         </div>
       </div>
       <div
-        data-css-20=""
+        data-css-18=""
         data-css-4=""
       />
     </div>

@@ -2,7 +2,7 @@ import glob from 'glob'
 import { promisify } from 'util'
 import fs from 'fs'
 import path from 'path'
-const reactDocs = require('react-docgen')
+import { parse } from 'react-docgen'
 
 const writeFile = promisify(fs.writeFile)
 const readfile = promisify(fs.readFile)
@@ -18,14 +18,14 @@ function propToRow(props) {
     }`
   }
 }
-const jo = (async function() {
+async function main() {
   try {
     let files = await globber('src/**/*.jsx')
     files = files.filter(path => path.indexOf('.test.jsx') === -1)
     files = await Promise.all(
       files.map(async file => {
         try {
-          const docs = reactDocs.parse(await readfile(file))
+          const docs = parse(await readfile(file))
           docs.displayName = docs.displayName || path.basename(file, '.jsx')
           return {
             docs,
@@ -63,12 +63,14 @@ ${
       }
     })
 
-    const write = await Promise.all(
+    await Promise.all(
       files.map(({ file, docs }) => {
         writeFile(
-          __dirname +
-            '/../' +
-            file.replace('src/', 'doc/reference/').replace('.jsx', '.md'),
+          path.join(
+            __dirname,
+            '..',
+            file.replace('src/', 'doc/reference/').replace('.jsx', '.md')
+          ),
           docs,
           { flag: 'w+' }
         )
@@ -77,4 +79,6 @@ ${
   } catch (e) {
     console.log(e)
   }
-})()
+}
+
+main()
