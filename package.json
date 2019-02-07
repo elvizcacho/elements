@@ -36,17 +36,17 @@
     "prebuild": "rimraf build",
     "build": "rollup -c rollup.config.js",
     "postbuild": "cp README.md package.json build",
-    "build:docs": "babel-node ./scripts/generate-docs.js",
-    "test:example": "jest babel-node ./scripts/example.test.js",
+    "build:copy-files": "node -r esm ./scripts/copy-files.js",
+    "build:docs": "node -r esm ./scripts/generate-docs.js",
+    "test:example": "jest ./scripts/example.test.js",
     "watch:test": "yarn test --watch",
-    "test": "NODE_ENV=development jest src/",
+    "test": "jest src/ scripts/",
     "prettier": "prettier --no-semi --single-quote --trailing-comma es5 --write",
     "lint": "eslint --cache --ext .js,.jsx src",
     "storybook": "start-storybook -p 6006"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
-    "@babel/node": "7.2.2",
     "@babel/plugin-proposal-class-properties": "7.3.0",
     "@babel/plugin-proposal-export-default-from": "7.2.0",
     "@babel/preset-env": "7.3.1",
@@ -74,6 +74,7 @@
     "eslint-plugin-promise": "4.0.1",
     "eslint-plugin-react": "7.12.4",
     "eslint-plugin-standard": "4.0.0",
+    "esm": "3.2.3",
     "glob": "7.1.3",
     "html-entities": "1.2.1",
     "husky": "1.3.1",
@@ -113,7 +114,9 @@
   "jest": {
     "bail": true,
     "collectCoverage": true,
-    "setupTestFrameworkScriptFile": "<rootDir>/bootstrap-jest.js",
+    "setupFilesAfterEnv": [
+      "<rootDir>/bootstrap-jest.js"
+    ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer",
       "jest-glamor-react"

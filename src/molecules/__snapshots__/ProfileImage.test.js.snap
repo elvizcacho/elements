@@ -19,9 +19,7 @@ exports[`Profile image with source renders correctly 1`] = `
 }
 
 .css-1:before,
-[data-css-1]:before,
-.css-1[data-simulate-before],
-[data-css-1][data-simulate-before] {
+[data-css-1]:before {
   content: "";
   position: absolute;
   top: 0;
@@ -32,14 +30,14 @@ exports[`Profile image with source renders correctly 1`] = `
   border-radius: 50%;
 }
 
-.css-5,
-[data-css-5] {
+.css-3,
+[data-css-3] {
   background-image: url(https://placeimg.com/100/100/people);
   background-size: contain;
 }
 
-.css-6,
-[data-css-6] {
+.css-4,
+[data-css-4] {
   box-sizing: border-box;
   flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
@@ -51,8 +49,8 @@ exports[`Profile image with source renders correctly 1`] = `
   <div
     alt=""
     data-css-0=""
-    data-css-6=""
-    data-css-5=""
+    data-css-4=""
+    data-css-3=""
   />
 </div>
 `;
@@ -70,9 +68,7 @@ exports[`Profile image without source renders correctly 1`] = `
 }
 
 .css-0:before,
-[data-css-0]:before,
-.css-0[data-simulate-before],
-[data-css-0][data-simulate-before] {
+[data-css-0]:before {
   content: "";
   position: absolute;
   top: 0;

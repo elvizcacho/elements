@@ -1,7 +1,6 @@
 import { render } from 'enzyme'
 import retrieveExamples from './example'
-import { transform } from 'babel-core'
-var React = require('react')
+import { transformSync } from '@babel/core'
 
 describe('Component Examples', async () => {
   it('should match snapshot', async () => {
@@ -12,7 +11,7 @@ describe('Component Examples', async () => {
         wholeExample.forEach((stringExample, index) => {
           const avoid = stringExample.match(/import|const/g)
           if (!avoid) {
-            let evalString = ``
+            let evalString = "var React = require('react');"
             const requiredComponents = stringExample.match(/<([A-Z])\w+/g)
             requiredComponents.push('View', 'ResourceProvider', 'ThemeProvider')
             requiredComponents.map(required => {
@@ -38,12 +37,13 @@ describe('Component Examples', async () => {
               themeOccurrence > 1
                 ? ''
                 : '</View></ResourceProvider></ThemeProvider>'
-            const result = transform(
+            const result = transformSync(
               themeTagStart + stringExample + themeTagEnd,
               { presets: ['@babel/react'] }
             )
 
             try {
+              // eslint-disable-next-line no-eval
               const wrapper = eval(evalString + result.code)
               const component = render(wrapper)
               expect(component).toMatchSnapshot(displayName + index)

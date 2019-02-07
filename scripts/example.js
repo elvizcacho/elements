@@ -2,8 +2,7 @@ import glob from 'glob'
 import { promisify } from 'util'
 import fs from 'fs'
 import path from 'path'
-import { transform } from 'babel-core'
-const reactDocs = require('react-docgen')
+import { parse } from 'react-docgen'
 
 const readfile = promisify(fs.readFile)
 const globber = promisify(glob)
@@ -18,7 +17,7 @@ const retrieveExamples = new Promise(async resolve => {
         .replace(/.*\//, '')
         .replace('.jsx', '')
       try {
-        const docs = reactDocs.parse(await readfile(file))
+        const docs = parse(await readfile(file))
         docs.displayName = docs.displayName || path.basename(file, '.jsx')
         return {
           docs,
