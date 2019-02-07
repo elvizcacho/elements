@@ -1,4 +1,4 @@
-# [@allthings/elements](https://github.com/allthings/elements)
+[![@allthings/elements](https://user-images.githubusercontent.com/132332/52407942-eb8e1700-2ad1-11e9-97f2-c71aa16ea41a.png)](https://developers.allthings.me/elements/index.html)
 
 <img alt="npm version" src="https://badge.fury.io/js/%40allthings%2Felements.svg"> [![Build Status](https://travis-ci.org/allthings/elements.svg?branch=master)](https://travis-ci.org/allthings/elements) [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovateapp.com/)
 
