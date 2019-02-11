@@ -7,8 +7,8 @@ import View from '../atoms/View'
 
 const MQ = {
   mobile: { maxWidth: 640 },
-  tablet: { minWidth: 641, maxWidth: 930 },
-  desktop: { minWidth: 931 },
+  tablet: { minWidth: 641, maxWidth: 1024 },
+  desktop: { minWidth: 1025 },
 }
 
 export const createMQ = (...devices) => {
