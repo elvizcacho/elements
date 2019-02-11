@@ -36,16 +36,12 @@ exports[`CardButton renders custom color 1`] = `
 }
 
 .css-1:focus,
-[data-css-1]:focus,
-.css-1[data-simulate-focus],
-[data-css-1][data-simulate-focus] {
+[data-css-1]:focus {
   outline: none;
 }
 
 .css-1:hover,
-[data-css-1]:hover,
-.css-1[data-simulate-hover],
-[data-css-1][data-simulate-hover] {
+[data-css-1]:hover {
   cursor: pointer;
   background: #d9d9d9;
 }
@@ -70,22 +66,18 @@ exports[`CardButton renders without error 1`] = `
 }
 
 .css-0:focus,
-[data-css-0]:focus,
-.css-0[data-simulate-focus],
-[data-css-0][data-simulate-focus] {
+[data-css-0]:focus {
   outline: none;
 }
 
 .css-0:hover,
-[data-css-0]:hover,
-.css-0[data-simulate-hover],
-[data-css-0][data-simulate-hover] {
+[data-css-0]:hover {
   cursor: pointer;
   background: #227dbf;
 }
 
-.css-7,
-[data-css-7] {
+.css-3,
+[data-css-3] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -111,7 +103,7 @@ exports[`CardButton renders without error 1`] = `
 
 <button
   data-css-0=""
-  data-css-7=""
+  data-css-3=""
   onClick={[Function]}
 >
   Click me

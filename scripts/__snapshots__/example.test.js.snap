@@ -21,22 +21,18 @@ exports[`Component Examples should match snapshot: Button0 1`] = `
 }
 
 .css-0:focus,
-[data-css-0]:focus,
-.css-0[data-simulate-focus],
-[data-css-0][data-simulate-focus] {
+[data-css-0]:focus {
   outline: none;
 }
 
 .css-0:hover,
-[data-css-0]:hover,
-.css-0[data-simulate-hover],
-[data-css-0][data-simulate-hover] {
+[data-css-0]:hover {
   color: white;
   background: #227dbf;
 }
 
-.css-7,
-[data-css-7] {
+.css-3,
+[data-css-3] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -46,7 +42,7 @@ exports[`Component Examples should match snapshot: Button0 1`] = `
 
 <button
   data-css-0=""
-  data-css-7=""
+  data-css-3=""
   name="button"
   type="button"
 >
@@ -82,22 +78,18 @@ exports[`Component Examples should match snapshot: Button1 1`] = `
 }
 
 .css-1:focus,
-[data-css-1]:focus,
-.css-1[data-simulate-focus],
-[data-css-1][data-simulate-focus] {
+[data-css-1]:focus {
   outline: none;
 }
 
 .css-1:hover,
-[data-css-1]:hover,
-.css-1[data-simulate-hover],
-[data-css-1][data-simulate-hover] {
+[data-css-1]:hover {
   color: white;
   background: #227dbf;
 }
 
-.css-8,
-[data-css-8] {
+.css-4,
+[data-css-4] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -105,8 +97,8 @@ exports[`Component Examples should match snapshot: Button1 1`] = `
   -moz-osx-font-smoothing: grayscale;
 }
 
-.css-9,
-[data-css-9] {
+.css-5,
+[data-css-5] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -135,12 +127,12 @@ exports[`Component Examples should match snapshot: Button1 1`] = `
    
   <button
     data-css-1=""
-    data-css-8=""
+    data-css-4=""
     name="submit"
     type="submit"
   >
     <div
-      data-css-9=""
+      data-css-5=""
     >
        Hello with icon 
       <div
@@ -329,9 +321,7 @@ exports[`Component Examples should match snapshot: ChatBubble0 1`] = `
 }
 
 .css-10:before,
-[data-css-10]:before,
-.css-10[data-simulate-before],
-[data-css-10][data-simulate-before] {
+[data-css-10]:before {
   content: "";
   background: transparent;
   position: absolute;
@@ -344,16 +334,16 @@ exports[`Component Examples should match snapshot: ChatBubble0 1`] = `
   border-color: transparent white transparent transparent;
 }
 
-.css-14,
-[data-css-14] {
+.css-12,
+[data-css-12] {
   padding: 10px;
   border-radius: 6px;
   box-shadow: 2px 3px 3px 0px rgba(211, 211, 211, .25);
   background: white;
 }
 
-.css-15,
-[data-css-15] {
+.css-13,
+[data-css-13] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -362,8 +352,8 @@ exports[`Component Examples should match snapshot: ChatBubble0 1`] = `
   color: #333333;
 }
 
-.css-16,
-[data-css-16] {
+.css-14,
+[data-css-14] {
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
@@ -373,10 +363,8 @@ exports[`Component Examples should match snapshot: ChatBubble0 1`] = `
   -webkit-flex-shrink: 0;
 }
 
-.css-16:before,
-[data-css-16]:before,
-.css-16[data-simulate-before],
-[data-css-16][data-simulate-before] {
+.css-14:before,
+[data-css-14]:before {
   content: "";
   position: absolute;
   top: 0;
@@ -387,14 +375,14 @@ exports[`Component Examples should match snapshot: ChatBubble0 1`] = `
   border-radius: 50%;
 }
 
-.css-20,
-[data-css-20] {
+.css-16,
+[data-css-16] {
   background-image: url(https://placeimg.com/40/40/people?t=3);
   background-size: contain;
 }
 
-.css-21,
-[data-css-21] {
+.css-17,
+[data-css-17] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -409,8 +397,8 @@ exports[`Component Examples should match snapshot: ChatBubble0 1`] = `
   -webkit-justify-content: space-between;
 }
 
-.css-22,
-[data-css-22] {
+.css-18,
+[data-css-18] {
   margin-top: 4px;
   display: -webkit-box;
   display: -moz-box;
@@ -426,8 +414,8 @@ exports[`Component Examples should match snapshot: ChatBubble0 1`] = `
   -webkit-justify-content: space-between;
 }
 
-.css-23,
-[data-css-23] {
+.css-19,
+[data-css-19] {
   padding-left: 0;
   flex: 1;
   position: relative;
@@ -435,10 +423,8 @@ exports[`Component Examples should match snapshot: ChatBubble0 1`] = `
   -webkit-flex: 1;
 }
 
-.css-23:before,
-[data-css-23]:before,
-.css-23[data-simulate-before],
-[data-css-23][data-simulate-before] {
+.css-19:before,
+[data-css-19]:before {
   content: "";
   background: transparent;
   position: absolute;
@@ -452,8 +438,8 @@ exports[`Component Examples should match snapshot: ChatBubble0 1`] = `
   right: 10px;
 }
 
-.css-27,
-[data-css-27] {
+.css-21,
+[data-css-21] {
   background-image: url(https://placeimg.com/40/40/people?t=1);
   background-size: contain;
 }
@@ -469,14 +455,14 @@ exports[`Component Examples should match snapshot: ChatBubble0 1`] = `
       data-css-4=""
     >
       <div
-        data-css-15=""
+        data-css-13=""
         data-css-5=""
         data-css-0=""
       >
         You
       </div>
       <div
-        data-css-15=""
+        data-css-13=""
         data-css-0=""
         data-css-6=""
       >
@@ -492,13 +478,13 @@ exports[`Component Examples should match snapshot: ChatBubble0 1`] = `
         data-css-8=""
       >
         <div
-          data-css-16=""
+          data-css-14=""
         >
           <div
             alt=""
             data-css-2=""
             data-css-0=""
-            data-css-20=""
+            data-css-16=""
           />
         </div>
       </div>
@@ -506,7 +492,7 @@ exports[`Component Examples should match snapshot: ChatBubble0 1`] = `
         data-css-10=""
       >
         <div
-          data-css-14=""
+          data-css-12=""
         >
           <div
             data-css-1=""
@@ -524,17 +510,17 @@ exports[`Component Examples should match snapshot: ChatBubble0 1`] = `
   >
     <div
       class="info"
-      data-css-21=""
+      data-css-17=""
     >
       <div
-        data-css-15=""
+        data-css-13=""
         data-css-5=""
         data-css-0=""
       >
         Agent
       </div>
       <div
-        data-css-15=""
+        data-css-13=""
         data-css-0=""
         data-css-6=""
       >
@@ -543,28 +529,28 @@ exports[`Component Examples should match snapshot: ChatBubble0 1`] = `
     </div>
     <div
       class="content"
-      data-css-22=""
+      data-css-18=""
     >
       <div
         class="image"
         data-css-8=""
       >
         <div
-          data-css-16=""
+          data-css-14=""
         >
           <div
             alt=""
             data-css-2=""
             data-css-0=""
-            data-css-27=""
+            data-css-21=""
           />
         </div>
       </div>
       <div
-        data-css-23=""
+        data-css-19=""
       >
         <div
-          data-css-14=""
+          data-css-12=""
         >
           <div
             data-css-1=""
@@ -1186,14 +1172,12 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
 }
 
 .css-4:-webkit-autofill,
-[data-css-4]:-webkit-autofill,
-.css-4[data-simulate-webkitautofill],
-[data-css-4][data-simulate-webkitautofill] {
+[data-css-4]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
-.css-8,
-[data-css-8] {
+.css-6,
+[data-css-6] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -1204,13 +1188,13 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   -moz-transition: opacity .225s;
 }
 
-.css-9,
-[data-css-9] {
+.css-7,
+[data-css-7] {
   position: relative;
 }
 
-.css-10,
-[data-css-10] {
+.css-8,
+[data-css-8] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -1219,8 +1203,8 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   color: #626262;
 }
 
-.css-11,
-[data-css-11] {
+.css-9,
+[data-css-9] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -1228,15 +1212,15 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   -moz-osx-font-smoothing: grayscale;
 }
 
-.css-12,
-[data-css-12] {
+.css-10,
+[data-css-10] {
   width: 100%;
   background: white;
   box-shadow: 2px 2px 2px rgba(230, 230, 230, 0.5);
 }
 
-.css-13,
-[data-css-13] {
+.css-11,
+[data-css-11] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -1245,16 +1229,16 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   color: #333333;
 }
 
-.css-14,
-[data-css-14] {
+.css-12,
+[data-css-12] {
   padding: 10px 15px;
   min-height: 50px;
   border-bottom: 1px solid #ecf0f1;
   background-color: white;
 }
 
-.css-15,
-[data-css-15] {
+.css-13,
+[data-css-13] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -1277,8 +1261,8 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-16,
-[data-css-16] {
+.css-14,
+[data-css-14] {
   position: absolute;
   top: 0;
   right: 0;
@@ -1286,14 +1270,14 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   bottom: 0;
 }
 
-.css-17,
-[data-css-17] {
+.css-15,
+[data-css-15] {
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.css-18,
-[data-css-18] {
+.css-16,
+[data-css-16] {
   border-radius: 3px;
   height: 25px;
   width: 25px;
@@ -1305,8 +1289,8 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   -moz-transition: 250ms;
 }
 
-.css-19,
-[data-css-19] {
+.css-17,
+[data-css-17] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -1329,24 +1313,24 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   -webkit-flex: 1;
 }
 
-.css-20,
-[data-css-20] {
+.css-18,
+[data-css-18] {
   height: 50px;
   background-color: #bada55;
   position: relative;
   z-index: 2;
 }
 
-.css-21,
-[data-css-21] {
+.css-19,
+[data-css-19] {
   height: 50px;
   width: 50px;
   border-radius: 2px;
   background-color: transparent;
 }
 
-.css-22,
-[data-css-22] {
+.css-20,
+[data-css-20] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 600;
@@ -1356,8 +1340,8 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   color: white;
 }
 
-.css-23,
-[data-css-23] {
+.css-21,
+[data-css-21] {
   -webkit-overflow-scrolling: touch;
   overflow: auto;
   overflow-x: hidden;
@@ -1365,8 +1349,8 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   height: 100%;
 }
 
-.css-24,
-[data-css-24] {
+.css-22,
+[data-css-22] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -1389,8 +1373,8 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-25,
-[data-css-25] {
+.css-23,
+[data-css-23] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -1407,15 +1391,13 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   -moz-transition: padding-top .225s ease-out;
 }
 
-.css-25:invalid:focus,
-[data-css-25]:invalid:focus,
-.css-25[data-simulate-invalidfocus],
-[data-css-25][data-simulate-invalidfocus] {
+.css-23:invalid:focus,
+[data-css-23]:invalid:focus {
   color: red;
 }
 
-.css-29,
-[data-css-29] {
+.css-25,
+[data-css-25] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -1432,15 +1414,13 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   -moz-transition: padding-top .225s ease-out;
 }
 
-.css-29:invalid:focus,
-[data-css-29]:invalid:focus,
-.css-29[data-simulate-invalidfocus],
-[data-css-29][data-simulate-invalidfocus] {
+.css-25:invalid:focus,
+[data-css-25]:invalid:focus {
   color: red;
 }
 
-.css-33,
-[data-css-33] {
+.css-27,
+[data-css-27] {
   position: relative;
   padding: 10px 16px;
   border-radius: 2px;
@@ -1458,39 +1438,35 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   -moz-transition: 250ms ease-in-out;
 }
 
-.css-33:focus,
-[data-css-33]:focus,
-.css-33[data-simulate-focus],
-[data-css-33][data-simulate-focus] {
+.css-27:focus,
+[data-css-27]:focus {
   outline: none;
 }
 
-.css-33:hover,
-[data-css-33]:hover,
-.css-33[data-simulate-hover],
-[data-css-33][data-simulate-hover] {
+.css-27:hover,
+[data-css-27]:hover {
   color: white;
   background: #a9d22d;
 }
 
 @media (max-width: 640px) {
-  .css-21,
-  [data-css-21] {
+  .css-19,
+  [data-css-19] {
     height: 40px;
     width: 40px;
   }
 }
 
 <div
-  data-css-19=""
+  data-css-17=""
 >
   <div
-    data-css-20=""
+    data-css-18=""
     data-css-0=""
   >
     <div
-      data-css-15=""
-      data-css-21=""
+      data-css-13=""
+      data-css-19=""
     >
       <div
         data-css-1=""
@@ -1498,31 +1474,31 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
       />
     </div>
     <div
-      data-css-22=""
+      data-css-20=""
       data-css-1=""
     >
        Create new account 
     </div>
   </div>
   <div
-    data-css-19=""
-    data-css-23=""
+    data-css-17=""
+    data-css-21=""
     id="scroll-container"
   >
     <form>
       <div
         data-css-1=""
-        data-css-12=""
+        data-css-10=""
       >
         <div
-          data-css-24=""
+          data-css-22=""
         >
           <div
             data-css-3=""
             data-css-0=""
           >
             <div
-              data-css-9=""
+              data-css-7=""
               data-css-1=""
               style="width:100%"
             >
@@ -1537,7 +1513,7 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
               />
               <div
                 class="checkmark"
-                data-css-8=""
+                data-css-6=""
                 data-css-1=""
               >
                 <div
@@ -1552,7 +1528,7 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
             data-css-0=""
           >
             <div
-              data-css-9=""
+              data-css-7=""
               data-css-1=""
               style="width:100%"
             >
@@ -1566,7 +1542,7 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
               />
               <div
                 class="checkmark"
-                data-css-8=""
+                data-css-6=""
                 data-css-1=""
               >
                 <div
@@ -1581,19 +1557,19 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
             data-css-0=""
           >
             <div
-              data-css-9=""
+              data-css-7=""
               data-css-1=""
               style="width:100%"
             >
               <textarea
-                data-css-25=""
+                data-css-23=""
                 name="longStory"
                 placeholder="A long story"
                 type="text"
               />
               <div
                 class="checkmark"
-                data-css-8=""
+                data-css-6=""
                 data-css-1=""
               >
                 <div
@@ -1608,12 +1584,12 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
             data-css-0=""
           >
             <div
-              data-css-9=""
+              data-css-7=""
               data-css-1=""
               style="width:100%"
             >
               <textarea
-                data-css-29=""
+                data-css-25=""
                 maxlength="15"
                 name="limitedStory"
                 placeholder="A limited story"
@@ -1621,7 +1597,7 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
               />
               <div
                 class="checkmark"
-                data-css-8=""
+                data-css-6=""
                 data-css-1=""
               >
                 <div
@@ -1634,7 +1610,7 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
                 data-css-2=""
               >
                 <div
-                  data-css-10=""
+                  data-css-8=""
                   data-css-1=""
                 >
                   0/15
@@ -1647,7 +1623,7 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
             data-css-0=""
           >
             <div
-              data-css-9=""
+              data-css-7=""
               data-css-1=""
               style="width:100%"
             >
@@ -1661,7 +1637,7 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
               />
               <div
                 class="checkmark"
-                data-css-8=""
+                data-css-6=""
                 data-css-1=""
               >
                 <div
@@ -1672,20 +1648,20 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
             </div>
           </div>
           <div
-            data-css-14=""
+            data-css-12=""
             data-css-0=""
           >
             <div
               data-css-0=""
             >
               <div
-                data-css-9=""
-                data-css-18=""
-                data-css-15=""
+                data-css-7=""
+                data-css-16=""
+                data-css-13=""
               >
                 <div
                   data-css-1=""
-                  data-css-16=""
+                  data-css-14=""
                 >
                   <input
                     id="accept"
@@ -1703,10 +1679,10 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
             >
               <div
                 data-css-1=""
-                data-css-17=""
+                data-css-15=""
               >
                 <div
-                  data-css-13=""
+                  data-css-11=""
                   data-css-1=""
                 >
                   Hereby I accept the terms & blablabla
@@ -1715,12 +1691,12 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
             </label>
           </div>
           <div
-            data-css-14=""
-            data-css-15=""
+            data-css-12=""
+            data-css-13=""
           >
             <button
-              data-css-33=""
-              data-css-11=""
+              data-css-27=""
+              data-css-9=""
               name="submit"
               type="submit"
             >
@@ -1893,16 +1869,12 @@ exports[`Component Examples should match snapshot: Hero0 1`] = `
 }
 
 .css-11:focus,
-[data-css-11]:focus,
-.css-11[data-simulate-focus],
-[data-css-11][data-simulate-focus] {
+[data-css-11]:focus {
   outline: none;
 }
 
 .css-11:hover,
-[data-css-11]:hover,
-.css-11[data-simulate-hover],
-[data-css-11][data-simulate-hover] {
+[data-css-11]:hover {
   color: white;
   background: rgba(0,0,0,0.2);
 }
@@ -2084,14 +2056,12 @@ exports[`Component Examples should match snapshot: Input0 1`] = `
 }
 
 .css-4:-webkit-autofill,
-[data-css-4]:-webkit-autofill,
-.css-4[data-simulate-webkitautofill],
-[data-css-4][data-simulate-webkitautofill] {
+[data-css-4]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
-.css-8,
-[data-css-8] {
+.css-6,
+[data-css-6] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -2102,13 +2072,13 @@ exports[`Component Examples should match snapshot: Input0 1`] = `
   -moz-transition: opacity .225s;
 }
 
-.css-9,
-[data-css-9] {
+.css-7,
+[data-css-7] {
   position: relative;
 }
 
-.css-10,
-[data-css-10] {
+.css-8,
+[data-css-8] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -2125,15 +2095,13 @@ exports[`Component Examples should match snapshot: Input0 1`] = `
   -moz-transition: padding-top .225s ease-out;
 }
 
-.css-10:invalid:focus,
-[data-css-10]:invalid:focus,
-.css-10[data-simulate-invalidfocus],
-[data-css-10][data-simulate-invalidfocus] {
+.css-8:invalid:focus,
+[data-css-8]:invalid:focus {
   color: red;
 }
 
-.css-14,
-[data-css-14] {
+.css-10,
+[data-css-10] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -2151,7 +2119,7 @@ exports[`Component Examples should match snapshot: Input0 1`] = `
     data-css-0=""
   >
     <div
-      data-css-9=""
+      data-css-7=""
       data-css-1=""
       style="width:100%"
     >
@@ -2165,7 +2133,7 @@ exports[`Component Examples should match snapshot: Input0 1`] = `
       />
       <div
         class="checkmark"
-        data-css-8=""
+        data-css-6=""
         data-css-1=""
       >
         <div
@@ -2180,12 +2148,12 @@ exports[`Component Examples should match snapshot: Input0 1`] = `
     data-css-0=""
   >
     <div
-      data-css-9=""
+      data-css-7=""
       data-css-1=""
       style="width:100%"
     >
       <textarea
-        data-css-10=""
+        data-css-8=""
         maxlength="255"
         minlength="50"
         name="inquiry"
@@ -2194,7 +2162,7 @@ exports[`Component Examples should match snapshot: Input0 1`] = `
       />
       <div
         class="checkmark"
-        data-css-8=""
+        data-css-6=""
         data-css-1=""
       >
         <div
@@ -2207,7 +2175,7 @@ exports[`Component Examples should match snapshot: Input0 1`] = `
         data-css-2=""
       >
         <div
-          data-css-14=""
+          data-css-10=""
           data-css-1=""
         >
           0/255
@@ -2966,14 +2934,12 @@ exports[`Component Examples should match snapshot: PhoneInput0 1`] = `
 }
 
 .css-1:-webkit-autofill,
-[data-css-1]:-webkit-autofill,
-.css-1[data-simulate-webkitautofill],
-[data-css-1][data-simulate-webkitautofill] {
+[data-css-1]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
-.css-5,
-[data-css-5] {
+.css-3,
+[data-css-3] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -2984,13 +2950,13 @@ exports[`Component Examples should match snapshot: PhoneInput0 1`] = `
   -moz-transition: opacity .225s;
 }
 
-.css-6,
-[data-css-6] {
+.css-4,
+[data-css-4] {
   position: relative;
 }
 
-.css-7,
-[data-css-7] {
+.css-5,
+[data-css-5] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -3007,14 +2973,14 @@ exports[`Component Examples should match snapshot: PhoneInput0 1`] = `
     style="position:relative;cursor:text;width:100%"
   >
     <div
-      data-css-7=""
+      data-css-5=""
       data-css-0=""
       style="margin-left:5px;user-select:none;position:absolute;z-index:10;width:100%;top:50%;transform:translateY(-50%)"
     >
       +
     </div>
     <div
-      data-css-6=""
+      data-css-4=""
       data-css-0=""
       style="width:100%"
     >
@@ -3029,7 +2995,7 @@ exports[`Component Examples should match snapshot: PhoneInput0 1`] = `
       />
       <div
         class="checkmark"
-        data-css-5=""
+        data-css-3=""
         data-css-0=""
       >
         <div
@@ -3141,9 +3107,7 @@ exports[`Component Examples should match snapshot: ProfileImage0 1`] = `
 }
 
 .css-3:before,
-[data-css-3]:before,
-.css-3[data-simulate-before],
-[data-css-3][data-simulate-before] {
+[data-css-3]:before {
   content: "";
   position: absolute;
   top: 0;
@@ -3154,8 +3118,8 @@ exports[`Component Examples should match snapshot: ProfileImage0 1`] = `
   border-radius: 50%;
 }
 
-.css-7,
-[data-css-7] {
+.css-5,
+[data-css-5] {
   background-image: url(https://placeimg.com/100/100/people);
   background-size: contain;
 }
@@ -3175,7 +3139,7 @@ exports[`Component Examples should match snapshot: ProfileImage0 1`] = `
         alt=""
         data-css-2=""
         data-css-0=""
-        data-css-7=""
+        data-css-5=""
       />
     </div>
     <div
@@ -4105,16 +4069,12 @@ exports[`Component Examples should match snapshot: Slider0 1`] = `
 }
 
 .css-1:focus,
-[data-css-1]:focus,
-.css-1[data-simulate-focus],
-[data-css-1][data-simulate-focus] {
+[data-css-1]:focus {
   outline: none;
 }
 
 .css-1::-webkit-slider-runnable-track,
-[data-css-1]::-webkit-slider-runnable-track,
-.css-1[data-simulate-webkitsliderrunnabletrack],
-[data-css-1][data-simulate-webkitsliderrunnabletrack] {
+[data-css-1]::-webkit-slider-runnable-track {
   width: 100%;
   height: 2px;
   cursor: pointer;
@@ -4124,9 +4084,7 @@ exports[`Component Examples should match snapshot: Slider0 1`] = `
 }
 
 .css-1::-webkit-slider-thumb,
-[data-css-1]::-webkit-slider-thumb,
-.css-1[data-simulate-webkitsliderthumb],
-[data-css-1][data-simulate-webkitsliderthumb] {
+[data-css-1]::-webkit-slider-thumb {
   border: 0px solid #000000;
   height: 16px;
   width: 16px;
@@ -4138,16 +4096,12 @@ exports[`Component Examples should match snapshot: Slider0 1`] = `
 }
 
 .css-1:focus::-webkit-slider-runnable-track,
-[data-css-1]:focus::-webkit-slider-runnable-track,
-.css-1[data-simulate-focuswebkitsliderrunnabletrack],
-[data-css-1][data-simulate-focuswebkitsliderrunnabletrack] {
+[data-css-1]:focus::-webkit-slider-runnable-track {
   background: #646f74;
 }
 
 .css-1::-moz-range-track,
-[data-css-1]::-moz-range-track,
-.css-1[data-simulate-mozrangetrack],
-[data-css-1][data-simulate-mozrangetrack] {
+[data-css-1]::-moz-range-track {
   width: 100%;
   height: 2px;
   cursor: pointer;
@@ -4157,9 +4111,7 @@ exports[`Component Examples should match snapshot: Slider0 1`] = `
 }
 
 .css-1::-moz-range-thumb,
-[data-css-1]::-moz-range-thumb,
-.css-1[data-simulate-mozrangethumb],
-[data-css-1][data-simulate-mozrangethumb] {
+[data-css-1]::-moz-range-thumb {
   border: 0px solid #000000;
   height: 16px;
   width: 16px;
@@ -4169,9 +4121,7 @@ exports[`Component Examples should match snapshot: Slider0 1`] = `
 }
 
 .css-1::-ms-track,
-[data-css-1]::-ms-track,
-.css-1[data-simulate-mstrack],
-[data-css-1][data-simulate-mstrack] {
+[data-css-1]::-ms-track {
   width: 100%;
   height: 2px;
   cursor: pointer;
@@ -4181,27 +4131,21 @@ exports[`Component Examples should match snapshot: Slider0 1`] = `
 }
 
 .css-1::-ms-fill-lower,
-[data-css-1]::-ms-fill-lower,
-.css-1[data-simulate-msfilllower],
-[data-css-1][data-simulate-msfilllower] {
+[data-css-1]::-ms-fill-lower {
   background: #303538;
   border: 0px solid #010101;
   border-radius: 4px;
 }
 
 .css-1::-ms-fill-upper,
-[data-css-1]::-ms-fill-upper,
-.css-1[data-simulate-msfillupper],
-[data-css-1][data-simulate-msfillupper] {
+[data-css-1]::-ms-fill-upper {
   background: #4a5256;
   border: 0px solid #010101;
   border-radius: 4px;
 }
 
 .css-1::-ms-thumb,
-[data-css-1]::-ms-thumb,
-.css-1[data-simulate-msthumb],
-[data-css-1][data-simulate-msthumb] {
+[data-css-1]::-ms-thumb {
   border: 0px solid #000000;
   height: 2px;
   width: 16px;
@@ -4211,16 +4155,12 @@ exports[`Component Examples should match snapshot: Slider0 1`] = `
 }
 
 .css-1:focus::-ms-fill-lower,
-[data-css-1]:focus::-ms-fill-lower,
-.css-1[data-simulate-focusmsfilllower],
-[data-css-1][data-simulate-focusmsfilllower] {
+[data-css-1]:focus::-ms-fill-lower {
   background: #4a5256;
 }
 
 .css-1:focus::-ms-fill-upper,
-[data-css-1]:focus::-ms-fill-upper,
-.css-1[data-simulate-focusmsfillupper],
-[data-css-1][data-simulate-focusmsfillupper] {
+[data-css-1]:focus::-ms-fill-upper {
   background: #646f74;
 }
 
@@ -4402,27 +4342,23 @@ exports[`Component Examples should match snapshot: SwitchList0 1`] = `
 }
 
 .css-2:hover,
-[data-css-2]:hover,
-.css-2[data-simulate-hover],
-[data-css-2][data-simulate-hover] {
+[data-css-2]:hover {
+  cursor: pointer;
+}
+
+.css-4,
+[data-css-5]:hover {
   cursor: pointer;
 }
 
 .css-6,
-[data-css-7]:hover,
-.css-7[data-simulate-hover],
-[data-css-7][data-simulate-hover] {
-  cursor: pointer;
-}
-
-.css-10,
-[data-css-10] {
+[data-css-6] {
   padding: 10px;
   text-align: center;
 }
 
-.css-11,
-[data-css-11] {
+.css-7,
+[data-css-7] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -4431,20 +4367,18 @@ exports[`Component Examples should match snapshot: SwitchList0 1`] = `
   color: gray;
 }
 
-.css-12,
-[data-css-12] {
+.css-8,
+[data-css-8] {
   background-color: #3598db;
 }
 
-.css-12:hover,
-[data-css-12]:hover,
-.css-12[data-simulate-hover],
-[data-css-12][data-simulate-hover] {
+.css-8:hover,
+[data-css-8]:hover {
   cursor: pointer;
 }
 
-.css-16,
-[data-css-16] {
+.css-10,
+[data-css-10] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -4463,13 +4397,13 @@ exports[`Component Examples should match snapshot: SwitchList0 1`] = `
   >
     <div
       data-css-1=""
-      data-css-7=""
+      data-css-5=""
       data-css-0=""
       data-e2e="settings-switch-locale-a"
     >
       <div
-        data-css-11=""
-        data-css-10=""
+        data-css-7=""
+        data-css-6=""
         data-css-0=""
       >
         Freiburg
@@ -4478,12 +4412,12 @@ exports[`Component Examples should match snapshot: SwitchList0 1`] = `
     <div
       data-css-1=""
       data-css-0=""
-      data-css-12=""
+      data-css-8=""
       data-e2e="settings-switch-locale-b"
     >
       <div
+        data-css-6=""
         data-css-10=""
-        data-css-16=""
         data-css-0=""
       >
         Berlin
@@ -4491,13 +4425,13 @@ exports[`Component Examples should match snapshot: SwitchList0 1`] = `
     </div>
     <div
       data-css-1=""
-      data-css-7=""
+      data-css-5=""
       data-css-0=""
       data-e2e="settings-switch-locale-c"
     >
       <div
-        data-css-11=""
-        data-css-10=""
+        data-css-7=""
+        data-css-6=""
         data-css-0=""
       >
         München
@@ -4651,14 +4585,12 @@ exports[`Component Examples should match snapshot: TextInput0 1`] = `
 }
 
 .css-4:-webkit-autofill,
-[data-css-4]:-webkit-autofill,
-.css-4[data-simulate-webkitautofill],
-[data-css-4][data-simulate-webkitautofill] {
+[data-css-4]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
-.css-8,
-[data-css-8] {
+.css-6,
+[data-css-6] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -4669,13 +4601,13 @@ exports[`Component Examples should match snapshot: TextInput0 1`] = `
   -moz-transition: opacity .225s;
 }
 
-.css-9,
-[data-css-9] {
+.css-7,
+[data-css-7] {
   position: relative;
 }
 
-.css-10,
-[data-css-10] {
+.css-8,
+[data-css-8] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -4692,15 +4624,13 @@ exports[`Component Examples should match snapshot: TextInput0 1`] = `
   -moz-transition: padding-top .225s ease-out;
 }
 
-.css-10:invalid:focus,
-[data-css-10]:invalid:focus,
-.css-10[data-simulate-invalidfocus],
-[data-css-10][data-simulate-invalidfocus] {
+.css-8:invalid:focus,
+[data-css-8]:invalid:focus {
   color: red;
 }
 
-.css-14,
-[data-css-14] {
+.css-10,
+[data-css-10] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -4718,7 +4648,7 @@ exports[`Component Examples should match snapshot: TextInput0 1`] = `
     data-css-0=""
   >
     <div
-      data-css-9=""
+      data-css-7=""
       data-css-1=""
       style="width:100%"
     >
@@ -4732,7 +4662,7 @@ exports[`Component Examples should match snapshot: TextInput0 1`] = `
       />
       <div
         class="checkmark"
-        data-css-8=""
+        data-css-6=""
         data-css-1=""
       >
         <div
@@ -4747,12 +4677,12 @@ exports[`Component Examples should match snapshot: TextInput0 1`] = `
     data-css-0=""
   >
     <div
-      data-css-9=""
+      data-css-7=""
       data-css-1=""
       style="width:100%"
     >
       <textarea
-        data-css-10=""
+        data-css-8=""
         maxlength="255"
         minlength="50"
         name="inquiry"
@@ -4761,7 +4691,7 @@ exports[`Component Examples should match snapshot: TextInput0 1`] = `
       />
       <div
         class="checkmark"
-        data-css-8=""
+        data-css-6=""
         data-css-1=""
       >
         <div
@@ -4774,7 +4704,7 @@ exports[`Component Examples should match snapshot: TextInput0 1`] = `
         data-css-2=""
       >
         <div
-          data-css-14=""
+          data-css-10=""
           data-css-1=""
         >
           0/255
