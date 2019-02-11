@@ -1879,7 +1879,7 @@ exports[`Component Examples should match snapshot: Hero0 1`] = `
   background: rgba(0,0,0,0.2);
 }
 
-@media (min-width: 641px) and (max-width: 930px), (min-width: 931px) {
+@media (min-width: 641px) and (max-width: 1024px), (min-width: 1025px) {
   .css-7,
   [data-css-7] {
     width: 50%;
