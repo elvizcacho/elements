@@ -63,12 +63,14 @@ exports[`TextInput renders 1`] = `
 }
 
 .css-2:-webkit-autofill,
-[data-css-2]:-webkit-autofill {
+[data-css-2]:-webkit-autofill,
+.css-2[data-simulate-webkitautofill],
+[data-css-2][data-simulate-webkitautofill] {
   padding-top: 10px !important;
 }
 
-.css-4,
-[data-css-4] {
+.css-6,
+[data-css-6] {
   position: absolute;
   left: 15px;
   font-size: 10px;
@@ -78,8 +80,8 @@ exports[`TextInput renders 1`] = `
   -moz-transition: all .225s ease-out;
 }
 
-.css-5,
-[data-css-5] {
+.css-7,
+[data-css-7] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -90,20 +92,20 @@ exports[`TextInput renders 1`] = `
   -moz-transition: opacity .225s;
 }
 
-.css-6,
-[data-css-6] {
+.css-8,
+[data-css-8] {
   position: relative;
 }
 
-.css-7,
-[data-css-7] {
+.css-9,
+[data-css-9] {
   box-sizing: border-box;
   flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
 }
 
-.css-8,
-[data-css-8] {
+.css-10,
+[data-css-10] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 10px;
@@ -117,8 +119,8 @@ exports[`TextInput renders 1`] = `
   data-css-1=""
 >
   <div
-    data-css-6=""
-    data-css-7=""
+    data-css-8=""
+    data-css-9=""
     style={
       Object {
         "width": "100%",
@@ -136,8 +138,8 @@ exports[`TextInput renders 1`] = `
     />
     <div
       className="label"
-      data-css-7=""
-      data-css-4=""
+      data-css-9=""
+      data-css-6=""
       style={
         Object {
           "opacity": 0,
@@ -146,8 +148,8 @@ exports[`TextInput renders 1`] = `
       }
     >
       <div
-        data-css-7=""
-        data-css-8=""
+        data-css-9=""
+        data-css-10=""
       >
         E-Mail
          
@@ -156,8 +158,8 @@ exports[`TextInput renders 1`] = `
     </div>
     <div
       className="checkmark"
-      data-css-5=""
       data-css-7=""
+      data-css-9=""
     >
       <div
         dangerouslySetInnerHTML={
@@ -165,7 +167,7 @@ exports[`TextInput renders 1`] = `
             "__html": undefined,
           }
         }
-        data-css-7=""
+        data-css-9=""
         style={
           Object {
             "fill": "lightGrey",

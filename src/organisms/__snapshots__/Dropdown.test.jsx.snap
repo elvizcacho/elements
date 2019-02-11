@@ -103,12 +103,14 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
 }
 
 .css-7:-webkit-autofill,
-[data-css-7]:-webkit-autofill {
+[data-css-7]:-webkit-autofill,
+.css-7[data-simulate-webkitautofill],
+[data-css-7][data-simulate-webkitautofill] {
   padding-top: 10px !important;
 }
 
-.css-9,
-[data-css-9] {
+.css-11,
+[data-css-11] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -119,8 +121,8 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   -moz-transition: opacity .225s;
 }
 
-.css-10,
-[data-css-10] {
+.css-12,
+[data-css-12] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 10px;
@@ -129,8 +131,8 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   color: #626262;
 }
 
-.css-11,
-[data-css-11] {
+.css-13,
+[data-css-13] {
   position: absolute;
   top: 0;
   right: 0;
@@ -187,7 +189,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
         >
           <div
             data-css-6=""
-            data-css-10=""
+            data-css-12=""
           >
             some label
              
@@ -195,7 +197,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
         </div>
         <div
           className="checkmark"
-          data-css-9=""
+          data-css-11=""
           data-css-6=""
         >
           <div
@@ -218,7 +220,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
       </div>
       <div
         data-css-5=""
-        data-css-11=""
+        data-css-13=""
         data-css-6=""
         onClick={[Function]}
       >
@@ -351,12 +353,14 @@ exports[`Dropdown should render with placement top 1`] = `
 }
 
 .css-7:-webkit-autofill,
-[data-css-7]:-webkit-autofill {
+[data-css-7]:-webkit-autofill,
+.css-7[data-simulate-webkitautofill],
+[data-css-7][data-simulate-webkitautofill] {
   padding-top: 10px !important;
 }
 
-.css-9,
-[data-css-9] {
+.css-11,
+[data-css-11] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -367,8 +371,8 @@ exports[`Dropdown should render with placement top 1`] = `
   -moz-transition: opacity .225s;
 }
 
-.css-10,
-[data-css-10] {
+.css-12,
+[data-css-12] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 10px;
@@ -377,8 +381,8 @@ exports[`Dropdown should render with placement top 1`] = `
   color: #626262;
 }
 
-.css-11,
-[data-css-11] {
+.css-13,
+[data-css-13] {
   position: absolute;
   top: 0;
   right: 0;
@@ -435,7 +439,7 @@ exports[`Dropdown should render with placement top 1`] = `
         >
           <div
             data-css-6=""
-            data-css-10=""
+            data-css-12=""
           >
             some label
              
@@ -443,7 +447,7 @@ exports[`Dropdown should render with placement top 1`] = `
         </div>
         <div
           className="checkmark"
-          data-css-9=""
+          data-css-11=""
           data-css-6=""
         >
           <div
@@ -466,7 +470,7 @@ exports[`Dropdown should render with placement top 1`] = `
       </div>
       <div
         data-css-5=""
-        data-css-11=""
+        data-css-13=""
         data-css-6=""
         onClick={[Function]}
       >
