@@ -16,7 +16,7 @@ export default {
       format: 'cjs',
     },
     {
-      dir: 'build/esm',
+      dir: 'build',
       format: 'esm',
     },
   ],
