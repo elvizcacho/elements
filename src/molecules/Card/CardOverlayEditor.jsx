@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import View from '../../atoms/View'
 import { css } from 'glamor'
-import { between } from './utils/math'
+import { between } from '../../utils/math'
 
 import ExpandingTextarea from '../ExpandingTextarea'
 import Text from '../../atoms/Text'
@@ -60,11 +60,10 @@ export default class CardOverlayEditor extends React.Component {
         { bottom, left, right, top }
       )
     ) {
-        e.stopPropagation()
-        this.triggerClose()
-        return false
-      }
-
+      e.stopPropagation()
+      this.triggerClose()
+      return false
+    }
   }
 
   setElement = element => (this.element = element)

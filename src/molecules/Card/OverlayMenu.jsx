@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { css } from 'glamor'
-import { between } from './utils/math'
+import { between } from '../../utils/math'
 
 const menuStyle = css({
   position: 'absolute',

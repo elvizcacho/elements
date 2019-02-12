@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { List } from '../../molecules/List'
-import Card from '../../molecules/Card'
+import List from '../../molecules/List/List'
+import Card from '../../molecules/Card/Card'
 
 /**
  * The CardList is a molecule that is a card containing a list.

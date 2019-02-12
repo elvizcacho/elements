@@ -9,7 +9,12 @@ const plugins = [
 export default {
   plugins,
   preserveModules: true,
-  input: ['./src/index.js', './src/behaviour/CDNIntlProvider.jsx'],
+  input: [
+    './src/index.js',
+    // bundled separately to not import the 3rd party packages by default
+    './src/behaviour/CDNIntlProvider.jsx',
+    './src/molecules/Calendar.jsx',
+  ],
   output: [
     {
       dir: 'build/cjs',

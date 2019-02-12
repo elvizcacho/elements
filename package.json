@@ -3,6 +3,7 @@
   "version": "5.0.0-beta.2",
   "main": "cjs/index.js",
   "module": "esm/index.js",
+  "sideEffects": false,
   "repository": "https://github.com/allthings/elements",
   "author": "Moritz Schwörer <moritz.schwoerer@allthings.me>",
   "license": "MIT",
@@ -35,7 +36,7 @@
     "prebuild": "rimraf build",
     "build": "rollup -c rollup.config.js",
     "postbuild": "cp README.md package.json build",
-    "build:copy-files": "node -r esm ./scripts/copy-files.js",
+    "missing-exports": "node -r esm ./scripts/missing-exports.js",
     "build:docs": "node -r esm ./scripts/generate-docs.js",
     "test:example": "jest ./scripts/example.test.js",
     "watch:test": "yarn test --watch",
@@ -44,6 +45,19 @@
     "lint": "eslint --cache --ext .js,.jsx src",
     "storybook": "start-storybook -p 6006"
   },
+  "ignoredMissingImports": [
+    "src/index.js",
+    "// exported separately with rollup to avoid importing 3rd party packages",
+    "src/behaviour/CDNIntlProvider.jsx",
+    "src/molecules/Calendar.jsx",
+    "// only internally used stuff",
+    "src/behaviour/Message.js",
+    "src/utils/math.js",
+    "src/propTypes/color.js",
+    "src/utils/escapeRegex.js",
+    "src/utils/CountryList.js",
+    "src/utils/insertCSS.js"
+  ],
   "devDependencies": {
     "@babel/core": "7.2.2",
     "@babel/plugin-proposal-class-properties": "7.3.0",
