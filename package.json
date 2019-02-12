@@ -1,6 +1,6 @@
 {
   "name": "@allthings/elements",
-  "version": "5.0.0-beta.3",
+  "version": "5.0.0-beta.4",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "repository": "https://github.com/allthings/elements",
@@ -30,7 +30,7 @@
   "scripts": {
     "create:release": "echo \"This command was removed. Please use yarn version instead.\"",
     "preversion": "yarn lint && yarn test",
-    "postversion": "git push --tags origin HEAD && yarn build && yarn publish build",
+    "postversion": "git push --tags origin HEAD && yarn build && yarn publish build --non-interactive",
     "prebuild": "rimraf build",
     "build": "rollup -c rollup.config.js",
     "postbuild": "cp README.md package.json build",
