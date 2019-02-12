@@ -14,5 +14,5 @@ patterns that are available.
 | ----------- |:--------------:| ------------:|
 |name **(required)**|enum|The name of the icon
 |color|string|The color of the icon<br>Default: 'primary'
-|size|union|Can be xs, s, m, l<br>Default: 32.5
+|size|union|Can be xs, s, m, l<br>Default: 'm'
 |children|node|

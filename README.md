@@ -4,6 +4,15 @@
 
 Elements is a set of **carefully crafted, high quality React UI components,** that [Allthings](https://www.allthings.me) uses to build their mobile app.
 
+## Content
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Examples](#examples)
+- [Documentation](#documentation)
+- [Writing unit tests](#writing-unit-tests)
+- [Local development in another app](#local-development-in-another-app)
+
 ## Installation
 
 Elements are available on [npm package](https://www.npmjs.com/package/@allthings/elements).

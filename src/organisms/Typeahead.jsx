@@ -13,7 +13,6 @@ import View from '../atoms/View'
 import escapeRegex from '../utils/escapeRegex'
 import Spinner from '../atoms/Spinner'
 
-const DEV = 'development'
 const NOOP = _ => _
 
 const INPUT_FIELD_HEIGHT = '50px'
@@ -90,7 +89,7 @@ export default class Typeahead extends React.PureComponent {
     if (
       process &&
       process.env &&
-      process.env.NODE_ENV === DEV &&
+      process.env.NODE_ENV !== 'production' &&
       props.hasOwnProperty('clearOnSelect') &&
       (props.hasOwnProperty('defaultValue') || props.hasOwnProperty('value'))
     ) {

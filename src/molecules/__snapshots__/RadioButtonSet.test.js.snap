@@ -9,13 +9,19 @@ exports[`<RadioButtonSet /> should render without error 1`] = `
 
 .css-1,
 [data-css-1] {
+  opacity: 0;
+  margin: 0;
+}
+
+.css-2,
+[data-css-2] {
   box-sizing: border-box;
   flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
 }
 
-.css-2,
-[data-css-2] {
+.css-3,
+[data-css-3] {
   box-sizing: border-box;
   align-content: flex-start;
   align-items: flex-start;
@@ -36,12 +42,6 @@ exports[`<RadioButtonSet /> should render without error 1`] = `
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -webkit-flex: 0 0 auto;
-}
-
-.css-3,
-[data-css-3] {
-  opacity: 0;
-  margin: 0;
 }
 
 .css-4,
@@ -162,10 +162,10 @@ exports[`<RadioButtonSet /> should render without error 1`] = `
 }
 
 <div
-  data-css-1=""
+  data-css-2=""
 >
   <div
-    data-css-2=""
+    data-css-3=""
     style={
       Object {
         "width": "100%",
@@ -174,7 +174,7 @@ exports[`<RadioButtonSet /> should render without error 1`] = `
   >
     <div
       data-css-0=""
-      data-css-1=""
+      data-css-2=""
       required={false}
     >
       <div
@@ -182,11 +182,11 @@ exports[`<RadioButtonSet /> should render without error 1`] = `
         data-css-5=""
       >
         <label
-          data-css-1=""
+          data-css-2=""
         >
           <div
             data-css-6=""
-            data-css-1=""
+            data-css-2=""
           >
             <div
               data-css-7=""
@@ -204,7 +204,7 @@ exports[`<RadioButtonSet /> should render without error 1`] = `
             </div>
           </div>
           <div
-            data-css-1=""
+            data-css-2=""
             data-css-11=""
             style={
               Object {
@@ -214,18 +214,18 @@ exports[`<RadioButtonSet /> should render without error 1`] = `
           >
             <div
               data-css-12=""
-              data-css-1=""
+              data-css-2=""
             >
               Blue
             </div>
           </div>
           <div
-            data-css-1=""
+            data-css-2=""
             data-css-13=""
           >
             <input
               checked={false}
-              data-css-3=""
+              data-css-1=""
               id="blue"
               name="colors"
               onChange={[Function]}
@@ -238,7 +238,7 @@ exports[`<RadioButtonSet /> should render without error 1`] = `
     </div>
     <div
       data-css-0=""
-      data-css-1=""
+      data-css-2=""
       required={false}
     >
       <div
@@ -246,11 +246,11 @@ exports[`<RadioButtonSet /> should render without error 1`] = `
         data-css-5=""
       >
         <label
-          data-css-1=""
+          data-css-2=""
         >
           <div
             data-css-6=""
-            data-css-1=""
+            data-css-2=""
           >
             <div
               data-css-7=""
@@ -268,7 +268,7 @@ exports[`<RadioButtonSet /> should render without error 1`] = `
             </div>
           </div>
           <div
-            data-css-1=""
+            data-css-2=""
             data-css-11=""
             style={
               Object {
@@ -278,18 +278,18 @@ exports[`<RadioButtonSet /> should render without error 1`] = `
           >
             <div
               data-css-12=""
-              data-css-1=""
+              data-css-2=""
             >
               Gray
             </div>
           </div>
           <div
-            data-css-1=""
+            data-css-2=""
             data-css-13=""
           >
             <input
               checked={false}
-              data-css-3=""
+              data-css-1=""
               id="gray"
               name="colors"
               onChange={[Function]}
