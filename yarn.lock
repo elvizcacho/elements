@@ -7830,13 +7830,6 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-broadcast@0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/react-broadcast/-/react-broadcast-0.7.1.tgz#732c1f4d3c9dbb9dbf0b92540c7c2490fb746dfb"
-  dependencies:
-    prop-types "^15.6.0"
-    warning "^3.0.0"
-
 react-calendar@2.18.1:
   version "2.18.1"
   resolved "https://registry.yarnpkg.com/react-calendar/-/react-calendar-2.18.1.tgz#f8ef9468d8566aa0d47d9d70c88917bb2030bcb9"
