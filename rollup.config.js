@@ -1,9 +1,11 @@
 import babel from 'rollup-plugin-babel'
 import includePaths from 'rollup-plugin-includepaths'
+import cleanup from 'rollup-plugin-cleanup'
 
 const plugins = [
   includePaths({ extensions: ['.js', '.jsx', '.json'] }),
   babel(),
+  cleanup(),
 ]
 
 export default {

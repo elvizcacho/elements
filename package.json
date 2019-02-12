@@ -3,7 +3,6 @@
   "version": "5.0.0-beta.3",
   "main": "cjs/index.js",
   "module": "esm/index.js",
-  "sideEffects": false,
   "repository": "https://github.com/allthings/elements",
   "author": "Moritz Schwörer <moritz.schwoerer@allthings.me>",
   "license": "MIT",
@@ -108,6 +107,7 @@
     "rimraf": "2.6.3",
     "rollup": "1.1.2",
     "rollup-plugin-babel": "4.3.2",
+    "rollup-plugin-cleanup": "3.1.1",
     "rollup-plugin-includepaths": "0.2.3",
     "snapshot-diff": "0.5.0"
   },
