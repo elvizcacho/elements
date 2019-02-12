@@ -159,6 +159,8 @@ export const Icons = [
   'wrench-screwdriver-filled',
 ]
 
+let hasWarnedBefore = false
+
 /**
  * Icons are used to visually communicate core parts of the product and
  * available actions. They can act as wayfinding tools to help users more
@@ -240,9 +242,11 @@ export default class Icon extends React.Component {
   loadIcon = name => {
     const iconName = this.getIconName(name)
     if (!this.context.resourcePath) {
-      console.warn(
-        'In order to use icons, you need to wrap everything into a ResourceProvider'
-      )
+      !hasWarnedBefore &&
+        console.warn(
+          'In order to use icons, you need to wrap everything into a ResourceProvider'
+        )
+      hasWarnedBefore = true
     } else if (!(iconName in Icon.icons)) {
       const resourcePath = this.context.resourcePath
       const path = `${resourcePath}/react-icons/production/${iconName}.svg`
