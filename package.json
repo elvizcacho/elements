@@ -1,6 +1,6 @@
 {
   "name": "@allthings/elements",
-  "version": "5.0.0-beta.2",
+  "version": "5.0.0-beta.3",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "sideEffects": false,
