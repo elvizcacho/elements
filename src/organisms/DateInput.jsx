@@ -47,10 +47,11 @@ class DateInput extends React.Component {
   }
 
   render() {
-    const { locale, name, onChange, ...props } = this.props
+    const { locale, name, onChange, readOnly, ...props } = this.props
+    const { date, showCalendar } = this.state
 
-    const stringValue = this.state.date
-      ? this.state.date.toLocaleDateString(locale, {
+    const stringValue = date
+      ? date.toLocaleDateString(locale, {
           weekday: 'long',
           year: 'numeric',
           month: 'long',
@@ -66,23 +67,23 @@ class DateInput extends React.Component {
           value={stringValue}
           icon="calendar-check"
           readOnly
-          {...css({ cursor: !this.props.readOnly && 'pointer' })}
+          {...css({ cursor: !readOnly && 'pointer' })}
           onClick={() =>
-            !this.props.readOnly &&
+            !readOnly &&
             this.setState(prevState => ({
               showCalendar: !prevState.showCalendar,
             }))
           }
         />
-        {this.state.showCalendar && (
+        {showCalendar && (
           <Calendar
             locale={locale}
             onChange={this.handleChange}
-            value={this.state.date}
+            value={date}
             {...props}
           />
         )}
-        {this.state.date && !this.props.readOnly && (
+        {date && !showCalendar && !readOnly && (
           <Absolute
             right={0}
             top={0}
