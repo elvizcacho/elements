@@ -96,7 +96,7 @@
     "react-generate-props": "0.5.0",
     "react-intl": "2.8.0",
     "react-test-renderer": "16.8.1",
-    "react-testing-library": "5.6.1",
+    "react-testing-library": "5.7.0",
     "rimraf": "2.6.3",
     "snapshot-diff": "0.5.0"
   },
