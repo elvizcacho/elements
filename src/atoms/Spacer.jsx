@@ -6,13 +6,15 @@ import { css } from 'glamor'
 /**
  * The vertical spacer is used to visually separate or create space between elements.
  */
-const Spacer = ({ height = 10, background }) => (
- <View {...css({ width: '100%', height, background })} />
+const Spacer = ({ width = '100%', height = 10, background }) => (
+  <View {...css({ width, height, background })} />
 )
 
 Spacer.propTypes = {
+  /** The width of space it should create **/
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   /** The height of space it should create **/
-  height: PropTypes.number,
+  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   /** Background color, default will be transparent **/
   background: PropTypes.string,
 }

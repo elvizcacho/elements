@@ -1,6 +1,9 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
+// Only needed to make Storybook work with IE 11, should be a noop for modern browsers anyway
+import 'cross-fetch/polyfill'
+
 import {
   Card,
   FloatingButton,
