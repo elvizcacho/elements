@@ -9,6 +9,8 @@ const plugins = [
 export default {
   plugins,
   preserveModules: true,
+  // some stuff got lost with treeshaking, so keep it for now
+  treeshake: false,
   input: [
     './src/index.js',
     // bundled separately to not import the 3rd party packages by default
