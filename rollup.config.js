@@ -9,7 +9,7 @@ const plugins = [
 export default {
   plugins,
   preserveModules: true,
-  input: './src/index.js',
+  input: ['./src/index.js', './src/behaviour/CDNIntlProvider.jsx'],
   output: [
     {
       dir: 'build/cjs',
