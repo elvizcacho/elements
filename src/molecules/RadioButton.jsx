@@ -13,11 +13,10 @@ const styles = {
     marginRight: 40,
     width: 'auto',
   }),
-  radio: primaryColor =>
-    css({
-      opacity: 0,
-      margin: 0,
-    }),
+  radio: css({
+    opacity: 0,
+    margin: 0,
+  }),
   required: css({
     position: 'absolute',
     right: 10,
@@ -62,7 +61,9 @@ class RadioButton extends React.Component {
   }
 
   state = {
-    checked: undefined,
+    // set initial value to boolean, to avoid the warning:
+    // `A component is changing an uncontrolled input of type radio to be controlled.`
+    checked: !!this.props.checked,
   }
 
   static getDerivedStateFromProps(props) {
@@ -101,7 +102,7 @@ class RadioButton extends React.Component {
 
     return (
       <Theme>
-        {({ theme, colorize }) => (
+        {({ theme }) => (
           <View {...styles.radioElement} {...props}>
             <Relative direction="row" alignV="center" alignH="center">
               <View htmlElement="label">
@@ -140,7 +141,7 @@ class RadioButton extends React.Component {
                     type="radio"
                     ref={inputRef}
                     name={name}
-                    {...styles.radio(theme.primary)}
+                    {...styles.radio}
                     value={value}
                     checked={this.state.checked}
                     onChange={this.handleChange}

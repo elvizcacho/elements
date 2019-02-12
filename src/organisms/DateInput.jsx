@@ -41,6 +41,11 @@ class DateInput extends React.Component {
     this.props.onChange(date)
   }
 
+  handleClear = () => {
+    this.setState({ date: undefined })
+    this.props.onChange('')
+  }
+
   render() {
     const { locale, name, onChange, ...props } = this.props
 
@@ -90,7 +95,7 @@ class DateInput extends React.Component {
               name="remove-light"
               color="black"
               size={10}
-              onClick={() => this.setState({ date: undefined })}
+              onClick={this.handleClear}
               {...css({ marginTop: -6 })}
             />
           </Absolute>

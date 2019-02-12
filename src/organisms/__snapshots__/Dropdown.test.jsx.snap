@@ -3,19 +3,14 @@
 exports[`Dropdown should render with placement bottom (default) 1`] = `
 .css-0,
 [data-css-0] {
-  position: relative;
-}
-
-.css-1,
-[data-css-1] {
   width: 100%;
   height: 50px;
   position: relative;
   background-color: #ffffff;
 }
 
-.css-2,
-[data-css-2] {
+.css-1,
+[data-css-1] {
   position: absolute;
   left: 15px;
   font-size: 10px;
@@ -23,6 +18,11 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   transition: all .225s ease-out;
   -webkit-transition: all .225s ease-out;
   -moz-transition: all .225s ease-out;
+}
+
+.css-2,
+[data-css-2] {
+  position: relative;
 }
 
 .css-3,
@@ -145,16 +145,16 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   role="combobox"
 >
   <div
-    data-css-0=""
+    data-css-2=""
     data-css-6=""
   >
     <div
       data-css-6=""
-      data-css-1=""
+      data-css-0=""
       onClick={[Function]}
     >
       <div
-        data-css-0=""
+        data-css-2=""
         data-css-6=""
         style={
           Object {
@@ -177,7 +177,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
         <div
           className="label"
           data-css-6=""
-          data-css-2=""
+          data-css-1=""
           style={
             Object {
               "opacity": 1,
@@ -242,7 +242,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
     </div>
   </div>
   <div
-    data-css-0=""
+    data-css-2=""
     data-css-6=""
   />
 </div>
@@ -251,19 +251,14 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
 exports[`Dropdown should render with placement top 1`] = `
 .css-0,
 [data-css-0] {
-  position: relative;
-}
-
-.css-1,
-[data-css-1] {
   width: 100%;
   height: 50px;
   position: relative;
   background-color: #ffffff;
 }
 
-.css-2,
-[data-css-2] {
+.css-1,
+[data-css-1] {
   position: absolute;
   left: 15px;
   font-size: 10px;
@@ -271,6 +266,11 @@ exports[`Dropdown should render with placement top 1`] = `
   transition: all .225s ease-out;
   -webkit-transition: all .225s ease-out;
   -moz-transition: all .225s ease-out;
+}
+
+.css-2,
+[data-css-2] {
+  position: relative;
 }
 
 .css-3,
@@ -393,16 +393,16 @@ exports[`Dropdown should render with placement top 1`] = `
   role="combobox"
 >
   <div
-    data-css-0=""
+    data-css-2=""
     data-css-6=""
   >
     <div
       data-css-6=""
-      data-css-1=""
+      data-css-0=""
       onClick={[Function]}
     >
       <div
-        data-css-0=""
+        data-css-2=""
         data-css-6=""
         style={
           Object {
@@ -425,7 +425,7 @@ exports[`Dropdown should render with placement top 1`] = `
         <div
           className="label"
           data-css-6=""
-          data-css-2=""
+          data-css-1=""
           style={
             Object {
               "opacity": 1,
@@ -490,7 +490,7 @@ exports[`Dropdown should render with placement top 1`] = `
     </div>
   </div>
   <div
-    data-css-0=""
+    data-css-2=""
     data-css-6=""
   />
 </div>

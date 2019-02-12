@@ -7,5 +7,6 @@ The vertical spacer is used to visually separate or create space between element
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
-|height|number|The height of space it should create *<br>Default: 10
+|width|union|The width of space it should create *<br>Default: '100%'
+|height|union|The height of space it should create *<br>Default: 10
 |background|string|Background color, default will be transparent *

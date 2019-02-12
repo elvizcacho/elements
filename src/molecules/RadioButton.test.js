@@ -1,7 +1,7 @@
 import React from 'react'
 import RadioButton from './RadioButton'
 import renderer from 'react-test-renderer'
-import { shallow } from 'enzyme'
+import { render, fireEvent } from 'react-testing-library'
 import ThemeProvider from '../behaviour/ThemeProvider'
 
 describe('<RadioButton />', () => {
@@ -17,13 +17,15 @@ describe('<RadioButton />', () => {
   })
 
   it('should handle onChange event', () => {
-    const handleChange = jest.fn()
-    const wrapper = shallow(
+    const { getByDisplayValue } = render(
       <ThemeProvider>
-        <RadioButton value="white" onChange={handleChange} />
+        <RadioButton value="white" />
       </ThemeProvider>
     )
-    wrapper.find('RadioButton').simulate('change')
-    expect(handleChange).toHaveBeenCalledTimes(1)
+
+    const input = getByDisplayValue('white')
+    fireEvent.click(input)
+
+    expect(input.checked).toBe(true)
   })
 })

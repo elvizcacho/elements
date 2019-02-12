@@ -172,6 +172,7 @@ exports[`<RadioButton /> should render without error 1`] = `
         data-css-11=""
       >
         <input
+          checked={false}
           data-css-1=""
           id="white"
           onChange={[Function]}
