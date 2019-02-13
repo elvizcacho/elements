@@ -6,3 +6,4 @@ docs/elements
 .cache
 /coverage
 /storybook-static
+/docs
