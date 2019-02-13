@@ -132,9 +132,11 @@ class Form extends React.Component {
   }
 
   render() {
+    const { children, method, ...props } = this.props
+
     return (
-      <form method={this.props.method} onSubmit={this.handleSubmit}>
-        {this.props.children}
+      <form method={method} onSubmit={this.handleSubmit} {...props}>
+        {children}
       </form>
     )
   }
