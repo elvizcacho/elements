@@ -27,7 +27,7 @@
     "react-intl": "^2.4.0"
   },
   "scripts": {
-    "create:release": "yarn lint && yarn test && yarn version && git push --tags origin HEAD && yarn build && cd build && yarn publish",
+    "create:release": "yarn lint && yarn test && yarn version && git push --tags origin HEAD && yarn build && yarn publish build --non-interactive",
     "prebuild": "rimraf build",
     "babel": "babel ./src --ignore *.spec.js --out-dir ./build",
     "babel:watch": "yarn babel --watch",
