@@ -51,6 +51,7 @@ class DropdownStory extends React.Component {
               Simple dropdown:
             </Text>
             <Dropdown
+              name="dropdown-simple"
               initialSelectedItem={this.state.items[1]}
               menuHeight={200}
               onSelect={item => this.setState({ simpleDropdown: item })}
@@ -60,6 +61,7 @@ class DropdownStory extends React.Component {
               Dropdown with icon and label:
             </Text>
             <Dropdown
+              name="dropdown-label"
               initialSelectedItem={this.state.items[1]}
               label="floating label yay"
               onSelect={item => this.setState({ withLabel: item })}
@@ -71,6 +73,7 @@ class DropdownStory extends React.Component {
               Clearable dropdown:
             </Text>
             <Dropdown
+              name="dropdown-clearable"
               label="clearable"
               initialSelectedItem={this.state.items[1]}
               menuHeight={200}
@@ -83,6 +86,7 @@ class DropdownStory extends React.Component {
               Drop up:
             </Text>
             <Dropdown
+              name="dropdown-dropup"
               initialSelectedItem={this.state.items[1]}
               label="dropUp"
               menuHeight={200}
