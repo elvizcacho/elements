@@ -1485,7 +1485,9 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
     data-css-21=""
     id="scroll-container"
   >
-    <form>
+    <form
+      method="POST"
+    >
       <div
         data-css-1=""
         data-css-10=""
