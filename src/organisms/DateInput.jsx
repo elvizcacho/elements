@@ -15,6 +15,8 @@ class DateInput extends React.Component {
   static propTypes = {
     /** Name of the input for a form **/
     name: PropTypes.string.isRequired,
+    /** The label of the input */
+    label: PropTypes.string,
     /** The locale decides on how to render date strings. Falls back to user locale if no value is provided **/
     locale: PropTypes.string,
     /** Called when a day is selected **/
@@ -47,7 +49,7 @@ class DateInput extends React.Component {
   }
 
   render() {
-    const { locale, name, onChange, readOnly, ...props } = this.props
+    const { locale, label, name, onChange, readOnly, ...props } = this.props
     const { date, showCalendar } = this.state
 
     const stringValue = date
@@ -65,6 +67,7 @@ class DateInput extends React.Component {
           name={name}
           placeholder="Select a day"
           value={stringValue}
+          label={label}
           icon="calendar-check"
           readOnly
           {...css({ cursor: !readOnly && 'pointer' })}
