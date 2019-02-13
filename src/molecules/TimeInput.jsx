@@ -252,7 +252,7 @@ class TimeInput extends React.Component {
               {label} {required && '*'}
             </Text>
 
-            <View {...css({ marginLeft: -2 })}>
+            <View direction="row" {...css({ marginLeft: -2 })}>
               <select
                 {...selectStyle(hasSelectedHour)}
                 onChange={this.handleSelectHour}
