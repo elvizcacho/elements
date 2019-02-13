@@ -37,8 +37,8 @@
     "test:example": "jest ./scripts/example.test.js",
     "prepublishOnly": "echo 'To publish this, go to build/ and run 'yarn publish''",
     "watch:test": "yarn test --watch",
-    "test": "NODE_ENV=test jest src/ scripts/",
-    "test:single": "NODE_ENV=test jest",
+    "test": "yarn jest src/ scripts/",
+    "jest": "NODE_ENV=test jest",
     "prettier": "prettier --no-semi --single-quote --trailing-comma es5 --write",
     "lint": "eslint --cache --ext .js,.jsx src",
     "storybook": "start-storybook -p 6006"
