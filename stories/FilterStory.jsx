@@ -77,6 +77,7 @@ export default class FilterStory extends React.Component {
                 />
                 <DateInput
                   name="select-date"
+                  label="Date"
                   locale="de-DE"
                   minDate={new Date()}
                   minDetail="year"
