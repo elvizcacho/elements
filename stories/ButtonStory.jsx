@@ -29,6 +29,14 @@ const CollapsibleStory = () => (
               Cancel
             </Button>
           </ListItem>
+          <ListItem alignH="space-around">
+            <Button backgroundColor="#ecf0f1" color="#333333">
+              Confirm
+            </Button>
+            <Button backgroundColor="#ecf0f1" color="#333333" secondary>
+              Cancel
+            </Button>
+          </ListItem>
         </List>
       </Card>
     </ResourceProvider>
