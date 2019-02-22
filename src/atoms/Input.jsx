@@ -13,7 +13,7 @@ const styles = {
       boxSizing: 'border-box',
       height: 50,
       width: '100%',
-      padding: '0 15px',
+      padding: '0 35px',
       paddingTop: showLabel ? 10 : 0,
       transition: 'padding-top .225s ease-out',
       border: 0,
