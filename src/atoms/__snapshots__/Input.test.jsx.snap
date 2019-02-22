@@ -29,7 +29,7 @@ exports[`Input component should render with all props 1`] = `
   box-sizing: border-box;
   height: 50px;
   width: 100%;
-  padding: 0 15px;
+  padding: 0 35px;
   padding-top: 10px;
   transition: padding-top .225s ease-out;
   border: 0;
@@ -216,7 +216,7 @@ exports[`Input component should render with required props only 1`] = `
   box-sizing: border-box;
   height: 50px;
   width: 100%;
-  padding: 0 15px;
+  padding: 0 35px;
   padding-top: 0;
   transition: padding-top .225s ease-out;
   border: 0;
