@@ -3,7 +3,7 @@ node_js: '8'
 cache: yarn
 before_script:
   - npm install -g yarn@1.12.3
-  - npm run security-check
+  - yarn security-check
 script:
-  - npm run test
-  - npm run lint
+  - yarn test
+  - yarn lint
