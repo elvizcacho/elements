@@ -7917,10 +7917,10 @@ react-dev-utils@^6.1.0:
     strip-ansi "4.0.0"
     text-table "0.2.0"
 
-react-docgen@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-4.0.0.tgz#d510ac42d495329cf76a8251bbaf52ea079c7e30"
-  integrity sha512-uA6BlsUD2nigCUj3IPY+/W4h6Y0H72zeVg2GE6IZpxjyfcUzTbjl5AO5ND4knG/8V5MGRPOHfTcaBWJcgLmPYA==
+react-docgen@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-4.0.1.tgz#164b78f40dea7cae60c28a4a13802641498f8480"
+  integrity sha512-9AeJlJ4M/wgWHbEkBho+XygjNO8qtp+1in5RSdtPtglk1UjArLT/TQypB4yQ+uqDC5kvOXNBHC37f666/4YFMg==
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/runtime" "^7.0.0"
