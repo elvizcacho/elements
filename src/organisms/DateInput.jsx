@@ -25,12 +25,15 @@ class DateInput extends React.Component {
     readOnly: PropTypes.bool,
     /** Set the default value which is shown on the first render **/
     defaultValue: PropTypes.instanceOf(Date),
+    /** The placeholder for the input field */
+    placeholder: PropTypes.string,
   }
 
   static defaultProps = {
     onChange: () => {},
     defaultValue: undefined,
     readOnly: false,
+    placeholder: '',
   }
 
   state = {
@@ -49,7 +52,15 @@ class DateInput extends React.Component {
   }
 
   render() {
-    const { locale, label, name, onChange, readOnly, ...props } = this.props
+    const {
+      locale,
+      label,
+      name,
+      onChange,
+      readOnly,
+      placeholder,
+      ...props
+    } = this.props
     const { date, showCalendar } = this.state
 
     const stringValue = date
@@ -65,7 +76,7 @@ class DateInput extends React.Component {
       <Relative direction="column">
         <Input
           name={name}
-          placeholder="Select a day"
+          placeholder={placeholder}
           value={stringValue}
           label={label}
           icon="calendar-check"
