@@ -773,7 +773,6 @@ exports[`Component Examples should match snapshot: Checkbox0 1`] = `
               name="notok"
               style="opacity:0;width:25px;height:25px;margin:0"
               type="checkbox"
-              value="false"
             />
           </div>
         </div>
@@ -1671,7 +1670,6 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
                     required=""
                     style="opacity:0;width:25px;height:25px;margin:0"
                     type="checkbox"
-                    value="false"
                   />
                 </div>
               </div>
