@@ -124,7 +124,6 @@ exports[`Test the checkbox component should tick it 1`] = `
         data-css-5=""
       >
         <input
-          checked={false}
           id="a"
           name="a"
           onChange={[Function]}
@@ -137,7 +136,6 @@ exports[`Test the checkbox component should tick it 1`] = `
             }
           }
           type="checkbox"
-          value={false}
         />
       </div>
     </div>
@@ -472,7 +470,6 @@ exports[`Test the checkbox component should work with children 1`] = `
         data-css-4=""
       >
         <input
-          checked={false}
           id="a"
           name="a"
           onChange={[Function]}
@@ -485,7 +482,6 @@ exports[`Test the checkbox component should work with children 1`] = `
             }
           }
           type="checkbox"
-          value={false}
         />
       </div>
     </div>
