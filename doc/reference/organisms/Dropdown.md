@@ -16,5 +16,5 @@ You can change it in "src/organisms/Dropdown.jsx" and run build:docs to update t
 |placeholder|string|The placeholder displayed in the input field.
 |label|string|A floating label
 |icon|string|Icon on the left of the input field
-|clearable|custom|If true, than the field can be cleared
-|name|string|For forms
+|clearable|bool|If true, than the field can be cleared
+|name **(required)**|string|For forms

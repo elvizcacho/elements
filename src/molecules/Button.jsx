@@ -16,12 +16,13 @@ const baseStyle = {
 }
 
 const primary = ({
+  color,
   disabled,
   disabledColor,
   disabledBackgroundColor,
   backgroundColor,
 }) => ({
-  color: 'white',
+  color,
   background: disabled ? disabledBackgroundColor : backgroundColor,
 })
 
@@ -57,7 +58,7 @@ function styles(
     ':hover': isSecondary
       ? !disabled && { color: col(backgroundColor, lightness(-20)) }
       : {
-          color: 'white',
+          color,
           background: disabled
             ? disabledBackgroundColor
             : backgroundColor.indexOf('#') !== -1

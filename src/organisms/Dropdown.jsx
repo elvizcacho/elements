@@ -70,9 +70,9 @@ export default class Dropdown extends React.PureComponent {
     /** Icon on the left of the input field */
     icon: PropTypes.string,
     /** If true, than the field can be cleared */
-    clearable: PropTypes.boolean,
+    clearable: PropTypes.bool,
     /** For forms */
-    name: PropTypes.string,
+    name: PropTypes.string.isRequired,
   }
 
   state = {
@@ -130,7 +130,7 @@ export default class Dropdown extends React.PureComponent {
               {...css({
                 alignItems: 'stretch',
                 border: 'none',
-                boxShadow: '1px 1px 3px rgba(29, 29, 29, 0.125)',
+                boxShadow: isOpen ? '1px 1px 3px rgba(29, 29, 29, 0.125)' : '',
                 display: 'flex',
                 flexDirection: 'column',
                 padding: 0,
@@ -178,7 +178,7 @@ export default class Dropdown extends React.PureComponent {
                     }
                   >
                     {showClearIcon ? (
-                      <Icon color="black" name="remove-light" size="10px" />
+                      <Icon color="black" name="remove-light" size={10} />
                     ) : (
                       <Icon
                         color="black"
@@ -187,7 +187,7 @@ export default class Dropdown extends React.PureComponent {
                             ? 'arrow-up'
                             : 'arrow-down'
                         }
-                        size="10px"
+                        size={10}
                       />
                     )}
                   </Absolute>

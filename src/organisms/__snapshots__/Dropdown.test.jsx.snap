@@ -29,7 +29,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
 [data-css-3] {
   align-items: stretch;
   border: none;
-  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  box-shadow: ;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -232,9 +232,9 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
           style={
             Object {
               "fill": false,
-              "height": "10px",
+              "height": 10,
               "stroke": "black",
-              "width": "10px",
+              "width": 10,
             }
           }
         />
@@ -277,7 +277,7 @@ exports[`Dropdown should render with placement top 1`] = `
 [data-css-3] {
   align-items: stretch;
   border: none;
-  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  box-shadow: ;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -480,9 +480,9 @@ exports[`Dropdown should render with placement top 1`] = `
           style={
             Object {
               "fill": false,
-              "height": "10px",
+              "height": 10,
               "stroke": "black",
-              "width": "10px",
+              "width": 10,
             }
           }
         />

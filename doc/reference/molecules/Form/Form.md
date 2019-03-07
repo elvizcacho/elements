@@ -13,9 +13,11 @@ are collected and get pass them as second argument to the onSubmit callback.
 To learn more, check out [controlled components section](https://reactjs.org/docs/forms.html#controlled-components) in the React docs.
 
 ## Getting started with 'Form'
-The Form components just <strong>does one simple thing</strong>:
+The Form component just <strong>does one simple thing</strong>:
 It intercepts the onSubmit Event and collects all data that the user entered and passes it as <strong>second parameter</strong> to the onSubmit callback,
 so you can work with it.
+
+The HTTP method that the browser uses to submit the form defaults to <strong>POST</strong>.  
 
 ## Simple example
 
@@ -110,4 +112,5 @@ Also see the <a href="/molecules/TextInput/">TextInput</a> for allowed props.
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
 |children|node|
+|method|string|<br>Default: 'POST'
 |onSubmit|func|<br>Default: _ => _

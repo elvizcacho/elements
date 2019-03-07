@@ -16,7 +16,8 @@ Column.propTypes = {
 const layout = columnNumber =>
   css({
     maxWidth: columnNumber === 0 && '380px',
-    overflow: 'auto',
+    overflowY: 'auto',
+    overflowX: 'hidden',
     position: 'relative', // for box-shadow to work properly
     boxShadow: columnNumber === 1 && '-2px 0px 5px 0px rgba(0,0,0,0.2)',
   })

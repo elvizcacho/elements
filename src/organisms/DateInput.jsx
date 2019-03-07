@@ -15,6 +15,8 @@ class DateInput extends React.Component {
   static propTypes = {
     /** Name of the input for a form **/
     name: PropTypes.string.isRequired,
+    /** The label of the input */
+    label: PropTypes.string,
     /** The locale decides on how to render date strings. Falls back to user locale if no value is provided **/
     locale: PropTypes.string,
     /** Called when a day is selected **/
@@ -23,12 +25,15 @@ class DateInput extends React.Component {
     readOnly: PropTypes.bool,
     /** Set the default value which is shown on the first render **/
     defaultValue: PropTypes.instanceOf(Date),
+    /** The placeholder for the input field */
+    placeholder: PropTypes.string,
   }
 
   static defaultProps = {
     onChange: () => {},
     defaultValue: undefined,
     readOnly: false,
+    placeholder: '',
   }
 
   state = {
@@ -47,10 +52,19 @@ class DateInput extends React.Component {
   }
 
   render() {
-    const { locale, name, onChange, ...props } = this.props
+    const {
+      locale,
+      label,
+      name,
+      onChange,
+      readOnly,
+      placeholder,
+      ...props
+    } = this.props
+    const { date, showCalendar } = this.state
 
-    const stringValue = this.state.date
-      ? this.state.date.toLocaleDateString(locale, {
+    const stringValue = date
+      ? date.toLocaleDateString(locale, {
           weekday: 'long',
           year: 'numeric',
           month: 'long',
@@ -62,27 +76,28 @@ class DateInput extends React.Component {
       <Relative direction="column">
         <Input
           name={name}
-          placeholder="Select a day"
+          placeholder={placeholder}
           value={stringValue}
+          label={label}
           icon="calendar-check"
           readOnly
-          {...css({ cursor: !this.props.readOnly && 'pointer' })}
+          {...css({ cursor: !readOnly && 'pointer' })}
           onClick={() =>
-            !this.props.readOnly &&
+            !readOnly &&
             this.setState(prevState => ({
               showCalendar: !prevState.showCalendar,
             }))
           }
         />
-        {this.state.showCalendar && (
+        {showCalendar && (
           <Calendar
             locale={locale}
             onChange={this.handleChange}
-            value={this.state.date}
+            value={date}
             {...props}
           />
         )}
-        {this.state.date && !this.props.readOnly && (
+        {date && !showCalendar && !readOnly && (
           <Absolute
             right={0}
             top={0}

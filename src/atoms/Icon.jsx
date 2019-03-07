@@ -32,7 +32,6 @@ export const Icons = [
   'calendar-check-filled',
   'camera',
   'camera-filled',
-  'comment',
   'car',
   'car-filled',
   'chat',
@@ -49,6 +48,8 @@ export const Icons = [
   'cloud-star-filled',
   'cog',
   'cog-filled',
+  'comment',
+  'comment-filled',
   'computer',
   'computer-filled',
   'download',
@@ -76,6 +77,8 @@ export const Icons = [
   'heart-crap-filled',
   'heart-filled',
   'house',
+  'house-add-filled',
+  'house-chart-filled',
   'house-filled',
   'lightbulb',
   'lightbulb-filled',
@@ -134,6 +137,7 @@ export const Icons = [
   'sort-desc',
   'sync',
   'sync-filled',
+  'temperature-filled',
   'ticket',
   'ticket-filled',
   'tile-filled',
@@ -158,6 +162,8 @@ export const Icons = [
   'wrench-screwdriver',
   'wrench-screwdriver-filled',
 ]
+
+let hasWarnedBefore = false
 
 /**
  * Icons are used to visually communicate core parts of the product and
@@ -240,9 +246,11 @@ export default class Icon extends React.Component {
   loadIcon = name => {
     const iconName = this.getIconName(name)
     if (!this.context.resourcePath) {
-      console.warn(
-        'In order to use icons, you need to wrap everything into a ResourceProvider'
-      )
+      !hasWarnedBefore &&
+        console.warn(
+          'In order to use icons, you need to wrap everything into a ResourceProvider'
+        )
+      hasWarnedBefore = true
     } else if (!(iconName in Icon.icons)) {
       const resourcePath = this.context.resourcePath
       const path = `${resourcePath}/react-icons/production/${iconName}.svg`

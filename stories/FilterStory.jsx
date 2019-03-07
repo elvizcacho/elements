@@ -50,6 +50,7 @@ export default class FilterStory extends React.Component {
                   height={2}
                 />
                 <Dropdown
+                  name="category"
                   icon="list-bullets-filled"
                   menuHeight={200}
                   onSelect={item => this.setState({ simpleDropdown: item })}
@@ -76,7 +77,9 @@ export default class FilterStory extends React.Component {
                   height={2}
                 />
                 <DateInput
+                  placeholder="Please select a day"
                   name="select-date"
+                  label="Date"
                   locale="de-DE"
                   minDate={new Date()}
                   minDetail="year"

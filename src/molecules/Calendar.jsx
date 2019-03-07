@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import UnstyledCalendar from 'react-calendar/dist/entry.nostyle'
 import { ColorPalette } from '@allthings/colors'
 import insertCSS from '../utils/insertCSS'
+import { color, lightness } from 'kewler'
 
 insertCSS(`
 .react-calendar {
@@ -26,10 +27,6 @@ insertCSS(`
   outline: none;
   transition: 250ms;
   font-size: inherit;
-}
-
-.react-calendar button.blocked {
-  color: ${ColorPalette.red};
 }
 
 .react-calendar button:enabled:hover {
@@ -76,7 +73,7 @@ insertCSS(`
 }
 .react-calendar__month-view__days__day--weekend {}
 .react-calendar__month-view__days__day--neighboringMonth {
-  color: ${ColorPalette.greyIntense};
+  color: ${ColorPalette.grey};
 }
 .react-calendar__year-view .react-calendar__tile,
 .react-calendar__decade-view .react-calendar__tile,
@@ -89,30 +86,39 @@ insertCSS(`
   padding: .75em .5em;
   background: none;
 }
-.react-calendar__tile:disabled {
-  color: ${ColorPalette.text.gray};
+.react-calendar__tile:disabled,
+.react-calendar button.blocked {
+  color: ${ColorPalette.grey} !important;
+  background: repeating-linear-gradient(
+    135deg,
+    ${ColorPalette.white},
+    ${ColorPalette.white} 5px,
+    ${ColorPalette.whiteIntense} 5px,
+    ${ColorPalette.whiteIntense} 10px
+  );
 }
 .react-calendar__tile:enabled:hover,
 .react-calendar__tile:enabled:focus {
-  background-color: #e6e6e6;
+  color: white;
+  background-color: ${ColorPalette.blue};
 }
 .react-calendar__tile--hasActive {
-  background: #76baff;
+  background: ${color(ColorPalette.blue, lightness(20))}
 }
 .react-calendar__tile--hasActive:enabled:hover,
 .react-calendar__tile--hasActive:enabled:focus {
-  background: #a9d4ff;
+  background: ${color(ColorPalette.blue, lightness(25))}
 }
 .react-calendar__tile--active {
-  background: #006edc;
   color: white;
+  background: ${ColorPalette.blue};
 }
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
-  background: #1087ff;
+  background: ${color(ColorPalette.blue, lightness(-20))}
 }
 .react-calendar--selectRange .react-calendar__tile--hover {
-  background-color: #e6e6e6;
+  background: ${color(ColorPalette.blue, lightness(35))}
 }
 `)
 /**
