@@ -57,11 +57,19 @@ class Checkbox extends React.Component {
   }
 
   static defaultProps = {
-    checked: false,
     labelSize: 'l',
+    onChange: () => {},
   }
 
-  handleChange = () => this.setState(({ checked }) => ({ checked: !checked }))
+  isControlled = () => typeof this.props.checked !== 'undefined'
+
+  handleChange = e => {
+    const checked = !this.state.checked
+    if (!this.isControlled()) {
+      this.setState({ checked })
+    }
+    this.props.onChange(e)
+  }
 
   render() {
     const {
@@ -73,8 +81,8 @@ class Checkbox extends React.Component {
       backgroundColor,
       ...props
     } = this.props
-    const realChecked = checked || this.state.checked
-    const changeHandler = onChange || this.handleChange
+    const realChecked = this.isControlled() ? checked : this.state.checked
+
     return (
       <Theme>
         {({ theme, colorize }) => (
@@ -104,7 +112,7 @@ class Checkbox extends React.Component {
                       height: '25px',
                       margin: 0,
                     }}
-                    onChange={changeHandler}
+                    onChange={this.handleChange}
                     {...props}
                   />
                 </Absolute>
