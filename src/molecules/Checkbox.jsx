@@ -64,9 +64,8 @@ class Checkbox extends React.Component {
   isControlled = () => typeof this.props.checked !== 'undefined'
 
   handleChange = e => {
-    const checked = !this.state.checked
     if (!this.isControlled()) {
-      this.setState({ checked })
+      this.setState(({ checked }) => ({ checked: !checked }))
     }
     this.props.onChange(e)
   }
