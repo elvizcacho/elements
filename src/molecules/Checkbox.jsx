@@ -21,6 +21,7 @@ const styles = {
       borderStyle: 'solid',
       borderColor: checked ? background : 'lightGrey',
       transition: '250ms',
+      cursor: 'pointer',
     }),
   text: css({
     width: 200,
@@ -110,6 +111,7 @@ class Checkbox extends React.Component {
                       width: '25px',
                       height: '25px',
                       margin: 0,
+                      cursor: 'pointer',
                     }}
                     onChange={this.handleChange}
                     {...props}
