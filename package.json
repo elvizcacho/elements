@@ -64,7 +64,7 @@
     "@babel/preset-env": "7.3.4",
     "@babel/preset-react": "7.0.0",
     "@babel/runtime": "7.3.4",
-    "@storybook/addon-actions": "5.0.0",
+    "@storybook/addon-actions": "5.0.1",
     "@storybook/addon-links": "5.0.0",
     "@storybook/react": "5.0.0",
     "babel-eslint": "10.0.1",
