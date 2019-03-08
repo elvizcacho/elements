@@ -64,22 +64,24 @@ const checkFormat = (countryIndex, pureNumber, areaCode) => {
           }
         })
       : // spain's (+39) area codes starts with 0, and keeps the 0 even when calling internationally
-        pureNumber[countryCodeLength] === '0' && countryCode !== '39'
-        ? [
-            countryCode,
-            ' (0) ',
-            validAreaCode,
-            removedCodes.substring(
-              pureNumber.length <= numberInFormat + codeLength + 1
-                ? 1
-                : pureNumber.length > numberInFormat + codeLength + 1 &&
-                  pureNumber[countryCodeLength] === '0' &&
-                  !validAreaCode
-                  ? 1
-                  : 0
-            ),
-          ]
-        : code ? [code, ' ', validAreaCode, removedCodes] : pureNumber
+      pureNumber[countryCodeLength] === '0' && countryCode !== '39'
+      ? [
+          countryCode,
+          ' (0) ',
+          validAreaCode,
+          removedCodes.substring(
+            pureNumber.length <= numberInFormat + codeLength + 1
+              ? 1
+              : pureNumber.length > numberInFormat + codeLength + 1 &&
+                pureNumber[countryCodeLength] === '0' &&
+                !validAreaCode
+              ? 1
+              : 0
+          ),
+        ]
+      : code
+      ? [code, ' ', validAreaCode, removedCodes]
+      : pureNumber
 
   return ['+', ...formattingArea]
 }
@@ -111,7 +113,9 @@ const formattedNumber = number => {
   const pureNumber =
     joinedMatch.substring(0, 2) === '00'
       ? joinedMatch.substring(2)
-      : joinedMatch[0] === '0' ? joinedMatch.substring(1) : joinedMatch
+      : joinedMatch[0] === '0'
+      ? joinedMatch.substring(1)
+      : joinedMatch
 
   // check first 3 digits of pureNumber to see if a country matches, else return pureNumber
   const loopThreeDigits = [...Array(3)].map((_, index) =>
@@ -196,10 +200,10 @@ class PhoneInput extends Component {
           previousSubstring === currentSubstring
             ? selectionStart
             : previous.length <= value.length && lastNumber !== -1
-              ? lastNumber
-              : previous.length <= value.length
-                ? value.length
-                : end - nonNumber[0] - nonNumber[1] - offset
+            ? lastNumber
+            : previous.length <= value.length
+            ? value.length
+            : end - nonNumber[0] - nonNumber[1] - offset
         input.setSelectionRange(position, position)
       } else if (deleted || deleted === 0) {
         input.setSelectionRange(deleted, deleted)
@@ -324,7 +328,7 @@ class PhoneInput extends Component {
         width: '100%',
       },
       span: {
-        marginLeft: '5px',
+        paddingLeft: '5px',
         userSelect: 'none',
         position: 'absolute',
         zIndex: this.state.spanZ,
