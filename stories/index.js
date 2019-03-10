@@ -33,11 +33,13 @@ import Button from '../src/molecules/Button'
 import ConfirmStory from './ConfirmStory'
 import FilterStory from './FilterStory'
 import ButtonStory from './ButtonStory'
+import SpinnerStory from './SpinnerStory'
 
 storiesOf('Animations', module)
   .addDecorator(createViewportDecorator())
   .add('HorizontalView', () => <HorizontalView />)
   .add('SimpleLayout', () => <SimpleLayoutStory />)
+  .add('Spinner', () => <SpinnerStory />)
 
 storiesOf('Forms', module)
   .addDecorator(createViewportDecorator())
