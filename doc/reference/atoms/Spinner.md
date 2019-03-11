@@ -11,4 +11,5 @@ The spinner is usefull to indicate a loading state
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
+|color|string|<br>Default: '#369980'
 |size|number|<br>Default: 30
