@@ -77,6 +77,7 @@ export default class FilterStory extends React.Component {
                   height={2}
                 />
                 <DateInput
+                  placeholder="Please select a day"
                   name="select-date"
                   label="Date"
                   locale="de-DE"

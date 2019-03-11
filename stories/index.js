@@ -8,12 +8,12 @@ import {
   Card,
   FloatingButton,
   Form,
+  PhoneInput,
   ReadMore,
   SimpleLayout,
   Text,
   TextInput,
   ThemeProvider,
-  PhoneInput,
 } from '../src/'
 import HorizontalView from './HorizontalView'
 import FormStory from './FormStory'
@@ -33,7 +33,7 @@ import Button from '../src/molecules/Button'
 import ConfirmStory from './ConfirmStory'
 import FilterStory from './FilterStory'
 import ButtonStory from './ButtonStory'
-import SpinnerStory from './SpinnerStory'
+import CheckboxStory from './CheckboxStory'
 
 storiesOf('Animations', module)
   .addDecorator(createViewportDecorator())
@@ -46,6 +46,7 @@ storiesOf('Forms', module)
   .add('Full form', () => <FormStory />)
   .add('Confirm', () => <ConfirmStory />)
   .add('RadioButton', () => <RadioButtonStory />)
+  .add('Checkbox', () => <CheckboxStory />)
   .add('PhoneInput', () => {
     return (
       <ThemeProvider>

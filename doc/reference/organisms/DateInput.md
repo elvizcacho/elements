@@ -13,3 +13,4 @@ You can change it in "src/organisms/DateInput.jsx" and run build:docs to update 
 |onChange|func|Called when a day is selected *<br>Default: () => {}
 |readOnly|bool|If a date should not be a changeable *<br>Default: false
 |defaultValue|instanceOf|Set the default value which is shown on the first render *<br>Default: undefined
+|placeholder|string|The placeholder for the input field<br>Default: ''

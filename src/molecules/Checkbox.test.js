@@ -1,4 +1,6 @@
 import React from 'react'
+import { render, fireEvent } from 'react-testing-library'
+
 import Checkbox from './Checkbox'
 import { ThemeProvider } from '../'
 
@@ -34,5 +36,28 @@ describe('Test the checkbox component', () => {
     )
     expect(wrapper).toMatchSnapshot()
     wrapper.unmount()
+  })
+
+  it('should work as controlled component', () => {
+    const handleChange = jest.fn()
+
+    const renderCheckboxWithChecked = checked => (
+      <Checkbox
+        label="label"
+        name="a"
+        checked={checked}
+        onChange={handleChange}
+      />
+    )
+
+    const { getByLabelText, rerender } = render(renderCheckboxWithChecked(true))
+
+    // a click shouldn't change 'checked'
+    fireEvent.click(getByLabelText('label'))
+    expect(getByLabelText('label').checked).toBe(true)
+    expect(handleChange).toBeCalled()
+
+    rerender(renderCheckboxWithChecked(false))
+    expect(getByLabelText('label').checked).toBe(false)
   })
 })

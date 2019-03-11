@@ -623,6 +623,7 @@ exports[`Component Examples should match snapshot: Checkbox0 1`] = `
   border-style: solid;
   border-color: #3598db;
   transition: 250ms;
+  cursor: pointer;
   -webkit-transition: 250ms;
   -moz-transition: 250ms;
 }
@@ -689,6 +690,7 @@ exports[`Component Examples should match snapshot: Checkbox0 1`] = `
   border-style: solid;
   border-color: lightGrey;
   transition: 250ms;
+  cursor: pointer;
   -webkit-transition: 250ms;
   -moz-transition: 250ms;
 }
@@ -729,7 +731,7 @@ exports[`Component Examples should match snapshot: Checkbox0 1`] = `
               checked=""
               id="ok"
               name="ok"
-              style="opacity:0;width:25px;height:25px;margin:0"
+              style="opacity:0;width:25px;height:25px;margin:0;cursor:pointer"
               type="checkbox"
               value="true"
             />
@@ -771,9 +773,8 @@ exports[`Component Examples should match snapshot: Checkbox0 1`] = `
             <input
               id="notok"
               name="notok"
-              style="opacity:0;width:25px;height:25px;margin:0"
+              style="opacity:0;width:25px;height:25px;margin:0;cursor:pointer"
               type="checkbox"
-              value="false"
             />
           </div>
         </div>
@@ -1285,6 +1286,7 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   border-style: solid;
   border-color: lightGrey;
   transition: 250ms;
+  cursor: pointer;
   -webkit-transition: 250ms;
   -moz-transition: 250ms;
 }
@@ -1669,9 +1671,8 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
                     id="accept"
                     name="accept"
                     required=""
-                    style="opacity:0;width:25px;height:25px;margin:0"
+                    style="opacity:0;width:25px;height:25px;margin:0;cursor:pointer"
                     type="checkbox"
-                    value="false"
                   />
                 </div>
               </div>
@@ -2977,7 +2978,7 @@ exports[`Component Examples should match snapshot: PhoneInput0 1`] = `
     <div
       data-css-5=""
       data-css-0=""
-      style="margin-left:5px;user-select:none;position:absolute;z-index:10;width:100%;top:50%;transform:translateY(-50%)"
+      style="padding-left:5px;user-select:none;position:absolute;z-index:10;width:100%;top:50%;transform:translateY(-50%)"
     >
       +
     </div>
