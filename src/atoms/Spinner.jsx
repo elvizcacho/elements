@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import { css, keyframes } from 'glamor'
 import { isIE11 } from '../utils/viewport'
 
@@ -17,7 +16,6 @@ const spin = keyframes('load', {
 
 const styles = size => ({
   spinner: css({
-    textIndent: '-9999em',
     width: size - 6,
     height: size - 6,
     borderRadius: '50%',
@@ -25,35 +23,11 @@ const styles = size => ({
     borderTop: '2px solid #369980',
     borderLeft: '2px solid #369980',
     borderBottom: '2px solid #369980',
-    // background: '#369980',
     position: 'relative',
     animation: `${spin} 1.1s infinite linear`,
     WebkitTransform: 'translateZ(0)',
     msTransform: 'translateZ(0)',
     transform: 'translateZ(0)',
-    // '&:before': {
-    //   width: '50%',
-    //   height: '50%',
-    //   background: '#369980',
-    //   borderRadius: '100% 0 0 0',
-    //   position: 'absolute',
-    //   top: 0,
-    //   left: 0,
-    //   content: ' ',
-    // },
-    // '&:after': {
-    //   backgroundColor: 'white',
-    //   width: '80%',
-    //   height: '80%',
-    //   borderRadius: '50%',
-    //   content: ' ',
-    //   margin: 'auto',
-    //   position: 'absolute',
-    //   top: 0,
-    //   left: 0,
-    //   bottom: 0,
-    //   right: 0,
-    // },
   }),
 })
 
@@ -110,10 +84,9 @@ const Spinner = ({ size = 30 }) =>
             values="125.5 125.5;1 250;125.5 125.5"
           />
         </circle>
-      </svg>{' '}
-      {'<-- Chrome'}
+      </svg>
       <div>
-        <div {...css(styles(size).spinner)} /> {'↑ Internet Explorer'}
+        <div {...css(styles(size).spinner)} />
       </div>
     </div>
   )
