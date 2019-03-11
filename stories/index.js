@@ -39,7 +39,6 @@ storiesOf('Animations', module)
   .addDecorator(createViewportDecorator())
   .add('HorizontalView', () => <HorizontalView />)
   .add('SimpleLayout', () => <SimpleLayoutStory />)
-  .add('Spinner', () => <SpinnerStory />)
 
 storiesOf('Forms', module)
   .addDecorator(createViewportDecorator())
