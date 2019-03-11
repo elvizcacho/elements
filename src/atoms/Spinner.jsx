@@ -1,3 +1,4 @@
+import { ColorPalette } from '@allthings/colors'
 import React from 'react'
 import PropTypes from 'prop-types'
 import { css, keyframes } from 'glamor'
@@ -40,7 +41,7 @@ const styles = (color, size) => ({
  * ```
  */
 
-const Spinner = ({ color = '#369980', size = 30 }) =>
+const Spinner = ({ color = ColorPalette.blue, size = 30 }) =>
   isIE11(window.navigator.userAgent) ? (
     <div {...css(styles(color, size).spinner)} />
   ) : (
