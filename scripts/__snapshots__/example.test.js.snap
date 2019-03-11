@@ -2810,7 +2810,7 @@ exports[`Component Examples should match snapshot: List1 1`] = `
             cy="50"
             fill="none"
             r="40"
-            stroke="#369980"
+            stroke="#3598db"
             stroke-linecap="round"
             stroke-width="8"
           >
@@ -4226,7 +4226,7 @@ exports[`Component Examples should match snapshot: Spinner0 1`] = `
       cy="50"
       fill="none"
       r="40"
-      stroke="#369980"
+      stroke="#3598db"
       stroke-linecap="round"
       stroke-width="8"
     >
