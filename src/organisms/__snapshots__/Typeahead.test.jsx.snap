@@ -1445,7 +1445,7 @@ exports[`Test the typeahead component should render differently when loading 2`]
           cy="50"
           fill="none"
           r="40"
-          stroke="#369980"
+          stroke="#3598db"
           strokeLinecap="round"
           strokeWidth="8"
         >
