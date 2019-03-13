@@ -8,9 +8,11 @@ import {
 } from '../src/'
 import { css } from 'glamor'
 import Text from '../src/atoms/Text'
+import { ColorPalette } from '@allthings/colors'
 
 import Names from './data/names'
 import Movies from './data/movies'
+import Icon from '../src/atoms/Icon'
 
 const DEFAULT_VALUE = 'Danielle Lilleman'
 const MARGIN = 15 // px
@@ -28,6 +30,28 @@ const debounce = (callback, time = 200, interval) => (...args) =>
 /* eslint-enable standard/no-callback-literal */
 
 const delay = time => new Promise(resolve => setTimeout(resolve, time))
+
+const Label = ({ icon, color, text }) => {
+  return (
+    <div
+      {...css({
+        display: 'flex',
+        alignItems: 'center',
+      })}
+    >
+      <div
+        {...css({
+          backgroundColor: color,
+          height: '15px',
+          width: '15px',
+        })}
+      >
+        {icon ? <Icon name={icon} color={color} /> : null}
+      </div>
+      <div {...css({ marginLeft: '5px' })}>{text}</div>
+    </div>
+  )
+}
 
 class TypeaheadStory extends React.Component {
   state = {
@@ -64,6 +88,18 @@ class TypeaheadStory extends React.Component {
     value !== '' && this.debouncedFetch()
   }
 
+  getAllthingsColors = () =>
+    Object.keys(ColorPalette).map(key => ({
+      label: (
+        <Label
+          key={key}
+          color={ColorPalette[key]}
+          text={`${ColorPalette[key]}`}
+        />
+      ),
+      value: ColorPalette[key],
+    }))
+
   render() {
     const { clearOnSelectValue, forcedValue, loading, movies } = this.state
     return (
@@ -74,7 +110,14 @@ class TypeaheadStory extends React.Component {
               Static:
             </Text>
             <Typeahead autoOpen items={Names} placeholder="Select an agent." />
-
+            <Text strong {...STYLES.title(true)}>
+              Static with component as label:
+            </Text>
+            <Typeahead
+              autoOpen
+              items={this.getAllthingsColors()}
+              placeholder="Select an color."
+            />
             <Text strong {...STYLES.title()}>
               Uncontrolled component:
             </Text>

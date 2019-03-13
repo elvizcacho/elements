@@ -115,13 +115,15 @@ export default class Typeahead extends React.PureComponent {
   }
 
   getHintText = ({ inputValue, itemText }) => {
-    if (itemText.toLowerCase().startsWith(inputValue.toLowerCase())) {
+    if (
+      itemText &&
+      itemText.toLowerCase().startsWith(inputValue.toLowerCase())
+    ) {
       const escaped = escapeRegex(inputValue)
       const restText = itemText
         .split(new RegExp(`(${escaped})`, 'i'))
         .slice(2)
         .join('')
-
       return inputValue + restText
     }
     return ''
@@ -240,6 +242,18 @@ export default class Typeahead extends React.PureComponent {
     }
   }
 
+  mapLabelToItemWithJSXLabel = label => {
+    const { items } = this.props
+    return items.find(item => this.getTextFromJSX(item.label) === label)
+  }
+
+  mapItemWithJSXLabelToItem = item => ({
+    label: this.getTextFromJSX(item.label),
+    value: item.value,
+  })
+
+  getTextFromJSX = jsx => jsx.props.text || jsx.props.label
+
   render() {
     const {
       autoOpen,
@@ -269,7 +283,13 @@ export default class Typeahead extends React.PureComponent {
         initialInputValue={defaultValue}
         initialSelectedItem={defaultSelectedItem}
         inputValue={value}
-        itemToString={item => (item ? item.label : '')}
+        itemToString={item =>
+          item
+            ? typeof item.label === 'object'
+              ? this.getTextFromJSX(item.label)
+              : item.label
+            : ''
+        }
         onChange={onSelect}
         onInputValueChange={onInputValueChange}
         onStateChange={this.handleStateChange}
@@ -288,9 +308,26 @@ export default class Typeahead extends React.PureComponent {
           selectHighlightedItem,
           toggleMenu,
         }) => {
-          const filtered = matchSorter(items, inputValue, {
+          const isObject = typeof (items[0] && items[0].label) === 'object'
+
+          let itemsToBeProcessed = items
+          if (isObject) {
+            itemsToBeProcessed = items.map(this.mapItemWithJSXLabelToItem)
+          }
+
+          const preFiltered = matchSorter(itemsToBeProcessed, inputValue, {
             keys: ['label'],
           }).slice(0, limit)
+
+          let filtered = preFiltered
+          if (isObject) {
+            filtered = preFiltered.map(pf =>
+              this.mapLabelToItemWithJSXLabel(pf.label)
+            )
+          }
+
+          const label =
+            filtered[highlightedIndex] && filtered[highlightedIndex].label
 
           // Opt for <div> here because we don't want to mess with downshifts
           // getRootProps and refKey, which is kind of strange.
@@ -322,64 +359,100 @@ export default class Typeahead extends React.PureComponent {
                   },
                 })}
               >
-                <Absolute top={0} left={0} {...css({ width: '100%' })}>
-                  <Input
-                    autoComplete="off"
-                    name="hint"
-                    tabIndex={-1}
-                    value={
-                      inputValue && filtered.length > 0
-                        ? this.getHintText({
-                            inputValue,
-                            itemText:
-                              (filtered[highlightedIndex] &&
-                                filtered[highlightedIndex].label) ||
-                              '',
-                          })
-                        : ''
-                    }
+                {!isObject || !selectedItem ? (
+                  <>
+                    <Absolute top={0} left={0} {...css({ width: '100%' })}>
+                      <Input
+                        autoComplete="off"
+                        name="hint"
+                        tabIndex={-1}
+                        value={
+                          inputValue && filtered.length > 0
+                            ? this.getHintText({
+                                inputValue,
+                                itemText: isObject
+                                  ? label.props.text
+                                  : label || '',
+                              })
+                            : ''
+                        }
+                        {...css({
+                          background: '#fff',
+                          border: 'none',
+                          boxShadow: 'none',
+                          color: '#999',
+                          opacity: 1,
+                          height: INPUT_FIELD_HEIGHT,
+                        })}
+                      />
+                    </Absolute>
+                    <Input
+                      name="typed"
+                      onClick={
+                        autoOpen && !selectedItem ? toggleMenu : undefined
+                      }
+                      onInputRef={this.setInputRef}
+                      placeholder={placeholder}
+                      {...getInputProps({
+                        onKeyDown: e => {
+                          if (
+                            ['Tab', 'ArrowRight', 'End'].includes(e.key) &&
+                            highlightedIndex !== null &&
+                            isOpen
+                          ) {
+                            selectHighlightedItem()
+                            // Clear the selection if clearOnSelect is used as we
+                            // want to keep the input empty.
+                            if (clearOnSelect) clearSelection()
+                            e.preventDefault()
+                          }
+                        },
+                      })}
+                      {...css({
+                        background: 'transparent',
+                        border: 'none',
+                        borderBottom:
+                          isOpen &&
+                          `1px solid ${ColorPalette.lightGreyIntense}`,
+                        boxShadow: 'none',
+                        color: '#000',
+                        outline: 'none',
+                        width: '100%',
+                        height: INPUT_FIELD_HEIGHT,
+                      })}
+                    />
+                  </>
+                ) : null}
+
+                {isObject && selectedItem ? (
+                  <div
                     {...css({
                       background: '#fff',
                       border: 'none',
+                      borderBottom:
+                        isOpen && `1px solid ${ColorPalette.lightGreyIntense}`,
                       boxShadow: 'none',
-                      color: '#999',
+                      color: '#000',
+                      width: '100%',
+                      outline: 'none',
                       opacity: 1,
                       height: INPUT_FIELD_HEIGHT,
+                      display: 'flex',
+                      alignItems: 'center',
                     })}
-                  />
-                </Absolute>
-                <Input
-                  name="typed"
-                  onClick={autoOpen && !selectedItem ? toggleMenu : undefined}
-                  onInputRef={this.setInputRef}
-                  placeholder={placeholder}
-                  {...getInputProps({
-                    onKeyDown: e => {
-                      if (
-                        ['Tab', 'ArrowRight', 'End'].includes(e.key) &&
-                        highlightedIndex !== null &&
-                        isOpen
-                      ) {
-                        selectHighlightedItem()
-                        // Clear the selection if clearOnSelect is used as we
-                        // want to keep the input empty.
-                        if (clearOnSelect) clearSelection()
-                        e.preventDefault()
-                      }
-                    },
-                  })}
-                  {...css({
-                    background: 'transparent',
-                    border: 'none',
-                    borderBottom:
-                      isOpen && `1px solid ${ColorPalette.lightGreyIntense}`,
-                    boxShadow: 'none',
-                    color: '#000',
-                    outline: 'none',
-                    width: '100%',
-                    height: INPUT_FIELD_HEIGHT,
-                  })}
-                />
+                    onClick={autoOpen ? toggleMenu : undefined}
+                  >
+                    <Text
+                      {...css({
+                        marginLeft: '15px',
+                        pointerEvents: 'none',
+                      })}
+                    >
+                      {this.mapLabelToItemWithJSXLabel(inputValue).label}
+                    </Text>
+                  </div>
+                ) : null}
+
                 <Absolute
                   alignV="center"
                   direction="row"
