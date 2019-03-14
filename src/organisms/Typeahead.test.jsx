@@ -1,5 +1,6 @@
 import React from 'react'
 import Typeahead from './Typeahead'
+import PropTypes from 'prop-types'
 
 // TODO: we should having to test within those instances but Enzyme unmount()
 // method is buggy!
