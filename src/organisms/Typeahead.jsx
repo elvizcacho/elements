@@ -426,6 +426,7 @@ export default class Typeahead extends React.PureComponent {
 
                 {isObject && selectedItem ? (
                   <div
+                    className="jsx"
                     {...css({
                       background: '#fff',
                       border: 'none',

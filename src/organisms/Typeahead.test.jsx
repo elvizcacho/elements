@@ -13,6 +13,8 @@ const INPUT = instance => `input#downshift-${instance}-input`
 
 const INPUT_HINT = 'input[name="hint"]'
 
+const JSX_DIV = 'div.jsx'
+
 const ITEMS = [
   { value: 1, label: DEFAULT_VALUE },
   { value: 2, label: 'Abra' },
@@ -362,5 +364,63 @@ describe('Test the typeahead component', () => {
     // Simulate clearing the input with the keyboard.
     wrapper.setProps({ value: '' })
     expect(wrapper.find(CLEAR_SELECTION)).toHaveLength(0)
+  })
+
+  describe('Test typeahead component with jsx labels', () => {
+    const Label = ({ color, text }) => (
+      <div>
+        {color} is {text}
+      </div>
+    )
+
+    const ITEMS = [
+      {
+        label: <Label color={'#FFF'} text={'White'} />,
+        value: '#FFF',
+      },
+      {
+        label: <Label color={'#000'} text={'BLACK'} />,
+        value: '#000',
+      },
+      {
+        label: <Label color={'#666'} text={'Grey'} />,
+        value: '#666',
+      },
+    ]
+    it('should be a simple static one - in depth testing of the core behavior with JSX labels', () => {
+      const wrapper = mount(
+        <Typeahead items={ITEMS} placeholder={PLACEHOLDER} />
+      )
+      expect(wrapper).toMatchSnapshot()
+      // JSX_DIV should not be visible at this point
+      expect(wrapper.find(JSX_DIV)).toHaveLength(0)
+      // Perform a click on the input.
+      wrapper.find(INPUT(19)).simulate('click')
+      // No menu should be there!
+      expect(wrapper.find(DOWNSHIFT_ITEM(4, 0))).toHaveLength(0)
+      // 1st case scenario: select by clicking the item.
+      wrapper.find(INPUT(19)).simulate('change', { target: { value: 'B' } })
+      // Check the input value.
+      expect(wrapper.find(INPUT(19)).prop('value')).toBe('B')
+      // Black color is found
+      expect(wrapper.find(DOWNSHIFT_ITEM(19, 0))).toHaveLength(1)
+      // Click on found item from list
+      wrapper.find(DOWNSHIFT_ITEM(19, 0)).simulate('click')
+      // JSX_DIV should be visible and inputs shouldn't
+      expect(wrapper.find(JSX_DIV)).toHaveLength(1)
+      // check value is displayed correctly
+      expect(wrapper.find(JSX_DIV).text()).toBe('#000 is BLACK')
+      expect(wrapper.find(INPUT(19))).toHaveLength(0)
+      // We should be able to clear it.
+      expect(wrapper.find(CLEAR_SELECTION)).toHaveLength(1)
+      wrapper.find(CLEAR_SELECTION).simulate('click')
+      // JSX_DIV is not visible anymore and inputs are instead
+      expect(wrapper.find(JSX_DIV)).toHaveLength(0)
+      expect(wrapper.find(INPUT(19))).toHaveLength(1)
+      // list of items is open and all 3 items are visible
+      expect(wrapper.find(DOWNSHIFT_ITEM(19, 0))).toHaveLength(1)
+      expect(wrapper.find(DOWNSHIFT_ITEM(19, 1))).toHaveLength(1)
+      expect(wrapper.find(DOWNSHIFT_ITEM(19, 2))).toHaveLength(1)
+    })
   })
 })

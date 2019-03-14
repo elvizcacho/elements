@@ -116,7 +116,7 @@ class TypeaheadStory extends React.Component {
             <Typeahead
               autoOpen
               items={this.getAllthingsColors()}
-              placeholder="Select an color."
+              placeholder="Select a color."
             />
             <Text strong {...STYLES.title()}>
               Uncontrolled component:
