@@ -318,7 +318,7 @@ export default class Typeahead extends React.PureComponent {
                 width: '100%',
               })}
             >
-              <div
+              <View
                 {...css({
                   display: 'flex',
                   alignItems: 'center',
@@ -445,7 +445,7 @@ export default class Typeahead extends React.PureComponent {
                     )}
                   </Absolute>
                 </Relative>
-              </div>
+              </View>
               <Relative>
                 {isOpen && (
                   <List
