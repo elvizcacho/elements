@@ -397,7 +397,7 @@ describe('Test the typeahead component', () => {
       // Perform a click on the input.
       wrapper.find(INPUT(19)).simulate('click')
       // No menu should be there!
-      expect(wrapper.find(DOWNSHIFT_ITEM(4, 0))).toHaveLength(0)
+      expect(wrapper.find(DOWNSHIFT_ITEM(19, 0))).toHaveLength(0)
       // 1st case scenario: select by clicking the item.
       wrapper.find(INPUT(19)).simulate('change', { target: { value: 'B' } })
       // Check the input value.
