@@ -42,7 +42,7 @@ const styles = (color, size) => ({
  */
 
 const Spinner = ({ color = ColorPalette.blue, size = 30 }) =>
-  isIE11(window.navigator.userAgent) ? (
+  isIE11(window && window.navigator.userAgent) ? (
     <div {...css(styles(color, size).spinner)} />
   ) : (
     <svg
