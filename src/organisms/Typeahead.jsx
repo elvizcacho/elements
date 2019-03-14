@@ -285,7 +285,7 @@ export default class Typeahead extends React.PureComponent {
         inputValue={value}
         itemToString={item =>
           item
-            ? typeof item.label === 'object'
+            ? React.isValidElement(item.label)
               ? this.getTextFromJSX(item.label)
               : item.label
             : ''
@@ -308,7 +308,7 @@ export default class Typeahead extends React.PureComponent {
           selectHighlightedItem,
           toggleMenu,
         }) => {
-          const isObject = typeof (items[0] && items[0].label) === 'object'
+          const isObject = React.isValidElement(items[0] && items[0].label)
 
           let itemsToBeProcessed = items
           if (isObject) {
@@ -422,11 +422,9 @@ export default class Typeahead extends React.PureComponent {
                       })}
                     />
                   </>
-                ) : null}
-
-                {isObject && selectedItem ? (
+                ) : (
                   <div
-                    className="jsx"
+                    id="jsx-label-container"
                     {...css({
                       background: '#fff',
                       border: 'none',
@@ -452,7 +450,7 @@ export default class Typeahead extends React.PureComponent {
                       {this.mapLabelToItemWithJSXLabel(inputValue).label}
                     </Text>
                   </div>
-                ) : null}
+                )}
 
                 <Absolute
                   alignV="center"

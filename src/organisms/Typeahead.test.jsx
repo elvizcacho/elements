@@ -14,7 +14,7 @@ const INPUT = instance => `input#downshift-${instance}-input`
 
 const INPUT_HINT = 'input[name="hint"]'
 
-const JSX_DIV = 'div.jsx'
+const JSX_DIV = '#jsx-label-container'
 
 const ITEMS = [
   { value: 1, label: DEFAULT_VALUE },
