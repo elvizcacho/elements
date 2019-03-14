@@ -73,6 +73,8 @@ export default class Typeahead extends React.PureComponent {
     placeholder: PropTypes.string,
     /** The value of the component, makes this a controlled component. */
     value: PropTypes.string,
+    /** Optional icon next to label */
+    icon: PropTypes.element,
   }
 
   static defaultProps = {
@@ -217,6 +219,9 @@ export default class Typeahead extends React.PureComponent {
         }),
       })}
     >
+      {item.icon ? (
+        <span {...css({ marginRight: '15px' })}>{item.icon}</span>
+      ) : null}
       <Text size="m">{item.label}</Text>
     </ListItem>
   )
@@ -292,6 +297,12 @@ export default class Typeahead extends React.PureComponent {
             keys: ['label'],
           }).slice(0, limit)
 
+          const highlightedFilteredItem = filtered[highlightedIndex]
+          const showIcon =
+            selectedItem &&
+            highlightedFilteredItem &&
+            highlightedFilteredItem.icon
+
           // Opt for <div> here because we don't want to mess with downshifts
           // getRootProps and refKey, which is kind of strange.
           return (
@@ -307,112 +318,134 @@ export default class Typeahead extends React.PureComponent {
                 width: '100%',
               })}
             >
-              <Relative
+              <div
                 {...css({
-                  ':after': selectedItem && {
-                    background:
-                      'linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(192,192,192,0) 52%,rgba(244,244,244,0) 66%,rgba(255,255,255,0.6) 81%,rgba(255,255,255,1) 88%,rgba(255,255,255,1) 100%)',
-                    bottom: 0,
-                    content: `''`,
-                    left: 0,
-                    pointerEvents: 'none',
-                    position: 'absolute',
-                    top: 0,
-                    width: '100%',
-                  },
+                  display: 'flex',
+                  alignItems: 'center',
+                  width: '100%',
+                  backgroundColor: '#FFF',
                 })}
               >
-                <Absolute top={0} left={0} {...css({ width: '100%' })}>
-                  <Input
-                    autoComplete="off"
-                    name="hint"
-                    tabIndex={-1}
-                    value={
-                      inputValue && filtered.length > 0
-                        ? this.getHintText({
-                            inputValue,
-                            itemText:
-                              (filtered[highlightedIndex] &&
-                                filtered[highlightedIndex].label) ||
-                              '',
-                          })
-                        : ''
-                    }
+                {showIcon ? (
+                  <span
+                    id="selected-item-icon"
                     {...css({
-                      background: '#fff',
+                      height: INPUT_FIELD_HEIGHT,
+                      display: 'flex',
+                      alignItems: 'center',
+                      marginLeft: '15px',
+                    })}
+                  >
+                    {highlightedFilteredItem.icon}
+                  </span>
+                ) : null}
+                <Relative
+                  {...css({
+                    width: showIcon ? 'calc(100% - 30px)' : '100%',
+                    ':after': selectedItem && {
+                      background:
+                        'linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(192,192,192,0) 52%,rgba(244,244,244,0) 66%,rgba(255,255,255,0.6) 81%,rgba(255,255,255,1) 88%,rgba(255,255,255,1) 100%)',
+                      bottom: 0,
+                      content: `''`,
+                      left: 0,
+                      pointerEvents: 'none',
+                      position: 'absolute',
+                      top: 0,
+                    },
+                  })}
+                >
+                  <Absolute top={0} left={0} {...css({ width: '100%' })}>
+                    <Input
+                      autoComplete="off"
+                      name="hint"
+                      tabIndex={-1}
+                      value={
+                        inputValue && filtered.length > 0
+                          ? this.getHintText({
+                              inputValue,
+                              itemText:
+                                (highlightedFilteredItem &&
+                                  highlightedFilteredItem.label) ||
+                                '',
+                            })
+                          : ''
+                      }
+                      {...css({
+                        background: '#fff',
+                        border: 'none',
+                        boxShadow: 'none',
+                        color: '#999',
+                        opacity: 1,
+                        height: INPUT_FIELD_HEIGHT,
+                      })}
+                    />
+                  </Absolute>
+                  <Input
+                    name="typed"
+                    onClick={autoOpen && !selectedItem ? toggleMenu : undefined}
+                    onInputRef={this.setInputRef}
+                    placeholder={placeholder}
+                    {...getInputProps({
+                      onKeyDown: e => {
+                        if (
+                          ['Tab', 'ArrowRight', 'End'].includes(e.key) &&
+                          highlightedIndex !== null &&
+                          isOpen
+                        ) {
+                          selectHighlightedItem()
+                          // Clear the selection if clearOnSelect is used as we
+                          // want to keep the input empty.
+                          if (clearOnSelect) clearSelection()
+                          e.preventDefault()
+                        }
+                      },
+                    })}
+                    {...css({
+                      background: 'transparent',
                       border: 'none',
+                      borderBottom:
+                        isOpen && `1px solid ${ColorPalette.lightGreyIntense}`,
                       boxShadow: 'none',
-                      color: '#999',
-                      opacity: 1,
+                      color: '#000',
+                      outline: 'none',
+                      width: '100%',
                       height: INPUT_FIELD_HEIGHT,
                     })}
                   />
-                </Absolute>
-                <Input
-                  name="typed"
-                  onClick={autoOpen && !selectedItem ? toggleMenu : undefined}
-                  onInputRef={this.setInputRef}
-                  placeholder={placeholder}
-                  {...getInputProps({
-                    onKeyDown: e => {
-                      if (
-                        ['Tab', 'ArrowRight', 'End'].includes(e.key) &&
-                        highlightedIndex !== null &&
-                        isOpen
-                      ) {
-                        selectHighlightedItem()
-                        // Clear the selection if clearOnSelect is used as we
-                        // want to keep the input empty.
-                        if (clearOnSelect) clearSelection()
-                        e.preventDefault()
-                      }
-                    },
-                  })}
-                  {...css({
-                    background: 'transparent',
-                    border: 'none',
-                    borderBottom:
-                      isOpen && `1px solid ${ColorPalette.lightGreyIntense}`,
-                    boxShadow: 'none',
-                    color: '#000',
-                    outline: 'none',
-                    width: '100%',
-                    height: INPUT_FIELD_HEIGHT,
-                  })}
-                />
-                <Absolute
-                  alignV="center"
-                  direction="row"
-                  right={20}
-                  top={0}
-                  {...css({ height: '100%' })}
-                >
-                  {isLoading ? (
-                    <Spinner size={16} />
-                  ) : (
-                    selectedItem &&
-                    !clearOnSelect && (
-                      <View
-                        onClick={this.clearSelection(clearSelection)}
-                        {...css({
-                          // Some hitbox.
-                          cursor: 'pointer',
-                          margin: -10,
-                          padding: 10,
-                          transform: 'translateY(-3px)',
-                          zIndex: 1,
-                        })}
-                      >
-                        <Icon
-                          color="black"
-                          name="remove-light-filled"
-                          size={10}
-                        />
-                      </View>
-                    )
-                  )}
-                </Absolute>
-              </Relative>
+                  <Absolute
+                    alignV="center"
+                    direction="row"
+                    right={20}
+                    top={0}
+                    {...css({ height: '100%' })}
+                  >
+                    {isLoading ? (
+                      <Spinner size={16} />
+                    ) : (
+                      selectedItem &&
+                      !clearOnSelect && (
+                        <View
+                          onClick={this.clearSelection(clearSelection)}
+                          {...css({
+                            // Some hitbox.
+                            cursor: 'pointer',
+                            margin: -10,
+                            padding: 10,
+                            transform: 'translateY(-3px)',
+                            zIndex: 1,
+                          })}
+                        >
+                          <Icon
+                            color="black"
+                            name="remove-light-filled"
+                            size={10}
+                          />
+                        </View>
+                      )
+                    )}
+                  </Absolute>
+                </Relative>
+              </div>
               <Relative>
                 {isOpen && (
                   <List

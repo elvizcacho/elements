@@ -24,3 +24,4 @@ data.
 |onSelect|func|Callback triggered when selecting an item.
 |placeholder|string|The placeholder displayed in the input field.
 |value|string|The value of the component, makes this a controlled component.
+|icon|element|Optional icon next to label

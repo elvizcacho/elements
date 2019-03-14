@@ -8,6 +8,7 @@ import {
 } from '../src/'
 import { css } from 'glamor'
 import Text from '../src/atoms/Text'
+import { ColorPalette } from '@allthings/colors'
 
 import Names from './data/names'
 import Movies from './data/movies'
@@ -28,6 +29,18 @@ const debounce = (callback, time = 200, interval) => (...args) =>
 /* eslint-enable standard/no-callback-literal */
 
 const delay = time => new Promise(resolve => setTimeout(resolve, time))
+
+const LabelIcon = ({ color }) => {
+  return (
+    <div
+      {...css({
+        backgroundColor: color,
+        height: '15px',
+        width: '15px',
+      })}
+    />
+  )
+}
 
 class TypeaheadStory extends React.Component {
   state = {
@@ -64,6 +77,13 @@ class TypeaheadStory extends React.Component {
     value !== '' && this.debouncedFetch()
   }
 
+  getAllthingsColors = () =>
+    Object.keys(ColorPalette).map(key => ({
+      label: `${ColorPalette[key]}`,
+      value: ColorPalette[key],
+      icon: <LabelIcon color={ColorPalette[key]} />,
+    }))
+
   render() {
     const { clearOnSelectValue, forcedValue, loading, movies } = this.state
     return (
@@ -74,7 +94,14 @@ class TypeaheadStory extends React.Component {
               Static:
             </Text>
             <Typeahead autoOpen items={Names} placeholder="Select an agent." />
-
+            <Text strong {...STYLES.title(true)}>
+              Static with component as label:
+            </Text>
+            <Typeahead
+              autoOpen
+              items={this.getAllthingsColors()}
+              placeholder="Select a color."
+            />
             <Text strong {...STYLES.title()}>
               Uncontrolled component:
             </Text>
