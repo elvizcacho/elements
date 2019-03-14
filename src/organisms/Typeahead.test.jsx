@@ -373,6 +373,11 @@ describe('Test the typeahead component', () => {
       </div>
     )
 
+    Label.propTypes = {
+      color: PropTypes.string,
+      text: PropTypes.string,
+    }
+
     const ITEMS = [
       {
         label: <Label color={'#FFF'} text={'White'} />,
