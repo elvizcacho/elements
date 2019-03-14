@@ -408,9 +408,9 @@ describe('Test the typeahead component', () => {
       wrapper.find(DOWNSHIFT_ITEM(19, 0)).simulate('click')
       // JSX_DIV should be visible and inputs shouldn't
       expect(wrapper.find(JSX_DIV)).toHaveLength(1)
+      expect(wrapper.find(INPUT(19))).toHaveLength(0)
       // check value is displayed correctly
       expect(wrapper.find(JSX_DIV).text()).toBe('#000 is BLACK')
-      expect(wrapper.find(INPUT(19))).toHaveLength(0)
       // We should be able to clear it.
       expect(wrapper.find(CLEAR_SELECTION)).toHaveLength(1)
       wrapper.find(CLEAR_SELECTION).simulate('click')
