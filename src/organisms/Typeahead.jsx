@@ -48,11 +48,12 @@ export default class Typeahead extends React.PureComponent {
     /** The loading state of the component, e.g when externally fetching some
      * data. */
     isLoading: PropTypes.bool,
-    /** The items passed to component as an array of objects. */
+    /** The items passed to component as an array of objects. (icon is optional) */
     items: PropTypes.arrayOf(
       PropTypes.shape({
         label: PropTypes.node.isRequired,
         value: PropTypes.any.isRequired,
+        icon: PropTypes.element,
       })
     ).isRequired,
     /** The maximum number of items displayed in the menu. */
@@ -73,8 +74,6 @@ export default class Typeahead extends React.PureComponent {
     placeholder: PropTypes.string,
     /** The value of the component, makes this a controlled component. */
     value: PropTypes.string,
-    /** Optional icon next to label */
-    icon: PropTypes.element,
   }
 
   static defaultProps = {

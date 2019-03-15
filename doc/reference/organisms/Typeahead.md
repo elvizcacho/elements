@@ -14,7 +14,7 @@ and uncontrolled components.
 |placement|enum|If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards<br>Default: 'bottom'
 |isLoading|bool|The loading state of the component, e.g when externally fetching some
 data.
-|items **(required)**|arrayOf|The items passed to component as an array of objects.
+|items **(required)**|arrayOf|The items passed to component as an array of objects. (icon is optional)
 |limit|number|The maximum number of items displayed in the menu.<br>Default: 20
 |menuHeight|number|The height of the menu in pixels.<br>Default: 300
 |onClearSelection|func|Callback triggered when clearing the selection.<br>Default: _ => _
@@ -24,4 +24,3 @@ data.
 |onSelect|func|Callback triggered when selecting an item.
 |placeholder|string|The placeholder displayed in the input field.
 |value|string|The value of the component, makes this a controlled component.
-|icon|element|Optional icon next to label
