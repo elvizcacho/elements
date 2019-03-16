@@ -109,7 +109,7 @@
     "react-test-renderer": "16.8.4",
     "react-testing-library": "6.0.0",
     "rimraf": "2.6.3",
-    "snapshot-diff": "0.5.0"
+    "snapshot-diff": "0.5.1"
   },
   "prettier": {
     "eslintIntegration": true,
