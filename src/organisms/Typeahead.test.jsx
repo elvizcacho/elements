@@ -14,7 +14,7 @@ const INPUT = instance => `input#downshift-${instance}-input`
 
 const INPUT_HINT = 'input[name="hint"]'
 
-const SELECTED_ITEM_ICON = '#selected-item-icon'
+const SELECTED_ITEM_ICON = 'strong'
 
 const ITEMS = [
   { value: 1, label: DEFAULT_VALUE },
@@ -396,7 +396,7 @@ describe('Test the typeahead component', () => {
         <Typeahead items={ITEMS} placeholder={PLACEHOLDER} />
       )
       expect(wrapper).toMatchSnapshot()
-      // JSX_DIV should not be visible at this point
+      // SELECTED_ITEM_ICON should not be visible at this point
       expect(wrapper.find(SELECTED_ITEM_ICON)).toHaveLength(0)
       // Perform a click on the input.
       wrapper.find(INPUT(19)).simulate('click')

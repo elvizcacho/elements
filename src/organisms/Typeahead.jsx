@@ -326,8 +326,7 @@ export default class Typeahead extends React.PureComponent {
                 })}
               >
                 {showIcon ? (
-                  <span
-                    id="selected-item-icon"
+                  <strong
                     {...css({
                       height: INPUT_FIELD_HEIGHT,
                       display: 'flex',
@@ -336,7 +335,7 @@ export default class Typeahead extends React.PureComponent {
                     })}
                   >
                     {highlightedFilteredItem.icon}
-                  </span>
+                  </strong>
                 ) : null}
                 <Relative
                   {...css({
