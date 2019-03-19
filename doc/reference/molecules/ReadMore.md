@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/molecules/ReadMore.jsx" and run build:docs to update this file.
+You can change it in "src/molecules/ReadMore.js" and run build:docs to update this file.
 -->
 # ReadMore
 A ReadMore is a simple container, to show / (hide) content. It will automatically decide whether to show the `read more` link or not.

@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/molecules/TimeInput.jsx" and run build:docs to update this file.
+You can change it in "src/molecules/TimeInput.js" and run build:docs to update this file.
 -->
 # TimeInput
 This component offers to select a time in a `hh:mm` (24hrs) format.

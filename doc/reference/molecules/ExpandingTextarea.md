@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/molecules/ExpandingTextarea.jsx" and run build:docs to update this file.
+You can change it in "src/molecules/ExpandingTextarea.js" and run build:docs to update this file.
 -->
 # ExpandingTextarea
 The height of the ExpandingTextarea will expand when the user adds a new line.

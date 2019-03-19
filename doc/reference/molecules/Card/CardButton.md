@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/molecules/Card/CardButton.jsx" and run build:docs to update this file.
+You can change it in "src/molecules/Card/CardButton.js" and run build:docs to update this file.
 -->
 # CardButton
 CardButton can to enable users to do actions directly related to content on

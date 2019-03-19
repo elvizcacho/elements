@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/atoms/Spacer.jsx" and run build:docs to update this file.
+You can change it in "src/atoms/Spacer.js" and run build:docs to update this file.
 -->
 # Spacer
 The vertical spacer is used to visually separate or create space between elements.

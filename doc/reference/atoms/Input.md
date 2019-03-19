@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/atoms/Input.jsx" and run build:docs to update this file.
+You can change it in "src/atoms/Input.js" and run build:docs to update this file.
 -->
 # Input
 TextInputs are used to allow users to enter information like names, numbers, urls, email addresses or passwords.

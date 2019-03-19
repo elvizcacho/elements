@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/molecules/Card/Card.jsx" and run build:docs to update this file.
+You can change it in "src/molecules/Card/Card.js" and run build:docs to update this file.
 -->
 # Card
 Cards can be used to group related content

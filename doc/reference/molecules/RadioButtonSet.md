@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/molecules/RadioButtonSet.jsx" and run build:docs to update this file.
+You can change it in "src/molecules/RadioButtonSet.js" and run build:docs to update this file.
 -->
 # RadioButtonSet
 RadioButtonSet can be used to render a set of RadioButtons to allow users to select exactly one item from a set.

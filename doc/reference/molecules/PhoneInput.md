@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/molecules/PhoneInput.jsx" and run build:docs to update this file.
+You can change it in "src/molecules/PhoneInput.js" and run build:docs to update this file.
 -->
 # PhoneInput
 PhoneInputs are used to enter international phone numbers - country codes are mandatory.

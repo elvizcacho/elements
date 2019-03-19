@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/molecules/Button.jsx" and run build:docs to update this file.
+You can change it in "src/molecules/Button.js" and run build:docs to update this file.
 -->
 # Button
 Buttons make common actions immediately visible and easy to perform with one

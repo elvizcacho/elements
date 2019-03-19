@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/molecules/Calendar.jsx" and run build:docs to update this file.
+You can change it in "src/molecules/Calendar.js" and run build:docs to update this file.
 -->
 # Calendar
 The `Calendar` component is a thin wrapper around https://github.com/wojtekmaj/react-calendar.

@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/molecules/List/ListItem.jsx" and run build:docs to update this file.
+You can change it in "src/molecules/List/ListItem.js" and run build:docs to update this file.
 -->
 # ListItem
 

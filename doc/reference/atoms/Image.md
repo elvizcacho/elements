@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/atoms/Image.jsx" and run build:docs to update this file.
+You can change it in "src/atoms/Image.js" and run build:docs to update this file.
 -->
 # Image
 Images make thing more interesting. They can be used

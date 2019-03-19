@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/organisms/Hero.jsx" and run build:docs to update this file.
+You can change it in "src/organisms/Hero.js" and run build:docs to update this file.
 -->
 # Hero
 Heros are used to give users an introduction and quickly explain features.

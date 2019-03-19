@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/behaviour/ResourceProvider.jsx" and run build:docs to update this file.
+You can change it in "src/behaviour/ResourceProvider.js" and run build:docs to update this file.
 -->
 # ResourceProvider
 Elements uses a set of static resources like images or icons.

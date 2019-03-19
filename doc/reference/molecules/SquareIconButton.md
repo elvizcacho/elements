@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/molecules/SquareIconButton.jsx" and run build:docs to update this file.
+You can change it in "src/molecules/SquareIconButton.js" and run build:docs to update this file.
 -->
 # SquareIconButton
 Button with only an icon. Can be used in toolbars. May also be used

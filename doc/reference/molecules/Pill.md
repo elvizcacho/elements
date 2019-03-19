@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/molecules/Pill.jsx" and run build:docs to update this file.
+You can change it in "src/molecules/Pill.js" and run build:docs to update this file.
 -->
 # Pill
 Pills 💊 are used to show status or to highlight a piece of information.

@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/atoms/Spinner.jsx" and run build:docs to update this file.
+You can change it in "src/atoms/Spinner.js" and run build:docs to update this file.
 -->
 # Spinner
 The spinner is usefull to indicate a loading state

@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/atoms/Text.jsx" and run build:docs to update this file.
+You can change it in "src/atoms/Text.js" and run build:docs to update this file.
 -->
 # Text
 Text will be used for everywhere a text appears.

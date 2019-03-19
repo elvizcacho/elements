@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/organisms/DateInput.jsx" and run build:docs to update this file.
+You can change it in "src/organisms/DateInput.js" and run build:docs to update this file.
 -->
 # DateInput
 `DateInput` shows a calendar on click and provides to select a single day.

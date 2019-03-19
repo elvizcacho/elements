@@ -20,13 +20,13 @@ function propToRow(props) {
 }
 async function main() {
   try {
-    let files = await globber('src/**/*.jsx')
-    files = files.filter(path => path.indexOf('.test.jsx') === -1)
+    let files = await globber('src/**/*.js')
+    files = files.filter(path => path.indexOf('.test.js') === -1)
     files = await Promise.all(
       files.map(async file => {
         try {
           const docs = parse(await readfile(file))
-          docs.displayName = docs.displayName || path.basename(file, '.jsx')
+          docs.displayName = docs.displayName || path.basename(file, '.js')
           return {
             docs,
             file,
@@ -69,7 +69,7 @@ ${
           path.join(
             __dirname,
             '..',
-            file.replace('src/', 'doc/reference/').replace('.jsx', '.md')
+            file.replace('src/', 'doc/reference/').replace('.js', '.md')
           ),
           docs,
           { flag: 'w+' }

@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/behaviour/CDNIntlProvider.jsx" and run build:docs to update this file.
+You can change it in "src/behaviour/CDNIntlProvider.js" and run build:docs to update this file.
 -->
 # CDNIntlProvider
 

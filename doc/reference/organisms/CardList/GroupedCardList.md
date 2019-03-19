@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/organisms/CardList/GroupedCardList.jsx" and run build:docs to update this file.
+You can change it in "src/organisms/CardList/GroupedCardList.js" and run build:docs to update this file.
 -->
 # GroupedCardList
 
