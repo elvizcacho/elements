@@ -63,7 +63,6 @@ describe('Check the CDNIntlProvider component', () => {
     expect(fetch.mock.calls[1][0]).toEqual(
       'https://static.allthings.me/app/production/i18n/en/residential-formal.json'
     )
-
   })
 
   it('should use the provided locale and do no fetch', () => {

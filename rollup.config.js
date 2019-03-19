@@ -3,7 +3,7 @@ import includePaths from 'rollup-plugin-includepaths'
 import cleanup from 'rollup-plugin-cleanup'
 
 const plugins = [
-  includePaths({ extensions: ['.js', '.jsx', '.json'] }),
+  includePaths({ extensions: ['.js', '.json'] }),
   babel(),
   cleanup(),
 ]
@@ -16,8 +16,8 @@ export default {
   input: [
     './src/index.js',
     // bundled separately to not import the 3rd party packages by default
-    './src/behaviour/CDNIntlProvider.jsx',
-    './src/molecules/Calendar.jsx',
+    './src/behaviour/CDNIntlProvider.js',
+    './src/molecules/Calendar.js',
   ],
   output: [
     {

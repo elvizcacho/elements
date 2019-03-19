@@ -33,7 +33,7 @@ const circle = (backgroundColor, outline, outlineColor, fill, radius) =>
  *   </ResourceProvider>
  * </ThemeProvider>
  * ```
-**/
+ **/
 const Circle = ({
   fill = true,
   color = 'primary',

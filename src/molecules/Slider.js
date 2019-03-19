@@ -127,7 +127,7 @@ class Slider extends React.Component {
     step: 0.1,
   }
 
-  render () {
+  render() {
     const { min, max, step, value, onChange, ...props } = this.props
     return (
       <View {...props}>

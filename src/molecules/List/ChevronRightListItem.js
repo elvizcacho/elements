@@ -22,7 +22,14 @@ function ChevronRightListItem(props) {
       >
         {children}
       </View>
-      <View flex="nogrow"><Icon name="arrow-right" size="xs" color={ColorPalette.greyIntense} {...style} /></View>
+      <View flex="nogrow">
+        <Icon
+          name="arrow-right"
+          size="xs"
+          color={ColorPalette.greyIntense}
+          {...style}
+        />
+      </View>
     </ListItem>
   )
 }
