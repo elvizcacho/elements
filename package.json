@@ -1,6 +1,6 @@
 {
   "name": "@allthings/elements",
-  "version": "5.0.0-beta.5",
+  "version": "5.0.0-beta.6",
   "main": "cjs/index.js",
   "module": "index.js",
   "repository": "https://github.com/allthings/elements",
