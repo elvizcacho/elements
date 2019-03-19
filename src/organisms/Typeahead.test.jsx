@@ -1,5 +1,6 @@
 import React from 'react'
 import Typeahead from './Typeahead'
+import PropTypes from 'prop-types'
 
 // TODO: we should having to test within those instances but Enzyme unmount()
 // method is buggy!
@@ -12,6 +13,8 @@ const CLEAR_SELECTION = 'div[onClick]'
 const INPUT = instance => `input#downshift-${instance}-input`
 
 const INPUT_HINT = 'input[name="hint"]'
+
+const SELECTED_ITEM_ICON = 'strong'
 
 const ITEMS = [
   { value: 1, label: DEFAULT_VALUE },
@@ -362,5 +365,65 @@ describe('Test the typeahead component', () => {
     // Simulate clearing the input with the keyboard.
     wrapper.setProps({ value: '' })
     expect(wrapper.find(CLEAR_SELECTION)).toHaveLength(0)
+  })
+
+  describe('Test typeahead component with jsx labels', () => {
+    const LabelIcon = ({ text }) => <div>{text[0]}</div>
+
+    LabelIcon.propTypes = {
+      text: PropTypes.string,
+    }
+
+    const ITEMS = [
+      {
+        label: 'White',
+        value: '#FFF',
+        icon: <LabelIcon text="White" />,
+      },
+      {
+        label: 'Black',
+        value: '#000',
+        icon: <LabelIcon text="Black" />,
+      },
+      {
+        label: 'Grey',
+        value: '#666',
+        icon: <LabelIcon text="Grey" />,
+      },
+    ]
+    it('should be a simple static one - in depth testing of the core behavior with JSX labels', () => {
+      const wrapper = mount(
+        <Typeahead items={ITEMS} placeholder={PLACEHOLDER} />
+      )
+      expect(wrapper).toMatchSnapshot()
+      // SELECTED_ITEM_ICON should not be visible at this point
+      expect(wrapper.find(SELECTED_ITEM_ICON)).toHaveLength(0)
+      // Perform a click on the input.
+      wrapper.find(INPUT(19)).simulate('click')
+      // No menu should be there!
+      expect(wrapper.find(DOWNSHIFT_ITEM(19, 0))).toHaveLength(0)
+      // 1st case scenario: select by clicking the item.
+      wrapper.find(INPUT(19)).simulate('change', { target: { value: 'B' } })
+      // Check the input value.
+      expect(wrapper.find(INPUT(19)).prop('value')).toBe('B')
+      // Black color is found
+      expect(wrapper.find(DOWNSHIFT_ITEM(19, 0))).toHaveLength(1)
+      // Click on found item from list
+      wrapper.find(DOWNSHIFT_ITEM(19, 0)).simulate('click')
+      // SELECTED_ITEM_ICON should be displayed
+      expect(wrapper.find(SELECTED_ITEM_ICON)).toHaveLength(1)
+      // check value is displayed correctly
+      expect(wrapper.find(SELECTED_ITEM_ICON).text()).toBe('B')
+      // We should be able to clear it.
+      expect(wrapper.find(CLEAR_SELECTION)).toHaveLength(1)
+      wrapper.find(CLEAR_SELECTION).simulate('click')
+      // SELECTED_ITEM_ICON is not visible anymore
+      expect(wrapper.find(SELECTED_ITEM_ICON)).toHaveLength(0)
+      expect(wrapper.find(INPUT(19))).toHaveLength(1)
+      // list of items is open and all 3 items are visible
+      expect(wrapper.find(DOWNSHIFT_ITEM(19, 0))).toHaveLength(1)
+      expect(wrapper.find(DOWNSHIFT_ITEM(19, 1))).toHaveLength(1)
+      expect(wrapper.find(DOWNSHIFT_ITEM(19, 2))).toHaveLength(1)
+    })
   })
 })
