@@ -1,6 +1,6 @@
 {
   "name": "@allthings/elements",
-  "version": "5.0.0-beta.6",
+  "version": "5.0.0-beta.7",
   "main": "index.js",
   "module": "esm/index.js",
   "repository": "https://github.com/allthings/elements",
