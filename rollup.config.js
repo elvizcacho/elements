@@ -21,11 +21,11 @@ export default {
   ],
   output: [
     {
-      dir: 'build/cjs',
+      dir: 'build',
       format: 'cjs',
     },
     {
-      dir: 'build',
+      dir: 'build/esm',
       format: 'esm',
     },
   ],

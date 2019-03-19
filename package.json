@@ -1,8 +1,8 @@
 {
   "name": "@allthings/elements",
   "version": "5.0.0-beta.6",
-  "main": "cjs/index.js",
-  "module": "index.js",
+  "main": "index.js",
+  "module": "esm/index.js",
   "repository": "https://github.com/allthings/elements",
   "author": "Moritz Schwörer <moritz.schwoerer@allthings.me>",
   "license": "MIT",
