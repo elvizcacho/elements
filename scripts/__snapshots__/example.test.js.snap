@@ -632,7 +632,6 @@ exports[`Component Examples should match snapshot: Checkbox0 1`] = `
 [data-css-5] {
   padding: 10px 15px;
   min-height: 50px;
-  border-bottom: 1px solid #ecf0f1;
   background-color: white;
 }
 
@@ -1234,7 +1233,6 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
 [data-css-12] {
   padding: 10px 15px;
   min-height: 50px;
-  border-bottom: 1px solid #ecf0f1;
   background-color: white;
 }
 
@@ -1423,6 +1421,14 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
 
 .css-27,
 [data-css-27] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: white;
+}
+
+.css-28,
+[data-css-28] {
   position: relative;
   padding: 10px 16px;
   border-radius: 2px;
@@ -1440,13 +1446,13 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   -moz-transition: 250ms ease-in-out;
 }
 
-.css-27:focus,
-[data-css-27]:focus {
+.css-28:focus,
+[data-css-28]:focus {
   outline: none;
 }
 
-.css-27:hover,
-[data-css-27]:hover {
+.css-28:hover,
+[data-css-28]:hover {
   color: white;
   background: #a9d22d;
 }
@@ -1694,11 +1700,11 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
             </label>
           </div>
           <div
-            data-css-12=""
+            data-css-27=""
             data-css-13=""
           >
             <button
-              data-css-27=""
+              data-css-28=""
               data-css-9=""
               name="submit"
               type="submit"
@@ -2241,14 +2247,6 @@ exports[`Component Examples should match snapshot: List0 1`] = `
 
 .css-4,
 [data-css-4] {
-  padding: 10px 15px;
-  min-height: 50px;
-  border-bottom: 1px solid #ecf0f1;
-  background-color: white;
-}
-
-.css-5,
-[data-css-5] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -2269,6 +2267,14 @@ exports[`Component Examples should match snapshot: List0 1`] = `
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -webkit-flex: 0 0 auto;
+}
+
+.css-5,
+[data-css-5] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: white;
 }
 
 .css-6,
@@ -2356,10 +2362,10 @@ exports[`Component Examples should match snapshot: List0 1`] = `
     data-css-3=""
   >
     <div
-      data-css-5=""
+      data-css-4=""
     >
       <div
-        data-css-4=""
+        data-css-5=""
         data-css-0=""
       >
         <div
@@ -2370,7 +2376,7 @@ exports[`Component Examples should match snapshot: List0 1`] = `
         </div>
       </div>
       <div
-        data-css-4=""
+        data-css-5=""
         data-css-0=""
       >
         <div
@@ -2381,7 +2387,7 @@ exports[`Component Examples should match snapshot: List0 1`] = `
         </div>
       </div>
       <div
-        data-css-4=""
+        data-css-5=""
         data-css-0=""
       >
         <div
@@ -2392,7 +2398,7 @@ exports[`Component Examples should match snapshot: List0 1`] = `
         </div>
       </div>
       <div
-        data-css-4=""
+        data-css-5=""
         data-css-0=""
       >
         <div
@@ -2508,14 +2514,6 @@ exports[`Component Examples should match snapshot: List1 1`] = `
 
 .css-5,
 [data-css-5] {
-  padding: 10px 15px;
-  min-height: 50px;
-  border-bottom: 1px solid #ecf0f1;
-  background-color: white;
-}
-
-.css-6,
-[data-css-6] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -2536,6 +2534,14 @@ exports[`Component Examples should match snapshot: List1 1`] = `
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -webkit-flex: 0 0 auto;
+}
+
+.css-6,
+[data-css-6] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: white;
 }
 
 .css-7,
@@ -2699,7 +2705,7 @@ exports[`Component Examples should match snapshot: List1 1`] = `
         data-css-4=""
       >
         <div
-          data-css-6=""
+          data-css-5=""
         >
           <div
             data-css-3=""
@@ -2709,7 +2715,7 @@ exports[`Component Examples should match snapshot: List1 1`] = `
               data-css-1=""
             />
             <div
-              data-css-5=""
+              data-css-6=""
               data-css-14=""
             >
               <div
@@ -2742,7 +2748,7 @@ exports[`Component Examples should match snapshot: List1 1`] = `
               data-css-15=""
             />
             <div
-              data-css-5=""
+              data-css-6=""
               data-css-14=""
             >
               <div
@@ -2761,7 +2767,7 @@ exports[`Component Examples should match snapshot: List1 1`] = `
               data-css-16=""
             />
             <div
-              data-css-5=""
+              data-css-6=""
               data-css-14=""
             >
               <div
@@ -3914,14 +3920,6 @@ exports[`Component Examples should match snapshot: ReadMore0 1`] = `
 
 .css-5,
 [data-css-5] {
-  padding: 10px 15px;
-  min-height: 50px;
-  border-bottom: 1px solid #ecf0f1;
-  background-color: white;
-}
-
-.css-6,
-[data-css-6] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -3942,6 +3940,14 @@ exports[`Component Examples should match snapshot: ReadMore0 1`] = `
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -webkit-flex: 0 0 auto;
+}
+
+.css-6,
+[data-css-6] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: white;
 }
 
 .css-7,
@@ -3986,12 +3992,12 @@ exports[`Component Examples should match snapshot: ReadMore0 1`] = `
     data-css-3=""
   >
     <div
-      data-css-5=""
+      data-css-6=""
       data-css-0=""
     >
       <div
         data-css-7=""
-        data-css-6=""
+        data-css-5=""
       >
         <div
           data-css-1=""
@@ -4019,12 +4025,12 @@ exports[`Component Examples should match snapshot: ReadMore0 1`] = `
       </div>
     </div>
     <div
-      data-css-5=""
+      data-css-6=""
       data-css-0=""
     >
       <div
         data-css-7=""
-        data-css-6=""
+        data-css-5=""
       >
         <div
           data-css-1=""
