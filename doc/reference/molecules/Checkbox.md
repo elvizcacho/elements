@@ -20,3 +20,5 @@ Checkbox are used to give users a way to select or deselect options.
 |name **(required)**|string|
 |onChange|func|<br>Default: () => {}
 |backgroundColor|string|Background color of the form item
+|hideLine|bool|ListItem props<br>Default: false
+|padded|bool|<br>Default: true

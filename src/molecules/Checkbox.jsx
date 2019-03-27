@@ -51,6 +51,9 @@ class Checkbox extends React.Component {
     onChange: PropTypes.func,
     /** Background color of the form item */
     backgroundColor: PropTypes.string,
+    /** ListItem props */
+    hideLine: PropTypes.bool,
+    padded: PropTypes.bool,
   }
 
   state = {
@@ -60,6 +63,8 @@ class Checkbox extends React.Component {
   static defaultProps = {
     labelSize: 'l',
     onChange: () => {},
+    hideLine: false,
+    padded: true,
   }
 
   isControlled = () => typeof this.props.checked !== 'undefined'
@@ -79,6 +84,8 @@ class Checkbox extends React.Component {
       labelSize,
       name,
       backgroundColor,
+      hideLine,
+      padded,
       ...props
     } = this.props
     const realChecked = this.isControlled() ? checked : this.state.checked
@@ -86,7 +93,7 @@ class Checkbox extends React.Component {
     return (
       <Theme>
         {({ theme, colorize }) => (
-          <ListItem backgroundColor={colorize(backgroundColor)}>
+          <ListItem backgroundColor={colorize(backgroundColor)} hideLine padded>
             <View direction="row" alignV="center">
               <Relative
                 direction="row"
