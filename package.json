@@ -68,7 +68,7 @@
     "@babel/runtime": "7.4.2",
     "@storybook/addon-actions": "5.0.3",
     "@storybook/addon-links": "5.0.3",
-    "@storybook/react": "5.0.3",
+    "@storybook/react": "5.0.6",
     "babel-eslint": "10.0.1",
     "babel-jest": "24.6.0",
     "babel-loader": "8.0.5",
