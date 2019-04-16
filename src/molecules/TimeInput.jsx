@@ -9,9 +9,11 @@ import Relative from '../atoms/Relative'
 import Text, { createTextStyles } from '../atoms/Text'
 import Icon from '../atoms/Icon'
 
-const selectStyle = isActive =>
+const selectStyle = (isActive, shouldShow = true, propose = false) =>
   css(createTextStyles(), {
-    background: 'none',
+    visibility: !propose && !shouldShow ? 'hidden' : 'auto',
+    width: propose && '50px',
+    background: propose ? 'lightGreyIntense' : 'none',
     color: !isActive && 'gray',
     WebkitAppearance: 'none',
     border: 'none',
@@ -254,7 +256,7 @@ class TimeInput extends React.Component {
 
             <View direction="row" {...css({ marginLeft: -2 })}>
               <select
-                {...selectStyle(hasSelectedHour)}
+                {...selectStyle(hasSelectedHour, true, !hasSelectedHour)}
                 onChange={this.handleSelectHour}
                 ref={this.hourRef}
                 value={hasSelectedHour ? padZero(selectedHour) : ''}
@@ -266,7 +268,11 @@ class TimeInput extends React.Component {
               </select>
               :
               <select
-                {...selectStyle(hasSelectedMinute)}
+                {...selectStyle(
+                  hasSelectedMinute,
+                  hasSelectedHour,
+                  hasSelectedHour
+                )}
                 onChange={this.handleSelectMinute}
                 ref={this.minuteRef}
                 disabled={!hasSelectedHour}
