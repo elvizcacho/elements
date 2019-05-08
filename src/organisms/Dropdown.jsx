@@ -57,6 +57,10 @@ export default class Dropdown extends React.PureComponent {
       label: PropTypes.node.isRequired,
       value: PropTypes.any.isRequired,
     }),
+    /** The initial input value */
+    initialInputValue: PropTypes.string,
+    /** The input value */
+    inputValue: PropTypes.string,
     /** The maximum number of items displayed in the menu. */
     limit: PropTypes.number,
     /** The height of the menu in pixels. */
@@ -105,6 +109,8 @@ export default class Dropdown extends React.PureComponent {
       clearable,
       items,
       initialSelectedItem,
+      initialInputValue,
+      inputValue,
       placeholder,
       onSelect,
       name,
@@ -115,6 +121,8 @@ export default class Dropdown extends React.PureComponent {
         itemToString={item => (item ? item.label : '')}
         onChange={onSelect}
         initialSelectedItem={initialSelectedItem}
+        initialInputValue={initialInputValue}
+        inputValue={inputValue}
       >
         {({
           isOpen,
