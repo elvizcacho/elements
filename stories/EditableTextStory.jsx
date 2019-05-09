@@ -1,12 +1,10 @@
 import React from 'react'
-import {
-  EditableText,
-  ResourceProvider,
-  Text,
-  ThemeProvider,
-  View,
-} from '../src/'
 import { css } from 'glamor'
+import ThemeProvider from '../src/behaviour/ThemeProvider'
+import ResourceProvider from '../src/behaviour/ResourceProvider'
+import View from '../src/atoms/View'
+import Text from '../src/atoms/Text'
+import EditableText from '../src/molecules/EditableText'
 
 const DEFAULT_TEXT = 'Edit me!'
 const MARGIN = 15 // px

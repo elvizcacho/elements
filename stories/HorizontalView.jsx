@@ -1,16 +1,14 @@
 import React from 'react'
-import {
-  ThemeProvider,
-  TitleBar,
-  SquareIconButton,
-  Text,
-  Button,
-  View,
-  CardList,
-  ListItem,
-  ResourceProvider,
-} from '../src'
+import ResourceProvider from '../src/behaviour/ResourceProvider'
 import HorizontalView from '../src/behaviour/HorizontalView'
+import ThemeProvider from '../src/behaviour/ThemeProvider'
+import View from '../src/atoms/View'
+import Text from '../src/atoms/Text'
+import ListItem from '../src/molecules/List/ListItem'
+import TitleBar from '../src/organisms/TitleBar'
+import SquareIconButton from '../src/molecules/SquareIconButton'
+import CardList from '../src/organisms/CardList/CardList'
+import Button from '../src/molecules/Button'
 
 export default class HorizontalViewStory extends React.Component {
   state = {

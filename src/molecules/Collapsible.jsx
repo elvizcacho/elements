@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { css } from 'glamor'
-import { View, Icon, Text } from '../'
 import { ColorPalette, alpha } from '@allthings/colors'
+import Icon from '../atoms/Icon'
+import View from '../atoms/View'
+import Text from '../atoms/Text'
 
 const tick = () => new Promise(resolve => setTimeout(resolve, 0))
 

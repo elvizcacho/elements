@@ -1,13 +1,11 @@
 import React from 'react'
-import {
-  ThemeProvider,
-  ResourceProvider,
-  List,
-  Card,
-  ListItem,
-  Button,
-} from '../src/'
 import { css } from 'glamor'
+import ThemeProvider from '../src/behaviour/ThemeProvider'
+import ResourceProvider from '../src/behaviour/ResourceProvider'
+import List from '../src/molecules/List/List'
+import ListItem from '../src/molecules/List/ListItem'
+import Button from '../src/molecules/Button'
+import Card from '../src/molecules/Card/Card'
 
 const CollapsibleStory = () => (
   <ThemeProvider>

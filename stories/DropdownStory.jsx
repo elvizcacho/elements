@@ -1,7 +1,10 @@
 import React from 'react'
-import { View, ThemeProvider, Dropdown, ResourceProvider } from '../src/'
 import { css } from 'glamor'
 import Text from '../src/atoms/Text'
+import ThemeProvider from '../src/behaviour/ThemeProvider'
+import ResourceProvider from '../src/behaviour/ResourceProvider'
+import View from '../src/atoms/View'
+import Dropdown from '../src/organisms/Dropdown'
 
 const styles = {
   title: css({

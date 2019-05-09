@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { css } from 'glamor'
-import { View, Text } from '../'
+import View from '../atoms/View'
+import Text from '../atoms/Text'
 
 /**
  *   A ReadMore is a simple container, to show / (hide) content. It will automatically decide whether to show the `read more` link or not.

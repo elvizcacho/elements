@@ -1,20 +1,17 @@
 import React from 'react'
-import {
-  Inset,
-  Input,
-  Spacer,
-  DateInput,
-  Dropdown,
-  Collapsible,
-  ThemeProvider,
-  ResourceProvider,
-  TimeInput,
-  View,
-  Button,
-  Form,
-} from '../src/'
-
 import { ColorPalette } from '@allthings/colors'
+import ThemeProvider from '../src/behaviour/ThemeProvider'
+import ResourceProvider from '../src/behaviour/ResourceProvider'
+import Input from '../src/atoms/Input'
+import Dropdown from '../src/organisms/Dropdown'
+import View from '../src/atoms/View'
+import Button from '../src/molecules/Button'
+import Form from '../src/molecules/Form/Form'
+import Inset from '../src/atoms/Inset'
+import Collapsible from '../src/molecules/Collapsible'
+import Spacer from '../src/atoms/Spacer'
+import DateInput from '../src/organisms/DateInput'
+import TimeInput from '../src/molecules/TimeInput'
 
 export default class FilterStory extends React.Component {
   state = {
