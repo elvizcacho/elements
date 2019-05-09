@@ -20,16 +20,10 @@
     "react-motion": "0.5.2"
   },
   "resolutions": {
-    "@storybook/react/**/url-parse": ">=1.4.3",
-    "extend": ">=3.0.2",
     "jest-glamor-react/**/atob": ">=2.1.0",
-    "jest/**/cryptiles": ">=4.1.2",
-    "jest/**/handlebars": ">=4.0.13",
-    "jest/**/merge": ">=1.2.1",
-    "jest/**/sshpk": ">=1.14.1",
-    "jest/**/stringstream": ">=0.0.6",
+    "jest/**/handlebars": ">=4.1.2",
     "js-yaml": ">=3.13.0",
-    "lodash": ">=4.17.11",
+    "marked": ">=0.6.2",
     "terser": "3.14"
   },
   "peerDependencies": {
