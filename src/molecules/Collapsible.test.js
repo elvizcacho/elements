@@ -1,6 +1,8 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { ThemeProvider, ResourceProvider, Collapsible } from '../'
+import ThemeProvider from '../behaviour/ThemeProvider'
+import ResourceProvider from '../behaviour/ResourceProvider'
+import Collapsible from '../molecules/Collapsible'
 import genProps from 'react-generate-props'
 
 describe('Input component', () => {
