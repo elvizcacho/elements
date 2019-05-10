@@ -57,8 +57,13 @@ export default class Dropdown extends React.PureComponent {
         value: PropTypes.any.isRequired,
       })
     ).isRequired,
-    /** Initially selected */
+    /** Initially selected item - this value is uncontrolled */
     initialSelectedItem: PropTypes.shape({
+      label: PropTypes.node.isRequired,
+      value: PropTypes.any.isRequired,
+    }),
+    /** Selected item - this item can be controlled */
+    selectedItem: PropTypes.shape({
       label: PropTypes.node.isRequired,
       value: PropTypes.any.isRequired,
     }),
@@ -107,20 +112,24 @@ export default class Dropdown extends React.PureComponent {
       menuHeight,
       label,
       icon,
-      initialSelectedItem,
       clearable,
       items,
+      initialSelectedItem,
+      selectedItem,
       placeholder,
       onSelect,
       name,
     } = this.props
     const { showScrollArrow } = this.state
 
+    console.log('render selectedItem', selectedItem)
+
     return (
       <Downshift
         itemToString={item => (item ? item.label : '')}
         onChange={onSelect}
         initialSelectedItem={initialSelectedItem}
+        selectedItem={selectedItem}
       >
         {({
           isOpen,
@@ -160,7 +169,7 @@ export default class Dropdown extends React.PureComponent {
                       overflow: 'hidden',
                       whiteSpace: 'nowrap',
                       cursor: 'pointer',
-                      paddingRight: '30px',
+                      paddingRight: '35px',
                       color: 'black',
                     })}
                   />
