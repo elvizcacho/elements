@@ -9,7 +9,8 @@ You can change it in "src/organisms/Dropdown.jsx" and run build:docs to update t
 | ----------- |:--------------:| ------------:|
 |placement|enum|If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards
 |items **(required)**|arrayOf|
-|initialSelectedItem|shape|Initially selected
+|initialSelectedItem|shape|Initially selected item - this value is uncontrolled
+|selectedItem|shape|Selected item - this item can be controlled
 |limit|number|The maximum number of items displayed in the menu.
 |menuHeight|number|The height of the menu in pixels.
 |onSelect|func|Callback triggered when clearing the selection.

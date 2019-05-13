@@ -1,7 +1,13 @@
 import React from 'react'
-import { View, ThemeProvider, Dropdown, ResourceProvider } from '../src/'
+import {
+  View,
+  ThemeProvider,
+  Dropdown,
+  ResourceProvider,
+  Button,
+  Text,
+} from '../src/'
 import { css } from 'glamor'
-import Text from '../src/atoms/Text'
 
 const styles = {
   title: css({
@@ -17,7 +23,14 @@ const styles = {
 
 class DropdownStory extends React.Component {
   state = {
-    simpleDropdown: 'dog',
+    simpleDropdown: {
+      label: 'dog',
+      value: 'dog',
+    },
+    controlledDropdown: {
+      label: 'dog',
+      value: 'dog',
+    },
     withLabel: 'cat',
     clearable: '',
     items: [
@@ -52,11 +65,12 @@ class DropdownStory extends React.Component {
             </Text>
             <Dropdown
               name="dropdown-simple"
-              initialSelectedItem={this.state.items[1]}
+              initialSelectedItem={this.state.simpleDropdown}
               menuHeight={200}
               onSelect={item => this.setState({ simpleDropdown: item })}
               items={this.state.items}
             />
+
             <Text strong {...styles.title}>
               Dropdown with icon and label:
             </Text>
@@ -69,6 +83,7 @@ class DropdownStory extends React.Component {
               icon="list-bullets-filled"
               items={this.state.items}
             />
+
             <Text strong {...styles.title}>
               Clearable dropdown:
             </Text>
@@ -82,6 +97,7 @@ class DropdownStory extends React.Component {
               clearable
               items={this.state.items}
             />
+
             <Text strong {...styles.title}>
               Drop up:
             </Text>
@@ -96,6 +112,26 @@ class DropdownStory extends React.Component {
               placement="top"
               items={this.state.items}
             />
+
+            <Text strong {...styles.title}>
+              Controlled dropdown item:
+            </Text>
+            <Dropdown
+              name="dropdown-controlled"
+              initialSelectedItem={this.state.controlledDropdown}
+              selectedItem={this.state.controlledDropdown}
+              menuHeight={200}
+              onSelect={item => this.setState({ controlledDropdown: item })}
+              items={this.state.items}
+            />
+            <Button
+              onClick={() =>
+                this.setState({ controlledDropdown: this.state.items[2] })
+              }
+              {...css({ marginTop: 10 })}
+            >
+              Set item to &quot;Cat&quot;
+            </Button>
           </View>
         </ResourceProvider>
       </ThemeProvider>

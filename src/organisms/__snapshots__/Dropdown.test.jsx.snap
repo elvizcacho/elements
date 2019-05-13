@@ -48,7 +48,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
 
 .css-4,
 [data-css-4] {
-  width: 100%;
+  width: calc(100% - 5px);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -296,7 +296,7 @@ exports[`Dropdown should render with placement top 1`] = `
 
 .css-4,
 [data-css-4] {
-  width: 100%;
+  width: calc(100% - 5px);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;

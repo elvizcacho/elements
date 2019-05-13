@@ -4,8 +4,9 @@ import Downshift from 'downshift'
 import { css, keyframes } from 'glamor'
 import Relative from '../atoms/Relative'
 import Absolute from '../atoms/Absolute'
-import { View, Text, List, ListItem, Icon, Input } from '../'
+import { View, Text, List, ListItem, Input } from '../'
 import { alpha, ColorPalette } from '@allthings/colors'
+import Icon from '../atoms/Icon'
 
 const bounceDownwardsAnim = keyframes('bounce', {
   '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
@@ -52,8 +53,13 @@ export default class Dropdown extends React.PureComponent {
         value: PropTypes.any.isRequired,
       })
     ).isRequired,
-    /** Initially selected */
+    /** Initially selected item - this value is uncontrolled */
     initialSelectedItem: PropTypes.shape({
+      label: PropTypes.node.isRequired,
+      value: PropTypes.any.isRequired,
+    }),
+    /** Selected item - this item can be controlled */
+    selectedItem: PropTypes.shape({
       label: PropTypes.node.isRequired,
       value: PropTypes.any.isRequired,
     }),
@@ -105,16 +111,19 @@ export default class Dropdown extends React.PureComponent {
       clearable,
       items,
       initialSelectedItem,
+      selectedItem,
       placeholder,
       onSelect,
       name,
     } = this.props
     const { showScrollArrow } = this.state
+
     return (
       <Downshift
         itemToString={item => (item ? item.label : '')}
         onChange={onSelect}
         initialSelectedItem={initialSelectedItem}
+        selectedItem={selectedItem}
       >
         {({
           isOpen,
@@ -149,7 +158,7 @@ export default class Dropdown extends React.PureComponent {
                     readOnly
                     name={name}
                     {...css({
-                      width: '100%',
+                      width: 'calc(100% - 5px)',
                       textOverflow: 'ellipsis',
                       overflow: 'hidden',
                       whiteSpace: 'nowrap',
