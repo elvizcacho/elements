@@ -1,11 +1,14 @@
 import React from 'react'
-import ThemeProvider from '../src/behaviour/ThemeProvider'
-import View from '../src/atoms/View'
-import Text from '../src/atoms/Text'
-import ResourceProvider from '../src/behaviour/ResourceProvider'
-import SimpleLayout from '../src/layouts/SimpleLayout'
-import Inset from '../src/atoms/Inset'
-import Spinner from '../src/atoms/Spinner'
+import {
+  Text,
+  ThemeProvider,
+  ResourceProvider,
+  SimpleLayout,
+  Spinner,
+  View,
+  Inset,
+  SlideIn,
+} from '../src/'
 
 class SimpleLayoutStory extends React.Component {
   state = {

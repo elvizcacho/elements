@@ -7,14 +7,11 @@ import { css, keyframes } from 'glamor'
 
 import Relative from '../atoms/Relative'
 import Absolute from '../atoms/Absolute'
+import { Input, List, ListItem, Text } from '../index'
 import Icon from '../atoms/Icon'
 import View from '../atoms/View'
 import escapeRegex from '../utils/escapeRegex'
 import Spinner from '../atoms/Spinner'
-import List from '../molecules/List/List'
-import ListItem from '../molecules/List/ListItem'
-import Input from '../atoms/Input'
-import Text from '../atoms/Text'
 
 const NOOP = _ => _
 

@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import ResourceProvider from '../src/behaviour/ResourceProvider'
 import Inset from '../src/atoms/Inset'
 import Checkbox from '../src/molecules/Checkbox'
+import { Text } from '../src'
 import Button from '../src/molecules/Button'
 import Spacer from '../src/atoms/Spacer'
-import Text from '../src/atoms/Text'
 
 export default function CheckboxStory() {
   const [checked, setChecked] = useState(false)

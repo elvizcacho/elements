@@ -1,19 +1,21 @@
 import React from 'react'
-import ResourceProvider from '../src/behaviour/ResourceProvider'
-import ThemeProvider from '../src/behaviour/ThemeProvider'
-import View from '../src/atoms/View'
-import Text from '../src/atoms/Text'
-import List from '../src/molecules/List/List'
-import ListItem from '../src/molecules/List/ListItem'
-import TitleBar from '../src/organisms/TitleBar'
-import SquareIconButton from '../src/molecules/SquareIconButton'
-import SimpleLayout from '../src/layouts/SimpleLayout'
-import Form from '../src/molecules/Form/Form'
-import Card from '../src/molecules/Card/Card'
-import TextInput from '../src/molecules/TextInput'
-import RadioButtonSet from '../src/molecules/RadioButtonSet'
-import RadioButton from '../src/molecules/RadioButton'
-import Button from '../src/molecules/Button'
+import {
+  ThemeProvider,
+  Button,
+  Card,
+  View,
+  TitleBar,
+  SquareIconButton,
+  Text,
+  SimpleLayout,
+  List,
+  ListItem,
+  TextInput,
+  ResourceProvider,
+  Form,
+  RadioButtonSet,
+  RadioButton,
+} from '../src'
 
 export default class FormStory extends React.Component {
   render() {

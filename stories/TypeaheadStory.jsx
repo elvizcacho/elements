@@ -1,12 +1,14 @@
 import React from 'react'
+import {
+  Button,
+  View,
+  ThemeProvider,
+  Typeahead,
+  ResourceProvider,
+} from '../src/'
 import { css } from 'glamor'
 import Text from '../src/atoms/Text'
 import { ColorPalette } from '@allthings/colors'
-import ThemeProvider from '../src/behaviour/ThemeProvider'
-import ResourceProvider from '../src/behaviour/ResourceProvider'
-import View from '../src/atoms/View'
-import Typeahead from '../src/organisms/Typeahead'
-import Button from '../src/molecules/Button'
 
 import Names from './data/names'
 import Movies from './data/movies'

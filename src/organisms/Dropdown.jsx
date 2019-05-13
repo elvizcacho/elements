@@ -4,13 +4,9 @@ import Downshift from 'downshift'
 import { css, keyframes } from 'glamor'
 import Relative from '../atoms/Relative'
 import Absolute from '../atoms/Absolute'
-import Icon from '../atoms/Icon'
+import { View, Text, List, ListItem, Input } from '../'
 import { alpha, ColorPalette } from '@allthings/colors'
-import View from '../atoms/View'
-import List from '../molecules/List/List'
-import ListItem from '../molecules/List/ListItem'
-import Input from '../atoms/Input'
-import Text from '../atoms/Text'
+import Icon from '../atoms/Icon'
 
 const bounceDownwardsAnim = keyframes('bounce', {
   '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
@@ -162,12 +158,12 @@ export default class Dropdown extends React.PureComponent {
                     readOnly
                     name={name}
                     {...css({
-                      width: '100%',
+                      width: 'calc(100% - 5px)',
                       textOverflow: 'ellipsis',
                       overflow: 'hidden',
                       whiteSpace: 'nowrap',
                       cursor: 'pointer',
-                      paddingRight: '35px',
+                      paddingRight: '30px',
                       color: 'black',
                     })}
                   />

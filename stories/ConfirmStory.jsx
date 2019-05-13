@@ -1,8 +1,5 @@
 import React from 'react'
-import Button from '../src/molecules/Button'
-import View from '../src/atoms/View'
-import ThemeProvider from '../src/behaviour/ThemeProvider'
-import confirm from '../src/behaviour/Confirm'
+import { Button, confirm, ThemeProvider, View } from '../src'
 import { css } from 'glamor'
 
 export default class FormStory extends React.Component {

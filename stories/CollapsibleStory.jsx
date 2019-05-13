@@ -1,13 +1,15 @@
 import React from 'react'
+import {
+  Text,
+  ThemeProvider,
+  Collapsible,
+  ResourceProvider,
+  View,
+  Card,
+  Icon,
+} from '../src/'
 import { css } from 'glamor'
 import Button from '../src/molecules/Button'
-import View from '../src/atoms/View'
-import Text from '../src/atoms/Text'
-import ThemeProvider from '../src/behaviour/ThemeProvider'
-import Icon from '../src/atoms/Icon'
-import Collapsible from '../src/molecules/Collapsible'
-import ResourceProvider from '../src/behaviour/ResourceProvider'
-import Card from '../src/molecules/Card/Card'
 
 class DynamicCollapsible extends React.Component {
   state = {

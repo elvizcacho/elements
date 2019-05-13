@@ -4,6 +4,17 @@ import { action } from '@storybook/addon-actions'
 // Only needed to make Storybook work with IE 11, should be a noop for modern browsers anyway
 import 'cross-fetch/polyfill'
 
+import {
+  Card,
+  FloatingButton,
+  Form,
+  PhoneInput,
+  ReadMore,
+  SimpleLayout,
+  Text,
+  TextInput,
+  ThemeProvider,
+} from '../src/'
 import HorizontalView from './HorizontalView'
 import FormStory from './FormStory'
 import createViewportDecorator from './createViewportDecorator'
@@ -23,15 +34,6 @@ import ConfirmStory from './ConfirmStory'
 import FilterStory from './FilterStory'
 import ButtonStory from './ButtonStory'
 import CheckboxStory from './CheckboxStory'
-import ThemeProvider from '../src/behaviour/ThemeProvider'
-import Form from '../src/molecules/Form/Form'
-import Text from '../src/atoms/Text'
-import SimpleLayout from '../src/layouts/SimpleLayout'
-import Card from '../src/molecules/Card/Card'
-import FloatingButton from '../src/molecules/FloatingButton'
-import PhoneInput from '../src/molecules/PhoneInput'
-import TextInput from '../src/molecules/TextInput'
-import ReadMore from '../src/molecules/ReadMore'
 
 storiesOf('Animations', module)
   .addDecorator(createViewportDecorator())
