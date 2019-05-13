@@ -8,9 +8,9 @@ exports[`HorizontalView behaviors should render non-arrays 1`] = `
 
 .css-1,
 [data-css-1] {
-  transform: translate3d(-200%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
   transition: .5s;
-  -webkit-transform: translate3d(-200%, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
   -webkit-transition: .5s;
   -moz-transition: .5s;
 }
@@ -95,9 +95,9 @@ exports[`HorizontalView behaviors should render with array too 1`] = `
 
 .css-1,
 [data-css-1] {
-  transform: translate3d(-200%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
   transition: .5s;
-  -webkit-transform: translate3d(-200%, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
   -webkit-transition: .5s;
   -moz-transition: .5s;
 }
