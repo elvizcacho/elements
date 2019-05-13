@@ -54,7 +54,6 @@ class DropdownStory extends React.Component {
   }
 
   render() {
-    console.log('render', this.state)
     return (
       <ThemeProvider>
         <ResourceProvider>

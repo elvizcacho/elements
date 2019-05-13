@@ -122,8 +122,6 @@ export default class Dropdown extends React.PureComponent {
     } = this.props
     const { showScrollArrow } = this.state
 
-    console.log('render selectedItem', selectedItem)
-
     return (
       <Downshift
         itemToString={item => (item ? item.label : '')}
