@@ -12,7 +12,8 @@
             "last 4 Edge versions"
           ]
         },
-        "useBuiltIns": "usage"
+        "useBuiltIns": "usage",
+        "corejs": "3.0.0"
       }
     ],
     "@babel/preset-react"
