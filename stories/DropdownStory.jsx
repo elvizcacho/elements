@@ -5,9 +5,9 @@ import {
   Dropdown,
   ResourceProvider,
   Button,
+  Text,
 } from '../src/'
 import { css } from 'glamor'
-import Text from '../src/atoms/Text'
 
 const styles = {
   title: css({
