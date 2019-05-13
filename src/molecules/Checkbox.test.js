@@ -2,7 +2,7 @@ import React from 'react'
 import { render, fireEvent } from 'react-testing-library'
 
 import Checkbox from './Checkbox'
-import ThemeProvider from '../behaviour/ThemeProvider'
+import { ThemeProvider } from '../'
 
 const THEME = {
   background: 'darkMarco',

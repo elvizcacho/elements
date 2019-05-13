@@ -1,6 +1,5 @@
 import React from 'react'
-import ReadMore from './ReadMore'
-import Text from '../atoms/Text'
+import { Text, ReadMore } from '../'
 
 class ReadMoreTest extends ReadMore {
   childRef = { current: { style: { height: 480 } } }

@@ -1,8 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import ThemeProvider from '../behaviour/ThemeProvider'
-import ResourceProvider from '../behaviour/ResourceProvider'
-import Dropdown from '../organisms/Dropdown'
+import { ThemeProvider, ResourceProvider, Dropdown } from '../'
 
 describe('Dropdown', () => {
   it('should render with placement bottom (default)', () => {
