@@ -3,6 +3,11 @@
 exports[`Test the checkbox component should tick it 1`] = `
 .css-0,
 [data-css-0] {
+  position: relative;
+}
+
+.css-1,
+[data-css-1] {
   border-radius: 3px;
   height: 25px;
   width: 25px;
@@ -15,16 +20,16 @@ exports[`Test the checkbox component should tick it 1`] = `
   -moz-transition: 250ms;
 }
 
-.css-1,
-[data-css-1] {
+.css-2,
+[data-css-2] {
   padding: 10px 15px;
   min-height: 50px;
   border-bottom: 1px solid #ecf0f1;
   background-color: white;
 }
 
-.css-2,
-[data-css-2] {
+.css-3,
+[data-css-3] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -45,11 +50,6 @@ exports[`Test the checkbox component should tick it 1`] = `
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -webkit-flex: 0 0 auto;
-}
-
-.css-3,
-[data-css-3] {
-  position: relative;
 }
 
 .css-4,
@@ -109,15 +109,15 @@ exports[`Test the checkbox component should tick it 1`] = `
 }
 
 <div
-  data-css-1=""
   data-css-2=""
+  data-css-3=""
 >
   <div
-    data-css-2=""
+    data-css-3=""
   >
     <div
-      data-css-3=""
       data-css-0=""
+      data-css-1=""
       data-css-4=""
     >
       <div
@@ -163,14 +163,19 @@ exports[`Test the checkbox component should tick it 1`] = `
 exports[`Test the checkbox component should tick it 2`] = `
 .css-0,
 [data-css-0] {
+  position: relative;
+}
+
+.css-1,
+[data-css-1] {
   padding: 10px 15px;
   min-height: 50px;
   border-bottom: 1px solid #ecf0f1;
   background-color: white;
 }
 
-.css-1,
-[data-css-1] {
+.css-2,
+[data-css-2] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -191,11 +196,6 @@ exports[`Test the checkbox component should tick it 2`] = `
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -webkit-flex: 0 0 auto;
-}
-
-.css-2,
-[data-css-2] {
-  position: relative;
 }
 
 .css-3,
@@ -276,14 +276,14 @@ exports[`Test the checkbox component should tick it 2`] = `
 }
 
 <div
-  data-css-0=""
   data-css-1=""
+  data-css-2=""
 >
   <div
-    data-css-1=""
+    data-css-2=""
   >
     <div
-      data-css-2=""
+      data-css-0=""
       data-css-3=""
       data-css-8=""
     >
@@ -353,6 +353,11 @@ exports[`Test the checkbox component should tick it 2`] = `
 exports[`Test the checkbox component should work with children 1`] = `
 .css-0,
 [data-css-0] {
+  position: relative;
+}
+
+.css-1,
+[data-css-1] {
   border-radius: 3px;
   height: 25px;
   width: 25px;
@@ -365,8 +370,8 @@ exports[`Test the checkbox component should work with children 1`] = `
   -moz-transition: 250ms;
 }
 
-.css-1,
-[data-css-1] {
+.css-2,
+[data-css-2] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -387,11 +392,6 @@ exports[`Test the checkbox component should work with children 1`] = `
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -webkit-flex: 0 0 auto;
-}
-
-.css-2,
-[data-css-2] {
-  position: relative;
 }
 
 .css-3,
@@ -459,15 +459,15 @@ exports[`Test the checkbox component should work with children 1`] = `
 }
 
 <div
-  data-css-1=""
+  data-css-2=""
   data-css-8=""
 >
   <div
-    data-css-1=""
+    data-css-2=""
   >
     <div
-      data-css-2=""
       data-css-0=""
+      data-css-1=""
       data-css-3=""
     >
       <div

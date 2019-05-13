@@ -22,6 +22,11 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
 
 .css-2,
 [data-css-2] {
+  position: relative;
+}
+
+.css-3,
+[data-css-3] {
   align-items: stretch;
   border: none;
   box-shadow: ;
@@ -41,28 +46,23 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   -webkit-flex-direction: column;
 }
 
-.css-3,
-[data-css-3] {
-  width: 100%;
+.css-4,
+[data-css-4] {
+  width: calc(100% - 5px);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   cursor: pointer;
-  padding-right: 35px;
+  padding-right: 30px;
   color: black;
-}
-
-.css-4,
-[data-css-4] {
-  cursor: pointer;
-  height: 100%;
-  width: 50px;
-  padding: 16px 16px 16px 20px;
 }
 
 .css-5,
 [data-css-5] {
-  position: relative;
+  cursor: pointer;
+  height: 100%;
+  width: 50px;
+  padding: 16px 16px 16px 20px;
 }
 
 .css-6,
@@ -141,11 +141,11 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   aria-haspopup="listbox"
   aria-labelledby="downshift-0-label"
   aria-owns={null}
-  data-css-2=""
+  data-css-3=""
   role="combobox"
 >
   <div
-    data-css-5=""
+    data-css-2=""
     data-css-6=""
   >
     <div
@@ -154,7 +154,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
       onClick={[Function]}
     >
       <div
-        data-css-5=""
+        data-css-2=""
         data-css-6=""
         style={
           Object {
@@ -164,7 +164,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
       >
         <input
           aria-required={false}
-          data-css-3=""
+          data-css-4=""
           data-css-7=""
           disabled={true}
           onChange={[Function]}
@@ -217,7 +217,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
         </div>
       </div>
       <div
-        data-css-4=""
+        data-css-5=""
         data-css-11=""
         data-css-6=""
         onClick={[Function]}
@@ -242,7 +242,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
     </div>
   </div>
   <div
-    data-css-5=""
+    data-css-2=""
     data-css-6=""
   />
 </div>
@@ -270,6 +270,11 @@ exports[`Dropdown should render with placement top 1`] = `
 
 .css-2,
 [data-css-2] {
+  position: relative;
+}
+
+.css-3,
+[data-css-3] {
   align-items: stretch;
   border: none;
   box-shadow: ;
@@ -289,28 +294,23 @@ exports[`Dropdown should render with placement top 1`] = `
   -webkit-flex-direction: column;
 }
 
-.css-3,
-[data-css-3] {
-  width: 100%;
+.css-4,
+[data-css-4] {
+  width: calc(100% - 5px);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   cursor: pointer;
-  padding-right: 35px;
+  padding-right: 30px;
   color: black;
-}
-
-.css-4,
-[data-css-4] {
-  cursor: pointer;
-  height: 100%;
-  width: 50px;
-  padding: 16px 16px 16px 20px;
 }
 
 .css-5,
 [data-css-5] {
-  position: relative;
+  cursor: pointer;
+  height: 100%;
+  width: 50px;
+  padding: 16px 16px 16px 20px;
 }
 
 .css-6,
@@ -389,11 +389,11 @@ exports[`Dropdown should render with placement top 1`] = `
   aria-haspopup="listbox"
   aria-labelledby="downshift-1-label"
   aria-owns={null}
-  data-css-2=""
+  data-css-3=""
   role="combobox"
 >
   <div
-    data-css-5=""
+    data-css-2=""
     data-css-6=""
   >
     <div
@@ -402,7 +402,7 @@ exports[`Dropdown should render with placement top 1`] = `
       onClick={[Function]}
     >
       <div
-        data-css-5=""
+        data-css-2=""
         data-css-6=""
         style={
           Object {
@@ -412,7 +412,7 @@ exports[`Dropdown should render with placement top 1`] = `
       >
         <input
           aria-required={false}
-          data-css-3=""
+          data-css-4=""
           data-css-7=""
           disabled={true}
           onChange={[Function]}
@@ -465,7 +465,7 @@ exports[`Dropdown should render with placement top 1`] = `
         </div>
       </div>
       <div
-        data-css-4=""
+        data-css-5=""
         data-css-11=""
         data-css-6=""
         onClick={[Function]}
@@ -490,7 +490,7 @@ exports[`Dropdown should render with placement top 1`] = `
     </div>
   </div>
   <div
-    data-css-5=""
+    data-css-2=""
     data-css-6=""
   />
 </div>

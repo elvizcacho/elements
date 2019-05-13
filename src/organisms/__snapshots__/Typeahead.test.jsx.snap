@@ -3,6 +3,11 @@
 exports[`Test the typeahead component Test typeahead component with jsx labels should be a simple static one - in depth testing of the core behavior with JSX labels 1`] = `
 .css-0,
 [data-css-0] {
+  position: relative;
+}
+
+.css-1,
+[data-css-1] {
   align-items: stretch;
   background: transparent;
   border: none;
@@ -21,8 +26,8 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
   -webkit-flex-direction: column;
 }
 
-.css-1,
-[data-css-1] {
+.css-2,
+[data-css-2] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -35,13 +40,13 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
   -webkit-align-items: center;
 }
 
-.css-2,
-[data-css-2] {
+.css-3,
+[data-css-3] {
   width: 100%;
 }
 
-.css-3,
-[data-css-3] {
+.css-4,
+[data-css-4] {
   background: #fff;
   border: none;
   box-shadow: none;
@@ -50,8 +55,8 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
   height: 50px;
 }
 
-.css-4,
-[data-css-4] {
+.css-5,
+[data-css-5] {
   background: transparent;
   border: none;
   box-shadow: none;
@@ -61,21 +66,16 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
   height: 50px;
 }
 
-.css-5,
-[data-css-5] {
-  height: 100%;
-}
-
 .css-6,
 [data-css-6] {
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  -webkit-flex: 0 0 auto;
+  height: 100%;
 }
 
 .css-7,
 [data-css-7] {
-  position: relative;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
 }
 
 .css-8,
@@ -168,26 +168,26 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
   aria-haspopup="listbox"
   aria-labelledby="downshift-19-label"
   aria-owns={null}
-  data-css-0=""
+  data-css-1=""
   role="combobox"
 >
   <div
-    data-css-6=""
-    data-css-1=""
+    data-css-7=""
+    data-css-2=""
   >
     <div
+      data-css-0=""
       data-css-7=""
-      data-css-6=""
-      data-css-2=""
+      data-css-3=""
     >
       <div
-        data-css-6=""
-        data-css-2=""
+        data-css-7=""
+        data-css-3=""
         data-css-8=""
       >
         <div
+          data-css-0=""
           data-css-7=""
-          data-css-6=""
           style={
             Object {
               "width": "100%",
@@ -197,7 +197,7 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
           <input
             aria-required={false}
             autoComplete="off"
-            data-css-3=""
+            data-css-4=""
             data-css-9=""
             name="hint"
             onChange={[Function]}
@@ -209,7 +209,7 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
           <div
             className="checkmark"
             data-css-11=""
-            data-css-6=""
+            data-css-7=""
           >
             <div
               dangerouslySetInnerHTML={
@@ -217,7 +217,7 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
                   "__html": undefined,
                 }
               }
-              data-css-6=""
+              data-css-7=""
               style={
                 Object {
                   "fill": "lightGrey",
@@ -231,8 +231,8 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
         </div>
       </div>
       <div
+        data-css-0=""
         data-css-7=""
-        data-css-6=""
         style={
           Object {
             "width": "100%",
@@ -246,7 +246,7 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
           aria-labelledby="downshift-19-label"
           aria-required={false}
           autoComplete="off"
-          data-css-4=""
+          data-css-5=""
           data-css-9=""
           id="downshift-19-input"
           name="typed"
@@ -261,7 +261,7 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
         <div
           className="checkmark"
           data-css-11=""
-          data-css-6=""
+          data-css-7=""
         >
           <div
             dangerouslySetInnerHTML={
@@ -269,7 +269,7 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
                 "__html": undefined,
               }
             }
-            data-css-6=""
+            data-css-7=""
             style={
               Object {
                 "fill": "lightGrey",
@@ -284,13 +284,13 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
       <div
         data-css-12=""
         data-css-13=""
-        data-css-5=""
+        data-css-6=""
       />
     </div>
   </div>
   <div
+    data-css-0=""
     data-css-7=""
-    data-css-6=""
   />
 </div>
 `;
@@ -298,6 +298,11 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
 exports[`Test the typeahead component should be a simple static one - in depth testing of the core behavior 1`] = `
 .css-0,
 [data-css-0] {
+  position: relative;
+}
+
+.css-1,
+[data-css-1] {
   align-items: stretch;
   background: transparent;
   border: none;
@@ -316,8 +321,8 @@ exports[`Test the typeahead component should be a simple static one - in depth t
   -webkit-flex-direction: column;
 }
 
-.css-1,
-[data-css-1] {
+.css-2,
+[data-css-2] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -330,13 +335,13 @@ exports[`Test the typeahead component should be a simple static one - in depth t
   -webkit-align-items: center;
 }
 
-.css-2,
-[data-css-2] {
+.css-3,
+[data-css-3] {
   width: 100%;
 }
 
-.css-3,
-[data-css-3] {
+.css-4,
+[data-css-4] {
   background: #fff;
   border: none;
   box-shadow: none;
@@ -345,8 +350,8 @@ exports[`Test the typeahead component should be a simple static one - in depth t
   height: 50px;
 }
 
-.css-4,
-[data-css-4] {
+.css-5,
+[data-css-5] {
   background: transparent;
   border: none;
   box-shadow: none;
@@ -356,21 +361,16 @@ exports[`Test the typeahead component should be a simple static one - in depth t
   height: 50px;
 }
 
-.css-5,
-[data-css-5] {
-  height: 100%;
-}
-
 .css-6,
 [data-css-6] {
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  -webkit-flex: 0 0 auto;
+  height: 100%;
 }
 
 .css-7,
 [data-css-7] {
-  position: relative;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
 }
 
 .css-8,
@@ -463,26 +463,26 @@ exports[`Test the typeahead component should be a simple static one - in depth t
   aria-haspopup="listbox"
   aria-labelledby="downshift-0-label"
   aria-owns={null}
-  data-css-0=""
+  data-css-1=""
   role="combobox"
 >
   <div
-    data-css-6=""
-    data-css-1=""
+    data-css-7=""
+    data-css-2=""
   >
     <div
+      data-css-0=""
       data-css-7=""
-      data-css-6=""
-      data-css-2=""
+      data-css-3=""
     >
       <div
-        data-css-6=""
-        data-css-2=""
+        data-css-7=""
+        data-css-3=""
         data-css-8=""
       >
         <div
+          data-css-0=""
           data-css-7=""
-          data-css-6=""
           style={
             Object {
               "width": "100%",
@@ -492,7 +492,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
           <input
             aria-required={false}
             autoComplete="off"
-            data-css-3=""
+            data-css-4=""
             data-css-9=""
             name="hint"
             onChange={[Function]}
@@ -504,7 +504,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
           <div
             className="checkmark"
             data-css-11=""
-            data-css-6=""
+            data-css-7=""
           >
             <div
               dangerouslySetInnerHTML={
@@ -512,7 +512,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
                   "__html": undefined,
                 }
               }
-              data-css-6=""
+              data-css-7=""
               style={
                 Object {
                   "fill": "lightGrey",
@@ -526,8 +526,8 @@ exports[`Test the typeahead component should be a simple static one - in depth t
         </div>
       </div>
       <div
+        data-css-0=""
         data-css-7=""
-        data-css-6=""
         style={
           Object {
             "width": "100%",
@@ -541,7 +541,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
           aria-labelledby="downshift-0-label"
           aria-required={false}
           autoComplete="off"
-          data-css-4=""
+          data-css-5=""
           data-css-9=""
           id="downshift-0-input"
           name="typed"
@@ -556,7 +556,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
         <div
           className="checkmark"
           data-css-11=""
-          data-css-6=""
+          data-css-7=""
         >
           <div
             dangerouslySetInnerHTML={
@@ -564,7 +564,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
                 "__html": undefined,
               }
             }
-            data-css-6=""
+            data-css-7=""
             style={
               Object {
                 "fill": "lightGrey",
@@ -579,13 +579,13 @@ exports[`Test the typeahead component should be a simple static one - in depth t
       <div
         data-css-12=""
         data-css-13=""
-        data-css-5=""
+        data-css-6=""
       />
     </div>
   </div>
   <div
+    data-css-0=""
     data-css-7=""
-    data-css-6=""
   />
 </div>
 `;
@@ -593,6 +593,11 @@ exports[`Test the typeahead component should be a simple static one - in depth t
 exports[`Test the typeahead component should be a simple static one which auto open on click 1`] = `
 .css-0,
 [data-css-0] {
+  position: relative;
+}
+
+.css-1,
+[data-css-1] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -605,13 +610,13 @@ exports[`Test the typeahead component should be a simple static one which auto o
   -webkit-align-items: center;
 }
 
-.css-1,
-[data-css-1] {
+.css-2,
+[data-css-2] {
   width: 100%;
 }
 
-.css-2,
-[data-css-2] {
+.css-3,
+[data-css-3] {
   background: #fff;
   border: none;
   box-shadow: none;
@@ -620,21 +625,16 @@ exports[`Test the typeahead component should be a simple static one which auto o
   height: 50px;
 }
 
-.css-3,
-[data-css-3] {
-  height: 100%;
-}
-
 .css-4,
 [data-css-4] {
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  -webkit-flex: 0 0 auto;
+  height: 100%;
 }
 
 .css-5,
 [data-css-5] {
-  position: relative;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
 }
 
 .css-6,
@@ -850,22 +850,22 @@ exports[`Test the typeahead component should be a simple static one which auto o
   role="combobox"
 >
   <div
-    data-css-4=""
-    data-css-0=""
+    data-css-5=""
+    data-css-1=""
   >
     <div
+      data-css-0=""
       data-css-5=""
-      data-css-4=""
-      data-css-1=""
+      data-css-2=""
     >
       <div
-        data-css-4=""
-        data-css-1=""
+        data-css-5=""
+        data-css-2=""
         data-css-6=""
       >
         <div
+          data-css-0=""
           data-css-5=""
-          data-css-4=""
           style={
             Object {
               "width": "100%",
@@ -875,7 +875,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
           <input
             aria-required={false}
             autoComplete="off"
-            data-css-2=""
+            data-css-3=""
             data-css-7=""
             name="hint"
             onChange={[Function]}
@@ -887,7 +887,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
           <div
             className="checkmark"
             data-css-9=""
-            data-css-4=""
+            data-css-5=""
           >
             <div
               dangerouslySetInnerHTML={
@@ -895,7 +895,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
                   "__html": undefined,
                 }
               }
-              data-css-4=""
+              data-css-5=""
               style={
                 Object {
                   "fill": "lightGrey",
@@ -909,8 +909,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
         </div>
       </div>
       <div
+        data-css-0=""
         data-css-5=""
-        data-css-4=""
         style={
           Object {
             "width": "100%",
@@ -940,7 +940,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
         <div
           className="checkmark"
           data-css-9=""
-          data-css-4=""
+          data-css-5=""
         >
           <div
             dangerouslySetInnerHTML={
@@ -948,7 +948,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
                 "__html": undefined,
               }
             }
-            data-css-4=""
+            data-css-5=""
             style={
               Object {
                 "fill": "lightGrey",
@@ -963,13 +963,13 @@ exports[`Test the typeahead component should be a simple static one which auto o
       <div
         data-css-10=""
         data-css-11=""
-        data-css-3=""
+        data-css-4=""
       />
     </div>
   </div>
   <div
+    data-css-0=""
     data-css-5=""
-    data-css-4=""
   >
     <div
       aria-labelledby="downshift-1-label"
@@ -996,7 +996,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
       >
         <div
           data-css-18=""
-          data-css-4=""
+          data-css-5=""
         >
           Abomasnow
         </div>
@@ -1018,7 +1018,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
       >
         <div
           data-css-18=""
-          data-css-4=""
+          data-css-5=""
         >
           Abra
         </div>
@@ -1040,7 +1040,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
       >
         <div
           data-css-18=""
-          data-css-4=""
+          data-css-5=""
         >
           Absol
         </div>
@@ -1062,7 +1062,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
       >
         <div
           data-css-18=""
-          data-css-4=""
+          data-css-5=""
         >
           Accelgor
         </div>
@@ -1084,7 +1084,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
       >
         <div
           data-css-18=""
-          data-css-4=""
+          data-css-5=""
         >
           Aegislash
         </div>
@@ -1106,7 +1106,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
       >
         <div
           data-css-18=""
-          data-css-4=""
+          data-css-5=""
         >
           Aerodactyl
         </div>
@@ -1128,7 +1128,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
       >
         <div
           data-css-18=""
-          data-css-4=""
+          data-css-5=""
         >
           Aggron
         </div>
@@ -1150,7 +1150,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
       >
         <div
           data-css-18=""
-          data-css-4=""
+          data-css-5=""
         >
           Aipom
         </div>
@@ -1172,7 +1172,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
       >
         <div
           data-css-18=""
-          data-css-4=""
+          data-css-5=""
         >
           Alakazam
         </div>
@@ -1194,13 +1194,13 @@ exports[`Test the typeahead component should be a simple static one which auto o
       >
         <div
           data-css-18=""
-          data-css-4=""
+          data-css-5=""
         >
           Alomomola
         </div>
       </div>
       <div
-        data-css-4=""
+        data-css-5=""
         data-css-19=""
       />
     </div>
@@ -1211,6 +1211,11 @@ exports[`Test the typeahead component should be a simple static one which auto o
 exports[`Test the typeahead component should render differently when loading 1`] = `
 .css-0,
 [data-css-0] {
+  position: relative;
+}
+
+.css-1,
+[data-css-1] {
   align-items: stretch;
   background: transparent;
   border: none;
@@ -1229,8 +1234,8 @@ exports[`Test the typeahead component should render differently when loading 1`]
   -webkit-flex-direction: column;
 }
 
-.css-1,
-[data-css-1] {
+.css-2,
+[data-css-2] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -1243,13 +1248,13 @@ exports[`Test the typeahead component should render differently when loading 1`]
   -webkit-align-items: center;
 }
 
-.css-2,
-[data-css-2] {
+.css-3,
+[data-css-3] {
   width: 100%;
 }
 
-.css-3,
-[data-css-3] {
+.css-4,
+[data-css-4] {
   background: #fff;
   border: none;
   box-shadow: none;
@@ -1258,8 +1263,8 @@ exports[`Test the typeahead component should render differently when loading 1`]
   height: 50px;
 }
 
-.css-4,
-[data-css-4] {
+.css-5,
+[data-css-5] {
   background: transparent;
   border: none;
   box-shadow: none;
@@ -1269,21 +1274,16 @@ exports[`Test the typeahead component should render differently when loading 1`]
   height: 50px;
 }
 
-.css-5,
-[data-css-5] {
-  height: 100%;
-}
-
 .css-6,
 [data-css-6] {
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  -webkit-flex: 0 0 auto;
+  height: 100%;
 }
 
 .css-7,
 [data-css-7] {
-  position: relative;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
 }
 
 .css-8,
@@ -1376,26 +1376,26 @@ exports[`Test the typeahead component should render differently when loading 1`]
   aria-haspopup="listbox"
   aria-labelledby="downshift-7-label"
   aria-owns={null}
-  data-css-0=""
+  data-css-1=""
   role="combobox"
 >
   <div
-    data-css-6=""
-    data-css-1=""
+    data-css-7=""
+    data-css-2=""
   >
     <div
+      data-css-0=""
       data-css-7=""
-      data-css-6=""
-      data-css-2=""
+      data-css-3=""
     >
       <div
-        data-css-6=""
-        data-css-2=""
+        data-css-7=""
+        data-css-3=""
         data-css-8=""
       >
         <div
+          data-css-0=""
           data-css-7=""
-          data-css-6=""
           style={
             Object {
               "width": "100%",
@@ -1405,7 +1405,7 @@ exports[`Test the typeahead component should render differently when loading 1`]
           <input
             aria-required={false}
             autoComplete="off"
-            data-css-3=""
+            data-css-4=""
             data-css-9=""
             name="hint"
             onChange={[Function]}
@@ -1417,7 +1417,7 @@ exports[`Test the typeahead component should render differently when loading 1`]
           <div
             className="checkmark"
             data-css-11=""
-            data-css-6=""
+            data-css-7=""
           >
             <div
               dangerouslySetInnerHTML={
@@ -1425,7 +1425,7 @@ exports[`Test the typeahead component should render differently when loading 1`]
                   "__html": undefined,
                 }
               }
-              data-css-6=""
+              data-css-7=""
               style={
                 Object {
                   "fill": "lightGrey",
@@ -1439,8 +1439,8 @@ exports[`Test the typeahead component should render differently when loading 1`]
         </div>
       </div>
       <div
+        data-css-0=""
         data-css-7=""
-        data-css-6=""
         style={
           Object {
             "width": "100%",
@@ -1454,7 +1454,7 @@ exports[`Test the typeahead component should render differently when loading 1`]
           aria-labelledby="downshift-7-label"
           aria-required={false}
           autoComplete="off"
-          data-css-4=""
+          data-css-5=""
           data-css-9=""
           id="downshift-7-input"
           name="typed"
@@ -1470,7 +1470,7 @@ exports[`Test the typeahead component should render differently when loading 1`]
         <div
           className="checkmark"
           data-css-11=""
-          data-css-6=""
+          data-css-7=""
         >
           <div
             dangerouslySetInnerHTML={
@@ -1478,7 +1478,7 @@ exports[`Test the typeahead component should render differently when loading 1`]
                 "__html": undefined,
               }
             }
-            data-css-6=""
+            data-css-7=""
             style={
               Object {
                 "fill": "lightGrey",
@@ -1493,13 +1493,13 @@ exports[`Test the typeahead component should render differently when loading 1`]
       <div
         data-css-12=""
         data-css-13=""
-        data-css-5=""
+        data-css-6=""
       />
     </div>
   </div>
   <div
+    data-css-0=""
     data-css-7=""
-    data-css-6=""
   />
 </div>
 `;
@@ -1507,6 +1507,11 @@ exports[`Test the typeahead component should render differently when loading 1`]
 exports[`Test the typeahead component should render differently when loading 2`] = `
 .css-0,
 [data-css-0] {
+  position: relative;
+}
+
+.css-1,
+[data-css-1] {
   align-items: stretch;
   background: transparent;
   border: none;
@@ -1525,8 +1530,8 @@ exports[`Test the typeahead component should render differently when loading 2`]
   -webkit-flex-direction: column;
 }
 
-.css-1,
-[data-css-1] {
+.css-2,
+[data-css-2] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -1539,13 +1544,13 @@ exports[`Test the typeahead component should render differently when loading 2`]
   -webkit-align-items: center;
 }
 
-.css-2,
-[data-css-2] {
+.css-3,
+[data-css-3] {
   width: 100%;
 }
 
-.css-3,
-[data-css-3] {
+.css-4,
+[data-css-4] {
   background: #fff;
   border: none;
   box-shadow: none;
@@ -1554,8 +1559,8 @@ exports[`Test the typeahead component should render differently when loading 2`]
   height: 50px;
 }
 
-.css-4,
-[data-css-4] {
+.css-5,
+[data-css-5] {
   background: transparent;
   border: none;
   box-shadow: none;
@@ -1565,21 +1570,16 @@ exports[`Test the typeahead component should render differently when loading 2`]
   height: 50px;
 }
 
-.css-5,
-[data-css-5] {
-  height: 100%;
-}
-
 .css-6,
 [data-css-6] {
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  -webkit-flex: 0 0 auto;
+  height: 100%;
 }
 
 .css-7,
 [data-css-7] {
-  position: relative;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
 }
 
 .css-8,
@@ -1672,26 +1672,26 @@ exports[`Test the typeahead component should render differently when loading 2`]
   aria-haspopup="listbox"
   aria-labelledby="downshift-7-label"
   aria-owns={null}
-  data-css-0=""
+  data-css-1=""
   role="combobox"
 >
   <div
-    data-css-6=""
-    data-css-1=""
+    data-css-7=""
+    data-css-2=""
   >
     <div
+      data-css-0=""
       data-css-7=""
-      data-css-6=""
-      data-css-2=""
+      data-css-3=""
     >
       <div
-        data-css-6=""
-        data-css-2=""
+        data-css-7=""
+        data-css-3=""
         data-css-8=""
       >
         <div
+          data-css-0=""
           data-css-7=""
-          data-css-6=""
           style={
             Object {
               "width": "100%",
@@ -1701,7 +1701,7 @@ exports[`Test the typeahead component should render differently when loading 2`]
           <input
             aria-required={false}
             autoComplete="off"
-            data-css-3=""
+            data-css-4=""
             data-css-9=""
             name="hint"
             onChange={[Function]}
@@ -1713,7 +1713,7 @@ exports[`Test the typeahead component should render differently when loading 2`]
           <div
             className="checkmark"
             data-css-11=""
-            data-css-6=""
+            data-css-7=""
           >
             <div
               dangerouslySetInnerHTML={
@@ -1721,7 +1721,7 @@ exports[`Test the typeahead component should render differently when loading 2`]
                   "__html": undefined,
                 }
               }
-              data-css-6=""
+              data-css-7=""
               style={
                 Object {
                   "fill": "lightGrey",
@@ -1735,8 +1735,8 @@ exports[`Test the typeahead component should render differently when loading 2`]
         </div>
       </div>
       <div
+        data-css-0=""
         data-css-7=""
-        data-css-6=""
         style={
           Object {
             "width": "100%",
@@ -1750,7 +1750,7 @@ exports[`Test the typeahead component should render differently when loading 2`]
           aria-labelledby="downshift-7-label"
           aria-required={false}
           autoComplete="off"
-          data-css-4=""
+          data-css-5=""
           data-css-9=""
           id="downshift-7-input"
           name="typed"
@@ -1766,7 +1766,7 @@ exports[`Test the typeahead component should render differently when loading 2`]
         <div
           className="checkmark"
           data-css-11=""
-          data-css-6=""
+          data-css-7=""
         >
           <div
             dangerouslySetInnerHTML={
@@ -1774,7 +1774,7 @@ exports[`Test the typeahead component should render differently when loading 2`]
                 "__html": undefined,
               }
             }
-            data-css-6=""
+            data-css-7=""
             style={
               Object {
                 "fill": "lightGrey",
@@ -1789,7 +1789,7 @@ exports[`Test the typeahead component should render differently when loading 2`]
       <div
         data-css-12=""
         data-css-13=""
-        data-css-5=""
+        data-css-6=""
       >
         <svg
           height={16}
@@ -1842,8 +1842,8 @@ exports[`Test the typeahead component should render differently when loading 2`]
     </div>
   </div>
   <div
+    data-css-0=""
     data-css-7=""
-    data-css-6=""
   />
 </div>
 `;
@@ -1851,6 +1851,11 @@ exports[`Test the typeahead component should render differently when loading 2`]
 exports[`Test the typeahead component should use the limit property 1`] = `
 .css-0,
 [data-css-0] {
+  position: relative;
+}
+
+.css-1,
+[data-css-1] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -1863,13 +1868,13 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   -webkit-align-items: center;
 }
 
-.css-1,
-[data-css-1] {
+.css-2,
+[data-css-2] {
   width: 100%;
 }
 
-.css-2,
-[data-css-2] {
+.css-3,
+[data-css-3] {
   background: #fff;
   border: none;
   box-shadow: none;
@@ -1878,21 +1883,16 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   height: 50px;
 }
 
-.css-3,
-[data-css-3] {
-  height: 100%;
-}
-
 .css-4,
 [data-css-4] {
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  -webkit-flex: 0 0 auto;
+  height: 100%;
 }
 
 .css-5,
 [data-css-5] {
-  position: relative;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
 }
 
 .css-6,
@@ -2108,22 +2108,22 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   role="combobox"
 >
   <div
-    data-css-4=""
-    data-css-0=""
+    data-css-5=""
+    data-css-1=""
   >
     <div
+      data-css-0=""
       data-css-5=""
-      data-css-4=""
-      data-css-1=""
+      data-css-2=""
     >
       <div
-        data-css-4=""
-        data-css-1=""
+        data-css-5=""
+        data-css-2=""
         data-css-6=""
       >
         <div
+          data-css-0=""
           data-css-5=""
-          data-css-4=""
           style={
             Object {
               "width": "100%",
@@ -2133,7 +2133,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
           <input
             aria-required={false}
             autoComplete="off"
-            data-css-2=""
+            data-css-3=""
             data-css-7=""
             name="hint"
             onChange={[Function]}
@@ -2145,7 +2145,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
           <div
             className="checkmark"
             data-css-9=""
-            data-css-4=""
+            data-css-5=""
           >
             <div
               dangerouslySetInnerHTML={
@@ -2153,7 +2153,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
                   "__html": undefined,
                 }
               }
-              data-css-4=""
+              data-css-5=""
               style={
                 Object {
                   "fill": "lightGrey",
@@ -2167,8 +2167,8 @@ exports[`Test the typeahead component should use the limit property 1`] = `
         </div>
       </div>
       <div
+        data-css-0=""
         data-css-5=""
-        data-css-4=""
         style={
           Object {
             "width": "100%",
@@ -2198,7 +2198,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
         <div
           className="checkmark"
           data-css-9=""
-          data-css-4=""
+          data-css-5=""
         >
           <div
             dangerouslySetInnerHTML={
@@ -2206,7 +2206,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
                 "__html": undefined,
               }
             }
-            data-css-4=""
+            data-css-5=""
             style={
               Object {
                 "fill": "lightGrey",
@@ -2221,13 +2221,13 @@ exports[`Test the typeahead component should use the limit property 1`] = `
       <div
         data-css-10=""
         data-css-11=""
-        data-css-3=""
+        data-css-4=""
       />
     </div>
   </div>
   <div
+    data-css-0=""
     data-css-5=""
-    data-css-4=""
   >
     <div
       aria-labelledby="downshift-2-label"
@@ -2254,7 +2254,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
       >
         <div
           data-css-18=""
-          data-css-4=""
+          data-css-5=""
         >
           Abomasnow
         </div>
@@ -2276,13 +2276,13 @@ exports[`Test the typeahead component should use the limit property 1`] = `
       >
         <div
           data-css-18=""
-          data-css-4=""
+          data-css-5=""
         >
           Abra
         </div>
       </div>
       <div
-        data-css-4=""
+        data-css-5=""
         data-css-19=""
       />
     </div>
@@ -2293,6 +2293,11 @@ exports[`Test the typeahead component should use the limit property 1`] = `
 exports[`Test the typeahead component should use the top placement property 1`] = `
 .css-0,
 [data-css-0] {
+  position: relative;
+}
+
+.css-1,
+[data-css-1] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -2305,13 +2310,13 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   -webkit-align-items: center;
 }
 
-.css-1,
-[data-css-1] {
+.css-2,
+[data-css-2] {
   width: 100%;
 }
 
-.css-2,
-[data-css-2] {
+.css-3,
+[data-css-3] {
   background: #fff;
   border: none;
   box-shadow: none;
@@ -2320,21 +2325,16 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   height: 50px;
 }
 
-.css-3,
-[data-css-3] {
-  height: 100%;
-}
-
 .css-4,
 [data-css-4] {
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  -webkit-flex: 0 0 auto;
+  height: 100%;
 }
 
 .css-5,
 [data-css-5] {
-  position: relative;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
 }
 
 .css-6,
@@ -2551,22 +2551,22 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   role="combobox"
 >
   <div
-    data-css-4=""
-    data-css-0=""
+    data-css-5=""
+    data-css-1=""
   >
     <div
+      data-css-0=""
       data-css-5=""
-      data-css-4=""
-      data-css-1=""
+      data-css-2=""
     >
       <div
-        data-css-4=""
-        data-css-1=""
+        data-css-5=""
+        data-css-2=""
         data-css-6=""
       >
         <div
+          data-css-0=""
           data-css-5=""
-          data-css-4=""
           style={
             Object {
               "width": "100%",
@@ -2576,7 +2576,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
           <input
             aria-required={false}
             autoComplete="off"
-            data-css-2=""
+            data-css-3=""
             data-css-7=""
             name="hint"
             onChange={[Function]}
@@ -2588,7 +2588,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
           <div
             className="checkmark"
             data-css-9=""
-            data-css-4=""
+            data-css-5=""
           >
             <div
               dangerouslySetInnerHTML={
@@ -2596,7 +2596,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
                   "__html": undefined,
                 }
               }
-              data-css-4=""
+              data-css-5=""
               style={
                 Object {
                   "fill": "lightGrey",
@@ -2610,8 +2610,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
         </div>
       </div>
       <div
+        data-css-0=""
         data-css-5=""
-        data-css-4=""
         style={
           Object {
             "width": "100%",
@@ -2641,7 +2641,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
         <div
           className="checkmark"
           data-css-9=""
-          data-css-4=""
+          data-css-5=""
         >
           <div
             dangerouslySetInnerHTML={
@@ -2649,7 +2649,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
                 "__html": undefined,
               }
             }
-            data-css-4=""
+            data-css-5=""
             style={
               Object {
                 "fill": "lightGrey",
@@ -2664,13 +2664,13 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       <div
         data-css-10=""
         data-css-11=""
-        data-css-3=""
+        data-css-4=""
       />
     </div>
   </div>
   <div
+    data-css-0=""
     data-css-5=""
-    data-css-4=""
   >
     <div
       aria-labelledby="downshift-3-label"
@@ -2697,7 +2697,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       >
         <div
           data-css-16=""
-          data-css-4=""
+          data-css-5=""
         >
           Abomasnow
         </div>
@@ -2719,7 +2719,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       >
         <div
           data-css-16=""
-          data-css-4=""
+          data-css-5=""
         >
           Abra
         </div>
@@ -2741,7 +2741,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       >
         <div
           data-css-16=""
-          data-css-4=""
+          data-css-5=""
         >
           Absol
         </div>
@@ -2763,7 +2763,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       >
         <div
           data-css-16=""
-          data-css-4=""
+          data-css-5=""
         >
           Accelgor
         </div>
@@ -2785,7 +2785,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       >
         <div
           data-css-16=""
-          data-css-4=""
+          data-css-5=""
         >
           Aegislash
         </div>
@@ -2807,7 +2807,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       >
         <div
           data-css-16=""
-          data-css-4=""
+          data-css-5=""
         >
           Aerodactyl
         </div>
@@ -2829,7 +2829,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       >
         <div
           data-css-16=""
-          data-css-4=""
+          data-css-5=""
         >
           Aggron
         </div>
@@ -2851,7 +2851,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       >
         <div
           data-css-16=""
-          data-css-4=""
+          data-css-5=""
         >
           Aipom
         </div>
@@ -2873,7 +2873,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       >
         <div
           data-css-16=""
-          data-css-4=""
+          data-css-5=""
         >
           Alakazam
         </div>
@@ -2895,14 +2895,14 @@ exports[`Test the typeahead component should use the top placement property 1`] 
       >
         <div
           data-css-16=""
-          data-css-4=""
+          data-css-5=""
         >
           Alomomola
         </div>
       </div>
       <div
         data-css-19=""
-        data-css-4=""
+        data-css-5=""
       />
     </div>
   </div>
