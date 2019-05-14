@@ -136,7 +136,7 @@ class Input extends React.Component {
     /** Can only be used with type=text. Increase to enable multi-line input */
     lines: PropTypes.number,
     /** Regular expression to validate against */
-    paddingRight: PropTypes.boolean,
+    paddingRight: PropTypes.bool,
     /** Used when there is an icon to the right of input field */
     pattern: PropTypes.string,
     /** Min number of characters that must be provided */
