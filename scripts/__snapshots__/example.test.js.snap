@@ -1154,6 +1154,7 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   width: 100%;
   padding: 0 15px;
   padding-top: 0;
+  padding-right: 15px;
   transition: padding-top .225s ease-out;
   border: 0;
   -webkit-transition: padding-top .225s ease-out;
@@ -2040,6 +2041,7 @@ exports[`Component Examples should match snapshot: Input0 1`] = `
   width: 100%;
   padding: 0 15px;
   padding-top: 0;
+  padding-right: 15px;
   transition: padding-top .225s ease-out;
   border: 0;
   -webkit-transition: padding-top .225s ease-out;
@@ -2918,6 +2920,7 @@ exports[`Component Examples should match snapshot: PhoneInput0 1`] = `
   width: 100%;
   padding: 0 15px;
   padding-top: 0;
+  padding-right: 15px;
   transition: padding-top .225s ease-out;
   border: 0;
   -webkit-transition: padding-top .225s ease-out;
@@ -4569,6 +4572,7 @@ exports[`Component Examples should match snapshot: TextInput0 1`] = `
   width: 100%;
   padding: 0 15px;
   padding-top: 0;
+  padding-right: 15px;
   transition: padding-top .225s ease-out;
   border: 0;
   -webkit-transition: padding-top .225s ease-out;

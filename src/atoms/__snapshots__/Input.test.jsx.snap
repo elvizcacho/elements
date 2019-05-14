@@ -26,6 +26,7 @@ exports[`Input component should render with all props 1`] = `
   padding: 0 15px;
   padding-left: 40px;
   padding-top: 10px;
+  padding-right: 15px;
   transition: padding-top .225s ease-out;
   border: 0;
   -webkit-transition: padding-top .225s ease-out;
@@ -275,6 +276,7 @@ exports[`Input component should render with required props only 1`] = `
   width: 100%;
   padding: 0 15px;
   padding-top: 0;
+  padding-right: 15px;
   transition: padding-top .225s ease-out;
   border: 0;
   -webkit-transition: padding-top .225s ease-out;
