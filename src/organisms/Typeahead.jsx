@@ -374,6 +374,7 @@ export default class Typeahead extends React.PureComponent {
                         boxShadow: 'none',
                         color: '#999',
                         opacity: 1,
+                        paddingRight: '50px',
                         height: INPUT_FIELD_HEIGHT,
                       })}
                     />
@@ -406,6 +407,7 @@ export default class Typeahead extends React.PureComponent {
                       boxShadow: 'none',
                       color: '#000',
                       outline: 'none',
+                      paddingRight: '50px',
                       width: '100%',
                       height: INPUT_FIELD_HEIGHT,
                     })}
