@@ -383,6 +383,7 @@ export default class Typeahead extends React.PureComponent {
                     name="typed"
                     onClick={autoOpen && !selectedItem ? toggleMenu : undefined}
                     onInputRef={this.setInputRef}
+                    paddingRight={!selectedItem && !!clearOnSelect}
                     placeholder={placeholder}
                     {...getInputProps({
                       onKeyDown: e => {
@@ -407,7 +408,6 @@ export default class Typeahead extends React.PureComponent {
                       boxShadow: 'none',
                       color: '#000',
                       outline: 'none',
-                      paddingRight: '50px !important',
                       width: '100%',
                       height: INPUT_FIELD_HEIGHT,
                     })}
