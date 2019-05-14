@@ -16,7 +16,7 @@ const styles = {
       padding: '0 15px',
       paddingLeft: translated && 40,
       paddingTop: showLabel ? 10 : 0,
-      paddingRight: checkmark ? 50 : 0,
+      paddingRight: checkmark ? 50 : 15,
       transition: 'padding-top .225s ease-out',
       border: 0,
       '&:-webkit-autofill ~ .label': {
