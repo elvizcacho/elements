@@ -21,7 +21,8 @@ TextInputs are used to allow users to enter information like names, numbers, url
 |onChange|func|Called, when the user changes something
 |value|string|The value, makes this component a controlled component
 |lines|number|Can only be used with type=text. Increase to enable multi-line input<br>Default: 1
-|pattern|string|Regular expression to validate against
+|paddingRight|custom|Regular expression to validate against
+|pattern|string|Used when there is an icon to the right of input field
 |minLength|number|Min number of characters that must be provided
 |maxLength|number|Max number of characters that can be provided
 |onInputRef|func|Called with the input field a reference<br>Default: _ => _

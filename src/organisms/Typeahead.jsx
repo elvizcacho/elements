@@ -368,13 +368,13 @@ export default class Typeahead extends React.PureComponent {
                             })
                           : ''
                       }
+                      paddingRight={!selectedItem && !!clearOnSelect}
                       {...css({
                         background: '#fff',
                         border: 'none',
                         boxShadow: 'none',
                         color: '#999',
                         opacity: 1,
-                        paddingRight: '50px !important',
                         height: INPUT_FIELD_HEIGHT,
                       })}
                     />
