@@ -52,7 +52,6 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
   box-shadow: none;
   color: #999;
   opacity: 1;
-  padding-right: 50px !important;
   height: 50px;
 }
 
@@ -350,7 +349,6 @@ exports[`Test the typeahead component should be a simple static one - in depth t
   box-shadow: none;
   color: #999;
   opacity: 1;
-  padding-right: 50px !important;
   height: 50px;
 }
 
@@ -628,7 +626,6 @@ exports[`Test the typeahead component should be a simple static one which auto o
   box-shadow: none;
   color: #999;
   opacity: 1;
-  padding-right: 50px !important;
   height: 50px;
 }
 
@@ -1269,7 +1266,6 @@ exports[`Test the typeahead component should render differently when loading 1`]
   box-shadow: none;
   color: #999;
   opacity: 1;
-  padding-right: 50px !important;
   height: 50px;
 }
 
@@ -1568,7 +1564,6 @@ exports[`Test the typeahead component should render differently when loading 2`]
   box-shadow: none;
   color: #999;
   opacity: 1;
-  padding-right: 50px !important;
   height: 50px;
 }
 
@@ -1895,7 +1890,6 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   box-shadow: none;
   color: #999;
   opacity: 1;
-  padding-right: 50px !important;
   height: 50px;
 }
 
@@ -2340,7 +2334,6 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   box-shadow: none;
   color: #999;
   opacity: 1;
-  padding-right: 50px !important;
   height: 50px;
 }
 

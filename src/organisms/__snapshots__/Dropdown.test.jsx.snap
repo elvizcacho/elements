@@ -84,7 +84,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   width: 100%;
   padding: 0 15px;
   padding-top: 10px;
-  padding-right: 15px;
+  padding-right: 50px;
   transition: padding-top .225s ease-out;
   border: 0;
   -webkit-transition: padding-top .225s ease-out;
@@ -165,8 +165,8 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
       >
         <input
           aria-required={false}
-          data-css-7=""
           data-css-4=""
+          data-css-7=""
           disabled={true}
           onChange={[Function]}
           placeholder="select something..."
@@ -333,7 +333,7 @@ exports[`Dropdown should render with placement top 1`] = `
   width: 100%;
   padding: 0 15px;
   padding-top: 10px;
-  padding-right: 15px;
+  padding-right: 50px;
   transition: padding-top .225s ease-out;
   border: 0;
   -webkit-transition: padding-top .225s ease-out;
@@ -414,8 +414,8 @@ exports[`Dropdown should render with placement top 1`] = `
       >
         <input
           aria-required={false}
-          data-css-7=""
           data-css-4=""
+          data-css-7=""
           disabled={true}
           onChange={[Function]}
           placeholder="select something..."
