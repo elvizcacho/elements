@@ -136,7 +136,7 @@ class Input extends React.Component {
     /** Can only be used with type=text. Increase to enable multi-line input */
     lines: PropTypes.number,
     /** Used when there is an icon to the right of input field */
-    paddingRight: PropTypes.bool,
+    hasRightIcon: PropTypes.bool,
     /** Regular expression to validate against */
     pattern: PropTypes.string,
     /** Min number of characters that must be provided */
@@ -226,7 +226,7 @@ class Input extends React.Component {
       pattern,
       badInput,
       customError,
-      paddingRight,
+      hasRightIcon,
       patternMismatch,
       rangeOverflow,
       rangeUnderflow,
@@ -269,7 +269,7 @@ class Input extends React.Component {
               {...styles.input(
                 showLabel,
                 !!icon,
-                isCheckmarkActive || paddingRight
+                isCheckmarkActive || hasRightIcon
               )}
               required={required}
               aria-required={required}
