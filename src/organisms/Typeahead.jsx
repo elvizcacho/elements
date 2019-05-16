@@ -368,6 +368,7 @@ export default class Typeahead extends React.PureComponent {
                             })
                           : ''
                       }
+                      hasRightIcon={!selectedItem && !!clearOnSelect}
                       {...css({
                         background: '#fff',
                         border: 'none',
@@ -382,6 +383,7 @@ export default class Typeahead extends React.PureComponent {
                     name="typed"
                     onClick={autoOpen && !selectedItem ? toggleMenu : undefined}
                     onInputRef={this.setInputRef}
+                    hasRightIcon={!selectedItem && !!clearOnSelect}
                     placeholder={placeholder}
                     {...getInputProps({
                       onKeyDown: e => {

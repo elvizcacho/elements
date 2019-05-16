@@ -157,6 +157,7 @@ export default class Dropdown extends React.PureComponent {
                     value={(selectedItem && selectedItem.label) || ''}
                     readOnly
                     name={name}
+                    hasRightIcon
                     {...css({
                       width: 'calc(100% - 5px)',
                       textOverflow: 'ellipsis',

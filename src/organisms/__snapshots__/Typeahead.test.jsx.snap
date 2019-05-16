@@ -97,6 +97,7 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
   width: 100%;
   padding: 0 15px;
   padding-top: 0;
+  padding-right: 15px;
   transition: padding-top .225s ease-out;
   border: 0;
   -webkit-transition: padding-top .225s ease-out;
@@ -392,6 +393,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
   width: 100%;
   padding: 0 15px;
   padding-top: 0;
+  padding-right: 15px;
   transition: padding-top .225s ease-out;
   border: 0;
   -webkit-transition: padding-top .225s ease-out;
@@ -656,6 +658,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
   width: 100%;
   padding: 0 15px;
   padding-top: 0;
+  padding-right: 15px;
   transition: padding-top .225s ease-out;
   border: 0;
   -webkit-transition: padding-top .225s ease-out;
@@ -1305,6 +1308,7 @@ exports[`Test the typeahead component should render differently when loading 1`]
   width: 100%;
   padding: 0 15px;
   padding-top: 0;
+  padding-right: 15px;
   transition: padding-top .225s ease-out;
   border: 0;
   -webkit-transition: padding-top .225s ease-out;
@@ -1601,6 +1605,7 @@ exports[`Test the typeahead component should render differently when loading 2`]
   width: 100%;
   padding: 0 15px;
   padding-top: 0;
+  padding-right: 15px;
   transition: padding-top .225s ease-out;
   border: 0;
   -webkit-transition: padding-top .225s ease-out;
@@ -1914,6 +1919,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   width: 100%;
   padding: 0 15px;
   padding-top: 0;
+  padding-right: 15px;
   transition: padding-top .225s ease-out;
   border: 0;
   -webkit-transition: padding-top .225s ease-out;
@@ -2356,6 +2362,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   width: 100%;
   padding: 0 15px;
   padding-top: 0;
+  padding-right: 15px;
   transition: padding-top .225s ease-out;
   border: 0;
   -webkit-transition: padding-top .225s ease-out;

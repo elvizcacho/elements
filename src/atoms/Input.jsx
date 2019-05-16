@@ -8,7 +8,7 @@ import Icon, { Icons as AvailableIcons } from '../atoms/Icon'
 import Absolute from './Absolute'
 
 const styles = {
-  input: (showLabel, translated) =>
+  input: (showLabel, translated, paddingRight) =>
     css(createTextStyles({ size: 'm' }), {
       boxSizing: 'border-box',
       height: 50,
@@ -16,6 +16,7 @@ const styles = {
       padding: '0 15px',
       paddingLeft: translated && 40,
       paddingTop: showLabel ? 10 : 0,
+      paddingRight: paddingRight ? 50 : 15,
       transition: 'padding-top .225s ease-out',
       border: 0,
       '&:-webkit-autofill ~ .label': {
@@ -134,6 +135,8 @@ class Input extends React.Component {
     value: PropTypes.string,
     /** Can only be used with type=text. Increase to enable multi-line input */
     lines: PropTypes.number,
+    /** Used when there is an icon to the right of input field */
+    hasRightIcon: PropTypes.bool,
     /** Regular expression to validate against */
     pattern: PropTypes.string,
     /** Min number of characters that must be provided */
@@ -223,6 +226,7 @@ class Input extends React.Component {
       pattern,
       badInput,
       customError,
+      hasRightIcon,
       patternMismatch,
       rangeOverflow,
       rangeUnderflow,
@@ -262,7 +266,11 @@ class Input extends React.Component {
             )}
             <input
               ref={this.input}
-              {...styles.input(showLabel, !!icon)}
+              {...styles.input(
+                showLabel,
+                !!icon,
+                isCheckmarkActive || hasRightIcon
+              )}
               required={required}
               aria-required={required}
               {...props}
