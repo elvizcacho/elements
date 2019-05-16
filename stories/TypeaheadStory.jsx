@@ -113,16 +113,6 @@ class TypeaheadStory extends React.Component {
               placeholder="Select an agent."
             />
             <Text strong {...STYLES.title()}>
-              Uncontrolled component (hidden clear cross):
-            </Text>
-            <Typeahead
-              autoOpen
-              defaultValue={forcedValue}
-              items={Names}
-              placeholder="Select an agent."
-              showClearSelectCross={false}
-            />
-            <Text strong {...STYLES.title()}>
               Controlled component:
             </Text>
             <Typeahead

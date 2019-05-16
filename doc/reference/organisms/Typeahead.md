@@ -23,5 +23,4 @@ data.
 |onOpen|func|Callback triggered when the menu is opened.<br>Default: _ => _
 |onSelect|func|Callback triggered when selecting an item.
 |placeholder|string|The placeholder displayed in the input field.
-|showClearSelectCross|bool|Show the clear select cross inside input element.<br>Default: true
 |value|string|The value of the component, makes this a controlled component.
