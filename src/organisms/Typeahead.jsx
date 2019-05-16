@@ -72,8 +72,6 @@ export default class Typeahead extends React.PureComponent {
     onSelect: PropTypes.func,
     /** The placeholder displayed in the input field. */
     placeholder: PropTypes.string,
-    /** Show the clear select cross inside input element. */
-    showClearSelectCross: PropTypes.bool,
     /** The value of the component, makes this a controlled component. */
     value: PropTypes.string,
   }
@@ -85,7 +83,6 @@ export default class Typeahead extends React.PureComponent {
     onClose: NOOP,
     onOpen: NOOP,
     placement: Placement.bottom,
-    showClearSelectCross: true,
   }
 
   constructor(props) {
@@ -260,7 +257,6 @@ export default class Typeahead extends React.PureComponent {
       onInputValueChange,
       onSelect,
       placeholder,
-      showClearSelectCross,
       value,
     } = this.props
     const { showScrollArrow } = this.state
@@ -424,8 +420,7 @@ export default class Typeahead extends React.PureComponent {
                     {isLoading ? (
                       <Spinner size={16} />
                     ) : (
-                      showClearSelectCross &&
-                      selectedItem &&
+                      (value || selectedItem) &&
                       !clearOnSelect && (
                         <View
                           onClick={this.clearSelection(clearSelection)}
