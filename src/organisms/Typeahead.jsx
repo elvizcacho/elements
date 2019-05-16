@@ -422,7 +422,7 @@ export default class Typeahead extends React.PureComponent {
                     {isLoading ? (
                       <Spinner size={16} />
                     ) : (
-                      selectedItem &&
+                      (value || selectedItem) &&
                       !clearOnSelect && (
                         <View
                           onClick={this.clearSelection(clearSelection)}
