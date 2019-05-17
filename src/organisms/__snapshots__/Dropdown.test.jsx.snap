@@ -55,6 +55,8 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   cursor: pointer;
   padding-right: 30px;
   color: black;
+  background-color: white;
+  pointer-events: none;
 }
 
 .css-5,
@@ -304,6 +306,8 @@ exports[`Dropdown should render with placement top 1`] = `
   cursor: pointer;
   padding-right: 30px;
   color: black;
+  background-color: white;
+  pointer-events: none;
 }
 
 .css-5,
