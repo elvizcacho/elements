@@ -166,6 +166,7 @@ export default class Dropdown extends React.PureComponent {
                       cursor: 'pointer',
                       paddingRight: '30px',
                       color: 'black',
+                      backgroundColor: 'white',
                     })}
                   />
 
