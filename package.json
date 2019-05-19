@@ -72,7 +72,7 @@
     "cross-env": "5.2.0",
     "cross-fetch": "3.0.2",
     "enzyme": "3.9.0",
-    "enzyme-adapter-react-16": "1.13.0",
+    "enzyme-adapter-react-16": "1.13.1",
     "enzyme-to-json": "3.3.5",
     "eslint": "5.16.0",
     "eslint-config-postcss": "3.0.7",
