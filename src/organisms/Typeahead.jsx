@@ -380,6 +380,7 @@ export default class Typeahead extends React.PureComponent {
                     />
                   </Absolute>
                   <Input
+                    data-e2e={this.props['data-e2e']}
                     name="typed"
                     onClick={autoOpen && !selectedItem ? toggleMenu : undefined}
                     onInputRef={this.setInputRef}
