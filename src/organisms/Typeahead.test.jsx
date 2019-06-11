@@ -160,6 +160,7 @@ describe('Test the typeahead component', () => {
       />
     )
     expect(wrapper.find(INPUT(5)).prop('value')).toBe(DEFAULT_VALUE)
+    expect(wrapper).toMatchSnapshot()
   })
   it('should use the value property (controlled component)', () => {
     const wrapper = mount(
