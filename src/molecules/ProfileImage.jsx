@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import Image from '../atoms/Image'
+import View from '../atoms/View'
 import { css } from 'glamor'
 
 const styles = {
@@ -40,6 +41,9 @@ const sizeMap = {
   l: 225,
   big: 225,
 }
+
+export const resolveSize = size =>
+  typeof size === 'number' ? size : sizeMap[size]
 
 const DefaultProfileImage = ({ width, height }) => {
   return (
@@ -86,12 +90,12 @@ const ProfileImage = ({
   children,
   ...restProps
 }) => {
-  const width = typeof size === 'number' ? size : sizeMap[size]
-  const height = typeof size === 'number' ? size : sizeMap[size]
+  const width = resolveSize(size)
+  const height = resolveSize(size)
   const pointerStyle = onClick ? { ':hover': { cursor: 'pointer' } } : {}
 
   return (
-    <div
+    <View
       onClick={onClick}
       {...css(
         styles.wrapper,
@@ -110,7 +114,7 @@ const ProfileImage = ({
         <DefaultProfileImage width={width} height={height} />
       )}
       {children}
-    </div>
+    </View>
   )
 }
 

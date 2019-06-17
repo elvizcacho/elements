@@ -479,6 +479,7 @@ exports[`Component Examples should match snapshot: ChatBubble0 1`] = `
       >
         <div
           data-css-14=""
+          data-css-0=""
         >
           <div
             alt=""
@@ -537,6 +538,7 @@ exports[`Component Examples should match snapshot: ChatBubble0 1`] = `
       >
         <div
           data-css-14=""
+          data-css-0=""
         >
           <div
             alt=""
@@ -3140,6 +3142,7 @@ exports[`Component Examples should match snapshot: ProfileImage0 1`] = `
   >
     <div
       data-css-3=""
+      data-css-0=""
     >
       <div
         alt=""
@@ -3150,6 +3153,7 @@ exports[`Component Examples should match snapshot: ProfileImage0 1`] = `
     </div>
     <div
       data-css-3=""
+      data-css-0=""
     >
       <svg
         style="width:40px;height:40px;background-color:#B4B4B4;box-sizing:border-box;padding-top:4px"

@@ -34,6 +34,13 @@ import ConfirmStory from './ConfirmStory'
 import FilterStory from './FilterStory'
 import ButtonStory from './ButtonStory'
 import CheckboxStory from './CheckboxStory'
+import ProfileImageStackStory from './ProfileImageStackStory'
+
+storiesOf('ProfleImage', module)
+  .addDecorator(createViewportDecorator())
+  .add('Profile Image Stack / Profile Image List ', () => (
+    <ProfileImageStackStory />
+  ))
 
 storiesOf('Animations', module)
   .addDecorator(createViewportDecorator())
