@@ -60,15 +60,15 @@ function getCssFlexValue(flex: flexType) {
   }
 }
 
-interface IProps<T> extends DOMAttributes<T> {
+export interface IProps<T> extends DOMAttributes<T> {
   children: React.ReactNode
   htmlElement?: string
   /** horizontal alignment */
-  alignH: alignH
+  alignH?: alignH
   /** vertical alignment */
-  alignV: alignV
+  alignV?: alignV
   /** direction */
-  direction: direction
+  direction?: direction
   /** Passing true, will make the view fill out available space */
   fill?: boolean
   /** Defining how children will wrap */

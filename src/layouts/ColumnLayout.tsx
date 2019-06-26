@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import PropTypes from 'prop-types'
-import View from '../atoms/View'
+import View, { IProps as ViewProps } from '../atoms/View'
 import { css } from 'glamor'
 
-export const Column = ({ children, ...props }) => (
+export const Column: FunctionComponent<ViewProps<'div'>> = ({
+  children,
+  ...props
+}) => (
   <View flex="flex" {...props} direction="column">
     {children}
   </View>
@@ -13,7 +16,7 @@ Column.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-const layout = columnNumber =>
+const layout = (columnNumber: number) =>
   css({
     maxWidth: columnNumber === 0 && '380px',
     overflowY: 'auto',
