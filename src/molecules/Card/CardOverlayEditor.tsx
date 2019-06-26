@@ -60,11 +60,10 @@ export default class CardOverlayEditor extends React.Component {
         { bottom, left, right, top }
       )
     ) {
-        e.stopPropagation()
-        this.triggerClose()
-        return false
-      }
-
+      e.stopPropagation()
+      this.triggerClose()
+      return false
+    }
   }
 
   setElement = element => (this.element = element)

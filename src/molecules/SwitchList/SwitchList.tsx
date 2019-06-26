@@ -79,17 +79,16 @@ export default class SwitchList extends React.Component {
           onClick={this.handleClick}
           {...styles.switchListItem}
         >
-          {this.props.showSpinner &&
-            this.state.active === optionKey && (
-              <View
-                key={optionKey}
-                direction="row"
-                alignV="center"
-                {...styles.itemInnerContainer}
-              >
-                <SwitchListSpinner width={23} fill={ColorPalette.text.gray} />
-              </View>
-            )}
+          {this.props.showSpinner && this.state.active === optionKey && (
+            <View
+              key={optionKey}
+              direction="row"
+              alignV="center"
+              {...styles.itemInnerContainer}
+            >
+              <SwitchListSpinner width={23} fill={ColorPalette.text.gray} />
+            </View>
+          )}
         </SwitchListItem>
       )
     })

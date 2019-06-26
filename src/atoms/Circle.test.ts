@@ -4,9 +4,7 @@ import Circle from './Circle'
 
 test('Circle renders without error', () => {
   const tree = renderer
-    .create(
-      <Circle color="pink" fill={true} radius={5} />
-    )
+    .create(<Circle color="pink" fill={true} radius={5} />)
     .toJSON()
   expect(tree).toMatchSnapshot()
 })

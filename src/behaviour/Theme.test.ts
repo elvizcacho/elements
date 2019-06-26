@@ -4,12 +4,12 @@ import Theme from './Theme'
 import ThemeProvider from './ThemeProvider'
 
 test('Should render correct color', () => {
-  const tree = renderer.create(
-    <ThemeProvider theme={{primary: 'red'}}>
-      <Theme>
-        {({colorize}) => colorize('warn')}
-      </Theme>
-    </ThemeProvider>
-  ).toJSON()
+  const tree = renderer
+    .create(
+      <ThemeProvider theme={{ primary: 'red' }}>
+        <Theme>{({ colorize }) => colorize('warn')}</Theme>
+      </ThemeProvider>
+    )
+    .toJSON()
   expect(tree).toMatchSnapshot()
 })

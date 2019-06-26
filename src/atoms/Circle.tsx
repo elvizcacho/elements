@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import View from '../atoms/View'
+import View from './View'
 import { css } from 'glamor'
 import Theme from '../behaviour/Theme'
 
@@ -33,7 +33,7 @@ const circle = (backgroundColor, outline, outlineColor, fill, radius) =>
  *   </ResourceProvider>
  * </ThemeProvider>
  * ```
-**/
+ **/
 const Circle = ({
   fill = true,
   color = 'primary',

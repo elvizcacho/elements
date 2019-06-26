@@ -18,9 +18,7 @@ describe('Component Examples', async () => {
               const requiredComponent = required.replace('<', '')
               evalString =
                 evalString +
-                `var ${requiredComponent} = require("../${
-                  fileObj[requiredComponent].file
-                }").default; `
+                `var ${requiredComponent} = require("../${fileObj[requiredComponent].file}").default; `
               return requiredComponent
             })
             const themeOccurrence = requiredComponents.reduce((acc, curr) => {

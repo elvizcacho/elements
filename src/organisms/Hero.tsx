@@ -80,12 +80,12 @@ class Hero extends React.Component {
       >
         <Inset direction="column" alignH="start" {...styles.textContainer}>
           <Text color="white" size="l" strong>
-            { text }
+            {text}
           </Text>
           {children}
         </Inset>
         <View {...styles.heroImageContainer}>
-          <img {...styles.heroImage} src={img}/>
+          <img {...styles.heroImage} src={img} />
         </View>
       </View>
     )

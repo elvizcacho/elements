@@ -3,6 +3,51 @@ import React, { Component } from 'react'
 import { css } from 'glamor'
 
 /**
+ * Appends 'flex-' to 'start' and 'end'
+ * @param {String} alignment
+ * @return {String}
+ */
+function getCssAlignValue(alignment) {
+  if (alignment === 'start' || alignment === 'end') {
+    return `flex-${alignment}`
+  }
+  return alignment
+}
+
+/**
+ *
+ * @param {String|Number} flex
+ * @returns {Object}
+ */
+function getCssFlexValue(flex) {
+  if (typeof flex === 'number') {
+    if (flex === 33) flex = 100 / 3
+    if (flex === 66) flex = 200 / 3
+    return `1 1 ${flex}%`
+  }
+
+  /**
+   * CSS value of flex: flex-grow flex-shrink flex-basis
+   */
+  switch (flex) {
+    case 'none':
+      return '0 0 auto'
+    case 'flex':
+      return '1'
+    case 'nogrow':
+      return '0 1 auto'
+    case 'grow':
+      return '1 1 100%'
+    case 'initial':
+      return '0 1 auto'
+    case 'auto':
+      return '1 1 auto'
+    case 'noshrink':
+      return '1 0 auto'
+  }
+}
+
+/**
  * This Component is rebuild of angular-material's flexbox directives.
  *
  * Different to angular's directive implementation, which can be used independent of each other,
@@ -20,6 +65,19 @@ import { css } from 'glamor'
  * </ThemeProvider>
  * ```
  */
+const View = ({
+  alignH = 'start',
+  alignV = 'stretch',
+  children,
+  htmlElement = 'div',
+  direction,
+  fill = false,
+  flex = 'none',
+  onRef = _ => _,
+  wrap,
+  ...restProps
+}) => {}
+
 class View extends Component {
   static propTypes = {
     children: PropTypes.node,
@@ -96,60 +154,6 @@ class View extends Component {
     onRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   }
 
-  static defaultProps = {
-    alignH: 'start',
-    alignV: 'stretch',
-    htmlElement: 'div',
-    fill: false,
-    flex: 'none',
-    onRef: _ => _,
-  }
-
-  /**
-   * Appends 'flex-' to 'start' and 'end'
-   * @param {String} alignment
-   * @return {String}
-   */
-  getCssAlignValue(alignment) {
-    if (alignment === 'start' || alignment === 'end') {
-      return `flex-${alignment}`
-    }
-    return alignment
-  }
-
-  /**
-   *
-   * @param {String|Number} flex
-   * @returns {Object}
-   */
-  getCssFlexValue(flex) {
-    if (typeof flex === 'number') {
-      if (flex === 33) flex = 100 / 3
-      if (flex === 66) flex = 200 / 3
-      return `1 1 ${flex}%`
-    }
-
-    /**
-     * CSS value of flex: flex-grow flex-shrink flex-basis
-     */
-    switch (flex) {
-      case 'none':
-        return '0 0 auto'
-      case 'flex':
-        return '1'
-      case 'nogrow':
-        return '0 1 auto'
-      case 'grow':
-        return '1 1 100%'
-      case 'initial':
-        return '0 1 auto'
-      case 'auto':
-        return '1 1 auto'
-      case 'noshrink':
-        return '1 0 auto'
-    }
-  }
-
   render() {
     const {
       alignH,
@@ -164,40 +168,26 @@ class View extends Component {
       ...restProps
     } = this.props
 
-    let styles = {}
-
-    if (direction || flex) {
-      styles.boxSizing = 'border-box'
-    }
-
-    if (direction) {
-      styles = {
-        ...styles,
-        alignContent: this.getCssAlignValue(alignV),
-        alignItems: this.getCssAlignValue(alignV),
+    const styles = {
+      ...((direction || flex) && { boxSizing: 'border-box' }),
+      ...(direction && {
+        alignContent: getCssAlignValue(alignV),
+        alignItems: getCssAlignValue(alignV),
         display: 'flex',
         flexDirection: direction,
-        justifyContent: this.getCssAlignValue(alignH),
-      }
-
-      if (wrap) styles.flexWrap = wrap
-
-      if (fill) {
-        styles = {
-          ...styles,
+        justifyContent: getCssAlignValue(alignH),
+        ...(wrap && { flexWrap: wrap }),
+        ...(fill && {
           height: '100%',
           margin: 0,
           minHeight: '100%',
           width: '100%',
-        }
-      }
-
-      if (restProps.onClick) {
-        styles = {
-          ...styles,
+        }),
+        ...(restProps.onClick && {
           cursor: 'pointer',
-        }
-      }
+        }),
+      }),
+      flex,
     }
 
     if (flex) {
