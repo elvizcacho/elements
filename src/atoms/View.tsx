@@ -7,19 +7,24 @@ import { css } from 'glamor'
  * @param {String} alignment
  * @return {String}
  */
-function getCssAlignValue(alignment) {
+function getCssAlignValue(alignment: 'start' | 'end' | string) {
   if (alignment === 'start' || alignment === 'end') {
     return `flex-${alignment}`
   }
   return alignment
 }
 
-/**
- *
- * @param {String|Number} flex
- * @returns {Object}
- */
-function getCssFlexValue(flex) {
+type flexType =
+  | number
+  | 'none'
+  | 'flex'
+  | 'nogrow'
+  | 'grow'
+  | 'initial'
+  | 'auto'
+  | 'noshrink'
+
+function getCssFlexValue(flex: flexType) {
   if (typeof flex === 'number') {
     if (flex === 33) flex = 100 / 3
     if (flex === 66) flex = 200 / 3
@@ -48,14 +53,7 @@ function getCssFlexValue(flex) {
 }
 
 /**
- * This Component is rebuild of angular-material's flexbox directives.
- *
- * Different to angular's directive implementation, which can be used independent of each other,
- * this component combines layout and element attributes within one component.
- *
- * For explanation see:
- * - https://material.angularjs.org/latest/layout/alignment
- * - https://material.angularjs.org/latest/layout/children
+ * Everything in elemnts is view! It's the component to align and layout things
  *
  * ```example
  * <ThemeProvider>
@@ -72,7 +70,6 @@ class View extends Component {
     htmlElement: 'div',
     fill: false,
     flex: 'none',
-    onRef: _ => _,
   }
 
   static propTypes = {
@@ -145,9 +142,6 @@ class View extends Component {
     ]),
 
     onClick: PropTypes.func,
-
-    /** @deprecated */
-    onRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   }
 
   render() {
@@ -159,7 +153,6 @@ class View extends Component {
       direction,
       fill,
       flex,
-      onRef,
       wrap,
       ...restProps
     } = this.props
@@ -193,7 +186,6 @@ class View extends Component {
     return React.createElement(
       htmlElement,
       {
-        ref: onRef,
         ...css(styles),
         ...restProps,
       },
