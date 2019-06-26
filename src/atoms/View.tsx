@@ -1,4 +1,4 @@
-import React, { DOMAttributes } from 'react'
+import React from 'react'
 import { css } from 'glamor'
 
 function getCssAlignValue(alignment: 'start' | 'end' | string) {
@@ -60,7 +60,7 @@ function getCssFlexValue(flex: flexType) {
   }
 }
 
-export interface IProps<T> extends DOMAttributes<T> {
+export interface IView {
   children: React.ReactNode
   htmlElement?: string
   /** horizontal alignment */
@@ -86,7 +86,7 @@ function createStyles({
   fill,
   hasClick,
 }: {
-  direction: direction
+  direction?: direction
   flex: flexType
   alignH: alignH
   wrap?: wrapType
@@ -128,7 +128,7 @@ function createStyles({
  * </ThemeProvider>
  * ```
  */
-function View<T = 'div'>({
+const View = ({
   alignH = 'start',
   alignV = 'stretch',
   children,
@@ -138,7 +138,7 @@ function View<T = 'div'>({
   flex = 'none',
   wrap,
   ...props
-}: IProps<T>) {
+}: IView & React.HTMLProps<HTMLDivElement>) => {
   return React.createElement(
     htmlElement,
     {

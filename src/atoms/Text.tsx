@@ -1,8 +1,7 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import { css } from 'glamor'
-import View from '../atoms/View'
-import Theme from '../behaviour/Theme'
+import View, { IView } from '../atoms/View'
+import Theme, { IThemeChildren } from '../behaviour/Theme'
 import neue from 'neue'
 
 if (typeof window !== `undefined`) {
@@ -14,6 +13,8 @@ if (typeof window !== `undefined`) {
   ])
 }
 
+type sizeType = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'giant'
+
 const availableSizes = {
   xs: 10,
   s: 12,
@@ -24,11 +25,27 @@ const availableSizes = {
   giant: 24,
 }
 
-export const createTextStyles = (
-  { block, italic, strong, size, underline, lineThrough, align, autoBreak } = {
-    size: 'm',
-  }
-) => {
+interface ITextStyles {
+  size: sizeType
+  block?: boolean
+  italic?: boolean
+  strong?: boolean
+  underline?: boolean
+  lineThrough?: boolean
+  align?: 'left' | 'center' | 'right'
+  autoBreak?: boolean
+}
+
+export const createTextStyles = ({
+  block = false,
+  italic = false,
+  strong = false,
+  size = 'm',
+  underline = false,
+  lineThrough = false,
+  align,
+  autoBreak,
+}: ITextStyles) => {
   return css({
     display: block ? 'block' : 'inline',
     fontFamily: '"Open Sans", Helvetica, Arial, sans-serif',
@@ -43,6 +60,10 @@ export const createTextStyles = (
     WebkitFontSmoothing: 'antialiased',
     MozOsxFontSmoothing: 'grayscale',
   })
+}
+
+export interface IText {
+  color: string
 }
 
 /**
@@ -63,62 +84,41 @@ export const createTextStyles = (
  *  </Text>
  *  ```
  */
-class Text extends React.Component {
-  static propTypes = {
-    align: PropTypes.oneOf(['left', 'center', 'right']),
-    autoBreak: PropTypes.bool,
-    block: PropTypes.bool,
-    children: PropTypes.node,
-    color: PropTypes.string,
-    italic: PropTypes.bool,
-    size: PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl', 'giant']),
-    strong: PropTypes.bool,
-    underline: PropTypes.bool,
-    lineThrough: PropTypes.bool,
-  }
-
-  static defaultProps = {
-    size: 'l',
-    block: true,
-    color: 'text',
-  }
-
-  render() {
-    const {
-      color,
-      block,
-      children,
-      italic,
-      size,
-      strong,
-      align,
-      underline,
-      autoBreak,
-      lineThrough,
-      ...props
-    } = this.props
-
-    const styles = createTextStyles({
-      block,
-      italic,
-      strong,
-      size,
-      underline,
-      lineThrough,
-      align,
-      autoBreak,
-    })
-
-    return (
-      <Theme>
-        {({ colorize }) => (
-          <View {...css(styles, { color: colorize(color) })} {...props}>
-            {children}
-          </View>
+const Text = ({
+  color = 'text',
+  block = true,
+  children,
+  italic,
+  size = 'l',
+  strong,
+  align,
+  underline,
+  autoBreak,
+  lineThrough,
+  ...props
+}: IText & ITextStyles & IView) => (
+  <Theme>
+    {({ colorize }: IThemeChildren) => (
+      <View
+        {...css(
+          createTextStyles({
+            block,
+            italic,
+            strong,
+            size,
+            underline,
+            lineThrough,
+            align,
+            autoBreak,
+          }),
+          { color: colorize(color) }
         )}
-      </Theme>
-    )
-  }
-}
+        {...props}
+      >
+        {children}
+      </View>
+    )}
+  </Theme>
+)
 
 export default Text

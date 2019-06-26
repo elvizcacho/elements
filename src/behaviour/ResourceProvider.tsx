@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 export const RESOURCE_PATH = 'https://static.allthings.me'
 
@@ -9,27 +8,8 @@ export const RESOURCE_PATH = 'https://static.allthings.me'
  *
  * Whenever you like to use Icons or Illustrations, you need to use the ResouceProvider to let the components know where they are.
  */
-class ResourceProvider extends React.Component {
-  getChildContext() {
-    return { resourcePath: this.props.resourcePath }
-  }
+const ResouceProvider = React.createContext({
+  resourcePath: RESOURCE_PATH,
+})
 
-  static childContextTypes = {
-    resourcePath: PropTypes.string,
-  }
-
-  static propTypes = {
-    resourcePath: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired,
-  }
-
-  static defaultProps = {
-    resourcePath: RESOURCE_PATH,
-  }
-
-  render() {
-    return this.props.children
-  }
-}
-
-export default ResourceProvider
+export default ResouceProvider

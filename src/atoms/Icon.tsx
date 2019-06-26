@@ -1,7 +1,166 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import View from '../atoms/View'
+import ResourceProvider from '../behaviour/ResourceProvider'
 import Theme from '../behaviour/Theme'
+
+export type IconType =
+  | 'alarm'
+  | 'alarm-filled'
+  | 'armchair'
+  | 'armchair-filled'
+  | 'arrow-down'
+  | 'arrow-down-filled'
+  | 'arrow-left'
+  | 'arrow-left-filled'
+  | 'arrow-right'
+  | 'arrow-right-filled'
+  | 'arrow-up'
+  | 'arrow-up-filled'
+  | 'baby-stroller'
+  | 'baby-stroller-filled'
+  | 'badge'
+  | 'badge-filled'
+  | 'ball-soccer'
+  | 'ball-soccer-filled'
+  | 'bank-notes'
+  | 'bank-notes-filled'
+  | 'book'
+  | 'book-filled'
+  | 'book-open'
+  | 'book-open-filled'
+  | 'calendar-check'
+  | 'calendar-check-filled'
+  | 'camera'
+  | 'camera-filled'
+  | 'car'
+  | 'car-filled'
+  | 'chat'
+  | 'chat-filled'
+  | 'check'
+  | 'check-circle'
+  | 'check-circle-filled'
+  | 'check-filled'
+  | 'check-light'
+  | 'check-light-filled'
+  | 'cloud'
+  | 'cloud-filled'
+  | 'cloud-star'
+  | 'cloud-star-filled'
+  | 'cog'
+  | 'cog-filled'
+  | 'comment'
+  | 'comment-filled'
+  | 'computer'
+  | 'computer-filled'
+  | 'download'
+  | 'download-filled'
+  | 'dress'
+  | 'dress-filled'
+  | 'edit'
+  | 'edit-filled'
+  | 'email'
+  | 'email-filled'
+  | 'file'
+  | 'file-document'
+  | 'file-document-filled'
+  | 'file-filled'
+  | 'folder'
+  | 'folder-filled'
+  | 'graduate'
+  | 'graduate-filled'
+  | 'hand-bag'
+  | 'hand-bag-filled'
+  | 'heart'
+  | 'heart-beat'
+  | 'heart-beat-filled'
+  | 'heart-crap'
+  | 'heart-crap-filled'
+  | 'heart-filled'
+  | 'house'
+  | 'house-add-filled'
+  | 'house-chart-filled'
+  | 'house-filled'
+  | 'lightbulb'
+  | 'lightbulb-filled'
+  | 'list-bullets'
+  | 'list-bullets-filled'
+  | 'location-pin'
+  | 'location-pin-filled'
+  | 'location-pin-food'
+  | 'location-ping-food-filled'
+  | 'login-key'
+  | 'login-key-filled'
+  | 'logout'
+  | 'logout-filled'
+  | 'man-megaphone'
+  | 'man-megaphone-filled'
+  | 'newspaper'
+  | 'newspaper-filled'
+  | 'paperclip'
+  | 'paperclip-filled'
+  | 'pet-paw'
+  | 'pet-paw-filled'
+  | 'phone'
+  | 'phone-filled'
+  | 'picture-add-filled'
+  | 'picture-filled'
+  | 'plus'
+  | 'plus-filled'
+  | 'plus-light'
+  | 'plus-light-filled'
+  | 'power'
+  | 'power-filled'
+  | 'present-box'
+  | 'present-box-filled'
+  | 'remove'
+  | 'remove-filled'
+  | 'remove-light'
+  | 'remove-light-filled'
+  | 'sand-glass'
+  | 'sand-glass-filled'
+  | 'search'
+  | 'search-filled'
+  | 'send'
+  | 'send-filled'
+  | 'serving'
+  | 'serving-filled'
+  | 'settings'
+  | 'settings-filled'
+  | 'sharetime'
+  | 'sharetime-filled'
+  | 'shopping-cart'
+  | 'shopping-cart-filled'
+  | 'smartphone'
+  | 'smartphone-filled'
+  | 'sort'
+  | 'sort-asc'
+  | 'sort-desc'
+  | 'sync'
+  | 'sync-filled'
+  | 'temperature-filled'
+  | 'ticket'
+  | 'ticket-filled'
+  | 'tile-filled'
+  | 'trash'
+  | 'trash-filled'
+  | 'trending-down'
+  | 'trending-down-filled'
+  | 'trending-up'
+  | 'trending-up-filled'
+  | 'upload'
+  | 'upload-filled'
+  | 'user'
+  | 'user-chat'
+  | 'user-chat-filled'
+  | 'user-filled'
+  | 'user-group'
+  | 'user-group-chat'
+  | 'user-group-chat-filled'
+  | 'user-group-filled'
+  | 'view'
+  | 'view-filled'
+  | 'wrench-screwdriver'
+  | 'wrench-screwdriver-filled'
 
 export const Icons = [
   'alarm',
@@ -165,6 +324,63 @@ export const Icons = [
 
 let hasWarnedBefore = false
 
+const getSize = (size: sizeType) => {
+  switch (size) {
+    case 'xs':
+      return 16
+    case 's':
+      return 21.5
+    case 'm':
+      return 27.5
+    case 'l':
+      return 43
+    default:
+      return size
+  }
+}
+
+const IconsCache: string[] = []
+
+const loadIcon = (name: string, resourcePath: string) => {
+  const iconName = getIconName(name)
+  if (!resourcePath) {
+    !hasWarnedBefore &&
+      console.warn(
+        'In order to use icons, you need to wrap everything into a ResourceProvider'
+      )
+    hasWarnedBefore = true
+  } else if (!(iconName in IconsCache)) {
+    const path = `${resourcePath}/react-icons/production/${iconName}.svg`
+
+    fetch(path)
+      .then(r => r.text())
+      .then(icon => {
+        IconsCache[iconName] = icon
+      })
+  }
+}
+
+const getIconName = (name: string) => {
+  // Transforms from my-icon-name to myIconName
+  let iconName = name.replace(/-([a-z])/g, g => g[1].toUpperCase())
+  // Transforms from MyIconNameIcon to myIconName
+  return (iconName.charAt(0).toLowerCase() + iconName.substr(1)).replace(
+    'Icon',
+    ''
+  )
+}
+
+type sizeType = 'xs' | 's' | 'm' | 'l' | number
+
+interface IProps {
+  /** The name of the icon */
+  name: IconType
+  /** The color of the icon */
+  color?: string
+  /** Can be xs, s, m, l */
+  size?: sizeType
+}
+
 /**
  * Icons are used to visually communicate core parts of the product and
  * available actions. They can act as wayfinding tools to help users more
@@ -173,123 +389,39 @@ let hasWarnedBefore = false
  *
  * *Note:* To use Icons, you need to wrap everything in a **ResourceProvider**
  */
-export default class Icon extends React.Component {
-  static propTypes = {
-    /** The name of the icon */
-    name: PropTypes.oneOf(Icons).isRequired,
-    /** The color of the icon */
-    color: PropTypes.string,
-    /** Can be xs, s, m, l */
-    size: PropTypes.oneOfType([
-      PropTypes.oneOf(['xs', 's', 'm', 'l']),
-      PropTypes.number,
-    ]),
-    children: PropTypes.node,
+export default ({ color = 'primary', name, size = 'm', ...props }: IProps) => {
+  const iconName = getIconName(name)
+  const isFilled = iconName.indexOf('Filled') !== -1
+  const { width, height } = {
+    width: getSize(size),
+    height: getSize(size),
   }
 
-  static defaultProps = {
-    color: 'primary',
-    size: 'm',
-  }
-
-  static contextTypes = {
-    resourcePath: PropTypes.string,
-  }
-
-  static icons = {}
-
-  componentDidMount() {
-    this.props.children &&
-      console.warn('Passing children to Icon is deprecated')
-
-    this.mounted = true
-    this.loadIcon(this.props.name)
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.name !== prevProps.name) {
-      this.loadIcon(this.props.name)
-    }
-  }
-
-  componentWillUnmount() {
-    this.mounted = false
-  }
-
-  mounted = false
-
-  getSize = () => {
-    switch (this.props.size) {
-      case 'xs':
-        return 16
-      case 's':
-        return 21.5
-      case 'm':
-        return 27.5
-      case 'l':
-        return 43
-      default:
-        return this.props.size
-    }
-  }
-
-  getIconName = name => {
-    // Transforms from my-icon-name to myIconName
-    let iconName = name.replace(/-([a-z])/g, g => g[1].toUpperCase())
-    // Transforms from MyIconNameIcon to myIconName
-    return (iconName.charAt(0).toLowerCase() + iconName.substr(1)).replace(
-      'Icon',
-      ''
-    )
-  }
-
-  loadIcon = name => {
-    const iconName = this.getIconName(name)
-    if (!this.context.resourcePath) {
-      !hasWarnedBefore &&
-        console.warn(
-          'In order to use icons, you need to wrap everything into a ResourceProvider'
+  return (
+    <ResourceProvider.Consumer>
+      {({ resourcePath }: { resourcePath: string }) => {
+        loadIcon(iconName, resourcePath)
+        return (
+          <Theme>
+            {({ colorize }) => (
+              <View
+                {...props}
+                style={{
+                  width: width,
+                  height: height,
+                  fill: isFilled && colorize(color),
+                  stroke: !isFilled && colorize(color),
+                }}
+                alignH="center"
+                alignV="center"
+                dangerouslySetInnerHTML={{
+                  __html: IconsCache[iconName] as string,
+                }}
+              />
+            )}
+          </Theme>
         )
-      hasWarnedBefore = true
-    } else if (!(iconName in Icon.icons)) {
-      const resourcePath = this.context.resourcePath
-      const path = `${resourcePath}/react-icons/production/${iconName}.svg`
-
-      fetch(path)
-        .then(r => r.text())
-        .then(icon => {
-          Icon.icons[iconName] = icon
-          this.mounted && this.forceUpdate()
-        })
-    }
-  }
-
-  render() {
-    const { children, color, name, size, ...props } = this.props
-    const iconName = this.getIconName(name)
-    const isFilled = iconName.indexOf('Filled') !== -1
-    const { width, height } = {
-      width: this.getSize(),
-      height: this.getSize(),
-    }
-
-    return (
-      <Theme>
-        {({ colorize }) => (
-          <View
-            {...props}
-            style={{
-              width: width,
-              height: height,
-              fill: isFilled && colorize(color),
-              stroke: !isFilled && colorize(color),
-            }}
-            alignH="center"
-            alignV="center"
-            dangerouslySetInnerHTML={{ __html: Icon.icons[iconName] }}
-          />
-        )}
-      </Theme>
-    )
-  }
+      }}
+    </ResourceProvider.Consumer>
+  )
 }
