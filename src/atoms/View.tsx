@@ -65,20 +65,16 @@ function getCssFlexValue(flex) {
  * </ThemeProvider>
  * ```
  */
-const View = ({
-  alignH = 'start',
-  alignV = 'stretch',
-  children,
-  htmlElement = 'div',
-  direction,
-  fill = false,
-  flex = 'none',
-  onRef = _ => _,
-  wrap,
-  ...restProps
-}) => {}
-
 class View extends Component {
+  static defaultProps = {
+    alignH: 'start',
+    alignV: 'stretch',
+    htmlElement: 'div',
+    fill: false,
+    flex: 'none',
+    onRef: _ => _,
+  }
+
   static propTypes = {
     children: PropTypes.node,
     htmlElement: PropTypes.string,
@@ -191,7 +187,7 @@ class View extends Component {
     }
 
     if (flex) {
-      styles.flex = this.getCssFlexValue(flex)
+      styles.flex = getCssFlexValue(flex)
     }
 
     return React.createElement(
