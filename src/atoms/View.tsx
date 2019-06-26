@@ -1,12 +1,6 @@
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, { DOMAttributes } from 'react'
 import { css } from 'glamor'
 
-/**
- * Appends 'flex-' to 'start' and 'end'
- * @param {String} alignment
- * @return {String}
- */
 function getCssAlignValue(alignment: 'start' | 'end' | string) {
   if (alignment === 'start' || alignment === 'end') {
     return `flex-${alignment}`
@@ -23,6 +17,20 @@ type flexType =
   | 'initial'
   | 'auto'
   | 'noshrink'
+
+type alignH =
+  | 'none'
+  | 'start'
+  | 'center'
+  | 'end'
+  | 'space-around'
+  | 'space-between'
+
+type alignV = 'none' | 'start' | 'center' | 'end' | 'stretch'
+
+type direction = 'row' | 'column' | 'row-reverse' | 'column-reverse'
+
+type wrapType = 'inherit' | 'initial' | 'wrap' | 'nowrap' | 'wrap-reverse'
 
 function getCssFlexValue(flex: flexType) {
   if (typeof flex === 'number') {
@@ -52,6 +60,63 @@ function getCssFlexValue(flex: flexType) {
   }
 }
 
+interface IProps<T> extends DOMAttributes<T> {
+  children: React.ReactNode
+  htmlElement?: string
+  /** horizontal alignment */
+  alignH: alignH
+  /** vertical alignment */
+  alignV: alignV
+  /** direction */
+  direction: direction
+  /** Passing true, will make the view fill out available space */
+  fill?: boolean
+  /** Defining how children will wrap */
+  wrap?: wrapType
+  /** Flex values, can be 5, 10, 15 ... 100 or 33, 66 */
+  flex?: flexType
+}
+
+function createStyles({
+  direction,
+  flex,
+  alignV,
+  alignH,
+  wrap,
+  fill,
+  hasClick,
+}: {
+  direction: direction
+  flex: flexType
+  alignH: alignH
+  wrap?: wrapType
+  alignV: alignV
+  fill: boolean
+  hasClick: boolean
+}) {
+  return css({
+    ...((direction || flex) && { boxSizing: 'border-box' }),
+    ...(direction && {
+      alignContent: getCssAlignValue(alignV),
+      alignItems: getCssAlignValue(alignV),
+      display: 'flex',
+      flexDirection: direction,
+      justifyContent: getCssAlignValue(alignH),
+      ...(wrap && { flexWrap: wrap }),
+      ...(fill && {
+        height: '100%',
+        margin: 0,
+        minHeight: '100%',
+        width: '100%',
+      }),
+      ...(hasClick && {
+        cursor: 'pointer',
+      }),
+    }),
+    flex,
+    ...(flex && { flex: getCssFlexValue(flex) }),
+  })
+}
 /**
  * Everything in elemnts is view! It's the component to align and layout things
  *
@@ -63,135 +128,33 @@ function getCssFlexValue(flex: flexType) {
  * </ThemeProvider>
  * ```
  */
-class View extends Component {
-  static defaultProps = {
-    alignH: 'start',
-    alignV: 'stretch',
-    htmlElement: 'div',
-    fill: false,
-    flex: 'none',
-  }
-
-  static propTypes = {
-    children: PropTypes.node,
-    htmlElement: PropTypes.string,
-
-    /** horizontal alignment */
-    alignH: PropTypes.oneOf([
-      'none',
-      'start',
-      'center',
-      'end',
-      'space-around',
-      'space-between',
-    ]),
-
-    /** vertical alignment */
-    alignV: PropTypes.oneOf(['none', 'start', 'center', 'end', 'stretch']),
-
-    /** direction */
-    direction: PropTypes.oneOf([
-      'row',
-      'column',
-      'row-reverse',
-      'column-reverse',
-    ]),
-
-    /** Passing true, will make the view fill out available space */
-    fill: PropTypes.bool,
-
-    /** Defining how children will wrap */
-    wrap: PropTypes.oneOf([
-      'inherit',
-      'initial',
-      'wrap',
-      'nowrap',
-      'wrap-reverse',
-    ]),
-
-    /** Flex values, can be 5, 10, 15 ... 100 or 33, 66 */
-    flex: PropTypes.oneOf([
-      'none',
-      'flex',
-      'nogrow',
-      'grow',
-      'initial',
-      'auto',
-      'noshrink',
-      5,
-      10,
-      15,
-      20,
-      25,
-      30,
-      35,
-      40,
-      45,
-      50,
-      55,
-      60,
-      65,
-      70,
-      75,
-      80,
-      95,
-      90,
-      100,
-      33,
-      66,
-    ]),
-
-    onClick: PropTypes.func,
-  }
-
-  render() {
-    const {
-      alignH,
-      alignV,
-      children,
-      htmlElement,
-      direction,
-      fill,
-      flex,
-      wrap,
-      ...restProps
-    } = this.props
-
-    const styles = {
-      ...((direction || flex) && { boxSizing: 'border-box' }),
-      ...(direction && {
-        alignContent: getCssAlignValue(alignV),
-        alignItems: getCssAlignValue(alignV),
-        display: 'flex',
-        flexDirection: direction,
-        justifyContent: getCssAlignValue(alignH),
-        ...(wrap && { flexWrap: wrap }),
-        ...(fill && {
-          height: '100%',
-          margin: 0,
-          minHeight: '100%',
-          width: '100%',
-        }),
-        ...(restProps.onClick && {
-          cursor: 'pointer',
-        }),
+function View<T = 'div'>({
+  alignH = 'start',
+  alignV = 'stretch',
+  children,
+  htmlElement = 'div',
+  direction,
+  fill = false,
+  flex = 'none',
+  wrap,
+  ...props
+}: IProps<T>) {
+  return React.createElement(
+    htmlElement,
+    {
+      ...createStyles({
+        alignH,
+        alignV,
+        fill,
+        wrap,
+        flex,
+        direction,
+        hasClick: !!props.onClick,
       }),
-      flex,
-    }
-
-    if (flex) {
-      styles.flex = getCssFlexValue(flex)
-    }
-
-    return React.createElement(
-      htmlElement,
-      {
-        ...css(styles),
-        ...restProps,
-      },
-      children
-    )
-  }
+      ...props,
+    },
+    children
+  )
 }
 
 export default View

@@ -1,12 +1,24 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { ThemeConsumer } from './ThemeProvider'
+import { ThemeConsumer, ITheme } from './ThemeProvider'
 
-const createColorizor = theme => color => theme[color] || color
+type Colorizor = (color: string) => string
 
-const Theme = ({ children }) => (
+const createColorizor = (theme: ITheme): Colorizor => (color: string) =>
+  theme[color] || color
+
+const Theme: React.FC = ({
+  children,
+}: {
+  children: ({
+    theme,
+    colorize,
+  }: {
+    theme: ITheme
+    colorize: any
+  }) => React.ReactNode
+}) => (
   <ThemeConsumer>
-    {theme =>
+    {(theme: ITheme) =>
       children({
         theme,
         colorize: createColorizor(theme),
@@ -14,9 +26,5 @@ const Theme = ({ children }) => (
     }
   </ThemeConsumer>
 )
-
-Theme.propTypes = {
-  children: PropTypes.func.isRequired,
-}
 
 export default Theme

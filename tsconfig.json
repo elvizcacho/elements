@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": false,
-    "allowSyntheticDefaultImports": false,
+    "allowSyntheticDefaultImports": true,
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
@@ -20,7 +20,8 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strictNullChecks": true,
-    "target": "es2017"
+    "target": "es2017",
+    "esModuleInterop": true
   },
   "exclude": ["public", "node_modules", "dist"],
   "include": ["src"]

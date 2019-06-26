@@ -1,5 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FunctionComponent } from 'react'
 import { ColorPalette } from '@allthings/colors'
 
 export const defaultTheme = {
@@ -14,6 +13,19 @@ export const defaultTheme = {
   textOnBackground: ColorPalette.white,
 }
 
+export interface ITheme {
+  primary: string
+  text: string
+  secondaryText: string
+  titleColor: string
+  contrast: string
+  warn: string
+  disabled: string
+  background: string
+  textOnBackground: string
+  [key: string]: string
+}
+
 const ThemeContext = React.createContext(defaultTheme)
 export const ThemeConsumer = ThemeContext.Consumer
 
@@ -23,9 +35,12 @@ export const ThemeConsumer = ThemeContext.Consumer
  *
  * **Example**: If you want all you buttons to be red, instead of writing <Button color="red" /> all the time, you might want to set the "primary" color of your theme to red.
  **/
-const ThemeProvider = ({ children, theme }) => (
+const ThemeProvider: FunctionComponent<{ theme: ITheme }> = ({
+  children,
+  theme,
+}) => (
   <ThemeConsumer>
-    {contextTheme => (
+    {(contextTheme: ITheme) => (
       <ThemeContext.Provider value={{ ...contextTheme, ...theme }}>
         {children}
       </ThemeContext.Provider>
@@ -33,38 +48,28 @@ const ThemeProvider = ({ children, theme }) => (
   </ThemeConsumer>
 )
 
-ThemeProvider.propTypes = {
-  theme: PropTypes.shape({
-    primary: PropTypes.string,
-    text: PropTypes.string,
-    secondaryText: PropTypes.string,
-    titleColor: PropTypes.string,
-    contrast: PropTypes.string,
-    warn: PropTypes.string,
-    disabled: PropTypes.string,
-    background: PropTypes.string,
-    textOnBackground: PropTypes.string,
-  }),
-  children: PropTypes.node,
-}
-
 export default ThemeProvider
 
-export const withTheme = (mapThemeToProps, displayName) => WrappedComponent =>
-  // eslint-disable-next-line react/no-multi-comp
-  class extends React.PureComponent {
-    static displayName = displayName || WrappedComponent.displayName
-    static component = WrappedComponent
+export function withTheme(
+  mapThemeToProps: (theme: ITheme, props: any) => any,
+  displayName: string
+) {
+  return (WrappedComponent: any) =>
+    // eslint-disable-next-line react/no-multi-comp
+    class extends React.Component {
+      static displayName = displayName || WrappedComponent.displayName
+      static component = WrappedComponent
 
-    renderComponent = theme => {
-      const props = !mapThemeToProps
-        ? { theme }
-        : mapThemeToProps(theme, this.props)
+      renderComponent = (theme: ITheme) => {
+        const props = !mapThemeToProps
+          ? { theme }
+          : mapThemeToProps(theme, this.props)
 
-      return <WrappedComponent {...this.props} {...props} />
+        return <WrappedComponent {...this.props} {...props} />
+      }
+
+      render() {
+        return <ThemeConsumer>{this.renderComponent}</ThemeConsumer>
+      }
     }
-
-    render() {
-      return <ThemeConsumer>{this.renderComponent}</ThemeConsumer>
-    }
-  }
+}

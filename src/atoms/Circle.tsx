@@ -1,10 +1,15 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import View from './View'
 import { css } from 'glamor'
 import Theme from '../behaviour/Theme'
 
-const circle = (backgroundColor, outline, outlineColor, fill, radius) =>
+const circle = (
+  backgroundColor: string,
+  outline: boolean,
+  outlineColor: string,
+  fill: boolean,
+  radius: number
+) =>
   css({
     border: outline && `1px solid ${outlineColor || backgroundColor}`,
     backgroundColor: fill && backgroundColor,
@@ -13,6 +18,21 @@ const circle = (backgroundColor, outline, outlineColor, fill, radius) =>
     width: radius,
     transition: 'background-color 120ms linear',
   })
+
+interface IProps {
+  /** Content of the Circle will be always centered */
+  children?: React.ReactNode
+  /** Color of the Circle. Allows theme names (like 'primary') or hex colors  */
+  color?: string
+  /** Radius of Circle, defaults to 40 */
+  radius?: number
+  /** If true it will only render the outline */
+  outline?: boolean
+  /** If passed outline will use as outline color instead of color */
+  outlineColor?: string
+  /** If true it will fill the circle */
+  fill?: boolean
+}
 
 /**
  * Simple circle element that is used to build other things.
@@ -37,12 +57,12 @@ const circle = (backgroundColor, outline, outlineColor, fill, radius) =>
 const Circle = ({
   fill = true,
   color = 'primary',
-  outline,
+  outline = false,
   outlineColor = 'primary',
   radius = 40,
   children,
   ...props
-}) => (
+}: IProps) => (
   <Theme>
     {({ colorize }) => (
       <View
@@ -63,20 +83,5 @@ const Circle = ({
     )}
   </Theme>
 )
-
-Circle.propTypes = {
-  /** Content of the Circle will be always centered */
-  children: PropTypes.node,
-  /** Color of the Circle. Allows theme names (like 'primary') or hex colors  */
-  color: PropTypes.string,
-  /** Radius of Circle, defaults to 40 */
-  radius: PropTypes.number,
-  /** If true it will only render the outline */
-  outline: PropTypes.bool,
-  /** If passed outline will use as outline color instead of color */
-  outlineColor: PropTypes.string,
-  /** If true it will fill the circle */
-  fill: PropTypes.bool,
-}
 
 export default Circle

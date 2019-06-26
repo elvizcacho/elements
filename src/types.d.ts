@@ -1,0 +1,6 @@
+declare module 'enzyme-adapter-react-16'
+declare module 'jest-fetch-mock'
+declare module 'react-test-renderer'
+declare module 'jest-glamor-react'
+declare module 'react-generate-props'
+declare module '@allthings/colors'
