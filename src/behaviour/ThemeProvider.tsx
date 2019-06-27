@@ -35,9 +35,9 @@ export const ThemeConsumer = ThemeContext.Consumer
  *
  * **Example**: If you want all you buttons to be red, instead of writing <Button color="red" /> all the time, you might want to set the "primary" color of your theme to red.
  **/
-const ThemeProvider: FunctionComponent<{ theme: ITheme }> = ({
+const ThemeProvider: FunctionComponent<{ theme?: ITheme }> = ({
   children,
-  theme,
+  theme = {},
 }) => (
   <ThemeConsumer>
     {(contextTheme: ITheme) => (
