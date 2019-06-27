@@ -3,12 +3,12 @@ import React, { Fragment } from 'react'
 import { IntlProvider } from 'react-intl'
 
 export const loadLanguage = async (
-  resourcePath,
-  project,
-  variation,
-  locale,
-  stage
-) => {
+  resourcePath: string,
+  project: string,
+  variation: string,
+  locale: string,
+  stage: string
+): Promise<object> => {
   const countryCode = locale.split('_')[0]
   const translations = await fetch(
     `${resourcePath}/${project}/${stage}/i18n/${countryCode}/${variation}.json`
@@ -16,7 +16,28 @@ export const loadLanguage = async (
   return translations.json()
 }
 
-class CDNIntlProvider extends React.Component {
+interface IBasicProps {
+  project: string
+  locale: string
+  onDone?: () => void
+  messages?: object
+  stage: 'prerelease' | 'production' | 'staging'
+  variation?: string
+}
+
+const defaultProps = {
+  onDone: () => {},
+  stage: 'production',
+  variation: 'default',
+}
+
+type IProps = IBasicProps & typeof defaultProps
+
+interface IState {
+  messages?: object
+}
+
+class CDNIntlProvider extends React.Component<IProps, IState> {
   static propTypes = {
     children: PropTypes.node,
     /** Locale you like to get, EN_us, DE_de */
@@ -33,17 +54,13 @@ class CDNIntlProvider extends React.Component {
     variation: PropTypes.string,
   }
 
-  static defaultProps = {
-    onDone: _ => _,
-    stage: 'production',
-    variation: 'default',
-  }
+  static defaultProps = defaultProps
 
   static contextTypes = {
     resourcePath: PropTypes.string,
   }
 
-  constructor(props, context) {
+  constructor(props: IProps, context: any) {
     super(props, context)
     const messages = props.messages
     this.state = {
@@ -52,7 +69,7 @@ class CDNIntlProvider extends React.Component {
     if (!messages && typeof document !== 'undefined') {
       const container = document.getElementById('__ELEMENTS_INTL__')
       if (container) {
-        const stateString = container.getAttribute('data-state')
+        const stateString = container.getAttribute('data-state') as string
         this.state = { messages: JSON.parse(stateString) }
       } else {
         this.loadLanguages(props)
@@ -60,7 +77,7 @@ class CDNIntlProvider extends React.Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: IProps) {
     const { project, locale, variation } = this.props
     if (
       prevProps.project !== project ||
@@ -71,7 +88,7 @@ class CDNIntlProvider extends React.Component {
     }
   }
 
-  loadLanguages = async props => {
+  loadLanguages = async (props: IProps) => {
     const { project, variation, locale, stage, onDone } = props
 
     const messages = await loadLanguage(
@@ -85,7 +102,7 @@ class CDNIntlProvider extends React.Component {
     this.setState({ messages }, onDone)
   }
 
-  renderSideEffect = messages => (
+  renderSideEffect = (messages?: object) => (
     <span
       id="__ELEMENTS_INTL__"
       style={{ display: 'none' }}

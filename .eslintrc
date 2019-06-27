@@ -4,6 +4,7 @@
       "version": "detect"
     }
   },
+  "parser": "@typescript-eslint/parser",
   "extends": [
     "standard",
     "plugin:react/recommended",
@@ -24,7 +25,6 @@
     "render": true,
     "shallow": true
   },
-  "parser": "babel-eslint",
   "plugins": ["react", "jest", "import"],
   "rules": {
     "comma-dangle": [2, "always-multiline"],
