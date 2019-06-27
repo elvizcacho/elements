@@ -1,9 +1,9 @@
 import React from 'react'
 import View from '../atoms/View'
 import { css } from 'glamor'
-import { color, colorCode } from '../propTypes/color'
+import { colorCode } from '../propTypes/color'
 
-const line = color =>
+const line = (color: string) =>
   css({
     backgroundColor: color,
     height: '1px',
@@ -11,7 +11,7 @@ const line = color =>
   })
 
 /** Hello, I'm a Line */
-const Line = ({ color }) => (
+const Line = ({ color }: { color?: string }) => (
   <View
     {...line(colorCode(color))}
     alignV="center"
@@ -19,10 +19,5 @@ const Line = ({ color }) => (
     direction="column"
   />
 )
-
-Line.propTypes = {
-  /** Color of the Circle */
-  color: color,
-}
 
 export default Line

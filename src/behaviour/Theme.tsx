@@ -8,7 +8,7 @@ const createColorizor = (theme: ITheme): Colorizor => (color: string) =>
 
 export interface IThemeChildren {
   theme: ITheme
-  colorize: any
+  colorize: (color: string) => string
 }
 
 type ThemeChildrenType = ({

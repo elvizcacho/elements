@@ -1,5 +1,5 @@
 import React from 'react'
-import View from '../atoms/View'
+import View, { IViewProps } from '../atoms/View'
 import { css } from 'glamor'
 
 const absolute = ({ left, right, top, bottom }: IProps) =>
@@ -13,13 +13,13 @@ const absolute = ({ left, right, top, bottom }: IProps) =>
 
 interface IProps {
   /** Top offset */
-  top: string | number
+  top?: string | number
   /** Bottom offset */
-  bottom: string | number
+  bottom?: string | number
   /** Left offset */
-  left: string | number
+  left?: string | number
   /** Right offset */
-  right: string | number
+  right?: string | number
 }
 
 const Absolute = ({
@@ -29,7 +29,7 @@ const Absolute = ({
   bottom,
   children,
   ...props
-}: React.FN<IProps>) => (
+}: IProps & IViewProps) => (
   <View {...absolute({ top, left, right, bottom })} {...props}>
     {children}
   </View>

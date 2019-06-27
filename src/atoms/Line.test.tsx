@@ -6,3 +6,8 @@ test('Line renders correctly', () => {
   const tree = renderer.create(<Line />).toJSON()
   expect(tree).toMatchSnapshot()
 })
+
+test('Line renders in different color', () => {
+  const tree = renderer.create(<Line color="red" />).toJSON()
+  expect(tree).toMatchSnapshot()
+})

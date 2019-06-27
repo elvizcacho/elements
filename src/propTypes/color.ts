@@ -1,25 +1,13 @@
-import PropTypes from 'prop-types'
 import { ColorPalette } from '@allthings/colors'
 
-export const color = PropTypes.oneOfType([
-  PropTypes.string, // keep this until we got the colors right
-  PropTypes.oneOf(
-    Object.keys(ColorPalette).concat(Object.values(ColorPalette))
-  ),
-])
+export type color = string // @Todo: Replace with real types, soon.
+export type textColor = string // @Todo: Replace with real types, soon.
 
-export const textColor = PropTypes.oneOfType([
-  PropTypes.string, // keep this until we got the colors right
-  PropTypes.oneOf(
-    Object.keys(ColorPalette.text).concat(Object.values(ColorPalette.text))
-  ),
-])
-
-export const colorCode = color =>
+export const colorCode = (color: string) =>
   ColorPalette[color] || ColorPalette.text[color] || color
 
-export const textColorCode = color =>
+export const textColorCode = (color: string) =>
   ColorPalette.text[color] || ColorPalette[color] || color
 
-export const backgroundColorCode = color =>
+export const backgroundColorCode = (color: string) =>
   ColorPalette.background[color] || ColorPalette[color] || color

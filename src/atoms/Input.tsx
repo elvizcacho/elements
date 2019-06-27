@@ -121,7 +121,7 @@ interface IProps extends IValidityStates {
   /** The label of the input */
   label?: string
   /** Type, can be: 'tel', 'number', 'text', 'url', 'email' */
-  type:
+  type?:
     | 'tel'
     | 'number'
     | 'text'
@@ -131,21 +131,21 @@ interface IProps extends IValidityStates {
     | 'date'
     | 'datetime-local'
   /** Called, when the user changes something */
-  onChange: any
+  onChange?: any
   /** The value, makes this component a controlled component */
-  value: string
+  value?: string
   /** Can only be used with type=text. Increase to enable multi-line input */
-  lines: number
+  lines?: number
   /** Used when there is an icon to the right of input field */
-  hasRightIcon: boolean
+  hasRightIcon?: boolean
   /** Regular expression to validate against */
-  pattern: string
+  pattern?: string
   /** Min number of characters that must be provided */
-  minLength: number
+  minLength?: number
   /** Max number of characters that can be provided */
-  maxLength: number
+  maxLength?: number
   /** Called with the input field a reference */
-  onInputRef: any
+  onInputRef?: any
 }
 
 interface IValidityStates {
@@ -218,7 +218,7 @@ const Input = ({
   valueMissing,
   icon,
   ...props
-}: IProps) => {
+}: IProps & React.HTMLAttributes<HTMLElement>) => {
   const isTextArea = lines !== 1
   const [value, setValue] = useState('')
   const [length, setLength] = useState((props.value && props.value.length) || 0)
@@ -284,7 +284,7 @@ const Input = ({
             {...styles.input(
               showLabel,
               !!icon,
-              isCheckmarkActive || hasRightIcon
+              Boolean(isCheckmarkActive || hasRightIcon)
             )}
             required={required}
             aria-required={required}

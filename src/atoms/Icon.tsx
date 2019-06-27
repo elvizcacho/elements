@@ -1,7 +1,8 @@
 import React from 'react'
-import View from '../atoms/View'
+import View, { IViewProps } from '../atoms/View'
 import ResourceProvider from '../behaviour/ResourceProvider'
-import Theme from '../behaviour/Theme'
+import Theme, { IThemeChildren } from '../behaviour/Theme'
+import { css } from 'glamor'
 
 export type IconType =
   | 'alarm'
@@ -339,9 +340,9 @@ const getSize = (size: sizeType) => {
   }
 }
 
-const IconsCache: string[] = []
+const IconsCache = new Map()
 
-const loadIcon = (name: string, resourcePath: string) => {
+const loadIcon = async (name: string, resourcePath: string) => {
   const iconName = getIconName(name)
   if (!resourcePath) {
     !hasWarnedBefore &&
@@ -349,14 +350,12 @@ const loadIcon = (name: string, resourcePath: string) => {
         'In order to use icons, you need to wrap everything into a ResourceProvider'
       )
     hasWarnedBefore = true
-  } else if (!(iconName in IconsCache)) {
+  } else if (!IconsCache.has(iconName)) {
     const path = `${resourcePath}/react-icons/production/${iconName}.svg`
 
-    fetch(path)
-      .then(r => r.text())
-      .then(icon => {
-        IconsCache[iconName] = icon
-      })
+    const icon = await fetch(path)
+    const html = await icon.text()
+    IconsCache.set(iconName, html)
   }
 }
 
@@ -389,7 +388,12 @@ interface IProps {
  *
  * *Note:* To use Icons, you need to wrap everything in a **ResourceProvider**
  */
-export default ({ color = 'primary', name, size = 'm', ...props }: IProps) => {
+export default ({
+  color = 'primary',
+  name,
+  size = 'm',
+  ...props
+}: IProps & IViewProps) => {
   const iconName = getIconName(name)
   const isFilled = iconName.indexOf('Filled') !== -1
   const { width, height } = {
@@ -403,19 +407,19 @@ export default ({ color = 'primary', name, size = 'm', ...props }: IProps) => {
         loadIcon(iconName, resourcePath)
         return (
           <Theme>
-            {({ colorize }) => (
+            {({ colorize }: IThemeChildren) => (
               <View
                 {...props}
-                style={{
+                {...css({
                   width: width,
                   height: height,
                   fill: isFilled && colorize(color),
                   stroke: !isFilled && colorize(color),
-                }}
+                })}
                 alignH="center"
                 alignV="center"
                 dangerouslySetInnerHTML={{
-                  __html: IconsCache[iconName] as string,
+                  __html: IconsCache.get(iconName),
                 }}
               />
             )}

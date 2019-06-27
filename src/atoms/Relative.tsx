@@ -1,5 +1,5 @@
 import React from 'react'
-import View, { IView } from '../atoms/View'
+import View, { IViewProps } from '../atoms/View'
 import { css } from 'glamor'
 
 const relative = ({ left, right, top, bottom }: IRelative) =>
@@ -11,25 +11,27 @@ const relative = ({ left, right, top, bottom }: IRelative) =>
     bottom,
   })
 
-/** Top offset */
+type IRelativeProps = IRelative & IViewProps
+
 interface IRelative {
-  top: number
+  /** Top offset */
+  top?: number
   /** Bottom offset */
-  bottom: number
+  bottom?: number
   /** Left offset */
-  left: number
+  left?: number
   /** Right offset */
-  right: number
+  right?: number
 }
 
-const Relative = ({
+const Relative: React.FC<IRelativeProps> = ({
   top,
   left,
   right,
   bottom,
   children,
   ...props
-}: IRelative & IView) => (
+}: IRelativeProps) => (
   <View {...relative({ top, left, right, bottom })} {...props}>
     {children}
   </View>

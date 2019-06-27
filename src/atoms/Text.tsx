@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from 'glamor'
-import View, { IView } from '../atoms/View'
+import View, { IViewProps } from '../atoms/View'
 import Theme, { IThemeChildren } from '../behaviour/Theme'
 import neue from 'neue'
 
@@ -96,7 +96,7 @@ const Text = ({
   autoBreak,
   lineThrough,
   ...props
-}: IText & ITextStyles & IView) => (
+}: IText & ITextStyles & IViewProps) => (
   <Theme>
     {({ colorize }: IThemeChildren) => (
       <View
