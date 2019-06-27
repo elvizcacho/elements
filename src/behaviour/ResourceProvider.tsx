@@ -12,4 +12,8 @@ const ResouceProvider = React.createContext({
   resourcePath: RESOURCE_PATH,
 })
 
+export type ResourceType = {
+  resourcePath?: string
+}
+
 export default ResouceProvider

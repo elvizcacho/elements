@@ -1,7 +1,22 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import View from '../atoms/View'
+import React, { Component, ImgHTMLAttributes } from 'react'
+import View, { IViewProps } from '../atoms/View'
 import { css } from 'glamor'
+import ResouceProvider, { ResourceType } from '../behaviour/ResourceProvider'
+
+interface IImage {
+  /** Alternative image to use */
+  alt?: string
+  /** The URL of the image */
+  src: string
+  /** The URL of the fallback image */
+  srcFallback?: string
+  /** The behaviour behavior of image within the container */
+  size?: 'contain' | 'cover'
+  /** The position of image */
+  position?: 'center' | 'left' | 'right' | 'top' | 'bottom'
+}
+
+type IImageProps = IImage & IViewProps & ImgHTMLAttributes<HTMLElement>
 
 /**
  * Images make thing more interesting. They can be used
@@ -24,52 +39,33 @@ import { css } from 'glamor'
  * />
  * ```
  */
-export default class Image extends React.Component {
-  static propTypes = {
-    /** Alternative image to use */
-    alt: PropTypes.string,
-    /** Will be called when the image is clicked */
-    onClick: PropTypes.func,
-    /** The URL of the image */
-    src: PropTypes.string.isRequired,
-    /** The URL of the fallback image */
-    srcFallback: PropTypes.string,
-    /** The behaviour behavior of image within the container */
-    size: PropTypes.oneOf(['contain', 'cover']),
-    /** The position of image */
-    position: PropTypes.oneOf(['center', 'left', 'right', 'top', 'bottom']),
-  }
-
+export default class ImageElement extends Component<IImageProps, {}> {
   state = {
     useFallback: false,
-  }
-
-  static contextTypes = {
-    resourcePath: PropTypes.string,
   }
 
   componentDidMount() {
     this.loadImage(this.props.src)
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps: IImageProps) {
     if (this.props.src !== prevProps.src) {
       this.setState({ useFallback: false })
       this.loadImage(this.props.src)
     }
   }
 
-  loadImage = src => {
+  loadImage = (src: string) => {
     const image = new Image()
     image.onerror = this.onError
     image.src = src
   }
 
-  getFallbackUrl = () => {
+  getFallbackUrl = (resourcePath?: string) => {
     const baseUrl =
-      typeof this.context.resourcePath === 'undefined'
+      typeof resourcePath === 'undefined'
         ? 'https://static.allthings.me/app/prod/'
-        : this.context.resourcePath
+        : resourcePath
 
     return `${baseUrl}/static/img/default/image.svg`
   }
@@ -79,19 +75,23 @@ export default class Image extends React.Component {
   render() {
     const { srcFallback, src, position, size, ...props } = this.props
 
-    const imageUrl = this.state.useFallback
-      ? srcFallback || this.getFallbackUrl()
-      : src
-
     return (
-      <View
-        {...css({
-          backgroundImage: `url(${imageUrl})`,
-          backgroundSize: size,
-          backgroundPosition: position,
-        })}
-        {...props}
-      />
+      <ResouceProvider.Consumer>
+        {({ resourcePath }: ResourceType) => (
+          <View
+            {...css({
+              backgroundImage: `url(${
+                this.state.useFallback
+                  ? srcFallback || this.getFallbackUrl(resourcePath)
+                  : src
+              })`,
+              backgroundSize: size,
+              backgroundPosition: position,
+            })}
+            {...props}
+          />
+        )}
+      </ResouceProvider.Consumer>
     )
   }
 }
