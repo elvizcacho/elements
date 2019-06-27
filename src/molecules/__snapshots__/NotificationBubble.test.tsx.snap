@@ -114,6 +114,13 @@ exports[`NotificationBubble renders without error 1`] = `
   -webkit-flex: 1 1 30%;
 }
 
+.css-7,
+[data-css-7] {
+  width: 27.5px;
+  height: 27.5px;
+  fill: white;
+}
+
 <div
   data-css-2=""
 >
@@ -152,15 +159,8 @@ exports[`NotificationBubble renders without error 1`] = `
             "__html": undefined,
           }
         }
+        data-css-7=""
         data-css-2=""
-        style={
-          Object {
-            "fill": "white",
-            "height": 27.5,
-            "stroke": false,
-            "width": 27.5,
-          }
-        }
       />
     </div>
   </div>

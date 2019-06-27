@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 import View from '../atoms/View'
 import { css } from 'glamor'
-import Theme from '../behaviour/Theme'
 import Icon from '../atoms/Icon'
 import Text from '../atoms/Text'
 import { Motion, spring } from 'react-motion'
-import PropTypes from 'prop-types'
+import Theme, { IThemeChildren } from '../behaviour/Theme'
 
 const styles = {
   bubble: css({
@@ -24,6 +23,14 @@ const styles = {
     width: 200,
     marginLeft: 20,
   }),
+}
+
+interface INotificationBubble {
+  color: string
+  onTimeout: () => void
+}
+interface INotificationBubbleState {
+  visible: boolean
 }
 
 /**
@@ -56,33 +63,32 @@ const styles = {
  * ```
  *
  */
-class NotificationBubble extends React.Component {
-  static propTypes = {
-    color: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired,
-    onTimeout: PropTypes.func.isRequired,
-  }
-
+class NotificationBubble extends Component<
+  INotificationBubble,
+  INotificationBubbleState
+> {
   state = {
     visible: true,
   }
 
   static defaultProps = {
     color: 'primary',
-    onTimeout: _ => _,
   }
 
   componentDidMount() {
     setTimeout(() => this.setState({ visible: false }), 2750)
   }
 
-  handleRest = () => this.state.visible === false && this.props.onTimeout()
+  handleRest = () =>
+    this.state.visible === false &&
+    this.props.onTimeout &&
+    this.props.onTimeout()
 
   render() {
     const { color, onTimeout, ...props } = this.props
     return (
       <Theme>
-        {({ colorize }) => (
+        {({ colorize }: IThemeChildren) => (
           <Motion
             defaultStyle={{ position: -50 }}
             onRest={this.handleRest}
@@ -94,7 +100,7 @@ class NotificationBubble extends React.Component {
             }}
           >
             {style => (
-              <View {...styles.container} {...props}>
+              <View {...props}>
                 <View
                   {...styles.bubble}
                   style={{
