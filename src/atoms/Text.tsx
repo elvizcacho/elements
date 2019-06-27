@@ -26,7 +26,7 @@ const availableSizes = {
 }
 
 interface ITextStyles {
-  size: sizeType
+  size?: sizeType
   block?: boolean
   italic?: boolean
   strong?: boolean
@@ -63,7 +63,7 @@ export const createTextStyles = ({
 }
 
 export interface IText {
-  color: string
+  color?: string
 }
 
 /**

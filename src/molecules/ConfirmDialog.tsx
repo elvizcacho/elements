@@ -33,7 +33,15 @@ const styles = {
   }),
 }
 
-class ConfirmDialog extends React.Component {
+export interface IConfirmDialogProps {
+  acceptButtonLabel: string
+  cancelButtonLabel: string
+  message: string
+  onCancel: () => void
+  onSuccess: () => void
+}
+
+class ConfirmDialog extends React.Component<IConfirmDialogProps> {
   static propTypes = {
     acceptButtonLabel: PropTypes.string.isRequired,
     cancelButtonLabel: PropTypes.string.isRequired,
@@ -42,7 +50,7 @@ class ConfirmDialog extends React.Component {
     onSuccess: PropTypes.func.isRequired,
   }
 
-  wrapperRef = React.createRef()
+  wrapperRef = React.createRef<HTMLDivElement>()
 
   componentDidMount() {
     document.addEventListener('mousedown', this.handleClickOutside)
@@ -56,15 +64,22 @@ class ConfirmDialog extends React.Component {
     document.removeEventListener('keyup', this.handleKeyUp)
   }
 
-  handleKeyUp = event => {
+  handleKeyUp = (event: KeyboardEvent) => {
     event.preventDefault()
     if (event.key === 'Escape') {
       this.props.onCancel()
     }
   }
 
-  handleClickOutside = event =>
-    !this.wrapperRef.current.contains(event.target) && this.props.onCancel()
+  handleClickOutside = (event: MouseEvent) => {
+    if (
+      event.target &&
+      this.wrapperRef.current &&
+      !this.wrapperRef.current.contains(event.target as HTMLElement)
+    ) {
+      this.props.onCancel()
+    }
+  }
 
   render() {
     const {
@@ -73,7 +88,7 @@ class ConfirmDialog extends React.Component {
       message,
       onCancel,
       onSuccess,
-      ...restProps
+      ...props
     } = this.props
 
     return (
@@ -82,7 +97,7 @@ class ConfirmDialog extends React.Component {
         alignV="center"
         alignH="center"
         {...styles.wrapper}
-        {...restProps}
+        {...props}
       >
         <div {...styles.insideView} ref={this.wrapperRef}>
           <Text color={ColorPalette.lightBlack} {...styles.text}>
