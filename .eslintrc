@@ -25,7 +25,17 @@
     "render": true,
     "shallow": true
   },
-  "plugins": ["react", "jest", "import"],
+  "overrides": [
+    {
+      // because of false positives:
+      // https://github.com/typescript-eslint/typescript-eslint/issues/46#issuecomment-470486034
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": [2, { "args": "none" }]
+      }
+    }
+  ],
+  "plugins": ["react", "jest", "import", "@typescript-eslint"],
   "rules": {
     "comma-dangle": [2, "always-multiline"],
     "generator-star-spacing": 0,

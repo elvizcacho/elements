@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent, useContext } from 'react'
 import View, { IViewProps } from '../atoms/View'
 import ResourceProvider from '../behaviour/ResourceProvider'
 import Theme, { IThemeChildren } from '../behaviour/Theme'
@@ -371,7 +371,7 @@ const getIconName = (name: string) => {
 
 type sizeType = 'xs' | 's' | 'm' | 'l' | number
 
-interface IProps {
+interface IIconProps extends IViewProps {
   /** The name of the icon */
   name: IconType
   /** The color of the icon */
@@ -388,12 +388,12 @@ interface IProps {
  *
  * *Note:* To use Icons, you need to wrap everything in a **ResourceProvider**
  */
-export default ({
+const Icon: FunctionComponent<IIconProps> = ({
   color = 'primary',
   name,
   size = 'm',
   ...props
-}: IProps & IViewProps) => {
+}) => {
   const iconName = getIconName(name)
   const isFilled = iconName.indexOf('Filled') !== -1
   const { width, height } = {
@@ -401,31 +401,28 @@ export default ({
     height: getSize(size),
   }
 
+  const { resourcePath } = useContext(ResourceProvider)
+
+  loadIcon(iconName, resourcePath)
+
   return (
-    <ResourceProvider.Consumer>
-      {({ resourcePath }: { resourcePath: string }) => {
-        loadIcon(iconName, resourcePath)
-        return (
-          <Theme>
-            {({ colorize }: IThemeChildren) => (
-              <View
-                {...props}
-                {...css({
-                  width: width,
-                  height: height,
-                  fill: isFilled && colorize(color),
-                  stroke: !isFilled && colorize(color),
-                })}
-                alignH="center"
-                alignV="center"
-                dangerouslySetInnerHTML={{
-                  __html: IconsCache.get(iconName),
-                }}
-              />
-            )}
-          </Theme>
-        )
-      }}
-    </ResourceProvider.Consumer>
+    <Theme>
+      {({ colorize }: IThemeChildren) => (
+        <View
+          {...props}
+          {...css({
+            width: width,
+            height: height,
+            fill: isFilled && colorize(color),
+            stroke: !isFilled && colorize(color),
+          })}
+          alignH="center"
+          alignV="center"
+          dangerouslySetInnerHTML={{ __html: IconsCache.get(iconName) }}
+        />
+      )}
+    </Theme>
   )
 }
+
+export default Icon

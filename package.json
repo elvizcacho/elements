@@ -45,7 +45,7 @@
     "test": "yarn jest src/ scripts/",
     "jest": "NODE_ENV=test jest",
     "prettier": "prettier --no-semi --single-quote --trailing-comma es5 --write",
-    "lint": "eslint --cache --ext .js,.jsx src",
+    "lint": "eslint --cache --ext .ts,.tsx src",
     "storybook": "start-storybook -p 6006",
     "security-check": "yarn audit"
   },
