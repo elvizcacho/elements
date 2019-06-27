@@ -1,7 +1,6 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import Image from '../atoms/Image'
-import View from '../atoms/View'
+import View, { IViewProps } from '../atoms/View'
 import { css } from 'glamor'
 
 const styles = {
@@ -42,10 +41,12 @@ const sizeMap = {
   big: 225,
 }
 
-export const resolveSize = size =>
+type sizeType = 'xs' | 's' | 'm' | 'l' | number
+
+export const resolveSize = (size: sizeType) =>
   typeof size === 'number' ? size : sizeMap[size]
 
-const DefaultProfileImage = ({ width, height }) => {
+const DefaultProfileImage = ({ width, height }: IDimensions) => {
   return (
     <svg
       viewBox="0 0 500 500"
@@ -68,9 +69,14 @@ const DefaultProfileImage = ({ width, height }) => {
   )
 }
 
-DefaultProfileImage.propTypes = {
-  width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired,
+interface IDimensions {
+  width: number
+  height: number
+}
+interface IProfileImageProps {
+  image?: string
+  showBorder?: boolean
+  size?: sizeType
 }
 
 /**
@@ -83,13 +89,13 @@ DefaultProfileImage.propTypes = {
  * ```
  */
 const ProfileImage = ({
-  size = 'medium',
+  size = 'm',
   showBorder = true,
   image,
   onClick,
   children,
   ...restProps
-}) => {
+}: IProfileImageProps & IViewProps) => {
   const width = resolveSize(size)
   const height = resolveSize(size)
   const pointerStyle = onClick ? { ':hover': { cursor: 'pointer' } } : {}
@@ -116,17 +122,6 @@ const ProfileImage = ({
       {children}
     </View>
   )
-}
-
-ProfileImage.propTypes = {
-  onClick: PropTypes.func,
-  children: PropTypes.node,
-  image: PropTypes.string,
-  showBorder: PropTypes.bool,
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf(['xs', 's', 'm', 'l']),
-    PropTypes.number,
-  ]),
 }
 
 export default ProfileImage

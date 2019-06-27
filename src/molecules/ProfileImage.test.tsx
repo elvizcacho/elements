@@ -10,6 +10,6 @@ test('Profile image with source renders correctly', () => {
 })
 
 test('Profile image without source renders correctly', () => {
-  const tree = renderer.create(<ProfileImage image={null} />).toJSON()
+  const tree = renderer.create(<ProfileImage />).toJSON()
   expect(tree).toMatchSnapshot()
 })
