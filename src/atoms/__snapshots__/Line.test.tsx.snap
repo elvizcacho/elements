@@ -3,6 +3,7 @@
 exports[`Line renders correctly 1`] = `
 .css-0,
 [data-css-0] {
+  background-color: #42e453;
   height: 1px;
   width: 100%;
 }

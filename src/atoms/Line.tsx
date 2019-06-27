@@ -11,7 +11,7 @@ const line = (color: string) =>
   })
 
 /** Hello, I'm a Line */
-const Line = ({ color }: { color?: string }) => (
+const Line = ({ color }: { color: string }) => (
   <View
     {...line(colorCode(color))}
     alignV="center"

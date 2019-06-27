@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer'
 import Line from './Line'
 
 test('Line renders correctly', () => {
-  const tree = renderer.create(<Line />).toJSON()
+  const tree = renderer.create(<Line color="green" />).toJSON()
   expect(tree).toMatchSnapshot()
 })
 
