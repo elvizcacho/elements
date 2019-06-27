@@ -119,6 +119,13 @@ exports[`Input component should render with all props 1`] = `
 
 .css-10,
 [data-css-10] {
+  width: 16px;
+  height: 16px;
+  stroke: #626262;
+}
+
+.css-11,
+[data-css-11] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 10px;
@@ -127,8 +134,15 @@ exports[`Input component should render with all props 1`] = `
   color: #626262;
 }
 
-.css-11,
-[data-css-11] {
+.css-12,
+[data-css-12] {
+  width: 16px;
+  height: 16px;
+  fill: lightGrey;
+}
+
+.css-13,
+[data-css-13] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -158,14 +172,7 @@ exports[`Input component should render with all props 1`] = `
         }
       }
       data-css-7=""
-      style={
-        Object {
-          "fill": false,
-          "height": 16,
-          "stroke": "#626262",
-          "width": 16,
-        }
-      }
+      data-css-10=""
     />
   </div>
   <input
@@ -194,7 +201,7 @@ exports[`Input component should render with all props 1`] = `
   >
     <div
       data-css-7=""
-      data-css-10=""
+      data-css-11=""
     >
       label
        
@@ -213,14 +220,7 @@ exports[`Input component should render with all props 1`] = `
         }
       }
       data-css-7=""
-      style={
-        Object {
-          "fill": "lightGrey",
-          "height": 16,
-          "stroke": false,
-          "width": 16,
-        }
-      }
+      data-css-12=""
     />
   </div>
   <div
@@ -228,7 +228,7 @@ exports[`Input component should render with all props 1`] = `
     data-css-0=""
   >
     <div
-      data-css-11=""
+      data-css-13=""
       data-css-7=""
     >
       5
@@ -266,6 +266,13 @@ exports[`Input component should render with required props only 1`] = `
 
 .css-3,
 [data-css-3] {
+  width: 16px;
+  height: 16px;
+  fill: lightGrey;
+}
+
+.css-4,
+[data-css-4] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -283,20 +290,20 @@ exports[`Input component should render with required props only 1`] = `
   -moz-transition: padding-top .225s ease-out;
 }
 
-.css-3:-webkit-autofill ~ .label,
-[data-css-3]:-webkit-autofill ~ .label {
+.css-4:-webkit-autofill ~ .label,
+[data-css-4]:-webkit-autofill ~ .label {
   opacity: 1 !important;
   top: 8px !important;
 }
 
-.css-3:-webkit-autofill ~ .checkmark,
-[data-css-3]:-webkit-autofill ~ .checkmark {
+.css-4:-webkit-autofill ~ .checkmark,
+[data-css-4]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
   top: 8px;
 }
 
-.css-3:-webkit-autofill,
-[data-css-3]:-webkit-autofill {
+.css-4:-webkit-autofill,
+[data-css-4]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
@@ -311,7 +318,7 @@ exports[`Input component should render with required props only 1`] = `
 >
   <input
     aria-required={false}
-    data-css-3=""
+    data-css-4=""
     name="name"
     onChange={[Function]}
     required={false}
@@ -325,18 +332,11 @@ exports[`Input component should render with required props only 1`] = `
     <div
       dangerouslySetInnerHTML={
         Object {
-          "__html": undefined,
+          "__html": "",
         }
       }
       data-css-2=""
-      style={
-        Object {
-          "fill": "lightGrey",
-          "height": 16,
-          "stroke": false,
-          "width": 16,
-        }
-      }
+      data-css-3=""
     />
   </div>
 </div>

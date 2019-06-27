@@ -280,6 +280,7 @@ const Input = ({
             </Absolute>
           )}
           <input
+            type={type}
             ref={inputRef}
             {...styles.input(
               showLabel,
@@ -304,6 +305,7 @@ const Input = ({
       )}
       {label && (
         <View
+          className="label"
           {...styles.label(!!icon && lines === 1)}
           style={{
             opacity: labelVisible ? 1 : 0,
