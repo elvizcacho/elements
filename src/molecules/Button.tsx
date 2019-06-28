@@ -1,10 +1,9 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { Component, SyntheticEvent } from 'react'
 import { css } from 'glamor'
 import { createTextStyles } from '../atoms/Text'
-import { withTheme } from '../behaviour/ThemeProvider'
-import { color, colorCode } from '../propTypes/color'
+import { color } from '../propTypes/color'
 import { color as col, lightness } from 'kewler'
+import Theme from '../behaviour/Theme'
 
 const baseStyle = {
   position: 'relative',
@@ -18,54 +17,78 @@ const baseStyle = {
 const primary = ({
   color,
   disabled,
-  disabledColor,
   disabledBackgroundColor,
   backgroundColor,
+}: {
+  color: color
+  disabled: boolean
+  disabledBackgroundColor: color
+  backgroundColor: color
 }) => ({
   color,
   background: disabled ? disabledBackgroundColor : backgroundColor,
 })
 
-const secondary = ({ disabled, disabledColor, backgroundColor }) => ({
+const secondary = ({
+  disabled,
+  disabledColor,
+  backgroundColor,
+}: {
+  disabled: boolean
+  disabledColor: color
+  backgroundColor: color
+}) => ({
   background: 'transparent',
   color: disabled ? disabledColor : backgroundColor,
   margin: 2,
 })
 
 function styles(
-  backgroundColor,
-  color,
-  disabled,
-  disabledColor,
-  disabledBackgroundColor,
-  isSecondary
+  backgroundColor: string,
+  color: string,
+  isDisabled: boolean,
+  isSecondary: boolean
 ) {
   const props = {
     color,
-    disabled,
-    disabledBackgroundColor,
-    disabledColor,
+    disabled: isDisabled,
+    disabledBackgroundColor: 'lightGrey',
+    disabledColor: 'darkgray',
     backgroundColor,
   }
   return css({
     ...baseStyle,
     ...(isSecondary ? secondary(props) : primary(props)),
-    cursor: disabled ? 'not-allowed' : 'pointer',
+    cursor: isDisabled ? 'not-allowed' : 'pointer',
     transition: '250ms ease-in-out',
     ':focus': {
       outline: 'none',
     },
     ':hover': isSecondary
-      ? !disabled && { color: col(backgroundColor, lightness(-20)) }
+      ? !isDisabled && { color: col(backgroundColor, lightness(-20)) }
       : {
           color,
-          background: disabled
-            ? disabledBackgroundColor
+          background: isDisabled
+            ? props.disabledBackgroundColor
             : backgroundColor.indexOf('#') !== -1
             ? col(backgroundColor, lightness(-10))
             : backgroundColor,
         },
   })
+}
+
+interface IButtonProps extends Partial<IComponentProps> {
+  /** If the button is used for a secondary option */
+  secondary?: boolean
+  /** Type of the button (deprecated) */
+  type?: 'reset' | 'button' | 'submit'
+  color?: color
+  /** Disable button state to indicate it's not touchable */
+  disabled?: boolean
+  /** Color of the button, theme primary color by default */
+  backgroundColor?: string
+  /** Name of the */
+  name?: string
 }
 
 /**
@@ -95,31 +118,8 @@ function styles(
  *  </Button>
  * ```
  */
-class Button extends React.Component {
-  static propTypes = {
-    /** Just text most of the time */
-    children: PropTypes.node.isRequired,
-    /** Called when the button is clicked */
-    onClick: PropTypes.func,
-    /** If the button is used for a secondary option */
-    secondary: PropTypes.bool,
-    /** Type of the button (deprecated) */
-    type: PropTypes.oneOf(['reset', 'button', 'submit']),
-    /** Disable button state to indicate it's not touchable */
-    disabled: PropTypes.bool,
-    /** Color of the button, theme primary color by default */
-    backgroundColor: PropTypes.string,
-    /** Textcolor of the button (deprecated) */
-    color: color,
-    /** Textcolor when button is disabled (deprecated) */
-    disabledColor: PropTypes.string,
-    /** Color when button is disabled (deprecated) */
-    disabledBackgroundColor: PropTypes.string,
-    /** Pass your own css (deprecated) */
-    css: PropTypes.object,
-  }
-
-  handleClick = e => {
+class Button extends Component<IButtonProps> {
+  handleClick = (e: SyntheticEvent<HTMLElement>) => {
     if (!this.props.disabled) {
       this.props.onClick && this.props.onClick(e)
     } else {
@@ -130,56 +130,39 @@ class Button extends React.Component {
   render() {
     const {
       children,
-      type,
-      disabled,
+      type = 'button',
+      disabled = false,
       backgroundColor,
-      color,
-      disabledColor,
-      secondary,
-      disabledBackgroundColor,
-      css: cssProp,
+      color = 'white',
+      secondary = false,
+      name,
       ...restProps
     } = this.props
 
-    const allStyles = css(
-      styles(
-        colorCode(backgroundColor),
-        color,
-        disabled,
-        disabledColor,
-        disabledBackgroundColor,
-        secondary
-      ),
-      cssProp
-    )
-
     return (
-      <button
-        type={type}
-        {...allStyles}
-        {...restProps}
-        {...createTextStyles({ size: 'l' })}
-        name={restProps.name || type || null}
-        onClick={this.handleClick}
-      >
-        {children}
-      </button>
+      <Theme>
+        {({ theme: { primary }, colorize }) => (
+          <button
+            type={type}
+            {...css(
+              styles(
+                colorize(backgroundColor || primary),
+                colorize(color),
+                disabled,
+                secondary
+              )
+            )}
+            {...restProps}
+            {...createTextStyles({ size: 'l' })}
+            name={name || type}
+            onClick={this.handleClick}
+          >
+            {children}
+          </button>
+        )}
+      </Theme>
     )
   }
 }
 
-Button.defaultProps = {
-  type: 'button',
-  disabled: false,
-  secondary: false,
-  color: 'white',
-  backgroundColor: 'purple',
-  disabledColor: 'darkgray',
-  disabledBackgroundColor: 'lightGray',
-}
-
-const mapThemeToProps = (theme, props) => ({
-  backgroundColor: props.backgroundColor || theme.primary,
-})
-
-export default withTheme(mapThemeToProps)(Button)
+export default Button

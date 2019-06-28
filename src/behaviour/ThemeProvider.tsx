@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, createContext } from 'react'
 import { ColorPalette } from '@allthings/colors'
 
 export const defaultTheme = {
@@ -26,7 +26,7 @@ export interface ITheme {
   [key: string]: string
 }
 
-const ThemeContext = React.createContext(defaultTheme)
+const ThemeContext = createContext<ITheme>(defaultTheme)
 export const ThemeConsumer = ThemeContext.Consumer
 
 /**
@@ -35,13 +35,13 @@ export const ThemeConsumer = ThemeContext.Consumer
  *
  * **Example**: If you want all you buttons to be red, instead of writing <Button color="red" /> all the time, you might want to set the "primary" color of your theme to red.
  **/
-const ThemeProvider: FunctionComponent<{ theme?: ITheme }> = ({
+const ThemeProvider: FunctionComponent<{ theme?: Partial<ITheme> }> = ({
   children,
   theme = {},
 }) => (
   <ThemeConsumer>
-    {(contextTheme: ITheme) => (
-      <ThemeContext.Provider value={{ ...contextTheme, ...theme }}>
+    {contextTheme => (
+      <ThemeContext.Provider value={{ ...contextTheme, ...(theme as ITheme) }}>
         {children}
       </ThemeContext.Provider>
     )}
@@ -50,26 +50,32 @@ const ThemeProvider: FunctionComponent<{ theme?: ITheme }> = ({
 
 export default ThemeProvider
 
-export function withTheme(
-  mapThemeToProps: (theme: ITheme, props: any) => any,
-  displayName: string
+type mapThemeToPropsType = (theme: ITheme, props: any) => any
+
+function createThemeConsumer<T>(
+  mapThemeToProps: mapThemeToPropsType,
+  WrappedComponent: React.ComponentType<T>,
+  props: Omit<T, 'theme'>
 ) {
-  return (WrappedComponent: any) =>
-    // eslint-disable-next-line react/no-multi-comp
-    class extends React.Component {
-      static displayName = displayName || WrappedComponent.displayName
-      static component = WrappedComponent
+  return (theme: ITheme) => {
+    const extraProps = !mapThemeToProps
+      ? { theme }
+      : mapThemeToProps(theme, props)
 
-      renderComponent = (theme: ITheme) => {
-        const props = !mapThemeToProps
-          ? { theme }
-          : mapThemeToProps(theme, this.props)
+    return <WrappedComponent {...props} {...extraProps} />
+  }
+}
 
-        return <WrappedComponent {...this.props} {...props} />
-      }
-
-      render() {
-        return <ThemeConsumer>{this.renderComponent}</ThemeConsumer>
-      }
+export function withTheme(mapThemeToProps: mapThemeToPropsType) {
+  return function<T extends { theme: ITheme }>(
+    WrappedComponent: React.ComponentType<T>
+  ): React.ComponentType<Omit<T, 'theme'>> {
+    return function(props: Omit<T, 'theme'>) {
+      return (
+        <ThemeConsumer>
+          {createThemeConsumer<T>(mapThemeToProps, WrappedComponent, props)}
+        </ThemeConsumer>
+      )
     }
+  }
 }

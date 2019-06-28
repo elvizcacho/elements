@@ -1,7 +1,7 @@
 import React from 'react'
 import View from './View'
 import { css } from 'glamor'
-import Theme, { IThemeChildren } from '../behaviour/Theme'
+import Theme from '../behaviour/Theme'
 
 const circle = (
   backgroundColor: string,
@@ -64,7 +64,7 @@ const Circle = ({
   ...props
 }: IProps) => (
   <Theme>
-    {({ colorize }: IThemeChildren) => (
+    {({ colorize }) => (
       <View
         {...circle(
           colorize(color),

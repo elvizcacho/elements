@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component Change color to green 1`] = `
+.css-0,
+[data-css-0] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.css-1,
+[data-css-1] {
+  position: relative;
+  padding: 10px 16px;
+  border-radius: 2px;
+  border: none;
+  user-select: none;
+  outline: none;
+  color: white;
+  background: green;
+  cursor: pointer;
+  transition: 250ms ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-transition: 250ms ease-in-out;
+  -moz-transition: 250ms ease-in-out;
+}
+
+.css-1:focus,
+[data-css-1]:focus {
+  outline: none;
+}
+
+.css-1:hover,
+[data-css-1]:hover {
+  color: white;
+  background: green;
+}
+
+<button
+  data-css-1=""
+  data-css-0=""
+  name="asd"
+  onClick={[Function]}
+  type="button"
+/>
+`;
+
+exports[`Button component Renders in different colors 1`] = `
+.css-0,
+[data-css-0] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.css-1,
+[data-css-1] {
+  position: relative;
+  padding: 10px 16px;
+  border-radius: 2px;
+  border: none;
+  user-select: none;
+  outline: none;
+  color: #3598db;
+  background: #e84c3d;
+  cursor: pointer;
+  transition: 250ms ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-transition: 250ms ease-in-out;
+  -moz-transition: 250ms ease-in-out;
+}
+
+.css-1:focus,
+[data-css-1]:focus {
+  outline: none;
+}
+
+.css-1:hover,
+[data-css-1]:hover {
+  color: #3598db;
+  background: #db2d1a;
+}
+
+<button
+  data-css-1=""
+  data-css-0=""
+  name="asd"
+  onClick={[Function]}
+  type="button"
+/>
+`;
+
+exports[`Button component Renders without anything 1`] = `
+.css-0,
+[data-css-0] {
+  position: relative;
+  padding: 10px 16px;
+  border-radius: 2px;
+  border: none;
+  user-select: none;
+  outline: none;
+  color: white;
+  background: #3598db;
+  cursor: pointer;
+  transition: 250ms ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-transition: 250ms ease-in-out;
+  -moz-transition: 250ms ease-in-out;
+}
+
+.css-0:focus,
+[data-css-0]:focus {
+  outline: none;
+}
+
+.css-0:hover,
+[data-css-0]:hover {
+  color: white;
+  background: #227dbf;
+}
+
+.css-3,
+[data-css-3] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+<button
+  data-css-0=""
+  data-css-3=""
+  name="button"
+  onClick={[Function]}
+  type="button"
+>
+  Hi
+</button>
+`;
