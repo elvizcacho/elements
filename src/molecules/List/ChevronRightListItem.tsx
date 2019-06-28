@@ -1,8 +1,7 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import { css, merge } from 'glamor'
 import Icon from '../../atoms/Icon'
-import View from '../../atoms/View'
+import View, { flexType, IViewProps } from '../../atoms/View'
 import { ColorPalette } from '@allthings/colors'
 import ListItem from './ListItem'
 
@@ -11,33 +10,34 @@ const style = css({
   height: 12,
 })
 
-function ChevronRightListItem(props) {
-  const { children, flex = 'grow', innerStyle = {}, ...restProps } = props
-  return (
-    <ListItem {...restProps} flex={flex}>
-      <View
-        direction="column"
-        flex={flex}
-        {...merge(css(innerStyle), css({ width: '100%' }))}
-      >
-        {children}
-      </View>
-      <View flex="nogrow">
-        <Icon
-          name="arrow-right"
-          size="xs"
-          color={ColorPalette.greyIntense}
-          {...style}
-        />
-      </View>
-    </ListItem>
-  )
+interface ChevronRightListItem extends IViewProps {
+  flex?: flexType
+  innerStyle?: any
 }
 
-ChevronRightListItem.propTypes = {
-  children: PropTypes.node.isRequired,
-  flex: PropTypes.node,
-  innerStyle: PropTypes.object,
-}
+const ChevronRightListItem = ({
+  innerStyle,
+  children,
+  flex = 'grow',
+  ...props
+}: PropsWithChildren<ChevronRightListItem>) => (
+  <ListItem {...props} flex={flex}>
+    <View
+      direction="column"
+      flex={flex}
+      {...merge(css(innerStyle), css({ width: '100%' }))}
+    >
+      {children}
+    </View>
+    <View flex="nogrow">
+      <Icon
+        name="arrow-right"
+        size="xs"
+        color={ColorPalette.greyIntense}
+        {...style}
+      />
+    </View>
+  </ListItem>
+)
 
 export default ChevronRightListItem

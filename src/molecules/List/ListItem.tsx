@@ -1,10 +1,15 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import { css } from 'glamor'
 import { ColorPalette } from '@allthings/colors'
-import View from '../../atoms/View'
+import View, { IViewProps } from '../../atoms/View'
+import { color } from '../../propTypes/color'
 
-const styles = (backgroundColor, withCursor, hideLine, padded) =>
+const styles = (
+  backgroundColor: string,
+  withCursor: boolean,
+  hideLine: boolean,
+  padded: boolean
+) =>
   css({
     padding: padded && '10px 15px',
     minHeight: '50px',
@@ -13,34 +18,24 @@ const styles = (backgroundColor, withCursor, hideLine, padded) =>
     backgroundColor: backgroundColor,
   })
 
+interface IListItemProps extends IViewProps {
+  backgroundColor?: color
+  hideLine?: boolean
+  padded?: boolean
+}
+
 const ListItem = ({
-  children,
-  backgroundColor,
-  hideLine,
-  padded,
+  backgroundColor = 'white',
+  hideLine = false,
+  padded = true,
   ...props
-}) => (
+}: PropsWithChildren<IListItemProps>) => (
   <View
     direction="row"
     alignV="center"
     {...styles(backgroundColor, !!props.onClick, hideLine, padded)}
     {...props}
-  >
-    {children}
-  </View>
+  />
 )
-
-ListItem.propTypes = {
-  children: PropTypes.node,
-  hideLine: PropTypes.bool,
-  padded: PropTypes.bool,
-  onClick: PropTypes.func,
-  backgroundColor: PropTypes.string,
-}
-
-ListItem.defaultProps = {
-  backgroundColor: 'white',
-  padded: true,
-}
 
 export default ListItem

@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import View from '../../atoms/View'
 
 /**
@@ -55,20 +54,8 @@ import View from '../../atoms/View'
  * </View>
  * ```
  */
-const List = ({ children, ...restProps }) => {
-  return (
-    <View direction="column" {...restProps}>
-      {children}
-    </View>
-  )
-}
-
-List.propTypes = {
-  /**
-   * Use a ListItem or ChevronRightListItem,
-   * or any View component.
-   * */
-  children: PropTypes.node,
-}
+const List = (props: PropsWithChildren<{}>) => (
+  <View direction="column" {...props} />
+)
 
 export default List
