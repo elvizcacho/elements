@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { ChangeEvent, Component, createRef } from 'react'
 import { css } from 'glamor'
 import View from '../atoms/View'
 
@@ -17,6 +16,16 @@ const styles = {
   }),
 }
 
+interface IExpandingTextareaProps {
+  autoFocus?: boolean
+  placeholder?: string
+  onHeightChange?: (height: number) => void
+  containerStyle?: any
+  onChange?: (e: ChangeEvent<HTMLTextAreaElement>) => void
+  value?: string
+  onFocus?: () => void
+}
+
 /**
  * The height of the ExpandingTextarea will expand when the user adds a new line.
  * It will take at maximum 25% of the current viewport. (max-height: 25vh)
@@ -28,57 +37,43 @@ const styles = {
  * />
  * ```
  */
-export default class ExpandingTextarea extends React.Component {
-  static propTypes = {
-    autoFocus: PropTypes.bool,
-    placeholder: PropTypes.string,
-    onEnter: PropTypes.func,
-    onHeightChange: PropTypes.func,
-    containerStyle: PropTypes.object,
-    onChange: PropTypes.func,
-    value: PropTypes.string,
-    onFocus: PropTypes.func,
-    onTextarea: PropTypes.func,
-  }
-
+export default class ExpandingTextarea extends Component<
+  IExpandingTextareaProps
+> {
   static defaultProps = {
     autoFocus: false,
   }
+  private textarea = createRef<HTMLTextAreaElement>()
 
   componentDidMount() {
     this.adjustTextareaHeight()
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: IExpandingTextareaProps) {
     if (this.props.value !== prevProps.value) {
       this.adjustTextareaHeight()
     }
     if (
       this.props.autoFocus === true &&
       prevProps.autoFocus === false &&
-      this.textarea
+      this.textarea.current
     ) {
-      this.textarea.focus()
+      this.textarea.current.focus()
       this.props.onFocus && this.props.onFocus()
     }
   }
 
-  setTextarea = textarea => {
-    this.textarea = textarea
-    this.props.onTextarea && this.props.onTextarea(textarea)
-  }
-
-  handleChange = e => {
+  handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     this.props.onChange && this.props.onChange(e)
     this.adjustTextareaHeight()
   }
 
   adjustTextareaHeight = () => {
-    const { textarea } = this
+    const { current: textarea } = this.textarea
     if (textarea) {
       const { onHeightChange } = this.props
 
-      textarea.style.height = 0
+      textarea.style.height = '0'
       textarea.style.height = `${textarea.scrollHeight}px`
 
       if (onHeightChange) {
@@ -92,8 +87,7 @@ export default class ExpandingTextarea extends React.Component {
   }
 
   render() {
-    // eslint-disable-next-line
-    const { placeholder, containerStyle, onTextarea, ...restProps } = this.props
+    const { placeholder, containerStyle, ...restProps } = this.props
 
     return (
       <View
@@ -104,12 +98,11 @@ export default class ExpandingTextarea extends React.Component {
       >
         <textarea
           {...restProps}
-          cols="1"
-          rows="1"
+          cols={1}
+          rows={1}
           placeholder={placeholder}
           onChange={this.handleChange}
-          onKeyDown={this.handleKeyDown}
-          ref={this.setTextarea}
+          ref={this.textarea}
           {...styles.textarea}
         />
       </View>

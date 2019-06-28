@@ -1,5 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FunctionComponent, PropsWithChildren } from 'react'
 import { List } from '../../molecules/List'
 import Card from '../../molecules/Card'
 
@@ -24,15 +23,10 @@ import Card from '../../molecules/Card'
  *   </CardList>
  * </ThemeProvider>
  **/
-const CardList = ({ children }) => (
+const CardList: FunctionComponent = (props: PropsWithChildren<{}>) => (
   <Card>
-    <List>{children}</List>
+    <List {...props} />
   </Card>
 )
-
-CardList.propTypes = {
-  /** Array of ListItem */
-  children: PropTypes.node,
-}
 
 export default CardList

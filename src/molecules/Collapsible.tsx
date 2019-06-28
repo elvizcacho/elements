@@ -1,10 +1,19 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { Component, KeyboardEvent } from 'react'
 import { css } from 'glamor'
 import { View, Icon, Text } from '../'
 import { ColorPalette, alpha } from '@allthings/colors'
 
 const tick = () => new Promise(resolve => setTimeout(resolve, 0))
+
+interface ICollapsibleProps {
+  title?: PropTypes.string
+  initiallyCollapsed?: PropTypes.bool
+  hasBottomBorder?: PropTypes.bool
+  tabIndex?: PropTypes.number
+  onToggle?: PropTypes.func
+}
+interface IState {}
 
 /**
  * A Collapsible is a simple container, that makes it possible to change between collapsed and extended states, and this way hiding and showing the children passed in.
@@ -34,16 +43,7 @@ const tick = () => new Promise(resolve => setTimeout(resolve, 0))
  * </ThemeProvider>
  * ```
  **/
-class Collapsible extends React.Component {
-  static propTypes = {
-    title: PropTypes.string,
-    children: PropTypes.node,
-    initiallyCollapsed: PropTypes.bool,
-    hasBottomBorder: PropTypes.bool,
-    tabIndex: PropTypes.number,
-    onToggle: PropTypes.func,
-  }
-
+class Collapsible extends Component<ICollapsibleProps, IState> {
   static defaultProps = {
     initiallyCollapsed: true,
     hasBottomBorder: false,
@@ -96,7 +96,7 @@ class Collapsible extends React.Component {
     }
   }
 
-  onKeyPress = e => e.key === 'Enter' && this.toggleCollapse()
+  onKeyPress = (e: KeyboardEvent) => e.key === 'Enter' && this.toggleCollapse()
 
   render() {
     const { title, children, hasBottomBorder, tabIndex } = this.props
