@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { FunctionComponent, PropsWithChildren } from 'react'
 import { css } from 'glamor'
 import View from '../../atoms/View'
 
@@ -14,14 +13,14 @@ const style = css({
   },
 })
 
-export default function CardFooter({ children }) {
-  return (
-    <View direction="row" alignV="center" alignH="space-around" {...style}>
-      {children}
-    </View>
-  )
-}
+const CardFooter: FunctionComponent = (props: PropsWithChildren<{}>) => (
+  <View
+    direction="row"
+    alignV="center"
+    alignH="space-around"
+    {...style}
+    {...props}
+  />
+)
 
-CardFooter.propTypes = {
-  children: PropTypes.node,
-}
+export default CardFooter

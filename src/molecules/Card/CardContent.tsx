@@ -1,24 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FunctionComponent, PropsWithChildren } from 'react'
 
 import View from '../../atoms/View'
 import { css } from 'glamor'
 
-const styles = {
-  container: css({
-    padding: 15,
-    position: 'relative',
-  }),
-}
+const styles = css({
+  padding: 15,
+  position: 'relative',
+})
 
-const CardContent = ({ children, ...props }) => (
-  <View {...styles.container} {...props}>
-    {children}
-  </View>
+const CardContent: FunctionComponent = (props: PropsWithChildren<{}>) => (
+  <View {...styles} {...props} />
 )
-
-CardContent.propTypes = {
-  children: PropTypes.node,
-}
 
 export default CardContent

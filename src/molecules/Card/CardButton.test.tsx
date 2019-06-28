@@ -4,7 +4,11 @@ import CardButton from './CardButton'
 
 test('CardButton renders without error', () => {
   const tree = renderer
-    .create(<CardButton backgroundColor="primary">Click me</CardButton>)
+    .create(
+      <CardButton onClick={_ => _} backgroundColor="primary">
+        Click me
+      </CardButton>
+    )
     .toJSON()
   expect(tree).toMatchSnapshot()
 })

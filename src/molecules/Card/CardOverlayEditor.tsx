@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { Component, ChangeEvent } from 'react'
 import View from '../../atoms/View'
 import { css } from 'glamor'
 import { between } from './utils/math'
@@ -21,18 +20,26 @@ const styles = {
   }),
 }
 
-export default class CardOverlayEditor extends React.Component {
-  static propTypes = {
-    initialText: PropTypes.string,
-    confirmText: PropTypes.string.isRequired,
-    cancelText: PropTypes.string.isRequired,
-    submitText: PropTypes.string.isRequired,
-    onSave: PropTypes.func.isRequired,
-    onRequestClose: PropTypes.func,
-    children: PropTypes.node,
-  }
+interface ICardOverlayEditorProps {
+  initialText?: string
+  confirmText: string
+  cancelText: string
+  submitText: string
+  onSave: (text: string | undefined) => void
+  onRequestClose?: () => void
+}
 
-  constructor(props) {
+interface IState {
+  text?: string
+}
+
+export default class CardOverlayEditor extends Component<
+  ICardOverlayEditorProps,
+  IState
+> {
+  public element = React.createRef<HTMLDivElement>()
+
+  constructor(props: ICardOverlayEditorProps) {
     super(props)
 
     this.state = {
@@ -48,25 +55,40 @@ export default class CardOverlayEditor extends React.Component {
     document.removeEventListener('click', this.handleClick, true)
   }
 
-  isOutsideElement = ({ x, y }, { top, bottom, left, right }) => {
+  isOutsideElement = (
+    { x, y }: { x: number; y: number },
+    {
+      top,
+      bottom,
+      left,
+      right,
+    }: { top: number; bottom: number; left: number; right: number }
+  ) => {
     return !between(y, top, bottom) || !between(x, left, right)
   }
 
-  handleClick = e => {
-    const { bottom, left, right, top } = this.element.getBoundingClientRect()
-    if (
-      this.isOutsideElement(
-        { x: e.clientX, y: e.clientY },
-        { bottom, left, right, top }
-      )
-    ) {
-      e.stopPropagation()
-      this.triggerClose()
-      return false
-    }
-  }
+  handleClick = (e: MouseEvent) => {
+    if (this.element.current) {
+      const {
+        bottom,
+        left,
+        right,
+        top,
+      } = this.element.current.getBoundingClientRect()
 
-  setElement = element => (this.element = element)
+      if (
+        this.isOutsideElement(
+          { x: e.clientX, y: e.clientY },
+          { bottom, left, right, top }
+        )
+      ) {
+        e.stopPropagation()
+        this.triggerClose()
+        return false
+      }
+    }
+    return true
+  }
 
   triggerClose = () => {
     if (
@@ -77,21 +99,21 @@ export default class CardOverlayEditor extends React.Component {
     }
   }
 
-  handleSave = e => this.props.onSave(this.state.text)
+  handleSave = () => this.props.onSave(this.state.text)
 
-  handleChange = e => {
+  handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const text = e.target.value
     this.setState(() => ({ text }))
   }
 
   render() {
     return (
-      <View onRef={this.setElement} {...css(styles.wrapper)}>
+      <View ref={this.element} {...css(styles.wrapper)}>
         <View {...css({ padding: 15 })}>
           <ExpandingTextarea
             value={this.state.text}
             onChange={this.handleChange}
-            style={{ padding: 0, color: '#333' }}
+            {...css({ padding: 0, color: '#333' })}
             autoFocus
           />
         </View>

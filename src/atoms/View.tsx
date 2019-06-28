@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createElement, forwardRef, Ref } from 'react'
 import { css } from 'glamor'
 
 function getCssAlignValue(alignment: 'start' | 'end' | string) {
@@ -8,7 +8,7 @@ function getCssAlignValue(alignment: 'start' | 'end' | string) {
   return alignment
 }
 
-type flexType =
+export type flexType =
   | number
   | 'none'
   | 'flex'
@@ -75,6 +75,8 @@ interface IView {
   wrap?: wrapType
   /** Flex values, can be 5, 10, 15 ... 100 or 33, 66 */
   flex?: flexType
+
+  innerRef?: Ref<HTMLDivElement>
 }
 
 function createStyles({
@@ -136,12 +138,14 @@ const View = ({
   direction,
   fill = false,
   flex = 'none',
+  innerRef,
   wrap,
   ...props
 }: IViewProps) => {
-  return React.createElement(
+  return createElement(
     htmlElement,
     {
+      ref: innerRef,
       ...createStyles({
         alignH,
         alignV,
@@ -157,4 +161,9 @@ const View = ({
   )
 }
 
-export default View
+export type Refx = HTMLDivElement
+export const ForwardView = forwardRef<Refx, IViewProps>((props, ref) => (
+  <View innerRef={ref} {...props} />
+))
+
+export default ForwardView

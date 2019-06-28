@@ -1,12 +1,14 @@
 import React from 'react'
 import CardOverlayEditor from './CardOverlayEditor'
 import CardButton from './CardButton'
+import { mount } from 'enzyme'
 
 test('Component sends confirm when cancel button is clicked', () => {
   const log = jest.fn()
   const requestClose = jest.fn()
   const onSave = jest.fn()
-  global.window.confirm = log
+  ;(global as any).window.confirm = log
+
   const example = mount(
     <CardOverlayEditor
       initialText="test"
@@ -73,7 +75,7 @@ test('Should request close if click outside of component', () => {
   const requestClose = jest.fn()
   const save = jest.fn()
   const stopPropagation = jest.fn()
-  const wrapper = shallow(
+  const wrapper = mount<CardOverlayEditor>(
     <CardOverlayEditor
       onSave={save}
       onRequestClose={requestClose}
@@ -83,12 +85,17 @@ test('Should request close if click outside of component', () => {
     />
   )
   const instance = wrapper.instance()
-  instance.element = {
-    getBoundingClientRect: () => ({ bottom: 10, left: 20, right: 20, top: 10 }),
-  }
 
-  wrapper.instance().handleClick({ clientX: 0, clientY: 0, stopPropagation })
-  wrapper.instance().handleClick({ clientX: 1, clientY: 10, stopPropagation })
+  jest
+    .spyOn(instance.element.current as any, 'getBoundingClientRect')
+    .mockImplementation(() => ({ bottom: 10, left: 20, right: 20, top: 10 }))
+
+  wrapper
+    .instance()
+    .handleClick({ clientX: 0, clientY: 0, stopPropagation } as any)
+  wrapper
+    .instance()
+    .handleClick({ clientX: 1, clientY: 10, stopPropagation } as any)
 
   expect(stopPropagation).toHaveBeenCalledTimes(2)
   expect(requestClose).toHaveBeenCalledTimes(2)
