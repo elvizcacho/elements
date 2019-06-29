@@ -148,6 +148,8 @@ class TimeInput extends Component<ITimeInputProps, IState> {
     super(props)
     props.minTime && timePropTypeValidator(props.minTime, 'minTime')
     props.maxTime && timePropTypeValidator(props.maxTime, 'maxTime')
+    props.defaultValue &&
+      timePropTypeValidator(props.defaultValue, 'defaultValue')
 
     const [defaultHour, defaultMinute] = parseTime(props.defaultValue)
 
