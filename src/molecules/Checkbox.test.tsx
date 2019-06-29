@@ -1,8 +1,9 @@
 import React from 'react'
 import { render, fireEvent } from 'react-testing-library'
+import { mount } from 'enzyme'
 
 import Checkbox from './Checkbox'
-import { ThemeProvider } from '../'
+import ThemeProvider from '../behaviour/ThemeProvider'
 
 const THEME = {
   background: 'darkMarco',
@@ -41,7 +42,7 @@ describe('Test the checkbox component', () => {
   it('should work as controlled component', () => {
     const handleChange = jest.fn()
 
-    const renderCheckboxWithChecked = checked => (
+    const renderCheckboxWithChecked = (checked: boolean) => (
       <Checkbox
         label="label"
         name="a"
@@ -54,10 +55,10 @@ describe('Test the checkbox component', () => {
 
     // a click shouldn't change 'checked'
     fireEvent.click(getByLabelText('label'))
-    expect(getByLabelText('label').checked).toBe(true)
+    expect((getByLabelText('label') as HTMLInputElement).checked).toBe(true)
     expect(handleChange).toBeCalled()
 
     rerender(renderCheckboxWithChecked(false))
-    expect(getByLabelText('label').checked).toBe(false)
+    expect((getByLabelText('label') as HTMLInputElement).checked).toBe(false)
   })
 })

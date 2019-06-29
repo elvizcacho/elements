@@ -1,17 +1,16 @@
-import React from 'react'
+import React, { Component, ReactNode, ChangeEvent } from 'react'
 import View from '../atoms/View'
 import Icon from '../atoms/Icon'
-import Text from '../atoms/Text'
+import Text, { sizeType } from '../atoms/Text'
 import Relative from '../atoms/Relative'
 import ListItem from './List/ListItem'
 import { css } from 'glamor'
 import Theme from '../behaviour/Theme'
-import PropTypes from 'prop-types'
 import Absolute from '../atoms/Absolute'
 import Inset from '../atoms/Inset'
 
 const styles = {
-  checkbox: (background, checked) =>
+  checkbox: (background: string, checked: boolean) =>
     css({
       borderRadius: '3px',
       height: '25px',
@@ -28,7 +27,21 @@ const styles = {
     marginLeft: 20,
   }),
 }
-
+interface ICheckboxProps {
+  /** True to make it checked */
+  checked?: boolean
+  /** Label of Checkbox */
+  label?: string | ReactNode
+  /** Text size of the label */
+  labelSize?: sizeType
+  name: string
+  onChange: (e: ChangeEvent) => void
+  /** Background color of the form item */
+  backgroundColor?: string
+}
+interface IState {
+  checked?: boolean
+}
 /**
  * Checkbox are used to give users a way to select or deselect options.
  *
@@ -39,20 +52,7 @@ const styles = {
  * </View>
  * ```
  */
-class Checkbox extends React.Component {
-  static propTypes = {
-    /** True to make it checked */
-    checked: PropTypes.bool,
-    /** Label of Checkbox */
-    label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
-    /** Text size of the label */
-    labelSize: Text.propTypes.size,
-    name: PropTypes.string.isRequired,
-    onChange: PropTypes.func,
-    /** Background color of the form item */
-    backgroundColor: PropTypes.string,
-  }
-
+class Checkbox extends Component<ICheckboxProps, IState> {
   state = {
     checked: this.props.checked,
   }
@@ -64,7 +64,7 @@ class Checkbox extends React.Component {
 
   isControlled = () => typeof this.props.checked !== 'undefined'
 
-  handleChange = e => {
+  handleChange = (e: ChangeEvent) => {
     if (!this.isControlled()) {
       this.setState(({ checked }) => ({ checked: !checked }))
     }
@@ -78,10 +78,12 @@ class Checkbox extends React.Component {
       label,
       labelSize,
       name,
-      backgroundColor,
+      backgroundColor = 'primary',
       ...props
     } = this.props
-    const realChecked = this.isControlled() ? checked : this.state.checked
+    const realChecked = Boolean(
+      this.isControlled() ? checked : this.state.checked
+    )
 
     return (
       <Theme>
@@ -92,7 +94,7 @@ class Checkbox extends React.Component {
                 direction="row"
                 alignV="center"
                 alignH="center"
-                {...styles.checkbox(theme.primary, realChecked)}
+                {...styles.checkbox(theme.primary, !!realChecked)}
               >
                 {realChecked && (
                   <Relative bottom={1}>
@@ -105,7 +107,7 @@ class Checkbox extends React.Component {
                     checked={realChecked}
                     id={name}
                     name={name}
-                    value={realChecked}
+                    value={String(realChecked)}
                     style={{
                       opacity: 0,
                       width: '25px',
