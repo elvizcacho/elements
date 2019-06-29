@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { PureComponent, PropsWithChildren, createRef } from 'react'
 import { css } from 'glamor'
 import { between } from './utils/math'
 
@@ -23,12 +22,14 @@ const menuStyle = css({
   },
 })
 
-export default class OverlayMenu extends React.PureComponent {
-  static propTypes = {
-    onRequestClose: PropTypes.func.isRequired,
-    children: PropTypes.node,
-  }
+interface IOverlayMenuProps {
+  onRequestClose: (e: MouseEvent) => void
+}
 
+export default class OverlayMenu extends PureComponent<
+  PropsWithChildren<IOverlayMenuProps>
+> {
+  private menu = createRef<HTMLDivElement>()
   componentDidMount() {
     document.addEventListener('click', this.handleDocumentClick, true)
   }
@@ -37,11 +38,14 @@ export default class OverlayMenu extends React.PureComponent {
     document.removeEventListener('click', this.handleDocumentClick, true)
   }
 
-  setMenu = menu => (this.menu = menu)
-
-  handleDocumentClick = e => {
-    if (this.menu) {
-      const { bottom, left, right, top } = this.menu.getBoundingClientRect()
+  handleDocumentClick = (e: MouseEvent) => {
+    if (this.menu.current) {
+      const {
+        bottom,
+        left,
+        right,
+        top,
+      } = this.menu.current.getBoundingClientRect()
 
       if (
         !between(e.clientY, top, bottom) ||
@@ -54,7 +58,7 @@ export default class OverlayMenu extends React.PureComponent {
 
   render() {
     return (
-      <div ref={this.setMenu} {...menuStyle}>
+      <div ref={this.menu} {...menuStyle}>
         {this.props.children}
       </div>
     )
