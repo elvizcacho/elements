@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from 'glamor'
 import View, { IViewProps } from '../atoms/View'
-import Theme, { IThemeChildren } from '../behaviour/Theme'
+import Theme from '../behaviour/Theme'
 import neue from 'neue'
 
 if (typeof window !== `undefined`) {
@@ -13,7 +13,7 @@ if (typeof window !== `undefined`) {
   ])
 }
 
-type sizeType = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'giant'
+export type sizeType = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'giant'
 
 const availableSizes = {
   xs: 10,
@@ -98,7 +98,7 @@ const Text = ({
   ...props
 }: IText & ITextStyles & IViewProps) => (
   <Theme>
-    {({ colorize }: IThemeChildren) => (
+    {({ colorize }) => (
       <View
         {...css(
           createTextStyles({

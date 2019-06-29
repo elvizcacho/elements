@@ -1,9 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import View from '../atoms/View'
+import View, { IViewProps } from '../atoms/View'
 import { css } from 'glamor'
 
-const styles = ({ horizontal, vertical }) =>
+const styles = ({ horizontal = false, vertical = false }) =>
   css({
     paddingLeft: horizontal && 15,
     paddingRight: horizontal && 15,
@@ -11,17 +10,12 @@ const styles = ({ horizontal, vertical }) =>
     paddingBottom: vertical && 15,
   })
 
-const Inset = ({ horizontal, vertical, ...props }) => (
+const Inset = ({
+  horizontal = true,
+  vertical,
+  ...props
+}: IViewProps & { horizontal?: boolean; vertical?: boolean }) => (
   <View {...styles({ horizontal, vertical })} {...props} />
 )
-
-Inset.propTypes = {
-  vertical: PropTypes.bool,
-  horizontal: PropTypes.bool,
-}
-
-Inset.defaultProps = {
-  horizontal: true,
-}
 
 export default Inset
