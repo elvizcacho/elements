@@ -4,8 +4,8 @@ import { render, fireEvent, cleanup } from 'react-testing-library'
 import TimeInput, { getTimeRange } from './TimeInput'
 import ResourceProvider from '../behaviour/ResourceProvider'
 
-const first = array => array[0]
-const last = array => array[array.length - 1]
+const first = (a: number[]) => a[0]
+const last = (a: number[]) => a[a.length - 1]
 
 describe('getTimeRange returns correct range', () => {
   it('with only start time', () => {
@@ -79,19 +79,19 @@ describe('TimeInput', () => {
 
   it('should have correct and normalized default value', () => {
     const { getByTestId } = render(
-      <ResourceProvider>
+      <ResourceProvider.Provider value={{ resourcePath: '' }}>
         <TimeInput defaultValue="6:15" name="time" data-testid="time-input" />
-      </ResourceProvider>
+      </ResourceProvider.Provider>
     )
 
-    expect(getByTestId('time-input').value).toBe('06:15')
+    expect((getByTestId('time-input') as HTMLSelectElement).value).toBe('06:15')
   })
 
   it('should have correct input value when 0 hours are selected', () => {
     const { getAllByDisplayValue, getByTestId } = render(
-      <ResourceProvider>
+      <ResourceProvider.Provider value={{ resourcePath: '' }}>
         <TimeInput name="time" data-testid="time-input" />
-      </ResourceProvider>
+      </ResourceProvider.Provider>
     )
 
     const [hourSelect, minuteSelect] = getAllByDisplayValue('--')
@@ -99,14 +99,14 @@ describe('TimeInput', () => {
     fireEvent.change(hourSelect, { target: { value: '00' } })
     fireEvent.change(minuteSelect, { target: { value: '00' } })
 
-    expect(getByTestId('time-input').value).toBe('00:00')
+    expect((getByTestId('time-input') as HTMLSelectElement).value).toBe('00:00')
   })
 
   it('should set form input value is on select', () => {
     const { getByTestId, getAllByDisplayValue } = render(
-      <ResourceProvider>
+      <ResourceProvider.Provider value={{ resourcePath: '' }}>
         <TimeInput name="time" data-testid="time-input" />
-      </ResourceProvider>
+      </ResourceProvider.Provider>
     )
 
     const [hourSelect, minuteSelect] = getAllByDisplayValue('--')
@@ -114,32 +114,32 @@ describe('TimeInput', () => {
     fireEvent.change(hourSelect, { target: { value: '10' } })
     fireEvent.change(minuteSelect, { target: { value: '30' } })
 
-    expect(getByTestId('time-input').value).toBe('10:30')
+    expect((getByTestId('time-input') as HTMLSelectElement).value).toBe('10:30')
   })
 
   it('should select first minute option when an hour is selected', () => {
     const { getByTestId, getByDisplayValue } = render(
-      <ResourceProvider>
+      <ResourceProvider.Provider value={{ resourcePath: '' }}>
         <TimeInput minTime="10:15" name="time" data-testid="time-input" />
-      </ResourceProvider>
+      </ResourceProvider.Provider>
     )
 
     fireEvent.change(getByDisplayValue('--'), { target: { value: '10' } })
 
-    expect(getByTestId('time-input').value).toBe('10:15')
+    expect((getByTestId('time-input') as HTMLSelectElement).value).toBe('10:15')
   })
 
   it('should reset input value when hour is unset', () => {
     const { getByTestId, getByDisplayValue } = render(
-      <ResourceProvider>
+      <ResourceProvider.Provider value={{ resourcePath: '' }}>
         <TimeInput defaultValue="10:30" name="time" data-testid="time-input" />
-      </ResourceProvider>
+      </ResourceProvider.Provider>
     )
 
     const hourSelect = getByDisplayValue('10')
 
     fireEvent.change(hourSelect, { target: { value: '' } })
-    expect(getByTestId('time-input').value).toBe('')
+    expect((getByTestId('time-input') as HTMLSelectElement).value).toBe('')
   })
 
   it('propTypes should complain about wrong time format', () => {
@@ -147,25 +147,23 @@ describe('TimeInput', () => {
 
     const invalidProps = {
       defaultValue: '24:00',
-      minTime: 5,
-      maxTime: {},
     }
 
     try {
       render(
-        <ResourceProvider>
+        <ResourceProvider.Provider value={{ resourcePath: '' }}>
           <TimeInput {...invalidProps} name="time" />
-        </ResourceProvider>
+        </ResourceProvider.Provider>
       )
     } catch (e) {}
     expect(console.error).toHaveBeenCalled()
 
     // Object.getOwnPropertyNames guarantees order
     Object.getOwnPropertyNames(invalidProps).forEach((prop, i) =>
-      expect(console.error.mock.calls[i][0]).toContain(
+      expect((console.error as any).mock.calls[i][0]).toContain(
         `Invalid prop \`${prop}\``
       )
     )
-    console.error.mockRestore()
+    ;(console.error as any).mockRestore()
   })
 })

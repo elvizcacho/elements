@@ -1,5 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { Component, ChangeEvent } from 'react'
 import { css } from 'glamor'
 
 import Input from '../atoms/Input'
@@ -9,8 +8,8 @@ import Relative from '../atoms/Relative'
 import Text, { createTextStyles } from '../atoms/Text'
 import Icon from '../atoms/Icon'
 
-const selectStyle = (isActive, shouldShow = true, propose = false) =>
-  css(createTextStyles(), {
+const selectStyle = (isActive = false, shouldShow = true, propose = false) =>
+  css(createTextStyles({}), {
     visibility: !propose && !shouldShow ? 'hidden' : 'auto',
     width: propose && '50px',
     background: propose ? 'lightGreyIntense' : 'none',
@@ -28,17 +27,32 @@ const selectStyle = (isActive, shouldShow = true, propose = false) =>
     },
   })
 
-const padZero = value =>
+const padZero = (value: string) =>
   parseFloat(value) < 10 && parseFloat(value) >= 0 ? '0' + value : value
-const formatHour = (hour, minute) => [padZero(hour), padZero(minute)].join(':')
-const parseTime = time => (time ? time.split(':').map(parseFloat) : [])
+const formatHour = (hour: string, minute: string) =>
+  [padZero(hour), padZero(minute)].join(':')
+const parseTime = (time?: string) =>
+  time ? time.split(':').map(parseFloat) : []
+
+interface ITime {
+  startTime: string
+  endTime: string
+  hourStep: string
+  minuteStep: string
+  [key: number]: number[]
+}
 
 export const getTimeRange = ({
   startTime,
   endTime,
   minuteStep = 1,
   hourStep = 1,
-}) => {
+}: {
+  startTime?: string
+  endTime?: string
+  minuteStep?: number
+  hourStep?: number
+}): ITime => {
   // default params don't work for startTime/endTime because input time might be an empty string
   startTime = startTime || '00:00'
   endTime = endTime || '23:59'
@@ -51,7 +65,7 @@ export const getTimeRange = ({
     (_, hour) => hour * hourStep
   ).filter(hour => hour >= startHour && hour <= endHour)
 
-  return hourRange.reduce((allHours, currentHour) => {
+  return hourRange.reduce((allHours: { [key: number]: any }, currentHour) => {
     // 'clamp' hours at their min/max times
     // otherwise hours have full 60 minutes
     const minutesInHour =
@@ -71,7 +85,6 @@ export const getTimeRange = ({
       currentHour === startHour
         ? Math.ceil(startMinute / minuteStep) * minuteStep
         : 0
-
     // generate all minute steps in current hour
     allHours[currentHour] = Array.from(
       { length: steps },
@@ -79,52 +92,62 @@ export const getTimeRange = ({
     )
 
     return allHours
-  }, {})
+  }, {}) as ITime
 }
 
-const timePropTypeValidator = (props, propName, componentName) => {
+const timePropTypeValidator = (value: string, propName: string) => {
   const regex = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/
-  const value = props[propName]
   if (value && !regex.test(value)) {
-    return new TypeError(
-      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. Expected format \`hh:mm\`, received: \`${value}\`.`
+    throw new TypeError(
+      `Invalid prop \`${propName}\` supplied to TimeInput. Expected format \`hh:mm\`, received: \`${value}\`.`
     )
   }
+}
+
+interface ITimeInputProps {
+  /** Name picked up by a form **/
+  name: string
+  /** Label shown above the time picker **/
+  label?: string
+  /** Indicates if this field is required **/
+  required?: boolean
+  /** The default value formatted as `hh:mm` **/
+  defaultValue?: string
+  /** The step between the hours **/
+  hourStep?: number
+  /** The step between the minutes **/
+  minuteStep?: number
+  /** The minimum time which can be selected. Formatted as `hh:mm` **/
+  minTime?: string
+  /** The maximum time which can be selected. Formatted as `hh:mm` **/
+  maxTime?: string
+  /** Callback when a new time has been selected **/
+  onChange?: (time: string) => void
+}
+
+interface IState {
+  selectedHour?: number
+  selectedMinute?: number
+  timeRange: ITime
+  // normalize by parsing and formatting the value
+  value: string
+  active: boolean
 }
 
 /**
  * This component offers to select a time in a `hh:mm` (24hrs) format.
  */
-class TimeInput extends React.Component {
-  static propTypes = {
-    /** Name picked up by a form **/
-    name: PropTypes.string.isRequired,
-    /** Label shown above the time picker **/
-    label: PropTypes.string,
-    /** Indicates if this field is required **/
-    required: PropTypes.bool,
-    /** The default value formatted as `hh:mm` **/
-    defaultValue: timePropTypeValidator,
-    /** The step between the hours **/
-    hourStep: PropTypes.number,
-    /** The step between the minutes **/
-    minuteStep: PropTypes.number,
-    /** The minimum time which can be selected. Formatted as `hh:mm` **/
-    minTime: timePropTypeValidator,
-    /** The maximum time which can be selected. Formatted as `hh:mm` **/
-    maxTime: timePropTypeValidator,
-    /** Callback when a new time has been selected **/
-    onChange: PropTypes.func,
-  }
-
+class TimeInput extends Component<ITimeInputProps, IState> {
   static defaultProps = {
     hourStep: 1,
     minuteStep: 1,
     onChange: () => {},
   }
 
-  constructor(props, context) {
-    super(props, context)
+  constructor(props: ITimeInputProps) {
+    super(props)
+    props.minTime && timePropTypeValidator(props.minTime, 'minTime')
+    props.maxTime && timePropTypeValidator(props.maxTime, 'maxTime')
 
     const [defaultHour, defaultMinute] = parseTime(props.defaultValue)
 
@@ -140,34 +163,34 @@ class TimeInput extends React.Component {
       // normalize by parsing and formatting the value
       value:
         defaultHour && defaultMinute
-          ? formatHour(defaultHour, defaultMinute)
+          ? formatHour(String(defaultHour), String(defaultMinute))
           : '',
       active: false,
     }
   }
 
-  hourRef = React.createRef()
-  minuteRef = React.createRef()
+  hourRef = React.createRef<HTMLSelectElement>()
+  minuteRef = React.createRef<HTMLSelectElement>()
 
   setHiddenFormValue = () => {
     const { selectedMinute, selectedHour } = this.state
     if (selectedHour !== undefined && selectedMinute !== undefined) {
-      const value = formatHour(selectedHour, selectedMinute)
+      const value = formatHour(String(selectedHour), String(selectedMinute))
       this.setState({ value })
-      this.props.onChange(value)
+      this.props.onChange && this.props.onChange(value)
     } else {
       const value = ''
       this.setState({ value })
-      this.props.onChange(value)
+      this.props.onChange && this.props.onChange(value)
     }
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps: ITimeInputProps, prevState: IState) {
     if (
       prevState.selectedHour === undefined &&
       this.state.selectedHour !== undefined
     ) {
-      this.minuteRef.current.focus()
+      this.minuteRef.current && this.minuteRef.current.focus()
     }
     if (
       this.props.minTime !== prevProps.minTime ||
@@ -186,7 +209,7 @@ class TimeInput extends React.Component {
     }
   }
 
-  handleSelectHour = e => {
+  handleSelectHour = (e: ChangeEvent<HTMLSelectElement>) => {
     const value = parseFloat(e.target.value)
     const selectedHour = value >= 0 ? value : undefined
 
@@ -196,14 +219,14 @@ class TimeInput extends React.Component {
       const [selectedMinute] = this.state.timeRange[selectedHour]
       this.setState({ selectedHour, selectedMinute }, this.setHiddenFormValue)
     }
-    this.hourRef.current.blur()
+    this.hourRef.current && this.hourRef.current.blur()
   }
 
-  handleSelectMinute = e => {
+  handleSelectMinute = (e: ChangeEvent<HTMLSelectElement>) => {
     const value = parseFloat(e.target.value)
     const selectedMinute = value >= 0 ? value : undefined
     this.setState({ selectedMinute }, this.setHiddenFormValue)
-    this.minuteRef.current.blur()
+    this.minuteRef.current && this.minuteRef.current.blur()
   }
 
   reset = () => {
@@ -212,7 +235,7 @@ class TimeInput extends React.Component {
       selectedHour: undefined,
       selectedMinute: undefined,
     })
-    this.props.onChange('')
+    this.props.onChange && this.props.onChange('')
   }
 
   render() {
@@ -225,6 +248,7 @@ class TimeInput extends React.Component {
       minTime,
       maxTime,
       defaultValue,
+      onChange,
       ...props
     } = this.props
     const { value, selectedHour, selectedMinute, timeRange } = this.state
@@ -242,7 +266,7 @@ class TimeInput extends React.Component {
           value={value}
         />
         <Absolute
-          left={props.icon ? 40 : 15}
+          left={15}
           top={0}
           bottom={0}
           right={0}
@@ -259,7 +283,7 @@ class TimeInput extends React.Component {
                 {...selectStyle(hasSelectedHour, true, !hasSelectedHour)}
                 onChange={this.handleSelectHour}
                 ref={this.hourRef}
-                value={hasSelectedHour ? padZero(selectedHour) : ''}
+                value={hasSelectedHour ? padZero(String(selectedHour)) : ''}
               >
                 <option>--</option>
                 {Object.keys(timeRange).map(hour => (
@@ -276,12 +300,12 @@ class TimeInput extends React.Component {
                 onChange={this.handleSelectMinute}
                 ref={this.minuteRef}
                 disabled={!hasSelectedHour}
-                value={hasSelectedHour ? padZero(selectedMinute) : ''}
+                value={hasSelectedHour ? padZero(String(selectedMinute)) : ''}
               >
                 <option>--</option>
                 {selectedHour !== undefined &&
                   timeRange[selectedHour].map(minute => (
-                    <option key={minute}>{padZero(minute)}</option>
+                    <option key={minute}>{padZero(String(minute))}</option>
                   ))}
               </select>
             </View>
