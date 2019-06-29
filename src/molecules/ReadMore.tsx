@@ -1,7 +1,14 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { Component, PropsWithChildren } from 'react'
 import { css } from 'glamor'
 import { View, Text } from '../'
+
+interface IReadMoreProps {
+  initiallyCollapsed: boolean
+  readMoreLabel: string
+  cropAtHeight: string | number
+  threshold: number
+  onToggle: (on: boolean) => void
+}
 
 /**
  *   A ReadMore is a simple container, to show / (hide) content. It will automatically decide whether to show the `read more` link or not.
@@ -29,17 +36,7 @@ import { View, Text } from '../'
 </Card>
  *  ```
  **/
-
-class ReadMore extends React.Component {
-  static propTypes = {
-    children: PropTypes.node,
-    initiallyCollapsed: PropTypes.bool,
-    readMoreLabel: PropTypes.string,
-    cropAtHeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    threshold: PropTypes.number,
-    onToggle: PropTypes.func,
-  }
-
+class ReadMore extends Component<PropsWithChildren<IReadMoreProps>> {
   static defaultProps = {
     initiallyCollapsed: true,
     readMoreLabel: 'Read more...',
@@ -53,7 +50,6 @@ class ReadMore extends React.Component {
   componentDidMount() {
     this.toggleCollapseLink()
     window.addEventListener('resize', this.toggleCollapseLink)
-
     // @todo: We should watch here for Dom changes and trigger the collapse ALSO
     // on DOM changes - see -> https://github.com/jcgertig/react-mutation-observer
     // -
@@ -64,8 +60,8 @@ class ReadMore extends React.Component {
     // I'm not sure about the right place for this functionality tho since it's
     // maybe better to be implemented into the mother component? Or maybe provide
     // a withObserver method?
-    if (window.MutationObserver) {
-      const { current } = this.childRef
+    const { current } = this.childRef
+    if (current && (window as any).MutationObserver) {
       this.observer = new MutationObserver(this.toggleCollapseLink)
       this.observer.observe(current, {
         attributes: false,
@@ -80,62 +76,64 @@ class ReadMore extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.toggleCollapseLink)
-    if (window.MutationObserver) {
-      this.observer.disconnect()
-    }
+    this.observer && this.observer.disconnect()
   }
 
-  childRef = React.createRef()
-  observer = null
+  protected childRef = React.createRef<HTMLDivElement>()
+  private observer: MutationObserver
 
   toggleCollapse = () => {
     const { current } = this.childRef
-    if (!this.state.collapsed) {
-      current.style.height = this.props.cropAtHeight
-      this.setState({ collapsed: true })
-      // signal new state for the parent
-      this.props.onToggle(true)
-    } else {
-      current.style.height = `${current.scrollHeight}px`
-      this.setState({ collapsed: false })
-      // signal new state for the parent
-      this.props.onToggle(false)
+    if (current && current.style) {
+      if (!this.state.collapsed) {
+        current.style.height = `${this.props.cropAtHeight}px`
+        this.setState({ collapsed: true })
+        // signal new state for the parent
+        this.props.onToggle(true)
+      } else {
+        current.style.height = `${current.scrollHeight}px`
+        this.setState({ collapsed: false })
+        // signal new state for the parent
+        this.props.onToggle(false)
+      }
     }
   }
 
   toggleCollapseLink = () => {
     const { current } = this.childRef
+    if (current && current.style) {
+      let defaultWrapperHeight = 0
+      const elHeight = current.scrollHeight
 
-    let defaultWrapperHeight = 0
-    const elHeight = current.scrollHeight
-
-    // Let's check for viewport dimensions in here and convert them to px...
-    const regex = /(vw|vh)$/
-    if (regex.test(this.props.cropAtHeight)) {
-      if (this.props.cropAtHeight.match(/(vh)/)) {
-        defaultWrapperHeight =
-          (window.innerHeight / 100) *
-          parseInt(this.props.cropAtHeight.replace(regex, ''))
+      // Let's check for viewport dimensions in here and convert them to px...
+      const regex = /(vw|vh)$/
+      const { cropAtHeight, threshold } = this.props
+      if (typeof cropAtHeight === 'string' && regex.test(cropAtHeight)) {
+        if (cropAtHeight.match(/(vh)/)) {
+          defaultWrapperHeight =
+            (window.innerHeight / 100) *
+            parseInt(cropAtHeight.replace(regex, ''))
+        }
+        if (cropAtHeight.match(/(vw)/)) {
+          defaultWrapperHeight =
+            (window.innerWidth / 100) *
+            parseInt(cropAtHeight.replace(regex, ''))
+        }
+      } else if (typeof cropAtHeight === 'number') {
+        defaultWrapperHeight = cropAtHeight
       }
-      if (this.props.cropAtHeight.match(/(vw)/)) {
-        defaultWrapperHeight =
-          (window.innerWidth / 100) *
-          parseInt(this.props.cropAtHeight.replace(regex, ''))
-      }
-    } else {
-      defaultWrapperHeight = this.props.cropAtHeight
-    }
-    defaultWrapperHeight = defaultWrapperHeight + this.props.threshold
+      defaultWrapperHeight = defaultWrapperHeight + threshold
 
-    // Let's check whether we should show the Read More link or not
-    if (elHeight < defaultWrapperHeight) {
-      current.style.height = `${elHeight}px`
-      this.props.onToggle(false)
-      this.setState({ collapsed: false })
-    } else {
-      current.style.height = `${defaultWrapperHeight}px`
-      this.props.onToggle(true)
-      this.setState({ collapsed: true })
+      // Let's check whether we should show the Read More link or not
+      if (elHeight < defaultWrapperHeight) {
+        current.style.height = `${elHeight}px`
+        this.props.onToggle(false)
+        this.setState({ collapsed: false })
+      } else {
+        current.style.height = `${defaultWrapperHeight}px`
+        this.props.onToggle(true)
+        this.setState({ collapsed: true })
+      }
     }
   }
 
@@ -150,7 +148,7 @@ class ReadMore extends React.Component {
       >
         {/* Child */}
         <View
-          onRef={this.childRef}
+          innerRef={this.childRef}
           {...css({
             transitionProperty: 'height',
             transition: 'height 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
