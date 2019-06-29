@@ -1,5 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { Component, PropsWithChildren, FormEvent } from 'react'
+
+interface IFormProps {
+  method?: 'POST' | 'GET'
+  onSubmit: (e: FormEvent, data: { [key: string]: string }) => void
+}
 
 /**
 Forms are used to allow the user to submit information to the app. The form component provides a very simple,
@@ -108,25 +112,21 @@ Also see the <a href="/molecules/TextInput/">TextInput</a> for allowed props.
 </ResourceProvider>
 ```
  */
-class Form extends React.Component {
-  static propTypes = {
-    children: PropTypes.node,
-    method: PropTypes.string,
-    onSubmit: PropTypes.func.isRequired,
-  }
-
+class Form extends Component<PropsWithChildren<IFormProps>> {
   static defaultProps = {
-    onSubmit: _ => _,
     method: 'POST',
   }
 
-  handleSubmit = e => {
+  handleSubmit = (e: FormEvent) => {
     e.preventDefault()
-    const data = {}
-    const elements = e.target.elements
+    const { target } = e as any
+    const data = {} as { [key: string]: any }
+    const elements = target.elements as HTMLFormControlsCollection
     for (let i = 0; i < elements.length; i++) {
-      let item = elements.item(i)
-      data[item.name] = item.value
+      const element = elements.item(i) as HTMLInputElement
+      if (element.name) {
+        data[element.name] = element.value
+      }
     }
     this.props.onSubmit(e, data)
   }
