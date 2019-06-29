@@ -124,9 +124,7 @@ class Form extends Component<PropsWithChildren<IFormProps>> {
     const elements = target.elements as HTMLFormControlsCollection
     for (let i = 0; i < elements.length; i++) {
       const element = elements.item(i) as HTMLInputElement
-      if (element.name) {
-        data[element.name] = element.value
-      }
+      data[element.name] = element.value
     }
     this.props.onSubmit(e, data)
   }
