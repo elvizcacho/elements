@@ -1,5 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { Component, PropsWithChildren } from 'react'
 import { css } from 'glamor'
 
 const styles = {
@@ -29,11 +28,15 @@ const styles = {
   }),
 }
 
-export class Viewport extends React.Component {
-  static propTypes = {
-    children: PropTypes.node,
-  }
+interface IProps {}
+interface IState {
+  padding: boolean
+  width: number
+  height: number
+  shiftPressed: boolean
+}
 
+export class Viewport extends Component<PropsWithChildren<IProps>, IState> {
   state = {
     width: 320,
     height: 500,
@@ -41,18 +44,19 @@ export class Viewport extends React.Component {
     shiftPressed: false,
   }
 
-  togglePadding = () => this.setState(({ padding }) => ({ padding: !padding }))
+  togglePadding = () =>
+    this.setState(({ padding }: IState) => ({ padding: !padding }))
 
-  setWidth = e => {
+  setWidth = (e: any) => {
     const width = +e.target.value
     this.setState(() => ({ width }))
   }
-  setHeight = e => {
+  setHeight = (e: any) => {
     const height = +e.target.value
     this.setState(() => ({ height }))
   }
 
-  setShiftPressed = e => {
+  setShiftPressed = (e: any) => {
     const { shiftKey } = e
     if (
       (!this.state.shiftPressed && shiftKey) ||
@@ -103,5 +107,5 @@ export class Viewport extends React.Component {
 }
 
 export default function createViewportDecorator() {
-  return story => <Viewport>{story()}</Viewport>
+  return (story: any) => <Viewport>{story()}</Viewport>
 }

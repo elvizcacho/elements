@@ -11,7 +11,7 @@ import {
 import { css } from 'glamor'
 import Button from '../src/molecules/Button'
 
-class DynamicCollapsible extends React.Component {
+class DynamicCollapsible extends React.Component<any, any> {
   state = {
     items: ['Item 1', 'Item 2'],
   }
@@ -53,7 +53,7 @@ class DynamicCollapsible extends React.Component {
 
 const CollapsibleStory = () => (
   <ThemeProvider>
-    <ResourceProvider>
+    <ResourceProvider.Provider value={{ resourcePath: '' }}>
       <Card
         {...css({
           width: '300px',
@@ -217,7 +217,7 @@ const CollapsibleStory = () => (
           </div>
         </Collapsible>
       </Card>
-    </ResourceProvider>
+    </ResourceProvider.Provider>
   </ThemeProvider>
 )
 

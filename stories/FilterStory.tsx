@@ -27,7 +27,7 @@ export default class FilterStory extends React.Component {
   render() {
     return (
       <ThemeProvider>
-        <ResourceProvider>
+        <ResourceProvider.Provider value={{ resourcePath: '' }}>
           <Form onSubmit={(e, formData) => this.setState({ formData })}>
             <Inset horizontal vertical>
               <Collapsible
@@ -121,7 +121,7 @@ export default class FilterStory extends React.Component {
               </Collapsible>
               <Spacer height={5} />
               <View direction="row">
-                <Button type="submit" style={{ flex: 1 }}>
+                <Button type="submit" style={{ flex: 'flex' }}>
                   Submit
                 </Button>
               </View>
@@ -132,7 +132,7 @@ export default class FilterStory extends React.Component {
               {JSON.stringify(this.state.formData, null, 2)}
             </pre>
           )}
-        </ResourceProvider>
+        </ResourceProvider.Provider>
       </ThemeProvider>
     )
   }
