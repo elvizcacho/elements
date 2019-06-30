@@ -1,10 +1,10 @@
 import React from 'react'
-import ReadM  ore from './ReadMore'
+import ReadMore from './ReadMore'
 import Text from '../atoms/Text'
 import { mount } from 'enzyme'
 
 class ReadMoreTest extends ReadMore {
-  childRef = { current: { style: { height: 480 } } }
+  childRef = { current: { style: { height: 480 } } } as any
 }
 
 describe('ReadMore component', () => {

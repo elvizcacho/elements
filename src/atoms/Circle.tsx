@@ -1,5 +1,5 @@
 import React from 'react'
-import View from './View'
+import View, { IViewProps } from './View'
 import { css } from 'glamor'
 import Theme from '../behaviour/Theme'
 
@@ -62,7 +62,7 @@ const Circle = ({
   radius = 40,
   children,
   ...props
-}: IProps) => (
+}: IProps & IViewProps) => (
   <Theme>
     {({ colorize }) => (
       <View

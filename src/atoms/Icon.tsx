@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useContext } from 'react'
 import View, { IViewProps } from '../atoms/View'
 import ResourceProvider from '../behaviour/ResourceProvider'
-import Theme, { IThemeChildren } from '../behaviour/Theme'
+import Theme from '../behaviour/Theme'
 import { css } from 'glamor'
 
 export type IconType =
@@ -407,7 +407,7 @@ const Icon: FunctionComponent<IIconProps> = ({
 
   return (
     <Theme>
-      {({ colorize }: IThemeChildren) => (
+      {({ colorize }) => (
         <View
           {...props}
           {...css({
