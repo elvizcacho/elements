@@ -1,17 +1,18 @@
-import PropTypes from 'prop-types'
 import React, { Component, KeyboardEvent } from 'react'
 import { css } from 'glamor'
-import { View, Icon, Text } from '../'
+import Icon from '../atoms/Icon'
+import Text from '../atoms/Text'
+import View from '../atoms/View'
 import { ColorPalette, alpha } from '@allthings/colors'
 
 const tick = () => new Promise(resolve => setTimeout(resolve, 0))
 
 interface ICollapsibleProps {
-  title?: PropTypes.string
-  initiallyCollapsed?: PropTypes.bool
-  hasBottomBorder?: PropTypes.bool
-  tabIndex?: PropTypes.number
-  onToggle?: PropTypes.func
+  title?: string
+  initiallyCollapsed?: boolean
+  hasBottomBorder?: boolean
+  tabIndex?: number
+  onToggle?: (on: boolean) => void
 }
 interface IState {}
 
@@ -47,8 +48,6 @@ class Collapsible extends Component<ICollapsibleProps, IState> {
   static defaultProps = {
     initiallyCollapsed: true,
     hasBottomBorder: false,
-    tabIndex: null,
-    onToggle: () => {},
   }
 
   state = {
@@ -59,7 +58,7 @@ class Collapsible extends Component<ICollapsibleProps, IState> {
   async componentDidMount() {
     const { current } = this.childRef
 
-    if (current) {
+    if (current && current.style) {
       if (!this.props.initiallyCollapsed) {
         current.style.height = `${current.scrollHeight}px`
         await tick()
@@ -70,27 +69,33 @@ class Collapsible extends Component<ICollapsibleProps, IState> {
     }
   }
 
-  childRef = React.createRef()
+  childRef = React.createRef<HTMLDivElement>()
 
   toggleCollapse = async () => {
     const { current } = this.childRef
-    if (current.style.height !== '0px') {
-      current.style.height = `${current.scrollHeight}px`
-      await tick()
-      current.style.height = '0px'
-      this.setState({ collapsed: true, overflow: 'hidden' })
-      // signal new state for the parent
-      this.props.onToggle(true)
-    } else {
-      current.style.height = `${current.scrollHeight}px`
-      this.setState({ collapsed: false })
-      // signal new state for the parent
-      this.props.onToggle(false)
+    if (current && current.style) {
+      if (current.style.height !== '0px') {
+        current.style.height = `${current.scrollHeight}px`
+        await tick()
+        current.style.height = '0px'
+        this.setState({ collapsed: true, overflow: 'hidden' })
+        // signal new state for the parent
+        this.props.onToggle && this.props.onToggle(true)
+      } else {
+        current.style.height = `${current.scrollHeight}px`
+        this.setState({ collapsed: false })
+        // signal new state for the parent
+        this.props.onToggle && this.props.onToggle(false)
+      }
     }
   }
 
   handleTransitionEnd = () => {
-    if (!this.state.collapsed) {
+    if (
+      !this.state.collapsed &&
+      this.childRef.current &&
+      this.childRef.current.style
+    ) {
       this.childRef.current.style.height = 'auto'
       this.setState({ overflow: null })
     }
@@ -111,7 +116,6 @@ class Collapsible extends Component<ICollapsibleProps, IState> {
           width: '100%',
         })}
       >
-        {/* Header bar */}
         <View
           direction="row"
           alignH="space-between"
@@ -121,7 +125,6 @@ class Collapsible extends Component<ICollapsibleProps, IState> {
             cursor: 'pointer',
           })}
         >
-          {/* Title */}
           <View
             direction="row"
             alignV="center"
@@ -171,9 +174,8 @@ class Collapsible extends Component<ICollapsibleProps, IState> {
             </View>
           </View>
         </View>
-        {/* Child */}
         <View
-          onRef={this.childRef}
+          innerRef={this.childRef}
           onTransitionEnd={this.handleTransitionEnd}
           {...css({
             transitionProperty: 'height',

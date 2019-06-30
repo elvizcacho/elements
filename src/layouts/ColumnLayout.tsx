@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react'
 import PropTypes from 'prop-types'
-import View, { IProps as ViewProps } from '../atoms/View'
+import View, { IViewProps } from '../atoms/View'
 import { css } from 'glamor'
 
-export const Column: FunctionComponent<ViewProps<'div'>> = ({
+export const Column: FunctionComponent<IViewProps> = ({
   children,
   ...props
 }) => (

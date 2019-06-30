@@ -26,7 +26,6 @@ describe('Test the Form component', () => {
     expect(submit).toHaveBeenCalledTimes(0)
     wrapper.find(Form).simulate('submit')
     expect(submit).toHaveBeenCalledTimes(1)
-    console.log(submit.mock.calls[0][1])
     expect(submit.mock.calls[0][1]).toStrictEqual({
       a: 'true',
       b: 'false',

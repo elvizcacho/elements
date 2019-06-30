@@ -4,6 +4,7 @@ import { createTextStyles } from '../atoms/Text'
 import { color } from '../propTypes/color'
 import { color as col, lightness } from 'kewler'
 import Theme from '../behaviour/Theme'
+import { HTMLAttributes } from 'enzyme'
 
 const baseStyle = {
   position: 'relative',
@@ -77,13 +78,14 @@ function styles(
   })
 }
 
-interface IButtonProps extends Partial<IComponentProps> {
+interface IButtonProps
+  extends React.HTMLAttributes<HTMLElement>,
+    Partial<IComponentProps> {
   /** If the button is used for a secondary option */
   secondary?: boolean
   /** Type of the button (deprecated) */
   type?: 'reset' | 'button' | 'submit'
   color?: color
-  /** Disable button state to indicate it's not touchable */
   disabled?: boolean
   /** Color of the button, theme primary color by default */
   backgroundColor?: string

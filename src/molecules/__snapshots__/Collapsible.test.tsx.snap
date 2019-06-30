@@ -166,6 +166,13 @@ exports[`Input component Collapsible renders properly 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
+.css-13,
+[data-css-13] {
+  width: 10px;
+  height: 10px;
+  fill: lightGreyIntense;
+}
+
 <div
   data-css-7=""
   data-css-0=""
@@ -211,14 +218,7 @@ exports[`Input component Collapsible renders properly 1`] = `
             }
           }
           data-css-11=""
-          style={
-            Object {
-              "fill": "lightGreyIntense",
-              "height": 10,
-              "stroke": false,
-              "width": 10,
-            }
-          }
+          data-css-13=""
         />
       </div>
     </div>

@@ -1,51 +1,50 @@
 import React from 'react'
 import Circle from '../atoms/Circle'
 import { Motion, spring } from 'react-motion'
-import { withTheme } from '../behaviour/ThemeProvider'
 import Icon from '../atoms/Icon'
-import PropTypes from 'prop-types'
+import { color } from '../propTypes/color'
+import { IViewProps } from '../atoms/View'
 
-class Checkmark extends React.Component {
-  static propTypes = {
-    checked: PropTypes.bool,
-    disabled: PropTypes.bool,
-    theme: PropTypes.object.isRequired,
-    onClick: PropTypes.func,
-  }
-
-  static defaultProps = {
-    checked: false,
-  }
-
-  render() {
-    const { checked, theme, onClick, ...props } = this.props
-    return (
-      <Motion
-        defaultStyle={{ size: 21.5 }}
-        style={{
-          size: spring(checked ? 21.5 : 10, {
-            stiffness: 180,
-            damping: 12,
-          }),
-        }}
-      >
-        {style => (
-          <Circle
-            outline
-            fill={checked}
-            outlineColor={this.props.disabled ? 'grey' : theme.primary}
-            color={this.props.disabled ? 'grey' : theme.primary}
-            onClick={this.props.disabled ? null : onClick}
-            {...props}
-          >
-            {checked && (
-              <Icon size={style.size} name="check-filled" color="white" />
-            )}
-          </Circle>
-        )}
-      </Motion>
-    )
-  }
+interface ICheckmarkProps {
+  checked: boolean
+  disabled: boolean
+  color: color
 }
 
-export default withTheme()(Checkmark)
+const Checkmark = ({
+  checked = false,
+  disabled,
+  color,
+  onClick,
+  ...props
+}: ICheckmarkProps & IViewProps) => {
+  const currentColor = disabled ? 'grey' : color || 'primary'
+  return (
+    <Motion
+      defaultStyle={{ size: 21.5 }}
+      style={{
+        size: spring(checked ? 21.5 : 10, {
+          stiffness: 180,
+          damping: 12,
+        }),
+      }}
+    >
+      {style => (
+        <Circle
+          outline
+          fill={checked}
+          outlineColor={currentColor}
+          color={currentColor}
+          onClick={disabled ? undefined : onClick}
+          {...props}
+        >
+          {checked && (
+            <Icon size={style.size} name="check-filled" color="white" />
+          )}
+        </Circle>
+      )}
+    </Motion>
+  )
+}
+
+export default Checkmark

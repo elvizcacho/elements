@@ -1,5 +1,5 @@
 import React from 'react'
-import ReadMore from './ReadMore'
+import ReadM  ore from './ReadMore'
 import Text from '../atoms/Text'
 import { mount } from 'enzyme'
 

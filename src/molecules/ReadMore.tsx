@@ -1,6 +1,7 @@
 import React, { Component, PropsWithChildren } from 'react'
 import { css } from 'glamor'
-import { View, Text } from '../'
+import View from '../atoms/View'
+import Text from '../atoms/Text'
 
 interface IReadMoreProps {
   initiallyCollapsed: boolean

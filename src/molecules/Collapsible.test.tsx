@@ -1,6 +1,8 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { ThemeProvider, ResourceProvider, Collapsible } from '../'
+import ThemeProvider from '../behaviour/ThemeProvider'
+import ResourceProvider from '../behaviour/ResourceProvider'
+import Collapsible from '../molecules/Collapsible'
 
 describe('Input component', () => {
   test('Collapsible renders properly', () => {
@@ -8,7 +10,12 @@ describe('Input component', () => {
       .create(
         <ThemeProvider>
           <ResourceProvider.Provider value={{ resourcePath: '' }}>
-            <Collapsible data-e2e="hallo">
+            <Collapsible
+              title="title"
+              hasBottomBorder={true}
+              tabIndex={1}
+              data-e2e="hallo"
+            >
               <p>Test child</p>
             </Collapsible>
           </ResourceProvider.Provider>

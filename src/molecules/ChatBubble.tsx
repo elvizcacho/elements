@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { Component, ReactNode } from 'react'
 import { css } from 'glamor'
 import Text from '../atoms/Text'
 import ProfileImage from '../molecules/ProfileImage'
@@ -32,7 +31,7 @@ const styles = {
     flexDirection: 'row-reverse',
   }),
   image: css({ flexShrink: 0 }),
-  outerText: background =>
+  outerText: (background: string) =>
     css({
       paddingLeft: 15,
       flex: 1,
@@ -50,7 +49,7 @@ const styles = {
         borderColor: `transparent ${background} transparent transparent`,
       },
     }),
-  outerTextReversed: background =>
+  outerTextReversed: (background: string) =>
     css({
       paddingLeft: 0,
       paddingRight: 15,
@@ -73,6 +72,23 @@ const styles = {
       textDecoration: 'underline',
     },
   }),
+}
+
+interface IChatBubbleProps {
+  /* Name of the person who wrote the message */
+  userName: string
+  /* Profile image of person who wrote the message */
+  userImage: string
+  /* Date when the message was send */
+  date: ReactNode
+  /* Text of the message */
+  text: ReactNode
+  /* Background color of chat message */
+  background: string
+  /* Position of profile image and name */
+  direction: 'left' | 'right'
+  /* Text color */
+  fontColor: string
 }
 
 /**
@@ -98,24 +114,7 @@ const styles = {
  * </ThemeProvider>
  * ```
  */
-class ChatBubble extends React.Component {
-  static propTypes = {
-    /* Name of the person who wrote the message */
-    userName: PropTypes.string.isRequired,
-    /* Profile image of person who wrote the message */
-    userImage: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-    /* Date when the message was send */
-    date: PropTypes.node.isRequired,
-    /* Text of the message */
-    text: PropTypes.node.isRequired,
-    /* Background color of chat message */
-    background: PropTypes.string,
-    /* Position of profile image and name */
-    direction: PropTypes.oneOf(['right', 'left']),
-    /* Text color */
-    fontColor: PropTypes.string,
-  }
-
+class ChatBubble extends Component<IChatBubbleProps> {
   static defaultProps = {
     direction: 'left',
     background: 'white',
@@ -124,7 +123,7 @@ class ChatBubble extends React.Component {
 
   renderProfileImage() {
     const { userImage } = this.props
-    return <ProfileImage size="medium" image={userImage} />
+    return <ProfileImage size="m" image={userImage} />
   }
 
   render() {
@@ -133,7 +132,7 @@ class ChatBubble extends React.Component {
 
     return (
       <Theme>
-        {({ theme, colorize }) => (
+        {({ colorize }) => (
           <div {...styles.reply}>
             <div
               className="info"
@@ -161,7 +160,7 @@ class ChatBubble extends React.Component {
               >
                 <div
                   {...css(styles.textContainer, {
-                    background,
+                    background: colorize(background),
                   })}
                 >
                   <Text {...css(styles.text)}>{text}</Text>
