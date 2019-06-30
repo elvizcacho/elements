@@ -1,8 +1,10 @@
-import React from 'react'
 import { storiesOf } from '@storybook/react'
+import createViewportDecorator from './createViewportDecorator'
+import CollapsibleStory from './CollapsibleStory'
+//  import FilterStory from './FilterStory'
+
+/*
 import { action } from '@storybook/addon-actions'
-// Only needed to make Storybook work with IE 11, should be a noop for modern browsers anyway
-import 'cross-fetch/polyfill'
 
 import {
   Card,
@@ -14,12 +16,10 @@ import {
   Text,
   TextInput,
   ThemeProvider,
-} from '../src/'
+} from '../src'
 import HorizontalView from './HorizontalView'
 import FormStory from './FormStory'
-import createViewportDecorator from './createViewportDecorator'
 import RadioButtonStory from './RadioButtonStory'
-import CollapsibleStory from './CollapsibleStory'
 import SimpleLayoutStory from './SimpleLayoutStory'
 import TypeaheadStory from './TypeaheadStory'
 import DropdownStory from './DropdownStory'
@@ -31,11 +31,17 @@ import Input from '../src/atoms/Input'
 import EditableTextStory from './EditableTextStory'
 import Button from '../src/molecules/Button'
 import ConfirmStory from './ConfirmStory'
-import FilterStory from './FilterStory'
 import ButtonStory from './ButtonStory'
 import CheckboxStory from './CheckboxStory'
 import ProfileImageStackStory from './ProfileImageStackStory'
+*/
 
+storiesOf('Containers', module)
+  .addDecorator(createViewportDecorator())
+  .add('Collapsible', CollapsibleStory)
+//.add('Filters', () => <FilterStory />)
+
+/*
 storiesOf('ProfleImage', module)
   .addDecorator(createViewportDecorator())
   .add('Profile Image Stack / Profile Image List ', () => (
@@ -266,3 +272,4 @@ storiesOf('ReadMore', module)
       </ThemeProvider>
     )
   })
+*/
