@@ -1,10 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { PropsWithChildren } from 'react'
 import CardList from './CardList'
 import View from '../../atoms/View'
 import GroupTitle from '../../atoms/GroupTitle'
 
-const GroupedCardList = ({ title, children, ...rest }) => {
+const GroupedCardList = ({
+  title,
+  children,
+  ...rest
+}: PropsWithChildren<IGroupedCardListProps>) => {
   return (
     <View {...rest}>
       <GroupTitle>{title}</GroupTitle>
@@ -13,12 +16,9 @@ const GroupedCardList = ({ title, children, ...rest }) => {
   )
 }
 
-GroupedCardList.propTypes = {
-  /** See ListItem and View */
-  children: PropTypes.node,
-  e2e: PropTypes.string,
+interface IGroupedCardListProps {
   /** The title for the CardList */
-  title: PropTypes.string,
+  title: string
 }
 
 export default GroupedCardList

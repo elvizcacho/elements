@@ -4,7 +4,7 @@ import { css } from 'glamor'
 import Icon from '../atoms/Icon'
 import Text from '../atoms/Text'
 import { Motion, spring } from 'react-motion'
-import Theme, { IThemeChildren } from '../behaviour/Theme'
+import Theme from '../behaviour/Theme'
 
 const styles = {
   bubble: css({
@@ -26,8 +26,8 @@ const styles = {
 }
 
 interface INotificationBubble {
-  color: string
-  onTimeout: () => void
+  color?: string
+  onTimeout?: () => void
 }
 interface INotificationBubbleState {
   visible: boolean
@@ -85,10 +85,10 @@ class NotificationBubble extends Component<
     this.props.onTimeout()
 
   render() {
-    const { color, onTimeout, ...props } = this.props
+    const { color = 'primary', onTimeout, ...props } = this.props
     return (
       <Theme>
-        {({ colorize }: IThemeChildren) => (
+        {({ colorize }) => (
           <Motion
             defaultStyle={{ position: -50 }}
             onRest={this.handleRest}
