@@ -1,12 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { PureComponent, ReactNode, createRef, MouseEvent } from 'react'
 import Downshift from 'downshift'
 import { css, keyframes } from 'glamor'
 import Relative from '../atoms/Relative'
 import Absolute from '../atoms/Absolute'
 import { View, Text, List, ListItem, Input } from '../'
 import { alpha, ColorPalette } from '@allthings/colors'
-import Icon from '../atoms/Icon'
+import Icon, { IconType } from '../atoms/Icon'
 
 const bounceDownwardsAnim = keyframes('bounce', {
   '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
@@ -43,62 +42,59 @@ const styles = {
   }),
 }
 
-export default class Dropdown extends React.PureComponent {
-  static propTypes = {
-    /** If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards */
-    placement: PropTypes.oneOf(Object.values(Placement)),
-    items: PropTypes.arrayOf(
-      PropTypes.shape({
-        label: PropTypes.node.isRequired,
-        value: PropTypes.any.isRequired,
-      })
-    ).isRequired,
-    /** Initially selected item - this value is uncontrolled */
-    initialSelectedItem: PropTypes.shape({
-      label: PropTypes.node.isRequired,
-      value: PropTypes.any.isRequired,
-    }),
-    /** Selected item - this item can be controlled */
-    selectedItem: PropTypes.shape({
-      label: PropTypes.node.isRequired,
-      value: PropTypes.any.isRequired,
-    }),
-    /** The maximum number of items displayed in the menu. */
-    limit: PropTypes.number,
-    /** The height of the menu in pixels. */
-    menuHeight: PropTypes.number,
-    /** Callback triggered when clearing the selection. */
-    onSelect: PropTypes.func,
-    /** The placeholder displayed in the input field. */
-    placeholder: PropTypes.string,
-    /** A floating label */
-    label: PropTypes.string,
-    /** Icon on the left of the input field */
-    icon: PropTypes.string,
-    /** If true, than the field can be cleared */
-    clearable: PropTypes.bool,
-    /** For forms */
-    name: PropTypes.string.isRequired,
-  }
+type ItemType = {
+  label: ReactNode
+  value: string
+}
 
+interface IDropdownProps {
+  /** If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards */
+  placement?: 'top' | 'bottom'
+  items: ItemType[]
+  /** Initially selected item - this value is uncontrolled */
+  initialSelectedItem?: ItemType
+  /** Selected item - this item can be controlled */
+  selectedItem?: ItemType
+  /** The maximum number of items displayed in the menu. */
+  limit?: number
+  /** The height of the menu in pixels. */
+  menuHeight?: number
+  /** Callback triggered when clearing the selection. */
+  onSelect?: () => void
+  /** The placeholder displayed in the input field. */
+  placeholder?: string
+  /** A floating label */
+  label?: string
+  /** Icon on the left of the input field */
+  icon?: IconType
+  /** If true, than the field can be cleared */
+  clearable?: boolean
+  /** For forms */
+  name?: string
+}
+
+export default class Dropdown extends PureComponent<IDropdownProps> {
   state = {
     showScrollArrow: false,
   }
 
-  handleListScroll = e => {
+  listRef = createRef<HTMLDivElement>()
+
+  handleListScroll = (e: any) => {
     if (this.state.showScrollArrow && e.target.scrollTop > 0) {
       this.setState({ showScrollArrow: false })
     }
   }
 
   showArrowIfNecessary = () =>
-    this.listRef &&
+    this.listRef.current &&
+    this.props.menuHeight &&
     this.setState({
-      showScrollArrow: this.listRef.scrollHeight > this.props.menuHeight,
+      showScrollArrow:
+        this.listRef.current.scrollHeight > this.props.menuHeight,
     })
 
-  setListRef = el => {
-    this.listRef = el
+  componentDidMount() {
     this.showArrowIfNecessary()
   }
 
@@ -148,7 +144,7 @@ export default class Dropdown extends React.PureComponent {
               })}
             >
               <Relative>
-                <View onClick={toggleMenu} {...styles.area}>
+                <View onClick={() => toggleMenu()} {...styles.area}>
                   <Input
                     disabled
                     icon={icon}
@@ -182,7 +178,7 @@ export default class Dropdown extends React.PureComponent {
                     })}
                     onClick={
                       showClearIcon
-                        ? e => {
+                        ? (e: MouseEvent<HTMLElement>) => {
                             e.stopPropagation()
                             clearSelection()
                           }
@@ -208,10 +204,10 @@ export default class Dropdown extends React.PureComponent {
               <Relative>
                 {isOpen && (
                   <List
+                    innerRef={this.listRef}
                     direction={
                       placement === Placement.top ? 'column-reverse' : 'column'
                     }
-                    onRef={this.setListRef}
                     {...css({
                       boxShadow:
                         isOpen && '1px 1px 3px rgba(29, 29, 29, 0.125)',
@@ -255,8 +251,8 @@ export default class Dropdown extends React.PureComponent {
                       </ListItem>
                     ))}
                     <Absolute
-                      bottom={placement !== Placement.top ? 15 : null}
-                      top={placement === Placement.top ? 15 : null}
+                      bottom={placement !== Placement.top ? 15 : undefined}
+                      top={placement === Placement.top ? 15 : undefined}
                       right={15}
                     >
                       {showScrollArrow &&

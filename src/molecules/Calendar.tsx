@@ -1,7 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-import UnstyledCalendar from 'react-calendar/dist/entry.nostyle'
+import UnstyledCalendar, {
+  CalendarProps,
+} from 'react-calendar/dist/entry.nostyle'
 import { ColorPalette } from '@allthings/colors'
 import insertCSS from '../utils/insertCSS'
 import { color, lightness } from 'kewler'
@@ -121,10 +122,17 @@ insertCSS(`
   background: ${color(ColorPalette.blue, lightness(35))}
 }
 `)
+
+const notBlocked = (_: Date) => false
+const notDisabled = (_: { activeStartDate: Date }) => false
 /**
  * The `Calendar` component is a thin wrapper around https://github.com/wojtekmaj/react-calendar.
  */
-const Calendar = ({ isBlockedDay, tileDisabled, ...props }) => (
+const Calendar = ({
+  isBlockedDay = notBlocked,
+  tileDisabled = notDisabled,
+  ...props
+}: ICalendarProps) => (
   <UnstyledCalendar
     {...props}
     // Add functionality for `isBlockedDay` to disable and color dates differently
@@ -133,17 +141,11 @@ const Calendar = ({ isBlockedDay, tileDisabled, ...props }) => (
   />
 )
 
-Calendar.propTypes = {
-  ...UnstyledCalendar.propTypes,
+interface ICalendarProps extends CalendarProps {
   /** Indicates if a day is blocked. Expects a function which is invoked with a `Date` object and should return a boolean **/
-  isBlockedDay: PropTypes.func,
+  isBlockedDay?: (date: Date) => boolean
   /** Proxied from `react-calendar` prop types **/
-  tileDisabled: PropTypes.func,
-}
-
-Calendar.defaultProps = {
-  isBlockedDay: () => false,
-  tileDisabled: () => false,
+  tileDisabled?: (date: { activeStartDate: Date }) => boolean
 }
 
 export default Calendar

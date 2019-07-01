@@ -1,9 +1,8 @@
 import { ColorPalette } from '@allthings/colors'
 import { css } from 'glamor'
-import { string } from 'prop-types'
-import React from 'react'
+import React, { KeyboardEvent } from 'react'
 
-import Icon from '../atoms/Icon'
+import Icon, { IconType } from '../atoms/Icon'
 import Text from '../atoms/Text'
 import View from '../atoms/View'
 
@@ -13,7 +12,7 @@ const DEFAULT_ICON_COLOR = 'black'
 const ENTER = 'Enter'
 
 const STYLES = {
-  editable: decorationColor =>
+  editable: (decorationColor: string) =>
     css({
       borderBottom: `1px dashed ${ColorPalette[decorationColor]}`,
       ':focus': {
@@ -31,13 +30,15 @@ const EditableText = ({
   icon = DEFAULT_ICON,
   iconColor = DEFAULT_ICON_COLOR,
   ...props
-}) => (
+}: IEditableTextProps) => (
   <View alignV="center" direction="row">
     <Text
       block
       contentEditable
       // Disable multi-line editing.
-      onKeyPress={event => event.key === ENTER && event.preventDefault()}
+      onKeyPress={(event: KeyboardEvent<HTMLElement>) =>
+        event.key === ENTER && event.preventDefault()
+      }
       spellCheck={false}
       // https://reactjs.org/docs/dom-elements.html#suppresscontenteditablewarning
       suppressContentEditableWarning
@@ -57,15 +58,15 @@ const EditableText = ({
   </View>
 )
 
-EditableText.propTypes = {
+interface IEditableTextProps {
   /** Text content passed to the component as children */
-  children: string,
+  children?: string
   /** Color of the emulated text decoration (border bottom) */
-  decorationColor: string,
+  decorationColor?: string
   /** Icon displayed on the right side of the text */
-  icon: string,
+  icon?: IconType
   /** Color of the icon */
-  iconColor: string,
+  iconColor?: string
 }
 
 export default EditableText

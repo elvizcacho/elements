@@ -79,9 +79,9 @@ describe('TimeInput', () => {
 
   it('should have correct and normalized default value', () => {
     const { getByTestId } = render(
-      <ResourceProvider.Provider value={{ resourcePath: '' }}>
+      <ResourceProvider>
         <TimeInput defaultValue="6:15" name="time" data-testid="time-input" />
-      </ResourceProvider.Provider>
+      </ResourceProvider>
     )
 
     expect((getByTestId('time-input') as HTMLSelectElement).value).toBe('06:15')
@@ -89,9 +89,9 @@ describe('TimeInput', () => {
 
   it('should have correct input value when 0 hours are selected', () => {
     const { getAllByDisplayValue, getByTestId } = render(
-      <ResourceProvider.Provider value={{ resourcePath: '' }}>
+      <ResourceProvider>
         <TimeInput name="time" data-testid="time-input" />
-      </ResourceProvider.Provider>
+      </ResourceProvider>
     )
 
     const [hourSelect, minuteSelect] = getAllByDisplayValue('--')
@@ -104,9 +104,9 @@ describe('TimeInput', () => {
 
   it('should set form input value is on select', () => {
     const { getByTestId, getAllByDisplayValue } = render(
-      <ResourceProvider.Provider value={{ resourcePath: '' }}>
+      <ResourceProvider>
         <TimeInput name="time" data-testid="time-input" />
-      </ResourceProvider.Provider>
+      </ResourceProvider>
     )
 
     const [hourSelect, minuteSelect] = getAllByDisplayValue('--')
@@ -119,9 +119,9 @@ describe('TimeInput', () => {
 
   it('should select first minute option when an hour is selected', () => {
     const { getByTestId, getByDisplayValue } = render(
-      <ResourceProvider.Provider value={{ resourcePath: '' }}>
+      <ResourceProvider>
         <TimeInput minTime="10:15" name="time" data-testid="time-input" />
-      </ResourceProvider.Provider>
+      </ResourceProvider>
     )
 
     fireEvent.change(getByDisplayValue('--'), { target: { value: '10' } })
@@ -131,9 +131,9 @@ describe('TimeInput', () => {
 
   it('should reset input value when hour is unset', () => {
     const { getByTestId, getByDisplayValue } = render(
-      <ResourceProvider.Provider value={{ resourcePath: '' }}>
+      <ResourceProvider>
         <TimeInput defaultValue="10:30" name="time" data-testid="time-input" />
-      </ResourceProvider.Provider>
+      </ResourceProvider>
     )
 
     const hourSelect = getByDisplayValue('10')
@@ -151,9 +151,9 @@ describe('TimeInput', () => {
 
     try {
       render(
-        <ResourceProvider.Provider value={{ resourcePath: '' }}>
+        <ResourceProvider>
           <TimeInput {...invalidProps} name="time" />
-        </ResourceProvider.Provider>
+        </ResourceProvider>
       )
     } catch (e) {}
     expect(console.error).toHaveBeenCalled()

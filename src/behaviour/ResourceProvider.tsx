@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 
 export const RESOURCE_PATH = 'https://static.allthings.me'
 
@@ -8,12 +8,27 @@ export const RESOURCE_PATH = 'https://static.allthings.me'
  *
  * Whenever you like to use Icons or Illustrations, you need to use the ResouceProvider to let the components know where they are.
  */
-const ResouceProvider = React.createContext({
+export const ResourceProviderContext = React.createContext({
   resourcePath: RESOURCE_PATH,
 })
 
 export type ResourceType = {
   resourcePath?: string
 }
+
+/**
+ * All elements support theming by default, and therefore every element must be wrapped inside a ThemeProvider.
+ * The ThemeProvider allows you to define the default colors for most elements.
+ *
+ * **Example**: If you want all you buttons to be red, instead of writing <Button color="red" /> all the time, you might want to set the "primary" color of your theme to red.
+ **/
+const ResouceProvider = ({
+  children,
+  resourcePath = RESOURCE_PATH,
+}: PropsWithChildren<{ resourcePath?: string }>) => (
+  <ResourceProviderContext.Provider value={{ resourcePath }}>
+    {children}
+  </ResourceProviderContext.Provider>
+)
 
 export default ResouceProvider

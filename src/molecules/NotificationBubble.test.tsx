@@ -7,13 +7,12 @@ import ResourceProvider from '../behaviour/ResourceProvider'
 test('NotificationBubble renders without error', () => {
   const tree = renderer
     .create(
-      <ResourceProvider.Provider
-        value={{ resourcePath: 'https://example.com/static/' }}
-      >
+      <ResourceProvider resourcePath="https://example.com/static/">
+        >
         <ThemeProvider>
           <NotificationBubble>Hello World</NotificationBubble>
         </ThemeProvider>
-      </ResourceProvider.Provider>
+      </ResourceProvider>
     )
     .toJSON()
   expect(tree).toMatchSnapshot()

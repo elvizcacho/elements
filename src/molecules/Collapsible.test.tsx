@@ -9,7 +9,7 @@ describe('Input component', () => {
     const tree = renderer
       .create(
         <ThemeProvider>
-          <ResourceProvider.Provider value={{ resourcePath: '' }}>
+          <ResourceProvider>
             <Collapsible
               title="title"
               hasBottomBorder={true}
@@ -18,7 +18,7 @@ describe('Input component', () => {
             >
               <p>Test child</p>
             </Collapsible>
-          </ResourceProvider.Provider>
+          </ResourceProvider>
         </ThemeProvider>
       )
       .toJSON()

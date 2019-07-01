@@ -1,37 +1,37 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import { css } from 'glamor'
-
 import Input from '../atoms/Input'
 import Calendar from '../molecules/Calendar'
 import Relative from '../atoms/Relative'
 import Absolute from '../atoms/Absolute'
 import Icon from '../atoms/Icon'
 
+interface IState {
+  date?: Date
+  showCalendar: boolean
+}
+interface IDateInputProps {
+  /** Name of the input for a form **/
+  name: string
+  /** The label of the input */
+  label?: string
+  /** The locale decides on how to render date strings. Falls back to user locale if no value is provided **/
+  locale?: string
+  /** Called when a day is selected **/
+  onChange?: (date?: Date) => void
+  /** If a date should not be a changeable **/
+  readOnly?: boolean
+  /** Set the default value which is shown on the first render **/
+  defaultValue?: Date
+  /** The placeholder for the input field */
+  placeholder?: string
+}
+
 /**
  * `DateInput` shows a calendar on click and provides to select a single day.
  */
-class DateInput extends React.Component {
-  static propTypes = {
-    /** Name of the input for a form **/
-    name: PropTypes.string.isRequired,
-    /** The label of the input */
-    label: PropTypes.string,
-    /** The locale decides on how to render date strings. Falls back to user locale if no value is provided **/
-    locale: PropTypes.string,
-    /** Called when a day is selected **/
-    onChange: PropTypes.func,
-    /** If a date should not be a changeable **/
-    readOnly: PropTypes.bool,
-    /** Set the default value which is shown on the first render **/
-    defaultValue: PropTypes.instanceOf(Date),
-    /** The placeholder for the input field */
-    placeholder: PropTypes.string,
-  }
-
+class DateInput extends Component<IDateInputProps, IState> {
   static defaultProps = {
-    onChange: () => {},
-    defaultValue: undefined,
     readOnly: false,
     placeholder: '',
   }
@@ -41,14 +41,15 @@ class DateInput extends React.Component {
     showCalendar: false,
   }
 
-  handleChange = date => {
+  handleChange = (date: Date) => {
     this.setState({ date, showCalendar: false })
-    this.props.onChange(date)
+    this.props.onChange && this.props.onChange(date)
+    this.props.onChange && this.props.onChange(date)
   }
 
   handleClear = () => {
     this.setState({ date: undefined })
-    this.props.onChange('')
+    this.props.onChange && this.props.onChange()
   }
 
   render() {

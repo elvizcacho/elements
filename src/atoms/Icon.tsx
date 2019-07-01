@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useContext } from 'react'
 import View, { IViewProps } from '../atoms/View'
-import ResourceProvider from '../behaviour/ResourceProvider'
+import { ResourceProviderContext } from '../behaviour/ResourceProvider'
 import Theme from '../behaviour/Theme'
 import { css } from 'glamor'
 
@@ -401,7 +401,7 @@ const Icon: FunctionComponent<IIconProps> = ({
     height: getSize(size),
   }
 
-  const { resourcePath } = useContext(ResourceProvider)
+  const { resourcePath } = useContext(ResourceProviderContext)
 
   loadIcon(iconName, resourcePath)
 

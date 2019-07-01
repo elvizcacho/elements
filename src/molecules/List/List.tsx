@@ -1,5 +1,5 @@
-import React, { PropsWithChildren } from 'react'
-import View from '../../atoms/View'
+import React from 'react'
+import View, { IViewProps } from '../../atoms/View'
 
 /**
  * Lists display a series of related content.
@@ -54,8 +54,6 @@ import View from '../../atoms/View'
  * </View>
  * ```
  */
-const List = (props: PropsWithChildren<{}>) => (
-  <View direction="column" {...props} />
-)
+const List = (props: IViewProps) => <View direction="column" {...props} />
 
 export default List

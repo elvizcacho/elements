@@ -117,7 +117,7 @@ interface IProps extends IValidityStates {
   /** Icon shown on the left of the input field (See `Icon` component for all possible values) **/
   icon?: IconType
   /** The name of this input field */
-  name: string
+  name?: string
   /** The label of the input */
   label?: string
   /** Type, can be: 'tel', 'number', 'text', 'url', 'email' */
@@ -146,6 +146,8 @@ interface IProps extends IValidityStates {
   maxLength?: number
   /** Called with the input field a reference */
   onInputRef?: any
+  readOnly?: boolean
+  disabled?: boolean
 }
 
 interface IValidityStates {

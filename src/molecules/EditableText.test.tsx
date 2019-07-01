@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import ReactDOM from 'react-dom'
 import EditableText from './EditableText'
 import { ColorPalette } from '@allthings/colors'
+import { shallow, mount } from 'enzyme'
+import { fromDOMNode } from 'jest-glamor-react'
 
 const EDITABLE = 'div[contentEditable]'
 const ICON = 'view'
@@ -39,7 +41,7 @@ describe('Test the editable text component', () => {
     // https://github.com/kentcdodds/jest-glamor-react#tohavestyleruleproperty-value
     // But it never get any CSS rule... Instead, let's snapshot-diff!
     // https://github.com/kentcdodds/jest-glamor-react#integration-with-snapshot-diff
-    const renderer = ui => {
+    const renderer = (ui: ReactElement) => {
       const div = document.createElement('div')
       ReactDOM.render(ui, div)
       return div.children[0]
@@ -48,7 +50,7 @@ describe('Test the editable text component', () => {
     const wrapperWithDecoration = renderer(
       <EditableText decorationColor={ICON_COLOR}>{TEXT}</EditableText>
     )
-    expect(fromDOMNode(wrapper)).toMatchDiffSnapshot(
+    ;(expect(fromDOMNode(wrapper)) as any).toMatchDiffSnapshot(
       fromDOMNode(wrapperWithDecoration)
     )
   })
