@@ -4,7 +4,6 @@ import { createTextStyles } from '../atoms/Text'
 import { color } from '../propTypes/color'
 import { color as col, lightness } from 'kewler'
 import Theme from '../behaviour/Theme'
-import { HTMLAttributes } from 'enzyme'
 
 const baseStyle = {
   position: 'relative',
@@ -78,9 +77,7 @@ function styles(
   })
 }
 
-interface IButtonProps
-  extends React.HTMLAttributes<HTMLElement>,
-    Partial<IComponentProps> {
+interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   /** If the button is used for a secondary option */
   secondary?: boolean
   /** Type of the button (deprecated) */
@@ -121,7 +118,7 @@ interface IButtonProps
  * ```
  */
 class Button extends Component<IButtonProps> {
-  handleClick = (e: SyntheticEvent<HTMLElement>) => {
+  handleClick = (e: MouseEvent) => {
     if (!this.props.disabled) {
       this.props.onClick && this.props.onClick(e)
     } else {
