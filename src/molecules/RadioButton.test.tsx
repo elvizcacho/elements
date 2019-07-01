@@ -23,7 +23,7 @@ describe('<RadioButton />', () => {
       </ThemeProvider>
     )
 
-    const input = getByDisplayValue('white')
+    const input = getByDisplayValue('white') as HTMLInputElement
     fireEvent.click(input)
 
     expect(input.checked).toBe(true)

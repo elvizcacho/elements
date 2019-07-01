@@ -1,5 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { Component, ChangeEvent, PropsWithChildren } from 'react'
 import { css } from 'glamor'
 import Absolute from '../atoms/Absolute'
 import Circle from '../atoms/Circle'
@@ -23,6 +22,26 @@ const styles = {
   }),
 }
 
+export interface IRadioButtonProps {
+  /** Background color of the form item */
+  backgroundColor?: string
+  id?: string
+  /** Set to true to controll radio button */
+  checked?: boolean
+  /** The name of this input field */
+  name?: string
+  /** Called when a radio button is clicked */
+  onChange?: (e: ChangeEvent) => void
+  /** Mark if the RadioButton is required */
+  required?: boolean
+  /** The value the checkbox will have */
+  value: string
+}
+
+interface IState {
+  checked: boolean
+}
+
 /**
  * RadioButtonSet can be used to render a set of RadioButtons to allow users to select exactly one item from a set.
  * Like gender (male / female) or sizes (s,m,l,xl)
@@ -34,28 +53,10 @@ const styles = {
  * </RadioButtonSet>
  * ```
  */
-class RadioButton extends React.Component {
-  static propTypes = {
-    /** Background color of the form item */
-    backgroundColor: PropTypes.string,
-    /** Set to true to controll radio button */
-    checked: PropTypes.bool,
-    /** Label of the radio button */
-    children: PropTypes.node,
-    /** Background color of the form item */
-    id: PropTypes.string,
-    /** reference to the input field */
-    inputRef: PropTypes.func,
-    /** The name of this input field */
-    name: PropTypes.string,
-    /** Called when a radio button is clicked */
-    onChange: PropTypes.func,
-    /** Mark if the RadioButton is required */
-    required: PropTypes.bool,
-    /** The value the checkbox will have */
-    value: PropTypes.string.isRequired,
-  }
-
+class RadioButton extends Component<
+  PropsWithChildren<IRadioButtonProps>,
+  IState
+> {
   static defaultProps = {
     required: false,
   }
@@ -66,7 +67,7 @@ class RadioButton extends React.Component {
     checked: !!this.props.checked,
   }
 
-  static getDerivedStateFromProps(props) {
+  static getDerivedStateFromProps(props: IRadioButtonProps) {
     if (props.checked === true) {
       return {
         checked: true,
@@ -80,7 +81,7 @@ class RadioButton extends React.Component {
     }
   }
 
-  handleChange = e => {
+  handleChange = (e: ChangeEvent) => {
     this.props.onChange && this.props.onChange(e)
     this.setState(({ checked }) => ({ checked: !checked }))
   }
@@ -91,7 +92,6 @@ class RadioButton extends React.Component {
       checked,
       children,
       id,
-      inputRef,
       name,
       onChange,
       value,
@@ -139,7 +139,6 @@ class RadioButton extends React.Component {
                   <input
                     id={realId}
                     type="radio"
-                    ref={inputRef}
                     name={name}
                     {...styles.radio}
                     value={value}
