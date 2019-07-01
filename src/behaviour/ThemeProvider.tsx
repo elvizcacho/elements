@@ -1,8 +1,7 @@
 import React, { FunctionComponent, createContext } from 'react'
 import { ColorPalette } from '@allthings/colors'
-import { color } from '../propTypes/color'
 
-export const defaultTheme = {
+export const defaultTheme: ITheme = {
   primary: ColorPalette.primary.blue,
   text: ColorPalette.text.primary,
   secondaryText: ColorPalette.text.secondary,
@@ -27,15 +26,7 @@ export interface ITheme {
   [key: string]: string
 }
 
-export interface IThemeProvider {
-  theme: ITheme
-  colorize: (color: string) => color
-}
-
-const ThemeContext = createContext<IThemeProvider>({
-  theme: defaultTheme,
-  colorize: color => color,
-})
+const ThemeContext = createContext<ITheme>(defaultTheme)
 export const ThemeConsumer = ThemeContext.Consumer
 
 /**

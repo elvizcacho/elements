@@ -1,18 +1,17 @@
 import React, { FunctionComponent } from 'react'
-import { ThemeConsumer, ITheme } from './ThemeProvider'
-import { color } from '../propTypes/color'
+import { ThemeConsumer, ITheme, defaultTheme } from './ThemeProvider'
 
 type Colorizor = (color: string) => string
 
 const createColorizor = (theme: ITheme): Colorizor => (color: string) =>
-  theme[color] || color
+  theme[color] || defaultTheme[color] || color
 
 type ThemeChildrenType = ({
   theme,
   colorize,
 }: {
   theme: ITheme
-  colorize: (color: string) => color
+  colorize: (color: string) => string
 }) => React.ReactNode
 
 interface IThemeProps {
