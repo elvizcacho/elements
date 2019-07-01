@@ -1,4 +1,4 @@
-import React, { Component, SyntheticEvent } from 'react'
+import React, { Component, MouseEvent } from 'react'
 import { css } from 'glamor'
 import { createTextStyles } from '../atoms/Text'
 import { color } from '../propTypes/color'
@@ -77,9 +77,10 @@ function styles(
   })
 }
 
-interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+interface IButtonProps {
   /** If the button is used for a secondary option */
   secondary?: boolean
+  onClick?: (event: MouseEvent) => void
   /** Type of the button (deprecated) */
   type?: 'reset' | 'button' | 'submit'
   color?: color
@@ -118,14 +119,6 @@ interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
  * ```
  */
 class Button extends Component<IButtonProps> {
-  handleClick = (e: MouseEvent) => {
-    if (!this.props.disabled) {
-      this.props.onClick && this.props.onClick(e)
-    } else {
-      e.preventDefault()
-    }
-  }
-
   render() {
     const {
       children,
@@ -134,6 +127,7 @@ class Button extends Component<IButtonProps> {
       backgroundColor,
       color = 'white',
       secondary = false,
+      onClick,
       name,
       ...restProps
     } = this.props
@@ -154,7 +148,7 @@ class Button extends Component<IButtonProps> {
             {...restProps}
             {...createTextStyles({ size: 'l' })}
             name={name || type}
-            onClick={this.handleClick}
+            onClick={disabled ? undefined : onClick}
           >
             {children}
           </button>

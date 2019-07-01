@@ -9,7 +9,7 @@ import View from '../atoms/View'
  * <ThemeProvider>
  *  <View style={{ background: '#bada55', padding: 15 }}>
  *    <Relative>
- *      <Logo size={80} onClick={this.handleClick} />
+ *      <Logo size={80} />
  *      <CountIndicator top="55" left="50" count={this.state.count} />
  *    </Relative>
  *  </View>

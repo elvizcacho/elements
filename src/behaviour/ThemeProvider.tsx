@@ -1,5 +1,6 @@
 import React, { FunctionComponent, createContext } from 'react'
 import { ColorPalette } from '@allthings/colors'
+import { color } from '../propTypes/color'
 
 export const defaultTheme = {
   primary: ColorPalette.primary.blue,
@@ -26,7 +27,15 @@ export interface ITheme {
   [key: string]: string
 }
 
-const ThemeContext = createContext<ITheme>(defaultTheme)
+export interface IThemeProvider {
+  theme: ITheme
+  colorize: (color: string) => color
+}
+
+const ThemeContext = createContext<IThemeProvider>({
+  theme: defaultTheme,
+  colorize: color => color,
+})
 export const ThemeConsumer = ThemeContext.Consumer
 
 /**
@@ -37,7 +46,7 @@ export const ThemeConsumer = ThemeContext.Consumer
  **/
 const ThemeProvider: FunctionComponent<{ theme?: Partial<ITheme> }> = ({
   children,
-  theme = {},
+  theme = defaultTheme,
 }) => (
   <ThemeConsumer>
     {contextTheme => (
@@ -49,33 +58,3 @@ const ThemeProvider: FunctionComponent<{ theme?: Partial<ITheme> }> = ({
 )
 
 export default ThemeProvider
-
-type mapThemeToPropsType = (theme: ITheme, props: any) => any
-
-function createThemeConsumer<T>(
-  mapThemeToProps: mapThemeToPropsType,
-  WrappedComponent: React.ComponentType<T>,
-  props: Omit<T, 'theme'>
-) {
-  return (theme: ITheme) => {
-    const extraProps = !mapThemeToProps
-      ? { theme }
-      : mapThemeToProps(theme, props)
-
-    return <WrappedComponent {...props} {...extraProps} />
-  }
-}
-
-export function withTheme(mapThemeToProps: mapThemeToPropsType) {
-  return function<T extends { theme: ITheme }>(
-    WrappedComponent: React.ComponentType<T>
-  ): React.ComponentType<Omit<T, 'theme'>> {
-    return function(props: Omit<T, 'theme'>) {
-      return (
-        <ThemeConsumer>
-          {createThemeConsumer<T>(mapThemeToProps, WrappedComponent, props)}
-        </ThemeConsumer>
-      )
-    }
-  }
-}

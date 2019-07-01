@@ -1,12 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { css } from 'glamor'
 
 import Text from '../atoms/Text'
 import View from '../atoms/View'
 import Theme from '../behaviour/Theme'
 
-const styles = backgroundColor =>
+const styles = (backgroundColor: string) =>
   css({
     backgroundColor,
     display: 'inline-block',
@@ -28,7 +27,7 @@ const styles = backgroundColor =>
  * </ThemeProvider>
  * ```
  */
-const Pill = ({ color = 'primary', label, ...props }) => {
+const Pill = ({ color = 'primary', label, ...props }: IPillProps) => {
   return (
     <Theme>
       {({ colorize }) => (
@@ -42,11 +41,11 @@ const Pill = ({ color = 'primary', label, ...props }) => {
   )
 }
 
-Pill.propTypes = {
+interface IPillProps {
   /** Text that shows on the pill **/
-  label: PropTypes.string.isRequired,
+  label: string
   /** Themed color of the pill **/
-  color: PropTypes.string,
+  color?: string
 }
 
 export default Pill

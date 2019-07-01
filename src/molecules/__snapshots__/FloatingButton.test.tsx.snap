@@ -43,7 +43,7 @@ exports[`Floating button renders without error 1`] = `
 
 .css-3:hover,
 [data-css-3]:hover {
-  background: #227dbf;
+  background: #3598db;
 }
 
 .css-5,
@@ -95,9 +95,9 @@ exports[`Floating button renders without error 1`] = `
     }
   />
   <div
-    data-css-3=""
     data-css-7=""
     data-css-6=""
+    data-css-3=""
   >
     <button
       data-css-0=""

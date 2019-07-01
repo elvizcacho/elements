@@ -8,6 +8,20 @@ describe('Button component', () => {
     const tree = renderer.create(<Button>Hi</Button>).toJSON()
     expect(tree).toMatchSnapshot()
   })
+  test('Renders a callback anything', () => {
+    const tree = renderer.create(<Button onClick={_ => _}>Hi</Button>).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+  test('doesnt render the callback if disabled', () => {
+    const tree = renderer
+      .create(
+        <Button disabled onClick={_ => _}>
+          Hi
+        </Button>
+      )
+      .toJSON()
+    expect(tree).toMatchSnapshot()
+  })
   test('Renders in different colors', () => {
     const tree = renderer
       .create(
