@@ -1,13 +1,16 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import CardButton from './CardButton'
+import { ThemeProvider } from '../..'
 
 test('CardButton renders without error', () => {
   const tree = renderer
     .create(
-      <CardButton onClick={_ => _} backgroundColor="primary">
-        Click me
-      </CardButton>
+      <ThemeProvider>
+        <CardButton onClick={_ => _} backgroundColor="primary">
+          Click me
+        </CardButton>
+      </ThemeProvider>
     )
     .toJSON()
   expect(tree).toMatchSnapshot()

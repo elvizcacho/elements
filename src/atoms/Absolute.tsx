@@ -2,7 +2,7 @@ import React from 'react'
 import View, { IViewProps } from '../atoms/View'
 import { css } from 'glamor'
 
-const absolute = ({ left, right, top, bottom }: IProps) =>
+const absolute = ({ left, right, top, bottom }: IAbsoluteProps) =>
   css({
     position: 'absolute',
     top,
@@ -11,7 +11,7 @@ const absolute = ({ left, right, top, bottom }: IProps) =>
     bottom,
   })
 
-interface IProps {
+export interface IAbsoluteProps {
   /** Top offset */
   top?: string | number
   /** Bottom offset */
@@ -29,7 +29,7 @@ const Absolute = ({
   bottom,
   children,
   ...props
-}: IProps & IViewProps) => (
+}: IAbsoluteProps & IViewProps) => (
   <View {...absolute({ top, left, right, bottom })} {...props}>
     {children}
   </View>

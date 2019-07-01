@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { css } from 'glamor'
 import CardButton from './Card/CardButton'
 import CardFooter from './Card/CardFooter'
 import Text from '../atoms/Text'
 import View from '../atoms/View'
-import PropTypes from 'prop-types'
 import { ColorPalette } from '@allthings/colors'
 
 const styles = {
@@ -41,15 +40,7 @@ export interface IConfirmDialogProps {
   onSuccess: () => void
 }
 
-class ConfirmDialog extends React.Component<IConfirmDialogProps> {
-  static propTypes = {
-    acceptButtonLabel: PropTypes.string.isRequired,
-    cancelButtonLabel: PropTypes.string.isRequired,
-    message: PropTypes.node.isRequired,
-    onCancel: PropTypes.func.isRequired,
-    onSuccess: PropTypes.func.isRequired,
-  }
-
+class ConfirmDialog extends Component<IConfirmDialogProps> {
   wrapperRef = React.createRef<HTMLDivElement>()
 
   componentDidMount() {
@@ -104,16 +95,11 @@ class ConfirmDialog extends React.Component<IConfirmDialogProps> {
             {message}
           </Text>
           <CardFooter>
-            <CardButton
-              backgroundColor={ColorPalette.white}
-              color={ColorPalette.greyIntense}
-              onClick={onCancel}
-            >
+            <CardButton backgroundColor={ColorPalette.white} onClick={onCancel}>
               <Text>{cancelButtonLabel}</Text>
             </CardButton>
             <CardButton
               backgroundColor={ColorPalette.white}
-              color={ColorPalette.greyIntense}
               onClick={onSuccess}
               autoFocus
             >

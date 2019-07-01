@@ -124,7 +124,7 @@ class Button extends Component<IButtonProps> {
       children,
       type = 'button',
       disabled = false,
-      backgroundColor,
+      backgroundColor = 'primary',
       color = 'white',
       secondary = false,
       onClick,
@@ -134,12 +134,12 @@ class Button extends Component<IButtonProps> {
 
     return (
       <Theme>
-        {({ theme: { primary }, colorize }) => (
+        {({ colorize }) => (
           <button
             type={type}
             {...css(
               styles(
-                colorize(backgroundColor || primary),
+                colorize(backgroundColor),
                 colorize(color),
                 disabled,
                 secondary

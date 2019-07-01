@@ -1,8 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Circle from '../atoms/Circle'
 import Text from '../atoms/Text'
-import Absolute from '../atoms/Absolute'
+import Absolute, { IAbsoluteProps } from '../atoms/Absolute'
 import Theme from '../behaviour/Theme'
 
 /**
@@ -18,12 +17,16 @@ import Theme from '../behaviour/Theme'
  * </ThemeProvider>
  * ```
  **/
-const CountIndicator = ({ count, ...props }) =>
+const CountIndicator = ({
+  count,
+  color = 'warn',
+  ...props
+}: ICountIndicatorProps) =>
   count === 0 ? null : (
     <Theme>
       {({ colorize }) => (
         <Absolute {...props}>
-          <Circle color={colorize(props.color)} radius={18}>
+          <Circle color={color ? colorize(color) : color} radius={18}>
             <Text size="xs" color="white">
               {count > 9 ? '9+' : count}
             </Text>
@@ -33,23 +36,11 @@ const CountIndicator = ({ count, ...props }) =>
     </Theme>
   )
 
-CountIndicator.propTypes = {
+interface ICountIndicatorProps extends IAbsoluteProps {
   /** Number to display */
-  count: PropTypes.number.isRequired,
-  /** Top offset */
-  top: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  /** Bottom offset */
-  bottom: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  /** Left offset */
-  left: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  /** Right offset */
-  right: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  count: number
   /** Color */
-  color: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-}
-
-CountIndicator.defaultProps = {
-  color: 'warn',
+  color?: string
 }
 
 export default CountIndicator

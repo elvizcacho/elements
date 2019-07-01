@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react'
-import View from '../../atoms/View'
+import View, { IViewProps } from '../../atoms/View'
 import { css } from 'glamor'
 import { color as col, lightness } from 'kewler'
 import Theme from '../../behaviour/Theme'
@@ -22,8 +22,9 @@ const style = (backgroundColor: string) =>
     },
   })
 
-interface ICardButtonProps extends Partial<IComponentProps> {
+interface ICardButtonProps extends IViewProps {
   backgroundColor?: color
+  autoFocus?: boolean
 }
 
 /**
