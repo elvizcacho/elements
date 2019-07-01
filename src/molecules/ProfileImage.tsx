@@ -41,9 +41,9 @@ const sizeMap = {
   big: 225,
 }
 
-type sizeType = 'xs' | 's' | 'm' | 'l' | number
+export type ProfileImageSizeType = 'xs' | 's' | 'm' | 'l' | number
 
-export const resolveSize = (size: sizeType) =>
+export const resolveSize = (size: ProfileImageSizeType) =>
   typeof size === 'number' ? size : sizeMap[size]
 
 const DefaultProfileImage = ({ width, height }: IDimensions) => {
@@ -76,7 +76,7 @@ interface IDimensions {
 interface IProfileImageProps {
   image?: string
   showBorder?: boolean
-  size?: sizeType
+  size?: ProfileImageSizeType
 }
 
 /**

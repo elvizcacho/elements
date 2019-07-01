@@ -47,7 +47,7 @@ exports[`Test the editable text component should be editable 1`] = `
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: text;
+  color: #333333;
 }
 
 .css-5,
@@ -82,8 +82,8 @@ exports[`Test the editable text component should be editable 1`] = `
       <div
         contentEditable={true}
         data-css-1=""
-        data-css-5=""
         data-css-4=""
+        data-css-5=""
         onKeyPress={[Function]}
         spellCheck={false}
         suppressContentEditableWarning={true}
@@ -164,7 +164,7 @@ Snapshot Diff:
     font-size: 14px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: text;
+    color: #333333;
   }
   
 - .css-5,
@@ -202,10 +202,10 @@ Snapshot Diff:
     <div
       contenteditable="true"
 -     data-css-1=""
-      data-css-5=""
 -     data-css-4=""
-+     data-css-3=""
 +     data-css-2=""
+      data-css-5=""
++     data-css-3=""
       spellcheck="false"
     >
       Edit me!

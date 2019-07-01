@@ -1,13 +1,15 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import Text from '../atoms/Text'
-import ProfileImage, { resolveSize } from '../molecules/ProfileImage'
+import ProfileImage, {
+  resolveSize,
+  ProfileImageSizeType,
+} from '../molecules/ProfileImage'
 import View from '../atoms/View'
 import { css } from 'glamor'
 
 const TIGHTNESS_FACTOR = 3
 
-const imageStyle = size =>
+const imageStyle = (size: ProfileImageSizeType) =>
   css({
     border: '1px solid #fff',
     borderWidth: size > 30 ? 2 : 1,
@@ -16,12 +18,12 @@ const imageStyle = size =>
   })
 
 const ProfileImageStack = ({
-  size = 'medium',
-  showBorder,
+  size = 'm',
+  showBorder = false,
   images = [],
   moreText,
   ...props
-}) => (
+}: IProfileImageStackProps) => (
   <View
     alignV="center"
     direction="row-reverse"
@@ -33,11 +35,15 @@ const ProfileImageStack = ({
     {...props}
   >
     {moreText && (
-      <Text color="grey" size={size} style={{ paddingLeft: 5 }}>
+      <Text
+        color="grey"
+        size={typeof size !== 'number' ? size : 'm'}
+        style={{ paddingLeft: 5 }}
+      >
         {moreText}
       </Text>
     )}
-    {images.map((image, i) => (
+    {images.map(image => (
       <ProfileImage
         key={image}
         size={size}
@@ -48,16 +54,11 @@ const ProfileImageStack = ({
     ))}
   </View>
 )
-
-ProfileImageStack.propTypes = {
-  children: PropTypes.node,
-  images: PropTypes.arrayOf(PropTypes.string),
-  moreText: PropTypes.string,
-  showBorder: PropTypes.bool,
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf(['xs', 's', 'm', 'l']),
-    PropTypes.number,
-  ]),
+interface IProfileImageStackProps {
+  images: string[]
+  moreText?: string
+  showBorder?: boolean
+  size?: ProfileImageSizeType
 }
 
 export default ProfileImageStack
