@@ -19,7 +19,8 @@ describe('Calendar', () => {
     )
 
     const found = testInstance.root.find(
-      el => el.props.className && el.props.className.indexOf('blocked') !== -1
+      (el: any) =>
+        el.props.className && el.props.className.indexOf('blocked') !== -1
     )
 
     expect(found.children[0].children[0]).toEqual(String(new Date().getDate()))

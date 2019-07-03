@@ -6,7 +6,7 @@ function createNodeMock() {
   return {
     value: '',
     length: 0,
-    setCustomValidity: _ => _,
+    setCustomValidity: (_: any) => _,
   }
 }
 

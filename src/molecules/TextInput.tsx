@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Theme from '../behaviour/Theme'
 import ListItem from './List/ListItem'
-import Input from '../atoms/Input'
-import PropTypes from 'prop-types'
+import Input, { IInputProps } from '../atoms/Input'
 
 /**
  * TextInputs are used to allow users to enter information like names, numbers, urls, email addresses or passwords.
@@ -12,19 +11,15 @@ import PropTypes from 'prop-types'
  * <TextInput name="inquiry" lines={5} placeholder="Your question" maxLength={255} minLength={50} />
  * ```
  */
-class TextInput extends React.Component {
-  static propTypes = {
-    ...Input.propTypes,
-    /** Background color of the form item */
-    backgroundColor: PropTypes.string,
-  }
-
+class TextInput extends Component<
+  IInputProps & { backgroundColor?: string } & React.HTMLAttributes<HTMLElement>
+> {
   render() {
-    const { backgroundColor, ...props } = this.props
+    const { backgroundColor = 'background', ...props } = this.props
 
     return (
       <Theme>
-        {({ theme, colorize }) => (
+        {({ colorize }) => (
           <ListItem padded={false} backgroundColor={colorize(backgroundColor)}>
             <Input {...props} />
           </ListItem>

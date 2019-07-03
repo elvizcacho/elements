@@ -1,7 +1,10 @@
 import React, { Component, ImgHTMLAttributes } from 'react'
 import View, { IViewProps } from '../atoms/View'
 import { css } from 'glamor'
-import ResouceProvider, { ResourceType } from '../behaviour/ResourceProvider'
+import {
+  ResourceType,
+  ResourceProviderContext,
+} from '../behaviour/ResourceProvider'
 
 interface IImage {
   /** Alternative image to use */
@@ -76,7 +79,7 @@ export default class ImageElement extends Component<IImageProps, {}> {
     const { srcFallback, src, position, size, ...props } = this.props
 
     return (
-      <ResouceProvider.Consumer>
+      <ResourceProviderContext.Consumer>
         {({ resourcePath }: ResourceType) => (
           <View
             {...css({
@@ -91,7 +94,7 @@ export default class ImageElement extends Component<IImageProps, {}> {
             {...props}
           />
         )}
-      </ResouceProvider.Consumer>
+      </ResourceProviderContext.Consumer>
     )
   }
 }

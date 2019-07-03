@@ -5,6 +5,8 @@ import renderer from 'react-test-renderer'
 import { FormattedMessage } from 'react-intl'
 import CDNIntlProvider from './CDNIntlProvider'
 import ResourceProvider from './ResourceProvider'
+import { shallow, mount } from 'enzyme'
+import fetch from 'jest-fetch-mock'
 
 describe('Check the CDNIntlProvider component', () => {
   beforeEach(fetch.resetMocks)
@@ -13,7 +15,6 @@ describe('Check the CDNIntlProvider component', () => {
     fetch.mockResponseOnce(JSON.stringify({ test: 'Hallo Welt' }))
 
     const testRenderer = await new Promise(resolve => {
-      let myRenderer
       function onDone() {
         resolve(myRenderer)
       }
@@ -30,7 +31,7 @@ describe('Check the CDNIntlProvider component', () => {
         </ResourceProvider>
       )
 
-      myRenderer = renderer.create(nbm)
+      const myRenderer = renderer.create(nbm)
     })
 
     expect(testRenderer).toMatchSnapshot()

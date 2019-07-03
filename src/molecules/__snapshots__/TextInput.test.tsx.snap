@@ -5,7 +5,7 @@ exports[`TextInput renders 1`] = `
 [data-css-0] {
   min-height: 50px;
   border-bottom: 1px solid #ecf0f1;
-  background-color: white;
+  background-color: #f3f5f7;
 }
 
 .css-1,
@@ -113,6 +113,13 @@ exports[`TextInput renders 1`] = `
   color: #626262;
 }
 
+.css-9,
+[data-css-9] {
+  width: 16px;
+  height: 16px;
+  fill: lightGrey;
+}
+
 <div
   data-css-0=""
   data-css-1=""
@@ -167,14 +174,7 @@ exports[`TextInput renders 1`] = `
           }
         }
         data-css-7=""
-        style={
-          Object {
-            "fill": "lightGrey",
-            "height": 16,
-            "stroke": false,
-            "width": 16,
-          }
-        }
+        data-css-9=""
       />
     </div>
   </div>

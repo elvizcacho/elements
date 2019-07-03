@@ -109,7 +109,7 @@ type validityStateType =
   | 'typeMismatch'
   | 'valueMissing'
 
-interface IProps extends IValidityStates {
+export interface IInputProps extends IValidityStates {
   /** The default value to put into the component, without making it controlled */
   defaultValue?: string
   /** Indicates that this field is required */
@@ -220,7 +220,7 @@ const Input = ({
   valueMissing,
   icon,
   ...props
-}: IProps & React.HTMLAttributes<HTMLElement>) => {
+}: IInputProps & React.HTMLAttributes<HTMLElement>) => {
   const isTextArea = lines !== 1
   const [value, setValue] = useState('')
   const [length, setLength] = useState((props.value && props.value.length) || 0)

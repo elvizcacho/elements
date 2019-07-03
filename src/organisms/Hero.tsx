@@ -1,14 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { Component, PropsWithChildren } from 'react'
 import { css } from 'glamor'
 import View from '../atoms/View'
 import { createMQ } from '../behaviour/Responsive'
 import { colorCode } from '../propTypes/color'
-import { withTheme } from '../behaviour/ThemeProvider'
 import Inset from '../atoms/Inset'
 import Text from '../atoms/Text'
+import Theme from '../behaviour/Theme'
 
-const heroStyle = background =>
+const heroStyle = (background: string) =>
   css({
     overflowY: 'hidden',
     overflowX: 'hidden',
@@ -39,6 +38,15 @@ const styles = {
   }),
 }
 
+interface IHeroProps {
+  /** Color of the hero, will be primary color by default */
+  color: string
+  /** Text that will be announced with the Hero */
+  text: string
+  /** URL to image that will be rendered */
+  img: string
+}
+
 /**
  * Heros are used to give users an introduction and quickly explain features.
  *
@@ -52,48 +60,37 @@ const styles = {
  * </ThemeProvider>
  * ```
  */
-class Hero extends React.Component {
-  static propTypes = {
-    /** Color of the hero, will be primary color by default */
-    color: PropTypes.string,
-    /** Text that will be announced with the Hero */
-    text: PropTypes.string,
-    /** Additional children, try to avoid */
-    children: PropTypes.node,
-    /** URL to image that will be rendered */
-    img: PropTypes.string,
-  }
-
+class Hero extends Component<PropsWithChildren<IHeroProps>> {
   static defaultProps = {
     color: 'grey',
   }
 
   render() {
-    const { img, text, children, color, ...props } = this.props
+    const { img, text, children, color = 'primary', ...props } = this.props
     return (
-      <View
-        direction="row"
-        alignV="center"
-        alignH="space-around"
-        {...heroStyle(color)}
-        {...props}
-      >
-        <Inset direction="column" alignH="start" {...styles.textContainer}>
-          <Text color="white" size="l" strong>
-            {text}
-          </Text>
-          {children}
-        </Inset>
-        <View {...styles.heroImageContainer}>
-          <img {...styles.heroImage} src={img} />
-        </View>
-      </View>
+      <Theme>
+        {({ colorize }) => (
+          <View
+            direction="row"
+            alignV="center"
+            alignH="space-around"
+            {...heroStyle(colorize(color))}
+            {...props}
+          >
+            <Inset direction="column" alignH="start" {...styles.textContainer}>
+              <Text color="white" size="l" strong>
+                {text}
+              </Text>
+              {children}
+            </Inset>
+            <View {...styles.heroImageContainer}>
+              <img {...styles.heroImage} src={img} />
+            </View>
+          </View>
+        )}
+      </Theme>
     )
   }
 }
 
-const mapThemeToProps = theme => ({
-  color: theme.primary,
-})
-
-export default withTheme(mapThemeToProps)(Hero)
+export default Hero

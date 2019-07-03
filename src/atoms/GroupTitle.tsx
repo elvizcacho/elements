@@ -1,19 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { PropsWithChildren } from 'react'
 
 import Inset from '../atoms/Inset'
 import Text from '../atoms/Text'
 
-const GroupTitle = ({ children }) => (
+const GroupTitle = ({ children }: PropsWithChildren<{}>) => (
   <Inset horizontal vertical>
     <Text size="l" strong color="titleColor">
       {children}
     </Text>
   </Inset>
 )
-
-GroupTitle.propTypes = {
-  children: PropTypes.node,
-}
 
 export default GroupTitle

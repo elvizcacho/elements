@@ -1,6 +1,7 @@
 import React from 'react'
 import HorizontalView from './HorizontalView'
 import Text from '../atoms/Text'
+import { shallow } from 'enzyme'
 
 describe('HorizontalView behaviors', () => {
   it('should render non-arrays', () => {

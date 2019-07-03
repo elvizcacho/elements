@@ -1,7 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import View from '../atoms/View'
+import React, { Component, ReactNode } from 'react'
+import View, { IViewProps } from '../atoms/View'
 import { css } from 'glamor'
+
+interface IHorizontalViewProps {
+  children: ReactNode[]
+}
+interface IState {
+  children?: ReactNode[]
+  currentChild: number
+  nextChildren?: ReactNode[]
+  waitForTransitionEnd: boolean
+}
 
 /**
  * HorizontalView is used to Views in a horizontal row, and will do smooth transitions between them.
@@ -46,31 +55,30 @@ import { css } from 'glamor'
  * </HorizontalView>
  * ```
  **/
-class HorizontalView extends React.Component {
-  static propTypes = {
-    children: PropTypes.array.isRequired,
-  }
-
-  constructor(props, context) {
-    super(props, context)
+class HorizontalView extends Component<
+  IViewProps & IHorizontalViewProps,
+  IState
+> {
+  constructor(props: IHorizontalViewProps) {
+    super(props)
 
     const children = props.children
-    const currentChild = children.length
+    const currentChild = React.Children.count(children)
 
     this.state = {
       children,
       currentChild,
-      nextChildren: null,
+      nextChildren: undefined,
       waitForTransitionEnd: false,
     }
   }
 
   static getDerivedStateFromProps(
-    { children: nextProps },
-    { children: previousState }
+    { children: nextProps }: IHorizontalViewProps,
+    { children: previousState }: IState
   ) {
     const [oldChildren, nextChildren] = [previousState, nextProps].map(
-      children => children.filter(child => React.isValidElement(child))
+      (children = []) => children.filter(child => React.isValidElement(child))
     )
 
     return nextChildren.length < oldChildren.length
@@ -89,7 +97,7 @@ class HorizontalView extends React.Component {
     if (this.state.waitForTransitionEnd) {
       this.setState({
         children: this.state.nextChildren,
-        nextChildren: null,
+        nextChildren: undefined,
         waitForTransitionEnd: false,
       })
     }
@@ -112,7 +120,7 @@ class HorizontalView extends React.Component {
           onTransitionEnd={this.handleTransitionEnd}
           {...props}
         >
-          {React.Children.map(children, (child, i) => (
+          {React.Children.map(children, (child: ReactNode, i: number) => (
             <View
               // eslint-disable-next-line
               key={i}

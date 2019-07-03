@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { Fragment } from 'react'
+import React, { Fragment, Component } from 'react'
 import { IntlProvider } from 'react-intl'
 
 export const loadLanguage = async (
@@ -37,23 +37,7 @@ interface IState {
   messages?: object
 }
 
-class CDNIntlProvider extends React.Component<IProps, IState> {
-  static propTypes = {
-    children: PropTypes.node,
-    /** Locale you like to get, EN_us, DE_de */
-    locale: PropTypes.string.isRequired,
-    /** Optionally pass messages. This will prevent initial loading. */
-    messages: PropTypes.object,
-    /** Called when new languages got loaded */
-    onDone: PropTypes.func,
-    /** The project ID loading the langauges for */
-    project: PropTypes.string.isRequired,
-    /** Stage, can be production and staging */
-    stage: PropTypes.oneOf(['prerelease', 'production', 'staging']),
-    /** "Default" by default. Can be any allowed variation string.  */
-    variation: PropTypes.string,
-  }
-
+class CDNIntlProvider extends Component<IProps, IState> {
   static defaultProps = defaultProps
 
   static contextTypes = {
