@@ -35,6 +35,7 @@ import FilterStory from './FilterStory'
 import ButtonStory from './ButtonStory'
 import CheckboxStory from './CheckboxStory'
 import ProfileImageStackStory from './ProfileImageStackStory'
+import ButtonGroup from '../src/molecules/ButtonGroup'
 
 storiesOf('ProfleImage', module)
   .addDecorator(createViewportDecorator())
@@ -76,9 +77,12 @@ storiesOf('Button', module)
       <Button>Hello</Button>
     </ThemeProvider>
   ))
-  .add('in progress', () => (
+  .add('ButtonGroup', () => (
     <ThemeProvider>
-      <Button inProgress>Hello</Button>
+      <ButtonGroup>
+        <Button secondary>Invite person</Button>
+        <Button>Invite dog</Button>
+      </ButtonGroup>
     </ThemeProvider>
   ))
 storiesOf('FloatingButton', module)
