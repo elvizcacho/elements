@@ -1,6 +1,7 @@
 yarn-error.log
 node_modules
 build
+dist
 docs/elements
 .eslintcache
 .cache
