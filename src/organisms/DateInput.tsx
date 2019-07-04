@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { css } from 'glamor'
 import Input from '../atoms/Input'
-import Calendar from '../molecules/Calendar'
+import Calendar, { ICalendarProps } from '../molecules/Calendar'
 import Relative from '../atoms/Relative'
 import Absolute from '../atoms/Absolute'
 import Icon from '../atoms/Icon'
@@ -10,7 +10,7 @@ interface IState {
   date?: Date
   showCalendar: boolean
 }
-interface IDateInputProps {
+interface IDateInputProps extends ICalendarProps {
   /** Name of the input for a form **/
   name: string
   /** The label of the input */
@@ -18,7 +18,7 @@ interface IDateInputProps {
   /** The locale decides on how to render date strings. Falls back to user locale if no value is provided **/
   locale?: string
   /** Called when a day is selected **/
-  onChange?: (date?: Date) => void
+  onChange?: (date?: Date | Date[]) => void
   /** If a date should not be a changeable **/
   readOnly?: boolean
   /** Set the default value which is shown on the first render **/
@@ -41,8 +41,8 @@ class DateInput extends Component<IDateInputProps, IState> {
     showCalendar: false,
   }
 
-  handleChange = (date: Date) => {
-    this.setState({ date, showCalendar: false })
+  handleChange = (date: Date | Date[]) => {
+    this.setState({ date: date as Date, showCalendar: false })
     this.props.onChange && this.props.onChange(date)
     this.props.onChange && this.props.onChange(date)
   }

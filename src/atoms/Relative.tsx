@@ -31,7 +31,7 @@ const Relative: FunctionComponent<IRelativeProps> = ({
   bottom,
   children,
   ...props
-}: IRelativeProps) => (
+}) => (
   <View {...relative({ top, left, right, bottom })} {...props}>
     {children}
   </View>
