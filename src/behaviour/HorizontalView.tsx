@@ -105,7 +105,8 @@ class HorizontalView extends Component<
 
   render() {
     const { currentChild, children } = this.state
-    const { children: propsChildren, ...props } = this.props
+    const props = { ...this.props }
+    delete props.children
     const translateX = (currentChild - 1) * -100
 
     return (

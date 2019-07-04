@@ -7,10 +7,10 @@ import { withTheme } from '../../behaviour/ThemeProvider'
 
 class SwitchListItem extends React.Component {
   static propTypes = {
-    optionKey: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
-    isActive: PropTypes.bool,
-    onClick: PropTypes.func.isRequired,
+    optionKey: string.isRequired,
+    value: string.isRequired,
+    isActive: boolean,
+    onClick: () => void.isRequired,
     children: PropTypes.node,
     theme: PropTypes.object.isRequired,
   }

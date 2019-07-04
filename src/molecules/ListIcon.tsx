@@ -1,9 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Icon from '../atoms/Icon'
+import React, { Component } from 'react'
+import Icon, { IconType } from '../atoms/Icon'
 import Circle from '../atoms/Circle'
 import { color } from '../propTypes/color'
-import { withTheme } from '../behaviour/ThemeProvider'
+import Theme from '../behaviour/Theme'
+
+interface IListIconProps {
+  name: IconType
+  iconColor?: color
+  backgroundColor?: color
+}
 
 /**
  * ListIcons are used to display icons in a list.
@@ -18,26 +23,23 @@ import { withTheme } from '../behaviour/ThemeProvider'
  * </ResourceProvider>
  * ```
  */
-class ListIcon extends React.Component {
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    iconColor: color,
-    backgroundColor: color,
-  }
-
+class ListIcon extends Component<IListIconProps> {
   render() {
-    const { name, backgroundColor, iconColor } = this.props
+    const {
+      name,
+      backgroundColor = 'primary',
+      iconColor = 'textOnBackground',
+    } = this.props
     return (
-      <Circle color={backgroundColor} fill height={40} width={40}>
-        <Icon color={iconColor} size="s" name={name} />
-      </Circle>
+      <Theme>
+        {({ colorize }) => (
+          <Circle color={colorize(backgroundColor)} fill radius={40}>
+            <Icon color={iconColor} size="s" name={name} />
+          </Circle>
+        )}
+      </Theme>
     )
   }
 }
 
-const mapThemeToProps = theme => ({
-  backgroundColor: theme.primary,
-  iconColor: theme.textOnBackground,
-})
-
-export default withTheme(mapThemeToProps)(ListIcon)
+export default ListIcon

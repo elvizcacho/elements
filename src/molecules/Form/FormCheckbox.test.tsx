@@ -1,5 +1,6 @@
 import React from 'react'
-import { render, fireEvent } from 'react-testing-library'
+import { render, fireEvent } from '@testing-library/react'
+import { mount } from 'enzyme'
 
 import FormCheckbox from './FormCheckbox'
 import ThemeProvider from '../../behaviour/ThemeProvider'
@@ -58,10 +59,10 @@ describe('Test the FormCheckbox component', () => {
 
     // a click shouldn't change 'checked'
     fireEvent.click(getByLabelText('label'))
-    expect(getByLabelText('label').checked).toBe(true)
+    expect((getByLabelText('label') as HTMLInputElement).checked).toBe(true)
     expect(handleChange).toBeCalled()
 
     rerender(renderCheckboxWithChecked(false))
-    expect(getByLabelText('label').checked).toBe(false)
+    expect((getByLabelText('label') as HTMLInputElement).checked).toBe(false)
   })
 })

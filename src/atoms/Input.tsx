@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment } from 'react'
+import React, { useEffect, useState, Fragment, AllHTMLAttributes } from 'react'
 import View from '../atoms/View'
 import { css } from 'glamor'
 import Relative from '../atoms/Relative'
@@ -111,7 +111,7 @@ type validityStateType =
 
 export interface IInputProps extends IValidityStates {
   /** The default value to put into the component, without making it controlled */
-  defaultValue?: string
+  defaultValue?: string | string[]
   /** Indicates that this field is required */
   required?: boolean
   /** Icon shown on the left of the input field (See `Icon` component for all possible values) **/
@@ -130,10 +130,11 @@ export interface IInputProps extends IValidityStates {
     | 'password'
     | 'date'
     | 'datetime-local'
+    | string
   /** Called, when the user changes something */
   onChange?: any
   /** The value, makes this component a controlled component */
-  value?: string
+  value?: string | string[] | number
   /** Can only be used with type=text. Increase to enable multi-line input */
   lines?: number
   /** Used when there is an icon to the right of input field */
@@ -220,7 +221,7 @@ const Input = ({
   valueMissing,
   icon,
   ...props
-}: IInputProps & React.HTMLAttributes<HTMLElement>) => {
+}: IInputProps & AllHTMLAttributes<HTMLElement>) => {
   const isTextArea = lines !== 1
   const [value, setValue] = useState('')
   const [length, setLength] = useState((props.value && props.value.length) || 0)
@@ -263,7 +264,7 @@ const Input = ({
       onInputRef && onInputRef(input)
       setValidity(input, customValidity)
     }
-  })
+  }, [isTextArea, textareaRef, inputRef, onInputRef, customValidity])
 
   return (
     <Relative style={{ width: '100%' }}>

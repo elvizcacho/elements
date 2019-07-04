@@ -6,7 +6,7 @@ exports[`Test the FormCheckbox component should tick it 1`] = `
   padding: 10px 15px;
   min-height: 50px;
   border-bottom: 1px solid #ecf0f1;
-  background-color: white;
+  background-color: darkMarco;
 }
 
 .css-1,
@@ -108,56 +108,89 @@ exports[`Test the FormCheckbox component should tick it 1`] = `
   color: #333333;
 }
 
-<div
+<ForwardRef
+  alignV="center"
   data-css-0=""
-  data-css-1=""
+  direction="row"
 >
   <div
     data-css-1=""
+    data-css-0=""
   >
-    <div
-      data-css-3=""
-      data-css-2=""
-      data-css-4=""
+    <ForwardRef
+      alignV="center"
+      direction="row"
     >
       <div
-        data-css-6=""
-        data-css-5=""
+        data-css-1=""
       >
-        <input
-          id="a"
-          name="a"
-          onChange={[Function]}
-          style={
-            Object {
-              "cursor": "pointer",
-              "height": "25px",
-              "margin": 0,
-              "opacity": 0,
-              "width": "25px",
-            }
-          }
-          type="checkbox"
-        />
+        <ForwardRef
+          alignH="center"
+          alignV="center"
+          data-css-3=""
+          data-css-2=""
+          direction="row"
+        >
+          <div
+            data-css-3=""
+            data-css-2=""
+            data-css-4=""
+          >
+            <ForwardRef
+              data-css-5=""
+            >
+              <div
+                data-css-6=""
+                data-css-5=""
+              >
+                <input
+                  checked={false}
+                  id="a"
+                  name="a"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                      "height": "25px",
+                      "margin": 0,
+                      "opacity": 0,
+                      "width": "25px",
+                    }
+                  }
+                  type="checkbox"
+                  value="false"
+                />
+              </div>
+            </ForwardRef>
+          </div>
+        </ForwardRef>
       </div>
-    </div>
+    </ForwardRef>
+    <label
+      htmlFor="a"
+    >
+      <ForwardRef
+        data-css-7=""
+      >
+        <div
+          data-css-6=""
+          data-css-7=""
+        >
+          <ForwardRef
+            data-css-8=""
+          >
+            <div
+              data-css-8=""
+              data-css-6=""
+            >
+              I am a nice FormCheckbox!
+            </div>
+          </ForwardRef>
+        </div>
+      </ForwardRef>
+    </label>
   </div>
-  <label
-    htmlFor="a"
-  >
-    <div
-      data-css-6=""
-      data-css-7=""
-    >
-      <div
-        data-css-8=""
-        data-css-6=""
-      >
-        I am a nice FormCheckbox!
-      </div>
-    </div>
-  </label>
-</div>
+</ForwardRef>
 `;
 
 exports[`Test the FormCheckbox component should tick it 2`] = `
@@ -166,7 +199,7 @@ exports[`Test the FormCheckbox component should tick it 2`] = `
   padding: 10px 15px;
   min-height: 50px;
   border-bottom: 1px solid #ecf0f1;
-  background-color: white;
+  background-color: darkMarco;
 }
 
 .css-1,
@@ -275,84 +308,138 @@ exports[`Test the FormCheckbox component should tick it 2`] = `
   bottom: 1px;
 }
 
-<div
+.css-10,
+[data-css-10] {
+  width: 14px;
+  height: 14px;
+  fill: #fff;
+}
+
+<ForwardRef
+  alignV="center"
   data-css-0=""
-  data-css-1=""
+  direction="row"
 >
   <div
     data-css-1=""
+    data-css-0=""
   >
-    <div
-      data-css-2=""
-      data-css-3=""
-      data-css-8=""
+    <ForwardRef
+      alignV="center"
+      direction="row"
     >
       <div
-        data-css-9=""
-        data-css-5=""
+        data-css-1=""
+      >
+        <ForwardRef
+          alignH="center"
+          alignV="center"
+          data-css-2=""
+          data-css-8=""
+          direction="row"
+        >
+          <div
+            data-css-2=""
+            data-css-3=""
+            data-css-8=""
+          >
+            <ForwardRef
+              data-css-9=""
+            >
+              <div
+                data-css-9=""
+                data-css-5=""
+              >
+                <ForwardRef
+                  alignH="center"
+                  alignV="center"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": undefined,
+                    }
+                  }
+                  data-css-10=""
+                >
+                  <div
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": undefined,
+                      }
+                    }
+                    data-css-5=""
+                    data-css-10=""
+                  />
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              data-css-4=""
+            >
+              <div
+                data-css-5=""
+                data-css-4=""
+              >
+                <input
+                  checked={true}
+                  id="a"
+                  name="a"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                      "height": "25px",
+                      "margin": 0,
+                      "opacity": 0,
+                      "width": "25px",
+                    }
+                  }
+                  type="checkbox"
+                  value="true"
+                />
+              </div>
+            </ForwardRef>
+          </div>
+        </ForwardRef>
+      </div>
+    </ForwardRef>
+    <label
+      htmlFor="a"
+    >
+      <ForwardRef
+        data-css-6=""
       >
         <div
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": undefined,
-            }
-          }
           data-css-5=""
-          style={
-            Object {
-              "fill": "#fff",
-              "height": 14,
-              "stroke": false,
-              "width": 14,
-            }
-          }
-        />
-      </div>
-      <div
-        data-css-5=""
-        data-css-4=""
-      >
-        <input
-          checked={true}
-          id="a"
-          name="a"
-          onChange={[Function]}
-          style={
-            Object {
-              "cursor": "pointer",
-              "height": "25px",
-              "margin": 0,
-              "opacity": 0,
-              "width": "25px",
-            }
-          }
-          type="checkbox"
-          value={true}
-        />
-      </div>
-    </div>
+          data-css-6=""
+        >
+          <ForwardRef
+            data-css-7=""
+          >
+            <div
+              data-css-7=""
+              data-css-5=""
+            >
+              I am a nice FormCheckbox!
+            </div>
+          </ForwardRef>
+        </div>
+      </ForwardRef>
+    </label>
   </div>
-  <label
-    htmlFor="a"
-  >
-    <div
-      data-css-5=""
-      data-css-6=""
-    >
-      <div
-        data-css-7=""
-        data-css-5=""
-      >
-        I am a nice FormCheckbox!
-      </div>
-    </div>
-  </label>
-</div>
+</ForwardRef>
 `;
 
 exports[`Test the FormCheckbox component should work with children 1`] = `
 .css-0,
 [data-css-0] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: darkMarco;
+}
+
+.css-1,
+[data-css-1] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -375,8 +462,8 @@ exports[`Test the FormCheckbox component should work with children 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-1,
-[data-css-1] {
+.css-2,
+[data-css-2] {
   border-radius: 3px;
   height: 25px;
   width: 25px;
@@ -389,13 +476,13 @@ exports[`Test the FormCheckbox component should work with children 1`] = `
   -moz-transition: 250ms;
 }
 
-.css-2,
-[data-css-2] {
+.css-3,
+[data-css-3] {
   position: relative;
 }
 
-.css-3,
-[data-css-3] {
+.css-4,
+[data-css-4] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -418,8 +505,8 @@ exports[`Test the FormCheckbox component should work with children 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-4,
-[data-css-4] {
+.css-5,
+[data-css-5] {
   position: absolute;
   top: 0;
   right: 0;
@@ -427,21 +514,21 @@ exports[`Test the FormCheckbox component should work with children 1`] = `
   bottom: 0;
 }
 
-.css-5,
-[data-css-5] {
+.css-6,
+[data-css-6] {
   box-sizing: border-box;
   flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
 }
 
-.css-6,
-[data-css-6] {
+.css-7,
+[data-css-7] {
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.css-7,
-[data-css-7] {
+.css-8,
+[data-css-8] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -450,64 +537,89 @@ exports[`Test the FormCheckbox component should work with children 1`] = `
   color: #333333;
 }
 
-.css-8,
-[data-css-8] {
-  padding: 10px 15px;
-  min-height: 50px;
-  border-bottom: 1px solid #ecf0f1;
-  background-color: darkMarco;
-}
-
-<div
+<ForwardRef
+  alignV="center"
   data-css-0=""
-  data-css-8=""
+  direction="row"
 >
   <div
+    data-css-1=""
     data-css-0=""
   >
-    <div
-      data-css-2=""
-      data-css-1=""
-      data-css-3=""
+    <ForwardRef
+      alignV="center"
+      direction="row"
     >
       <div
-        data-css-5=""
-        data-css-4=""
+        data-css-1=""
       >
-        <input
-          id="a"
-          name="a"
-          onChange={[Function]}
-          style={
-            Object {
-              "cursor": "pointer",
-              "height": "25px",
-              "margin": 0,
-              "opacity": 0,
-              "width": "25px",
-            }
-          }
-          type="checkbox"
-        />
+        <ForwardRef
+          alignH="center"
+          alignV="center"
+          data-css-3=""
+          data-css-2=""
+          direction="row"
+        >
+          <div
+            data-css-3=""
+            data-css-2=""
+            data-css-4=""
+          >
+            <ForwardRef
+              data-css-5=""
+            >
+              <div
+                data-css-6=""
+                data-css-5=""
+              >
+                <input
+                  checked={false}
+                  id="a"
+                  name="a"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                      "height": "25px",
+                      "margin": 0,
+                      "opacity": 0,
+                      "width": "25px",
+                    }
+                  }
+                  type="checkbox"
+                  value="false"
+                />
+              </div>
+            </ForwardRef>
+          </div>
+        </ForwardRef>
       </div>
-    </div>
-  </div>
-  <label
-    htmlFor="a"
-  >
-    <div
-      data-css-5=""
-      data-css-6=""
+    </ForwardRef>
+    <label
+      htmlFor="a"
     >
-      <div
+      <ForwardRef
         data-css-7=""
-        data-css-5=""
       >
-        <h1>
-          test
-        </h1>
-      </div>
-    </div>
-  </label>
-</div>
+        <div
+          data-css-6=""
+          data-css-7=""
+        >
+          <ForwardRef
+            data-css-8=""
+          >
+            <div
+              data-css-8=""
+              data-css-6=""
+            >
+              <h1>
+                test
+              </h1>
+            </div>
+          </ForwardRef>
+        </div>
+      </ForwardRef>
+    </label>
+  </div>
+</ForwardRef>
 `;

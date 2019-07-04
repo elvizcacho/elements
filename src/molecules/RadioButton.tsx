@@ -5,7 +5,6 @@ import Circle from '../atoms/Circle'
 import Relative from '../atoms/Relative'
 import Text from '../atoms/Text'
 import View from '../atoms/View'
-import Theme from '../behaviour/Theme'
 
 const styles = {
   radioElement: css({
@@ -23,8 +22,6 @@ const styles = {
 }
 
 export interface IRadioButtonProps {
-  /** Background color of the form item */
-  backgroundColor?: string
   id?: string
   /** Set to true to controll radio button */
   checked?: boolean
@@ -87,70 +84,55 @@ class RadioButton extends Component<
   }
 
   render() {
-    const {
-      backgroundColor,
-      checked,
-      children,
-      id,
-      name,
-      onChange,
-      value,
-      ...props
-    } = this.props
+    const { children, id, name, value, ...props } = this.props
+    delete props.checked
+    delete props.onChange
 
     const realId = id || value
 
     return (
-      <Theme>
-        {({ theme }) => (
-          <View {...styles.radioElement} {...props}>
-            <Relative direction="row" alignV="center" alignH="center">
-              <View htmlElement="label">
-                <Relative top={10}>
+      <View {...styles.radioElement} {...props}>
+        <Relative direction="row" alignV="center" alignH="center">
+          <View htmlElement="label">
+            <Relative top={10}>
+              <Circle
+                color={this.state.checked ? 'primary' : 'lightGrey'}
+                radius={20}
+              >
+                <Circle color="white" radius={16}>
                   <Circle
-                    color={`${
-                      this.state.checked ? theme.primary : 'lightGrey'
-                    }`}
-                    radius={20}
-                  >
-                    <Circle color="white" radius={16}>
-                      <Circle
-                        color={`${
-                          this.state.checked ? theme.primary : 'white'
-                        }`}
-                        radius={10}
-                      />
-                    </Circle>
-                  </Circle>
-                </Relative>
-                <Relative
-                  top={-8}
-                  style={{
-                    marginLeft: 30,
-                  }}
-                >
-                  {typeof children === 'string' ? (
-                    <Text size="m">{children}</Text>
-                  ) : (
-                    children
-                  )}
-                </Relative>
-                <Absolute top={0} left={0} right={0} bottom={0}>
-                  <input
-                    id={realId}
-                    type="radio"
-                    name={name}
-                    {...styles.radio}
-                    value={value}
-                    checked={this.state.checked}
-                    onChange={this.handleChange}
+                    color={this.state.checked ? 'primary' : 'white'}
+                    radius={10}
                   />
-                </Absolute>
-              </View>
+                </Circle>
+              </Circle>
             </Relative>
+            <Relative
+              top={-8}
+              style={{
+                marginLeft: 30,
+              }}
+            >
+              {typeof children === 'string' ? (
+                <Text size="m">{children}</Text>
+              ) : (
+                children
+              )}
+            </Relative>
+            <Absolute top={0} left={0} right={0} bottom={0}>
+              <input
+                id={realId}
+                type="radio"
+                name={name}
+                {...styles.radio}
+                value={value}
+                checked={this.state.checked}
+                onChange={this.handleChange}
+              />
+            </Absolute>
           </View>
-        )}
-      </Theme>
+        </Relative>
+      </View>
     )
   }
 }

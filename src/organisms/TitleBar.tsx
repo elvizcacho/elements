@@ -1,17 +1,23 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import { css } from 'glamor'
 import View from '../atoms/View'
 import { colorCode } from '../propTypes/color'
-import { withTheme } from '../behaviour/ThemeProvider'
+import { Theme } from '..'
 
-const box = background =>
+const box = (background: string) =>
   css({
     height: 50,
     backgroundColor: colorCode(background),
     position: 'relative',
     zIndex: 2,
   })
+
+interface ITitleBarProps {
+  /** Callback when title bar is clicked */
+  onClick?: () => void
+  /** Color of the title bar */
+  color?: string
+}
 
 /**
  * Title bar is used to give user control and information about navigation.
@@ -30,31 +36,28 @@ const box = background =>
  * </ThemeProvider>
  * ```
  */
-class TitleBar extends React.Component {
-  static propTypes = {
-    /** Callback when title bar is clicked */
-    onClick: PropTypes.func,
-    /** Color of the title bar */
-    color: PropTypes.string,
-    children: PropTypes.node,
-  }
-
+class TitleBar extends Component<ITitleBarProps> {
   static defaultProps = {
     color: 'grey',
   }
 
   render() {
-    const { children, color, ...props } = this.props
+    const { children, color = 'primary', ...props } = this.props
     return (
-      <View direction="row" alignV="center" {...props} {...box(color)}>
-        {children}
-      </View>
+      <Theme>
+        {({ colorize }) => (
+          <View
+            direction="row"
+            alignV="center"
+            {...props}
+            {...box(colorize(color))}
+          >
+            {children}
+          </View>
+        )}
+      </Theme>
     )
   }
 }
 
-const mapThemeToProps = theme => ({
-  color: theme.primary,
-})
-
-export default withTheme(mapThemeToProps, 'TitleBar')(TitleBar)
+export default TitleBar

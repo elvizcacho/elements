@@ -11,3 +11,7 @@ declare module 'jest-glamor-react'
 declare module 'react-generate-props'
 declare module '@allthings/colors'
 declare module 'neue'
+
+interface Window {
+  Image: typeof Image
+}

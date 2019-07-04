@@ -78,16 +78,9 @@ class RadioButtonSet extends Component<IRadioButtonSetProps, IState> {
     this.props.direction === DIRECTION_HORIZONTAL ? 'row' : 'column'
 
   render() {
-    const {
-      children,
-      label,
-      required,
-      name,
-      direction,
-      onChange,
-      ...props
-    } = this.props
+    const { children, label, required, name, direction, ...props } = this.props
     const { value } = this.state
+    delete props.onChange
 
     return (
       <View>

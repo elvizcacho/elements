@@ -1,20 +1,19 @@
 import React from 'react'
-import { bool, func, string } from 'prop-types'
 import Input from '../atoms/Input'
 
-const PhoneInput = props => <Input type="tel" {...props} />
+const PhoneInput = (props: PhoneInputProps) => <Input type="tel" {...props} />
 
-PhoneInput.propTypes = {
+interface PhoneInputProps {
   /** Indicates that this field is required */
-  required: bool,
+  required?: boolean
   /** The name of this input field */
-  name: string.isRequired,
+  name: string
   /** Called, when the users changes something */
-  onChange: func,
+  onChange?: () => void
   /** Prefilled default value (optional) */
-  defaultValue: string,
+  defaultValue?: string
   /** Value of placeholder */
-  placeholder: string,
+  placeholder?: string
 }
 
 export default PhoneInput

@@ -369,7 +369,7 @@ const getIconName = (name: string) => {
   )
 }
 
-type sizeType = 'xs' | 's' | 'm' | 'l' | number
+export type IconSizeType = 'xs' | 's' | 'm' | 'l' | number
 
 interface IIconProps extends IViewProps {
   /** The name of the icon */
@@ -377,7 +377,7 @@ interface IIconProps extends IViewProps {
   /** The color of the icon */
   color?: string
   /** Can be xs, s, m, l */
-  size?: sizeType
+  size?: IconSizeType
 }
 
 /**

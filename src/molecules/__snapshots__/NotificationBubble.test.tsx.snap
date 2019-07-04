@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NotificationBubble renders without error 1`] = `
-Array [
-  ">",
-  .css-0,
+.css-0,
 [data-css-0] {
   z-index: 200;
   position: fixed;
@@ -124,48 +122,47 @@ Array [
 }
 
 <div
-    data-css-2=""
+  data-css-2=""
+>
+  <div
+    data-css-0=""
+    data-css-3=""
+    style={
+      Object {
+        "backgroundColor": "#3598db",
+        "bottom": -50,
+      }
+    }
   >
     <div
-      data-css-0=""
-      data-css-3=""
-      style={
-        Object {
-          "backgroundColor": "#3598db",
-          "bottom": -50,
-        }
-      }
+      data-css-1=""
+      data-css-4=""
     >
       <div
-        data-css-1=""
-        data-css-4=""
-      >
-        <div
-          data-css-5=""
-          data-css-2=""
-          style={
-            Object {
-              "width": "100%",
-            }
+        data-css-5=""
+        data-css-2=""
+        style={
+          Object {
+            "width": "100%",
           }
-        >
-          Hello World
-        </div>
-      </div>
-      <div
-        data-css-6=""
+        }
       >
-        <div
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": undefined,
-            }
-          }
-          data-css-7=""
-          data-css-2=""
-        />
+        Hello World
       </div>
     </div>
-  </div>,
-]
+    <div
+      data-css-6=""
+    >
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": undefined,
+          }
+        }
+        data-css-7=""
+        data-css-2=""
+      />
+    </div>
+  </div>
+</div>
 `;

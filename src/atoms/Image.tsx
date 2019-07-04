@@ -31,14 +31,14 @@ type IImageProps = IImage & IViewProps & ImgHTMLAttributes<HTMLElement>
  * <Image
  *   style={{width: 225, height: 225}}
  *   size="cover"
- *   src={'https://placeimg.com/225/225/people'}
+ *   src="https://placeimg.com/225/225/people"
  * />
  * ```
  *
  * ```example
  * <Image
- * style={{width: 225, height: 225}}
- * src={'https://placeimg.com/nothing'}
+ *   style={{width: 225, height: 225}}
+ *   src="https://placeimg.com/nothing"
  * />
  * ```
  */
@@ -59,7 +59,7 @@ export default class ImageElement extends Component<IImageProps, {}> {
   }
 
   loadImage = (src: string) => {
-    const image = new Image()
+    const image = new window.Image()
     image.onerror = this.onError
     image.src = src
   }

@@ -1,7 +1,6 @@
 import React from 'react'
 import Typeahead from './Typeahead'
-import PropTypes from 'prop-types'
-
+import { shallow, mount } from 'enzyme'
 // TODO: we should having to test within those instances but Enzyme unmount()
 // method is buggy!
 // See https://github.com/airbnb/enzyme/issues/941
@@ -10,7 +9,7 @@ const DEFAULT_VALUE = 'Abomasnow'
 
 const CLEAR_SELECTION = 'div[onClick]'
 
-const INPUT = instance => `input#downshift-${instance}-input`
+const INPUT = (instance: string | number) => `input#downshift-${instance}-input`
 
 const INPUT_HINT = 'input[name="hint"]'
 
@@ -33,13 +32,13 @@ const NICK = 'nick'
 
 const PLACEHOLDER = "Select Nick's Pokemon"
 
-const DOWNSHIFT_ITEM = (instance, index) =>
+const DOWNSHIFT_ITEM = (instance: string | number, index: string | number) =>
   `div#downshift-${instance}-item-${index}`
 
 describe('Test the typeahead component', () => {
   it('should be a simple static one - in depth testing of the core behavior', () => {
     const wrapper = mount(<Typeahead items={ITEMS} placeholder={PLACEHOLDER} />)
-    const clickAndPress = (value, last) => {
+    const clickAndPress = (value: string | number, last: string | number) => {
       // Simulate press `a`.
       // See https://github.com/airbnb/enzyme/issues/76.
       wrapper.find(INPUT(0)).simulate('change', { target: { value } })
@@ -369,11 +368,7 @@ describe('Test the typeahead component', () => {
   })
 
   describe('Test typeahead component with jsx labels', () => {
-    const LabelIcon = ({ text }) => <div>{text[0]}</div>
-
-    LabelIcon.propTypes = {
-      text: PropTypes.string,
-    }
+    const LabelIcon = ({ text }: { text: string }) => <div>{text[0]}</div>
 
     const ITEMS = [
       {

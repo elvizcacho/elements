@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import json2mq from 'json2mq'
 import { css } from 'glamor'
 import Media from 'react-media'
@@ -29,26 +28,17 @@ const displayStyle = (mq: string) =>
   })
 
 interface IResponsiveProps {
+  /** Whether the component should be displayed on mobile or not */
   mobile?: boolean
+  /** Whether the component should be displayed on tablet or not */
   tablet?: boolean
+  /** Whether the component should be displayed on desktop or not */
   desktop?: boolean
+  /** Ensures that the children will only be rendered on a match, if false it will be hidden by CSS (but still be rendered) */
   onlyRenderOnMatch?: boolean
 }
 
 export default class Responsive extends React.Component<IResponsiveProps> {
-  static propTypes = {
-    /** Children to be displayed when component matches screen size(s) */
-    children: PropTypes.node.isRequired,
-    /** Whether the component should be displayed on mobile or not */
-    mobile: PropTypes.bool,
-    /** Whether the component should be displayed on tablet or not */
-    tablet: PropTypes.bool,
-    /** Whether the component should be displayed on desktop or not */
-    desktop: PropTypes.bool,
-    /** Ensures that the children will only be rendered on a match, if false it will be hidden by CSS (but still be rendered) */
-    onlyRenderOnMatch: PropTypes.bool,
-  }
-
   renderChildrenFn = () => this.props.children
 
   render() {

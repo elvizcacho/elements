@@ -1,5 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { PureComponent, ReactNode } from 'react'
 import Downshift from 'downshift'
 import matchSorter from 'match-sorter'
 import { alpha, ColorPalette } from '@allthings/colors'
@@ -34,48 +33,50 @@ const Placement = {
   bottom: 'bottom',
 }
 
-export default class Typeahead extends React.PureComponent {
-  static propTypes = {
-    /** Forces the menu to be opened when clicking in the input. */
-    autoOpen: PropTypes.bool,
-    /** Automatically clears the selection. Must not be used with controlled
-     * and uncontrolled components. */
-    clearOnSelect: PropTypes.bool,
-    /** The default value of the component, without making it controlled. */
-    defaultValue: PropTypes.string,
-    /** If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards */
-    placement: PropTypes.oneOf(Object.values(Placement)),
-    /** The loading state of the component, e.g when externally fetching some
-     * data. */
-    isLoading: PropTypes.bool,
-    /** The items passed to component as an array of objects. (icon is optional) */
-    items: PropTypes.arrayOf(
-      PropTypes.shape({
-        label: PropTypes.node.isRequired,
-        value: PropTypes.any.isRequired,
-        icon: PropTypes.element,
-      })
-    ).isRequired,
-    /** The maximum number of items displayed in the menu. */
-    limit: PropTypes.number,
-    /** The height of the menu in pixels. */
-    menuHeight: PropTypes.number,
-    /** Callback triggered when clearing the selection. */
-    onClearSelection: PropTypes.func,
-    /** Callback triggered when the menu is closed. */
-    onClose: PropTypes.func,
-    /** Callback triggered when the input value is modified. */
-    onInputValueChange: PropTypes.func,
-    /** Callback triggered when the menu is opened. */
-    onOpen: PropTypes.func,
-    /** Callback triggered when selecting an item. */
-    onSelect: PropTypes.func,
-    /** The placeholder displayed in the input field. */
-    placeholder: PropTypes.string,
-    /** The value of the component, makes this a controlled component. */
-    value: PropTypes.string,
-  }
+type Placement = 'top' | 'bottom'
 
+interface TypeaheadItem {
+  label: ReactNode
+  value: any
+  icon?: ReactNode
+}
+
+interface ITypeaheadProps {
+  /** Forces the menu to be opened when clicking in the input. */
+  autoOpen?: boolean
+  /** Automatically clears the selection. Must not be used with controlled
+   * and uncontrolled components. */
+  clearOnSelect?: boolean
+  /** The defaultbooleancomponent, without making it controlled. */
+  defaultValue?: string
+  /** If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards */
+  placement?: Placement
+  /** The loading state of the component, e.g when externally fetching some
+   * data. */
+  isLoading?: boolean
+  /** The itebooleanomponent as an array of objects. (icon is optional) */
+  items: TypeaheadItem[]
+  /** The maximum number of items displayed in the menu. */
+  limit?: number
+  /** The height of the menu in pixels. */
+  menuHeight?: number
+  /** Callback triggered when clearing the selection. */
+  onClearSelection?: () => void
+  /** Callback triggered when the menu is closed. */
+  onClose?: () => void
+  /** Callback triggered when the input value is modified. */
+  onInputValueChange?: () => void
+  /** Callback triggered when the menu is opened. */
+  onOpen?: () => void
+  /** Callback triggered when selecting an item. */
+  onSelect?: () => void
+  /** The placeholder displayed in the input field. */
+  placeholder?: string
+  /** The value of the component, makes this a controlled component. */
+  value?: string
+}
+
+export default class Typeahead extends PureComponent<ITypeaheadProps> {
   static defaultProps = {
     limit: 20,
     menuHeight: 300,
@@ -85,7 +86,7 @@ export default class Typeahead extends React.PureComponent {
     placement: Placement.bottom,
   }
 
-  constructor(props) {
+  constructor(props: ITypeaheadProps) {
     super(props)
     if (
       process &&
@@ -354,6 +355,7 @@ export default class Typeahead extends React.PureComponent {
                 >
                   <Absolute top={0} left={0} {...css({ width: '100%' })}>
                     <Input
+                      type="password"
                       autoComplete="off"
                       name="hint"
                       tabIndex={-1}
@@ -381,7 +383,9 @@ export default class Typeahead extends React.PureComponent {
                   </Absolute>
                   <Input
                     name="typed"
-                    onClick={autoOpen && !selectedItem ? toggleMenu : undefined}
+                    onClick={
+                      autoOpen && !selectedItem ? () => toggleMenu() : undefined
+                    }
                     onInputRef={this.setInputRef}
                     hasRightIcon={!!selectedItem && !clearOnSelect}
                     placeholder={placeholder}
@@ -476,8 +480,8 @@ export default class Typeahead extends React.PureComponent {
                       })
                     )}
                     <Absolute
-                      bottom={placement !== Placement.top ? 15 : null}
-                      top={placement === Placement.top ? 15 : null}
+                      bottom={placement !== Placement.top ? 15 : undefined}
+                      top={placement === Placement.top ? 15 : undefined}
                       right={15}
                     >
                       {showScrollArrow &&

@@ -1,10 +1,22 @@
-import React from 'react'
-import Text from '../../atoms/Text'
+import React, { Component, ReactNode, ChangeEvent } from 'react'
+import Text, { sizeType } from '../../atoms/Text'
 import ListItem from '../List/ListItem'
 import Theme from '../../behaviour/Theme'
-import PropTypes from 'prop-types'
-import Checkbox from '../Checkbox'
+import Checkbox, { ICheckboxProps } from '../Checkbox'
 import Inset from '../../atoms/Inset'
+
+interface IFormCheckboxProps extends ICheckboxProps {
+  /** True to make it checked */
+  checked?: boolean
+  /** Label of Checkbox */
+  label?: string | ReactNode
+  /** Text size of the label */
+  labelSize?: sizeType
+  name: string
+  onChange: (e: ChangeEvent) => void
+  /** Background color of the form item */
+  backgroundColor?: string
+}
 
 /**
  * FormCheckbox are used to give users a way to select or deselect options.
@@ -16,27 +28,20 @@ import Inset from '../../atoms/Inset'
  * </View>
  * ```
  */
-class FormCheckbox extends React.Component {
-  static propTypes = {
-    /** True to make it checked */
-    checked: PropTypes.bool,
-    /** Label of Checkbox */
-    label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
-    /** Text size of the label */
-    labelSize: Text.propTypes.size,
-    name: PropTypes.string.isRequired,
-    onChange: PropTypes.func,
-    /** Background color of the form item */
-    backgroundColor: PropTypes.string,
-  }
-
+class FormCheckbox extends Component<IFormCheckboxProps> {
   static defaultProps = {
     labelSize: 'l',
     onChange: () => {},
   }
 
   render() {
-    const { label, labelSize, name, backgroundColor, ...props } = this.props
+    const {
+      label,
+      labelSize,
+      name,
+      backgroundColor = 'background',
+      ...props
+    } = this.props
 
     return (
       <Theme>

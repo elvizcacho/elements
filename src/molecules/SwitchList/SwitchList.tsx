@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import View from '../../atoms/View'
 import { css } from 'glamor'
@@ -48,13 +48,13 @@ const styles = {
  * />
  * ```
  */
-export default class SwitchList extends React.Component {
+export default class SwitchList extends Component<ISwitchListProps> {
   static propTypes = {
-    disabled: PropTypes.bool,
-    onChange: PropTypes.func,
+    disabled: boolean,
+    onChange: () => void,
     options: PropTypes.object,
-    initialActive: PropTypes.string,
-    showSpinner: PropTypes.bool,
+    initialActive: string,
+    showSpinner: boolean,
   }
 
   state = {

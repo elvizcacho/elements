@@ -1,4 +1,4 @@
-import React, { Component, ReactNode, ChangeEvent } from 'react'
+import React, { Component, ChangeEvent } from 'react'
 import View from '../atoms/View'
 import Icon from '../atoms/Icon'
 import Relative from '../atoms/Relative'
@@ -20,17 +20,12 @@ const styles = {
       cursor: 'pointer',
     }),
 }
-interface ICheckboxProps {
+export interface ICheckboxProps {
   /** True to make it checked */
   checked?: boolean
   /** Label of Checkbox */
-  label?: string | ReactNode
-  /** Text size of the label */
-  labelSize?: sizeType
   name: string
   onChange: (e: ChangeEvent) => void
-  /** Background color of the form item */
-  backgroundColor?: string
 }
 interface IState {
   checked?: boolean
@@ -46,12 +41,6 @@ interface IState {
  * ```
  */
 class Checkbox extends Component<ICheckboxProps, IState> {
-  static propTypes = {
-    checked: PropTypes.bool,
-    name: PropTypes.string.isRequired,
-    onChange: PropTypes.func,
-  }
-
   state = {
     checked: this.props.checked,
   }
@@ -66,7 +55,8 @@ class Checkbox extends Component<ICheckboxProps, IState> {
   }
 
   render() {
-    const { checked, onChange, name, ...props } = this.props
+    const { checked, name, ...props } = this.props
+    delete props.onChange
     const realChecked = Boolean(
       this.isControlled() ? checked : this.state.checked
     )

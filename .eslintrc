@@ -23,7 +23,8 @@
     "MutationObserver": true,
     "React": true,
     "render": true,
-    "shallow": true
+    "shallow": true,
+    "Image": true
   },
   "overrides": [
     {
