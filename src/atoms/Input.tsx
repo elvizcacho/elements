@@ -1,4 +1,12 @@
-import React, { useEffect, useState, Fragment, AllHTMLAttributes } from 'react'
+import React, {
+  useEffect,
+  useState,
+  Fragment,
+  AllHTMLAttributes,
+  FunctionComponent,
+  useRef,
+  useCallback,
+} from 'react'
 import View from '../atoms/View'
 import { css } from 'glamor'
 import Relative from '../atoms/Relative'
@@ -201,7 +209,9 @@ const setValidity = (
  * ```
  */
 
-const Input = ({
+const Input: FunctionComponent<
+  IInputProps & AllHTMLAttributes<HTMLElement>
+> = ({
   required = false,
   onInputRef,
   lines = 1,
@@ -221,20 +231,23 @@ const Input = ({
   valueMissing,
   icon,
   ...props
-}: IInputProps & AllHTMLAttributes<HTMLElement>) => {
+}) => {
   const isTextArea = lines !== 1
   const [value, setValue] = useState('')
-  const [length, setLength] = useState((props.value && props.value.length) || 0)
-  const currentValue = props.value || value
+  const [length, setLength] = useState(
+    (typeof props.value === 'string' && props.value.length) || 0
+  )
+  const currentValue = (props.value || value) as string
   const labelVisible = currentValue.length > 0
   const showLabel = !!(label && currentValue.length > 0)
-  const inputRef = React.createRef<HTMLInputElement>()
-  const textareaRef = React.createRef<HTMLTextAreaElement>()
-  const isCheckmarkActive =
+  const inputRef = useRef<HTMLInputElement>(null)
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
+  const isCheckmarkActive = Boolean(
     (pattern || props.minLength || props.maxLength || required) &&
-    inputRef.current &&
-    inputRef.current.validity &&
-    inputRef.current.validity.valid
+      inputRef.current &&
+      inputRef.current.validity &&
+      inputRef.current.validity.valid
+  )
 
   const customValidity = {
     rangeOverflow,
@@ -246,16 +259,19 @@ const Input = ({
     valueMissing,
   }
 
-  const handleChange = (
-    e:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
-    setValidity(e.target, customValidity)
-    setLength(e.target.value.length)
-    setValue(e.target.value)
-    props.onChange && props.onChange(e)
-  }
+  const handleChange = useCallback(
+    (
+      e:
+        | React.ChangeEvent<HTMLInputElement>
+        | React.ChangeEvent<HTMLTextAreaElement>
+    ) => {
+      setValidity(e.target, customValidity)
+      setLength(e.target.value.length)
+      setValue(e.target.value)
+      props.onChange && props.onChange(e)
+    },
+    [customValidity, props]
+  )
 
   useEffect(() => {
     const input = isTextArea ? textareaRef.current : inputRef.current
@@ -321,7 +337,7 @@ const Input = ({
         </View>
       )}
 
-      <View className="checkmark" {...styles.checkmark(!!isCheckmarkActive)}>
+      <View className="checkmark" {...styles.checkmark(isCheckmarkActive)}>
         <Icon name="check-filled" size="xs" color="lightGrey" />
       </View>
 

@@ -323,9 +323,11 @@ export const Icons = [
   'wrench-screwdriver-filled',
 ]
 
+export type iconSizeType = 'xs' | 's' | 'm' | 'l' | number
+
 let hasWarnedBefore = false
 
-const getSize = (size: sizeType) => {
+const getSize = (size: iconSizeType) => {
   switch (size) {
     case 'xs':
       return 16
