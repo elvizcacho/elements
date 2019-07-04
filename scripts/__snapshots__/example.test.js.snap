@@ -755,16 +755,6 @@ exports[`Component Examples should match snapshot: Checkbox0 1`] = `
 
 .css-3,
 [data-css-3] {
-  display: block;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #333333;
-}
-
-.css-4,
-[data-css-4] {
   border-radius: 3px;
   height: 25px;
   width: 25px;
@@ -778,16 +768,8 @@ exports[`Component Examples should match snapshot: Checkbox0 1`] = `
   -moz-transition: 250ms;
 }
 
-.css-5,
-[data-css-5] {
-  padding: 10px 15px;
-  min-height: 50px;
-  border-bottom: 1px solid #ecf0f1;
-  background-color: white;
-}
-
-.css-6,
-[data-css-6] {
+.css-4,
+[data-css-4] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -810,14 +792,14 @@ exports[`Component Examples should match snapshot: Checkbox0 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-7,
-[data-css-7] {
+.css-5,
+[data-css-5] {
   position: relative;
   bottom: 1px;
 }
 
-.css-8,
-[data-css-8] {
+.css-6,
+[data-css-6] {
   position: absolute;
   top: 0;
   right: 0;
@@ -825,14 +807,8 @@ exports[`Component Examples should match snapshot: Checkbox0 1`] = `
   bottom: 0;
 }
 
-.css-9,
-[data-css-9] {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.css-10,
-[data-css-10] {
+.css-7,
+[data-css-7] {
   border-radius: 3px;
   height: 25px;
   width: 25px;
@@ -853,97 +829,57 @@ exports[`Component Examples should match snapshot: Checkbox0 1`] = `
     data-css-1=""
   >
     <div
-      data-css-5=""
       data-css-0=""
     >
       <div
-        data-css-0=""
+        data-css-2=""
+        data-css-4=""
+        data-css-3=""
       >
         <div
-          data-css-2=""
-          data-css-6=""
-          data-css-4=""
+          data-css-5=""
+          data-css-1=""
         >
           <div
-            data-css-7=""
             data-css-1=""
-          >
-            <div
-              data-css-1=""
-              style="width:14px;height:14px;fill:#fff;stroke:"
-            />
-          </div>
-          <div
-            data-css-1=""
-            data-css-8=""
-          >
-            <input
-              checked=""
-              id="ok"
-              name="ok"
-              style="opacity:0;width:25px;height:25px;margin:0;cursor:pointer"
-              type="checkbox"
-              value="true"
-            />
-          </div>
+            style="width:14px;height:14px;fill:#fff;stroke:"
+          />
         </div>
-      </div>
-      <label
-        for="ok"
-      >
         <div
           data-css-1=""
-          data-css-9=""
+          data-css-6=""
         >
-          <div
-            data-css-3=""
-            data-css-1=""
-          >
-            Are you ok?
-          </div>
+          <input
+            checked=""
+            id="ok"
+            name="ok"
+            style="opacity:0;width:25px;height:25px;margin:0;cursor:pointer"
+            type="checkbox"
+            value="true"
+          />
         </div>
-      </label>
+      </div>
     </div>
     <div
-      data-css-5=""
       data-css-0=""
     >
       <div
-        data-css-0=""
-      >
-        <div
-          data-css-2=""
-          data-css-10=""
-          data-css-6=""
-        >
-          <div
-            data-css-1=""
-            data-css-8=""
-          >
-            <input
-              id="notok"
-              name="notok"
-              style="opacity:0;width:25px;height:25px;margin:0;cursor:pointer"
-              type="checkbox"
-            />
-          </div>
-        </div>
-      </div>
-      <label
-        for="notok"
+        data-css-2=""
+        data-css-7=""
+        data-css-4=""
       >
         <div
           data-css-1=""
-          data-css-9=""
+          data-css-6=""
         >
-          <div
-            data-css-3=""
-            data-css-1=""
-          >
-            Are you not ok?
-          </div>
+          <input
+            id="notok"
+            name="notok"
+            style="opacity:0;width:25px;height:25px;margin:0;cursor:pointer"
+            type="checkbox"
+          />
         </div>
-      </label>
+      </div>
     </div>
   </div>
    
@@ -1373,24 +1309,6 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
 
 .css-11,
 [data-css-11] {
-  display: block;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 12px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #333333;
-}
-
-.css-12,
-[data-css-12] {
-  padding: 10px 15px;
-  min-height: 50px;
-  border-bottom: 1px solid #ecf0f1;
-  background-color: white;
-}
-
-.css-13,
-[data-css-13] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -1413,8 +1331,8 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-14,
-[data-css-14] {
+.css-12,
+[data-css-12] {
   position: absolute;
   top: 0;
   right: 0;
@@ -1422,14 +1340,8 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   bottom: 0;
 }
 
-.css-15,
-[data-css-15] {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.css-16,
-[data-css-16] {
+.css-13,
+[data-css-13] {
   border-radius: 3px;
   height: 25px;
   width: 25px;
@@ -1442,8 +1354,8 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   -moz-transition: 250ms;
 }
 
-.css-17,
-[data-css-17] {
+.css-14,
+[data-css-14] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -1466,24 +1378,24 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   -webkit-flex: 1;
 }
 
-.css-18,
-[data-css-18] {
+.css-15,
+[data-css-15] {
   height: 50px;
   background-color: #bada55;
   position: relative;
   z-index: 2;
 }
 
-.css-19,
-[data-css-19] {
+.css-16,
+[data-css-16] {
   height: 50px;
   width: 50px;
   border-radius: 2px;
   background-color: transparent;
 }
 
-.css-20,
-[data-css-20] {
+.css-17,
+[data-css-17] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 600;
@@ -1493,8 +1405,8 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   color: white;
 }
 
-.css-21,
-[data-css-21] {
+.css-18,
+[data-css-18] {
   -webkit-overflow-scrolling: touch;
   overflow: auto;
   overflow-x: hidden;
@@ -1502,8 +1414,8 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   height: 100%;
 }
 
-.css-22,
-[data-css-22] {
+.css-19,
+[data-css-19] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -1526,8 +1438,8 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-23,
-[data-css-23] {
+.css-20,
+[data-css-20] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -1544,13 +1456,13 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   -moz-transition: padding-top .225s ease-out;
 }
 
-.css-23:invalid:focus,
-[data-css-23]:invalid:focus {
+.css-20:invalid:focus,
+[data-css-20]:invalid:focus {
   color: red;
 }
 
-.css-25,
-[data-css-25] {
+.css-22,
+[data-css-22] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -1567,13 +1479,21 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   -moz-transition: padding-top .225s ease-out;
 }
 
-.css-25:invalid:focus,
-[data-css-25]:invalid:focus {
+.css-22:invalid:focus,
+[data-css-22]:invalid:focus {
   color: red;
 }
 
-.css-27,
-[data-css-27] {
+.css-24,
+[data-css-24] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: white;
+}
+
+.css-25,
+[data-css-25] {
   position: relative;
   padding: 10px 16px;
   border-radius: 2px;
@@ -1591,35 +1511,35 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
   -moz-transition: 250ms ease-in-out;
 }
 
-.css-27:focus,
-[data-css-27]:focus {
+.css-25:focus,
+[data-css-25]:focus {
   outline: none;
 }
 
-.css-27:hover,
-[data-css-27]:hover {
+.css-25:hover,
+[data-css-25]:hover {
   color: white;
   background: #a9d22d;
 }
 
 @media (max-width: 640px) {
-  .css-19,
-  [data-css-19] {
+  .css-16,
+  [data-css-16] {
     height: 40px;
     width: 40px;
   }
 }
 
 <div
-  data-css-17=""
+  data-css-14=""
 >
   <div
-    data-css-18=""
+    data-css-15=""
     data-css-0=""
   >
     <div
-      data-css-13=""
-      data-css-19=""
+      data-css-11=""
+      data-css-16=""
     >
       <div
         data-css-1=""
@@ -1627,15 +1547,15 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
       />
     </div>
     <div
-      data-css-20=""
+      data-css-17=""
       data-css-1=""
     >
        Create new account 
     </div>
   </div>
   <div
-    data-css-17=""
-    data-css-21=""
+    data-css-14=""
+    data-css-18=""
     id="scroll-container"
   >
     <form
@@ -1646,7 +1566,7 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
         data-css-10=""
       >
         <div
-          data-css-22=""
+          data-css-19=""
         >
           <div
             data-css-3=""
@@ -1717,7 +1637,7 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
               style="width:100%"
             >
               <textarea
-                data-css-23=""
+                data-css-20=""
                 name="longStory"
                 placeholder="A long story"
                 type="text"
@@ -1744,7 +1664,7 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
               style="width:100%"
             >
               <textarea
-                data-css-25=""
+                data-css-22=""
                 maxlength="15"
                 name="limitedStory"
                 placeholder="A limited story"
@@ -1803,53 +1723,33 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
             </div>
           </div>
           <div
-            data-css-12=""
             data-css-0=""
           >
             <div
-              data-css-0=""
-            >
-              <div
-                data-css-7=""
-                data-css-16=""
-                data-css-13=""
-              >
-                <div
-                  data-css-1=""
-                  data-css-14=""
-                >
-                  <input
-                    id="accept"
-                    name="accept"
-                    required=""
-                    style="opacity:0;width:25px;height:25px;margin:0;cursor:pointer"
-                    type="checkbox"
-                  />
-                </div>
-              </div>
-            </div>
-            <label
-              for="accept"
+              data-css-7=""
+              data-css-13=""
+              data-css-11=""
             >
               <div
                 data-css-1=""
-                data-css-15=""
+                data-css-12=""
               >
-                <div
-                  data-css-11=""
-                  data-css-1=""
-                >
-                  Hereby I accept the terms & blablabla
-                </div>
+                <input
+                  id="accept"
+                  name="accept"
+                  required=""
+                  style="opacity:0;width:25px;height:25px;margin:0;cursor:pointer"
+                  type="checkbox"
+                />
               </div>
-            </label>
+            </div>
           </div>
           <div
-            data-css-12=""
-            data-css-13=""
+            data-css-24=""
+            data-css-11=""
           >
             <button
-              data-css-27=""
+              data-css-25=""
               data-css-9=""
               name="submit"
               type="submit"
@@ -1861,6 +1761,206 @@ exports[`Component Examples should match snapshot: Form0 1`] = `
       </div>
     </form>
   </div>
+</div>
+`;
+
+exports[`Component Examples should match snapshot: FormCheckbox0 1`] = `
+.css-0,
+[data-css-0] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-1,
+[data-css-1] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-2,
+[data-css-2] {
+  position: relative;
+}
+
+.css-3,
+[data-css-3] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
+}
+
+.css-4,
+[data-css-4] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-5,
+[data-css-5] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.css-6,
+[data-css-6] {
+  border-radius: 3px;
+  height: 25px;
+  width: 25px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: lightGrey;
+  transition: 250ms;
+  cursor: pointer;
+  -webkit-transition: 250ms;
+  -moz-transition: 250ms;
+}
+
+.css-7,
+[data-css-7] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: white;
+}
+
+.css-8,
+[data-css-8] {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+<div
+  data-css-1=""
+>
+   
+  <div
+    data-css-1=""
+  >
+    <div
+      data-css-7=""
+      data-css-0=""
+      name="ok"
+    >
+      <div
+        data-css-0=""
+      >
+        <div
+          data-css-2=""
+          data-css-6=""
+          data-css-4=""
+        >
+          <div
+            data-css-1=""
+            data-css-5=""
+          >
+            <input
+              style="opacity:0;width:25px;height:25px;margin:0;cursor:pointer"
+              type="checkbox"
+            />
+          </div>
+        </div>
+      </div>
+      <label
+        for="ok"
+      >
+        <div
+          data-css-1=""
+          data-css-8=""
+        >
+          <div
+            data-css-3=""
+            data-css-1=""
+          >
+            Are you ok?
+          </div>
+        </div>
+      </label>
+    </div>
+    <div
+      data-css-7=""
+      data-css-0=""
+      name="notok"
+    >
+      <div
+        data-css-0=""
+      >
+        <div
+          data-css-2=""
+          data-css-6=""
+          data-css-4=""
+        >
+          <div
+            data-css-1=""
+            data-css-5=""
+          >
+            <input
+              style="opacity:0;width:25px;height:25px;margin:0;cursor:pointer"
+              type="checkbox"
+            />
+          </div>
+        </div>
+      </div>
+      <label
+        for="notok"
+      >
+        <div
+          data-css-1=""
+          data-css-8=""
+        >
+          <div
+            data-css-3=""
+            data-css-1=""
+          >
+            Are you not ok?
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+   
 </div>
 `;
 
@@ -1883,12 +1983,6 @@ exports[`Component Examples should match snapshot: Hero0 1`] = `
 
 .css-2,
 [data-css-2] {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.css-3,
-[data-css-3] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 600;
@@ -1898,8 +1992,8 @@ exports[`Component Examples should match snapshot: Hero0 1`] = `
   color: white;
 }
 
-.css-4,
-[data-css-4] {
+.css-3,
+[data-css-3] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -1922,8 +2016,8 @@ exports[`Component Examples should match snapshot: Hero0 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-5,
-[data-css-5] {
+.css-4,
+[data-css-4] {
   position: absolute;
   right: -150px;
   top: -70px;
@@ -1931,18 +2025,18 @@ exports[`Component Examples should match snapshot: Hero0 1`] = `
   height: 360px;
 }
 
+.css-5,
+[data-css-5] {
+  width: 150px;
+}
+
 .css-6,
 [data-css-6] {
-  width: 150px;
+  width: 142px;
 }
 
 .css-7,
 [data-css-7] {
-  width: 142px;
-}
-
-.css-8,
-[data-css-8] {
   overflow-y: hidden;
   overflow-x: hidden;
   height: 232px;
@@ -1951,8 +2045,8 @@ exports[`Component Examples should match snapshot: Hero0 1`] = `
   box-shadow: 0px -1px 5px rgba(0,0,0,0.3);
 }
 
-.css-9,
-[data-css-9] {
+.css-8,
+[data-css-8] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -1973,6 +2067,12 @@ exports[`Component Examples should match snapshot: Hero0 1`] = `
   -webkit-box-pack: justify;
   -webkit-justify-content: space-around;
   -webkit-flex: 0 0 auto;
+}
+
+.css-9,
+[data-css-9] {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .css-10,
@@ -2034,23 +2134,23 @@ exports[`Component Examples should match snapshot: Hero0 1`] = `
 }
 
 @media (min-width: 641px) and (max-width: 1024px), (min-width: 1025px) {
-  .css-7,
-  [data-css-7] {
+  .css-6,
+  [data-css-6] {
     width: 50%;
   }
 }
 
 <div
-  data-css-9=""
   data-css-8=""
+  data-css-7=""
 >
   <div
-    data-css-7=""
-    data-css-4=""
-    data-css-2=""
+    data-css-6=""
+    data-css-3=""
+    data-css-9=""
   >
     <div
-      data-css-3=""
+      data-css-2=""
       data-css-0=""
     >
       You are my Hero!
@@ -2069,11 +2169,11 @@ exports[`Component Examples should match snapshot: Hero0 1`] = `
     </div>
   </div>
   <div
-    data-css-6=""
+    data-css-5=""
     data-css-0=""
   >
     <img
-      data-css-5=""
+      data-css-4=""
       src="https://placeimg.com/500/500/people"
     />
   </div>
@@ -2393,14 +2493,6 @@ exports[`Component Examples should match snapshot: List0 1`] = `
 
 .css-4,
 [data-css-4] {
-  padding: 10px 15px;
-  min-height: 50px;
-  border-bottom: 1px solid #ecf0f1;
-  background-color: white;
-}
-
-.css-5,
-[data-css-5] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -2421,6 +2513,14 @@ exports[`Component Examples should match snapshot: List0 1`] = `
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -webkit-flex: 0 0 auto;
+}
+
+.css-5,
+[data-css-5] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: white;
 }
 
 .css-6,
@@ -2508,10 +2608,10 @@ exports[`Component Examples should match snapshot: List0 1`] = `
     data-css-3=""
   >
     <div
-      data-css-5=""
+      data-css-4=""
     >
       <div
-        data-css-4=""
+        data-css-5=""
         data-css-0=""
       >
         <div
@@ -2522,7 +2622,7 @@ exports[`Component Examples should match snapshot: List0 1`] = `
         </div>
       </div>
       <div
-        data-css-4=""
+        data-css-5=""
         data-css-0=""
       >
         <div
@@ -2533,7 +2633,7 @@ exports[`Component Examples should match snapshot: List0 1`] = `
         </div>
       </div>
       <div
-        data-css-4=""
+        data-css-5=""
         data-css-0=""
       >
         <div
@@ -2544,7 +2644,7 @@ exports[`Component Examples should match snapshot: List0 1`] = `
         </div>
       </div>
       <div
-        data-css-4=""
+        data-css-5=""
         data-css-0=""
       >
         <div
@@ -2660,14 +2760,6 @@ exports[`Component Examples should match snapshot: List1 1`] = `
 
 .css-5,
 [data-css-5] {
-  padding: 10px 15px;
-  min-height: 50px;
-  border-bottom: 1px solid #ecf0f1;
-  background-color: white;
-}
-
-.css-6,
-[data-css-6] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -2688,6 +2780,14 @@ exports[`Component Examples should match snapshot: List1 1`] = `
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -webkit-flex: 0 0 auto;
+}
+
+.css-6,
+[data-css-6] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: white;
 }
 
 .css-7,
@@ -2851,7 +2951,7 @@ exports[`Component Examples should match snapshot: List1 1`] = `
         data-css-4=""
       >
         <div
-          data-css-6=""
+          data-css-5=""
         >
           <div
             data-css-3=""
@@ -2861,7 +2961,7 @@ exports[`Component Examples should match snapshot: List1 1`] = `
               data-css-1=""
             />
             <div
-              data-css-5=""
+              data-css-6=""
               data-css-14=""
             >
               <div
@@ -2894,7 +2994,7 @@ exports[`Component Examples should match snapshot: List1 1`] = `
               data-css-15=""
             />
             <div
-              data-css-5=""
+              data-css-6=""
               data-css-14=""
             >
               <div
@@ -2913,7 +3013,7 @@ exports[`Component Examples should match snapshot: List1 1`] = `
               data-css-16=""
             />
             <div
-              data-css-5=""
+              data-css-6=""
               data-css-14=""
             >
               <div
@@ -4069,14 +4169,6 @@ exports[`Component Examples should match snapshot: ReadMore0 1`] = `
 
 .css-5,
 [data-css-5] {
-  padding: 10px 15px;
-  min-height: 50px;
-  border-bottom: 1px solid #ecf0f1;
-  background-color: white;
-}
-
-.css-6,
-[data-css-6] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -4097,6 +4189,14 @@ exports[`Component Examples should match snapshot: ReadMore0 1`] = `
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -webkit-flex: 0 0 auto;
+}
+
+.css-6,
+[data-css-6] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: white;
 }
 
 .css-7,
@@ -4141,12 +4241,12 @@ exports[`Component Examples should match snapshot: ReadMore0 1`] = `
     data-css-3=""
   >
     <div
-      data-css-5=""
+      data-css-6=""
       data-css-0=""
     >
       <div
         data-css-7=""
-        data-css-6=""
+        data-css-5=""
       >
         <div
           data-css-1=""
@@ -4174,12 +4274,12 @@ exports[`Component Examples should match snapshot: ReadMore0 1`] = `
       </div>
     </div>
     <div
-      data-css-5=""
+      data-css-6=""
       data-css-0=""
     >
       <div
         data-css-7=""
-        data-css-6=""
+        data-css-5=""
       >
         <div
           data-css-1=""
