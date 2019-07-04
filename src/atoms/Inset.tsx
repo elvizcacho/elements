@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import View, { IViewProps } from '../atoms/View'
 import { css } from 'glamor'
 
@@ -10,12 +10,15 @@ const styles = ({ horizontal = false, vertical = false }) =>
     paddingBottom: vertical && 15,
   })
 
-const Inset = ({
+interface IInsetProps {
+  horizontal?: boolean
+  vertical?: boolean
+}
+
+const Inset: FunctionComponent<IViewProps & IInsetProps> = ({
   horizontal = true,
   vertical,
   ...props
-}: IViewProps & { horizontal?: boolean; vertical?: boolean }) => (
-  <View {...styles({ horizontal, vertical })} {...props} />
-)
+}) => <View {...styles({ horizontal, vertical })} {...props} />
 
 export default Inset

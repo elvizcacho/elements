@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 import UnstyledCalendar, {
   CalendarProps,
@@ -128,11 +128,11 @@ const notDisabled = (_: { activeStartDate: Date }) => false
 /**
  * The `Calendar` component is a thin wrapper around https://github.com/wojtekmaj/react-calendar.
  */
-const Calendar = ({
+const Calendar: FunctionComponent<ICalendarProps> = ({
   isBlockedDay = notBlocked,
   tileDisabled = notDisabled,
   ...props
-}: ICalendarProps) => (
+}) => (
   <UnstyledCalendar
     {...props}
     // Add functionality for `isBlockedDay` to disable and color dates differently

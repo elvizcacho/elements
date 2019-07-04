@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { css } from 'glamor'
 
 import Text from '../atoms/Text'
@@ -27,7 +27,11 @@ const styles = (backgroundColor: string) =>
  * </ThemeProvider>
  * ```
  */
-const Pill = ({ color = 'primary', label, ...props }: IPillProps) => {
+const Pill: FunctionComponent<IPillProps> = ({
+  color = 'primary',
+  label,
+  ...props
+}) => {
   return (
     <Theme>
       {({ colorize }) => (

@@ -1,6 +1,6 @@
 import { ColorPalette } from '@allthings/colors'
 import { css } from 'glamor'
-import React, { KeyboardEvent } from 'react'
+import React, { FunctionComponent, KeyboardEvent } from 'react'
 
 import Icon, { IconType } from '../atoms/Icon'
 import Text from '../atoms/Text'
@@ -24,13 +24,13 @@ const STYLES = {
   }),
 }
 
-const EditableText = ({
+const EditableText: FunctionComponent<IEditableTextProps> = ({
   children,
   decorationColor = DEFAULT_DECORATION_COLOR,
   icon = DEFAULT_ICON,
   iconColor = DEFAULT_ICON_COLOR,
   ...props
-}: IEditableTextProps) => (
+}) => (
   <View alignV="center" direction="row">
     <Text
       block

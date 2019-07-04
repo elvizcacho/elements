@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import View, { IViewProps } from '../atoms/View'
 import { css } from 'glamor'
 
@@ -24,7 +24,7 @@ interface IRelative {
   right?: number
 }
 
-const Relative: React.FC<IRelativeProps> = ({
+const Relative: FunctionComponent<IRelativeProps> = ({
   top,
   left,
   right,

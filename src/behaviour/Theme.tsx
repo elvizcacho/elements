@@ -18,7 +18,7 @@ interface IThemeProps {
   children: ThemeChildrenType
 }
 
-const Theme: FunctionComponent<IThemeProps> = ({ children }: IThemeProps) => (
+const Theme: FunctionComponent<IThemeProps> = ({ children }) => (
   <ThemeConsumer>
     {theme =>
       children({

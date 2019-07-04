@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { css } from 'glamor'
 import View, { IViewProps } from '../atoms/View'
 import Theme from '../behaviour/Theme'
@@ -84,7 +84,7 @@ export interface IText {
  *  </Text>
  *  ```
  */
-const Text = ({
+const Text: FunctionComponent<IText & ITextStyles & IViewProps> = ({
   color = 'text',
   block = true,
   children,
@@ -96,7 +96,7 @@ const Text = ({
   autoBreak,
   lineThrough,
   ...props
-}: IText & ITextStyles & IViewProps) => (
+}) => (
   <Theme>
     {({ colorize }) => (
       <View

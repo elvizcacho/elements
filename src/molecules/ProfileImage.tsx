@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import Image from '../atoms/Image'
 import View, { IViewProps } from '../atoms/View'
 import { css } from 'glamor'
@@ -46,7 +46,10 @@ export type ProfileImageSizeType = 'xs' | 's' | 'm' | 'l' | number
 export const resolveSize = (size: ProfileImageSizeType) =>
   typeof size === 'number' ? size : sizeMap[size]
 
-const DefaultProfileImage = ({ width, height }: IDimensions) => {
+const DefaultProfileImage: FunctionComponent<IDimensions> = ({
+  width,
+  height,
+}) => {
   return (
     <svg
       viewBox="0 0 500 500"
@@ -88,14 +91,14 @@ interface IProfileImageProps {
  * </Card>
  * ```
  */
-const ProfileImage = ({
+const ProfileImage: FunctionComponent<IProfileImageProps & IViewProps> = ({
   size = 'm',
   showBorder = true,
   image,
   onClick,
   children,
   ...restProps
-}: IProfileImageProps & IViewProps) => {
+}) => {
   const width = resolveSize(size)
   const height = resolveSize(size)
   const pointerStyle = onClick ? { ':hover': { cursor: 'pointer' } } : {}

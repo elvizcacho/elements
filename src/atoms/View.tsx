@@ -1,4 +1,4 @@
-import React, { createElement, forwardRef, Ref } from 'react'
+import React, { createElement, forwardRef, FunctionComponent, Ref } from 'react'
 import { css } from 'glamor'
 
 function getCssAlignValue(alignment: 'start' | 'end' | string) {
@@ -130,7 +130,7 @@ function createStyles({
  * </ThemeProvider>
  * ```
  */
-const View = ({
+const View: FunctionComponent<IViewProps> = ({
   alignH = 'start',
   alignV = 'stretch',
   children,
@@ -141,7 +141,7 @@ const View = ({
   innerRef,
   wrap,
   ...props
-}: IViewProps) => {
+}) => {
   return createElement(
     htmlElement,
     {

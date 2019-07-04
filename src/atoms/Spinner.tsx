@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { css, keyframes } from 'glamor'
 import { isIE11 } from '../utils/viewport'
 import Theme from '../behaviour/Theme'
@@ -32,13 +32,16 @@ const styles = (color: string, size: number) => ({
 })
 
 /**
- * The spinner is usefull to indicate a loading state
+ * The spinner is useful to indicate a loading state
  *
  * ```example
  * <Spinner />
  * ```
  */
-const Spinner = ({ color = 'primary', size = 30 }: ISpinnerProps) => (
+const Spinner: FunctionComponent<ISpinnerProps> = ({
+  color = 'primary',
+  size = 30,
+}) => (
   <Theme>
     {({ colorize }) =>
       typeof window !== 'undefined' && isIE11(window.navigator.userAgent) ? (

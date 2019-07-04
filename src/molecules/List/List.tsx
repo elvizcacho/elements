@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import View, { IViewProps } from '../../atoms/View'
 
 /**
@@ -54,6 +54,8 @@ import View, { IViewProps } from '../../atoms/View'
  * </View>
  * ```
  */
-const List = (props: IViewProps) => <View direction="column" {...props} />
+const List: FunctionComponent<IViewProps> = props => (
+  <View direction="column" {...props} />
+)
 
 export default List

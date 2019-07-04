@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import Circle from '../atoms/Circle'
 import { Motion, spring } from 'react-motion'
 import Icon from '../atoms/Icon'
@@ -11,13 +11,13 @@ interface ICheckmarkProps {
   color: color
 }
 
-const Checkmark = ({
+const Checkmark: FunctionComponent<ICheckmarkProps & IViewProps> = ({
   checked = false,
   disabled,
   color,
   onClick,
   ...props
-}: ICheckmarkProps & IViewProps) => {
+}) => {
   const currentColor = disabled ? 'grey' : color || 'primary'
   return (
     <Motion

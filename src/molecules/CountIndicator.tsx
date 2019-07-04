@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import Circle from '../atoms/Circle'
 import Text from '../atoms/Text'
 import Absolute, { IAbsoluteProps } from '../atoms/Absolute'
@@ -17,11 +17,11 @@ import Theme from '../behaviour/Theme'
  * </ThemeProvider>
  * ```
  **/
-const CountIndicator = ({
+const CountIndicator: FunctionComponent<ICountIndicatorProps> = ({
   count,
   color = 'warn',
   ...props
-}: ICountIndicatorProps) =>
+}) =>
   count === 0 ? null : (
     <Theme>
       {({ colorize }) => (
