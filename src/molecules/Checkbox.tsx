@@ -1,13 +1,10 @@
 import React, { Component, ReactNode, ChangeEvent } from 'react'
 import View from '../atoms/View'
 import Icon from '../atoms/Icon'
-import Text, { sizeType } from '../atoms/Text'
 import Relative from '../atoms/Relative'
-import ListItem from './List/ListItem'
 import { css } from 'glamor'
 import Theme from '../behaviour/Theme'
 import Absolute from '../atoms/Absolute'
-import Inset from '../atoms/Inset'
 
 const styles = {
   checkbox: (background: string, checked: boolean) =>
@@ -22,10 +19,6 @@ const styles = {
       transition: '250ms',
       cursor: 'pointer',
     }),
-  text: css({
-    width: 200,
-    marginLeft: 20,
-  }),
 }
 interface ICheckboxProps {
   /** True to make it checked */
@@ -53,13 +46,14 @@ interface IState {
  * ```
  */
 class Checkbox extends Component<ICheckboxProps, IState> {
-  state = {
-    checked: this.props.checked,
+  static propTypes = {
+    checked: PropTypes.bool,
+    name: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
   }
 
-  static defaultProps = {
-    labelSize: 'l',
-    onChange: () => {},
+  state = {
+    checked: this.props.checked,
   }
 
   isControlled = () => typeof this.props.checked !== 'undefined'
@@ -68,65 +62,50 @@ class Checkbox extends Component<ICheckboxProps, IState> {
     if (!this.isControlled()) {
       this.setState(({ checked }) => ({ checked: !checked }))
     }
-    this.props.onChange(e)
+    this.props.onChange && this.props.onChange(e)
   }
 
   render() {
-    const {
-      checked,
-      onChange,
-      label,
-      labelSize,
-      name,
-      backgroundColor = 'primary',
-      ...props
-    } = this.props
+    const { checked, onChange, name, ...props } = this.props
     const realChecked = Boolean(
       this.isControlled() ? checked : this.state.checked
     )
 
     return (
       <Theme>
-        {({ theme, colorize }) => (
-          <ListItem backgroundColor={colorize(backgroundColor)}>
-            <View direction="row" alignV="center">
-              <Relative
-                direction="row"
-                alignV="center"
-                alignH="center"
-                {...styles.checkbox(theme.primary, !!realChecked)}
-              >
-                {realChecked && (
-                  <Relative bottom={1}>
-                    <Icon name="check-filled" size={14} color="#fff" />
-                  </Relative>
-                )}
-                <Absolute top={0} left={0} right={0} bottom={0}>
-                  <input
-                    type="checkbox"
-                    checked={realChecked}
-                    id={name}
-                    name={name}
-                    value={String(realChecked)}
-                    style={{
-                      opacity: 0,
-                      width: '25px',
-                      height: '25px',
-                      margin: 0,
-                      cursor: 'pointer',
-                    }}
-                    onChange={this.handleChange}
-                    {...props}
-                  />
-                </Absolute>
-              </Relative>
-            </View>
-            <label htmlFor={name}>
-              <Inset horizontal>
-                <Text size={labelSize}>{label}</Text>
-              </Inset>
-            </label>
-          </ListItem>
+        {({ colorize }) => (
+          <View direction="row" alignV="center">
+            <Relative
+              direction="row"
+              alignV="center"
+              alignH="center"
+              {...styles.checkbox(colorize('primary'), realChecked)}
+            >
+              {realChecked && (
+                <Relative bottom={1}>
+                  <Icon name="check-filled" size={14} color="#fff" />
+                </Relative>
+              )}
+              <Absolute top={0} left={0} right={0} bottom={0}>
+                <input
+                  type="checkbox"
+                  checked={realChecked}
+                  id={name}
+                  name={name}
+                  value={String(realChecked)}
+                  style={{
+                    opacity: 0,
+                    width: '25px',
+                    height: '25px',
+                    margin: 0,
+                    cursor: 'pointer',
+                  }}
+                  onChange={this.handleChange}
+                  {...props}
+                />
+              </Absolute>
+            </Relative>
+          </View>
         )}
       </Theme>
     )

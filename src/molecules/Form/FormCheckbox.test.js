@@ -1,20 +1,19 @@
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
-import { mount } from 'enzyme'
+import { render, fireEvent } from 'react-testing-library'
 
-import Checkbox from './Checkbox'
-import ThemeProvider from '../behaviour/ThemeProvider'
+import FormCheckbox from './FormCheckbox'
+import ThemeProvider from '../../behaviour/ThemeProvider'
 
 const THEME = {
   background: 'darkMarco',
 }
-const STRING_LABEL = 'I am a nice checkbox!'
+const STRING_LABEL = 'I am a nice FormCheckbox!'
 
-describe('Test the checkbox component', () => {
+describe('Test the FormCheckbox component', () => {
   it('should tick it', () => {
     const wrapper = mount(
       <ThemeProvider theme={THEME}>
-        <Checkbox label={STRING_LABEL} name="a" />
+        <FormCheckbox label={STRING_LABEL} name="a" />
       </ThemeProvider>
     )
     const input = wrapper.find('input#a')
@@ -32,7 +31,11 @@ describe('Test the checkbox component', () => {
   it('should work with children', () => {
     const wrapper = mount(
       <ThemeProvider theme={THEME}>
-        <Checkbox label={<h1>test</h1>} name="a" backgroundColor="darkMarco" />
+        <FormCheckbox
+          label={<h1>test</h1>}
+          name="a"
+          backgroundColor="darkMarco"
+        />
       </ThemeProvider>
     )
     expect(wrapper).toMatchSnapshot()
@@ -42,8 +45,8 @@ describe('Test the checkbox component', () => {
   it('should work as controlled component', () => {
     const handleChange = jest.fn()
 
-    const renderCheckboxWithChecked = (checked: boolean) => (
-      <Checkbox
+    const renderCheckboxWithChecked = checked => (
+      <FormCheckbox
         label="label"
         name="a"
         checked={checked}
@@ -55,10 +58,10 @@ describe('Test the checkbox component', () => {
 
     // a click shouldn't change 'checked'
     fireEvent.click(getByLabelText('label'))
-    expect((getByLabelText('label') as HTMLInputElement).checked).toBe(true)
+    expect(getByLabelText('label').checked).toBe(true)
     expect(handleChange).toBeCalled()
 
     rerender(renderCheckboxWithChecked(false))
-    expect((getByLabelText('label') as HTMLInputElement).checked).toBe(false)
+    expect(getByLabelText('label').checked).toBe(false)
   })
 })
