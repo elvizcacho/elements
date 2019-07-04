@@ -1,70 +1,83 @@
-import React from 'react'
-import View from '../atoms/View'
-import mitt from 'mitt'
+import React, {
+  FunctionComponent,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react'
+import View, { IViewProps } from '../atoms/View'
+import Mitt, { Handler } from 'mitt'
 import NotificationBubble from '../molecules/NotificationBubble'
-import PropTypes from 'prop-types'
 import Message from './Message'
 
-const emitter = mitt()
+const emitter = new Mitt()
 
-const send = (message, type) => {
+const send = (message: string, type: string) => {
   emitter.emit(type, message)
 }
 
-export const sendSuccess = message => send(message, 'success')
-export const sendWarning = message => send(message, 'warning')
-export const sendInfo = message => send(message, 'info')
+export const sendSuccess = (message: string) => send(message, 'success')
+export const sendWarning = (message: string) => send(message, 'warning')
+export const sendInfo = (message: string) => send(message, 'info')
 
-class NotificationBubbleManager extends React.Component {
-  static propTypes = {
-    children: PropTypes.node,
-    renderBubble: PropTypes.func,
-  }
+interface INotificationBubbleManager {
+  renderBubble?: ({
+    key,
+    onTimeout,
+    children,
+  }: {
+    key: number
+    onTimeout: () => void
+    children: string
+  }) => ReactNode
+}
 
-  state = {
-    messages: [],
-  }
+const NotificationBubbleManager: FunctionComponent<
+  INotificationBubbleManager & IViewProps
+> = ({ children, renderBubble, ...props }) => {
+  const [messages, setMessages] = useState<Message[]>([])
 
-  componentDidMount() {
-    emitter.on('*', this.handleEvent)
-  }
+  const handleEvent = useCallback(
+    (type, message) =>
+      setMessages(messages => [...messages, new Message(type, message)]),
+    []
+  )
 
-  componentWillUnmount() {
-    emitter.off('*', this.handleEvent)
-  }
+  const handleTimeout = useCallback(
+    () => setMessages(messages => messages.slice(1)),
+    []
+  )
 
-  handleEvent = (type, message) =>
-    this.setState(({ messages }) => ({
-      messages: [...messages, new Message(type, message)],
-    }))
+  const doRenderBubble = useCallback(
+    (message: Message) =>
+      renderBubble ? (
+        renderBubble({
+          key: message.id,
+          onTimeout: handleTimeout,
+          children: message.text,
+        })
+      ) : (
+        <NotificationBubble key={message.id} onTimeout={handleTimeout}>
+          {message.text}
+        </NotificationBubble>
+      ),
+    [handleTimeout, renderBubble]
+  )
 
-  handleTimeout = () =>
-    this.setState(({ messages }) => ({ messages: messages.slice(1) }))
+  useEffect(() => {
+    emitter.on('*', handleEvent as Handler)
 
-  renderBubble = message =>
-    this.props.renderBubble ? (
-      this.props.renderBubble({
-        key: message.id,
-        onTimeout: this.handleTimeout,
-        children: message.text,
-      })
-    ) : (
-      <NotificationBubble key={message.id} onTimeout={this.handleTimeout}>
-        {message.text}
-      </NotificationBubble>
-    )
+    return () => emitter.off('*', handleEvent as Handler)
+  }, [handleEvent])
 
-  render() {
-    const { children, renderBubble, ...props } = this.props
-    const message = this.state.messages[0]
+  const message = messages[0]
 
-    return (
-      <View {...props}>
-        {message && this.renderBubble(message)}
-        {children}
-      </View>
-    )
-  }
+  return (
+    <View {...props}>
+      {message && doRenderBubble(message)}
+      {children}
+    </View>
+  )
 }
 
 export default NotificationBubbleManager

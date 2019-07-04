@@ -1,15 +1,17 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
 import NotificationBubbleManager, {
   sendSuccess,
 } from './NotificationBubbleManager'
 import NotificationBubble from '../molecules/NotificationBubble'
 import ResourceProvider from '../behaviour/ResourceProvider'
+import { render } from 'react-testing-library'
 
 test('NotificationBubbleManager renders the bubble', () => {
-  const renderBubble = jest.fn(props => <NotificationBubble {...props} />)
+  const renderBubble = jest.fn(props => (
+    <NotificationBubble data-testid="test" {...props} />
+  ))
 
-  const nbm = (
+  const { getByTestId } = render(
     <ResourceProvider>
       <NotificationBubbleManager renderBubble={renderBubble}>
         <div>Test</div>
@@ -17,9 +19,8 @@ test('NotificationBubbleManager renders the bubble', () => {
     </ResourceProvider>
   )
 
-  const tree = renderer.create(nbm)
-  sendSuccess('success')
-  tree.update(nbm)
-  expect(renderBubble).toBeCalled()
-  expect(tree).toMatchSnapshot()
+  const successMessage = 'this was a success'
+  sendSuccess(successMessage)
+
+  expect(getByTestId('test').textContent).toEqual(successMessage)
 })
