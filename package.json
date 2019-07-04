@@ -151,6 +151,7 @@
     "bail": true,
     "collectCoverage": true,
     "setupFilesAfterEnv": [
+      "react-testing-library/cleanup-after-each",
       "<rootDir>/bootstrap-jest.ts"
     ],
     "snapshotSerializers": [
