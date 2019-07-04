@@ -38,7 +38,7 @@ const DOWNSHIFT_ITEM = (instance: string | number, index: string | number) =>
 describe('Test the typeahead component', () => {
   it('should be a simple static one - in depth testing of the core behavior', () => {
     const wrapper = mount(<Typeahead items={ITEMS} placeholder={PLACEHOLDER} />)
-    const clickAndPress = (value: string | number, last: string | number) => {
+    const clickAndPress = (value: string | number, last?: number) => {
       // Simulate press `a`.
       // See https://github.com/airbnb/enzyme/issues/76.
       wrapper.find(INPUT(0)).simulate('change', { target: { value } })

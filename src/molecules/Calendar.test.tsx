@@ -3,10 +3,11 @@ import Calendar from './Calendar'
 import ThemeProvider from '../behaviour/ThemeProvider'
 import ResourceProvider from '../behaviour/ResourceProvider'
 import renderer from 'react-test-renderer'
+import { render } from '@testing-library/react'
 
 describe('Calendar', () => {
   it('should be able to block days', () => {
-    const testInstance = renderer.create(
+    const { container } = render(
       <ThemeProvider>
         <ResourceProvider>
           <Calendar
@@ -18,12 +19,9 @@ describe('Calendar', () => {
       </ThemeProvider>
     )
 
-    const found = testInstance.root.find(
-      (el: any) =>
-        el.props.className && el.props.className.indexOf('blocked') !== -1
+    expect(container.querySelector('.blocked')!.textContent).toBe(
+      String(new Date().getDate())
     )
-
-    expect(found.children[0].children[0]).toEqual(String(new Date().getDate()))
   })
 
   it('should render calendar', () => {

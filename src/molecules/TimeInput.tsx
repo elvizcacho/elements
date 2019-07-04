@@ -241,14 +241,19 @@ class TimeInput extends Component<ITimeInputProps, IState> {
   }
 
   render() {
-    const { name, label, required, ...props } = this.props
+    const {
+      name,
+      label,
+      required,
+      hourStep,
+      minuteStep,
+      minTime,
+      maxTime,
+      defaultValue,
+      onChange,
+      ...props
+    } = this.props
     const { value, selectedHour, selectedMinute, timeRange } = this.state
-    delete props.hourStep
-    delete props.minuteStep
-    delete props.minTime
-    delete props.maxTime
-    delete props.defaultValue
-    delete props.onChange
 
     const hasSelectedHour = selectedHour !== undefined
     const hasSelectedMinute = selectedMinute !== undefined
