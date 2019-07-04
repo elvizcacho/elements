@@ -1,5 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { TouchEvent } from 'react'
 import View from '../atoms/View'
 import { css } from 'glamor'
 import { color } from '../propTypes/color'
@@ -7,7 +6,7 @@ import { createMQ } from '../behaviour/Responsive'
 import { Motion, spring } from 'react-motion'
 import Theme from '../behaviour/Theme'
 
-const simple = backgroundColor =>
+const simple = (backgroundColor: string) =>
   css({
     WebkitOverflowScrolling: 'touch',
     overflow: 'auto',
@@ -16,7 +15,7 @@ const simple = backgroundColor =>
     height: '100%',
   })
 
-const paddedCss = (paddedVertical, paddedHorizontal) =>
+const paddedCss = (paddedVertical: boolean, paddedHorizontal: boolean) =>
   css({
     [createMQ('tablet', 'desktop')]: {
       paddingLeft: paddedHorizontal && '25px',
@@ -26,19 +25,19 @@ const paddedCss = (paddedVertical, paddedHorizontal) =>
     },
   })
 
-class SimpleLayout extends React.PureComponent {
-  static propTypes = {
-    children: PropTypes.node,
-    backgroundColor: color,
-    follow: PropTypes.bool,
-    padded: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.oneOf(['horizontal', 'vertical']),
-    ]),
-    onScrollEnd: PropTypes.func,
-    onPullDown: PropTypes.func,
-  }
+interface ISimpleLayout {
+  backgroundColor: color
+  follow: boolean
+  padded: boolean | 'horizontal' | 'vertical'
+  onScrollEnd: () => void
+  onPullDown: () => void
+}
 
+interface IState {
+  pullDownOffset: number
+}
+
+class SimpleLayout extends React.PureComponent<ISimpleLayout, IState> {
   static defaultProps = {
     backgroundColor: 'background',
   }
@@ -47,17 +46,17 @@ class SimpleLayout extends React.PureComponent {
     pullDownOffset: 0,
   }
 
-  trigger = true
-  scrollTop = 0
-  pullDown = false
+  trigger: boolean = true
+  scrollTop: number = 0
+  pullDown?: number
 
-  handleScroll = e => {
+  handleScroll = (e: MouseEvent) => {
     e.preventDefault()
-    this.scrollTop = e.target.scrollTop
+    const target = e.target as HTMLDivElement
+    this.scrollTop = target.scrollTop
     if (this.props.onScrollEnd) {
-      const element = e.target
       const thresholdReached =
-        element.scrollTop + element.clientHeight + 75 > element.scrollHeight
+        target.scrollTop + target.clientHeight + 75 > target.scrollHeight
 
       // Trigger the callback with a tolerance of 75 px.
       if (thresholdReached) {
@@ -71,23 +70,22 @@ class SimpleLayout extends React.PureComponent {
     }
   }
 
-  handleTouchStart = e => {
+  handleTouchStart = () => {
     if (this.props.onPullDown && this.scrollTop === 0) {
-      this.pullDown = false
+      this.pullDown = undefined
       this.setState({ pullDownOffset: 0 })
     }
   }
 
-  handleTouchMove = event => {
+  handleTouchMove = (e: TouchEvent<HTMLDivElement>) => {
     if (this.props.onPullDown && this.scrollTop === 0) {
       let y = 0
-      const touches =
-        event.touches && event.touches.length ? event.touches : [event]
-      const e = (event.changedTouches && event.changedTouches[0]) || touches[0]
-      if (e) {
-        y = e.clientY || e.pageY || 0
+      const touches = e.touches && e.touches.length ? e.touches : [e]
+      const event = (e.changedTouches && e.changedTouches[0]) || touches[0]
+      if (event) {
+        y = event.clientY || event.pageY || 0
       }
-      if (this.pullDown && y > this.pullDown) {
+      if (this.pullDown !== undefined && y > this.pullDown) {
         this.setState({
           pullDownOffset: Math.min(Math.abs(this.pullDown - y), 60),
         })
@@ -97,25 +95,21 @@ class SimpleLayout extends React.PureComponent {
     }
   }
 
-  handleTouchEnd = e => {
+  handleTouchEnd = () => {
     if (this.state.pullDownOffset === 60) {
       this.props.onPullDown()
     }
     if (this.props.onPullDown && this.scrollTop === 0) {
-      this.pullDown = false
+      this.pullDown = undefined
       this.setState({ pullDownOffset: 0 })
     }
   }
 
   render() {
-    const {
-      children,
-      backgroundColor,
-      padded,
-      onScrollEnd,
-      onPullDown,
-      ...props
-    } = this.props
+    const { children, backgroundColor, padded, ...props } = this.props
+
+    delete props.onScrollEnd
+    delete props.onPullDown
 
     return (
       <Theme>
@@ -141,7 +135,9 @@ class SimpleLayout extends React.PureComponent {
                     ? { transform: `translateY(${value.x}px)` }
                     : {}
                 }
-                onScroll={this.handleScroll}
+                // workaround for
+                // TS2322: Type '(e: MouseEvent) => void' is not assignable to type '(event: UIEvent<HTMLElement>) => void'.
+                onScroll={this.handleScroll as any}
                 // for e2e-tests, to scroll down on pages (id is taken for cross browser selector compat)
                 id="scroll-container"
                 {...props}
