@@ -1,7 +1,7 @@
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { hydrate } from 'react-dom'
-import renderer from 'react-test-renderer'
+import renderer, { ReactTestRenderer } from 'react-test-renderer'
 import { FormattedMessage } from 'react-intl'
 import CDNIntlProvider from './CDNIntlProvider'
 import ResourceProvider from './ResourceProvider'
@@ -14,7 +14,7 @@ describe('Check the CDNIntlProvider component', () => {
   it('should fetch the corresponding locales', async () => {
     fetch.mockResponseOnce(JSON.stringify({ test: 'Hallo Welt' }))
 
-    const testRenderer = await new Promise(resolve => {
+    const testRenderer: ReactTestRenderer = await new Promise(resolve => {
       function onDone() {
         resolve(myRenderer)
       }
@@ -134,7 +134,10 @@ describe('Check the CDNIntlProvider component', () => {
         </CDNIntlProvider>
       </ResourceProvider>,
       div,
-      () => expect(div.innerHTML).toMatchSnapshot() & ok()
+      () => {
+        expect(div.innerHTML).toMatchSnapshot()
+        ok()
+      }
     )
   })
 })

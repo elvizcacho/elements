@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import View, { IViewProps } from '../atoms/View'
 import { css } from 'glamor'
 
@@ -22,14 +22,14 @@ export interface IAbsoluteProps {
   right?: string | number
 }
 
-const Absolute = ({
+const Absolute: FunctionComponent<IAbsoluteProps & IViewProps> = ({
   top,
   left,
   right,
   bottom,
   children,
   ...props
-}: IAbsoluteProps & IViewProps) => (
+}) => (
   <View {...absolute({ top, left, right, bottom })} {...props}>
     {children}
   </View>

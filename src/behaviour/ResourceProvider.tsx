@@ -6,7 +6,7 @@ export const RESOURCE_PATH = 'https://static.allthings.me'
  * Elements uses a set of static resources like images or icons.
  * In order to benefit from caching across all apps, these resources are provided by a static asset CDN.
  *
- * Whenever you like to use Icons or Illustrations, you need to use the ResouceProvider to let the components know where they are.
+ * Whenever you like to use Icons or Illustrations, you need to use the ResourceProvider to let the components know where they are.
  */
 export const ResourceProviderContext = React.createContext({
   resourcePath: RESOURCE_PATH,
@@ -22,7 +22,7 @@ export type ResourceType = {
  *
  * **Example**: If you want all you buttons to be red, instead of writing <Button color="red" /> all the time, you might want to set the "primary" color of your theme to red.
  **/
-const ResouceProvider = ({
+const ResourceProvider = ({
   children,
   resourcePath = RESOURCE_PATH,
 }: PropsWithChildren<{ resourcePath?: string }>) => (
@@ -31,4 +31,4 @@ const ResouceProvider = ({
   </ResourceProviderContext.Provider>
 )
 
-export default ResouceProvider
+export default ResourceProvider

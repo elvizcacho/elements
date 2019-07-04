@@ -47,6 +47,7 @@
     "react/jsx-first-prop-new-line": [2, "multiline-multiprop"],
     "react/jsx-indent-props": 0,
     "react/jsx-no-bind": 0,
+    "react/prop-types": 0,
     "react/jsx-no-target-blank": 0,
     "react/no-array-index-key": 2,
     "react/no-multi-comp": [1, { "ignoreStateless": true }],

@@ -1880,7 +1880,7 @@
   dependencies:
     "@types/jest-diff" "*"
 
-"@types/json2mq@^0.2.0":
+"@types/json2mq@0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@types/json2mq/-/json2mq-0.2.0.tgz#6fd48dd2761250ecf28da0628e9830a13121828e"
   integrity sha512-E7R0ye2fY4HGbBDwopzJzMrwPY3gFxy2dCrE1uVnyS7UEjLggfSilM3lPWYTbqf0nqJbHE87K9pIvP+V3flslA==
@@ -1912,10 +1912,17 @@
   resolved "https://registry.yarnpkg.com/@types/react-intl/-/react-intl-2.3.18.tgz#fd2d8b7f4d0a1dd05b5f1784ab0d7fe1786a690d"
   integrity sha512-DVNJs49zUxKRZng8VuILE886Yihdsf3yLr5vHk9zJrmF8SyRSK3sxNSvikAKxNkv9hX55XBTJShz6CkJnbNjgg==
 
-"@types/react-motion@^0.0.29":
+"@types/react-motion@0.0.29":
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/react-motion/-/react-motion-0.0.29.tgz#1a22e11bc1452150e8aa58463f72dd921ff10721"
   integrity sha512-MD1DbdcDKruR0zz5Z0XIlrkPdjDMgYx0AHhbaoTBpDirUTt8Bd7x6OFE458nEINZxfPW0EcEOw2O8S/WwGNLsA==
+  dependencies:
+    "@types/react" "*"
+
+"@types/react-test-renderer@16.8.2":
+  version "16.8.2"
+  resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-16.8.2.tgz#ad544b5571ebfc5f182c320376f1431a2b725c5e"
+  integrity sha512-cm42QR9S9V3aOxLh7Fh7PUqQ8oSfSdnSni30T7TiTmlKvE6aUlo+LhQAzjnZBPriD9vYmgG8MXI8UDK4Nfb7gg==
   dependencies:
     "@types/react" "*"
 
@@ -1932,7 +1939,7 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
 
-"@types/storybook__react@^4.0.2":
+"@types/storybook__react@4.0.2":
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@types/storybook__react/-/storybook__react-4.0.2.tgz#f36fb399574c662e79c1a0cf6e429b6ff730da40"
   integrity sha512-U/+J5qccRdKFryvHkk1a0IeZaSIZLCmTwAQhTSDGeC3SPNIYPus+EtunBqP49r870l8czbfxtjeC3IL9P66ngQ==
@@ -2583,7 +2590,7 @@ autoprefixer@^9.4.9:
     postcss "^7.0.14"
     postcss-value-parser "^3.3.1"
 
-awesome-typescript-loader@^5.2.1:
+awesome-typescript-loader@5.2.1:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/awesome-typescript-loader/-/awesome-typescript-loader-5.2.1.tgz#a41daf7847515f4925cdbaa3075d61f289e913fc"
   integrity sha512-slv66OAJB8orL+UUaTI3pKlLorwIvS4ARZzYR9iJJyGsEgOqueMfOMdKySWzZ73vIkEe3fcwFgsKMg4d8zyb1g==
@@ -8908,7 +8915,7 @@ react-dev-utils@^9.0.0:
     strip-ansi "5.2.0"
     text-table "0.2.0"
 
-react-docgen-typescript-loader@^3.1.0:
+react-docgen-typescript-loader@3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/react-docgen-typescript-loader/-/react-docgen-typescript-loader-3.1.0.tgz#09cacf872617c97f946ee920d2239f51d543be41"
   integrity sha512-gY+b7RkRPty5ZN4NMQ+jwx9MzTVuIj6LJCwdWRAi1+nrHJfH2gMMytQfxFdzQ7BlgD4COWnSE8Ixtl2L62kCRw==
@@ -10571,7 +10578,7 @@ tslib@^1.9.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
 
-tslint@^5.18.0:
+tslint@5.18.0:
   version "5.18.0"
   resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.18.0.tgz#f61a6ddcf372344ac5e41708095bbf043a147ac6"
   integrity sha512-Q3kXkuDEijQ37nXZZLKErssQVnwCV/+23gFEMROi8IlbaBG6tXqLPQJ5Wjcyt/yHPKBC+hD5SzuGaMora+ZS6w==

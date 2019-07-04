@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import View, { IViewProps } from './View'
 import { css } from 'glamor'
 import Theme from '../behaviour/Theme'
@@ -54,7 +54,7 @@ interface IProps {
  * </ThemeProvider>
  * ```
  **/
-const Circle = ({
+const Circle: FunctionComponent<IProps & IViewProps> = ({
   fill = true,
   color = 'primary',
   outline = false,
@@ -62,7 +62,7 @@ const Circle = ({
   radius = 40,
   children,
   ...props
-}: IProps & IViewProps) => (
+}) => (
   <Theme>
     {({ colorize }) => (
       <View

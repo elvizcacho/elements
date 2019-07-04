@@ -61,7 +61,7 @@ function getCssFlexValue(flex: flexType) {
 }
 
 export type IViewProps = IView & React.HTMLAttributes<HTMLElement>
-interface IView {
+export interface IView {
   htmlElement?: string
   /** horizontal alignment */
   alignH?: alignH

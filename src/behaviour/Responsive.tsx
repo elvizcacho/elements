@@ -11,20 +11,31 @@ const MQ = {
   desktop: { minWidth: 1025 },
 }
 
-export const createMQ = (...devices) => {
-  devices = Array.isArray(devices[0]) ? devices[0] : [...devices]
+type DeviceType = 'mobile' | 'tablet' | 'desktop'
 
-  return `@media ${json2mq(devices.map(device => MQ[device]))}`
+export const createMQ = (...devices: DeviceType[] | [DeviceType[]]) => {
+  const _devices: DeviceType[] = Array.isArray(devices[0])
+    ? devices[0]
+    : (devices as DeviceType[])
+
+  return `@media ${json2mq(_devices.map(device => MQ[device]))}`
 }
 
-const displayStyle = mq =>
+const displayStyle = (mq: string) =>
   css({
     [`@media ${mq}`]: {
       display: 'none !important',
     },
   })
 
-export default class Responsive extends React.Component {
+interface IResponsiveProps {
+  mobile?: boolean
+  tablet?: boolean
+  desktop?: boolean
+  onlyRenderOnMatch?: boolean
+}
+
+export default class Responsive extends React.Component<IResponsiveProps> {
   static propTypes = {
     /** Children to be displayed when component matches screen size(s) */
     children: PropTypes.node.isRequired,
