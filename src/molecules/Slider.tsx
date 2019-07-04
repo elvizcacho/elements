@@ -1,6 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import View from '../atoms/View'
+import React, { FunctionComponent, ChangeEvent } from 'react'
+import View, { IViewProps } from '../atoms/View'
 import { css } from 'glamor'
 
 const styles = {
@@ -109,40 +108,39 @@ const styles = {
  * />
  * ```
  */
-class Slider extends React.Component {
-  static propTypes = {
-    /** Minimum selectable value **/
-    min: PropTypes.number.isRequired,
-    /** Maximum selectable value **/
-    max: PropTypes.number.isRequired,
-    /** Step interval **/
-    step: PropTypes.number,
-    /** Current value to show **/
-    value: PropTypes.number,
-    /** Callback when the users changes the value **/
-    onChange: PropTypes.func,
-  }
 
-  static defaultProps = {
-    step: 0.1,
-  }
-
-  render() {
-    const { min, max, step, value, onChange, ...props } = this.props
-    return (
-      <View {...props}>
-        <input
-          max={max}
-          min={min}
-          onChange={onChange}
-          step={step}
-          type="range"
-          value={value}
-          {...styles.slider}
-        />
-      </View>
-    )
-  }
+interface ISliderProps extends IViewProps {
+  /** Minimum selectable value **/
+  min: number
+  /** Maximum selectable value **/
+  max: number
+  /** Step interval **/
+  step?: number
+  /** Current value to show **/
+  value?: number
+  /** Callback when the users changes the value **/
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
+
+const Slider: FunctionComponent<ISliderProps> = ({
+  min,
+  max,
+  step = 0.1,
+  value,
+  onChange,
+  ...props
+}) => (
+  <View {...props}>
+    <input
+      max={max}
+      min={min}
+      onChange={onChange}
+      step={step}
+      type="range"
+      value={value}
+      {...styles.slider}
+    />
+  </View>
+)
 
 export default Slider
