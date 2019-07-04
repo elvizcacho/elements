@@ -5,8 +5,9 @@ import renderer, { ReactTestRenderer } from 'react-test-renderer'
 import { FormattedMessage } from 'react-intl'
 import CDNIntlProvider from './CDNIntlProvider'
 import ResourceProvider from './ResourceProvider'
-import { shallow, mount } from 'enzyme'
+import { mount } from 'enzyme'
 import fetch from 'jest-fetch-mock'
+import { render } from 'react-testing-library'
 
 describe('Check the CDNIntlProvider component', () => {
   beforeEach(fetch.resetMocks)
@@ -87,21 +88,23 @@ describe('Check the CDNIntlProvider component', () => {
 
   it('should use the correct stage', () => {
     const stage = 'staging'
-    const wrapper = shallow(
+    const test = 'Bonjour tout le monde'
+    const { getByTestId } = render(
       <ResourceProvider>
         <CDNIntlProvider
-          messages={{ test: 'Bonjour tout le monde' }}
+          messages={{ test }}
           locale="fr_FR"
           project="app"
           stage={stage}
           variation="residential-formal"
         >
-          <FormattedMessage id="test" defaultMessage="Default" />
+          <FormattedMessage id="test" defaultMessage="Default">
+            {message => <div data-testid="asd">{message}</div>}
+          </FormattedMessage>
         </CDNIntlProvider>
       </ResourceProvider>
     )
-    expect(wrapper).toMatchSnapshot()
-    expect(wrapper.props().stage).toBe(stage)
+    expect(getByTestId('asd').textContent).toEqual(test)
   })
 
   it('should pick up if hyrdated', ok => {

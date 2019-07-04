@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types'
 import React, { Fragment, Component } from 'react'
 import { IntlProvider } from 'react-intl'
+import { ResourceProviderContext } from './ResourceProvider'
 
 export const loadLanguage = async (
   resourcePath: string,
@@ -40,9 +40,7 @@ interface IState {
 class CDNIntlProvider extends Component<IProps, IState> {
   static defaultProps = defaultProps
 
-  static contextTypes = {
-    resourcePath: PropTypes.string,
-  }
+  static contextType = ResourceProviderContext
 
   constructor(props: IProps, context: any) {
     super(props, context)
