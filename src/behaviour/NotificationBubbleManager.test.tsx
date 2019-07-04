@@ -4,7 +4,7 @@ import NotificationBubbleManager, {
 } from './NotificationBubbleManager'
 import NotificationBubble from '../molecules/NotificationBubble'
 import ResourceProvider from '../behaviour/ResourceProvider'
-import { render } from 'react-testing-library'
+import { act, render } from 'react-testing-library'
 
 test('NotificationBubbleManager renders the bubble', () => {
   const renderBubble = jest.fn(props => (
@@ -20,7 +20,9 @@ test('NotificationBubbleManager renders the bubble', () => {
   )
 
   const successMessage = 'this was a success'
-  sendSuccess(successMessage)
+  act(() => {
+    sendSuccess(successMessage)
+  })
 
   expect(getByTestId('test').textContent).toEqual(successMessage)
 })
