@@ -119,7 +119,7 @@ interface ISliderProps extends IViewProps {
   /** Current value to show **/
   value?: number
   /** Callback when the users changes the value **/
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 const Slider: FunctionComponent<ISliderProps> = ({
