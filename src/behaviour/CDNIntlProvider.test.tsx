@@ -7,7 +7,7 @@ import CDNIntlProvider from './CDNIntlProvider'
 import ResourceProvider from './ResourceProvider'
 import { mount } from 'enzyme'
 import fetch from 'jest-fetch-mock'
-import { render } from 'react-testing-library'
+import { render } from '@testing-library/react'
 
 describe('Check the CDNIntlProvider component', () => {
   beforeEach(fetch.resetMocks)

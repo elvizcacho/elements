@@ -64,6 +64,7 @@
     "@storybook/addon-actions": "5.1.9",
     "@storybook/addon-links": "5.1.9",
     "@storybook/react": "5.1.9",
+    "@testing-library/react": "8.0.4",
     "@types/enzyme": "3.9.4",
     "@types/jest": "24.0.15",
     "@types/json2mq": "0.2.0",
@@ -116,7 +117,6 @@
     "react-generate-props": "0.5.0",
     "react-intl": "2.9.0",
     "react-test-renderer": "16.8.6",
-    "react-testing-library": "6.1.2",
     "rimraf": "2.6.3",
     "snapshot-diff": "0.5.1",
     "ts-jest": "24.0.2",
@@ -159,7 +159,7 @@
     "bail": true,
     "collectCoverage": true,
     "setupFilesAfterEnv": [
-      "react-testing-library/cleanup-after-each",
+      "@testing-library/react/cleanup-after-each",
       "<rootDir>/bootstrap-jest.ts"
     ],
     "snapshotSerializers": [

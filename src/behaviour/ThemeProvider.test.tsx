@@ -1,6 +1,6 @@
 import React from 'react'
 import ThemeProvider, { ThemeConsumer } from './ThemeProvider'
-import { render } from 'react-testing-library'
+import { render } from '@testing-library/react'
 
 describe('ThemeProvider', () => {
   it('should merge themes recursively', () => {

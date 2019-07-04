@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { render, fireEvent } from 'react-testing-library'
+import { render, fireEvent } from '@testing-library/react'
 import RadioButton from './RadioButton'
 import RadioButtonSet from './RadioButtonSet'
 import ThemeProvider from '../behaviour/ThemeProvider'

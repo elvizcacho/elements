@@ -4,7 +4,7 @@ import NotificationBubbleManager, {
 } from './NotificationBubbleManager'
 import NotificationBubble from '../molecules/NotificationBubble'
 import ResourceProvider from '../behaviour/ResourceProvider'
-import { act, render } from 'react-testing-library'
+import { act, render } from '@testing-library/react'
 
 test('NotificationBubbleManager renders the bubble', () => {
   const renderBubble = jest.fn(props => (
