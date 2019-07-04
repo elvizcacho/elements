@@ -26,7 +26,7 @@ export interface ITheme {
   [key: string]: string
 }
 
-const ThemeContext = createContext<ITheme>(defaultTheme)
+export const ThemeContext = createContext<ITheme>(defaultTheme)
 export const ThemeConsumer = ThemeContext.Consumer
 
 /**

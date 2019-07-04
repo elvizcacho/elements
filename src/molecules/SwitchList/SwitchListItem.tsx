@@ -1,56 +1,48 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FunctionComponent, useContext } from 'react'
 import View from '../../atoms/View'
 import { css } from 'glamor'
 import Text from '../../atoms/Text'
-import { withTheme } from '../../behaviour/ThemeProvider'
+import { ThemeContext } from '../../behaviour/ThemeProvider'
 
-class SwitchListItem extends React.Component {
-  static propTypes = {
-    optionKey: string.isRequired,
-    value: string.isRequired,
-    isActive: boolean,
-    onClick: () => void.isRequired,
-    children: PropTypes.node,
-    theme: PropTypes.object.isRequired,
-  }
-
-  handleClick = () => this.props.onClick(this.props.optionKey)
-
-  render() {
-    const {
-      optionKey,
-      value,
-      isActive,
-      onClick,
-      children,
-      theme,
-      ...props
-    } = this.props
-    const activeStyle = isActive && {
-      backgroundColor: theme.primary,
-    }
-    return (
-      <View
-        onClick={this.handleClick}
-        data-e2e={`settings-switch-locale-${this.props.optionKey}`}
-        {...css(activeStyle, { ':hover': { cursor: 'pointer' } })}
-        {...props}
-      >
-        <Text
-          size="m"
-          color={isActive ? 'textOnBackground' : 'gray'}
-          {...css({
-            padding: 10,
-            textAlign: 'center',
-          })}
-        >
-          {value}
-        </Text>
-        {children}
-      </View>
-    )
-  }
+interface ISwitchListItem {
+  optionKey: string
+  value: string
+  isActive: boolean
+  onClick: (optionKey: string) => void
 }
 
-export default withTheme()(SwitchListItem)
+const SwitchListItem: FunctionComponent<ISwitchListItem> = ({
+  optionKey,
+  value,
+  isActive,
+  onClick,
+  children,
+  ...props
+}) => {
+  const theme = useContext(ThemeContext)
+  const activeStyle = isActive && {
+    backgroundColor: theme.primary,
+  }
+  return (
+    <View
+      onClick={() => onClick(optionKey)}
+      data-e2e={`settings-switch-locale-${optionKey}`}
+      {...css(activeStyle, { ':hover': { cursor: 'pointer' } })}
+      {...props}
+    >
+      <Text
+        size="m"
+        color={isActive ? 'textOnBackground' : 'gray'}
+        {...css({
+          padding: 10,
+          textAlign: 'center',
+        })}
+      >
+        {value}
+      </Text>
+      {children}
+    </View>
+  )
+}
+
+export default SwitchListItem

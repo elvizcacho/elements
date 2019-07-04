@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import View from '../../atoms/View'
 import { css } from 'glamor'
 import { ColorPalette } from '@allthings/colors'
@@ -48,20 +47,25 @@ const styles = {
  * />
  * ```
  */
-export default class SwitchList extends Component<ISwitchListProps> {
-  static propTypes = {
-    disabled: boolean,
-    onChange: () => void,
-    options: PropTypes.object,
-    initialActive: string,
-    showSpinner: boolean,
-  }
 
+interface ISwitchListProps {
+  disabled?: boolean
+  onChange: (optionKey: string) => void
+  options: { [key: string]: string }
+  initialActive?: string
+  showSpinner?: boolean
+}
+
+interface IState {
+  active?: string
+}
+
+export default class SwitchList extends Component<ISwitchListProps, IState> {
   state = {
     active: this.props.initialActive,
   }
 
-  handleClick = optionKey => {
+  handleClick = (optionKey: string) => {
     if (!this.props.disabled) {
       this.props.onChange(optionKey)
       this.setState({ active: optionKey })
@@ -103,6 +107,7 @@ export default class SwitchList extends Component<ISwitchListProps> {
       showSpinner,
       ...props
     } = this.props
+
     return (
       <View {...styles.container} {...props}>
         {this.renderItems()}
