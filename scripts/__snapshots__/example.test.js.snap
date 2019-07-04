@@ -3050,121 +3050,6 @@ exports[`Component Examples should match snapshot: ListIcon0 1`] = `
 </div>
 `;
 
-exports[`Component Examples should match snapshot: PhoneInput0 1`] = `
-.css-0,
-[data-css-0] {
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  -webkit-flex: 0 0 auto;
-}
-
-.css-1,
-[data-css-1] {
-  display: inline;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  box-sizing: border-box;
-  height: 50px;
-  width: 100%;
-  padding: 0 15px;
-  padding-top: 0;
-  padding-right: 15px;
-  transition: padding-top .225s ease-out;
-  border: 0;
-  -webkit-transition: padding-top .225s ease-out;
-  -moz-transition: padding-top .225s ease-out;
-}
-
-.css-1:-webkit-autofill ~ .label,
-[data-css-1]:-webkit-autofill ~ .label {
-  opacity: 1 !important;
-  top: 8px !important;
-}
-
-.css-1:-webkit-autofill ~ .checkmark,
-[data-css-1]:-webkit-autofill ~ .checkmark {
-  opacity: 1 !important;
-  top: 8px;
-}
-
-.css-1:-webkit-autofill,
-[data-css-1]:-webkit-autofill {
-  padding-top: 10px !important;
-}
-
-.css-3,
-[data-css-3] {
-  position: absolute;
-  top: 16px;
-  right: 15px;
-  pointer-events: none;
-  transition: opacity .225s;
-  opacity: 0;
-  -webkit-transition: opacity .225s;
-  -moz-transition: opacity .225s;
-}
-
-.css-4,
-[data-css-4] {
-  position: relative;
-}
-
-.css-5,
-[data-css-5] {
-  display: block;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #333333;
-}
-
-<div
-  data-css-0=""
->
-   
-  <div
-    style="position:relative;cursor:text;width:100%"
-  >
-    <div
-      data-css-5=""
-      data-css-0=""
-      style="padding-left:5px;user-select:none;position:absolute;z-index:10;width:100%;top:50%;transform:translateY(-50%)"
-    >
-      +
-    </div>
-    <div
-      data-css-4=""
-      data-css-0=""
-      style="width:100%"
-    >
-      <input
-        aria-required="true"
-        data-css-1=""
-        name="phone"
-        placeholder="Example Placeholder"
-        required=""
-        type="tel"
-        value="4907615555555"
-      />
-      <div
-        class="checkmark"
-        data-css-3=""
-        data-css-0=""
-      >
-        <div
-          data-css-0=""
-          style="width:16px;height:16px;fill:lightGrey;stroke:"
-        />
-      </div>
-    </div>
-  </div>
-   
-</div>
-`;
-
 exports[`Component Examples should match snapshot: Pill0 1`] = `
 .css-0,
 [data-css-0] {
@@ -3393,28 +3278,18 @@ exports[`Component Examples should match snapshot: RadioButton0 1`] = `
 
 .css-5,
 [data-css-5] {
-  display: block;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #333333;
-}
-
-.css-6,
-[data-css-6] {
   margin-right: 40px;
   width: auto;
 }
 
-.css-7,
-[data-css-7] {
+.css-6,
+[data-css-6] {
   opacity: 0;
   margin: 0;
 }
 
-.css-8,
-[data-css-8] {
+.css-7,
+[data-css-7] {
   box-sizing: border-box;
   align-content: flex-start;
   align-items: flex-start;
@@ -3437,14 +3312,14 @@ exports[`Component Examples should match snapshot: RadioButton0 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-9,
-[data-css-9] {
+.css-8,
+[data-css-8] {
   position: relative;
   top: 10px;
 }
 
-.css-10,
-[data-css-10] {
+.css-9,
+[data-css-9] {
   background-color: lightGrey;
   border-radius: 50%;
   height: 20px;
@@ -3454,8 +3329,8 @@ exports[`Component Examples should match snapshot: RadioButton0 1`] = `
   -moz-transition: background-color 120ms linear;
 }
 
-.css-11,
-[data-css-11] {
+.css-10,
+[data-css-10] {
   background-color: white;
   border-radius: 50%;
   height: 16px;
@@ -3465,8 +3340,8 @@ exports[`Component Examples should match snapshot: RadioButton0 1`] = `
   -moz-transition: background-color 120ms linear;
 }
 
-.css-12,
-[data-css-12] {
+.css-11,
+[data-css-11] {
   background-color: white;
   border-radius: 50%;
   height: 10px;
@@ -3476,10 +3351,20 @@ exports[`Component Examples should match snapshot: RadioButton0 1`] = `
   -moz-transition: background-color 120ms linear;
 }
 
-.css-13,
-[data-css-13] {
+.css-12,
+[data-css-12] {
   position: relative;
   top: -8px;
+}
+
+.css-13,
+[data-css-13] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
 }
 
 .css-14,
@@ -3512,11 +3397,11 @@ exports[`Component Examples should match snapshot: RadioButton0 1`] = `
     data-css-1=""
   >
     <div
-      data-css-8=""
+      data-css-7=""
       style="width:100%"
     >
       <div
-        data-css-6=""
+        data-css-5=""
         data-css-1=""
       >
         <div
@@ -3527,19 +3412,19 @@ exports[`Component Examples should match snapshot: RadioButton0 1`] = `
             data-css-1=""
           >
             <div
-              data-css-9=""
+              data-css-8=""
               data-css-1=""
             >
               <div
-                data-css-10=""
+                data-css-9=""
                 data-css-0=""
               >
                 <div
-                  data-css-11=""
+                  data-css-10=""
                   data-css-0=""
                 >
                   <div
-                    data-css-12=""
+                    data-css-11=""
                     data-css-0=""
                   />
                 </div>
@@ -3547,11 +3432,11 @@ exports[`Component Examples should match snapshot: RadioButton0 1`] = `
             </div>
             <div
               data-css-1=""
-              data-css-13=""
+              data-css-12=""
               style="margin-left:30px"
             >
               <div
-                data-css-5=""
+                data-css-13=""
                 data-css-1=""
               >
                 Female
@@ -3562,7 +3447,7 @@ exports[`Component Examples should match snapshot: RadioButton0 1`] = `
               data-css-4=""
             >
               <input
-                data-css-7=""
+                data-css-6=""
                 id="female"
                 name="gender"
                 type="radio"
@@ -3573,7 +3458,7 @@ exports[`Component Examples should match snapshot: RadioButton0 1`] = `
         </div>
       </div>
       <div
-        data-css-6=""
+        data-css-5=""
         data-css-1=""
       >
         <div
@@ -3584,7 +3469,7 @@ exports[`Component Examples should match snapshot: RadioButton0 1`] = `
             data-css-1=""
           >
             <div
-              data-css-9=""
+              data-css-8=""
               data-css-1=""
             >
               <div
@@ -3592,7 +3477,7 @@ exports[`Component Examples should match snapshot: RadioButton0 1`] = `
                 data-css-0=""
               >
                 <div
-                  data-css-11=""
+                  data-css-10=""
                   data-css-0=""
                 >
                   <div
@@ -3604,11 +3489,11 @@ exports[`Component Examples should match snapshot: RadioButton0 1`] = `
             </div>
             <div
               data-css-1=""
-              data-css-13=""
+              data-css-12=""
               style="margin-left:30px"
             >
               <div
-                data-css-5=""
+                data-css-13=""
                 data-css-1=""
               >
                 Male
@@ -3620,7 +3505,7 @@ exports[`Component Examples should match snapshot: RadioButton0 1`] = `
             >
               <input
                 checked=""
-                data-css-7=""
+                data-css-6=""
                 id="male"
                 name="gender"
                 type="radio"
@@ -3708,34 +3593,24 @@ exports[`Component Examples should match snapshot: RadioButtonSet0 1`] = `
 
 .css-5,
 [data-css-5] {
-  display: block;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #333333;
-}
-
-.css-6,
-[data-css-6] {
   margin-right: 40px;
   width: auto;
 }
 
-.css-7,
-[data-css-7] {
+.css-6,
+[data-css-6] {
   opacity: 0;
   margin: 0;
 }
 
-.css-8,
-[data-css-8] {
+.css-7,
+[data-css-7] {
   position: relative;
   top: 10px;
 }
 
-.css-9,
-[data-css-9] {
+.css-8,
+[data-css-8] {
   background-color: lightGrey;
   border-radius: 50%;
   height: 20px;
@@ -3745,8 +3620,8 @@ exports[`Component Examples should match snapshot: RadioButtonSet0 1`] = `
   -moz-transition: background-color 120ms linear;
 }
 
-.css-10,
-[data-css-10] {
+.css-9,
+[data-css-9] {
   background-color: white;
   border-radius: 50%;
   height: 16px;
@@ -3756,8 +3631,8 @@ exports[`Component Examples should match snapshot: RadioButtonSet0 1`] = `
   -moz-transition: background-color 120ms linear;
 }
 
-.css-11,
-[data-css-11] {
+.css-10,
+[data-css-10] {
   background-color: white;
   border-radius: 50%;
   height: 10px;
@@ -3767,10 +3642,20 @@ exports[`Component Examples should match snapshot: RadioButtonSet0 1`] = `
   -moz-transition: background-color 120ms linear;
 }
 
-.css-12,
-[data-css-12] {
+.css-11,
+[data-css-11] {
   position: relative;
   top: -8px;
+}
+
+.css-12,
+[data-css-12] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
 }
 
 .css-13,
@@ -3831,7 +3716,7 @@ exports[`Component Examples should match snapshot: RadioButtonSet0 1`] = `
       style="width:100%"
     >
       <div
-        data-css-6=""
+        data-css-5=""
         data-css-1=""
       >
         <div
@@ -3842,19 +3727,19 @@ exports[`Component Examples should match snapshot: RadioButtonSet0 1`] = `
             data-css-1=""
           >
             <div
-              data-css-8=""
+              data-css-7=""
               data-css-1=""
             >
               <div
-                data-css-9=""
+                data-css-8=""
                 data-css-0=""
               >
                 <div
-                  data-css-10=""
+                  data-css-9=""
                   data-css-0=""
                 >
                   <div
-                    data-css-11=""
+                    data-css-10=""
                     data-css-0=""
                   />
                 </div>
@@ -3862,11 +3747,11 @@ exports[`Component Examples should match snapshot: RadioButtonSet0 1`] = `
             </div>
             <div
               data-css-1=""
-              data-css-12=""
+              data-css-11=""
               style="margin-left:30px"
             >
               <div
-                data-css-5=""
+                data-css-12=""
                 data-css-1=""
               >
                 Coffe
@@ -3877,7 +3762,7 @@ exports[`Component Examples should match snapshot: RadioButtonSet0 1`] = `
               data-css-4=""
             >
               <input
-                data-css-7=""
+                data-css-6=""
                 id="coffe"
                 name="order"
                 type="radio"
@@ -3888,7 +3773,7 @@ exports[`Component Examples should match snapshot: RadioButtonSet0 1`] = `
         </div>
       </div>
       <div
-        data-css-6=""
+        data-css-5=""
         data-css-1=""
       >
         <div
@@ -3899,7 +3784,7 @@ exports[`Component Examples should match snapshot: RadioButtonSet0 1`] = `
             data-css-1=""
           >
             <div
-              data-css-8=""
+              data-css-7=""
               data-css-1=""
             >
               <div
@@ -3907,7 +3792,7 @@ exports[`Component Examples should match snapshot: RadioButtonSet0 1`] = `
                 data-css-0=""
               >
                 <div
-                  data-css-10=""
+                  data-css-9=""
                   data-css-0=""
                 >
                   <div
@@ -3919,11 +3804,11 @@ exports[`Component Examples should match snapshot: RadioButtonSet0 1`] = `
             </div>
             <div
               data-css-1=""
-              data-css-12=""
+              data-css-11=""
               style="margin-left:30px"
             >
               <div
-                data-css-5=""
+                data-css-12=""
                 data-css-1=""
               >
                 Tee
@@ -3935,7 +3820,7 @@ exports[`Component Examples should match snapshot: RadioButtonSet0 1`] = `
             >
               <input
                 checked=""
-                data-css-7=""
+                data-css-6=""
                 id="tee"
                 name="order"
                 type="radio"
@@ -3946,7 +3831,7 @@ exports[`Component Examples should match snapshot: RadioButtonSet0 1`] = `
         </div>
       </div>
       <div
-        data-css-6=""
+        data-css-5=""
         data-css-1=""
       >
         <div
@@ -3957,19 +3842,19 @@ exports[`Component Examples should match snapshot: RadioButtonSet0 1`] = `
             data-css-1=""
           >
             <div
-              data-css-8=""
+              data-css-7=""
               data-css-1=""
             >
               <div
-                data-css-9=""
+                data-css-8=""
                 data-css-0=""
               >
                 <div
-                  data-css-10=""
+                  data-css-9=""
                   data-css-0=""
                 >
                   <div
-                    data-css-11=""
+                    data-css-10=""
                     data-css-0=""
                   />
                 </div>
@@ -3977,11 +3862,11 @@ exports[`Component Examples should match snapshot: RadioButtonSet0 1`] = `
             </div>
             <div
               data-css-1=""
-              data-css-12=""
+              data-css-11=""
               style="margin-left:30px"
             >
               <div
-                data-css-5=""
+                data-css-12=""
                 data-css-1=""
               >
                 Others
@@ -3992,7 +3877,7 @@ exports[`Component Examples should match snapshot: RadioButtonSet0 1`] = `
               data-css-4=""
             >
               <input
-                data-css-7=""
+                data-css-6=""
                 id="others"
                 name="order"
                 type="radio"
