@@ -1,3 +1,4 @@
+/// <reference path="./src/modules.d.ts" />
 import { configure, shallow, render, mount } from 'enzyme'
 import { createSerializer } from 'enzyme-to-json'
 import { toMatchDiffSnapshot, getSnapshotDiffSerializer } from 'snapshot-diff'
