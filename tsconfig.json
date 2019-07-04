@@ -6,7 +6,7 @@
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
     "lib": ["dom", "esnext"],
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "noImplicitReturns": true,
@@ -16,13 +16,19 @@
     "outDir": "dist",
     "pretty": true,
     "removeComments": true,
-    "rootDir": ".",
+    "rootDir": "./src",
     "skipLibCheck": true,
     "sourceMap": true,
     "strictNullChecks": true,
-    "target": "es2017",
+    "target": "esnext",
     "esModuleInterop": true
   },
-  "exclude": ["public", "node_modules", "dist"],
+  "exclude": [
+    "public",
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "**/*.test.tsx"
+  ],
   "include": ["src"]
 }

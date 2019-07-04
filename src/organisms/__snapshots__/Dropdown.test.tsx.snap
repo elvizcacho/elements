@@ -134,9 +134,23 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
 
 .css-11,
 [data-css-11] {
+  width: 16px;
+  height: 16px;
+  fill: lightGrey;
+}
+
+.css-12,
+[data-css-12] {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.css-13,
+[data-css-13] {
+  width: 10px;
+  height: 10px;
+  stroke: black;
 }
 
 <div
@@ -208,20 +222,13 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
               }
             }
             data-css-6=""
-            style={
-              Object {
-                "fill": "lightGrey",
-                "height": 16,
-                "stroke": false,
-                "width": 16,
-              }
-            }
+            data-css-11=""
           />
         </div>
       </div>
       <div
         data-css-5=""
-        data-css-11=""
+        data-css-12=""
         data-css-6=""
         onClick={[Function]}
       >
@@ -231,15 +238,8 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
               "__html": undefined,
             }
           }
+          data-css-13=""
           data-css-6=""
-          style={
-            Object {
-              "fill": false,
-              "height": 10,
-              "stroke": "black",
-              "width": 10,
-            }
-          }
         />
       </div>
     </div>
@@ -385,9 +385,23 @@ exports[`Dropdown should render with placement top 1`] = `
 
 .css-11,
 [data-css-11] {
+  width: 16px;
+  height: 16px;
+  fill: lightGrey;
+}
+
+.css-12,
+[data-css-12] {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.css-13,
+[data-css-13] {
+  width: 10px;
+  height: 10px;
+  stroke: black;
 }
 
 <div
@@ -459,20 +473,13 @@ exports[`Dropdown should render with placement top 1`] = `
               }
             }
             data-css-6=""
-            style={
-              Object {
-                "fill": "lightGrey",
-                "height": 16,
-                "stroke": false,
-                "width": 16,
-              }
-            }
+            data-css-11=""
           />
         </div>
       </div>
       <div
         data-css-5=""
-        data-css-11=""
+        data-css-12=""
         data-css-6=""
         onClick={[Function]}
       >
@@ -482,15 +489,8 @@ exports[`Dropdown should render with placement top 1`] = `
               "__html": "",
             }
           }
+          data-css-13=""
           data-css-6=""
-          style={
-            Object {
-              "fill": false,
-              "height": 10,
-              "stroke": "black",
-              "width": 10,
-            }
-          }
         />
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent, cleanup } from '@testing-library/react'
+import { render, fireEvent } from '@testing-library/react'
 
 import TimeInput, { getTimeRange } from './TimeInput'
 import ResourceProvider from '../behaviour/ResourceProvider'
@@ -75,8 +75,6 @@ describe('getTimeRange returns correct range', () => {
 })
 
 describe('TimeInput', () => {
-  afterEach(cleanup)
-
   it('should have correct and normalized default value', () => {
     const { getByTestId } = render(
       <ResourceProvider>
@@ -118,13 +116,13 @@ describe('TimeInput', () => {
   })
 
   it('should select first minute option when an hour is selected', () => {
-    const { getByTestId, getByDisplayValue } = render(
+    const { getByTestId, getAllByDisplayValue } = render(
       <ResourceProvider>
         <TimeInput minTime="10:15" name="time" data-testid="time-input" />
       </ResourceProvider>
     )
 
-    fireEvent.change(getByDisplayValue('--'), { target: { value: '10' } })
+    fireEvent.change(getAllByDisplayValue('--')[0], { target: { value: '10' } })
 
     expect((getByTestId('time-input') as HTMLSelectElement).value).toBe('10:15')
   })
