@@ -1,5 +1,5 @@
 import React, { PureComponent, ReactNode } from 'react'
-import Downshift from 'downshift'
+import Downshift, { StateChangeOptions, DownshiftProps } from 'downshift'
 import matchSorter from 'match-sorter'
 import { alpha, ColorPalette } from '@allthings/colors'
 import { css, keyframes } from 'glamor'
@@ -12,7 +12,7 @@ import View from '../atoms/View'
 import escapeRegex from '../utils/escapeRegex'
 import Spinner from '../atoms/Spinner'
 
-const NOOP = _ => _
+const NOOP = (_: any) => undefined
 
 const INPUT_FIELD_HEIGHT = '50px'
 
@@ -36,8 +36,8 @@ const Placement = {
 type Placement = 'top' | 'bottom'
 
 interface TypeaheadItem {
-  label: ReactNode
-  value: any
+  label: string
+  value: string | number
   icon?: ReactNode
 }
 
@@ -76,17 +76,24 @@ interface ITypeaheadProps {
   value?: string
 }
 
-export default class Typeahead extends PureComponent<ITypeaheadProps> {
-  static defaultProps = {
-    limit: 20,
-    menuHeight: 300,
-    onClearSelection: NOOP,
-    onClose: NOOP,
-    onOpen: NOOP,
-    placement: Placement.bottom,
-  }
+interface IState {
+  showScrollArrow: boolean
+}
 
-  constructor(props: ITypeaheadProps) {
+const defaultProps = {
+  limit: 20,
+  menuHeight: 300,
+  onClose: NOOP,
+  onOpen: NOOP,
+  placement: Placement.bottom,
+}
+
+type MyProps = ITypeaheadProps & typeof defaultProps
+
+export default class Typeahead extends PureComponent<MyProps, IState> {
+  static defaultProps = defaultProps
+
+  constructor(props: MyProps) {
     super(props)
     if (
       process &&
@@ -107,16 +114,18 @@ export default class Typeahead extends PureComponent<ITypeaheadProps> {
     }
   }
 
-  clearSelection = downshiftClearSelection => () => {
+  inputRef = React.createRef<HTMLInputElement>()
+
+  clearSelection = (downshiftClearSelection: () => void) => () => {
     // Focus back on the input.
-    this.inputRef && this.inputRef.focus()
+    this.inputRef.current && this.inputRef.current.focus()
     // Trigger the Downshift method.
     downshiftClearSelection()
     // Trigger the prop one.
-    this.props.onClearSelection()
+    this.props.onClearSelection && this.props.onClearSelection()
   }
 
-  getHintText = ({ inputValue, itemText }) => {
+  getHintText = (inputValue: string, itemText: string) => {
     if (itemText.toLowerCase().startsWith(inputValue.toLowerCase())) {
       const escaped = escapeRegex(inputValue)
       const restText = itemText
@@ -129,7 +138,10 @@ export default class Typeahead extends PureComponent<ITypeaheadProps> {
     return ''
   }
 
-  stateReducer = (state, changes) => {
+  stateReducer = (
+    state: { highlightedIndex: number; selectedItem: string; isOpen: boolean },
+    changes: StateChangeOptions<string>
+  ) => {
     const { clearOnSelect, placement } = this.props
     const minOfLimits = Math.min(
       this.props.items.length - 1,
@@ -190,7 +202,7 @@ export default class Typeahead extends PureComponent<ITypeaheadProps> {
     }
   }
 
-  handleStateChange = changes => {
+  handleStateChange = (changes: StateChangeOptions<string>) => {
     if (changes.isOpen === true) this.props.onOpen()
     if (changes.isOpen === false) this.props.onClose()
     if (changes.hasOwnProperty('inputValue')) this.showArrowIfNecessary()
@@ -200,7 +212,10 @@ export default class Typeahead extends PureComponent<ITypeaheadProps> {
     clearSelection,
     getItemProps,
     highlightedIndex,
-  }) => (item, index) => (
+  }: Pick<
+    DownshiftProps<T>,
+    'clearSelection' | 'getItemProps' | 'highlightedIndex'
+  >) => (item, index) => (
     <ListItem
       {...getItemProps({
         index,
@@ -231,8 +246,6 @@ export default class Typeahead extends PureComponent<ITypeaheadProps> {
     this.setState({
       showScrollArrow: this.listRef.scrollHeight > this.props.menuHeight,
     })
-
-  setInputRef = el => (this.inputRef = el)
 
   setListRef = el => {
     this.listRef = el
@@ -293,15 +306,26 @@ export default class Typeahead extends PureComponent<ITypeaheadProps> {
           selectHighlightedItem,
           toggleMenu,
         }) => {
-          const filtered = matchSorter(items, inputValue, {
+          const filtered = matchSorter(items, String(inputValue), {
             keys: ['label'],
           }).slice(0, limit)
 
-          const highlightedFilteredItem = filtered[highlightedIndex]
+          const highlightedFilteredItem = highlightedIndex
+            ? filtered[highlightedIndex]
+            : null
           const showIcon =
             selectedItem &&
             highlightedFilteredItem &&
             highlightedFilteredItem.icon
+
+          const itemText =
+            highlightedFilteredItem && highlightedFilteredItem.label
+              ? highlightedFilteredItem.label
+              : ''
+          const hintValue =
+            inputValue && filtered.length > 0
+              ? this.getHintText(inputValue, itemText)
+              : ''
 
           // Opt for <div> here because we don't want to mess with downshifts
           // getRootProps and refKey, which is kind of strange.
@@ -335,7 +359,7 @@ export default class Typeahead extends PureComponent<ITypeaheadProps> {
                       marginLeft: '15px',
                     })}
                   >
-                    {highlightedFilteredItem.icon}
+                    {highlightedFilteredItem && highlightedFilteredItem.icon}
                   </strong>
                 ) : null}
                 <Relative
@@ -355,21 +379,10 @@ export default class Typeahead extends PureComponent<ITypeaheadProps> {
                 >
                   <Absolute top={0} left={0} {...css({ width: '100%' })}>
                     <Input
-                      type="password"
                       autoComplete="off"
                       name="hint"
                       tabIndex={-1}
-                      value={
-                        inputValue && filtered.length > 0
-                          ? this.getHintText({
-                              inputValue,
-                              itemText:
-                                (highlightedFilteredItem &&
-                                  highlightedFilteredItem.label) ||
-                                '',
-                            })
-                          : ''
-                      }
+                      value={hintValue}
                       hasRightIcon={!!selectedItem && !clearOnSelect}
                       {...css({
                         background: '#fff',
@@ -386,7 +399,7 @@ export default class Typeahead extends PureComponent<ITypeaheadProps> {
                     onClick={
                       autoOpen && !selectedItem ? () => toggleMenu() : undefined
                     }
-                    onInputRef={this.setInputRef}
+                    ref={this.inputRef}
                     hasRightIcon={!!selectedItem && !clearOnSelect}
                     placeholder={placeholder}
                     {...getInputProps({
@@ -431,7 +444,6 @@ export default class Typeahead extends PureComponent<ITypeaheadProps> {
                         <View
                           onClick={this.clearSelection(clearSelection)}
                           {...css({
-                            // Some hitbox.
                             cursor: 'pointer',
                             margin: -10,
                             padding: 10,
@@ -457,7 +469,6 @@ export default class Typeahead extends PureComponent<ITypeaheadProps> {
                       placement === Placement.top ? 'column-reverse' : 'column'
                     }
                     onRef={this.setListRef}
-                    // Bypass the refKey check which is messy.
                     {...getMenuProps({}, { suppressRefError: true })}
                     {...css({
                       boxShadow:

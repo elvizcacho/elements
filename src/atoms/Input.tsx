@@ -4,7 +4,7 @@ import React, {
   Fragment,
   AllHTMLAttributes,
   FunctionComponent,
-  useRef,
+  forwardRef,
   useCallback,
 } from 'react'
 import View from '../atoms/View'
@@ -117,7 +117,9 @@ type validityStateType =
   | 'typeMismatch'
   | 'valueMissing'
 
-export interface IInputProps extends IValidityStates {
+export interface IInputProps
+  extends IValidityStates,
+    AllHTMLAttributes<HTMLElement> {
   /** The default value to put into the component, without making it controlled */
   defaultValue?: string | string[]
   /** Indicates that this field is required */
@@ -157,6 +159,7 @@ export interface IInputProps extends IValidityStates {
   onInputRef?: any
   readOnly?: boolean
   disabled?: boolean
+  innerRef?: any
 }
 
 interface IValidityStates {
@@ -209,11 +212,9 @@ const setValidity = (
  * ```
  */
 
-const Input: FunctionComponent<
-  IInputProps & AllHTMLAttributes<HTMLElement>
-> = ({
+const Input: FunctionComponent<IInputProps> = ({
   required = false,
-  onInputRef,
+  innerRef,
   lines = 1,
   label,
   pattern,
@@ -240,13 +241,12 @@ const Input: FunctionComponent<
   const currentValue = (props.value || value) as string
   const labelVisible = currentValue.length > 0
   const showLabel = !!(label && currentValue.length > 0)
-  const inputRef = useRef<HTMLInputElement>(null)
-  const textareaRef = useRef<HTMLTextAreaElement>(null)
+
   const isCheckmarkActive = Boolean(
     (pattern || props.minLength || props.maxLength || required) &&
-      inputRef.current &&
-      inputRef.current.validity &&
-      inputRef.current.validity.valid
+      innerRef.current &&
+      innerRef.current.validity &&
+      innerRef.current.validity.valid
   )
 
   const customValidity = {
@@ -274,13 +274,12 @@ const Input: FunctionComponent<
   )
 
   useEffect(() => {
-    const input = isTextArea ? textareaRef.current : inputRef.current
+    const input = innerRef.current
     if (input) {
       setLength(input.value && input.value.length ? input.value.length : 0)
-      onInputRef && onInputRef(input)
       setValidity(input, customValidity)
     }
-  }, [isTextArea, textareaRef, inputRef, onInputRef, customValidity])
+  }, [isTextArea, innerRef, customValidity])
 
   return (
     <Relative style={{ width: '100%' }}>
@@ -300,7 +299,7 @@ const Input: FunctionComponent<
           )}
           <input
             type={type}
-            ref={inputRef}
+            ref={innerRef}
             {...styles.input(
               showLabel,
               !!icon,
@@ -315,7 +314,7 @@ const Input: FunctionComponent<
         </Fragment>
       ) : (
         <textarea
-          ref={textareaRef}
+          ref={innerRef}
           {...styles.area(lines, showLabel)}
           required={required}
           {...props}
@@ -352,4 +351,6 @@ const Input: FunctionComponent<
   )
 }
 
-export default Input
+export default forwardRef<HTMLInputElement, IInputProps>((props, ref) => (
+  <Input {...props} innerRef={ref} />
+))
