@@ -1813,6 +1813,21 @@ exports[`Component Examples should match snapshot: FormCheckbox0 1`] = `
 
 .css-4,
 [data-css-4] {
+  border-radius: 3px;
+  height: 25px;
+  width: 25px;
+  background-color: #3598db;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #3598db;
+  transition: 250ms;
+  cursor: pointer;
+  -webkit-transition: 250ms;
+  -moz-transition: 250ms;
+}
+
+.css-5,
+[data-css-5] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -1835,8 +1850,14 @@ exports[`Component Examples should match snapshot: FormCheckbox0 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-5,
-[data-css-5] {
+.css-6,
+[data-css-6] {
+  position: relative;
+  bottom: 1px;
+}
+
+.css-7,
+[data-css-7] {
   position: absolute;
   top: 0;
   right: 0;
@@ -1844,8 +1865,8 @@ exports[`Component Examples should match snapshot: FormCheckbox0 1`] = `
   bottom: 0;
 }
 
-.css-6,
-[data-css-6] {
+.css-8,
+[data-css-8] {
   border-radius: 3px;
   height: 25px;
   width: 25px;
@@ -1858,16 +1879,16 @@ exports[`Component Examples should match snapshot: FormCheckbox0 1`] = `
   -moz-transition: 250ms;
 }
 
-.css-7,
-[data-css-7] {
+.css-9,
+[data-css-9] {
   padding: 10px 15px;
   min-height: 50px;
   border-bottom: 1px solid #ecf0f1;
   background-color: white;
 }
 
-.css-8,
-[data-css-8] {
+.css-10,
+[data-css-10] {
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -1880,25 +1901,37 @@ exports[`Component Examples should match snapshot: FormCheckbox0 1`] = `
     data-css-1=""
   >
     <div
-      data-css-7=""
+      data-css-9=""
       data-css-0=""
-      name="ok"
     >
       <div
         data-css-0=""
       >
         <div
           data-css-2=""
-          data-css-6=""
+          data-css-5=""
           data-css-4=""
         >
           <div
+            data-css-6=""
             data-css-1=""
-            data-css-5=""
+          >
+            <div
+              data-css-1=""
+              style="width:14px;height:14px;fill:#fff;stroke:"
+            />
+          </div>
+          <div
+            data-css-1=""
+            data-css-7=""
           >
             <input
+              checked=""
+              id="ok"
+              name="ok"
               style="opacity:0;width:25px;height:25px;margin:0;cursor:pointer"
               type="checkbox"
+              value="true"
             />
           </div>
         </div>
@@ -1908,7 +1941,7 @@ exports[`Component Examples should match snapshot: FormCheckbox0 1`] = `
       >
         <div
           data-css-1=""
-          data-css-8=""
+          data-css-10=""
         >
           <div
             data-css-3=""
@@ -1920,23 +1953,24 @@ exports[`Component Examples should match snapshot: FormCheckbox0 1`] = `
       </label>
     </div>
     <div
-      data-css-7=""
+      data-css-9=""
       data-css-0=""
-      name="notok"
     >
       <div
         data-css-0=""
       >
         <div
           data-css-2=""
-          data-css-6=""
-          data-css-4=""
+          data-css-8=""
+          data-css-5=""
         >
           <div
             data-css-1=""
-            data-css-5=""
+            data-css-7=""
           >
             <input
+              id="notok"
+              name="notok"
               style="opacity:0;width:25px;height:25px;margin:0;cursor:pointer"
               type="checkbox"
             />
@@ -1948,7 +1982,7 @@ exports[`Component Examples should match snapshot: FormCheckbox0 1`] = `
       >
         <div
           data-css-1=""
-          data-css-8=""
+          data-css-10=""
         >
           <div
             data-css-3=""
@@ -2018,6 +2052,12 @@ exports[`Component Examples should match snapshot: Hero0 1`] = `
 
 .css-4,
 [data-css-4] {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.css-5,
+[data-css-5] {
   position: absolute;
   right: -150px;
   top: -70px;
@@ -2025,18 +2065,18 @@ exports[`Component Examples should match snapshot: Hero0 1`] = `
   height: 360px;
 }
 
-.css-5,
-[data-css-5] {
-  width: 150px;
-}
-
 .css-6,
 [data-css-6] {
-  width: 142px;
+  width: 150px;
 }
 
 .css-7,
 [data-css-7] {
+  width: 142px;
+}
+
+.css-8,
+[data-css-8] {
   overflow-y: hidden;
   overflow-x: hidden;
   height: 232px;
@@ -2045,8 +2085,8 @@ exports[`Component Examples should match snapshot: Hero0 1`] = `
   box-shadow: 0px -1px 5px rgba(0,0,0,0.3);
 }
 
-.css-8,
-[data-css-8] {
+.css-9,
+[data-css-9] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -2067,12 +2107,6 @@ exports[`Component Examples should match snapshot: Hero0 1`] = `
   -webkit-box-pack: justify;
   -webkit-justify-content: space-around;
   -webkit-flex: 0 0 auto;
-}
-
-.css-9,
-[data-css-9] {
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 .css-10,
@@ -2134,20 +2168,20 @@ exports[`Component Examples should match snapshot: Hero0 1`] = `
 }
 
 @media (min-width: 641px) and (max-width: 1024px), (min-width: 1025px) {
-  .css-6,
-  [data-css-6] {
+  .css-7,
+  [data-css-7] {
     width: 50%;
   }
 }
 
 <div
+  data-css-9=""
   data-css-8=""
-  data-css-7=""
 >
   <div
-    data-css-6=""
+    data-css-7=""
     data-css-3=""
-    data-css-9=""
+    data-css-4=""
   >
     <div
       data-css-2=""
@@ -2169,11 +2203,11 @@ exports[`Component Examples should match snapshot: Hero0 1`] = `
     </div>
   </div>
   <div
-    data-css-5=""
+    data-css-6=""
     data-css-0=""
   >
     <img
-      data-css-4=""
+      data-css-5=""
       src="https://placeimg.com/500/500/people"
     />
   </div>
