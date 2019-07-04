@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions'
 import {
   Button,
   Card,
-  Checkbox,
+  FormCheckbox,
   Form,
   List,
   ListItem,
@@ -78,7 +78,7 @@ export default class FormStory extends React.Component {
                       placeholder="Tell us how you feel today"
                     />
 
-                    <Checkbox
+                    <FormCheckbox
                       name="accept"
                       required
                       label="Hereby I accept the terms & blablabla"
