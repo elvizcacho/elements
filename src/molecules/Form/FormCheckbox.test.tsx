@@ -46,7 +46,7 @@ describe('Test the FormCheckbox component', () => {
   it('should work as controlled component', () => {
     const handleChange = jest.fn()
 
-    const renderCheckboxWithChecked = checked => (
+    const renderCheckboxWithChecked = (checked: boolean) => (
       <FormCheckbox
         label="label"
         name="a"

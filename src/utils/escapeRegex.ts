@@ -1,3 +1,4 @@
-const escapeRegex = input => input.replace(/[-|\\{}()[\]^$+*?.]/g, '\\$&')
+const escapeRegex = (input: string) =>
+  input.replace(/[-|\\{}()[\]^$+*?.]/g, '\\$&')
 
 export default escapeRegex

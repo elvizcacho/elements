@@ -85,8 +85,7 @@ class NotificationBubble extends Component<
     this.props.onTimeout()
 
   render() {
-    const { color = 'primary', ...props } = this.props
-    delete props.onTimeout
+    const { color = 'primary', onTimeout, ...props } = this.props
 
     return (
       <Theme>

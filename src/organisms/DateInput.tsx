@@ -53,8 +53,15 @@ class DateInput extends Component<IDateInputProps, IState> {
   }
 
   render() {
-    const { locale, label, name, readOnly, placeholder, ...props } = this.props
-    delete props.onChange
+    const {
+      locale,
+      label,
+      name,
+      readOnly,
+      placeholder,
+      onChange,
+      ...props
+    } = this.props
     const { date, showCalendar } = this.state
 
     const stringValue = date

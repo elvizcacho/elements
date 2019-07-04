@@ -1,9 +1,9 @@
 import React from 'react'
 import Form from './Form'
-import Checkbox from '../Checkbox'
 import ThemeProvider from '../../behaviour/ThemeProvider'
 import { mount } from 'enzyme'
 import Button from '../Button'
+import FormCheckbox from './FormCheckbox'
 
 describe('Test the Form component', () => {
   it('should submit and default to method post', () => {
@@ -12,8 +12,8 @@ describe('Test the Form component', () => {
     const wrapper = mount(
       <ThemeProvider>
         <Form onSubmit={submit}>
-          <Checkbox label="a" name="a" checked />
-          <Checkbox label="b" name="b" />
+          <FormCheckbox label="a" name="a" checked />
+          <FormCheckbox label="b" name="b" />
           <Button
             type="submit"
             name="send"

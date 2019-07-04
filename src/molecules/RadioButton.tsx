@@ -84,14 +84,23 @@ class RadioButton extends Component<
   }
 
   render() {
-    const { children, id, name, value, ...props } = this.props
-    delete props.checked
-    delete props.onChange
+    const {
+      children,
+      id,
+      name,
+      value,
+      checked,
+      onChange,
+      ...props
+    } = this.props
 
     const realId = id || value
 
     return (
-      <View {...styles.radioElement} {...props}>
+      <View
+        {...styles.radioElement}
+        {...(props as Omit<IRadioButtonProps, 'checked' | 'onChange'>)}
+      >
         <Relative direction="row" alignV="center" alignH="center">
           <View htmlElement="label">
             <Relative top={10}>

@@ -106,10 +106,14 @@ class SimpleLayout extends React.PureComponent<ISimpleLayout, IState> {
   }
 
   render() {
-    const { children, backgroundColor, padded, ...props } = this.props
-
-    delete props.onScrollEnd
-    delete props.onPullDown
+    const {
+      children,
+      backgroundColor,
+      padded,
+      onScrollEnd,
+      onPullDown,
+      ...props
+    } = this.props
 
     return (
       <Theme>
