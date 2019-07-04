@@ -1,19 +1,19 @@
 import React from 'react'
 import { render, fireEvent } from 'react-testing-library'
 
-import Checkbox from './Checkbox'
-import { ThemeProvider } from '../'
+import FormCheckbox from './FormCheckbox'
+import ThemeProvider from '../../behaviour/ThemeProvider'
 
 const THEME = {
   background: 'darkMarco',
 }
-const STRING_LABEL = 'I am a nice checkbox!'
+const STRING_LABEL = 'I am a nice FormCheckbox!'
 
-describe('Test the checkbox component', () => {
+describe('Test the FormCheckbox component', () => {
   it('should tick it', () => {
     const wrapper = mount(
       <ThemeProvider theme={THEME}>
-        <Checkbox label={STRING_LABEL} name="a" />
+        <FormCheckbox label={STRING_LABEL} name="a" />
       </ThemeProvider>
     )
     const input = wrapper.find('input#a')
@@ -31,7 +31,11 @@ describe('Test the checkbox component', () => {
   it('should work with children', () => {
     const wrapper = mount(
       <ThemeProvider theme={THEME}>
-        <Checkbox label={<h1>test</h1>} name="a" backgroundColor="darkMarco" />
+        <FormCheckbox
+          label={<h1>test</h1>}
+          name="a"
+          backgroundColor="darkMarco"
+        />
       </ThemeProvider>
     )
     expect(wrapper).toMatchSnapshot()
@@ -42,7 +46,7 @@ describe('Test the checkbox component', () => {
     const handleChange = jest.fn()
 
     const renderCheckboxWithChecked = checked => (
-      <Checkbox
+      <FormCheckbox
         label="label"
         name="a"
         checked={checked}
