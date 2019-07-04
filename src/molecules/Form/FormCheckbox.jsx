@@ -1,7 +1,6 @@
 import React from 'react'
 import Text from '../../atoms/Text'
 import ListItem from '../List/ListItem'
-import { css } from 'glamor'
 import Theme from '../../behaviour/Theme'
 import PropTypes from 'prop-types'
 import Checkbox from '../Checkbox'

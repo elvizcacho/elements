@@ -1,8 +1,6 @@
 import React from 'react'
 import View from '../atoms/View'
 import Icon from '../atoms/Icon'
-import Text from '../atoms/Text'
-import Inset from '../atoms/Inset'
 import Relative from '../atoms/Relative'
 import { css } from 'glamor'
 import Theme from '../behaviour/Theme'
@@ -45,11 +43,6 @@ class Checkbox extends React.Component {
     checked: this.props.checked,
   }
 
-  static defaultProps = {
-    labelSize: 'l',
-    labelPosition: Checkbox.LABEL_RIGHT,
-  }
-
   isControlled = () => typeof this.props.checked !== 'undefined'
 
   handleChange = e => {
@@ -59,24 +52,8 @@ class Checkbox extends React.Component {
     this.props.onChange && this.props.onChange(e)
   }
 
-  renderLabel = (name, labelSize, label) => (
-    <label htmlFor={name}>
-      <Inset horizontal>
-        <Text size={labelSize}>{label}</Text>
-      </Inset>
-    </label>
-  )
-
   render() {
-    const {
-      checked,
-      onChange,
-      label,
-      labelSize,
-      labelPosition,
-      name,
-      ...props
-    } = this.props
+    const { checked, onChange, name, ...props } = this.props
     const realChecked = this.isControlled() ? checked : this.state.checked
 
     return (
