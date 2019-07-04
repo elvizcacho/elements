@@ -1,5 +1,3 @@
-import { SyntheticEvent } from 'react'
-
 declare module 'kewler'
 /*
 declare module 'kewler' {
@@ -13,7 +11,3 @@ declare module 'jest-glamor-react'
 declare module 'react-generate-props'
 declare module '@allthings/colors'
 declare module 'neue'
-
-interface IComponentProps {
-  onClick: (e: SyntheticEvent<HTMLElement>) => void
-}
