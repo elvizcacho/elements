@@ -242,37 +242,6 @@ exports[`Input component should render with all props 1`] = `
 exports[`Input component should render with required props only 1`] = `
 .css-0,
 [data-css-0] {
-  position: absolute;
-  top: 16px;
-  right: 15px;
-  pointer-events: none;
-  transition: opacity .225s;
-  opacity: 0;
-  -webkit-transition: opacity .225s;
-  -moz-transition: opacity .225s;
-}
-
-.css-1,
-[data-css-1] {
-  position: relative;
-}
-
-.css-2,
-[data-css-2] {
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  -webkit-flex: 0 0 auto;
-}
-
-.css-3,
-[data-css-3] {
-  width: 16px;
-  height: 16px;
-  fill: lightGrey;
-}
-
-.css-4,
-[data-css-4] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -290,26 +259,57 @@ exports[`Input component should render with required props only 1`] = `
   -moz-transition: padding-top .225s ease-out;
 }
 
-.css-4:-webkit-autofill ~ .label,
-[data-css-4]:-webkit-autofill ~ .label {
+.css-0:-webkit-autofill ~ .label,
+[data-css-0]:-webkit-autofill ~ .label {
   opacity: 1 !important;
   top: 8px !important;
 }
 
-.css-4:-webkit-autofill ~ .checkmark,
-[data-css-4]:-webkit-autofill ~ .checkmark {
+.css-0:-webkit-autofill ~ .checkmark,
+[data-css-0]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
   top: 8px;
 }
 
-.css-4:-webkit-autofill,
-[data-css-4]:-webkit-autofill {
+.css-0:-webkit-autofill,
+[data-css-0]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
+.css-2,
+[data-css-2] {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  pointer-events: none;
+  transition: opacity .225s;
+  opacity: 0;
+  -webkit-transition: opacity .225s;
+  -moz-transition: opacity .225s;
+}
+
+.css-3,
+[data-css-3] {
+  position: relative;
+}
+
+.css-4,
+[data-css-4] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-5,
+[data-css-5] {
+  width: 16px;
+  height: 16px;
+  fill: lightGrey;
+}
+
 <div
-  data-css-1=""
-  data-css-2=""
+  data-css-3=""
+  data-css-4=""
   style={
     Object {
       "width": "100%",
@@ -318,7 +318,7 @@ exports[`Input component should render with required props only 1`] = `
 >
   <input
     aria-required={false}
-    data-css-4=""
+    data-css-0=""
     name="name"
     onChange={[Function]}
     required={false}
@@ -326,17 +326,17 @@ exports[`Input component should render with required props only 1`] = `
   />
   <div
     className="checkmark"
-    data-css-0=""
     data-css-2=""
+    data-css-4=""
   >
     <div
       dangerouslySetInnerHTML={
         Object {
-          "__html": "",
+          "__html": undefined,
         }
       }
-      data-css-2=""
-      data-css-3=""
+      data-css-4=""
+      data-css-5=""
     />
   </div>
 </div>

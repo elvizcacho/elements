@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from 'react'
-import View, { IViewProps } from '../../atoms/View'
+import React, { forwardRef } from 'react'
+import View, { IViewProps, ViewRef } from '../../atoms/View'
 
 /**
  * Lists display a series of related content.
@@ -54,8 +54,8 @@ import View, { IViewProps } from '../../atoms/View'
  * </View>
  * ```
  */
-const List: FunctionComponent<IViewProps> = props => (
-  <View direction="column" {...props} />
-)
+const List = forwardRef<ViewRef, IViewProps>((props, ref) => (
+  <View direction="column" ref={ref} {...props} />
+))
 
 export default List

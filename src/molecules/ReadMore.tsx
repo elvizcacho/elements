@@ -149,7 +149,7 @@ class ReadMore extends Component<PropsWithChildren<IReadMoreProps>> {
       >
         {/* Child */}
         <View
-          innerRef={this.childRef}
+          ref={this.childRef}
           {...css({
             transitionProperty: 'height',
             transition: 'height 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',

@@ -76,7 +76,7 @@ export interface IView {
   /** Flex values, can be 5, 10, 15 ... 100 or 33, 66 */
   flex?: flexType
 
-  innerRef?: Ref<HTMLDivElement>
+  forwardedRef?: Ref<HTMLDivElement>
 }
 
 function createStyles({
@@ -138,14 +138,14 @@ const View: FunctionComponent<IViewProps> = ({
   direction,
   fill = false,
   flex = 'none',
-  innerRef,
+  forwardedRef,
   wrap,
   ...props
 }) => {
   return createElement(
     htmlElement,
     {
-      ref: innerRef,
+      ref: forwardedRef,
       ...createStyles({
         alignH,
         alignV,
@@ -161,9 +161,8 @@ const View: FunctionComponent<IViewProps> = ({
   )
 }
 
-export type Refx = HTMLDivElement
-export const ForwardView = forwardRef<Refx, IViewProps>((props, ref) => (
-  <View innerRef={ref} {...props} />
-))
+export type ViewRef = HTMLDivElement
 
-export default ForwardView
+export default forwardRef<ViewRef, IViewProps>((props, ref) => (
+  <View forwardedRef={ref} {...props} />
+))

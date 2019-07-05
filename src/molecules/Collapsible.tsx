@@ -175,7 +175,7 @@ class Collapsible extends Component<ICollapsibleProps, IState> {
           </View>
         </View>
         <View
-          innerRef={this.childRef}
+          ref={this.childRef}
           onTransitionEnd={this.handleTransitionEnd}
           {...css({
             transitionProperty: 'height',

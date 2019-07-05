@@ -1,5 +1,9 @@
 import React, { PureComponent, ReactNode } from 'react'
-import Downshift, { StateChangeOptions, DownshiftProps } from 'downshift'
+import Downshift, {
+  StateChangeOptions,
+  GetItemPropsOptions,
+  DownshiftState,
+} from 'downshift'
 import matchSorter from 'match-sorter'
 import { alpha, ColorPalette } from '@allthings/colors'
 import { css, keyframes } from 'glamor'
@@ -115,6 +119,13 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
   }
 
   inputRef = React.createRef<HTMLInputElement>()
+  listRef = React.createRef<HTMLDivElement>()
+
+  componentDidMount() {
+    if (this.listRef.current) {
+      this.showArrowIfNecessary()
+    }
+  }
 
   clearSelection = (downshiftClearSelection: () => void) => () => {
     // Focus back on the input.
@@ -139,8 +150,8 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
   }
 
   stateReducer = (
-    state: { highlightedIndex: number; selectedItem: string; isOpen: boolean },
-    changes: StateChangeOptions<string>
+    state: DownshiftState<TypeaheadItem>,
+    changes: StateChangeOptions<TypeaheadItem>
   ) => {
     const { clearOnSelect, placement } = this.props
     const minOfLimits = Math.min(
@@ -161,9 +172,9 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
           ? {
               ...state,
               highlightedIndex:
-                state.highlightedIndex >= minOfLimits
+                state.highlightedIndex! >= minOfLimits
                   ? 0
-                  : state.highlightedIndex + 1,
+                  : state.highlightedIndex! + 1,
             }
           : { ...state, ...changes }
       case Downshift.stateChangeTypes.keyDownArrowDown:
@@ -171,11 +182,11 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
           ? {
               ...state,
               highlightedIndex:
-                state.highlightedIndex > minOfLimits
+                state.highlightedIndex! > minOfLimits
                   ? minOfLimits
-                  : state.highlightedIndex <= 0
+                  : state.highlightedIndex! <= 0
                   ? minOfLimits
-                  : state.highlightedIndex - 1,
+                  : state.highlightedIndex! - 1,
             }
           : { ...state, ...changes }
 
@@ -212,10 +223,11 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
     clearSelection,
     getItemProps,
     highlightedIndex,
-  }: Pick<
-    DownshiftProps<T>,
-    'clearSelection' | 'getItemProps' | 'highlightedIndex'
-  >) => (item, index) => (
+  }: {
+    clearSelection: () => void
+    getItemProps: (options: GetItemPropsOptions<TypeaheadItem>) => any
+    highlightedIndex: null | number
+  }) => (item: TypeaheadItem, index: number) => (
     <ListItem
       {...getItemProps({
         index,
@@ -242,17 +254,13 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
   )
 
   showArrowIfNecessary = () =>
-    this.listRef &&
+    this.listRef.current &&
     this.setState({
-      showScrollArrow: this.listRef.scrollHeight > this.props.menuHeight,
+      showScrollArrow:
+        this.listRef.current.scrollHeight > this.props.menuHeight,
     })
 
-  setListRef = el => {
-    this.listRef = el
-    this.showArrowIfNecessary()
-  }
-
-  handleListScroll = e => {
+  handleListScroll = (e: any) => {
     if (this.state.showScrollArrow && e.target.scrollTop > 0) {
       this.setState({ showScrollArrow: false })
     }
@@ -468,7 +476,7 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
                     direction={
                       placement === Placement.top ? 'column-reverse' : 'column'
                     }
-                    onRef={this.setListRef}
+                    ref={this.listRef}
                     {...getMenuProps({}, { suppressRefError: true })}
                     {...css({
                       boxShadow:

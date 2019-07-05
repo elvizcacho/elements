@@ -159,7 +159,7 @@ export interface IInputProps
   onInputRef?: any
   readOnly?: boolean
   disabled?: boolean
-  innerRef?: any
+  forwardedRef?: any
 }
 
 interface IValidityStates {
@@ -214,7 +214,7 @@ const setValidity = (
 
 const Input: FunctionComponent<IInputProps> = ({
   required = false,
-  innerRef,
+  forwardedRef,
   lines = 1,
   label,
   pattern,
@@ -233,6 +233,7 @@ const Input: FunctionComponent<IInputProps> = ({
   icon,
   ...props
 }) => {
+  console.log('hey!', forwardedRef)
   const isTextArea = lines !== 1
   const [value, setValue] = useState('')
   const [length, setLength] = useState(
@@ -244,9 +245,10 @@ const Input: FunctionComponent<IInputProps> = ({
 
   const isCheckmarkActive = Boolean(
     (pattern || props.minLength || props.maxLength || required) &&
-      innerRef.current &&
-      innerRef.current.validity &&
-      innerRef.current.validity.valid
+      forwardedRef &&
+      forwardedRef.current &&
+      forwardedRef.current.validity &&
+      forwardedRef.current.validity.valid
   )
 
   const customValidity = {
@@ -274,12 +276,12 @@ const Input: FunctionComponent<IInputProps> = ({
   )
 
   useEffect(() => {
-    const input = innerRef.current
-    if (input) {
+    if (forwardedRef && forwardedRef.current) {
+      const input = forwardedRef.current
       setLength(input.value && input.value.length ? input.value.length : 0)
       setValidity(input, customValidity)
     }
-  }, [isTextArea, innerRef, customValidity])
+  }, [isTextArea, customValidity, forwardedRef])
 
   return (
     <Relative style={{ width: '100%' }}>
@@ -299,7 +301,7 @@ const Input: FunctionComponent<IInputProps> = ({
           )}
           <input
             type={type}
-            ref={innerRef}
+            ref={forwardedRef}
             {...styles.input(
               showLabel,
               !!icon,
@@ -314,7 +316,7 @@ const Input: FunctionComponent<IInputProps> = ({
         </Fragment>
       ) : (
         <textarea
-          ref={innerRef}
+          ref={forwardedRef}
           {...styles.area(lines, showLabel)}
           required={required}
           {...props}
@@ -351,6 +353,7 @@ const Input: FunctionComponent<IInputProps> = ({
   )
 }
 
-export default forwardRef<HTMLInputElement, IInputProps>((props, ref) => (
-  <Input {...props} innerRef={ref} />
-))
+export default forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
+  console.log('haai', ref)
+  return <Input {...props} forwardedRef={ref} />
+})
