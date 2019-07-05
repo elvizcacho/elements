@@ -407,7 +407,9 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
                     onClick={
                       autoOpen && !selectedItem ? () => toggleMenu() : undefined
                     }
-                    ref={this.inputRef}
+                    // @todo why string though?
+                    // Type 'string' is not assignable to type 'RefObject<HTMLInputElement> | ((instance: HTMLInputElement | null) => void) | null | undefined'.
+                    ref={this.inputRef as any}
                     hasRightIcon={!!selectedItem && !clearOnSelect}
                     placeholder={placeholder}
                     {...getInputProps({

@@ -16,7 +16,7 @@
     "outDir": "dist",
     "pretty": true,
     "removeComments": true,
-    "rootDir": "./src",
+    "rootDirs": ["src", "stories"],
     "skipLibCheck": true,
     "sourceMap": true,
     "strictNullChecks": true,
