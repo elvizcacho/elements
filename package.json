@@ -1,6 +1,6 @@
 {
   "name": "@allthings/elements",
-  "version": "5.0.0-beta.0",
+  "version": "5.0.0-beta.8",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "files": [
