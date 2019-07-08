@@ -2803,7 +2803,7 @@ exports[`Test the typeahead component should use the defaultValue property (unco
                 hasRightIcon={true}
                 name="hint"
                 tabIndex={-1}
-                value=""
+                value="Abomasnow"
               >
                 <ForwardRef
                   data-css-0=""
@@ -2832,7 +2832,7 @@ exports[`Test the typeahead component should use the defaultValue property (unco
                       required={false}
                       tabIndex={-1}
                       type="text"
-                      value=""
+                      value="Abomasnow"
                     />
                     <ForwardRef
                       className="checkmark"
