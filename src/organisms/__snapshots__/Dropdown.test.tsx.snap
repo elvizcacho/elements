@@ -218,7 +218,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": undefined,
+                "__html": "",
               }
             }
             data-css-6=""
@@ -235,7 +235,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
         <div
           dangerouslySetInnerHTML={
             Object {
-              "__html": undefined,
+              "__html": "",
             }
           }
           data-css-13=""

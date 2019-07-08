@@ -355,7 +355,7 @@ exports[`Test the FormCheckbox component should tick it 2`] = `
                   alignV="center"
                   dangerouslySetInnerHTML={
                     Object {
-                      "__html": undefined,
+                      "__html": "",
                     }
                   }
                   data-css-10=""
@@ -363,7 +363,7 @@ exports[`Test the FormCheckbox component should tick it 2`] = `
                   <div
                     dangerouslySetInnerHTML={
                       Object {
-                        "__html": undefined,
+                        "__html": "",
                       }
                     }
                     data-css-5=""

@@ -156,7 +156,7 @@ exports[`NotificationBubble renders without error 1`] = `
       <div
         dangerouslySetInnerHTML={
           Object {
-            "__html": undefined,
+            "__html": "",
           }
         }
         data-css-7=""

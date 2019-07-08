@@ -168,7 +168,7 @@ exports[`Input component should render with all props 1`] = `
     <div
       dangerouslySetInnerHTML={
         Object {
-          "__html": undefined,
+          "__html": "",
         }
       }
       data-css-7=""
@@ -216,7 +216,7 @@ exports[`Input component should render with all props 1`] = `
     <div
       dangerouslySetInnerHTML={
         Object {
-          "__html": undefined,
+          "__html": "",
         }
       }
       data-css-7=""

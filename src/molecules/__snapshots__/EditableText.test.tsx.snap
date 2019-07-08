@@ -100,7 +100,7 @@ exports[`Test the editable text component should be editable 1`] = `
           alignV="center"
           dangerouslySetInnerHTML={
             Object {
-              "__html": undefined,
+              "__html": "",
             }
           }
           data-css-6=""
@@ -109,7 +109,7 @@ exports[`Test the editable text component should be editable 1`] = `
           <div
             dangerouslySetInnerHTML={
               Object {
-                "__html": undefined,
+                "__html": "",
               }
             }
             data-css-6=""

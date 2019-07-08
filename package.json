@@ -39,7 +39,7 @@
   },
   "scripts": {
     "preversion": "yarn lint && yarn test && yarn build",
-    "postversion": "git push --tags origin HEAD && yarn publish dist/",
+    "postversion": "git push --tags origin HEAD",
     "prebuild": "rimraf dist",
     "build:es": "tsc -p tsconfig.json --target ESNext --module ESNext --outDir dist/es",
     "build:cjs": "tsc -p tsconfig.json --target ES5 --module CommonJS --outDir dist/cjs",

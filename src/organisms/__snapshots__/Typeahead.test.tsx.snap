@@ -645,7 +645,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
                           alignV="center"
                           dangerouslySetInnerHTML={
                             Object {
-                              "__html": undefined,
+                              "__html": "",
                             }
                           }
                           data-css-12=""
@@ -653,7 +653,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
                           <div
                             dangerouslySetInnerHTML={
                               Object {
-                                "__html": undefined,
+                                "__html": "",
                               }
                             }
                             data-css-7=""
@@ -733,7 +733,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
                       alignV="center"
                       dangerouslySetInnerHTML={
                         Object {
-                          "__html": undefined,
+                          "__html": "",
                         }
                       }
                       data-css-12=""
@@ -741,7 +741,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
                       <div
                         dangerouslySetInnerHTML={
                           Object {
-                            "__html": undefined,
+                            "__html": "",
                           }
                         }
                         data-css-7=""
