@@ -1,4 +1,4 @@
-import React, { Component, MouseEvent } from 'react'
+import React, { Component, HTMLProps, MouseEvent } from 'react'
 import { css } from 'glamor'
 import { createTextStyles } from '../atoms/Text'
 import { color } from '../propTypes/color'
@@ -77,7 +77,7 @@ function styles(
   })
 }
 
-interface IButtonProps {
+interface IButtonProps extends HTMLProps<HTMLButtonElement> {
   /** If the button is used for a secondary option */
   secondary?: boolean
   onClick?: (event: MouseEvent) => void

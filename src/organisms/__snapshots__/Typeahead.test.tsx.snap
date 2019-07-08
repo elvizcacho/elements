@@ -205,137 +205,163 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
               data-css-8=""
             >
               <ForwardRef
-                data-css-0=""
-                style={
-                  Object {
-                    "width": "100%",
-                  }
-                }
+                autoComplete="off"
+                data-css-4=""
+                hasRightIcon={false}
+                name="hint"
+                tabIndex={-1}
+                value=""
               >
-                <div
+                <ForwardRef
                   data-css-0=""
-                  data-css-7=""
                   style={
                     Object {
                       "width": "100%",
                     }
                   }
                 >
-                  <input
-                    aria-required={false}
-                    autoComplete="off"
-                    data-css-4=""
-                    data-css-9=""
-                    name="hint"
-                    onChange={[Function]}
-                    required={false}
-                    tabIndex={-1}
-                    type="password"
-                    value=""
-                  />
-                  <ForwardRef
-                    className="checkmark"
-                    data-css-11=""
+                  <div
+                    data-css-0=""
+                    data-css-7=""
+                    style={
+                      Object {
+                        "width": "100%",
+                      }
+                    }
                   >
-                    <div
+                    <input
+                      aria-required={false}
+                      autoComplete="off"
+                      data-css-4=""
+                      data-css-9=""
+                      name="hint"
+                      onChange={[Function]}
+                      required={false}
+                      tabIndex={-1}
+                      type="text"
+                      value=""
+                    />
+                    <ForwardRef
                       className="checkmark"
                       data-css-11=""
-                      data-css-7=""
                     >
-                      <ForwardRef
-                        alignH="center"
-                        alignV="center"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "",
-                          }
-                        }
-                        data-css-12=""
+                      <div
+                        className="checkmark"
+                        data-css-11=""
+                        data-css-7=""
                       >
-                        <div
+                        <ForwardRef
+                          alignH="center"
+                          alignV="center"
                           dangerouslySetInnerHTML={
                             Object {
                               "__html": "",
                             }
                           }
-                          data-css-7=""
                           data-css-12=""
-                        />
-                      </ForwardRef>
-                    </div>
-                  </ForwardRef>
-                </div>
+                        >
+                          <div
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "",
+                              }
+                            }
+                            data-css-7=""
+                            data-css-12=""
+                          />
+                        </ForwardRef>
+                      </div>
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
               </ForwardRef>
             </div>
           </ForwardRef>
           <ForwardRef
-            data-css-0=""
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
+            aria-activedescendant={null}
+            aria-autocomplete="list"
+            aria-controls={null}
+            aria-labelledby="downshift-19-label"
+            autoComplete="off"
+            data-css-5=""
+            hasRightIcon={false}
+            id="downshift-19-input"
+            name="typed"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Select Nick's Pokemon"
+            value=""
           >
-            <div
+            <ForwardRef
               data-css-0=""
-              data-css-7=""
               style={
                 Object {
                   "width": "100%",
                 }
               }
             >
-              <input
-                aria-activedescendant={null}
-                aria-autocomplete="list"
-                aria-controls={null}
-                aria-labelledby="downshift-19-label"
-                aria-required={false}
-                autoComplete="off"
-                data-css-5=""
-                data-css-9=""
-                id="downshift-19-input"
-                name="typed"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onKeyDown={[Function]}
-                placeholder="Select Nick's Pokemon"
-                required={false}
-                type="text"
-                value=""
-              />
-              <ForwardRef
-                className="checkmark"
-                data-css-11=""
+              <div
+                data-css-0=""
+                data-css-7=""
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
               >
-                <div
+                <input
+                  aria-activedescendant={null}
+                  aria-autocomplete="list"
+                  aria-controls={null}
+                  aria-labelledby="downshift-19-label"
+                  aria-required={false}
+                  autoComplete="off"
+                  data-css-5=""
+                  data-css-9=""
+                  id="downshift-19-input"
+                  name="typed"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Select Nick's Pokemon"
+                  required={false}
+                  type="text"
+                  value=""
+                />
+                <ForwardRef
                   className="checkmark"
                   data-css-11=""
-                  data-css-7=""
                 >
-                  <ForwardRef
-                    alignH="center"
-                    alignV="center"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "",
-                      }
-                    }
-                    data-css-12=""
+                  <div
+                    className="checkmark"
+                    data-css-11=""
+                    data-css-7=""
                   >
-                    <div
+                    <ForwardRef
+                      alignH="center"
+                      alignV="center"
                       dangerouslySetInnerHTML={
                         Object {
                           "__html": "",
                         }
                       }
-                      data-css-7=""
                       data-css-12=""
-                    />
-                  </ForwardRef>
-                </div>
-              </ForwardRef>
-            </div>
+                    >
+                      <div
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "",
+                          }
+                        }
+                        data-css-7=""
+                        data-css-12=""
+                      />
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
           </ForwardRef>
           <ForwardRef
             alignV="center"
@@ -569,137 +595,163 @@ exports[`Test the typeahead component should be a simple static one - in depth t
               data-css-8=""
             >
               <ForwardRef
-                data-css-0=""
-                style={
-                  Object {
-                    "width": "100%",
-                  }
-                }
+                autoComplete="off"
+                data-css-4=""
+                hasRightIcon={false}
+                name="hint"
+                tabIndex={-1}
+                value=""
               >
-                <div
+                <ForwardRef
                   data-css-0=""
-                  data-css-7=""
                   style={
                     Object {
                       "width": "100%",
                     }
                   }
                 >
-                  <input
-                    aria-required={false}
-                    autoComplete="off"
-                    data-css-4=""
-                    data-css-9=""
-                    name="hint"
-                    onChange={[Function]}
-                    required={false}
-                    tabIndex={-1}
-                    type="password"
-                    value=""
-                  />
-                  <ForwardRef
-                    className="checkmark"
-                    data-css-11=""
+                  <div
+                    data-css-0=""
+                    data-css-7=""
+                    style={
+                      Object {
+                        "width": "100%",
+                      }
+                    }
                   >
-                    <div
+                    <input
+                      aria-required={false}
+                      autoComplete="off"
+                      data-css-4=""
+                      data-css-9=""
+                      name="hint"
+                      onChange={[Function]}
+                      required={false}
+                      tabIndex={-1}
+                      type="text"
+                      value=""
+                    />
+                    <ForwardRef
                       className="checkmark"
                       data-css-11=""
-                      data-css-7=""
                     >
-                      <ForwardRef
-                        alignH="center"
-                        alignV="center"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": undefined,
-                          }
-                        }
-                        data-css-12=""
+                      <div
+                        className="checkmark"
+                        data-css-11=""
+                        data-css-7=""
                       >
-                        <div
+                        <ForwardRef
+                          alignH="center"
+                          alignV="center"
                           dangerouslySetInnerHTML={
                             Object {
                               "__html": undefined,
                             }
                           }
-                          data-css-7=""
                           data-css-12=""
-                        />
-                      </ForwardRef>
-                    </div>
-                  </ForwardRef>
-                </div>
+                        >
+                          <div
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": undefined,
+                              }
+                            }
+                            data-css-7=""
+                            data-css-12=""
+                          />
+                        </ForwardRef>
+                      </div>
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
               </ForwardRef>
             </div>
           </ForwardRef>
           <ForwardRef
-            data-css-0=""
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
+            aria-activedescendant={null}
+            aria-autocomplete="list"
+            aria-controls={null}
+            aria-labelledby="downshift-0-label"
+            autoComplete="off"
+            data-css-5=""
+            hasRightIcon={false}
+            id="downshift-0-input"
+            name="typed"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Select Nick's Pokemon"
+            value=""
           >
-            <div
+            <ForwardRef
               data-css-0=""
-              data-css-7=""
               style={
                 Object {
                   "width": "100%",
                 }
               }
             >
-              <input
-                aria-activedescendant={null}
-                aria-autocomplete="list"
-                aria-controls={null}
-                aria-labelledby="downshift-0-label"
-                aria-required={false}
-                autoComplete="off"
-                data-css-5=""
-                data-css-9=""
-                id="downshift-0-input"
-                name="typed"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onKeyDown={[Function]}
-                placeholder="Select Nick's Pokemon"
-                required={false}
-                type="text"
-                value=""
-              />
-              <ForwardRef
-                className="checkmark"
-                data-css-11=""
+              <div
+                data-css-0=""
+                data-css-7=""
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
               >
-                <div
+                <input
+                  aria-activedescendant={null}
+                  aria-autocomplete="list"
+                  aria-controls={null}
+                  aria-labelledby="downshift-0-label"
+                  aria-required={false}
+                  autoComplete="off"
+                  data-css-5=""
+                  data-css-9=""
+                  id="downshift-0-input"
+                  name="typed"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Select Nick's Pokemon"
+                  required={false}
+                  type="text"
+                  value=""
+                />
+                <ForwardRef
                   className="checkmark"
                   data-css-11=""
-                  data-css-7=""
                 >
-                  <ForwardRef
-                    alignH="center"
-                    alignV="center"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": undefined,
-                      }
-                    }
-                    data-css-12=""
+                  <div
+                    className="checkmark"
+                    data-css-11=""
+                    data-css-7=""
                   >
-                    <div
+                    <ForwardRef
+                      alignH="center"
+                      alignV="center"
                       dangerouslySetInnerHTML={
                         Object {
                           "__html": undefined,
                         }
                       }
-                      data-css-7=""
                       data-css-12=""
-                    />
-                  </ForwardRef>
-                </div>
-              </ForwardRef>
-            </div>
+                    >
+                      <div
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": undefined,
+                          }
+                        }
+                        data-css-7=""
+                        data-css-12=""
+                      />
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
           </ForwardRef>
           <ForwardRef
             alignV="center"
@@ -1021,138 +1073,165 @@ exports[`Test the typeahead component should be a simple static one which auto o
               data-css-6=""
             >
               <ForwardRef
-                data-css-0=""
-                style={
-                  Object {
-                    "width": "100%",
-                  }
-                }
+                autoComplete="off"
+                data-css-3=""
+                hasRightIcon={false}
+                name="hint"
+                tabIndex={-1}
+                value=""
               >
-                <div
+                <ForwardRef
                   data-css-0=""
-                  data-css-5=""
                   style={
                     Object {
                       "width": "100%",
                     }
                   }
                 >
-                  <input
-                    aria-required={false}
-                    autoComplete="off"
-                    data-css-3=""
-                    data-css-7=""
-                    name="hint"
-                    onChange={[Function]}
-                    required={false}
-                    tabIndex={-1}
-                    type="password"
-                    value=""
-                  />
-                  <ForwardRef
-                    className="checkmark"
-                    data-css-9=""
+                  <div
+                    data-css-0=""
+                    data-css-5=""
+                    style={
+                      Object {
+                        "width": "100%",
+                      }
+                    }
                   >
-                    <div
+                    <input
+                      aria-required={false}
+                      autoComplete="off"
+                      data-css-3=""
+                      data-css-7=""
+                      name="hint"
+                      onChange={[Function]}
+                      required={false}
+                      tabIndex={-1}
+                      type="text"
+                      value=""
+                    />
+                    <ForwardRef
                       className="checkmark"
                       data-css-9=""
-                      data-css-5=""
                     >
-                      <ForwardRef
-                        alignH="center"
-                        alignV="center"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "",
-                          }
-                        }
-                        data-css-10=""
+                      <div
+                        className="checkmark"
+                        data-css-9=""
+                        data-css-5=""
                       >
-                        <div
+                        <ForwardRef
+                          alignH="center"
+                          alignV="center"
                           dangerouslySetInnerHTML={
                             Object {
                               "__html": "",
                             }
                           }
-                          data-css-5=""
                           data-css-10=""
-                        />
-                      </ForwardRef>
-                    </div>
-                  </ForwardRef>
-                </div>
+                        >
+                          <div
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "",
+                              }
+                            }
+                            data-css-5=""
+                            data-css-10=""
+                          />
+                        </ForwardRef>
+                      </div>
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
               </ForwardRef>
             </div>
           </ForwardRef>
           <ForwardRef
-            data-css-0=""
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
+            aria-activedescendant="downshift-1-item-0"
+            aria-autocomplete="list"
+            aria-controls="downshift-1-menu"
+            aria-labelledby="downshift-1-label"
+            autoComplete="off"
+            data-css-14=""
+            hasRightIcon={false}
+            id="downshift-1-input"
+            name="typed"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Select Nick's Pokemon"
+            value=""
           >
-            <div
+            <ForwardRef
               data-css-0=""
-              data-css-5=""
               style={
                 Object {
                   "width": "100%",
                 }
               }
             >
-              <input
-                aria-activedescendant="downshift-1-item-0"
-                aria-autocomplete="list"
-                aria-controls="downshift-1-menu"
-                aria-labelledby="downshift-1-label"
-                aria-required={false}
-                autoComplete="off"
-                data-css-7=""
-                data-css-14=""
-                id="downshift-1-input"
-                name="typed"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                placeholder="Select Nick's Pokemon"
-                required={false}
-                type="text"
-                value=""
-              />
-              <ForwardRef
-                className="checkmark"
-                data-css-9=""
+              <div
+                data-css-0=""
+                data-css-5=""
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
               >
-                <div
+                <input
+                  aria-activedescendant="downshift-1-item-0"
+                  aria-autocomplete="list"
+                  aria-controls="downshift-1-menu"
+                  aria-labelledby="downshift-1-label"
+                  aria-required={false}
+                  autoComplete="off"
+                  data-css-7=""
+                  data-css-14=""
+                  id="downshift-1-input"
+                  name="typed"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Select Nick's Pokemon"
+                  required={false}
+                  type="text"
+                  value=""
+                />
+                <ForwardRef
                   className="checkmark"
                   data-css-9=""
-                  data-css-5=""
                 >
-                  <ForwardRef
-                    alignH="center"
-                    alignV="center"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "",
-                      }
-                    }
-                    data-css-10=""
+                  <div
+                    className="checkmark"
+                    data-css-9=""
+                    data-css-5=""
                   >
-                    <div
+                    <ForwardRef
+                      alignH="center"
+                      alignV="center"
                       dangerouslySetInnerHTML={
                         Object {
                           "__html": "",
                         }
                       }
-                      data-css-5=""
                       data-css-10=""
-                    />
-                  </ForwardRef>
-                </div>
-              </ForwardRef>
-            </div>
+                    >
+                      <div
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "",
+                          }
+                        }
+                        data-css-5=""
+                        data-css-10=""
+                      />
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
           </ForwardRef>
           <ForwardRef
             alignV="center"
@@ -1182,39 +1261,30 @@ exports[`Test the typeahead component should be a simple static one which auto o
         data-css-15=""
         direction="column"
         id="downshift-1-menu"
-        onRef={[Function]}
         onScroll={[Function]}
         role="listbox"
       >
-        <div
+        <ForwardRef
           aria-labelledby="downshift-1-label"
           data-css-15=""
-          data-css-16=""
+          direction="column"
           id="downshift-1-menu"
-          onRef={[Function]}
           onScroll={[Function]}
           role="listbox"
         >
-          <ForwardRef
-            alignV="center"
-            aria-selected={true}
-            data-css-17=""
-            direction="row"
-            id="downshift-1-item-0"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#f9fafb",
-              }
-            }
+          <div
+            aria-labelledby="downshift-1-label"
+            data-css-15=""
+            data-css-16=""
+            id="downshift-1-menu"
+            onScroll={[Function]}
+            role="listbox"
           >
-            <div
+            <ForwardRef
+              alignV="center"
               aria-selected={true}
-              data-css-18=""
               data-css-17=""
+              direction="row"
               id="downshift-1-item-0"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -1226,38 +1296,38 @@ exports[`Test the typeahead component should be a simple static one which auto o
                 }
               }
             >
-              <ForwardRef
-                data-css-19=""
+              <div
+                aria-selected={true}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-0"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#f9fafb",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-19=""
-                  data-css-5=""
                 >
-                  Abomasnow
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-17=""
-            direction="row"
-            id="downshift-1-item-1"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Abomasnow
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-18=""
               data-css-17=""
+              direction="row"
               id="downshift-1-item-1"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -1269,38 +1339,38 @@ exports[`Test the typeahead component should be a simple static one which auto o
                 }
               }
             >
-              <ForwardRef
-                data-css-19=""
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-1"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-19=""
-                  data-css-5=""
                 >
-                  Abra
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-17=""
-            direction="row"
-            id="downshift-1-item-2"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Abra
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-18=""
               data-css-17=""
+              direction="row"
               id="downshift-1-item-2"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -1312,38 +1382,38 @@ exports[`Test the typeahead component should be a simple static one which auto o
                 }
               }
             >
-              <ForwardRef
-                data-css-19=""
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-2"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-19=""
-                  data-css-5=""
                 >
-                  Absol
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-17=""
-            direction="row"
-            id="downshift-1-item-3"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Absol
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-18=""
               data-css-17=""
+              direction="row"
               id="downshift-1-item-3"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -1355,38 +1425,38 @@ exports[`Test the typeahead component should be a simple static one which auto o
                 }
               }
             >
-              <ForwardRef
-                data-css-19=""
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-3"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-19=""
-                  data-css-5=""
                 >
-                  Accelgor
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-17=""
-            direction="row"
-            id="downshift-1-item-4"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Accelgor
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-18=""
               data-css-17=""
+              direction="row"
               id="downshift-1-item-4"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -1398,38 +1468,38 @@ exports[`Test the typeahead component should be a simple static one which auto o
                 }
               }
             >
-              <ForwardRef
-                data-css-19=""
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-4"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-19=""
-                  data-css-5=""
                 >
-                  Aegislash
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-17=""
-            direction="row"
-            id="downshift-1-item-5"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Aegislash
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-18=""
               data-css-17=""
+              direction="row"
               id="downshift-1-item-5"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -1441,38 +1511,38 @@ exports[`Test the typeahead component should be a simple static one which auto o
                 }
               }
             >
-              <ForwardRef
-                data-css-19=""
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-5"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-19=""
-                  data-css-5=""
                 >
-                  Aerodactyl
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-17=""
-            direction="row"
-            id="downshift-1-item-6"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Aerodactyl
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-18=""
               data-css-17=""
+              direction="row"
               id="downshift-1-item-6"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -1484,38 +1554,38 @@ exports[`Test the typeahead component should be a simple static one which auto o
                 }
               }
             >
-              <ForwardRef
-                data-css-19=""
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-6"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-19=""
-                  data-css-5=""
                 >
-                  Aggron
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-17=""
-            direction="row"
-            id="downshift-1-item-7"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Aggron
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-18=""
               data-css-17=""
+              direction="row"
               id="downshift-1-item-7"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -1527,38 +1597,38 @@ exports[`Test the typeahead component should be a simple static one which auto o
                 }
               }
             >
-              <ForwardRef
-                data-css-19=""
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-7"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-19=""
-                  data-css-5=""
                 >
-                  Aipom
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-17=""
-            direction="row"
-            id="downshift-1-item-8"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Aipom
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-18=""
               data-css-17=""
+              direction="row"
               id="downshift-1-item-8"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -1570,38 +1640,38 @@ exports[`Test the typeahead component should be a simple static one which auto o
                 }
               }
             >
-              <ForwardRef
-                data-css-19=""
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-8"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-19=""
-                  data-css-5=""
                 >
-                  Alakazam
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-17=""
-            direction="row"
-            id="downshift-1-item-9"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Alakazam
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-18=""
               data-css-17=""
+              direction="row"
               id="downshift-1-item-9"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -1613,27 +1683,43 @@ exports[`Test the typeahead component should be a simple static one which auto o
                 }
               }
             >
-              <ForwardRef
-                data-css-19=""
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-9"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-19=""
-                  data-css-5=""
                 >
-                  Alomomola
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            data-css-20=""
-          >
-            <div
-              data-css-5=""
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Alomomola
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
               data-css-20=""
-            />
-          </ForwardRef>
-        </div>
+            >
+              <div
+                data-css-5=""
+                data-css-20=""
+              />
+            </ForwardRef>
+          </div>
+        </ForwardRef>
       </ForwardRef>
     </div>
   </ForwardRef>
@@ -1845,138 +1931,165 @@ exports[`Test the typeahead component should render differently when loading 1`]
               data-css-8=""
             >
               <ForwardRef
-                data-css-0=""
-                style={
-                  Object {
-                    "width": "100%",
-                  }
-                }
+                autoComplete="off"
+                data-css-4=""
+                hasRightIcon={false}
+                name="hint"
+                tabIndex={-1}
+                value=""
               >
-                <div
+                <ForwardRef
                   data-css-0=""
-                  data-css-7=""
                   style={
                     Object {
                       "width": "100%",
                     }
                   }
                 >
-                  <input
-                    aria-required={false}
-                    autoComplete="off"
-                    data-css-4=""
-                    data-css-9=""
-                    name="hint"
-                    onChange={[Function]}
-                    required={false}
-                    tabIndex={-1}
-                    type="password"
-                    value=""
-                  />
-                  <ForwardRef
-                    className="checkmark"
-                    data-css-11=""
+                  <div
+                    data-css-0=""
+                    data-css-7=""
+                    style={
+                      Object {
+                        "width": "100%",
+                      }
+                    }
                   >
-                    <div
+                    <input
+                      aria-required={false}
+                      autoComplete="off"
+                      data-css-4=""
+                      data-css-9=""
+                      name="hint"
+                      onChange={[Function]}
+                      required={false}
+                      tabIndex={-1}
+                      type="text"
+                      value=""
+                    />
+                    <ForwardRef
                       className="checkmark"
                       data-css-11=""
-                      data-css-7=""
                     >
-                      <ForwardRef
-                        alignH="center"
-                        alignV="center"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "",
-                          }
-                        }
-                        data-css-12=""
+                      <div
+                        className="checkmark"
+                        data-css-11=""
+                        data-css-7=""
                       >
-                        <div
+                        <ForwardRef
+                          alignH="center"
+                          alignV="center"
                           dangerouslySetInnerHTML={
                             Object {
                               "__html": "",
                             }
                           }
-                          data-css-7=""
                           data-css-12=""
-                        />
-                      </ForwardRef>
-                    </div>
-                  </ForwardRef>
-                </div>
+                        >
+                          <div
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "",
+                              }
+                            }
+                            data-css-7=""
+                            data-css-12=""
+                          />
+                        </ForwardRef>
+                      </div>
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
               </ForwardRef>
             </div>
           </ForwardRef>
           <ForwardRef
-            data-css-0=""
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
+            aria-activedescendant={null}
+            aria-autocomplete="list"
+            aria-controls={null}
+            aria-labelledby="downshift-7-label"
+            autoComplete="off"
+            data-css-5=""
+            hasRightIcon={false}
+            id="downshift-7-input"
+            name="typed"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Select Nick's Pokemon"
+            value=""
           >
-            <div
+            <ForwardRef
               data-css-0=""
-              data-css-7=""
               style={
                 Object {
                   "width": "100%",
                 }
               }
             >
-              <input
-                aria-activedescendant={null}
-                aria-autocomplete="list"
-                aria-controls={null}
-                aria-labelledby="downshift-7-label"
-                aria-required={false}
-                autoComplete="off"
-                data-css-5=""
-                data-css-9=""
-                id="downshift-7-input"
-                name="typed"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                placeholder="Select Nick's Pokemon"
-                required={false}
-                type="text"
-                value=""
-              />
-              <ForwardRef
-                className="checkmark"
-                data-css-11=""
+              <div
+                data-css-0=""
+                data-css-7=""
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
               >
-                <div
+                <input
+                  aria-activedescendant={null}
+                  aria-autocomplete="list"
+                  aria-controls={null}
+                  aria-labelledby="downshift-7-label"
+                  aria-required={false}
+                  autoComplete="off"
+                  data-css-5=""
+                  data-css-9=""
+                  id="downshift-7-input"
+                  name="typed"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Select Nick's Pokemon"
+                  required={false}
+                  type="text"
+                  value=""
+                />
+                <ForwardRef
                   className="checkmark"
                   data-css-11=""
-                  data-css-7=""
                 >
-                  <ForwardRef
-                    alignH="center"
-                    alignV="center"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "",
-                      }
-                    }
-                    data-css-12=""
+                  <div
+                    className="checkmark"
+                    data-css-11=""
+                    data-css-7=""
                   >
-                    <div
+                    <ForwardRef
+                      alignH="center"
+                      alignV="center"
                       dangerouslySetInnerHTML={
                         Object {
                           "__html": "",
                         }
                       }
-                      data-css-7=""
                       data-css-12=""
-                    />
-                  </ForwardRef>
-                </div>
-              </ForwardRef>
-            </div>
+                    >
+                      <div
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "",
+                          }
+                        }
+                        data-css-7=""
+                        data-css-12=""
+                      />
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
           </ForwardRef>
           <ForwardRef
             alignV="center"
@@ -2210,138 +2323,165 @@ exports[`Test the typeahead component should render differently when loading 2`]
               data-css-8=""
             >
               <ForwardRef
-                data-css-0=""
-                style={
-                  Object {
-                    "width": "100%",
-                  }
-                }
+                autoComplete="off"
+                data-css-4=""
+                hasRightIcon={false}
+                name="hint"
+                tabIndex={-1}
+                value=""
               >
-                <div
+                <ForwardRef
                   data-css-0=""
-                  data-css-7=""
                   style={
                     Object {
                       "width": "100%",
                     }
                   }
                 >
-                  <input
-                    aria-required={false}
-                    autoComplete="off"
-                    data-css-4=""
-                    data-css-9=""
-                    name="hint"
-                    onChange={[Function]}
-                    required={false}
-                    tabIndex={-1}
-                    type="password"
-                    value=""
-                  />
-                  <ForwardRef
-                    className="checkmark"
-                    data-css-11=""
+                  <div
+                    data-css-0=""
+                    data-css-7=""
+                    style={
+                      Object {
+                        "width": "100%",
+                      }
+                    }
                   >
-                    <div
+                    <input
+                      aria-required={false}
+                      autoComplete="off"
+                      data-css-4=""
+                      data-css-9=""
+                      name="hint"
+                      onChange={[Function]}
+                      required={false}
+                      tabIndex={-1}
+                      type="text"
+                      value=""
+                    />
+                    <ForwardRef
                       className="checkmark"
                       data-css-11=""
-                      data-css-7=""
                     >
-                      <ForwardRef
-                        alignH="center"
-                        alignV="center"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "",
-                          }
-                        }
-                        data-css-12=""
+                      <div
+                        className="checkmark"
+                        data-css-11=""
+                        data-css-7=""
                       >
-                        <div
+                        <ForwardRef
+                          alignH="center"
+                          alignV="center"
                           dangerouslySetInnerHTML={
                             Object {
                               "__html": "",
                             }
                           }
-                          data-css-7=""
                           data-css-12=""
-                        />
-                      </ForwardRef>
-                    </div>
-                  </ForwardRef>
-                </div>
+                        >
+                          <div
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "",
+                              }
+                            }
+                            data-css-7=""
+                            data-css-12=""
+                          />
+                        </ForwardRef>
+                      </div>
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
               </ForwardRef>
             </div>
           </ForwardRef>
           <ForwardRef
-            data-css-0=""
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
+            aria-activedescendant={null}
+            aria-autocomplete="list"
+            aria-controls={null}
+            aria-labelledby="downshift-7-label"
+            autoComplete="off"
+            data-css-5=""
+            hasRightIcon={false}
+            id="downshift-7-input"
+            name="typed"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Select Nick's Pokemon"
+            value=""
           >
-            <div
+            <ForwardRef
               data-css-0=""
-              data-css-7=""
               style={
                 Object {
                   "width": "100%",
                 }
               }
             >
-              <input
-                aria-activedescendant={null}
-                aria-autocomplete="list"
-                aria-controls={null}
-                aria-labelledby="downshift-7-label"
-                aria-required={false}
-                autoComplete="off"
-                data-css-5=""
-                data-css-9=""
-                id="downshift-7-input"
-                name="typed"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                placeholder="Select Nick's Pokemon"
-                required={false}
-                type="text"
-                value=""
-              />
-              <ForwardRef
-                className="checkmark"
-                data-css-11=""
+              <div
+                data-css-0=""
+                data-css-7=""
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
               >
-                <div
+                <input
+                  aria-activedescendant={null}
+                  aria-autocomplete="list"
+                  aria-controls={null}
+                  aria-labelledby="downshift-7-label"
+                  aria-required={false}
+                  autoComplete="off"
+                  data-css-5=""
+                  data-css-9=""
+                  id="downshift-7-input"
+                  name="typed"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Select Nick's Pokemon"
+                  required={false}
+                  type="text"
+                  value=""
+                />
+                <ForwardRef
                   className="checkmark"
                   data-css-11=""
-                  data-css-7=""
                 >
-                  <ForwardRef
-                    alignH="center"
-                    alignV="center"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "",
-                      }
-                    }
-                    data-css-12=""
+                  <div
+                    className="checkmark"
+                    data-css-11=""
+                    data-css-7=""
                   >
-                    <div
+                    <ForwardRef
+                      alignH="center"
+                      alignV="center"
                       dangerouslySetInnerHTML={
                         Object {
                           "__html": "",
                         }
                       }
-                      data-css-7=""
                       data-css-12=""
-                    />
-                  </ForwardRef>
-                </div>
-              </ForwardRef>
-            </div>
+                    >
+                      <div
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "",
+                          }
+                        }
+                        data-css-7=""
+                        data-css-12=""
+                      />
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
           </ForwardRef>
           <ForwardRef
             alignV="center"
@@ -2658,137 +2798,163 @@ exports[`Test the typeahead component should use the defaultValue property (unco
               data-css-8=""
             >
               <ForwardRef
-                data-css-0=""
-                style={
-                  Object {
-                    "width": "100%",
-                  }
-                }
+                autoComplete="off"
+                data-css-4=""
+                hasRightIcon={true}
+                name="hint"
+                tabIndex={-1}
+                value=""
               >
-                <div
+                <ForwardRef
                   data-css-0=""
-                  data-css-7=""
                   style={
                     Object {
                       "width": "100%",
                     }
                   }
                 >
-                  <input
-                    aria-required={false}
-                    autoComplete="off"
-                    data-css-4=""
-                    data-css-16=""
-                    name="hint"
-                    onChange={[Function]}
-                    required={false}
-                    tabIndex={-1}
-                    type="password"
-                    value="Abomasnow"
-                  />
-                  <ForwardRef
-                    className="checkmark"
-                    data-css-9=""
+                  <div
+                    data-css-0=""
+                    data-css-7=""
+                    style={
+                      Object {
+                        "width": "100%",
+                      }
+                    }
                   >
-                    <div
+                    <input
+                      aria-required={false}
+                      autoComplete="off"
+                      data-css-4=""
+                      data-css-16=""
+                      name="hint"
+                      onChange={[Function]}
+                      required={false}
+                      tabIndex={-1}
+                      type="text"
+                      value=""
+                    />
+                    <ForwardRef
                       className="checkmark"
                       data-css-9=""
-                      data-css-7=""
                     >
-                      <ForwardRef
-                        alignH="center"
-                        alignV="center"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "",
-                          }
-                        }
-                        data-css-10=""
+                      <div
+                        className="checkmark"
+                        data-css-9=""
+                        data-css-7=""
                       >
-                        <div
+                        <ForwardRef
+                          alignH="center"
+                          alignV="center"
                           dangerouslySetInnerHTML={
                             Object {
                               "__html": "",
                             }
                           }
-                          data-css-7=""
                           data-css-10=""
-                        />
-                      </ForwardRef>
-                    </div>
-                  </ForwardRef>
-                </div>
+                        >
+                          <div
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "",
+                              }
+                            }
+                            data-css-7=""
+                            data-css-10=""
+                          />
+                        </ForwardRef>
+                      </div>
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
               </ForwardRef>
             </div>
           </ForwardRef>
           <ForwardRef
-            data-css-0=""
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
+            aria-activedescendant={null}
+            aria-autocomplete="list"
+            aria-controls={null}
+            aria-labelledby="downshift-5-label"
+            autoComplete="off"
+            data-css-5=""
+            hasRightIcon={true}
+            id="downshift-5-input"
+            name="typed"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Select Nick's Pokemon"
+            value="Abomasnow"
           >
-            <div
+            <ForwardRef
               data-css-0=""
-              data-css-7=""
               style={
                 Object {
                   "width": "100%",
                 }
               }
             >
-              <input
-                aria-activedescendant={null}
-                aria-autocomplete="list"
-                aria-controls={null}
-                aria-labelledby="downshift-5-label"
-                aria-required={false}
-                autoComplete="off"
-                data-css-5=""
-                data-css-16=""
-                id="downshift-5-input"
-                name="typed"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onKeyDown={[Function]}
-                placeholder="Select Nick's Pokemon"
-                required={false}
-                type="text"
-                value="Abomasnow"
-              />
-              <ForwardRef
-                className="checkmark"
-                data-css-9=""
+              <div
+                data-css-0=""
+                data-css-7=""
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
               >
-                <div
+                <input
+                  aria-activedescendant={null}
+                  aria-autocomplete="list"
+                  aria-controls={null}
+                  aria-labelledby="downshift-5-label"
+                  aria-required={false}
+                  autoComplete="off"
+                  data-css-5=""
+                  data-css-16=""
+                  id="downshift-5-input"
+                  name="typed"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Select Nick's Pokemon"
+                  required={false}
+                  type="text"
+                  value="Abomasnow"
+                />
+                <ForwardRef
                   className="checkmark"
                   data-css-9=""
-                  data-css-7=""
                 >
-                  <ForwardRef
-                    alignH="center"
-                    alignV="center"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "",
-                      }
-                    }
-                    data-css-10=""
+                  <div
+                    className="checkmark"
+                    data-css-9=""
+                    data-css-7=""
                   >
-                    <div
+                    <ForwardRef
+                      alignH="center"
+                      alignV="center"
                       dangerouslySetInnerHTML={
                         Object {
                           "__html": "",
                         }
                       }
-                      data-css-7=""
                       data-css-10=""
-                    />
-                  </ForwardRef>
-                </div>
-              </ForwardRef>
-            </div>
+                    >
+                      <div
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "",
+                          }
+                        }
+                        data-css-7=""
+                        data-css-10=""
+                      />
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
           </ForwardRef>
           <ForwardRef
             alignV="center"
@@ -3142,138 +3308,165 @@ exports[`Test the typeahead component should use the limit property 1`] = `
               data-css-6=""
             >
               <ForwardRef
-                data-css-0=""
-                style={
-                  Object {
-                    "width": "100%",
-                  }
-                }
+                autoComplete="off"
+                data-css-3=""
+                hasRightIcon={false}
+                name="hint"
+                tabIndex={-1}
+                value=""
               >
-                <div
+                <ForwardRef
                   data-css-0=""
-                  data-css-5=""
                   style={
                     Object {
                       "width": "100%",
                     }
                   }
                 >
-                  <input
-                    aria-required={false}
-                    autoComplete="off"
-                    data-css-3=""
-                    data-css-7=""
-                    name="hint"
-                    onChange={[Function]}
-                    required={false}
-                    tabIndex={-1}
-                    type="password"
-                    value=""
-                  />
-                  <ForwardRef
-                    className="checkmark"
-                    data-css-9=""
+                  <div
+                    data-css-0=""
+                    data-css-5=""
+                    style={
+                      Object {
+                        "width": "100%",
+                      }
+                    }
                   >
-                    <div
+                    <input
+                      aria-required={false}
+                      autoComplete="off"
+                      data-css-3=""
+                      data-css-7=""
+                      name="hint"
+                      onChange={[Function]}
+                      required={false}
+                      tabIndex={-1}
+                      type="text"
+                      value=""
+                    />
+                    <ForwardRef
                       className="checkmark"
                       data-css-9=""
-                      data-css-5=""
                     >
-                      <ForwardRef
-                        alignH="center"
-                        alignV="center"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "",
-                          }
-                        }
-                        data-css-10=""
+                      <div
+                        className="checkmark"
+                        data-css-9=""
+                        data-css-5=""
                       >
-                        <div
+                        <ForwardRef
+                          alignH="center"
+                          alignV="center"
                           dangerouslySetInnerHTML={
                             Object {
                               "__html": "",
                             }
                           }
-                          data-css-5=""
                           data-css-10=""
-                        />
-                      </ForwardRef>
-                    </div>
-                  </ForwardRef>
-                </div>
+                        >
+                          <div
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "",
+                              }
+                            }
+                            data-css-5=""
+                            data-css-10=""
+                          />
+                        </ForwardRef>
+                      </div>
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
               </ForwardRef>
             </div>
           </ForwardRef>
           <ForwardRef
-            data-css-0=""
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
+            aria-activedescendant="downshift-2-item-0"
+            aria-autocomplete="list"
+            aria-controls="downshift-2-menu"
+            aria-labelledby="downshift-2-label"
+            autoComplete="off"
+            data-css-14=""
+            hasRightIcon={false}
+            id="downshift-2-input"
+            name="typed"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Select Nick's Pokemon"
+            value=""
           >
-            <div
+            <ForwardRef
               data-css-0=""
-              data-css-5=""
               style={
                 Object {
                   "width": "100%",
                 }
               }
             >
-              <input
-                aria-activedescendant="downshift-2-item-0"
-                aria-autocomplete="list"
-                aria-controls="downshift-2-menu"
-                aria-labelledby="downshift-2-label"
-                aria-required={false}
-                autoComplete="off"
-                data-css-7=""
-                data-css-14=""
-                id="downshift-2-input"
-                name="typed"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                placeholder="Select Nick's Pokemon"
-                required={false}
-                type="text"
-                value=""
-              />
-              <ForwardRef
-                className="checkmark"
-                data-css-9=""
+              <div
+                data-css-0=""
+                data-css-5=""
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
               >
-                <div
+                <input
+                  aria-activedescendant="downshift-2-item-0"
+                  aria-autocomplete="list"
+                  aria-controls="downshift-2-menu"
+                  aria-labelledby="downshift-2-label"
+                  aria-required={false}
+                  autoComplete="off"
+                  data-css-7=""
+                  data-css-14=""
+                  id="downshift-2-input"
+                  name="typed"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Select Nick's Pokemon"
+                  required={false}
+                  type="text"
+                  value=""
+                />
+                <ForwardRef
                   className="checkmark"
                   data-css-9=""
-                  data-css-5=""
                 >
-                  <ForwardRef
-                    alignH="center"
-                    alignV="center"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "",
-                      }
-                    }
-                    data-css-10=""
+                  <div
+                    className="checkmark"
+                    data-css-9=""
+                    data-css-5=""
                   >
-                    <div
+                    <ForwardRef
+                      alignH="center"
+                      alignV="center"
                       dangerouslySetInnerHTML={
                         Object {
                           "__html": "",
                         }
                       }
-                      data-css-5=""
                       data-css-10=""
-                    />
-                  </ForwardRef>
-                </div>
-              </ForwardRef>
-            </div>
+                    >
+                      <div
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "",
+                          }
+                        }
+                        data-css-5=""
+                        data-css-10=""
+                      />
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
           </ForwardRef>
           <ForwardRef
             alignV="center"
@@ -3303,39 +3496,30 @@ exports[`Test the typeahead component should use the limit property 1`] = `
         data-css-15=""
         direction="column"
         id="downshift-2-menu"
-        onRef={[Function]}
         onScroll={[Function]}
         role="listbox"
       >
-        <div
+        <ForwardRef
           aria-labelledby="downshift-2-label"
           data-css-15=""
-          data-css-16=""
+          direction="column"
           id="downshift-2-menu"
-          onRef={[Function]}
           onScroll={[Function]}
           role="listbox"
         >
-          <ForwardRef
-            alignV="center"
-            aria-selected={true}
-            data-css-17=""
-            direction="row"
-            id="downshift-2-item-0"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#f9fafb",
-              }
-            }
+          <div
+            aria-labelledby="downshift-2-label"
+            data-css-15=""
+            data-css-16=""
+            id="downshift-2-menu"
+            onScroll={[Function]}
+            role="listbox"
           >
-            <div
+            <ForwardRef
+              alignV="center"
               aria-selected={true}
-              data-css-18=""
               data-css-17=""
+              direction="row"
               id="downshift-2-item-0"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -3347,38 +3531,38 @@ exports[`Test the typeahead component should use the limit property 1`] = `
                 }
               }
             >
-              <ForwardRef
-                data-css-19=""
+              <div
+                aria-selected={true}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-2-item-0"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#f9fafb",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-19=""
-                  data-css-5=""
                 >
-                  Abomasnow
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-17=""
-            direction="row"
-            id="downshift-2-item-1"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Abomasnow
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-18=""
               data-css-17=""
+              direction="row"
               id="downshift-2-item-1"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -3390,27 +3574,43 @@ exports[`Test the typeahead component should use the limit property 1`] = `
                 }
               }
             >
-              <ForwardRef
-                data-css-19=""
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-2-item-1"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-19=""
-                  data-css-5=""
                 >
-                  Abra
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            data-css-20=""
-          >
-            <div
-              data-css-5=""
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Abra
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
               data-css-20=""
-            />
-          </ForwardRef>
-        </div>
+            >
+              <div
+                data-css-5=""
+                data-css-20=""
+              />
+            </ForwardRef>
+          </div>
+        </ForwardRef>
       </ForwardRef>
     </div>
   </ForwardRef>
@@ -3711,138 +3911,165 @@ exports[`Test the typeahead component should use the top placement property 1`] 
               data-css-6=""
             >
               <ForwardRef
-                data-css-0=""
-                style={
-                  Object {
-                    "width": "100%",
-                  }
-                }
+                autoComplete="off"
+                data-css-3=""
+                hasRightIcon={false}
+                name="hint"
+                tabIndex={-1}
+                value=""
               >
-                <div
+                <ForwardRef
                   data-css-0=""
-                  data-css-5=""
                   style={
                     Object {
                       "width": "100%",
                     }
                   }
                 >
-                  <input
-                    aria-required={false}
-                    autoComplete="off"
-                    data-css-3=""
-                    data-css-7=""
-                    name="hint"
-                    onChange={[Function]}
-                    required={false}
-                    tabIndex={-1}
-                    type="password"
-                    value=""
-                  />
-                  <ForwardRef
-                    className="checkmark"
-                    data-css-9=""
+                  <div
+                    data-css-0=""
+                    data-css-5=""
+                    style={
+                      Object {
+                        "width": "100%",
+                      }
+                    }
                   >
-                    <div
+                    <input
+                      aria-required={false}
+                      autoComplete="off"
+                      data-css-3=""
+                      data-css-7=""
+                      name="hint"
+                      onChange={[Function]}
+                      required={false}
+                      tabIndex={-1}
+                      type="text"
+                      value=""
+                    />
+                    <ForwardRef
                       className="checkmark"
                       data-css-9=""
-                      data-css-5=""
                     >
-                      <ForwardRef
-                        alignH="center"
-                        alignV="center"
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "",
-                          }
-                        }
-                        data-css-10=""
+                      <div
+                        className="checkmark"
+                        data-css-9=""
+                        data-css-5=""
                       >
-                        <div
+                        <ForwardRef
+                          alignH="center"
+                          alignV="center"
                           dangerouslySetInnerHTML={
                             Object {
                               "__html": "",
                             }
                           }
-                          data-css-5=""
                           data-css-10=""
-                        />
-                      </ForwardRef>
-                    </div>
-                  </ForwardRef>
-                </div>
+                        >
+                          <div
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "",
+                              }
+                            }
+                            data-css-5=""
+                            data-css-10=""
+                          />
+                        </ForwardRef>
+                      </div>
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
               </ForwardRef>
             </div>
           </ForwardRef>
           <ForwardRef
-            data-css-0=""
-            style={
-              Object {
-                "width": "100%",
-              }
-            }
+            aria-activedescendant="downshift-3-item-0"
+            aria-autocomplete="list"
+            aria-controls="downshift-3-menu"
+            aria-labelledby="downshift-3-label"
+            autoComplete="off"
+            data-css-14=""
+            hasRightIcon={false}
+            id="downshift-3-input"
+            name="typed"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Select Nick's Pokemon"
+            value=""
           >
-            <div
+            <ForwardRef
               data-css-0=""
-              data-css-5=""
               style={
                 Object {
                   "width": "100%",
                 }
               }
             >
-              <input
-                aria-activedescendant="downshift-3-item-0"
-                aria-autocomplete="list"
-                aria-controls="downshift-3-menu"
-                aria-labelledby="downshift-3-label"
-                aria-required={false}
-                autoComplete="off"
-                data-css-7=""
-                data-css-14=""
-                id="downshift-3-input"
-                name="typed"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                placeholder="Select Nick's Pokemon"
-                required={false}
-                type="text"
-                value=""
-              />
-              <ForwardRef
-                className="checkmark"
-                data-css-9=""
+              <div
+                data-css-0=""
+                data-css-5=""
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
               >
-                <div
+                <input
+                  aria-activedescendant="downshift-3-item-0"
+                  aria-autocomplete="list"
+                  aria-controls="downshift-3-menu"
+                  aria-labelledby="downshift-3-label"
+                  aria-required={false}
+                  autoComplete="off"
+                  data-css-7=""
+                  data-css-14=""
+                  id="downshift-3-input"
+                  name="typed"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Select Nick's Pokemon"
+                  required={false}
+                  type="text"
+                  value=""
+                />
+                <ForwardRef
                   className="checkmark"
                   data-css-9=""
-                  data-css-5=""
                 >
-                  <ForwardRef
-                    alignH="center"
-                    alignV="center"
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "",
-                      }
-                    }
-                    data-css-10=""
+                  <div
+                    className="checkmark"
+                    data-css-9=""
+                    data-css-5=""
                   >
-                    <div
+                    <ForwardRef
+                      alignH="center"
+                      alignV="center"
                       dangerouslySetInnerHTML={
                         Object {
                           "__html": "",
                         }
                       }
-                      data-css-5=""
                       data-css-10=""
-                    />
-                  </ForwardRef>
-                </div>
-              </ForwardRef>
-            </div>
+                    >
+                      <div
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "",
+                          }
+                        }
+                        data-css-5=""
+                        data-css-10=""
+                      />
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
           </ForwardRef>
           <ForwardRef
             alignV="center"
@@ -3872,39 +4099,30 @@ exports[`Test the typeahead component should use the top placement property 1`] 
         data-css-18=""
         direction="column-reverse"
         id="downshift-3-menu"
-        onRef={[Function]}
         onScroll={[Function]}
         role="listbox"
       >
-        <div
+        <ForwardRef
           aria-labelledby="downshift-3-label"
           data-css-18=""
-          data-css-19=""
+          direction="column-reverse"
           id="downshift-3-menu"
-          onRef={[Function]}
           onScroll={[Function]}
           role="listbox"
         >
-          <ForwardRef
-            alignV="center"
-            aria-selected={true}
-            data-css-15=""
-            direction="row"
-            id="downshift-3-item-0"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#f9fafb",
-              }
-            }
+          <div
+            aria-labelledby="downshift-3-label"
+            data-css-18=""
+            data-css-19=""
+            id="downshift-3-menu"
+            onScroll={[Function]}
+            role="listbox"
           >
-            <div
+            <ForwardRef
+              alignV="center"
               aria-selected={true}
-              data-css-16=""
               data-css-15=""
+              direction="row"
               id="downshift-3-item-0"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -3916,38 +4134,38 @@ exports[`Test the typeahead component should use the top placement property 1`] 
                 }
               }
             >
-              <ForwardRef
-                data-css-17=""
+              <div
+                aria-selected={true}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-0"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#f9fafb",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-17=""
-                  data-css-5=""
                 >
-                  Abomasnow
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-15=""
-            direction="row"
-            id="downshift-3-item-1"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Abomasnow
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-16=""
               data-css-15=""
+              direction="row"
               id="downshift-3-item-1"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -3959,38 +4177,38 @@ exports[`Test the typeahead component should use the top placement property 1`] 
                 }
               }
             >
-              <ForwardRef
-                data-css-17=""
+              <div
+                aria-selected={false}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-1"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-17=""
-                  data-css-5=""
                 >
-                  Abra
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-15=""
-            direction="row"
-            id="downshift-3-item-2"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Abra
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-16=""
               data-css-15=""
+              direction="row"
               id="downshift-3-item-2"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -4002,38 +4220,38 @@ exports[`Test the typeahead component should use the top placement property 1`] 
                 }
               }
             >
-              <ForwardRef
-                data-css-17=""
+              <div
+                aria-selected={false}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-2"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-17=""
-                  data-css-5=""
                 >
-                  Absol
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-15=""
-            direction="row"
-            id="downshift-3-item-3"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Absol
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-16=""
               data-css-15=""
+              direction="row"
               id="downshift-3-item-3"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -4045,38 +4263,38 @@ exports[`Test the typeahead component should use the top placement property 1`] 
                 }
               }
             >
-              <ForwardRef
-                data-css-17=""
+              <div
+                aria-selected={false}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-3"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-17=""
-                  data-css-5=""
                 >
-                  Accelgor
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-15=""
-            direction="row"
-            id="downshift-3-item-4"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Accelgor
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-16=""
               data-css-15=""
+              direction="row"
               id="downshift-3-item-4"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -4088,38 +4306,38 @@ exports[`Test the typeahead component should use the top placement property 1`] 
                 }
               }
             >
-              <ForwardRef
-                data-css-17=""
+              <div
+                aria-selected={false}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-4"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-17=""
-                  data-css-5=""
                 >
-                  Aegislash
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-15=""
-            direction="row"
-            id="downshift-3-item-5"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Aegislash
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-16=""
               data-css-15=""
+              direction="row"
               id="downshift-3-item-5"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -4131,38 +4349,38 @@ exports[`Test the typeahead component should use the top placement property 1`] 
                 }
               }
             >
-              <ForwardRef
-                data-css-17=""
+              <div
+                aria-selected={false}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-5"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-17=""
-                  data-css-5=""
                 >
-                  Aerodactyl
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-15=""
-            direction="row"
-            id="downshift-3-item-6"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Aerodactyl
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-16=""
               data-css-15=""
+              direction="row"
               id="downshift-3-item-6"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -4174,38 +4392,38 @@ exports[`Test the typeahead component should use the top placement property 1`] 
                 }
               }
             >
-              <ForwardRef
-                data-css-17=""
+              <div
+                aria-selected={false}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-6"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-17=""
-                  data-css-5=""
                 >
-                  Aggron
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-15=""
-            direction="row"
-            id="downshift-3-item-7"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Aggron
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-16=""
               data-css-15=""
+              direction="row"
               id="downshift-3-item-7"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -4217,38 +4435,38 @@ exports[`Test the typeahead component should use the top placement property 1`] 
                 }
               }
             >
-              <ForwardRef
-                data-css-17=""
+              <div
+                aria-selected={false}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-7"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-17=""
-                  data-css-5=""
                 >
-                  Aipom
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-15=""
-            direction="row"
-            id="downshift-3-item-8"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Aipom
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-16=""
               data-css-15=""
+              direction="row"
               id="downshift-3-item-8"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -4260,38 +4478,38 @@ exports[`Test the typeahead component should use the top placement property 1`] 
                 }
               }
             >
-              <ForwardRef
-                data-css-17=""
+              <div
+                aria-selected={false}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-8"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-17=""
-                  data-css-5=""
                 >
-                  Alakazam
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            alignV="center"
-            aria-selected={false}
-            data-css-15=""
-            direction="row"
-            id="downshift-3-item-9"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            role="option"
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-              }
-            }
-          >
-            <div
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Alakazam
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
               aria-selected={false}
-              data-css-16=""
               data-css-15=""
+              direction="row"
               id="downshift-3-item-9"
               onClick={[Function]}
               onMouseDown={[Function]}
@@ -4303,27 +4521,43 @@ exports[`Test the typeahead component should use the top placement property 1`] 
                 }
               }
             >
-              <ForwardRef
-                data-css-17=""
+              <div
+                aria-selected={false}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-9"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
               >
-                <div
+                <ForwardRef
                   data-css-17=""
-                  data-css-5=""
                 >
-                  Alomomola
-                </div>
-              </ForwardRef>
-            </div>
-          </ForwardRef>
-          <ForwardRef
-            data-css-20=""
-          >
-            <div
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Alomomola
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
               data-css-20=""
-              data-css-5=""
-            />
-          </ForwardRef>
-        </div>
+            >
+              <div
+                data-css-20=""
+                data-css-5=""
+              />
+            </ForwardRef>
+          </div>
+        </ForwardRef>
       </ForwardRef>
     </div>
   </ForwardRef>

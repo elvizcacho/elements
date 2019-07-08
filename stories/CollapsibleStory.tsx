@@ -23,7 +23,7 @@ class DynamicCollapsible extends React.Component<any, any> {
           <View direction="row" alignH="space-around">
             <Button
               onClick={() =>
-                this.setState(({ items }) => ({
+                this.setState(({ items }: { items: string[] }) => ({
                   items: [...items, `Item ${items.length + 1}`],
                 }))
               }
@@ -32,7 +32,7 @@ class DynamicCollapsible extends React.Component<any, any> {
             </Button>
             <Button
               onClick={() =>
-                this.setState(({ items }) => ({
+                this.setState(({ items }: { items: string[] }) => ({
                   items: items.slice(0, -1),
                 }))
               }
@@ -41,6 +41,7 @@ class DynamicCollapsible extends React.Component<any, any> {
             </Button>
           </View>
           {this.state.items.map((item, i) => (
+            // eslint-disable-next-line react/no-array-index-key
             <Text block key={i}>
               {item}
             </Text>
@@ -53,7 +54,7 @@ class DynamicCollapsible extends React.Component<any, any> {
 
 const CollapsibleStory = () => (
   <ThemeProvider>
-    <ResourceProvider.Provider value={{ resourcePath: '' }}>
+    <ResourceProvider resourcePath="">
       <Card
         {...css({
           width: '300px',
@@ -217,7 +218,7 @@ const CollapsibleStory = () => (
           </div>
         </Collapsible>
       </Card>
-    </ResourceProvider.Provider>
+    </ResourceProvider>
   </ThemeProvider>
 )
 

@@ -164,5 +164,5 @@ const View: FunctionComponent<IViewProps> = ({
 export type ViewRef = HTMLDivElement
 
 export default forwardRef<ViewRef, IViewProps>((props, ref) => (
-  <View forwardedRef={ref} {...props} />
+  <View {...props} forwardedRef={ref} />
 ))

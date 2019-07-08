@@ -6,6 +6,7 @@ import React, {
   FunctionComponent,
   forwardRef,
   useCallback,
+  useRef,
 } from 'react'
 import View from '../atoms/View'
 import { css } from 'glamor'
@@ -13,6 +14,7 @@ import Relative from '../atoms/Relative'
 import Text, { createTextStyles } from '../atoms/Text'
 import Icon, { IconType } from '../atoms/Icon'
 import Absolute from './Absolute'
+import { useCombinedRefs } from '../hooks/useCombinedRefs'
 
 const styles = {
   input: (showLabel: boolean, translated: boolean, paddingRight: boolean) =>
@@ -233,7 +235,7 @@ const Input: FunctionComponent<IInputProps> = ({
   icon,
   ...props
 }) => {
-  console.log('hey!', forwardedRef)
+  const internalRef = useRef<any>(null)
   const isTextArea = lines !== 1
   const [value, setValue] = useState('')
   const [length, setLength] = useState(
@@ -245,10 +247,10 @@ const Input: FunctionComponent<IInputProps> = ({
 
   const isCheckmarkActive = Boolean(
     (pattern || props.minLength || props.maxLength || required) &&
-      forwardedRef &&
-      forwardedRef.current &&
-      forwardedRef.current.validity &&
-      forwardedRef.current.validity.valid
+      internalRef &&
+      internalRef.current &&
+      internalRef.current.validity &&
+      internalRef.current.validity.valid
   )
 
   const customValidity = {
@@ -276,12 +278,14 @@ const Input: FunctionComponent<IInputProps> = ({
   )
 
   useEffect(() => {
-    if (forwardedRef && forwardedRef.current) {
-      const input = forwardedRef.current
+    const input = internalRef.current
+    if (input) {
       setLength(input.value && input.value.length ? input.value.length : 0)
       setValidity(input, customValidity)
     }
-  }, [isTextArea, customValidity, forwardedRef])
+  }, [isTextArea, customValidity])
+
+  const combinedRef = useCombinedRefs(internalRef, forwardedRef)
 
   return (
     <Relative style={{ width: '100%' }}>
@@ -301,7 +305,7 @@ const Input: FunctionComponent<IInputProps> = ({
           )}
           <input
             type={type}
-            ref={forwardedRef}
+            ref={combinedRef}
             {...styles.input(
               showLabel,
               !!icon,
@@ -316,7 +320,7 @@ const Input: FunctionComponent<IInputProps> = ({
         </Fragment>
       ) : (
         <textarea
-          ref={forwardedRef}
+          ref={combinedRef}
           {...styles.area(lines, showLabel)}
           required={required}
           {...props}
@@ -353,7 +357,6 @@ const Input: FunctionComponent<IInputProps> = ({
   )
 }
 
-export default forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
-  console.log('haai', ref)
-  return <Input {...props} forwardedRef={ref} />
-})
+export default forwardRef<HTMLInputElement, IInputProps>((props, ref) => (
+  <Input {...props} forwardedRef={ref} />
+))

@@ -27,10 +27,9 @@ const paddedCss = (paddedVertical: boolean, paddedHorizontal: boolean) =>
 
 interface ISimpleLayout {
   backgroundColor: color
-  follow: boolean
-  padded: boolean | 'horizontal' | 'vertical'
-  onScrollEnd: () => void
-  onPullDown: () => void
+  padded?: boolean | 'horizontal' | 'vertical'
+  onScrollEnd?: () => void
+  onPullDown?: () => void
 }
 
 interface IState {
@@ -97,7 +96,7 @@ class SimpleLayout extends React.PureComponent<ISimpleLayout, IState> {
 
   handleTouchEnd = () => {
     if (this.state.pullDownOffset === 60) {
-      this.props.onPullDown()
+      this.props.onPullDown && this.props.onPullDown()
     }
     if (this.props.onPullDown && this.scrollTop === 0) {
       this.pullDown = undefined
