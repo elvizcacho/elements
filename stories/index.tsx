@@ -1,9 +1,9 @@
+import React from 'react'
 import { storiesOf } from '@storybook/react'
 import createViewportDecorator from './createViewportDecorator'
 import CollapsibleStory from './CollapsibleStory'
 //  import FilterStory from './FilterStory'
 
-/*
 import { action } from '@storybook/addon-actions'
 
 import {
@@ -34,14 +34,13 @@ import ConfirmStory from './ConfirmStory'
 import ButtonStory from './ButtonStory'
 import CheckboxStory from './CheckboxStory'
 import ProfileImageStackStory from './ProfileImageStackStory'
-*/
+import FilterStory from './FilterStory'
 
 storiesOf('Containers', module)
   .addDecorator(createViewportDecorator())
   .add('Collapsible', CollapsibleStory)
-//.add('Filters', () => <FilterStory />)
+  .add('Filters', () => <FilterStory />)
 
-/*
 storiesOf('ProfleImage', module)
   .addDecorator(createViewportDecorator())
   .add('Profile Image Stack / Profile Image List ', () => (
@@ -80,11 +79,6 @@ storiesOf('Button', module)
   .add('with text', () => (
     <ThemeProvider>
       <Button>Hello</Button>
-    </ThemeProvider>
-  ))
-  .add('in progress', () => (
-    <ThemeProvider>
-      <Button inProgress>Hello</Button>
     </ThemeProvider>
   ))
 storiesOf('FloatingButton', module)
@@ -127,7 +121,7 @@ storiesOf('FloatingButton', module)
     <ThemeProvider>
       <SimpleLayout>
         <Form onSubmit={_ => _}>
-          {new Array(50).fill(1).map(item => (
+          {new Array(50).fill(1).map(() => (
             <Text key={Math.random()} align="center" strong size="xxl">
               Scroll Down!
             </Text>
@@ -154,14 +148,14 @@ storiesOf('Icons', module)
       <ResourceProvider>
         <List>
           {Icons.map(icon => (
-            <ListItem key={icon} directon="row">
+            <ListItem key={icon} direction="row">
               <Icon size="m" name={icon} />
               <Input
                 name="x[]"
-                onFocus={e => e.target.select()} // eslint-disable-line react/jsx-no-bind
+                onFocus={e => e.target.select()}
                 type="text"
                 value={icon}
-                readonly
+                readOnly
                 style={{ cursor: 'pointer', outline: 'none', flex: 1 }}
               />
             </ListItem>
@@ -272,4 +266,3 @@ storiesOf('ReadMore', module)
       </ThemeProvider>
     )
   })
-*/

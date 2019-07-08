@@ -27,8 +27,8 @@ export default class FilterStory extends React.Component {
   render() {
     return (
       <ThemeProvider>
-        <ResourceProvider.Provider value={{ resourcePath: '' }}>
-          <Form onSubmit={(e, formData) => this.setState({ formData })}>
+        <ResourceProvider>
+          <Form onSubmit={(_e, formData) => this.setState({ formData })}>
             <Inset horizontal vertical>
               <Collapsible
                 title="Filter this list"
@@ -132,7 +132,7 @@ export default class FilterStory extends React.Component {
               {JSON.stringify(this.state.formData, null, 2)}
             </pre>
           )}
-        </ResourceProvider.Provider>
+        </ResourceProvider>
       </ThemeProvider>
     )
   }

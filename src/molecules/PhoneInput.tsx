@@ -1,9 +1,7 @@
-import React from 'react'
-import Input from '../atoms/Input'
+import React, { FunctionComponent } from 'react'
+import Input, { IInputProps } from '../atoms/Input'
 
-const PhoneInput = (props: PhoneInputProps) => <Input type="tel" {...props} />
-
-interface PhoneInputProps {
+interface PhoneInputProps extends IInputProps {
   /** Indicates that this field is required */
   required?: boolean
   /** The name of this input field */
@@ -15,5 +13,9 @@ interface PhoneInputProps {
   /** Value of placeholder */
   placeholder?: string
 }
+
+const PhoneInput: FunctionComponent<PhoneInputProps> = props => (
+  <Input type="tel" {...props} />
+)
 
 export default PhoneInput

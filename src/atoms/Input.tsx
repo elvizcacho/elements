@@ -105,23 +105,13 @@ const validityStates = [
   'tooShort',
   'typeMismatch',
   'valueMissing',
-]
+] as const
 
-type validityStateType =
-  | 'badInput'
-  | 'customError'
-  | 'patternMismatch'
-  | 'rangeOverflow'
-  | 'rangeUnderflow'
-  | 'stepMismatch'
-  | 'tooLong'
-  | 'tooShort'
-  | 'typeMismatch'
-  | 'valueMissing'
+type validityStateType = typeof validityStates[number]
 
 export interface IInputProps
   extends IValidityStates,
-    AllHTMLAttributes<HTMLElement> {
+    AllHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
   /** The default value to put into the component, without making it controlled */
   defaultValue?: string | string[]
   /** Indicates that this field is required */

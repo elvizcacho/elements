@@ -1,4 +1,4 @@
-import React, { Component, HTMLProps } from 'react'
+import React, { Component, HTMLAttributes } from 'react'
 import Absolute from '../atoms/Absolute'
 import Theme from '../behaviour/Theme'
 import { css } from 'glamor'
@@ -22,7 +22,7 @@ const buttonStyle = css({
   },
 })
 
-interface IFloatingButtonProps extends HTMLProps<HTMLButtonElement> {
+interface IFloatingButtonProps extends HTMLAttributes<HTMLButtonElement> {
   color?: string
   disabled?: boolean
   /* True to use the button that something is in progress */
