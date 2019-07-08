@@ -62,7 +62,7 @@ export const getTimeRange = ({
 
   const hourRange = Array.from(
     { length: 24 },
-    (_, hour) => hour * hourStep
+    (_, hour) => hour * hourStep,
   ).filter(hour => hour >= startHour && hour <= endHour)
 
   return hourRange.reduce((allHours: { [key: number]: any }, currentHour) => {
@@ -88,7 +88,7 @@ export const getTimeRange = ({
     // generate all minute steps in current hour
     allHours[currentHour] = Array.from(
       { length: steps },
-      (_, minute) => minute * minuteStep + offset
+      (_, minute) => minute * minuteStep + offset,
     )
 
     return allHours
@@ -99,7 +99,7 @@ const timePropTypeValidator = (value: string, propName: string) => {
   const regex = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/
   if (value && !regex.test(value)) {
     throw new TypeError(
-      `Invalid prop \`${propName}\` supplied to TimeInput. Expected format \`hh:mm\`, received: \`${value}\`.`
+      `Invalid prop \`${propName}\` supplied to TimeInput. Expected format \`hh:mm\`, received: \`${value}\`.`,
     )
   }
 }
@@ -297,7 +297,7 @@ class TimeInput extends Component<ITimeInputProps, IState> {
                 {...selectStyle(
                   hasSelectedMinute,
                   hasSelectedHour,
-                  hasSelectedHour
+                  hasSelectedHour,
                 )}
                 onChange={this.handleSelectMinute}
                 ref={this.minuteRef}

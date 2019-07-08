@@ -111,7 +111,7 @@ const Text: FunctionComponent<IText & ITextStyles & IViewProps> = ({
             align,
             autoBreak,
           }),
-          { color: colorize(color) }
+          { color: colorize(color) },
         )}
         {...props}
       >

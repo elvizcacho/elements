@@ -40,12 +40,12 @@ const NotificationBubbleManager: FunctionComponent<
   const handleEvent = useCallback(
     (type, message) =>
       setMessages(messages => [...messages, new Message(type, message)]),
-    []
+    [],
   )
 
   const handleTimeout = useCallback(
     () => setMessages(messages => messages.slice(1)),
-    []
+    [],
   )
 
   const doRenderBubble = useCallback(
@@ -61,7 +61,7 @@ const NotificationBubbleManager: FunctionComponent<
           {message.text}
         </NotificationBubble>
       ),
-    [handleTimeout, renderBubble]
+    [handleTimeout, renderBubble],
   )
 
   useEffect(() => {

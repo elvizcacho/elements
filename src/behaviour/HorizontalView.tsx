@@ -75,10 +75,10 @@ class HorizontalView extends Component<
 
   static getDerivedStateFromProps(
     { children: nextProps }: IHorizontalViewProps,
-    { children: previousState }: IState
+    { children: previousState }: IState,
   ) {
     const [oldChildren, nextChildren] = [previousState, nextProps].map(
-      (children = []) => children.filter(child => React.isValidElement(child))
+      (children = []) => children.filter(child => React.isValidElement(child)),
     )
 
     return nextChildren.length < oldChildren.length

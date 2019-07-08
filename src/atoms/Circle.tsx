@@ -8,7 +8,7 @@ const circle = (
   outline: boolean,
   outlineColor: string,
   fill: boolean,
-  radius: number
+  radius: number,
 ) =>
   css({
     border: outline && `1px solid ${outlineColor || backgroundColor}`,
@@ -71,7 +71,7 @@ const Circle: FunctionComponent<IProps & IViewProps> = ({
           outline,
           colorize(outlineColor),
           fill,
-          radius
+          radius,
         )}
         alignV="center"
         alignH="center"

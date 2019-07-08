@@ -17,7 +17,7 @@ test('Component sends confirm when cancel button is clicked', () => {
       confirmText="cancel forsure"
       cancelText="buttoncancel"
       submitText="sumbit"
-    />
+    />,
   )
   example
     .find(CardButton)
@@ -38,7 +38,7 @@ test('Should close when cancel button is clicked without text', () => {
       confirmText="cancel forsure"
       cancelText="buttoncancel"
       submitText="sumbit"
-    />
+    />,
   )
 
   wrapper
@@ -59,7 +59,7 @@ test('Should save when confirm button is clicked', () => {
       confirmText="cancel forsure"
       cancelText="buttoncancel"
       submitText="sumbit"
-    />
+    />,
   )
 
   wrapper
@@ -82,7 +82,7 @@ test('Should request close if click outside of component', () => {
       confirmText="cancel forsure"
       cancelText="buttoncancel"
       submitText="sumbit"
-    />
+    />,
   )
   const instance = wrapper.instance()
 
@@ -111,7 +111,7 @@ test('Should update the textbox', () => {
       confirmText="cancel forsure"
       cancelText="buttoncancel"
       submitText="sumbit"
-    />
+    />,
   )
 
   wrapper

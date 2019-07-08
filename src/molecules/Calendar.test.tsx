@@ -16,11 +16,11 @@ describe('Calendar', () => {
             }
           />
         </ResourceProvider>
-      </ThemeProvider>
+      </ThemeProvider>,
     )
 
     expect(container.querySelector('.blocked')!.textContent).toBe(
-      String(new Date().getDate())
+      String(new Date().getDate()),
     )
   })
 
@@ -31,7 +31,7 @@ describe('Calendar', () => {
           <ResourceProvider>
             <Calendar value={new Date(2020, 0, 1)} />
           </ResourceProvider>
-        </ThemeProvider>
+        </ThemeProvider>,
       )
       .toJSON()
 

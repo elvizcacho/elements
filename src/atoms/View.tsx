@@ -157,7 +157,7 @@ const View: FunctionComponent<IViewProps> = ({
       }),
       ...props,
     },
-    children
+    children,
   )
 }
 

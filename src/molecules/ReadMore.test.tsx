@@ -8,7 +8,7 @@ describe('ReadMore component', () => {
     const { container } = render(
       <ReadMore cropAtHeight={20}>
         <Text>Testing a short text...</Text>
-      </ReadMore>
+      </ReadMore>,
     )
     expect(container).toMatchSnapshot()
   })
@@ -16,7 +16,7 @@ describe('ReadMore component', () => {
     const { container } = render(
       <ReadMore cropAtHeight="10vh">
         <Text>Testing a short text with 10vh...</Text>
-      </ReadMore>
+      </ReadMore>,
     )
     expect(container).toMatchSnapshot()
   })
@@ -31,7 +31,7 @@ describe('ReadMore component', () => {
           elementum vel, ultrices in erat. Vestibulum eget ante turpis. Donec
           dapibus, purus vel euismod egestas
         </Text>
-      </ReadMore>
+      </ReadMore>,
     )
     // @TODO - create a test which actually clicks the readMore link and checks if it disappears....
     expect(container).toMatchSnapshot()

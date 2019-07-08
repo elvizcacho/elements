@@ -234,7 +234,7 @@ export default class Dropdown extends PureComponent<IDropdownProps> {
                                 ? alpha(
                                     ColorPalette.background.bright,
                                     0.5,
-                                    true
+                                    true,
                                   )
                                 : ColorPalette.background.white,
                           },

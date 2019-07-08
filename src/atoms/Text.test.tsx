@@ -8,7 +8,7 @@ test('Text renders correctly', () => {
     .create(
       <ThemeProvider>
         <Text />
-      </ThemeProvider>
+      </ThemeProvider>,
     )
     .toJSON()
   expect(tree).toMatchSnapshot()

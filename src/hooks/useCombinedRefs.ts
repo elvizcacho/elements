@@ -18,5 +18,5 @@ export const useCombinedRefs = <T extends any>(...refs: Ref<T>[]): Ref<T> =>
         ;(ref as any).current = element
       }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    refs
+    refs,
   )

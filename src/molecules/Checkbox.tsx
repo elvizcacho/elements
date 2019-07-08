@@ -58,7 +58,7 @@ class Checkbox extends Component<ICheckboxProps, IState> {
   render() {
     const { checked, name, onChange, ...props } = this.props
     const realChecked = Boolean(
-      this.isControlled() ? checked : this.state.checked
+      this.isControlled() ? checked : this.state.checked,
     )
 
     return (

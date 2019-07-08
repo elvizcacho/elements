@@ -131,7 +131,7 @@ class SimpleLayout extends React.PureComponent<ISimpleLayout, IState> {
                 {...simple(colorize(backgroundColor))}
                 {...paddedCss(
                   padded === true || padded === 'vertical',
-                  padded === true || padded === 'horizontal'
+                  padded === true || padded === 'horizontal',
                 )}
                 style={
                   value && value.x

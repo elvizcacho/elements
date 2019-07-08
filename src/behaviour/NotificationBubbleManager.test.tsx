@@ -16,7 +16,7 @@ test('NotificationBubbleManager renders the bubble', () => {
       <NotificationBubbleManager renderBubble={renderBubble}>
         <div>Test</div>
       </NotificationBubbleManager>
-    </ResourceProvider>
+    </ResourceProvider>,
   )
 
   const successMessage = 'this was a success'

@@ -1,4 +1,9 @@
-import React, { FunctionComponent, useContext } from 'react'
+import React, {
+  FunctionComponent,
+  useContext,
+  useState,
+  useEffect,
+} from 'react'
 import View, { IViewProps } from '../atoms/View'
 import { ResourceProviderContext } from '../behaviour/ResourceProvider'
 import Theme from '../behaviour/Theme'
@@ -184,23 +189,25 @@ const getSize = (size: IconSizeType) => {
   }
 }
 
-const IconsCache = new Map()
+const IconCache = new Map()
 
 const loadIcon = async (name: string, resourcePath: string) => {
   const iconName = getIconName(name)
   if (!resourcePath) {
     !hasWarnedBefore &&
       console.warn(
-        'In order to use icons, you need to wrap everything into a ResourceProvider'
+        'In order to use icons, you need to wrap everything into a ResourceProvider',
       )
     hasWarnedBefore = true
-  } else if (!IconsCache.has(iconName)) {
-    const path = `${resourcePath}/react-icons/production/${iconName}.svg`
+  }
 
+  if (!IconCache.has(name)) {
+    const path = `${resourcePath}/react-icons/production/${iconName}.svg`
     const icon = await fetch(path)
     const html = await icon.text()
-    IconsCache.set(iconName, html)
+    IconCache.set(name, html)
   }
+  return IconCache.get(name)
 }
 
 const getIconName = (name: string) => {
@@ -209,7 +216,7 @@ const getIconName = (name: string) => {
   // Transforms from MyIconNameIcon to myIconName
   return (iconName.charAt(0).toLowerCase() + iconName.substr(1)).replace(
     'Icon',
-    ''
+    '',
   )
 }
 
@@ -243,9 +250,13 @@ const Icon: FunctionComponent<IIconProps> = ({
     height: getSize(size),
   }
 
+  const [html, setHtml] = useState('')
+
   const { resourcePath } = useContext(ResourceProviderContext)
 
-  loadIcon(iconName, resourcePath)
+  useEffect(() => {
+    loadIcon(iconName, resourcePath).then(setHtml)
+  }, [iconName, resourcePath])
 
   return (
     <Theme>
@@ -260,7 +271,7 @@ const Icon: FunctionComponent<IIconProps> = ({
           })}
           alignH="center"
           alignV="center"
-          dangerouslySetInnerHTML={{ __html: IconsCache.get(iconName) }}
+          dangerouslySetInnerHTML={{ __html: html }}
         />
       )}
     </Theme>

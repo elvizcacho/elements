@@ -10,7 +10,7 @@ describe('<RadioButton />', () => {
       .create(
         <ThemeProvider>
           <RadioButton value="white" />
-        </ThemeProvider>
+        </ThemeProvider>,
       )
       .toJSON()
     expect(tree).toMatchSnapshot()
@@ -20,7 +20,7 @@ describe('<RadioButton />', () => {
     const { getByDisplayValue } = render(
       <ThemeProvider>
         <RadioButton value="white" />
-      </ThemeProvider>
+      </ThemeProvider>,
     )
 
     const input = getByDisplayValue('white') as HTMLInputElement

@@ -8,7 +8,7 @@ test('Should render correct color', () => {
     .create(
       <ThemeProvider theme={{ primary: 'red' }}>
         <Theme>{({ colorize }) => colorize('warn')}</Theme>
-      </ThemeProvider>
+      </ThemeProvider>,
     )
     .toJSON()
   expect(tree).toMatchSnapshot()

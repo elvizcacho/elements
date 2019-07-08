@@ -20,7 +20,7 @@ test('TextInput renders', () => {
         placeholder="E-Mail"
         required
       />,
-      { createNodeMock }
+      { createNodeMock },
     )
     .toJSON()
   expect(tree).toMatchSnapshot()

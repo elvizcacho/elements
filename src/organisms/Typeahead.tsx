@@ -110,7 +110,7 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
         [
           'The clearOnSelect property should not be used on a controlled',
           'or uncontrolled component in order to avoid side-effects.',
-        ].join('')
+        ].join(''),
       )
     }
     this.state = {
@@ -151,12 +151,12 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
 
   stateReducer = (
     state: DownshiftState<TypeaheadItem>,
-    changes: StateChangeOptions<TypeaheadItem>
+    changes: StateChangeOptions<TypeaheadItem>,
   ) => {
     const { clearOnSelect, placement } = this.props
     const minOfLimits = Math.min(
       this.props.items.length - 1,
-      this.props.limit - 1
+      this.props.limit - 1,
     )
     switch (changes.type) {
       // Special case when the clearOnSelect property is used and we want to
@@ -283,7 +283,7 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
     } = this.props
     const { showScrollArrow } = this.state
     const defaultSelectedItem = items.filter(
-      ({ label }) => label === defaultValue
+      ({ label }) => label === defaultValue,
     )[0]
     const selectedItem =
       value !== '' && items.filter(({ label }) => label === value)[0]
@@ -498,7 +498,7 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
                         clearSelection,
                         getItemProps,
                         highlightedIndex,
-                      })
+                      }),
                     )}
                     <Absolute
                       bottom={placement !== Placement.top ? 15 : undefined}

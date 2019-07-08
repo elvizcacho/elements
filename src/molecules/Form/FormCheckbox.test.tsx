@@ -15,7 +15,7 @@ describe('Test the FormCheckbox component', () => {
     const wrapper = mount(
       <ThemeProvider theme={THEME}>
         <FormCheckbox label={STRING_LABEL} name="a" />
-      </ThemeProvider>
+      </ThemeProvider>,
     )
     const input = wrapper.find('input#a')
     expect(wrapper).toMatchSnapshot()
@@ -37,7 +37,7 @@ describe('Test the FormCheckbox component', () => {
           name="a"
           backgroundColor="darkMarco"
         />
-      </ThemeProvider>
+      </ThemeProvider>,
     )
     expect(wrapper).toMatchSnapshot()
     wrapper.unmount()

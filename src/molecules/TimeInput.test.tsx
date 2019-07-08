@@ -79,7 +79,7 @@ describe('TimeInput', () => {
     const { getByTestId } = render(
       <ResourceProvider>
         <TimeInput defaultValue="6:15" name="time" data-testid="time-input" />
-      </ResourceProvider>
+      </ResourceProvider>,
     )
 
     expect((getByTestId('time-input') as HTMLSelectElement).value).toBe('06:15')
@@ -89,7 +89,7 @@ describe('TimeInput', () => {
     const { getAllByDisplayValue, getByTestId } = render(
       <ResourceProvider>
         <TimeInput name="time" data-testid="time-input" />
-      </ResourceProvider>
+      </ResourceProvider>,
     )
 
     const [hourSelect, minuteSelect] = getAllByDisplayValue('--')
@@ -104,7 +104,7 @@ describe('TimeInput', () => {
     const { getByTestId, getAllByDisplayValue } = render(
       <ResourceProvider>
         <TimeInput name="time" data-testid="time-input" />
-      </ResourceProvider>
+      </ResourceProvider>,
     )
 
     const [hourSelect, minuteSelect] = getAllByDisplayValue('--')
@@ -119,7 +119,7 @@ describe('TimeInput', () => {
     const { getByTestId, getAllByDisplayValue } = render(
       <ResourceProvider>
         <TimeInput minTime="10:15" name="time" data-testid="time-input" />
-      </ResourceProvider>
+      </ResourceProvider>,
     )
 
     fireEvent.change(getAllByDisplayValue('--')[0], { target: { value: '10' } })
@@ -131,7 +131,7 @@ describe('TimeInput', () => {
     const { getByTestId, getByDisplayValue } = render(
       <ResourceProvider>
         <TimeInput defaultValue="10:30" name="time" data-testid="time-input" />
-      </ResourceProvider>
+      </ResourceProvider>,
     )
 
     const hourSelect = getByDisplayValue('10')
@@ -151,7 +151,7 @@ describe('TimeInput', () => {
       render(
         <ResourceProvider>
           <TimeInput {...invalidProps} name="time" />
-        </ResourceProvider>
+        </ResourceProvider>,
       )
     } catch (e) {}
     expect(console.error).toHaveBeenCalled()
@@ -159,8 +159,8 @@ describe('TimeInput', () => {
     // Object.getOwnPropertyNames guarantees order
     Object.getOwnPropertyNames(invalidProps).forEach((prop, i) =>
       expect((console.error as any).mock.calls[i][0]).toContain(
-        `Invalid prop \`${prop}\``
-      )
+        `Invalid prop \`${prop}\``,
+      ),
     )
     ;(console.error as any).mockRestore()
   })

@@ -30,7 +30,7 @@ test('Card renders as full example', () => {
             <CardButton>Hi</CardButton>
           </CardFooter>
         </Card>
-      </ThemeProvider>
+      </ThemeProvider>,
     )
     .toJSON()
   expect(tree).toMatchSnapshot()

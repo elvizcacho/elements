@@ -8,7 +8,7 @@ test('Floating button renders without error', () => {
     .create(
       <ThemeProvider>
         <FloatingButton>Hello World</FloatingButton>
-      </ThemeProvider>
+      </ThemeProvider>,
     )
     .toJSON()
   expect(tree).toMatchSnapshot()

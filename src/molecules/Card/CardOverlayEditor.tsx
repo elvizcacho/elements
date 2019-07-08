@@ -62,7 +62,7 @@ export default class CardOverlayEditor extends Component<
       bottom,
       left,
       right,
-    }: { top: number; bottom: number; left: number; right: number }
+    }: { top: number; bottom: number; left: number; right: number },
   ) => {
     return !between(y, top, bottom) || !between(x, left, right)
   }
@@ -79,7 +79,7 @@ export default class CardOverlayEditor extends Component<
       if (
         this.isOutsideElement(
           { x: e.clientX, y: e.clientY },
-          { bottom, left, right, top }
+          { bottom, left, right, top },
         )
       ) {
         e.stopPropagation()

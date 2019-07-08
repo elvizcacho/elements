@@ -30,7 +30,7 @@ describe('Input component', () => {
         />,
         {
           createNodeMock,
-        }
+        },
       )
       .toJSON()
     expect(tree).toMatchSnapshot()

@@ -123,7 +123,7 @@ class RadioButtonSet extends Component<IRadioButtonSetProps, IState> {
                   [
                     "Elements: the RadioButtonSet component doesn't accept a Fragment as a child.",
                     'Consider providing an array instead.',
-                  ].join('\n')
+                  ].join('\n'),
                 )
               }
 

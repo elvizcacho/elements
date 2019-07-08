@@ -179,7 +179,7 @@ interface IValidityStates {
 
 const setValidity = (
   target: HTMLInputElement | HTMLTextAreaElement,
-  customValidityStates: IValidityStates
+  customValidityStates: IValidityStates,
 ) => {
   let customValidity = ''
   validityStates.forEach((state: validityStateType) => {
@@ -229,7 +229,7 @@ const Input: FunctionComponent<IInputProps> = ({
   const isTextArea = lines !== 1
   const [value, setValue] = useState('')
   const [length, setLength] = useState(
-    (typeof props.value === 'string' && props.value.length) || 0
+    (typeof props.value === 'string' && props.value.length) || 0,
   )
   const currentValue = (props.value || value) as string
   const labelVisible = currentValue.length > 0
@@ -240,7 +240,7 @@ const Input: FunctionComponent<IInputProps> = ({
       internalRef &&
       internalRef.current &&
       internalRef.current.validity &&
-      internalRef.current.validity.valid
+      internalRef.current.validity.valid,
   )
 
   const customValidity = {
@@ -257,14 +257,14 @@ const Input: FunctionComponent<IInputProps> = ({
     (
       e:
         | React.ChangeEvent<HTMLInputElement>
-        | React.ChangeEvent<HTMLTextAreaElement>
+        | React.ChangeEvent<HTMLTextAreaElement>,
     ) => {
       setValidity(e.target, customValidity)
       setLength(e.target.value.length)
       setValue(e.target.value)
       props.onChange && props.onChange(e)
     },
-    [customValidity, props]
+    [customValidity, props],
   )
 
   useEffect(() => {
@@ -299,7 +299,7 @@ const Input: FunctionComponent<IInputProps> = ({
             {...styles.input(
               showLabel,
               !!icon,
-              Boolean(isCheckmarkActive || hasRightIcon)
+              Boolean(isCheckmarkActive || hasRightIcon),
             )}
             required={required}
             aria-required={required}

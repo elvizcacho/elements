@@ -7,11 +7,11 @@ export const loadLanguage = async (
   project: string,
   variation: string,
   locale: string,
-  stage: string
+  stage: string,
 ): Promise<object> => {
   const countryCode = locale.split('_')[0]
   const translations = await fetch(
-    `${resourcePath}/${project}/${stage}/i18n/${countryCode}/${variation}.json`
+    `${resourcePath}/${project}/${stage}/i18n/${countryCode}/${variation}.json`,
   )
   return translations.json()
 }
@@ -78,7 +78,7 @@ class CDNIntlProvider extends Component<IProps, IState> {
       project,
       variation,
       locale,
-      stage
+      stage,
     )
 
     this.setState({ messages }, onDone)

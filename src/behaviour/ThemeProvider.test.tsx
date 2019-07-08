@@ -17,10 +17,10 @@ describe('ThemeProvider', () => {
             </ThemeConsumer>
           </ThemeProvider>
         </ThemeProvider>
-      </ThemeProvider>
+      </ThemeProvider>,
     )
     expect(container.textContent).toMatchInlineSnapshot(
-      `"primary: thistle, text: rebeccapurple, warn: #e84c3d"`
+      `"primary: thistle, text: rebeccapurple, warn: #e84c3d"`,
     )
   })
 })

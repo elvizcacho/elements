@@ -14,7 +14,7 @@ describe('<RadioButtonSet />', () => {
             <RadioButton value="blue">Blue</RadioButton>
             <RadioButton value="gray">Gray</RadioButton>
           </RadioButtonSet>
-        </ThemeProvider>
+        </ThemeProvider>,
       )
       .toJSON()
     expect(tree).toMatchSnapshot()
@@ -28,7 +28,7 @@ describe('<RadioButtonSet />', () => {
           <RadioButton value="blue">Blue</RadioButton>
           <RadioButton value="gray">Gray</RadioButton>
         </RadioButtonSet>
-      </ThemeProvider>
+      </ThemeProvider>,
     )
 
     fireEvent.click(getByLabelText('Gray', { selector: 'input' }))

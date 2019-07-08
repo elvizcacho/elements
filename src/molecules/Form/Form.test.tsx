@@ -21,7 +21,7 @@ describe('Test the Form component', () => {
             backgroundColor="warn"
           />
         </Form>
-      </ThemeProvider>
+      </ThemeProvider>,
     )
     expect(submit).toHaveBeenCalledTimes(0)
     wrapper.find(Form).simulate('submit')

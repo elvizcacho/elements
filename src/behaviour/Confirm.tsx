@@ -22,7 +22,7 @@ const confirm = (props: Omit<IConfirmDialogProps, 'onCancel' | 'onSuccess'>) =>
           onSuccess={() => resolveAndClean(true)}
         />
       </ThemeProvider>,
-      div
+      div,
     )
   })
 

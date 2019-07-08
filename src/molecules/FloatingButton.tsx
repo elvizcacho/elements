@@ -67,7 +67,7 @@ const FloatingButton: FunctionComponent<IFloatingButtonProps> = ({
                     ? disabledColor
                     : color.indexOf('#') !== -1
                     ? col(color, lightness(-10))
-                    : color
+                    : color,
                 ),
               },
             })}

@@ -60,10 +60,10 @@ describe('Check the CDNIntlProvider component', () => {
 
     expect(fetch.mock.calls.length).toEqual(2)
     expect(fetch.mock.calls[0][0]).toEqual(
-      'https://static.allthings.me/app/production/i18n/de/residential-formal.json'
+      'https://static.allthings.me/app/production/i18n/de/residential-formal.json',
     )
     expect(fetch.mock.calls[1][0]).toEqual(
-      'https://static.allthings.me/app/production/i18n/en/residential-formal.json'
+      'https://static.allthings.me/app/production/i18n/en/residential-formal.json',
     )
   })
 
@@ -80,7 +80,7 @@ describe('Check the CDNIntlProvider component', () => {
         >
           <FormattedMessage id="test" defaultMessage="Default" />
         </CDNIntlProvider>
-      </ResourceProvider>
+      </ResourceProvider>,
     )
     expect(wrapper).toMatchSnapshot()
     expect(onDone.mock.calls.length).toBe(0)
@@ -102,7 +102,7 @@ describe('Check the CDNIntlProvider component', () => {
             {message => <div data-testid="asd">{message}</div>}
           </FormattedMessage>
         </CDNIntlProvider>
-      </ResourceProvider>
+      </ResourceProvider>,
     )
     expect(getByTestId('asd').textContent).toEqual(test)
   })
@@ -120,7 +120,7 @@ describe('Check the CDNIntlProvider component', () => {
         >
           <FormattedMessage id="test" defaultMessage="Default" />
         </CDNIntlProvider>
-      </ResourceProvider>
+      </ResourceProvider>,
     )
 
     div.innerHTML = dom
@@ -140,7 +140,7 @@ describe('Check the CDNIntlProvider component', () => {
       () => {
         expect(div.innerHTML).toMatchSnapshot()
         ok()
-      }
+      },
     )
   })
 })

@@ -17,7 +17,7 @@ describe('Button component', () => {
       .create(
         <Button disabled onClick={_ => _}>
           Hi
-        </Button>
+        </Button>,
       )
       .toJSON()
     expect(tree).toMatchSnapshot()
@@ -30,7 +30,7 @@ describe('Button component', () => {
           color="primary"
           backgroundColor="warn"
           onClick={_ => _}
-        />
+        />,
       )
       .toJSON()
     expect(tree).toMatchSnapshot()
@@ -40,7 +40,7 @@ describe('Button component', () => {
       .create(
         <ThemeProvider theme={{ warn: 'green' }}>
           <Button name="asd" backgroundColor="warn" onClick={_ => _} />
-        </ThemeProvider>
+        </ThemeProvider>,
       )
       .toJSON()
     expect(tree).toMatchSnapshot()

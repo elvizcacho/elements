@@ -19,7 +19,7 @@ describe('HorizontalView behaviors', () => {
             Text 3
           </Text>
         )}
-      </HorizontalView>
+      </HorizontalView>,
     )
     expect(wrapper).toMatchSnapshot()
     expect(wrapper.find(Text)).toHaveLength(2)
@@ -44,7 +44,7 @@ describe('HorizontalView behaviors', () => {
             </Text>
           ),
         ]}
-      </HorizontalView>
+      </HorizontalView>,
     )
     expect(wrapper).toMatchSnapshot()
     expect(wrapper.find(Text)).toHaveLength(2)

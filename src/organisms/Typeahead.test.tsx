@@ -46,7 +46,7 @@ describe('Test the typeahead component', () => {
       expect(wrapper.find(INPUT(0)).prop('value')).toBe(value)
       // We should have a pokemon for this last index or not at all.
       expect(wrapper.find(DOWNSHIFT_ITEM(0, last || 0))).toHaveLength(
-        typeof last === 'undefined' ? 0 : 1
+        typeof last === 'undefined' ? 0 : 1,
       )
       // Check for no next item.
       if (last) {
@@ -98,7 +98,7 @@ describe('Test the typeahead component', () => {
   })
   it('should be a simple static one which auto open on click', () => {
     const wrapper = mount(
-      <Typeahead autoOpen items={ITEMS} placeholder={PLACEHOLDER} />
+      <Typeahead autoOpen items={ITEMS} placeholder={PLACEHOLDER} />,
     )
     // Perform a click on the input.
     wrapper.find(INPUT(1)).simulate('click')
@@ -108,7 +108,7 @@ describe('Test the typeahead component', () => {
   })
   it('should use the limit property', () => {
     const wrapper = mount(
-      <Typeahead autoOpen items={ITEMS} limit={2} placeholder={PLACEHOLDER} />
+      <Typeahead autoOpen items={ITEMS} limit={2} placeholder={PLACEHOLDER} />,
     )
     // Perform a click on the input.
     wrapper.find(INPUT(2)).simulate('click')
@@ -125,7 +125,7 @@ describe('Test the typeahead component', () => {
         items={ITEMS}
         placeholder={PLACEHOLDER}
         placement="top"
-      />
+      />,
     )
     // Perform a click on the input.
     wrapper.find(INPUT(3)).simulate('click')
@@ -141,7 +141,7 @@ describe('Test the typeahead component', () => {
         clearOnSelect
         items={ITEMS}
         placeholder={PLACEHOLDER}
-      />
+      />,
     )
     // Perform a click on the input.
     wrapper.find(INPUT(4)).simulate('click')
@@ -156,7 +156,7 @@ describe('Test the typeahead component', () => {
         defaultValue={DEFAULT_VALUE}
         items={ITEMS}
         placeholder={PLACEHOLDER}
-      />
+      />,
     )
     expect(wrapper.find(INPUT(5)).prop('value')).toBe(DEFAULT_VALUE)
     expect(wrapper).toMatchSnapshot()
@@ -168,7 +168,7 @@ describe('Test the typeahead component', () => {
         items={ITEMS}
         placeholder={PLACEHOLDER}
         value={DEFAULT_VALUE}
-      />
+      />,
     )
     expect(wrapper.find(INPUT(6)).prop('value')).toBe(DEFAULT_VALUE)
     // Without controlling the value from the outside, we can't change it!
@@ -185,7 +185,7 @@ describe('Test the typeahead component', () => {
         isLoading={false}
         items={ITEMS}
         placeholder={PLACEHOLDER}
-      />
+      />,
     )
     expect(wrapper).toMatchSnapshot()
     // Load!
@@ -200,7 +200,7 @@ describe('Test the typeahead component', () => {
         items={ITEMS}
         onClearSelection={handleOnClearSelection}
         placeholder={PLACEHOLDER}
-      />
+      />,
     )
     expect(handleOnClearSelection.mock.calls.length).toBe(0)
     // Open the menu.
@@ -221,7 +221,7 @@ describe('Test the typeahead component', () => {
         items={ITEMS}
         onOpen={handleOnOpen}
         placeholder={PLACEHOLDER}
-      />
+      />,
     )
     expect(handleOnOpen.mock.calls.length).toBe(0)
     // Open the menu.
@@ -236,7 +236,7 @@ describe('Test the typeahead component', () => {
         items={ITEMS}
         onClose={handleOnClose}
         placeholder={PLACEHOLDER}
-      />
+      />,
     )
     expect(handleOnClose.mock.calls.length).toBe(0)
     // Open the menu.
@@ -253,7 +253,7 @@ describe('Test the typeahead component', () => {
         items={ITEMS}
         onInputValueChange={handleOnInputValueChange}
         placeholder={PLACEHOLDER}
-      />
+      />,
     )
     expect(handleOnInputValueChange.mock.calls.length).toBe(0)
     // Enter something.
@@ -268,7 +268,7 @@ describe('Test the typeahead component', () => {
         items={ITEMS}
         onSelect={handleOnSelect}
         placeholder={PLACEHOLDER}
-      />
+      />,
     )
     expect(handleOnSelect.mock.calls.length).toBe(0)
     // Open the menu.
@@ -289,7 +289,7 @@ describe('Test the typeahead component', () => {
         clearOnSelect
         defaultValue={NICK}
         placeholder={PLACEHOLDER}
-      />
+      />,
     )
     expect(hasWarned.mock.calls.length).toBe(1)
     shallow(
@@ -299,7 +299,7 @@ describe('Test the typeahead component', () => {
         items={ITEMS}
         placeholder={PLACEHOLDER}
         value={NICK}
-      />
+      />,
     )
     expect(hasWarned.mock.calls.length).toBe(2)
   })
@@ -310,7 +310,7 @@ describe('Test the typeahead component', () => {
   })
   it('should not display a clear icon as a controlled component when value is an emtpy string', () => {
     const wrapper = mount(
-      <Typeahead autoOpen items={ITEMS} placeholder={PLACEHOLDER} value={''} />
+      <Typeahead autoOpen items={ITEMS} placeholder={PLACEHOLDER} value={''} />,
     )
     expect(wrapper.find(INPUT(14)).prop('value')).toBe('')
     expect(wrapper.find(CLEAR_SELECTION)).toHaveLength(0)
@@ -322,7 +322,7 @@ describe('Test the typeahead component', () => {
         items={ITEMS}
         placeholder={PLACEHOLDER}
         value={undefined}
-      />
+      />,
     )
     expect(wrapper.find(INPUT(15)).prop('value')).toBe('')
     expect(wrapper.find(CLEAR_SELECTION)).toHaveLength(0)
@@ -334,7 +334,7 @@ describe('Test the typeahead component', () => {
         defaultValue={''}
         items={ITEMS}
         placeholder={PLACEHOLDER}
-      />
+      />,
     )
     expect(wrapper.find(INPUT(16)).prop('value')).toBe('')
     expect(wrapper.find(CLEAR_SELECTION)).toHaveLength(0)
@@ -346,7 +346,7 @@ describe('Test the typeahead component', () => {
         defaultValue={undefined}
         items={ITEMS}
         placeholder={PLACEHOLDER}
-      />
+      />,
     )
     expect(wrapper.find(INPUT(17)).prop('value')).toBe('')
     expect(wrapper.find(CLEAR_SELECTION)).toHaveLength(0)
@@ -358,7 +358,7 @@ describe('Test the typeahead component', () => {
         items={ITEMS}
         placeholder={PLACEHOLDER}
         value={DEFAULT_VALUE}
-      />
+      />,
     )
     expect(wrapper.find(INPUT(18)).prop('value')).toBe(DEFAULT_VALUE)
     expect(wrapper.find(CLEAR_SELECTION)).toHaveLength(1)
@@ -389,7 +389,7 @@ describe('Test the typeahead component', () => {
     ]
     it('should be a simple static one - in depth testing of the core behavior with JSX labels', () => {
       const wrapper = mount(
-        <Typeahead items={ITEMS} placeholder={PLACEHOLDER} />
+        <Typeahead items={ITEMS} placeholder={PLACEHOLDER} />,
       )
       expect(wrapper).toMatchSnapshot()
       // SELECTED_ITEM_ICON should not be visible at this point

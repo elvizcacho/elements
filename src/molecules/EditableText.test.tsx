@@ -31,7 +31,7 @@ describe('Test the editable text component', () => {
     const wrapper = shallow(
       <EditableText icon={ICON} iconColor={ICON_COLOR}>
         {TEXT}
-      </EditableText>
+      </EditableText>,
     )
     expect(wrapper).toMatchSnapshot()
     expect(wrapper.find('Icon').prop('color')).toBe(ICON_COLOR_FROM_PALETTE)
@@ -48,10 +48,10 @@ describe('Test the editable text component', () => {
     }
     const wrapper = renderer(<EditableText>{TEXT}</EditableText>)
     const wrapperWithDecoration = renderer(
-      <EditableText decorationColor={ICON_COLOR}>{TEXT}</EditableText>
+      <EditableText decorationColor={ICON_COLOR}>{TEXT}</EditableText>,
     )
     ;(expect(fromDOMNode(wrapper)) as any).toMatchDiffSnapshot(
-      fromDOMNode(wrapperWithDecoration)
+      fromDOMNode(wrapperWithDecoration),
     )
   })
 })

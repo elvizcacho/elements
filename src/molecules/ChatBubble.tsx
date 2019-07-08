@@ -155,7 +155,7 @@ class ChatBubble extends Component<IChatBubbleProps> {
               <div
                 {...css(
                   styles.outerText(background),
-                  isReversed && styles.outerTextReversed(background)
+                  isReversed && styles.outerTextReversed(background),
                 )}
               >
                 <div

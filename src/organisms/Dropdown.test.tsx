@@ -34,7 +34,7 @@ describe('Dropdown', () => {
               ]}
             />
           </ResourceProvider>
-        </ThemeProvider>
+        </ThemeProvider>,
       )
       .toJSON()
     expect(tree).toMatchSnapshot()
@@ -72,7 +72,7 @@ describe('Dropdown', () => {
               placement="top"
             />
           </ResourceProvider>
-        </ThemeProvider>
+        </ThemeProvider>,
       )
       .toJSON()
     expect(tree).toMatchSnapshot()

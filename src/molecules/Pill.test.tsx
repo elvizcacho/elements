@@ -8,7 +8,7 @@ test('Pill renders without error', () => {
     .create(
       <ThemeProvider>
         <Pill label="Important message" />
-      </ThemeProvider>
+      </ThemeProvider>,
     )
     .toJSON()
   expect(tree).toMatchSnapshot()
@@ -19,7 +19,7 @@ test('Pill renders with custom color', () => {
     .create(
       <ThemeProvider>
         <Pill label="Important message" color="warn" />
-      </ThemeProvider>
+      </ThemeProvider>,
     )
     .toJSON()
   expect(tree).toMatchSnapshot()

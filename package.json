@@ -1,5 +1,5 @@
 {
-  "name": "@allthings/elements-build",
+  "name": "@allthings/elements",
   "version": "4.4.6",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
@@ -38,7 +38,8 @@
     "react-intl": "^2.4.0"
   },
   "scripts": {
-    "create:release": "yarn lint && yarn test && yarn version && git push --tags origin HEAD && yarn build && yarn publish build",
+    "preversion": "yarn lint && yarn test && yarn build",
+    "postversion": "git push --tags origin HEAD && yarn publish dist/",
     "prebuild": "rimraf dist",
     "build:es": "tsc -p tsconfig.json --target ESNext --module ESNext --outDir dist/es",
     "build:cjs": "tsc -p tsconfig.json --target ES5 --module CommonJS --outDir dist/cjs",
@@ -49,7 +50,6 @@
     "watch:test": "yarn test --watch",
     "test": "yarn jest src/ scripts/",
     "jest": "NODE_ENV=test jest",
-    "prettier": "prettier --no-semi --single-quote --trailing-comma es5 --write",
     "lint": "eslint --cache --ext .ts,.tsx src",
     "storybook": "start-storybook -p 6006",
     "security-check": "yarn audit"
@@ -128,12 +128,11 @@
     "typescript": "3.5.2"
   },
   "prettier": {
-    "eslintIntegration": true,
-    "singleQuote": true,
-    "trailingComma": "es5",
+    "printWidth": 80,
     "semi": false,
-    "useTabs": false,
-    "jsonEnable": []
+    "singleQuote": true,
+    "trailingComma": "all",
+    "useTabs": false
   },
   "husky": {
     "hooks": {

@@ -113,7 +113,7 @@ const ProfileImage: FunctionComponent<IProfileImageProps & IViewProps> = ({
           width,
           height,
         },
-        pointerStyle
+        pointerStyle,
       )}
       {...restProps}
     >

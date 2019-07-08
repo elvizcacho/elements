@@ -19,7 +19,7 @@ describe('Input component', () => {
               <p>Test child</p>
             </Collapsible>
           </ResourceProvider>
-        </ThemeProvider>
+        </ThemeProvider>,
       )
       .toJSON()
     expect(tree).toMatchSnapshot()

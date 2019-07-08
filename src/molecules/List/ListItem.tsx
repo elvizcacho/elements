@@ -8,7 +8,7 @@ const styles = (
   backgroundColor: string,
   withCursor: boolean,
   hideLine: boolean,
-  padded: boolean
+  padded: boolean,
 ) =>
   css({
     padding: padded && '10px 15px',

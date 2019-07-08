@@ -54,7 +54,7 @@ class DynamicCollapsible extends React.Component<any, any> {
 
 const CollapsibleStory = () => (
   <ThemeProvider>
-    <ResourceProvider resourcePath="">
+    <ResourceProvider>
       <Card
         {...css({
           width: '300px',

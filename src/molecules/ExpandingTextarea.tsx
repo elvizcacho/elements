@@ -79,7 +79,7 @@ export default class ExpandingTextarea extends Component<
       if (onHeightChange) {
         const actualHeight = Math.min(
           textarea.scrollHeight,
-          textarea.offsetHeight
+          textarea.offsetHeight,
         )
         onHeightChange(actualHeight)
       }

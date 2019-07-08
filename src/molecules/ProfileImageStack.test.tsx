@@ -16,7 +16,7 @@ test('Profile image stack renders correctly', () => {
           'https://placeimg.com/100/100/people?5',
         ]}
         moreText={'+ 1 other'}
-      />
+      />,
     )
     .toJSON()
   expect(tree).toMatchSnapshot()

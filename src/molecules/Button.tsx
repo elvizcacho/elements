@@ -47,7 +47,7 @@ function styles(
   backgroundColor: string,
   color: string,
   isDisabled: boolean,
-  isSecondary: boolean
+  isSecondary: boolean,
 ) {
   const props = {
     color,
@@ -142,8 +142,8 @@ class Button extends Component<IButtonProps> {
                 colorize(backgroundColor),
                 colorize(color),
                 disabled,
-                secondary
-              )
+                secondary,
+              ),
             )}
             {...restProps}
             {...createTextStyles({ size: 'l' })}

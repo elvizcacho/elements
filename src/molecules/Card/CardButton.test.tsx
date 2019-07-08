@@ -10,7 +10,7 @@ test('CardButton renders without error', () => {
         <CardButton onClick={_ => _} backgroundColor="primary">
           Click me
         </CardButton>
-      </ThemeProvider>
+      </ThemeProvider>,
     )
     .toJSON()
   expect(tree).toMatchSnapshot()
