@@ -318,9 +318,9 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
             keys: ['label'],
           }).slice(0, limit)
 
-          const highlightedFilteredItem = highlightedIndex
-            ? filtered[highlightedIndex]
-            : null
+          const highlightedFilteredItem =
+            highlightedIndex !== null ? filtered[highlightedIndex] : null
+
           const showIcon =
             selectedItem &&
             highlightedFilteredItem &&
