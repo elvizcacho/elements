@@ -1,4 +1,4 @@
-import React, { Component, PropsWithChildren } from 'react'
+import React, { Component, HTMLProps } from 'react'
 import Absolute from '../atoms/Absolute'
 import Theme from '../behaviour/Theme'
 import { css } from 'glamor'
@@ -22,7 +22,7 @@ const buttonStyle = css({
   },
 })
 
-interface IFloatingButtonProps {
+interface IFloatingButtonProps extends HTMLProps<HTMLButtonElement> {
   color?: string
   disabled?: boolean
   /* True to use the button that something is in progress */
@@ -30,9 +30,7 @@ interface IFloatingButtonProps {
   disabledColor?: string
 }
 
-class FloatingButton extends Component<
-  PropsWithChildren<IFloatingButtonProps>
-> {
+class FloatingButton extends Component<IFloatingButtonProps> {
   static defaultProps = {
     inProgress: false,
   }
