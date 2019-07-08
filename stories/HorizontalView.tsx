@@ -12,7 +12,10 @@ import {
 } from '../src'
 import HorizontalView from '../src/behaviour/HorizontalView'
 
-export default class HorizontalViewStory extends React.Component {
+export default class HorizontalViewStory extends React.Component<
+  {},
+  { level: number }
+> {
   state = {
     level: 3,
   }
@@ -34,18 +37,19 @@ export default class HorizontalViewStory extends React.Component {
           <View fill direction="column" alignV="stretch">
             <TitleBar alignH="space-between" color="blueIntense">
               <View direction="row" alignV="center">
-                <SquareIconButton icon="ArmchairFilledIcon" iconColor="white" />
+                <SquareIconButton icon="armchair-filled" iconColor="white" />
                 <Text color="white" strong>
                   Get Relaxed
                 </Text>
               </View>
-              <SquareIconButton icon="SearchFilledIcon" iconColor="white" />
+              <SquareIconButton icon="search-filled" iconColor="white" />
             </TitleBar>
             <View direction="row" flex="flex">
               <HorizontalView>
                 {Array(this.state.level)
                   .fill({})
                   .map((_, i) => (
+                    // eslint-disable-next-line react/no-array-index-key
                     <CardList key={i} direction="column">
                       <ListItem>
                         <Text>{`Test ${i}`}</Text>

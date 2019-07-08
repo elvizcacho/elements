@@ -60,7 +60,7 @@ interface IDropdownProps {
   /** The height of the menu in pixels. */
   menuHeight?: number
   /** Callback triggered when clearing the selection. */
-  onSelect?: () => void
+  onSelect?: (item: ItemType) => void
   /** The placeholder displayed in the input field. */
   placeholder?: string
   /** A floating label */

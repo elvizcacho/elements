@@ -1,6 +1,7 @@
-import React, { FunctionComponent, PropsWithChildren } from 'react'
+import React, { FunctionComponent } from 'react'
 import { List } from '../../molecules/List'
 import Card from '../../molecules/Card'
+import { IViewProps } from '../../atoms/View'
 
 /**
  * The CardList is a molecule that is a card containing a list.
@@ -23,7 +24,7 @@ import Card from '../../molecules/Card'
  *   </CardList>
  * </ThemeProvider>
  **/
-const CardList: FunctionComponent = (props: PropsWithChildren<{}>) => (
+const CardList: FunctionComponent<IViewProps> = props => (
   <Card>
     <List {...props} />
   </Card>

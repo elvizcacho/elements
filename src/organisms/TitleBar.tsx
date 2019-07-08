@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { css } from 'glamor'
-import View from '../atoms/View'
+import View, { IViewProps } from '../atoms/View'
 import { colorCode } from '../propTypes/color'
 import { Theme } from '..'
 
@@ -12,7 +12,7 @@ const box = (background: string) =>
     zIndex: 2,
   })
 
-interface ITitleBarProps {
+interface ITitleBarProps extends IViewProps {
   /** Callback when title bar is clicked */
   onClick?: () => void
   /** Color of the title bar */

@@ -26,7 +26,7 @@ interface ISquareIconButtonProps {
   /** Size of the icon child component (check <Icon />) **/
   iconSize?: IconSizeType
   iconColor?: string
-  onClick: () => void
+  onClick?: () => void
 }
 
 /**
