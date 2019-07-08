@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import ResourceProvider from '../src/behaviour/ResourceProvider'
 import Inset from '../src/atoms/Inset'
-import Checkbox from '../src/molecules/Checkbox'
 import FormCheckbox from '../src/molecules/Form/FormCheckbox'
 import { Text } from '../src'
 import Button from '../src/molecules/Button'
@@ -16,7 +15,7 @@ export default function CheckboxStory() {
       <>
         <Inset horizontal vertical>
           Controlled:
-          <Checkbox
+          <FormCheckbox
             name="abc"
             label={
               <>
@@ -31,7 +30,7 @@ export default function CheckboxStory() {
             checked={checked}
             onChange={() => !blocked && setChecked(!checked)}
           />
-          <Inset direction="row" vertical={10} horizontal={0}>
+          <Inset direction="row" vertical horizontal>
             <Button onClick={() => setChecked(!checked)}>
               Toggle from outside
             </Button>
@@ -41,7 +40,7 @@ export default function CheckboxStory() {
             </Button>
           </Inset>
           Uncontrolled:
-          <Checkbox name="123" />
+          <FormCheckbox name="123" />
         </Inset>
         I like to live in a Form:
         <FormCheckbox name="asd" label="Toggle me!" />

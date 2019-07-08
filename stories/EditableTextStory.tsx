@@ -14,7 +14,7 @@ const STATUSES = {
   DEFAULT: 'edit',
   PROGRESS: 'sand-glass',
   DONE: 'check',
-}
+} as const
 
 const STYLES = {
   editable: css({ minWidth: '3rem' }),
@@ -24,13 +24,16 @@ const STYLES = {
     }),
 }
 
-class EditableTextStory extends React.Component {
+class EditableTextStory extends React.Component<
+  {},
+  { status: string; text: string }
+> {
   state = {
     status: STATUSES.DEFAULT,
     text: DEFAULT_TEXT,
   }
 
-  handleBlur = ({ currentTarget: { innerText } }) => {
+  handleBlur = () => {
     this.setState({ status: STATUSES.PROGRESS })
     setTimeout(() => this.setState({ status: STATUSES.DONE }), 500)
   }

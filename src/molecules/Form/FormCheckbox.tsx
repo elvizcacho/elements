@@ -5,7 +5,7 @@ import Theme from '../../behaviour/Theme'
 import Checkbox, { ICheckboxProps } from '../Checkbox'
 import Inset from '../../atoms/Inset'
 
-interface IFormCheckboxProps extends ICheckboxProps {
+interface IFormCheckboxProps extends Omit<ICheckboxProps, 'label'> {
   /** True to make it checked */
   checked?: boolean
   /** Label of Checkbox */

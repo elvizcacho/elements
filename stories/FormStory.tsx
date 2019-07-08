@@ -3,8 +3,8 @@ import { action } from '@storybook/addon-actions'
 import {
   Button,
   Card,
-  FormCheckbox,
   Form,
+  FormCheckbox,
   List,
   ListItem,
   PhoneInput,

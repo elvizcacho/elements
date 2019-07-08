@@ -10,7 +10,7 @@ const styles = ({ horizontal = false, vertical = false }) =>
     paddingBottom: vertical && 15,
   })
 
-interface IInsetProps {
+interface IInsetProps extends IViewProps {
   horizontal?: boolean
   vertical?: boolean
 }

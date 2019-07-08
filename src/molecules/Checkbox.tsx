@@ -5,6 +5,7 @@ import Relative from '../atoms/Relative'
 import { css } from 'glamor'
 import Theme from '../behaviour/Theme'
 import Absolute from '../atoms/Absolute'
+import { IInputProps } from '../atoms/Input'
 
 const styles = {
   checkbox: (background: string, checked: boolean) =>
@@ -20,7 +21,7 @@ const styles = {
       cursor: 'pointer',
     }),
 }
-export interface ICheckboxProps {
+export interface ICheckboxProps extends IInputProps {
   /** True to make it checked */
   checked?: boolean
   /** Label of Checkbox */

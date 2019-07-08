@@ -26,6 +26,7 @@ export { default as EditableText } from './molecules/EditableText'
 export { default as ExpandingTextarea } from './molecules/ExpandingTextarea'
 export { default as FloatingButton } from './molecules/FloatingButton'
 export { default as Form } from './molecules/Form/Form'
+export { default as FormCheckbox } from './molecules/Form/FormCheckbox'
 export {
   default as GroupedCardList,
 } from './organisms/CardList/GroupedCardList'

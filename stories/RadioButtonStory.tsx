@@ -17,7 +17,7 @@ import {
   RadioButton,
 } from '../src'
 
-export default class FormStory extends React.Component {
+export default class RadioButtonStory extends React.Component {
   render() {
     return (
       <ResourceProvider>
@@ -30,7 +30,7 @@ export default class FormStory extends React.Component {
               </Text>
             </TitleBar>
             <SimpleLayout>
-              <Form>
+              <Form onSubmit={() => {}}>
                 <Card>
                   <List>
                     <TextInput
@@ -56,7 +56,7 @@ export default class FormStory extends React.Component {
                         name="drink"
                         required
                       >
-                        <RadioButton value="coffe">Coffe</RadioButton>
+                        <RadioButton value="coffee">Coffee</RadioButton>
                         <RadioButton value="tee">Tee</RadioButton>
                         <RadioButton value="beer">Beer</RadioButton>
                       </RadioButtonSet>

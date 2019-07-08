@@ -4,7 +4,7 @@ import React, { FunctionComponent, KeyboardEvent } from 'react'
 
 import Icon, { IconType } from '../atoms/Icon'
 import Text from '../atoms/Text'
-import View from '../atoms/View'
+import View, { IViewProps } from '../atoms/View'
 
 const DEFAULT_DECORATION_COLOR = 'grey'
 const DEFAULT_ICON = 'edit'
@@ -58,7 +58,7 @@ const EditableText: FunctionComponent<IEditableTextProps> = ({
   </View>
 )
 
-interface IEditableTextProps {
+interface IEditableTextProps extends IViewProps {
   /** Text content passed to the component as children */
   children?: string
   /** Color of the emulated text decoration (border bottom) */

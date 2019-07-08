@@ -69,11 +69,11 @@ interface ITypeaheadProps {
   /** Callback triggered when the menu is closed. */
   onClose?: () => void
   /** Callback triggered when the input value is modified. */
-  onInputValueChange?: () => void
+  onInputValueChange?: (inputValue: string) => void
   /** Callback triggered when the menu is opened. */
   onOpen?: () => void
   /** Callback triggered when selecting an item. */
-  onSelect?: () => void
+  onSelect?: (item: TypeaheadItem) => void
   /** The placeholder displayed in the input field. */
   placeholder?: string
   /** The value of the component, makes this a controlled component. */

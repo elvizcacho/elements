@@ -1,4 +1,4 @@
-import React, { Component, PropsWithChildren, FormEvent } from 'react'
+import React, { Component, FormEvent } from 'react'
 
 interface IFormProps {
   method?: 'POST' | 'GET'
@@ -20,7 +20,7 @@ The Form component just <strong>does one simple thing</strong>:
 It intercepts the onSubmit Event and collects all data that the user entered and passes it as <strong>second parameter</strong> to the onSubmit callback,
 so you can work with it.
 
-The HTTP method that the browser uses to submit the form defaults to <strong>POST</strong>.  
+The HTTP method that the browser uses to submit the form defaults to <strong>POST</strong>.
 
 ## Simple example
 
@@ -112,7 +112,7 @@ Also see the <a href="/molecules/TextInput/">TextInput</a> for allowed props.
 </ResourceProvider>
 ```
  */
-class Form extends Component<PropsWithChildren<IFormProps>> {
+class Form extends Component<IFormProps> {
   static defaultProps = {
     method: 'POST',
   }

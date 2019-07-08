@@ -10,8 +10,8 @@ import { css } from 'glamor'
 import Text from '../src/atoms/Text'
 import { ColorPalette } from '@allthings/colors'
 
-import Names from './data/names'
-import Movies from './data/movies'
+import Names from './data/names.json'
+import Movies from './data/movies.json'
 
 const DEFAULT_VALUE = 'Danielle Lilleman'
 const MARGIN = 15 // px
@@ -24,13 +24,16 @@ const STYLES = {
 }
 
 /* eslint-disable standard/no-callback-literal */
-const debounce = (callback, time = 200, interval) => (...args) =>
+// @ts-ignore
+const debounce = (callback, time? = 200, interval?) => (...args) =>
+  // @ts-ignore
   clearTimeout(interval, (interval = setTimeout(() => callback(...args), time)))
 /* eslint-enable standard/no-callback-literal */
 
-const delay = time => new Promise(resolve => setTimeout(resolve, time))
+const delay = (time: number) =>
+  new Promise(resolve => setTimeout(resolve, time))
 
-const LabelIcon = ({ color }) => {
+const LabelIcon = ({ color }: { color: string }) => {
   return (
     <div
       {...css({
@@ -72,7 +75,7 @@ class TypeaheadStory extends React.Component {
 
   debouncedFetch = debounce(this.fetch)
 
-  onInputChange = value => {
+  onInputChange = (value: string) => {
     this.setState({ inputValue: value })
     value !== '' && this.debouncedFetch()
   }

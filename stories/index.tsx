@@ -2,8 +2,6 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import createViewportDecorator from './createViewportDecorator'
 import CollapsibleStory from './CollapsibleStory'
-//  import FilterStory from './FilterStory'
-
 import { action } from '@storybook/addon-actions'
 
 import {

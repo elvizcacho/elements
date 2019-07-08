@@ -7,10 +7,12 @@ import {
   Spinner,
   View,
   Inset,
-  SlideIn,
 } from '../src/'
 
-class SimpleLayoutStory extends React.Component {
+class SimpleLayoutStory extends React.Component<
+  {},
+  { loading: boolean; text: string }
+> {
   state = {
     loading: true,
     text: '',
@@ -28,7 +30,7 @@ class SimpleLayoutStory extends React.Component {
     const text = await response.json()
     setTimeout(() => {
       this.setState({
-        text: text.reduce((prev, curr) => prev + curr),
+        text: text.reduce((prev: string, curr: string) => prev + curr),
         loading: false,
       })
     }, 1000)
