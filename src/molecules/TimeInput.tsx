@@ -1,7 +1,7 @@
 import React, { Component, ChangeEvent } from 'react'
 import { css } from 'glamor'
 
-import Input from '../atoms/Input'
+import Input, { IInputProps } from '../atoms/Input'
 import View from '../atoms/View'
 import Absolute from '../atoms/Absolute'
 import Relative from '../atoms/Relative'
@@ -104,7 +104,7 @@ const timePropTypeValidator = (value: string, propName: string) => {
   }
 }
 
-interface ITimeInputProps {
+interface ITimeInputProps extends IInputProps {
   /** Name picked up by a form **/
   name: string
   /** Label shown above the time picker **/
