@@ -5,7 +5,7 @@ import { css } from 'glamor'
 const style = css({
   width: '100%',
   background: 'white',
-  boxShadow: '2px 2px 2px rgba(230, 230, 230, 0.5)',
+  boxShadow: '2px 2px 2px rgba(0, 0, 0, 0.05)',
 })
 
 /**
