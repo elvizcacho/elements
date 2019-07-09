@@ -5,7 +5,7 @@ exports[`Card renders as full example 1`] = `
 [data-css-0] {
   width: 100%;
   background: white;
-  box-shadow: 2px 2px 2px rgba(230, 230, 230, 0.5);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
 }
 
 .css-1,
@@ -127,8 +127,8 @@ exports[`Card renders as full example 1`] = `
 }
 
 <div
-  data-css-3=""
   data-css-0=""
+  data-css-3=""
 >
   <div
     data-css-1=""
@@ -166,7 +166,7 @@ exports[`Card renders without error 1`] = `
 [data-css-0] {
   width: 100%;
   background: white;
-  box-shadow: 2px 2px 2px rgba(230, 230, 230, 0.5);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
 }
 
 .css-1,
@@ -177,7 +177,7 @@ exports[`Card renders without error 1`] = `
 }
 
 <div
-  data-css-1=""
   data-css-0=""
+  data-css-1=""
 />
 `;
