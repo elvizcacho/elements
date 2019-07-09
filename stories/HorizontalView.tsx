@@ -10,7 +10,7 @@ import {
   ListItem,
   ResourceProvider,
 } from '../src'
-import HorizontalView from '../src/behaviour/HorizontalView'
+import HorizontalView from '../src/HorizontalView'
 
 export default class HorizontalViewStory extends React.Component<
   {},

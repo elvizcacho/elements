@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import ResourceProvider from '../src/behaviour/ResourceProvider'
-import Inset from '../src/atoms/Inset'
-import FormCheckbox from '../src/molecules/Form/FormCheckbox'
-import { Text } from '../src'
-import Button from '../src/molecules/Button'
-import Spacer from '../src/atoms/Spacer'
+import ResourceProvider from '../src/ResourceProvider'
+import Inset from '../src/Inset'
+import FormCheckbox from '../src/FormCheckbox'
+import Text from '../src/Text'
+import Button from '../src/Button'
+import Spacer from '../src/Spacer'
 
 export default function CheckboxStory() {
   const [checked, setChecked] = useState(false)

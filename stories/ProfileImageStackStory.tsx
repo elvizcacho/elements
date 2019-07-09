@@ -1,6 +1,11 @@
 import React from 'react'
-import { ThemeProvider, ResourceProvider, Text, Card } from '../src/'
-import ProfileImageStack from '../src/molecules/ProfileImageStack'
+import {
+  ThemeProvider,
+  ResourceProvider,
+  Text,
+  Card,
+  ProfileImageStack,
+} from '../src/'
 
 import { css } from 'glamor'
 

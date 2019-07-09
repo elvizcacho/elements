@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonGroup should render button group 1`] = `
+.css-0> *,
+[data-css-0]> * {
+  margin-right: 10px;
+}
+
+.css-0> *:last-child,
+[data-css-0]> *:last-child {
+  margin-right: 0;
+}
+
+.css-1,
+[data-css-1] {
+  box-sizing: border-box;
+  align-content: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-2,
+[data-css-2] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-3,
+[data-css-3] {
+  position: relative;
+  padding: 10px 16px;
+  border-radius: 2px;
+  border: none;
+  user-select: none;
+  outline: none;
+  background: transparent;
+  color: #3598db;
+  margin: 2px;
+  cursor: pointer;
+  transition: 250ms ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-transition: 250ms ease-in-out;
+  -moz-transition: 250ms ease-in-out;
+}
+
+.css-3:focus,
+[data-css-3]:focus {
+  outline: none;
+}
+
+.css-3:hover,
+[data-css-3]:hover {
+  color: #1a6193;
+}
+
+.css-6,
+[data-css-6] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.css-7,
+[data-css-7] {
+  position: relative;
+  padding: 10px 16px;
+  border-radius: 2px;
+  border: none;
+  user-select: none;
+  outline: none;
+  color: white;
+  background: #3598db;
+  cursor: pointer;
+  transition: 250ms ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-transition: 250ms ease-in-out;
+  -moz-transition: 250ms ease-in-out;
+}
+
+.css-7:focus,
+[data-css-7]:focus {
+  outline: none;
+}
+
+.css-7:hover,
+[data-css-7]:hover {
+  color: white;
+  background: #227dbf;
+}
+
+<div
+  data-css-1=""
+  data-css-0=""
+>
+  <div
+    data-css-2=""
+  >
+    <button
+      data-css-6=""
+      data-css-3=""
+      name="button"
+      type="button"
+    >
+      Cancel
+    </button>
+  </div>
+  <div
+    data-css-2=""
+  >
+    <button
+      data-css-7=""
+      data-css-6=""
+      name="button"
+      type="button"
+    >
+      Accept
+    </button>
+  </div>
+</div>
+`;
