@@ -1,4 +1,4 @@
-import React, { PureComponent, PropsWithChildren, createRef } from 'react'
+import React, { FunctionComponent, useEffect, useRef } from 'react'
 import { css } from 'glamor'
 import { between } from './utils/math'
 
@@ -26,41 +26,41 @@ interface IOverlayMenuProps {
   onRequestClose: (e: MouseEvent) => void
 }
 
-export default class OverlayMenu extends PureComponent<
-  PropsWithChildren<IOverlayMenuProps>
-> {
-  private menu = createRef<HTMLDivElement>()
-  componentDidMount() {
-    document.addEventListener('click', this.handleDocumentClick, true)
-  }
+const OverlayMenu: FunctionComponent<IOverlayMenuProps> = ({
+  onRequestClose,
+  children,
+}) => {
+  const menuRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const handleDocumentClick = (e: MouseEvent) => {
+      if (menuRef.current) {
+        const {
+          bottom,
+          left,
+          right,
+          top,
+        } = menuRef.current.getBoundingClientRect()
 
-  componentWillUnmount() {
-    document.removeEventListener('click', this.handleDocumentClick, true)
-  }
-
-  handleDocumentClick = (e: MouseEvent) => {
-    if (this.menu.current) {
-      const {
-        bottom,
-        left,
-        right,
-        top,
-      } = this.menu.current.getBoundingClientRect()
-
-      if (
-        !between(e.clientY, top, bottom) ||
-        !between(e.clientX, left, right)
-      ) {
-        this.props.onRequestClose(e)
+        if (
+          !between(e.clientY, top, bottom) ||
+          !between(e.clientX, left, right)
+        ) {
+          onRequestClose(e)
+        }
       }
     }
-  }
+    document.addEventListener('click', handleDocumentClick, true)
 
-  render() {
-    return (
-      <div ref={this.menu} {...menuStyle}>
-        {this.props.children}
-      </div>
-    )
-  }
+    return () => {
+      document.removeEventListener('click', handleDocumentClick, true)
+    }
+  }, [onRequestClose])
+
+  return (
+    <div ref={menuRef} {...menuStyle}>
+      {children}
+    </div>
+  )
 }
+
+export default OverlayMenu
