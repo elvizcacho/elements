@@ -1,6 +1,6 @@
-import React, { FunctionComponent, PropsWithChildren } from 'react'
+import React, { FunctionComponent } from 'react'
 import { css } from 'glamor'
-import View from '../View'
+import View, { IViewProps } from '../View'
 
 const style = css({
   borderTop: '1px solid #e7ecee',
@@ -13,7 +13,7 @@ const style = css({
   },
 })
 
-const CardFooter: FunctionComponent = (props: PropsWithChildren<{}>) => (
+const CardFooter: FunctionComponent<IViewProps> = props => (
   <View
     direction="row"
     alignV="center"

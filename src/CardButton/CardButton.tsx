@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react'
+import React, { FunctionComponent } from 'react'
 import View, { IViewProps } from '../View'
 import { css } from 'glamor'
 import { color as col, lightness } from 'kewler'
@@ -31,23 +31,23 @@ interface ICardButtonProps extends IViewProps {
  * CardButton can to enable users to do actions directly related to content on
  * on cards. It should always go into a [CardFooter](CardFooter.md).
  */
-export default function CardButton({
+const CardButton: FunctionComponent<ICardButtonProps> = ({
   backgroundColor = '#ffffff',
   ...props
-}: PropsWithChildren<ICardButtonProps>) {
-  return (
-    <Theme>
-      {({ colorize }) => (
-        <View
-          alignH="center"
-          flex="flex"
-          alignV="center"
-          direction="row"
-          htmlElement="button"
-          {...style(colorize(backgroundColor))}
-          {...props}
-        />
-      )}
-    </Theme>
-  )
-}
+}) => (
+  <Theme>
+    {({ colorize }) => (
+      <View
+        alignH="center"
+        flex="flex"
+        alignV="center"
+        direction="row"
+        htmlElement="button"
+        {...style(colorize(backgroundColor))}
+        {...props}
+      />
+    )}
+  </Theme>
+)
+
+export default CardButton

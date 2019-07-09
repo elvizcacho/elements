@@ -1,4 +1,4 @@
-import React, { Component, ChangeEvent, PropsWithChildren } from 'react'
+import React, { Component, ChangeEvent } from 'react'
 import { css } from 'glamor'
 import Absolute from '../Absolute'
 import Circle from '../Circle'
@@ -50,10 +50,7 @@ interface IState {
  * </RadioButtonSet>
  * ```
  */
-class RadioButton extends Component<
-  PropsWithChildren<IRadioButtonProps>,
-  IState
-> {
+class RadioButton extends Component<IRadioButtonProps, IState> {
   static defaultProps = {
     required: false,
   }

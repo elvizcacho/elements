@@ -1,13 +1,13 @@
-import React, { PropsWithChildren } from 'react'
+import React, { FunctionComponent } from 'react'
 import CardList from '../CardList'
-import View from '../View'
+import View, { IViewProps } from '../View'
 import GroupTitle from '../GroupTitle'
 
-const GroupedCardList = ({
+const GroupedCardList: FunctionComponent<IGroupedCardListProps> = ({
   title,
   children,
   ...rest
-}: PropsWithChildren<IGroupedCardListProps>) => {
+}) => {
   return (
     <View {...rest}>
       <GroupTitle>{title}</GroupTitle>
@@ -16,7 +16,7 @@ const GroupedCardList = ({
   )
 }
 
-interface IGroupedCardListProps {
+interface IGroupedCardListProps extends IViewProps {
   /** The title for the CardList */
   title: string
 }

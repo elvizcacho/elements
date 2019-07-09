@@ -1,6 +1,6 @@
-import React, { Component, PropsWithChildren } from 'react'
+import React, { FunctionComponent } from 'react'
 import { css } from 'glamor'
-import View from '../View'
+import View, { IViewProps } from '../View'
 import { createMQ } from '../Responsive'
 import { colorCode } from '../utils/propTypes/color'
 import Inset from '../Inset'
@@ -38,7 +38,7 @@ const styles = {
   }),
 }
 
-interface IHeroProps {
+interface IHeroProps extends IViewProps {
   /** Color of the hero, will be primary color by default */
   color: string
   /** Text that will be announced with the Hero */
@@ -60,37 +60,34 @@ interface IHeroProps {
  * </ThemeProvider>
  * ```
  */
-class Hero extends Component<PropsWithChildren<IHeroProps>> {
-  static defaultProps = {
-    color: 'grey',
-  }
-
-  render() {
-    const { img, text, children, color = 'primary', ...props } = this.props
-    return (
-      <Theme>
-        {({ colorize }) => (
-          <View
-            direction="row"
-            alignV="center"
-            alignH="space-around"
-            {...heroStyle(colorize(color))}
-            {...props}
-          >
-            <Inset direction="column" alignH="start" {...styles.textContainer}>
-              <Text color="white" size="l" strong>
-                {text}
-              </Text>
-              {children}
-            </Inset>
-            <View {...styles.heroImageContainer}>
-              <img {...styles.heroImage} src={img} />
-            </View>
-          </View>
-        )}
-      </Theme>
-    )
-  }
-}
+const Hero: FunctionComponent<IHeroProps> = ({
+  img,
+  text,
+  children,
+  color = 'primary',
+  ...props
+}) => (
+  <Theme>
+    {({ colorize }) => (
+      <View
+        direction="row"
+        alignV="center"
+        alignH="space-around"
+        {...heroStyle(colorize(color))}
+        {...props}
+      >
+        <Inset direction="column" alignH="start" {...styles.textContainer}>
+          <Text color="white" size="l" strong>
+            {text}
+          </Text>
+          {children}
+        </Inset>
+        <View {...styles.heroImageContainer}>
+          <img {...styles.heroImage} src={img} />
+        </View>
+      </View>
+    )}
+  </Theme>
+)
 
 export default Hero

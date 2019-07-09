@@ -1,26 +1,26 @@
-import React, { PropsWithChildren } from 'react'
+import React, { FunctionComponent } from 'react'
 import { css, merge } from 'glamor'
 import Icon from '../Icon'
-import View, { flexType, IViewProps } from '../View'
+import View, { flexType } from '../View'
 import { ColorPalette } from '@allthings/colors'
-import ListItem from '../ListItem'
+import ListItem, { IListItemProps } from '../ListItem'
 
 const style = css({
   width: 12,
   height: 12,
 })
 
-interface ChevronRightListItem extends IViewProps {
+interface ChevronRightListItem extends IListItemProps {
   flex?: flexType
   innerStyle?: any
 }
 
-const ChevronRightListItem = ({
+const ChevronRightListItem: FunctionComponent<ChevronRightListItem> = ({
   innerStyle,
   children,
   flex = 'grow',
   ...props
-}: PropsWithChildren<ChevronRightListItem>) => (
+}) => (
   <ListItem {...props} flex={flex}>
     <View
       direction="column"

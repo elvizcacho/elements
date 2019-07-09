@@ -1,10 +1,7 @@
 import React, { Component, ImgHTMLAttributes } from 'react'
 import View, { IViewProps } from '../View'
 import { css } from 'glamor'
-import {
-  ResourceType,
-  ResourceProviderContext,
-} from '../ResourceProvider'
+import { ResourceProviderContext } from '../ResourceProvider'
 
 interface IImage {
   /** Alternative image to use */
@@ -80,7 +77,7 @@ export default class ImageElement extends Component<IImageProps, {}> {
 
     return (
       <ResourceProviderContext.Consumer>
-        {({ resourcePath }: ResourceType) => (
+        {({ resourcePath }) => (
           <View
             {...css({
               backgroundImage: `url(${

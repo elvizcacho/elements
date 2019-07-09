@@ -1,4 +1,4 @@
-import React, { Component, PropsWithChildren } from 'react'
+import React, { FunctionComponent, KeyboardEvent, useState } from 'react'
 import { css } from 'glamor'
 
 const styles = {
@@ -28,82 +28,57 @@ const styles = {
   }),
 }
 
-interface IProps {}
-interface IState {
-  padding: boolean
-  width: number
-  height: number
-  shiftPressed: boolean
-}
+export const Viewport: FunctionComponent = ({ children }) => {
+  const [width, setWidth] = useState(320)
+  const [height, setHeight] = useState(568)
+  const [showPadding, setShowPadding] = useState(false)
+  const [shiftPressed, setShiftPressed] = useState(false)
 
-export class Viewport extends Component<PropsWithChildren<IProps>, IState> {
-  state = {
-    width: 320,
-    height: 500,
-    padding: false,
-    shiftPressed: false,
-  }
-
-  togglePadding = () =>
-    this.setState(({ padding }: IState) => ({ padding: !padding }))
-
-  setWidth = (e: any) => {
-    const width = +e.target.value
-    this.setState(() => ({ width }))
-  }
-  setHeight = (e: any) => {
-    const height = +e.target.value
-    this.setState(() => ({ height }))
-  }
-
-  setShiftPressed = (e: any) => {
+  const toggleShiftPressed = (e: KeyboardEvent<HTMLInputElement>) => {
     const { shiftKey } = e
-    if (
-      (!this.state.shiftPressed && shiftKey) ||
-      (this.state.shiftPressed && !shiftKey)
-    ) {
-      this.setState(() => ({ shiftPressed: shiftKey }))
+    if ((!shiftPressed && shiftKey) || (shiftPressed && !shiftKey)) {
+      setShiftPressed(shiftKey)
     }
   }
 
-  render() {
-    const { width, height } = this.state
-
-    return (
-      <div {...styles.wrapper}>
-        <div {...css({ flexDirection: 'row' })}>
+  return (
+    <div {...styles.wrapper}>
+      <div {...css({ flexDirection: 'row' })}>
+        <input
+          type="number"
+          style={{ width: 40 }}
+          value={width}
+          step={shiftPressed ? 10 : 1}
+          onChange={e => setWidth(Number(e.target.value))}
+          onKeyDown={toggleShiftPressed}
+          onKeyUp={toggleShiftPressed}
+        />
+        <span>⨉</span>
+        <input
+          type="number"
+          style={{ width: 40 }}
+          value={height}
+          step={shiftPressed ? 10 : 1}
+          onChange={e => setHeight(Number(e.target.value))}
+          onKeyDown={toggleShiftPressed}
+          onKeyUp={toggleShiftPressed}
+        />
+        <label>
           <input
-            type="number"
-            style={{ width: 40 }}
-            value={width}
-            step={this.state.shiftPressed ? 10 : 1}
-            onChange={this.setWidth}
-            onKeyDown={this.setShiftPressed}
-            onKeyUp={this.setShiftPressed}
-          />
-          <span>⨉</span>
-          <input
-            type="number"
-            style={{ width: 40 }}
-            value={height}
-            step={this.state.shiftPressed ? 10 : 1}
-            onChange={this.setHeight}
-            onKeyDown={this.setShiftPressed}
-            onKeyUp={this.setShiftPressed}
-          />
-          <label>
-            <input type="checkbox" onClick={this.togglePadding} /> With padding?
-          </label>
-        </div>
-        <div
-          {...css(styles.mobileView, { padding: this.state.padding && 20 })}
-          style={{ width, height }}
-        >
-          {this.props.children}
-        </div>
+            type="checkbox"
+            onClick={() => setShowPadding(padding => !padding)}
+          />{' '}
+          With padding?
+        </label>
       </div>
-    )
-  }
+      <div
+        {...css(styles.mobileView, { padding: showPadding && 20 })}
+        style={{ width, height }}
+      >
+        {children}
+      </div>
+    </div>
+  )
 }
 
 export default function createViewportDecorator() {

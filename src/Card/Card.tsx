@@ -1,5 +1,5 @@
-import React, { FunctionComponent, PropsWithChildren } from 'react'
-import View from '../View'
+import React, { FunctionComponent } from 'react'
+import View, { IViewProps } from '../View'
 import { css } from 'glamor'
 
 const style = css({
@@ -25,7 +25,7 @@ const style = css({
  * </Card>
  * ```
  */
-const Card: FunctionComponent = (props: PropsWithChildren<{}>) => (
+const Card: FunctionComponent<IViewProps> = props => (
   <View {...style} {...props} />
 )
 
