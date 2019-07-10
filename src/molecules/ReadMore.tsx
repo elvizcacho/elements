@@ -1,4 +1,4 @@
-import React, { Component, PropsWithChildren } from 'react'
+import React, { Component } from 'react'
 import { css } from 'glamor'
 import View from '../atoms/View'
 import Text from '../atoms/Text'
@@ -37,7 +37,7 @@ interface IReadMoreProps {
 </Card>
  *  ```
  **/
-class ReadMore extends Component<PropsWithChildren<IReadMoreProps>> {
+class ReadMore extends Component<IReadMoreProps> {
   static defaultProps = {
     initiallyCollapsed: true,
     readMoreLabel: 'Read more...',

@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react'
+import React, { FunctionComponent, useEffect, useState } from 'react'
 
 export const RESOURCE_PATH = 'https://static.allthings.me'
 
@@ -12,7 +12,7 @@ export const ResourceProviderContext = React.createContext({
   resourcePath: RESOURCE_PATH,
 })
 
-export type ResourceType = {
+export interface IResourceProviderProps {
   resourcePath?: string
 }
 
@@ -22,13 +22,22 @@ export type ResourceType = {
  *
  * **Example**: If you want all you buttons to be red, instead of writing <Button color="red" /> all the time, you might want to set the "primary" color of your theme to red.
  **/
-const ResourceProvider = ({
+const ResourceProvider: FunctionComponent<IResourceProviderProps> = ({
   children,
   resourcePath = RESOURCE_PATH,
-}: PropsWithChildren<{ resourcePath?: string }>) => (
-  <ResourceProviderContext.Provider value={{ resourcePath }}>
-    {children}
-  </ResourceProviderContext.Provider>
-)
+}) => {
+  // this is to prevent unintentional re-renders in consumers
+  // see https://reactjs.org/docs/context.html#caveats
+  const [value, setValue] = useState({ resourcePath })
+  useEffect(() => {
+    setValue({ resourcePath })
+  }, [resourcePath])
+
+  return (
+    <ResourceProviderContext.Provider value={value}>
+      {children}
+    </ResourceProviderContext.Provider>
+  )
+}
 
 export default ResourceProvider

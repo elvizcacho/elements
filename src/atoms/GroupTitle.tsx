@@ -1,9 +1,9 @@
-import React, { PropsWithChildren } from 'react'
+import React, { FunctionComponent } from 'react'
 
 import Inset from '../atoms/Inset'
 import Text from '../atoms/Text'
 
-const GroupTitle = ({ children }: PropsWithChildren<{}>) => (
+const GroupTitle: FunctionComponent = ({ children }) => (
   <Inset horizontal vertical>
     <Text size="l" strong color="titleColor">
       {children}

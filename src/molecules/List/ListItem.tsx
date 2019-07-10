@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react'
+import React, { FunctionComponent } from 'react'
 import { css } from 'glamor'
 import { ColorPalette } from '@allthings/colors'
 import View, { IViewProps } from '../../atoms/View'
@@ -18,18 +18,18 @@ const styles = (
     backgroundColor: backgroundColor,
   })
 
-interface IListItemProps extends IViewProps {
+export interface IListItemProps extends IViewProps {
   backgroundColor?: color
   hideLine?: boolean
   padded?: boolean
 }
 
-const ListItem = ({
+const ListItem: FunctionComponent<IListItemProps> = ({
   backgroundColor = 'white',
   hideLine = false,
   padded = true,
   ...props
-}: PropsWithChildren<IListItemProps>) => (
+}) => (
   <View
     direction="row"
     alignV="center"
