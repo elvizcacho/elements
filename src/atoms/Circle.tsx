@@ -35,7 +35,7 @@ interface IProps {
 }
 
 /**
- * Simple circle element that is used to build other things.
+ * Simple circle element that is used to build other things. It's quite round.
  *
  * Check out ProfileImage to see it in action.
  *
