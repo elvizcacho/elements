@@ -1,0 +1,21 @@
+<!-- 
+This is an auto-generated markdown. 
+You can change it in "/Users/daniel/Dev/allthings/elements/src/Slider/Slider.tsx" and run build:docs to update this file.
+-->
+# Slider
+
+## Usage
+| Name        | Type           | Description  |
+| ----------- |:--------------:| ------------:|
+|min **(required)**||Minimum selectable value *
+|max **(required)**||Maximum selectable value *
+|step|number|Step interval *
+|value|number|Current value to show *
+|onChange|((e: ChangeEvent<HTMLInputElement>) => void)|Callback when the users changes the value *
+|htmlElement|string|
+|alignH|"none", "start", "center", "end", "space-around", "space-between"|horizontal alignment
+|alignV|"none", "start", "center", "end", "stretch"|vertical alignment
+|direction|"row", "column", "row-reverse", "column-reverse"|direction
+|fill|boolean|Passing true, will make the view fill out available space
+|wrap|"wrap", "inherit", "initial", "nowrap", "wrap-reverse"|Defining how children will wrap
+|flex|number, "flex", "none", "initial", "nogrow", "grow", "auto", "noshrink"|Flex values, can be 5, 10, 15 ... 100 or 33, 66
