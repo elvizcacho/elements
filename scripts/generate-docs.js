@@ -2,79 +2,78 @@ import glob from 'glob'
 import { promisify } from 'util'
 import fs from 'fs'
 import path from 'path'
-import { parse } from 'react-docgen'
+import { withCustomConfig } from 'react-docgen-typescript'
 
 const writeFile = promisify(fs.writeFile)
-const readfile = promisify(fs.readFile)
 const globber = promisify(glob)
+const { parse } = withCustomConfig('./tsconfig.json')
 
-function propToRow(props) {
-  return propName => {
-    const { required, description, defaultValue, type } = props[propName]
-    return `|${propName}${required ? ' **(required)**' : ''}|${
-      type.name
-    }|${description || ''}${
-      defaultValue ? `<br>Default: ${defaultValue.value}` : ''
-    }`
-  }
+const FILE_TYPE = '.tsx'
+
+const [_, __, arg1] = process.argv
+
+const propToRow = prop => {
+  const { name, required, description, defaultValue, type } = prop
+  console.log(type)
+  return `|${name}${required ? ' **(required)**' : ''}|${type.name
+    .split('|')
+    .map(value => value.trim())
+    .filter(value => required === false && value !== 'undefined')
+    .join(', ')}|${description || ''}${
+    defaultValue ? `<br>Default: ${defaultValue.value}` : ''
+  }`
 }
+
 async function main() {
   try {
-    let files = await globber('src/**/*.jsx')
-    files = files.filter(path => path.indexOf('.test.jsx') === -1)
-    files = await Promise.all(
+    const files = (await globber(arg1 || `src/**/*${FILE_TYPE}`)).filter(
+      path => path.indexOf(`test${FILE_TYPE}`) === -1,
+    )
+    await Promise.all(
       files.map(async file => {
         try {
-          const docs = parse(await readfile(file))
-          docs.displayName = docs.displayName || path.basename(file, '.jsx')
-          return {
-            docs,
-            file,
-          }
-        } catch (e) {
-          console.log('Could not find React in ' + file)
-          return null
-        }
-      })
-    )
-    files = files.filter(file => !!file)
-    files = files.map(({ file, docs }) => {
-      console.log('Generating docs for', file)
+          const [docs] = parse(file)
+          console.log(docs)
+          docs.displayName = docs.displayName || path.basename(file, FILE_TYPE)
 
-      return {
-        file,
-        docs: `<!-- 
+          const docMarkdown = `<!-- 
 This is an auto-generated markdown. 
 You can change it in "${file}" and run build:docs to update this file.
 -->
-# ${docs.displayName}
-${docs.description}
+# ${docs.displayName || ''}
+${docs.description || ''}
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
 ${
   docs.props
-    ? Object.keys(docs.props)
-        .map(propToRow(docs.props))
+    ? Object.values(docs.props)
+        .filter(
+          value =>
+            typeof value.parent === 'undefined' ||
+            value.parent.fileName.startsWith('src/'),
+        )
+        .map(propToRow)
         .join('\n')
     : '*No properties to pass*'
 }
-`,
-      }
-    })
+`
 
-    await Promise.all(
-      files.map(({ file, docs }) => {
-        writeFile(
-          path.join(
-            __dirname,
-            '..',
-            file.replace('src/', 'doc/reference/').replace('.jsx', '.md')
-          ),
-          docs,
-          { flag: 'w+' }
-        )
-      })
+          return writeFile(
+            path.join(
+              __dirname,
+              '..',
+              file.replace('src/', 'doc/reference/').replace(FILE_TYPE, '.md'),
+            ),
+            docMarkdown,
+            { flag: 'w+' },
+          )
+        } catch (e) {
+          console.log(e)
+          console.log('Could not find React in ' + file)
+          return null
+        }
+      }),
     )
   } catch (e) {
     console.log(e)

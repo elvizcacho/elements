@@ -8,6 +8,7 @@ describe('ButtonGroup', () => {
     const tree = renderer
       .create(
         <ButtonGroup>
+          <a>asd</a>
           <Button secondary>Cancel</Button>
           <Button>Accept</Button>
         </ButtonGroup>,
