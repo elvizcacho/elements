@@ -10,8 +10,23 @@ const line = (color: string) =>
     width: '100%',
   })
 
-/** Hello, I'm a Line */
-const Line = ({ color }: { color: string }) => (
+/**
+ * Everything in elements is view! It's the component to align and layout things.
+ *
+ * ```example
+ * <ThemeProvider>
+ *   <View fill direction="row" alignH="end">
+ *     <Text>Say Hello!</Text>
+ *   </View>
+ * </ThemeProvider>
+ * ```
+ */
+const Line = ({
+  color,
+}: {
+  /** Color of the Line */
+  color: string
+}) => (
   <View
     {...line(colorCode(color))}
     alignV="center"

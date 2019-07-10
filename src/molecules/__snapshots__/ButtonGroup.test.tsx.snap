@@ -21,7 +21,7 @@ exports[`ButtonGroup should render button group 1`] = `
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  flex-direction: horizontal;
+  flex-direction: row;
   justify-content: flex-start;
   flex: 0 0 auto;
   -webkit-align-content: stretch;
@@ -29,7 +29,7 @@ exports[`ButtonGroup should render button group 1`] = `
   -webkit-align-items: stretch;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: horizontal;
+  -webkit-flex-direction: row;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -webkit-flex: 0 0 auto;
@@ -122,7 +122,6 @@ exports[`ButtonGroup should render button group 1`] = `
       data-css-6=""
       data-css-3=""
       name="button"
-      onClick={[Function]}
       type="button"
     >
       Cancel
@@ -135,7 +134,6 @@ exports[`ButtonGroup should render button group 1`] = `
       data-css-7=""
       data-css-6=""
       name="button"
-      onClick={[Function]}
       type="button"
     >
       Accept

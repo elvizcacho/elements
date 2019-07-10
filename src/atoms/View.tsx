@@ -60,8 +60,8 @@ function getCssFlexValue(flex: flexType) {
   }
 }
 
-export type IViewProps = IView & React.HTMLAttributes<HTMLElement>
-export interface IView {
+export type IViewProps = Omit<IView, 'forwardedRef'>
+export interface IView extends React.HTMLAttributes<HTMLElement> {
   htmlElement?: string
   /** horizontal alignment */
   alignH?: alignH
@@ -119,18 +119,8 @@ function createStyles({
     ...(flex && { flex: getCssFlexValue(flex) }),
   })
 }
-/**
- * Everything in elemnts is view! It's the component to align and layout things
- *
- * ```example
- * <ThemeProvider>
- *   <View fill direction="row" alignH="end">
- *     <Text>Say Hello!</Text>
- *   </View>
- * </ThemeProvider>
- * ```
- */
-const View: FunctionComponent<IViewProps> = ({
+
+const View: FunctionComponent<IView> = ({
   alignH = 'start',
   alignV = 'stretch',
   children,
@@ -163,6 +153,17 @@ const View: FunctionComponent<IViewProps> = ({
 
 export type ViewRef = HTMLDivElement
 
+/**
+ * Everything in elements is view! It's the component to align and layout things.
+ *
+ * ```example
+ * <ThemeProvider>
+ *   <View fill direction="row" alignH="end">
+ *     <Text>Say Hello!</Text>
+ *   </View>
+ * </ThemeProvider>
+ * ```
+ */
 export default forwardRef<ViewRef, IViewProps>((props, ref) => (
   <View {...props} forwardedRef={ref} />
 ))

@@ -26,9 +26,6 @@ export interface ITheme {
   [key: string]: string
 }
 
-export const ThemeContext = createContext<ITheme>(defaultTheme)
-export const ThemeConsumer = ThemeContext.Consumer
-
 /**
  * All elements support theming by default, and therefore every element must be wrapped inside a ThemeProvider.
  * The ThemeProvider allows you to define the default colors for most elements.
@@ -49,3 +46,5 @@ const ThemeProvider: FunctionComponent<{ theme?: Partial<ITheme> }> = ({
 )
 
 export default ThemeProvider
+export const ThemeContext = createContext<ITheme>(defaultTheme)
+export const ThemeConsumer = ThemeContext.Consumer
