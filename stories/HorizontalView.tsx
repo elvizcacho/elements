@@ -35,7 +35,7 @@ export default class HorizontalViewStory extends React.Component<
       <ResourceProvider>
         <ThemeProvider>
           <View fill direction="column" alignV="stretch">
-            <TitleBar alignH="space-between" color="blueIntense">
+            <TitleBar alignH="space-between">
               <View direction="row" alignV="center">
                 <SquareIconButton icon="armchair-filled" iconColor="white" />
                 <Text color="white" strong>

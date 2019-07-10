@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { css } from 'glamor'
 import View, { IViewProps } from '../View'
-import { colorCode } from '../utils/propTypes/color'
 import Theme from '../Theme'
 
 const box = (background: string) =>
   css({
     height: 50,
-    backgroundColor: colorCode(background),
+    backgroundColor: background,
     position: 'relative',
     zIndex: 2,
   })
@@ -24,7 +23,7 @@ interface ITitleBarProps extends IViewProps {
  *
  * ```example
  * <ThemeProvider>
- *   <TitleBar alignH="space-between" color="blueIntense">
+ *   <TitleBar alignH="space-between" color="primary">
  *     <View direction="row" alignV="center">
  *       <SquareIconButton icon="armchair-filled" iconColor="white" />
  *       <Text color="white" strong>
@@ -37,10 +36,6 @@ interface ITitleBarProps extends IViewProps {
  * ```
  */
 class TitleBar extends Component<ITitleBarProps> {
-  static defaultProps = {
-    color: 'grey',
-  }
-
   render() {
     const { children, color = 'primary', ...props } = this.props
     return (

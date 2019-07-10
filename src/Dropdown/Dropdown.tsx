@@ -208,7 +208,7 @@ export default class Dropdown extends PureComponent<IDropdownProps> {
               <Relative>
                 {isOpen && (
                   <List
-                    forwardedRef={this.listRef}
+                    ref={this.listRef}
                     direction={
                       placement === Placement.top ? 'column-reverse' : 'column'
                     }
