@@ -1,4 +1,4 @@
-import React, { Component, FormEvent } from 'react'
+import React, { FormEvent, FunctionComponent } from 'react'
 
 interface IFormProps {
   method?: 'POST' | 'GET'
@@ -112,30 +112,28 @@ Also see the <a href="/molecules/TextInput/">TextInput</a> for allowed props.
 </ResourceProvider>
 ```
  */
-class Form extends Component<IFormProps> {
-  static defaultProps = {
-    method: 'POST',
-  }
-
-  handleSubmit = (e: FormEvent) => {
+const Form: FunctionComponent<IFormProps> = ({
+  children,
+  onSubmit,
+  method = 'POST',
+}) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     const { target } = e as any
-    const data = {} as { [key: string]: any }
+    const data = {} as { [key: string]: string }
     const elements = target.elements as HTMLFormControlsCollection
     for (let i = 0; i < elements.length; i++) {
       const element = elements.item(i) as HTMLInputElement
       data[element.name] = element.value
     }
-    this.props.onSubmit(e, data)
+    onSubmit(e, data)
   }
 
-  render() {
-    return (
-      <form method={this.props.method} onSubmit={this.handleSubmit}>
-        {this.props.children}
-      </form>
-    )
-  }
+  return (
+    <form method={method} onSubmit={handleSubmit}>
+      {children}
+    </form>
+  )
 }
 
 export default Form

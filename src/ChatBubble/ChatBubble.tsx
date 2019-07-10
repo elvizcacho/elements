@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from 'react'
+import React, { FunctionComponent, ReactNode } from 'react'
 import { css } from 'glamor'
 import Text from '../Text'
 import ProfileImage from '../ProfileImage'
@@ -87,8 +87,6 @@ interface IChatBubbleProps {
   background: string
   /* Position of profile image and name */
   direction: 'left' | 'right'
-  /* Text color */
-  fontColor: string
 }
 
 /**
@@ -114,64 +112,57 @@ interface IChatBubbleProps {
  * </ThemeProvider>
  * ```
  */
-class ChatBubble extends Component<IChatBubbleProps> {
-  static defaultProps = {
-    direction: 'left',
-    background: 'white',
-    fontColor: 'text',
-  }
+const ChatBubble: FunctionComponent<IChatBubbleProps> = ({
+  userName,
+  userImage,
+  date,
+  background = 'white',
+  direction = 'left',
+  text,
+}) => {
+  const isReversed = direction === 'right'
 
-  renderProfileImage() {
-    const { userImage } = this.props
-    return <ProfileImage size="m" image={userImage} />
-  }
-
-  render() {
-    const { userName, date, background, direction, text } = this.props
-    const isReversed = direction === 'right'
-
-    return (
-      <Theme>
-        {({ colorize }) => (
-          <div {...styles.reply}>
-            <div
-              className="info"
-              {...css(styles.title, isReversed && styles.titleReversed)}
-            >
-              <Text size="s" {...styles.user}>
-                {userName}
-              </Text>
-              <Text size="s" {...styles.time}>
-                {date}
-              </Text>
+  return (
+    <Theme>
+      {({ colorize }) => (
+        <div {...styles.reply}>
+          <div
+            className="info"
+            {...css(styles.title, isReversed && styles.titleReversed)}
+          >
+            <Text size="s" {...styles.user}>
+              {userName}
+            </Text>
+            <Text size="s" {...styles.time}>
+              {date}
+            </Text>
+          </div>
+          <div
+            className="content"
+            {...css(styles.content, isReversed && styles.contentReversed)}
+          >
+            <div className="image" {...styles.image}>
+              <ProfileImage size="m" image={userImage} />
             </div>
             <div
-              className="content"
-              {...css(styles.content, isReversed && styles.contentReversed)}
+              {...css(
+                styles.outerText(background),
+                isReversed && styles.outerTextReversed(background),
+              )}
             >
-              <div className="image" {...styles.image}>
-                {this.renderProfileImage()}
-              </div>
               <div
-                {...css(
-                  styles.outerText(background),
-                  isReversed && styles.outerTextReversed(background),
-                )}
+                {...css(styles.textContainer, {
+                  background: colorize(background),
+                })}
               >
-                <div
-                  {...css(styles.textContainer, {
-                    background: colorize(background),
-                  })}
-                >
-                  <Text {...css(styles.text)}>{text}</Text>
-                </div>
+                <Text {...css(styles.text)}>{text}</Text>
               </div>
             </div>
           </div>
-        )}
-      </Theme>
-    )
-  }
+        </div>
+      )}
+    </Theme>
+  )
 }
 
 export default ChatBubble
