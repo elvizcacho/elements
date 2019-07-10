@@ -1,0 +1,312 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test the editable text component should be editable 1`] = `
+.css-0,
+[data-css-0] {
+  margin-left: 4px;
+}
+
+.css-1,
+[data-css-1] {
+  border-bottom: 1px dashed #95a5a5;
+}
+
+.css-1:focus,
+[data-css-1]:focus {
+  border-bottom: 1px solid #95a5a5;
+}
+
+.css-3,
+[data-css-3] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-4,
+[data-css-4] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
+}
+
+.css-5,
+[data-css-5] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-6,
+[data-css-6] {
+  width: 12px;
+  height: 12px;
+  stroke: #000000;
+}
+
+<ForwardRef
+  alignV="center"
+  direction="row"
+>
+  <div
+    data-css-3=""
+  >
+    <ForwardRef
+      contentEditable={true}
+      data-css-1=""
+      data-css-4=""
+      onKeyPress={[Function]}
+      spellCheck={false}
+      suppressContentEditableWarning={true}
+    >
+      <div
+        contentEditable={true}
+        data-css-1=""
+        data-css-4=""
+        data-css-5=""
+        onKeyPress={[Function]}
+        spellCheck={false}
+        suppressContentEditableWarning={true}
+      >
+        Edit me!
+      </div>
+    </ForwardRef>
+    <ForwardRef>
+      <div
+        data-css-5=""
+      >
+        <ForwardRef
+          alignH="center"
+          alignV="center"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "",
+            }
+          }
+          data-css-6=""
+          data-css-0=""
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "",
+              }
+            }
+            data-css-6=""
+            data-css-0=""
+            data-css-5=""
+          />
+        </ForwardRef>
+      </div>
+    </ForwardRef>
+  </div>
+</ForwardRef>
+`
+
+exports[
+  `Test the editable text component should be using a custom decoration color 1`
+] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -3,20 +3,10 @@
+    margin-left: 4px;
+  }
+  
+  .css-1,
+  [data-css-1] {
+-   border-bottom: 1px dashed #95a5a5;
+- }
+- 
+- .css-1:focus,
+- [data-css-1]:focus {
+-   border-bottom: 1px solid #95a5a5;
+- }
+- 
+- .css-3,
+- [data-css-3] {
+    box-sizing: border-box;
+    align-content: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -moz-box;
+@@ -35,51 +25,61 @@
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -webkit-flex: 0 0 auto;
+  }
+  
+- .css-4,
+- [data-css-4] {
++ .css-2,
++ [data-css-2] {
+    display: block;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #333333;
+  }
+  
+- .css-5,
+- [data-css-5] {
++ .css-3,
++ [data-css-3] {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
+  }
+  
+- .css-6,
+- [data-css-6] {
++ .css-4,
++ [data-css-4] {
+    width: 12px;
+    height: 12px;
+    stroke: #000000;
++ }
++ 
++ .css-5,
++ [data-css-5] {
++   border-bottom: 1px dashed #e84c3d;
++ }
++ 
++ .css-5:focus,
++ [data-css-5]:focus {
++   border-bottom: 1px solid #e84c3d;
+  }
+  
+  <div
+-   data-css-3=""
++   data-css-1=""
+  >
+    <div
+      contenteditable="true"
+-     data-css-1=""
+-     data-css-4=""
++     data-css-2=""
+      data-css-5=""
++     data-css-3=""
+      spellcheck="false"
+    >
+      Edit me!
+    </div>
+    <div
+-     data-css-5=""
++     data-css-3=""
+    >
+      <div
+-       data-css-6=""
++       data-css-4=""
+        data-css-0=""
+-       data-css-5=""
++       data-css-3=""
+      />
+    </div>
+  </div>
+`
+
+exports[`Test the editable text component should be using a custom icon 1`] = `
+.css-0,
+[data-css-0] {
+  margin-left: 4px;
+}
+
+.css-1,
+[data-css-1] {
+  border-bottom: 1px dashed #95a5a5;
+}
+
+.css-1:focus,
+[data-css-1]:focus {
+  border-bottom: 1px solid #95a5a5;
+}
+
+<ForwardRef
+  alignV="center"
+  direction="row"
+>
+  <Text
+    block={true}
+    contentEditable={true}
+    data-css-1=""
+    onKeyPress={[Function]}
+    spellCheck={false}
+    suppressContentEditableWarning={true}
+  >
+    Edit me!
+  </Text>
+  <ForwardRef>
+    <Icon
+      color="#000000"
+      data-css-0=""
+      name="view"
+      size={12}
+    />
+  </ForwardRef>
+</ForwardRef>
+`
+
+exports[
+  `Test the editable text component should be using a custom icon color 1`
+] = `
+.css-0,
+[data-css-0] {
+  margin-left: 4px;
+}
+
+.css-1,
+[data-css-1] {
+  border-bottom: 1px dashed #95a5a5;
+}
+
+.css-1:focus,
+[data-css-1]:focus {
+  border-bottom: 1px solid #95a5a5;
+}
+
+<ForwardRef
+  alignV="center"
+  direction="row"
+>
+  <Text
+    block={true}
+    contentEditable={true}
+    data-css-1=""
+    onKeyPress={[Function]}
+    spellCheck={false}
+    suppressContentEditableWarning={true}
+  >
+    Edit me!
+  </Text>
+  <ForwardRef>
+    <Icon
+      color="#e84c3d"
+      data-css-0=""
+      name="view"
+      size={12}
+    />
+  </ForwardRef>
+</ForwardRef>
+`

@@ -147,6 +147,7 @@
     "roots": [
       "<rootDir>/src"
     ],
+    "snapshotResolver": "<rootDir>/snapshotResolver.js",
     "globals": {
       "ts-jest": {
         "diagnostics": {

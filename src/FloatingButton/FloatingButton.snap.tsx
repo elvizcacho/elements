@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Floating button renders without error 1`] = `
+.css-0,
+[data-css-0] {
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-item: center;
+  justify-content: center;
+  height: 100%;
+  background: transparent;
+  border: 0;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+}
+
+.css-0:active,
+[data-css-0]:active {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.css-0:disabled,
+[data-css-0]:disabled {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.css-3,
+[data-css-3] {
+  background-color: #3598db;
+  box-shadow: 0px -2px 10px 0px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  height: 50px;
+  overflow: hidden;
+  transition: 250ms ease-in-out;
+  width: 100%;
+  -webkit-transition: 250ms ease-in-out;
+  -moz-transition: 250ms ease-in-out;
+}
+
+.css-3:hover,
+[data-css-3]:hover {
+  background: #3598db;
+}
+
+.css-5,
+[data-css-5] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-6,
+[data-css-6] {
+  position: absolute;
+  bottom: 0;
+}
+
+.css-7,
+[data-css-7] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex: 1;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -webkit-flex: 1;
+}
+
+<div
+  data-css-5=""
+>
+  <div
+    data-css-5=""
+    style={
+      Object {
+        "height": 50,
+      }
+    }
+  />
+  <div
+    data-css-7=""
+    data-css-6=""
+    data-css-3=""
+  >
+    <button
+      data-css-0=""
+      disabled={false}
+    >
+      Hello World
+    </button>
+  </div>
+</div>
+`

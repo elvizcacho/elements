@@ -7,7 +7,7 @@ import {
   ResourceProvider,
 } from '../src/'
 import { css } from 'glamor'
-import Text from '../src/atoms/Text'
+import Text from '../src/Text'
 import { ColorPalette } from '@allthings/colors'
 
 import Names from './data/names.json'

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Circle renders without error 1`] = `
+.css-0,
+[data-css-0] {
+  background-color: pink;
+  border-radius: 50%;
+  height: 5px;
+  width: 5px;
+  transition: background-color 120ms linear;
+  -webkit-transition: background-color 120ms linear;
+  -moz-transition: background-color 120ms linear;
+}
+
+.css-1,
+[data-css-1] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -webkit-flex: 0 0 auto;
+}
+
+<div
+  data-css-0=""
+  data-css-1=""
+/>
+`

@@ -1,0 +1,625 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test the FormCheckbox component should tick it 1`] = `
+.css-0,
+[data-css-0] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: darkMarco;
+}
+
+.css-1,
+[data-css-1] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-2,
+[data-css-2] {
+  border-radius: 3px;
+  height: 25px;
+  width: 25px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: lightGrey;
+  transition: 250ms;
+  cursor: pointer;
+  -webkit-transition: 250ms;
+  -moz-transition: 250ms;
+}
+
+.css-3,
+[data-css-3] {
+  position: relative;
+}
+
+.css-4,
+[data-css-4] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-5,
+[data-css-5] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.css-6,
+[data-css-6] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-7,
+[data-css-7] {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.css-8,
+[data-css-8] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
+}
+
+<ForwardRef
+  alignV="center"
+  data-css-0=""
+  direction="row"
+>
+  <div
+    data-css-1=""
+    data-css-0=""
+  >
+    <ForwardRef
+      alignV="center"
+      direction="row"
+    >
+      <div
+        data-css-1=""
+      >
+        <ForwardRef
+          alignH="center"
+          alignV="center"
+          data-css-3=""
+          data-css-2=""
+          direction="row"
+        >
+          <div
+            data-css-3=""
+            data-css-2=""
+            data-css-4=""
+          >
+            <ForwardRef
+              data-css-5=""
+            >
+              <div
+                data-css-6=""
+                data-css-5=""
+              >
+                <input
+                  checked={false}
+                  id="a"
+                  name="a"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                      "height": "25px",
+                      "margin": 0,
+                      "opacity": 0,
+                      "width": "25px",
+                    }
+                  }
+                  type="checkbox"
+                  value="false"
+                />
+              </div>
+            </ForwardRef>
+          </div>
+        </ForwardRef>
+      </div>
+    </ForwardRef>
+    <label
+      htmlFor="a"
+    >
+      <ForwardRef
+        data-css-7=""
+      >
+        <div
+          data-css-6=""
+          data-css-7=""
+        >
+          <ForwardRef
+            data-css-8=""
+          >
+            <div
+              data-css-8=""
+              data-css-6=""
+            >
+              I am a nice FormCheckbox!
+            </div>
+          </ForwardRef>
+        </div>
+      </ForwardRef>
+    </label>
+  </div>
+</ForwardRef>
+`
+
+exports[`Test the FormCheckbox component should tick it 2`] = `
+.css-0,
+[data-css-0] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: darkMarco;
+}
+
+.css-1,
+[data-css-1] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-2,
+[data-css-2] {
+  position: relative;
+}
+
+.css-3,
+[data-css-3] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-4,
+[data-css-4] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.css-5,
+[data-css-5] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-6,
+[data-css-6] {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.css-7,
+[data-css-7] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
+}
+
+.css-8,
+[data-css-8] {
+  border-radius: 3px;
+  height: 25px;
+  width: 25px;
+  background-color: #3598db;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #3598db;
+  transition: 250ms;
+  cursor: pointer;
+  -webkit-transition: 250ms;
+  -moz-transition: 250ms;
+}
+
+.css-9,
+[data-css-9] {
+  position: relative;
+  bottom: 1px;
+}
+
+.css-10,
+[data-css-10] {
+  width: 14px;
+  height: 14px;
+  fill: #fff;
+}
+
+<ForwardRef
+  alignV="center"
+  data-css-0=""
+  direction="row"
+>
+  <div
+    data-css-1=""
+    data-css-0=""
+  >
+    <ForwardRef
+      alignV="center"
+      direction="row"
+    >
+      <div
+        data-css-1=""
+      >
+        <ForwardRef
+          alignH="center"
+          alignV="center"
+          data-css-2=""
+          data-css-8=""
+          direction="row"
+        >
+          <div
+            data-css-2=""
+            data-css-3=""
+            data-css-8=""
+          >
+            <ForwardRef
+              data-css-9=""
+            >
+              <div
+                data-css-9=""
+                data-css-5=""
+              >
+                <ForwardRef
+                  alignH="center"
+                  alignV="center"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "",
+                    }
+                  }
+                  data-css-10=""
+                >
+                  <div
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "",
+                      }
+                    }
+                    data-css-5=""
+                    data-css-10=""
+                  />
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              data-css-4=""
+            >
+              <div
+                data-css-5=""
+                data-css-4=""
+              >
+                <input
+                  checked={true}
+                  id="a"
+                  name="a"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                      "height": "25px",
+                      "margin": 0,
+                      "opacity": 0,
+                      "width": "25px",
+                    }
+                  }
+                  type="checkbox"
+                  value="true"
+                />
+              </div>
+            </ForwardRef>
+          </div>
+        </ForwardRef>
+      </div>
+    </ForwardRef>
+    <label
+      htmlFor="a"
+    >
+      <ForwardRef
+        data-css-6=""
+      >
+        <div
+          data-css-5=""
+          data-css-6=""
+        >
+          <ForwardRef
+            data-css-7=""
+          >
+            <div
+              data-css-7=""
+              data-css-5=""
+            >
+              I am a nice FormCheckbox!
+            </div>
+          </ForwardRef>
+        </div>
+      </ForwardRef>
+    </label>
+  </div>
+</ForwardRef>
+`
+
+exports[`Test the FormCheckbox component should work with children 1`] = `
+.css-0,
+[data-css-0] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: darkMarco;
+}
+
+.css-1,
+[data-css-1] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-2,
+[data-css-2] {
+  border-radius: 3px;
+  height: 25px;
+  width: 25px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: lightGrey;
+  transition: 250ms;
+  cursor: pointer;
+  -webkit-transition: 250ms;
+  -moz-transition: 250ms;
+}
+
+.css-3,
+[data-css-3] {
+  position: relative;
+}
+
+.css-4,
+[data-css-4] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-5,
+[data-css-5] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.css-6,
+[data-css-6] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-7,
+[data-css-7] {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.css-8,
+[data-css-8] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
+}
+
+<ForwardRef
+  alignV="center"
+  data-css-0=""
+  direction="row"
+>
+  <div
+    data-css-1=""
+    data-css-0=""
+  >
+    <ForwardRef
+      alignV="center"
+      direction="row"
+    >
+      <div
+        data-css-1=""
+      >
+        <ForwardRef
+          alignH="center"
+          alignV="center"
+          data-css-3=""
+          data-css-2=""
+          direction="row"
+        >
+          <div
+            data-css-3=""
+            data-css-2=""
+            data-css-4=""
+          >
+            <ForwardRef
+              data-css-5=""
+            >
+              <div
+                data-css-6=""
+                data-css-5=""
+              >
+                <input
+                  checked={false}
+                  id="a"
+                  name="a"
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                      "height": "25px",
+                      "margin": 0,
+                      "opacity": 0,
+                      "width": "25px",
+                    }
+                  }
+                  type="checkbox"
+                  value="false"
+                />
+              </div>
+            </ForwardRef>
+          </div>
+        </ForwardRef>
+      </div>
+    </ForwardRef>
+    <label
+      htmlFor="a"
+    >
+      <ForwardRef
+        data-css-7=""
+      >
+        <div
+          data-css-6=""
+          data-css-7=""
+        >
+          <ForwardRef
+            data-css-8=""
+          >
+            <div
+              data-css-8=""
+              data-css-6=""
+            >
+              <h1>
+                test
+              </h1>
+            </div>
+          </ForwardRef>
+        </div>
+      </ForwardRef>
+    </label>
+  </div>
+</ForwardRef>
+`

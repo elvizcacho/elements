@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput renders 1`] = `
+.css-0,
+[data-css-0] {
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: #f3f5f7;
+}
+
+.css-1,
+[data-css-1] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-2,
+[data-css-2] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  padding-top: 0;
+  padding-right: 15px;
+  transition: padding-top .225s ease-out;
+  border: 0;
+  -webkit-transition: padding-top .225s ease-out;
+  -moz-transition: padding-top .225s ease-out;
+}
+
+.css-2:-webkit-autofill ~ .label,
+[data-css-2]:-webkit-autofill ~ .label {
+  opacity: 1 !important;
+  top: 8px !important;
+}
+
+.css-2:-webkit-autofill ~ .checkmark,
+[data-css-2]:-webkit-autofill ~ .checkmark {
+  opacity: 1 !important;
+  top: 8px;
+}
+
+.css-2:-webkit-autofill,
+[data-css-2]:-webkit-autofill {
+  padding-top: 10px !important;
+}
+
+.css-4,
+[data-css-4] {
+  position: absolute;
+  left: 15px;
+  font-size: 10px;
+  opacity: 0;
+  transition: all .225s ease-out;
+  -webkit-transition: all .225s ease-out;
+  -moz-transition: all .225s ease-out;
+}
+
+.css-5,
+[data-css-5] {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  pointer-events: none;
+  transition: opacity .225s;
+  opacity: 0;
+  -webkit-transition: opacity .225s;
+  -moz-transition: opacity .225s;
+}
+
+.css-6,
+[data-css-6] {
+  position: relative;
+}
+
+.css-7,
+[data-css-7] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-8,
+[data-css-8] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #626262;
+}
+
+.css-9,
+[data-css-9] {
+  width: 16px;
+  height: 16px;
+  fill: lightGrey;
+}
+
+<div
+  data-css-0=""
+  data-css-1=""
+>
+  <div
+    data-css-6=""
+    data-css-7=""
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  >
+    <input
+      aria-required={true}
+      data-css-2=""
+      name="email"
+      onChange={[Function]}
+      placeholder="E-Mail"
+      required={true}
+      type="email"
+    />
+    <div
+      className="label"
+      data-css-7=""
+      data-css-4=""
+      style={
+        Object {
+          "opacity": 0,
+          "top": 12,
+        }
+      }
+    >
+      <div
+        data-css-7=""
+        data-css-8=""
+      >
+        E-Mail
+         
+        *
+      </div>
+    </div>
+    <div
+      className="checkmark"
+      data-css-5=""
+      data-css-7=""
+    >
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "",
+          }
+        }
+        data-css-7=""
+        data-css-9=""
+      />
+    </div>
+  </div>
+</div>
+`

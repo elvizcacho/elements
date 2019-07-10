@@ -1,0 +1,4579 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[
+  `Test the typeahead component Test typeahead component with jsx labels should be a simple static one - in depth testing of the core behavior with JSX labels 1`
+] = `
+.css-0,
+[data-css-0] {
+  position: relative;
+}
+
+.css-1,
+[data-css-1] {
+  align-items: stretch;
+  background: transparent;
+  border: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+}
+
+.css-2,
+[data-css-2] {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #FFF;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+}
+
+.css-3,
+[data-css-3] {
+  width: 100%;
+}
+
+.css-4,
+[data-css-4] {
+  background: #fff;
+  border: none;
+  box-shadow: none;
+  color: #999;
+  opacity: 1;
+  height: 50px;
+}
+
+.css-5,
+[data-css-5] {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #000;
+  outline: none;
+  width: 100%;
+  height: 50px;
+}
+
+.css-6,
+[data-css-6] {
+  height: 100%;
+}
+
+.css-7,
+[data-css-7] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-8,
+[data-css-8] {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.css-9,
+[data-css-9] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  padding-top: 0;
+  padding-right: 15px;
+  transition: padding-top .225s ease-out;
+  border: 0;
+  -webkit-transition: padding-top .225s ease-out;
+  -moz-transition: padding-top .225s ease-out;
+}
+
+.css-9:-webkit-autofill ~ .label,
+[data-css-9]:-webkit-autofill ~ .label {
+  opacity: 1 !important;
+  top: 8px !important;
+}
+
+.css-9:-webkit-autofill ~ .checkmark,
+[data-css-9]:-webkit-autofill ~ .checkmark {
+  opacity: 1 !important;
+  top: 8px;
+}
+
+.css-9:-webkit-autofill,
+[data-css-9]:-webkit-autofill {
+  padding-top: 10px !important;
+}
+
+.css-11,
+[data-css-11] {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  pointer-events: none;
+  transition: opacity .225s;
+  opacity: 0;
+  -webkit-transition: opacity .225s;
+  -moz-transition: opacity .225s;
+}
+
+.css-12,
+[data-css-12] {
+  width: 16px;
+  height: 16px;
+  fill: lightGrey;
+}
+
+.css-13,
+[data-css-13] {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+.css-14,
+[data-css-14] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+<div
+  aria-expanded={false}
+  aria-haspopup="listbox"
+  aria-labelledby="downshift-19-label"
+  aria-owns={null}
+  data-css-1=""
+  role="combobox"
+>
+  <ForwardRef
+    data-css-2=""
+  >
+    <div
+      data-css-7=""
+      data-css-2=""
+    >
+      <ForwardRef
+        data-css-0=""
+        data-css-3=""
+      >
+        <div
+          data-css-0=""
+          data-css-7=""
+          data-css-3=""
+        >
+          <ForwardRef
+            data-css-3=""
+            data-css-8=""
+          >
+            <div
+              data-css-7=""
+              data-css-3=""
+              data-css-8=""
+            >
+              <ForwardRef
+                autoComplete="off"
+                data-css-4=""
+                hasRightIcon={false}
+                name="hint"
+                tabIndex={-1}
+                value=""
+              >
+                <ForwardRef
+                  data-css-0=""
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    data-css-0=""
+                    data-css-7=""
+                    style={
+                      Object {
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      aria-required={false}
+                      autoComplete="off"
+                      data-css-4=""
+                      data-css-9=""
+                      name="hint"
+                      onChange={[Function]}
+                      required={false}
+                      tabIndex={-1}
+                      type="text"
+                      value=""
+                    />
+                    <ForwardRef
+                      className="checkmark"
+                      data-css-11=""
+                    >
+                      <div
+                        className="checkmark"
+                        data-css-11=""
+                        data-css-7=""
+                      >
+                        <ForwardRef
+                          alignH="center"
+                          alignV="center"
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "",
+                            }
+                          }
+                          data-css-12=""
+                        >
+                          <div
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "",
+                              }
+                            }
+                            data-css-7=""
+                            data-css-12=""
+                          />
+                        </ForwardRef>
+                      </div>
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </ForwardRef>
+            </div>
+          </ForwardRef>
+          <ForwardRef
+            aria-activedescendant={null}
+            aria-autocomplete="list"
+            aria-controls={null}
+            aria-labelledby="downshift-19-label"
+            autoComplete="off"
+            data-css-5=""
+            hasRightIcon={false}
+            id="downshift-19-input"
+            name="typed"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Select Nick's Pokemon"
+            value=""
+          >
+            <ForwardRef
+              data-css-0=""
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                data-css-0=""
+                data-css-7=""
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
+              >
+                <input
+                  aria-activedescendant={null}
+                  aria-autocomplete="list"
+                  aria-controls={null}
+                  aria-labelledby="downshift-19-label"
+                  aria-required={false}
+                  autoComplete="off"
+                  data-css-5=""
+                  data-css-9=""
+                  id="downshift-19-input"
+                  name="typed"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Select Nick's Pokemon"
+                  required={false}
+                  type="text"
+                  value=""
+                />
+                <ForwardRef
+                  className="checkmark"
+                  data-css-11=""
+                >
+                  <div
+                    className="checkmark"
+                    data-css-11=""
+                    data-css-7=""
+                  >
+                    <ForwardRef
+                      alignH="center"
+                      alignV="center"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "",
+                        }
+                      }
+                      data-css-12=""
+                    >
+                      <div
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "",
+                          }
+                        }
+                        data-css-7=""
+                        data-css-12=""
+                      />
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+          </ForwardRef>
+          <ForwardRef
+            alignV="center"
+            data-css-13=""
+            data-css-6=""
+            direction="row"
+          >
+            <div
+              data-css-13=""
+              data-css-14=""
+              data-css-6=""
+            />
+          </ForwardRef>
+        </div>
+      </ForwardRef>
+    </div>
+  </ForwardRef>
+  <ForwardRef
+    data-css-0=""
+  >
+    <div
+      data-css-0=""
+      data-css-7=""
+    />
+  </ForwardRef>
+</div>
+`
+
+exports[
+  `Test the typeahead component should be a simple static one - in depth testing of the core behavior 1`
+] = `
+.css-0,
+[data-css-0] {
+  position: relative;
+}
+
+.css-1,
+[data-css-1] {
+  align-items: stretch;
+  background: transparent;
+  border: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+}
+
+.css-2,
+[data-css-2] {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #FFF;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+}
+
+.css-3,
+[data-css-3] {
+  width: 100%;
+}
+
+.css-4,
+[data-css-4] {
+  background: #fff;
+  border: none;
+  box-shadow: none;
+  color: #999;
+  opacity: 1;
+  height: 50px;
+}
+
+.css-5,
+[data-css-5] {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #000;
+  outline: none;
+  width: 100%;
+  height: 50px;
+}
+
+.css-6,
+[data-css-6] {
+  height: 100%;
+}
+
+.css-7,
+[data-css-7] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-8,
+[data-css-8] {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.css-9,
+[data-css-9] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  padding-top: 0;
+  padding-right: 15px;
+  transition: padding-top .225s ease-out;
+  border: 0;
+  -webkit-transition: padding-top .225s ease-out;
+  -moz-transition: padding-top .225s ease-out;
+}
+
+.css-9:-webkit-autofill ~ .label,
+[data-css-9]:-webkit-autofill ~ .label {
+  opacity: 1 !important;
+  top: 8px !important;
+}
+
+.css-9:-webkit-autofill ~ .checkmark,
+[data-css-9]:-webkit-autofill ~ .checkmark {
+  opacity: 1 !important;
+  top: 8px;
+}
+
+.css-9:-webkit-autofill,
+[data-css-9]:-webkit-autofill {
+  padding-top: 10px !important;
+}
+
+.css-11,
+[data-css-11] {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  pointer-events: none;
+  transition: opacity .225s;
+  opacity: 0;
+  -webkit-transition: opacity .225s;
+  -moz-transition: opacity .225s;
+}
+
+.css-12,
+[data-css-12] {
+  width: 16px;
+  height: 16px;
+  fill: lightGrey;
+}
+
+.css-13,
+[data-css-13] {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+.css-14,
+[data-css-14] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+<div
+  aria-expanded={false}
+  aria-haspopup="listbox"
+  aria-labelledby="downshift-0-label"
+  aria-owns={null}
+  data-css-1=""
+  role="combobox"
+>
+  <ForwardRef
+    data-css-2=""
+  >
+    <div
+      data-css-7=""
+      data-css-2=""
+    >
+      <ForwardRef
+        data-css-0=""
+        data-css-3=""
+      >
+        <div
+          data-css-0=""
+          data-css-7=""
+          data-css-3=""
+        >
+          <ForwardRef
+            data-css-3=""
+            data-css-8=""
+          >
+            <div
+              data-css-7=""
+              data-css-3=""
+              data-css-8=""
+            >
+              <ForwardRef
+                autoComplete="off"
+                data-css-4=""
+                hasRightIcon={false}
+                name="hint"
+                tabIndex={-1}
+                value=""
+              >
+                <ForwardRef
+                  data-css-0=""
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    data-css-0=""
+                    data-css-7=""
+                    style={
+                      Object {
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      aria-required={false}
+                      autoComplete="off"
+                      data-css-4=""
+                      data-css-9=""
+                      name="hint"
+                      onChange={[Function]}
+                      required={false}
+                      tabIndex={-1}
+                      type="text"
+                      value=""
+                    />
+                    <ForwardRef
+                      className="checkmark"
+                      data-css-11=""
+                    >
+                      <div
+                        className="checkmark"
+                        data-css-11=""
+                        data-css-7=""
+                      >
+                        <ForwardRef
+                          alignH="center"
+                          alignV="center"
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "",
+                            }
+                          }
+                          data-css-12=""
+                        >
+                          <div
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "",
+                              }
+                            }
+                            data-css-7=""
+                            data-css-12=""
+                          />
+                        </ForwardRef>
+                      </div>
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </ForwardRef>
+            </div>
+          </ForwardRef>
+          <ForwardRef
+            aria-activedescendant={null}
+            aria-autocomplete="list"
+            aria-controls={null}
+            aria-labelledby="downshift-0-label"
+            autoComplete="off"
+            data-css-5=""
+            hasRightIcon={false}
+            id="downshift-0-input"
+            name="typed"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Select Nick's Pokemon"
+            value=""
+          >
+            <ForwardRef
+              data-css-0=""
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                data-css-0=""
+                data-css-7=""
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
+              >
+                <input
+                  aria-activedescendant={null}
+                  aria-autocomplete="list"
+                  aria-controls={null}
+                  aria-labelledby="downshift-0-label"
+                  aria-required={false}
+                  autoComplete="off"
+                  data-css-5=""
+                  data-css-9=""
+                  id="downshift-0-input"
+                  name="typed"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Select Nick's Pokemon"
+                  required={false}
+                  type="text"
+                  value=""
+                />
+                <ForwardRef
+                  className="checkmark"
+                  data-css-11=""
+                >
+                  <div
+                    className="checkmark"
+                    data-css-11=""
+                    data-css-7=""
+                  >
+                    <ForwardRef
+                      alignH="center"
+                      alignV="center"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "",
+                        }
+                      }
+                      data-css-12=""
+                    >
+                      <div
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "",
+                          }
+                        }
+                        data-css-7=""
+                        data-css-12=""
+                      />
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+          </ForwardRef>
+          <ForwardRef
+            alignV="center"
+            data-css-13=""
+            data-css-6=""
+            direction="row"
+          >
+            <div
+              data-css-13=""
+              data-css-14=""
+              data-css-6=""
+            />
+          </ForwardRef>
+        </div>
+      </ForwardRef>
+    </div>
+  </ForwardRef>
+  <ForwardRef
+    data-css-0=""
+  >
+    <div
+      data-css-0=""
+      data-css-7=""
+    />
+  </ForwardRef>
+</div>
+`
+
+exports[
+  `Test the typeahead component should be a simple static one which auto open on click 1`
+] = `
+.css-0,
+[data-css-0] {
+  position: relative;
+}
+
+.css-1,
+[data-css-1] {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #FFF;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+}
+
+.css-2,
+[data-css-2] {
+  width: 100%;
+}
+
+.css-3,
+[data-css-3] {
+  background: #fff;
+  border: none;
+  box-shadow: none;
+  color: #999;
+  opacity: 1;
+  height: 50px;
+}
+
+.css-4,
+[data-css-4] {
+  height: 100%;
+}
+
+.css-5,
+[data-css-5] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-6,
+[data-css-6] {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.css-7,
+[data-css-7] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  padding-top: 0;
+  padding-right: 15px;
+  transition: padding-top .225s ease-out;
+  border: 0;
+  -webkit-transition: padding-top .225s ease-out;
+  -moz-transition: padding-top .225s ease-out;
+}
+
+.css-7:-webkit-autofill ~ .label,
+[data-css-7]:-webkit-autofill ~ .label {
+  opacity: 1 !important;
+  top: 8px !important;
+}
+
+.css-7:-webkit-autofill ~ .checkmark,
+[data-css-7]:-webkit-autofill ~ .checkmark {
+  opacity: 1 !important;
+  top: 8px;
+}
+
+.css-7:-webkit-autofill,
+[data-css-7]:-webkit-autofill {
+  padding-top: 10px !important;
+}
+
+.css-9,
+[data-css-9] {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  pointer-events: none;
+  transition: opacity .225s;
+  opacity: 0;
+  -webkit-transition: opacity .225s;
+  -moz-transition: opacity .225s;
+}
+
+.css-10,
+[data-css-10] {
+  width: 16px;
+  height: 16px;
+  fill: lightGrey;
+}
+
+.css-11,
+[data-css-11] {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+.css-12,
+[data-css-12] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-13,
+[data-css-13] {
+  align-items: stretch;
+  background: transparent;
+  border: none;
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+}
+
+.css-14,
+[data-css-14] {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #bec3c7;
+  box-shadow: none;
+  color: #000;
+  outline: none;
+  width: 100%;
+  height: 50px;
+}
+
+.css-15,
+[data-css-15] {
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+}
+
+.css-16,
+[data-css-16] {
+  box-sizing: border-box;
+  align-content: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-17,
+[data-css-17] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  cursor: pointer;
+  background-color: white;
+}
+
+.css-18,
+[data-css-18] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  cursor: pointer;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-19,
+[data-css-19] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
+}
+
+.css-20,
+[data-css-20] {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+
+<div
+  aria-expanded={true}
+  aria-haspopup="listbox"
+  aria-labelledby="downshift-1-label"
+  aria-owns="downshift-1-menu"
+  data-css-13=""
+  role="combobox"
+>
+  <ForwardRef
+    data-css-1=""
+  >
+    <div
+      data-css-5=""
+      data-css-1=""
+    >
+      <ForwardRef
+        data-css-0=""
+        data-css-2=""
+      >
+        <div
+          data-css-0=""
+          data-css-5=""
+          data-css-2=""
+        >
+          <ForwardRef
+            data-css-2=""
+            data-css-6=""
+          >
+            <div
+              data-css-5=""
+              data-css-2=""
+              data-css-6=""
+            >
+              <ForwardRef
+                autoComplete="off"
+                data-css-3=""
+                hasRightIcon={false}
+                name="hint"
+                tabIndex={-1}
+                value=""
+              >
+                <ForwardRef
+                  data-css-0=""
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    data-css-0=""
+                    data-css-5=""
+                    style={
+                      Object {
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      aria-required={false}
+                      autoComplete="off"
+                      data-css-3=""
+                      data-css-7=""
+                      name="hint"
+                      onChange={[Function]}
+                      required={false}
+                      tabIndex={-1}
+                      type="text"
+                      value=""
+                    />
+                    <ForwardRef
+                      className="checkmark"
+                      data-css-9=""
+                    >
+                      <div
+                        className="checkmark"
+                        data-css-9=""
+                        data-css-5=""
+                      >
+                        <ForwardRef
+                          alignH="center"
+                          alignV="center"
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "",
+                            }
+                          }
+                          data-css-10=""
+                        >
+                          <div
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "",
+                              }
+                            }
+                            data-css-5=""
+                            data-css-10=""
+                          />
+                        </ForwardRef>
+                      </div>
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </ForwardRef>
+            </div>
+          </ForwardRef>
+          <ForwardRef
+            aria-activedescendant="downshift-1-item-0"
+            aria-autocomplete="list"
+            aria-controls="downshift-1-menu"
+            aria-labelledby="downshift-1-label"
+            autoComplete="off"
+            data-css-14=""
+            hasRightIcon={false}
+            id="downshift-1-input"
+            name="typed"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Select Nick's Pokemon"
+            value=""
+          >
+            <ForwardRef
+              data-css-0=""
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                data-css-0=""
+                data-css-5=""
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
+              >
+                <input
+                  aria-activedescendant="downshift-1-item-0"
+                  aria-autocomplete="list"
+                  aria-controls="downshift-1-menu"
+                  aria-labelledby="downshift-1-label"
+                  aria-required={false}
+                  autoComplete="off"
+                  data-css-7=""
+                  data-css-14=""
+                  id="downshift-1-input"
+                  name="typed"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Select Nick's Pokemon"
+                  required={false}
+                  type="text"
+                  value=""
+                />
+                <ForwardRef
+                  className="checkmark"
+                  data-css-9=""
+                >
+                  <div
+                    className="checkmark"
+                    data-css-9=""
+                    data-css-5=""
+                  >
+                    <ForwardRef
+                      alignH="center"
+                      alignV="center"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "",
+                        }
+                      }
+                      data-css-10=""
+                    >
+                      <div
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "",
+                          }
+                        }
+                        data-css-5=""
+                        data-css-10=""
+                      />
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+          </ForwardRef>
+          <ForwardRef
+            alignV="center"
+            data-css-11=""
+            data-css-4=""
+            direction="row"
+          >
+            <div
+              data-css-11=""
+              data-css-12=""
+              data-css-4=""
+            />
+          </ForwardRef>
+        </div>
+      </ForwardRef>
+    </div>
+  </ForwardRef>
+  <ForwardRef
+    data-css-0=""
+  >
+    <div
+      data-css-0=""
+      data-css-5=""
+    >
+      <ForwardRef
+        aria-labelledby="downshift-1-label"
+        data-css-15=""
+        direction="column"
+        id="downshift-1-menu"
+        onScroll={[Function]}
+        role="listbox"
+      >
+        <ForwardRef
+          aria-labelledby="downshift-1-label"
+          data-css-15=""
+          direction="column"
+          id="downshift-1-menu"
+          onScroll={[Function]}
+          role="listbox"
+        >
+          <div
+            aria-labelledby="downshift-1-label"
+            data-css-15=""
+            data-css-16=""
+            id="downshift-1-menu"
+            onScroll={[Function]}
+            role="listbox"
+          >
+            <ForwardRef
+              alignV="center"
+              aria-selected={true}
+              data-css-17=""
+              direction="row"
+              id="downshift-1-item-0"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#f9fafb",
+                }
+              }
+            >
+              <div
+                aria-selected={true}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-0"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#f9fafb",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-19=""
+                >
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Abomasnow
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-17=""
+              direction="row"
+              id="downshift-1-item-1"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-1"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-19=""
+                >
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Abra
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-17=""
+              direction="row"
+              id="downshift-1-item-2"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-2"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-19=""
+                >
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Absol
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-17=""
+              direction="row"
+              id="downshift-1-item-3"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-3"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-19=""
+                >
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Accelgor
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-17=""
+              direction="row"
+              id="downshift-1-item-4"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-4"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-19=""
+                >
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Aegislash
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-17=""
+              direction="row"
+              id="downshift-1-item-5"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-5"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-19=""
+                >
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Aerodactyl
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-17=""
+              direction="row"
+              id="downshift-1-item-6"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-6"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-19=""
+                >
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Aggron
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-17=""
+              direction="row"
+              id="downshift-1-item-7"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-7"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-19=""
+                >
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Aipom
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-17=""
+              direction="row"
+              id="downshift-1-item-8"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-8"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-19=""
+                >
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Alakazam
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-17=""
+              direction="row"
+              id="downshift-1-item-9"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-1-item-9"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-19=""
+                >
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Alomomola
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              data-css-20=""
+            >
+              <div
+                data-css-5=""
+                data-css-20=""
+              />
+            </ForwardRef>
+          </div>
+        </ForwardRef>
+      </ForwardRef>
+    </div>
+  </ForwardRef>
+</div>
+`
+
+exports[
+  `Test the typeahead component should render differently when loading 1`
+] = `
+.css-0,
+[data-css-0] {
+  position: relative;
+}
+
+.css-1,
+[data-css-1] {
+  align-items: stretch;
+  background: transparent;
+  border: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+}
+
+.css-2,
+[data-css-2] {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #FFF;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+}
+
+.css-3,
+[data-css-3] {
+  width: 100%;
+}
+
+.css-4,
+[data-css-4] {
+  background: #fff;
+  border: none;
+  box-shadow: none;
+  color: #999;
+  opacity: 1;
+  height: 50px;
+}
+
+.css-5,
+[data-css-5] {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #000;
+  outline: none;
+  width: 100%;
+  height: 50px;
+}
+
+.css-6,
+[data-css-6] {
+  height: 100%;
+}
+
+.css-7,
+[data-css-7] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-8,
+[data-css-8] {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.css-9,
+[data-css-9] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  padding-top: 0;
+  padding-right: 15px;
+  transition: padding-top .225s ease-out;
+  border: 0;
+  -webkit-transition: padding-top .225s ease-out;
+  -moz-transition: padding-top .225s ease-out;
+}
+
+.css-9:-webkit-autofill ~ .label,
+[data-css-9]:-webkit-autofill ~ .label {
+  opacity: 1 !important;
+  top: 8px !important;
+}
+
+.css-9:-webkit-autofill ~ .checkmark,
+[data-css-9]:-webkit-autofill ~ .checkmark {
+  opacity: 1 !important;
+  top: 8px;
+}
+
+.css-9:-webkit-autofill,
+[data-css-9]:-webkit-autofill {
+  padding-top: 10px !important;
+}
+
+.css-11,
+[data-css-11] {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  pointer-events: none;
+  transition: opacity .225s;
+  opacity: 0;
+  -webkit-transition: opacity .225s;
+  -moz-transition: opacity .225s;
+}
+
+.css-12,
+[data-css-12] {
+  width: 16px;
+  height: 16px;
+  fill: lightGrey;
+}
+
+.css-13,
+[data-css-13] {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+.css-14,
+[data-css-14] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+<div
+  aria-expanded={false}
+  aria-haspopup="listbox"
+  aria-labelledby="downshift-7-label"
+  aria-owns={null}
+  data-css-1=""
+  role="combobox"
+>
+  <ForwardRef
+    data-css-2=""
+  >
+    <div
+      data-css-7=""
+      data-css-2=""
+    >
+      <ForwardRef
+        data-css-0=""
+        data-css-3=""
+      >
+        <div
+          data-css-0=""
+          data-css-7=""
+          data-css-3=""
+        >
+          <ForwardRef
+            data-css-3=""
+            data-css-8=""
+          >
+            <div
+              data-css-7=""
+              data-css-3=""
+              data-css-8=""
+            >
+              <ForwardRef
+                autoComplete="off"
+                data-css-4=""
+                hasRightIcon={false}
+                name="hint"
+                tabIndex={-1}
+                value=""
+              >
+                <ForwardRef
+                  data-css-0=""
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    data-css-0=""
+                    data-css-7=""
+                    style={
+                      Object {
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      aria-required={false}
+                      autoComplete="off"
+                      data-css-4=""
+                      data-css-9=""
+                      name="hint"
+                      onChange={[Function]}
+                      required={false}
+                      tabIndex={-1}
+                      type="text"
+                      value=""
+                    />
+                    <ForwardRef
+                      className="checkmark"
+                      data-css-11=""
+                    >
+                      <div
+                        className="checkmark"
+                        data-css-11=""
+                        data-css-7=""
+                      >
+                        <ForwardRef
+                          alignH="center"
+                          alignV="center"
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "",
+                            }
+                          }
+                          data-css-12=""
+                        >
+                          <div
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "",
+                              }
+                            }
+                            data-css-7=""
+                            data-css-12=""
+                          />
+                        </ForwardRef>
+                      </div>
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </ForwardRef>
+            </div>
+          </ForwardRef>
+          <ForwardRef
+            aria-activedescendant={null}
+            aria-autocomplete="list"
+            aria-controls={null}
+            aria-labelledby="downshift-7-label"
+            autoComplete="off"
+            data-css-5=""
+            hasRightIcon={false}
+            id="downshift-7-input"
+            name="typed"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Select Nick's Pokemon"
+            value=""
+          >
+            <ForwardRef
+              data-css-0=""
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                data-css-0=""
+                data-css-7=""
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
+              >
+                <input
+                  aria-activedescendant={null}
+                  aria-autocomplete="list"
+                  aria-controls={null}
+                  aria-labelledby="downshift-7-label"
+                  aria-required={false}
+                  autoComplete="off"
+                  data-css-5=""
+                  data-css-9=""
+                  id="downshift-7-input"
+                  name="typed"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Select Nick's Pokemon"
+                  required={false}
+                  type="text"
+                  value=""
+                />
+                <ForwardRef
+                  className="checkmark"
+                  data-css-11=""
+                >
+                  <div
+                    className="checkmark"
+                    data-css-11=""
+                    data-css-7=""
+                  >
+                    <ForwardRef
+                      alignH="center"
+                      alignV="center"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "",
+                        }
+                      }
+                      data-css-12=""
+                    >
+                      <div
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "",
+                          }
+                        }
+                        data-css-7=""
+                        data-css-12=""
+                      />
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+          </ForwardRef>
+          <ForwardRef
+            alignV="center"
+            data-css-13=""
+            data-css-6=""
+            direction="row"
+          >
+            <div
+              data-css-13=""
+              data-css-14=""
+              data-css-6=""
+            />
+          </ForwardRef>
+        </div>
+      </ForwardRef>
+    </div>
+  </ForwardRef>
+  <ForwardRef
+    data-css-0=""
+  >
+    <div
+      data-css-0=""
+      data-css-7=""
+    />
+  </ForwardRef>
+</div>
+`
+
+exports[
+  `Test the typeahead component should render differently when loading 2`
+] = `
+.css-0,
+[data-css-0] {
+  position: relative;
+}
+
+.css-1,
+[data-css-1] {
+  align-items: stretch;
+  background: transparent;
+  border: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+}
+
+.css-2,
+[data-css-2] {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #FFF;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+}
+
+.css-3,
+[data-css-3] {
+  width: 100%;
+}
+
+.css-4,
+[data-css-4] {
+  background: #fff;
+  border: none;
+  box-shadow: none;
+  color: #999;
+  opacity: 1;
+  height: 50px;
+}
+
+.css-5,
+[data-css-5] {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #000;
+  outline: none;
+  width: 100%;
+  height: 50px;
+}
+
+.css-6,
+[data-css-6] {
+  height: 100%;
+}
+
+.css-7,
+[data-css-7] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-8,
+[data-css-8] {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.css-9,
+[data-css-9] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  padding-top: 0;
+  padding-right: 15px;
+  transition: padding-top .225s ease-out;
+  border: 0;
+  -webkit-transition: padding-top .225s ease-out;
+  -moz-transition: padding-top .225s ease-out;
+}
+
+.css-9:-webkit-autofill ~ .label,
+[data-css-9]:-webkit-autofill ~ .label {
+  opacity: 1 !important;
+  top: 8px !important;
+}
+
+.css-9:-webkit-autofill ~ .checkmark,
+[data-css-9]:-webkit-autofill ~ .checkmark {
+  opacity: 1 !important;
+  top: 8px;
+}
+
+.css-9:-webkit-autofill,
+[data-css-9]:-webkit-autofill {
+  padding-top: 10px !important;
+}
+
+.css-11,
+[data-css-11] {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  pointer-events: none;
+  transition: opacity .225s;
+  opacity: 0;
+  -webkit-transition: opacity .225s;
+  -moz-transition: opacity .225s;
+}
+
+.css-12,
+[data-css-12] {
+  width: 16px;
+  height: 16px;
+  fill: lightGrey;
+}
+
+.css-13,
+[data-css-13] {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+.css-14,
+[data-css-14] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+<div
+  aria-expanded={false}
+  aria-haspopup="listbox"
+  aria-labelledby="downshift-7-label"
+  aria-owns={null}
+  data-css-1=""
+  role="combobox"
+>
+  <ForwardRef
+    data-css-2=""
+  >
+    <div
+      data-css-7=""
+      data-css-2=""
+    >
+      <ForwardRef
+        data-css-0=""
+        data-css-3=""
+      >
+        <div
+          data-css-0=""
+          data-css-7=""
+          data-css-3=""
+        >
+          <ForwardRef
+            data-css-3=""
+            data-css-8=""
+          >
+            <div
+              data-css-7=""
+              data-css-3=""
+              data-css-8=""
+            >
+              <ForwardRef
+                autoComplete="off"
+                data-css-4=""
+                hasRightIcon={false}
+                name="hint"
+                tabIndex={-1}
+                value=""
+              >
+                <ForwardRef
+                  data-css-0=""
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    data-css-0=""
+                    data-css-7=""
+                    style={
+                      Object {
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      aria-required={false}
+                      autoComplete="off"
+                      data-css-4=""
+                      data-css-9=""
+                      name="hint"
+                      onChange={[Function]}
+                      required={false}
+                      tabIndex={-1}
+                      type="text"
+                      value=""
+                    />
+                    <ForwardRef
+                      className="checkmark"
+                      data-css-11=""
+                    >
+                      <div
+                        className="checkmark"
+                        data-css-11=""
+                        data-css-7=""
+                      >
+                        <ForwardRef
+                          alignH="center"
+                          alignV="center"
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "",
+                            }
+                          }
+                          data-css-12=""
+                        >
+                          <div
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "",
+                              }
+                            }
+                            data-css-7=""
+                            data-css-12=""
+                          />
+                        </ForwardRef>
+                      </div>
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </ForwardRef>
+            </div>
+          </ForwardRef>
+          <ForwardRef
+            aria-activedescendant={null}
+            aria-autocomplete="list"
+            aria-controls={null}
+            aria-labelledby="downshift-7-label"
+            autoComplete="off"
+            data-css-5=""
+            hasRightIcon={false}
+            id="downshift-7-input"
+            name="typed"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Select Nick's Pokemon"
+            value=""
+          >
+            <ForwardRef
+              data-css-0=""
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                data-css-0=""
+                data-css-7=""
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
+              >
+                <input
+                  aria-activedescendant={null}
+                  aria-autocomplete="list"
+                  aria-controls={null}
+                  aria-labelledby="downshift-7-label"
+                  aria-required={false}
+                  autoComplete="off"
+                  data-css-5=""
+                  data-css-9=""
+                  id="downshift-7-input"
+                  name="typed"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Select Nick's Pokemon"
+                  required={false}
+                  type="text"
+                  value=""
+                />
+                <ForwardRef
+                  className="checkmark"
+                  data-css-11=""
+                >
+                  <div
+                    className="checkmark"
+                    data-css-11=""
+                    data-css-7=""
+                  >
+                    <ForwardRef
+                      alignH="center"
+                      alignV="center"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "",
+                        }
+                      }
+                      data-css-12=""
+                    >
+                      <div
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "",
+                          }
+                        }
+                        data-css-7=""
+                        data-css-12=""
+                      />
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+          </ForwardRef>
+          <ForwardRef
+            alignV="center"
+            data-css-13=""
+            data-css-6=""
+            direction="row"
+          >
+            <div
+              data-css-13=""
+              data-css-14=""
+              data-css-6=""
+            >
+              <svg
+                height={16}
+                preserveAspectRatio="xMidYMid"
+                viewBox="0 0 100 100"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  fill="none"
+                  height="100"
+                  width="100"
+                  x="0"
+                  y="0"
+                />
+                <circle
+                  cx="50"
+                  cy="50"
+                  fill="none"
+                  r="40"
+                  stroke="#ffffff"
+                  strokeLinecap="round"
+                  strokeWidth="10"
+                />
+                <circle
+                  cx="50"
+                  cy="50"
+                  fill="none"
+                  r="40"
+                  stroke="#3598db"
+                  strokeLinecap="round"
+                  strokeWidth="8"
+                >
+                  <animate
+                    attributeName="stroke-dashoffset"
+                    dur="2s"
+                    from="0"
+                    repeatCount="indefinite"
+                    to="502"
+                  />
+                  <animate
+                    attributeName="stroke-dasharray"
+                    dur="2s"
+                    repeatCount="indefinite"
+                    values="125.5 125.5;1 250;125.5 125.5"
+                  />
+                </circle>
+              </svg>
+            </div>
+          </ForwardRef>
+        </div>
+      </ForwardRef>
+    </div>
+  </ForwardRef>
+  <ForwardRef
+    data-css-0=""
+  >
+    <div
+      data-css-0=""
+      data-css-7=""
+    />
+  </ForwardRef>
+</div>
+`
+
+exports[
+  `Test the typeahead component should use the defaultValue property (uncontrolled component) 1`
+] = `
+.css-0,
+[data-css-0] {
+  position: relative;
+}
+
+.css-1,
+[data-css-1] {
+  align-items: stretch;
+  background: transparent;
+  border: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+}
+
+.css-2,
+[data-css-2] {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #FFF;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+}
+
+.css-3,
+[data-css-3] {
+  width: 100%;
+}
+
+.css-4,
+[data-css-4] {
+  background: #fff;
+  border: none;
+  box-shadow: none;
+  color: #999;
+  opacity: 1;
+  height: 50px;
+}
+
+.css-5,
+[data-css-5] {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #000;
+  outline: none;
+  width: 100%;
+  height: 50px;
+}
+
+.css-6,
+[data-css-6] {
+  height: 100%;
+}
+
+.css-7,
+[data-css-7] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-8,
+[data-css-8] {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.css-9,
+[data-css-9] {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  pointer-events: none;
+  transition: opacity .225s;
+  opacity: 0;
+  -webkit-transition: opacity .225s;
+  -moz-transition: opacity .225s;
+}
+
+.css-10,
+[data-css-10] {
+  width: 16px;
+  height: 16px;
+  fill: lightGrey;
+}
+
+.css-11,
+[data-css-11] {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+.css-12,
+[data-css-12] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-13,
+[data-css-13] {
+  width: 100%;
+}
+
+.css-13:after,
+[data-css-13]:after {
+  background: -webkit-linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(192,192,192,0) 52%,rgba(244,244,244,0) 66%,rgba(255,255,255,0.6) 81%,rgba(255,255,255,1) 88%,rgba(255,255,255,1) 100%);
+  background: -moz-linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(192,192,192,0) 52%,rgba(244,244,244,0) 66%,rgba(255,255,255,0.6) 81%,rgba(255,255,255,1) 88%,rgba(255,255,255,1) 100%);
+  background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(192,192,192,0) 52%,rgba(244,244,244,0) 66%,rgba(255,255,255,0.6) 81%,rgba(255,255,255,1) 88%,rgba(255,255,255,1) 100%);
+  bottom: 0;
+  content: '';
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+}
+
+.css-15,
+[data-css-15] {
+  cursor: pointer;
+  margin: -10px;
+  padding: 10px;
+  transform: translateY(-3px);
+  z-index: 1;
+  -webkit-transform: translateY(-3px);
+}
+
+.css-16,
+[data-css-16] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  padding-top: 0;
+  padding-right: 50px;
+  transition: padding-top .225s ease-out;
+  border: 0;
+  -webkit-transition: padding-top .225s ease-out;
+  -moz-transition: padding-top .225s ease-out;
+}
+
+.css-16:-webkit-autofill ~ .label,
+[data-css-16]:-webkit-autofill ~ .label {
+  opacity: 1 !important;
+  top: 8px !important;
+}
+
+.css-16:-webkit-autofill ~ .checkmark,
+[data-css-16]:-webkit-autofill ~ .checkmark {
+  opacity: 1 !important;
+  top: 8px;
+}
+
+.css-16:-webkit-autofill,
+[data-css-16]:-webkit-autofill {
+  padding-top: 10px !important;
+}
+
+.css-18,
+[data-css-18] {
+  width: 10px;
+  height: 10px;
+  fill: black;
+}
+
+<div
+  aria-expanded={false}
+  aria-haspopup="listbox"
+  aria-labelledby="downshift-5-label"
+  aria-owns={null}
+  data-css-1=""
+  role="combobox"
+>
+  <ForwardRef
+    data-css-2=""
+  >
+    <div
+      data-css-7=""
+      data-css-2=""
+    >
+      <ForwardRef
+        data-css-0=""
+        data-css-13=""
+      >
+        <div
+          data-css-0=""
+          data-css-13=""
+          data-css-7=""
+        >
+          <ForwardRef
+            data-css-3=""
+            data-css-8=""
+          >
+            <div
+              data-css-7=""
+              data-css-3=""
+              data-css-8=""
+            >
+              <ForwardRef
+                autoComplete="off"
+                data-css-4=""
+                hasRightIcon={true}
+                name="hint"
+                tabIndex={-1}
+                value="Abomasnow"
+              >
+                <ForwardRef
+                  data-css-0=""
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    data-css-0=""
+                    data-css-7=""
+                    style={
+                      Object {
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      aria-required={false}
+                      autoComplete="off"
+                      data-css-4=""
+                      data-css-16=""
+                      name="hint"
+                      onChange={[Function]}
+                      required={false}
+                      tabIndex={-1}
+                      type="text"
+                      value="Abomasnow"
+                    />
+                    <ForwardRef
+                      className="checkmark"
+                      data-css-9=""
+                    >
+                      <div
+                        className="checkmark"
+                        data-css-9=""
+                        data-css-7=""
+                      >
+                        <ForwardRef
+                          alignH="center"
+                          alignV="center"
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "",
+                            }
+                          }
+                          data-css-10=""
+                        >
+                          <div
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "",
+                              }
+                            }
+                            data-css-7=""
+                            data-css-10=""
+                          />
+                        </ForwardRef>
+                      </div>
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </ForwardRef>
+            </div>
+          </ForwardRef>
+          <ForwardRef
+            aria-activedescendant={null}
+            aria-autocomplete="list"
+            aria-controls={null}
+            aria-labelledby="downshift-5-label"
+            autoComplete="off"
+            data-css-5=""
+            hasRightIcon={true}
+            id="downshift-5-input"
+            name="typed"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Select Nick's Pokemon"
+            value="Abomasnow"
+          >
+            <ForwardRef
+              data-css-0=""
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                data-css-0=""
+                data-css-7=""
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
+              >
+                <input
+                  aria-activedescendant={null}
+                  aria-autocomplete="list"
+                  aria-controls={null}
+                  aria-labelledby="downshift-5-label"
+                  aria-required={false}
+                  autoComplete="off"
+                  data-css-5=""
+                  data-css-16=""
+                  id="downshift-5-input"
+                  name="typed"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Select Nick's Pokemon"
+                  required={false}
+                  type="text"
+                  value="Abomasnow"
+                />
+                <ForwardRef
+                  className="checkmark"
+                  data-css-9=""
+                >
+                  <div
+                    className="checkmark"
+                    data-css-9=""
+                    data-css-7=""
+                  >
+                    <ForwardRef
+                      alignH="center"
+                      alignV="center"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "",
+                        }
+                      }
+                      data-css-10=""
+                    >
+                      <div
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "",
+                          }
+                        }
+                        data-css-7=""
+                        data-css-10=""
+                      />
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+          </ForwardRef>
+          <ForwardRef
+            alignV="center"
+            data-css-11=""
+            data-css-6=""
+            direction="row"
+          >
+            <div
+              data-css-11=""
+              data-css-12=""
+              data-css-6=""
+            >
+              <ForwardRef
+                data-css-15=""
+                onClick={[Function]}
+              >
+                <div
+                  data-css-7=""
+                  data-css-15=""
+                  onClick={[Function]}
+                >
+                  <ForwardRef
+                    alignH="center"
+                    alignV="center"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "",
+                      }
+                    }
+                    data-css-18=""
+                  >
+                    <div
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "",
+                        }
+                      }
+                      data-css-7=""
+                      data-css-18=""
+                    />
+                  </ForwardRef>
+                </div>
+              </ForwardRef>
+            </div>
+          </ForwardRef>
+        </div>
+      </ForwardRef>
+    </div>
+  </ForwardRef>
+  <ForwardRef
+    data-css-0=""
+  >
+    <div
+      data-css-0=""
+      data-css-7=""
+    />
+  </ForwardRef>
+</div>
+`
+
+exports[`Test the typeahead component should use the limit property 1`] = `
+.css-0,
+[data-css-0] {
+  position: relative;
+}
+
+.css-1,
+[data-css-1] {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #FFF;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+}
+
+.css-2,
+[data-css-2] {
+  width: 100%;
+}
+
+.css-3,
+[data-css-3] {
+  background: #fff;
+  border: none;
+  box-shadow: none;
+  color: #999;
+  opacity: 1;
+  height: 50px;
+}
+
+.css-4,
+[data-css-4] {
+  height: 100%;
+}
+
+.css-5,
+[data-css-5] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-6,
+[data-css-6] {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.css-7,
+[data-css-7] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  padding-top: 0;
+  padding-right: 15px;
+  transition: padding-top .225s ease-out;
+  border: 0;
+  -webkit-transition: padding-top .225s ease-out;
+  -moz-transition: padding-top .225s ease-out;
+}
+
+.css-7:-webkit-autofill ~ .label,
+[data-css-7]:-webkit-autofill ~ .label {
+  opacity: 1 !important;
+  top: 8px !important;
+}
+
+.css-7:-webkit-autofill ~ .checkmark,
+[data-css-7]:-webkit-autofill ~ .checkmark {
+  opacity: 1 !important;
+  top: 8px;
+}
+
+.css-7:-webkit-autofill,
+[data-css-7]:-webkit-autofill {
+  padding-top: 10px !important;
+}
+
+.css-9,
+[data-css-9] {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  pointer-events: none;
+  transition: opacity .225s;
+  opacity: 0;
+  -webkit-transition: opacity .225s;
+  -moz-transition: opacity .225s;
+}
+
+.css-10,
+[data-css-10] {
+  width: 16px;
+  height: 16px;
+  fill: lightGrey;
+}
+
+.css-11,
+[data-css-11] {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+.css-12,
+[data-css-12] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-13,
+[data-css-13] {
+  align-items: stretch;
+  background: transparent;
+  border: none;
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+}
+
+.css-14,
+[data-css-14] {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #bec3c7;
+  box-shadow: none;
+  color: #000;
+  outline: none;
+  width: 100%;
+  height: 50px;
+}
+
+.css-15,
+[data-css-15] {
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+}
+
+.css-16,
+[data-css-16] {
+  box-sizing: border-box;
+  align-content: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-17,
+[data-css-17] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  cursor: pointer;
+  background-color: white;
+}
+
+.css-18,
+[data-css-18] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  cursor: pointer;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-19,
+[data-css-19] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
+}
+
+.css-20,
+[data-css-20] {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+
+<div
+  aria-expanded={true}
+  aria-haspopup="listbox"
+  aria-labelledby="downshift-2-label"
+  aria-owns="downshift-2-menu"
+  data-css-13=""
+  role="combobox"
+>
+  <ForwardRef
+    data-css-1=""
+  >
+    <div
+      data-css-5=""
+      data-css-1=""
+    >
+      <ForwardRef
+        data-css-0=""
+        data-css-2=""
+      >
+        <div
+          data-css-0=""
+          data-css-5=""
+          data-css-2=""
+        >
+          <ForwardRef
+            data-css-2=""
+            data-css-6=""
+          >
+            <div
+              data-css-5=""
+              data-css-2=""
+              data-css-6=""
+            >
+              <ForwardRef
+                autoComplete="off"
+                data-css-3=""
+                hasRightIcon={false}
+                name="hint"
+                tabIndex={-1}
+                value=""
+              >
+                <ForwardRef
+                  data-css-0=""
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    data-css-0=""
+                    data-css-5=""
+                    style={
+                      Object {
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      aria-required={false}
+                      autoComplete="off"
+                      data-css-3=""
+                      data-css-7=""
+                      name="hint"
+                      onChange={[Function]}
+                      required={false}
+                      tabIndex={-1}
+                      type="text"
+                      value=""
+                    />
+                    <ForwardRef
+                      className="checkmark"
+                      data-css-9=""
+                    >
+                      <div
+                        className="checkmark"
+                        data-css-9=""
+                        data-css-5=""
+                      >
+                        <ForwardRef
+                          alignH="center"
+                          alignV="center"
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "",
+                            }
+                          }
+                          data-css-10=""
+                        >
+                          <div
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "",
+                              }
+                            }
+                            data-css-5=""
+                            data-css-10=""
+                          />
+                        </ForwardRef>
+                      </div>
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </ForwardRef>
+            </div>
+          </ForwardRef>
+          <ForwardRef
+            aria-activedescendant="downshift-2-item-0"
+            aria-autocomplete="list"
+            aria-controls="downshift-2-menu"
+            aria-labelledby="downshift-2-label"
+            autoComplete="off"
+            data-css-14=""
+            hasRightIcon={false}
+            id="downshift-2-input"
+            name="typed"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Select Nick's Pokemon"
+            value=""
+          >
+            <ForwardRef
+              data-css-0=""
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                data-css-0=""
+                data-css-5=""
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
+              >
+                <input
+                  aria-activedescendant="downshift-2-item-0"
+                  aria-autocomplete="list"
+                  aria-controls="downshift-2-menu"
+                  aria-labelledby="downshift-2-label"
+                  aria-required={false}
+                  autoComplete="off"
+                  data-css-7=""
+                  data-css-14=""
+                  id="downshift-2-input"
+                  name="typed"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Select Nick's Pokemon"
+                  required={false}
+                  type="text"
+                  value=""
+                />
+                <ForwardRef
+                  className="checkmark"
+                  data-css-9=""
+                >
+                  <div
+                    className="checkmark"
+                    data-css-9=""
+                    data-css-5=""
+                  >
+                    <ForwardRef
+                      alignH="center"
+                      alignV="center"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "",
+                        }
+                      }
+                      data-css-10=""
+                    >
+                      <div
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "",
+                          }
+                        }
+                        data-css-5=""
+                        data-css-10=""
+                      />
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+          </ForwardRef>
+          <ForwardRef
+            alignV="center"
+            data-css-11=""
+            data-css-4=""
+            direction="row"
+          >
+            <div
+              data-css-11=""
+              data-css-12=""
+              data-css-4=""
+            />
+          </ForwardRef>
+        </div>
+      </ForwardRef>
+    </div>
+  </ForwardRef>
+  <ForwardRef
+    data-css-0=""
+  >
+    <div
+      data-css-0=""
+      data-css-5=""
+    >
+      <ForwardRef
+        aria-labelledby="downshift-2-label"
+        data-css-15=""
+        direction="column"
+        id="downshift-2-menu"
+        onScroll={[Function]}
+        role="listbox"
+      >
+        <ForwardRef
+          aria-labelledby="downshift-2-label"
+          data-css-15=""
+          direction="column"
+          id="downshift-2-menu"
+          onScroll={[Function]}
+          role="listbox"
+        >
+          <div
+            aria-labelledby="downshift-2-label"
+            data-css-15=""
+            data-css-16=""
+            id="downshift-2-menu"
+            onScroll={[Function]}
+            role="listbox"
+          >
+            <ForwardRef
+              alignV="center"
+              aria-selected={true}
+              data-css-17=""
+              direction="row"
+              id="downshift-2-item-0"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#f9fafb",
+                }
+              }
+            >
+              <div
+                aria-selected={true}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-2-item-0"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#f9fafb",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-19=""
+                >
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Abomasnow
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-17=""
+              direction="row"
+              id="downshift-2-item-1"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-18=""
+                data-css-17=""
+                id="downshift-2-item-1"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-19=""
+                >
+                  <div
+                    data-css-19=""
+                    data-css-5=""
+                  >
+                    Abra
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              data-css-20=""
+            >
+              <div
+                data-css-5=""
+                data-css-20=""
+              />
+            </ForwardRef>
+          </div>
+        </ForwardRef>
+      </ForwardRef>
+    </div>
+  </ForwardRef>
+</div>
+`
+
+exports[
+  `Test the typeahead component should use the top placement property 1`
+] = `
+.css-0,
+[data-css-0] {
+  position: relative;
+}
+
+.css-1,
+[data-css-1] {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #FFF;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+}
+
+.css-2,
+[data-css-2] {
+  width: 100%;
+}
+
+.css-3,
+[data-css-3] {
+  background: #fff;
+  border: none;
+  box-shadow: none;
+  color: #999;
+  opacity: 1;
+  height: 50px;
+}
+
+.css-4,
+[data-css-4] {
+  height: 100%;
+}
+
+.css-5,
+[data-css-5] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-6,
+[data-css-6] {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.css-7,
+[data-css-7] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  padding-top: 0;
+  padding-right: 15px;
+  transition: padding-top .225s ease-out;
+  border: 0;
+  -webkit-transition: padding-top .225s ease-out;
+  -moz-transition: padding-top .225s ease-out;
+}
+
+.css-7:-webkit-autofill ~ .label,
+[data-css-7]:-webkit-autofill ~ .label {
+  opacity: 1 !important;
+  top: 8px !important;
+}
+
+.css-7:-webkit-autofill ~ .checkmark,
+[data-css-7]:-webkit-autofill ~ .checkmark {
+  opacity: 1 !important;
+  top: 8px;
+}
+
+.css-7:-webkit-autofill,
+[data-css-7]:-webkit-autofill {
+  padding-top: 10px !important;
+}
+
+.css-9,
+[data-css-9] {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  pointer-events: none;
+  transition: opacity .225s;
+  opacity: 0;
+  -webkit-transition: opacity .225s;
+  -moz-transition: opacity .225s;
+}
+
+.css-10,
+[data-css-10] {
+  width: 16px;
+  height: 16px;
+  fill: lightGrey;
+}
+
+.css-11,
+[data-css-11] {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+.css-12,
+[data-css-12] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-13,
+[data-css-13] {
+  align-items: stretch;
+  background: transparent;
+  border: none;
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+}
+
+.css-14,
+[data-css-14] {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #bec3c7;
+  box-shadow: none;
+  color: #000;
+  outline: none;
+  width: 100%;
+  height: 50px;
+}
+
+.css-15,
+[data-css-15] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  cursor: pointer;
+  background-color: white;
+}
+
+.css-16,
+[data-css-16] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  cursor: pointer;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-17,
+[data-css-17] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
+}
+
+.css-18,
+[data-css-18] {
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  z-index: 9999;
+}
+
+.css-19,
+[data-css-19] {
+  box-sizing: border-box;
+  align-content: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: column-reverse;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-20,
+[data-css-20] {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+<div
+  aria-expanded={true}
+  aria-haspopup="listbox"
+  aria-labelledby="downshift-3-label"
+  aria-owns="downshift-3-menu"
+  data-css-13=""
+  role="combobox"
+>
+  <ForwardRef
+    data-css-1=""
+  >
+    <div
+      data-css-5=""
+      data-css-1=""
+    >
+      <ForwardRef
+        data-css-0=""
+        data-css-2=""
+      >
+        <div
+          data-css-0=""
+          data-css-5=""
+          data-css-2=""
+        >
+          <ForwardRef
+            data-css-2=""
+            data-css-6=""
+          >
+            <div
+              data-css-5=""
+              data-css-2=""
+              data-css-6=""
+            >
+              <ForwardRef
+                autoComplete="off"
+                data-css-3=""
+                hasRightIcon={false}
+                name="hint"
+                tabIndex={-1}
+                value=""
+              >
+                <ForwardRef
+                  data-css-0=""
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    data-css-0=""
+                    data-css-5=""
+                    style={
+                      Object {
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      aria-required={false}
+                      autoComplete="off"
+                      data-css-3=""
+                      data-css-7=""
+                      name="hint"
+                      onChange={[Function]}
+                      required={false}
+                      tabIndex={-1}
+                      type="text"
+                      value=""
+                    />
+                    <ForwardRef
+                      className="checkmark"
+                      data-css-9=""
+                    >
+                      <div
+                        className="checkmark"
+                        data-css-9=""
+                        data-css-5=""
+                      >
+                        <ForwardRef
+                          alignH="center"
+                          alignV="center"
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "",
+                            }
+                          }
+                          data-css-10=""
+                        >
+                          <div
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "",
+                              }
+                            }
+                            data-css-5=""
+                            data-css-10=""
+                          />
+                        </ForwardRef>
+                      </div>
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </ForwardRef>
+            </div>
+          </ForwardRef>
+          <ForwardRef
+            aria-activedescendant="downshift-3-item-0"
+            aria-autocomplete="list"
+            aria-controls="downshift-3-menu"
+            aria-labelledby="downshift-3-label"
+            autoComplete="off"
+            data-css-14=""
+            hasRightIcon={false}
+            id="downshift-3-input"
+            name="typed"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Select Nick's Pokemon"
+            value=""
+          >
+            <ForwardRef
+              data-css-0=""
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                data-css-0=""
+                data-css-5=""
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
+              >
+                <input
+                  aria-activedescendant="downshift-3-item-0"
+                  aria-autocomplete="list"
+                  aria-controls="downshift-3-menu"
+                  aria-labelledby="downshift-3-label"
+                  aria-required={false}
+                  autoComplete="off"
+                  data-css-7=""
+                  data-css-14=""
+                  id="downshift-3-input"
+                  name="typed"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Select Nick's Pokemon"
+                  required={false}
+                  type="text"
+                  value=""
+                />
+                <ForwardRef
+                  className="checkmark"
+                  data-css-9=""
+                >
+                  <div
+                    className="checkmark"
+                    data-css-9=""
+                    data-css-5=""
+                  >
+                    <ForwardRef
+                      alignH="center"
+                      alignV="center"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "",
+                        }
+                      }
+                      data-css-10=""
+                    >
+                      <div
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "",
+                          }
+                        }
+                        data-css-5=""
+                        data-css-10=""
+                      />
+                    </ForwardRef>
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+          </ForwardRef>
+          <ForwardRef
+            alignV="center"
+            data-css-11=""
+            data-css-4=""
+            direction="row"
+          >
+            <div
+              data-css-11=""
+              data-css-12=""
+              data-css-4=""
+            />
+          </ForwardRef>
+        </div>
+      </ForwardRef>
+    </div>
+  </ForwardRef>
+  <ForwardRef
+    data-css-0=""
+  >
+    <div
+      data-css-0=""
+      data-css-5=""
+    >
+      <ForwardRef
+        aria-labelledby="downshift-3-label"
+        data-css-18=""
+        direction="column-reverse"
+        id="downshift-3-menu"
+        onScroll={[Function]}
+        role="listbox"
+      >
+        <ForwardRef
+          aria-labelledby="downshift-3-label"
+          data-css-18=""
+          direction="column-reverse"
+          id="downshift-3-menu"
+          onScroll={[Function]}
+          role="listbox"
+        >
+          <div
+            aria-labelledby="downshift-3-label"
+            data-css-18=""
+            data-css-19=""
+            id="downshift-3-menu"
+            onScroll={[Function]}
+            role="listbox"
+          >
+            <ForwardRef
+              alignV="center"
+              aria-selected={true}
+              data-css-15=""
+              direction="row"
+              id="downshift-3-item-0"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#f9fafb",
+                }
+              }
+            >
+              <div
+                aria-selected={true}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-0"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#f9fafb",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-17=""
+                >
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Abomasnow
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-15=""
+              direction="row"
+              id="downshift-3-item-1"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-1"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-17=""
+                >
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Abra
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-15=""
+              direction="row"
+              id="downshift-3-item-2"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-2"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-17=""
+                >
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Absol
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-15=""
+              direction="row"
+              id="downshift-3-item-3"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-3"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-17=""
+                >
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Accelgor
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-15=""
+              direction="row"
+              id="downshift-3-item-4"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-4"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-17=""
+                >
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Aegislash
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-15=""
+              direction="row"
+              id="downshift-3-item-5"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-5"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-17=""
+                >
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Aerodactyl
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-15=""
+              direction="row"
+              id="downshift-3-item-6"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-6"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-17=""
+                >
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Aggron
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-15=""
+              direction="row"
+              id="downshift-3-item-7"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-7"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-17=""
+                >
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Aipom
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-15=""
+              direction="row"
+              id="downshift-3-item-8"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-8"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-17=""
+                >
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Alakazam
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              alignV="center"
+              aria-selected={false}
+              data-css-15=""
+              direction="row"
+              id="downshift-3-item-9"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              role="option"
+              style={
+                Object {
+                  "backgroundColor": "#ffffff",
+                }
+              }
+            >
+              <div
+                aria-selected={false}
+                data-css-16=""
+                data-css-15=""
+                id="downshift-3-item-9"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  }
+                }
+              >
+                <ForwardRef
+                  data-css-17=""
+                >
+                  <div
+                    data-css-17=""
+                    data-css-5=""
+                  >
+                    Alomomola
+                  </div>
+                </ForwardRef>
+              </div>
+            </ForwardRef>
+            <ForwardRef
+              data-css-20=""
+            >
+              <div
+                data-css-20=""
+                data-css-5=""
+              />
+            </ForwardRef>
+          </div>
+        </ForwardRef>
+      </ForwardRef>
+    </div>
+  </ForwardRef>
+</div>
+`

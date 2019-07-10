@@ -7,9 +7,9 @@ import {
   View,
   Card,
   Icon,
+  Button,
 } from '../src/'
 import { css } from 'glamor'
-import Button from '../src/molecules/Button'
 
 class DynamicCollapsible extends React.Component<any, any> {
   state = {
