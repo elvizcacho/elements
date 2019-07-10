@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/molecules/Card/CardOverlayEditor.jsx" and run build:docs to update this file.
+You can change it in "src/molecules/Card/CardOverlayEditor.tsx" and run build:docs to update this file.
 -->
 # CardOverlayEditor
 
@@ -8,9 +8,8 @@ You can change it in "src/molecules/Card/CardOverlayEditor.jsx" and run build:do
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
 |initialText|string|
-|confirmText **(required)**|string|
-|cancelText **(required)**|string|
-|submitText **(required)**|string|
-|onSave **(required)**|func|
-|onRequestClose|func|
-|children|node|
+|confirmText **(required)**||
+|cancelText **(required)**||
+|submitText **(required)**||
+|onSave **(required)**||
+|onRequestClose|(() => void)|

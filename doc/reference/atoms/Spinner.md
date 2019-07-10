@@ -1,9 +1,9 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/atoms/Spinner.jsx" and run build:docs to update this file.
+You can change it in "src/atoms/Spinner.tsx" and run build:docs to update this file.
 -->
 # Spinner
-The spinner is usefull to indicate a loading state
+The spinner is useful to indicate a loading state
 
 ```example
 <Spinner />
@@ -11,5 +11,5 @@ The spinner is usefull to indicate a loading state
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
-|color|string|<br>Default: ColorPalette.blue
-|size|number|<br>Default: 30
+|color|string|
+|size|number|

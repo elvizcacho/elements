@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/molecules/Form/Form.jsx" and run build:docs to update this file.
+You can change it in "src/molecules/Form/Form.tsx" and run build:docs to update this file.
 -->
 # Form
 Forms are used to allow the user to submit information to the app. The form component provides a very simple,
@@ -17,7 +17,7 @@ The Form component just <strong>does one simple thing</strong>:
 It intercepts the onSubmit Event and collects all data that the user entered and passes it as <strong>second parameter</strong> to the onSubmit callback,
 so you can work with it.
 
-The HTTP method that the browser uses to submit the form defaults to <strong>POST</strong>.  
+The HTTP method that the browser uses to submit the form defaults to <strong>POST</strong>.
 
 ## Simple example
 
@@ -25,17 +25,17 @@ The HTTP method that the browser uses to submit the form defaults to <strong>POS
 import { Form, TextInput } from '@allthings/elements'
 class MyForm extends React.Component {
 
-  handleSubmit = (e, data) => {
-    exampleLoginRequest(data.username, data.password)
-  }
+handleSubmit = (e, data) => {
+exampleLoginRequest(data.username, data.password)
+}
 
-  render () {
-    return (
-        <Form onSubmit={this.handleSubmit}>
-            <TextInput name="username" required defaultValue="test"/>
-            <TextInput type="password" name="password" required />
-        </Form>)
-  }
+render () {
+return (
+   <Form onSubmit={this.handleSubmit}>
+       <TextInput name="username" required defaultValue="test"/>
+       <TextInput type="password" name="password" required />
+   </Form>)
+}
 }
 ```
 
@@ -49,68 +49,67 @@ Also see the <a href="/molecules/TextInput/">TextInput</a> for allowed props.
 
 ```example
 <ResourceProvider>
-  <ThemeProvider theme={{ primary: '#bada55' }}>
-    <View direction="column" flex="flex">
-      <TitleBar>
-        <SquareIconButton icon="login-key" iconColor="white" />
-        <Text strong color="white">
-          Create new account
-        </Text>
-      </TitleBar>
-      <SimpleLayout>
-        <Form>
-          <Card>
-            <List>
-              <TextInput
-                name="name"
-                placeholder="Your first- and surname"
-                pattern="[A-Za-z ]*"
-                required
-              />
-              <TextInput
-                type="email"
-                name="number"
-                placeholder="Your email address"
-                required
-              />
-              <TextInput
-                type="text"
-                lines={3}
-                name="longStory"
-                placeholder="A long story"
-              />
-              <TextInput
-                type="text"
-                lines={2}
-                maxLength={15}
-                name="limitedStory"
-                placeholder="A limited story"
-              />
-              <TextInput
-                name="number"
-                placeholder="Your phone number"
-                minLength={3}
-              />
-              <Checkbox
-                name="accept"
-                required
-                label="Hereby I accept the terms & blablabla"
-                labelSize="s"
-              />
-              <ListItem alignH="center">
-                <Button type="submit">Create my account</Button>
-              </ListItem>
-            </List>
-          </Card>
-        </Form>
-      </SimpleLayout>
-    </View>
-  </ThemeProvider>
+<ThemeProvider theme={{ primary: '#bada55' }}>
+<View direction="column" flex="flex">
+<TitleBar>
+   <SquareIconButton icon="login-key" iconColor="white" />
+   <Text strong color="white">
+     Create new account
+   </Text>
+</TitleBar>
+<SimpleLayout>
+   <Form>
+     <Card>
+       <List>
+         <TextInput
+           name="name"
+           placeholder="Your first- and surname"
+           pattern="[A-Za-z ]*"
+           required
+         />
+         <TextInput
+           type="email"
+           name="number"
+           placeholder="Your email address"
+           required
+         />
+         <TextInput
+           type="text"
+           lines={3}
+           name="longStory"
+           placeholder="A long story"
+         />
+         <TextInput
+           type="text"
+           lines={2}
+           maxLength={15}
+           name="limitedStory"
+           placeholder="A limited story"
+         />
+         <TextInput
+           name="number"
+           placeholder="Your phone number"
+           minLength={3}
+         />
+         <Checkbox
+           name="accept"
+           required
+           label="Hereby I accept the terms & blablabla"
+           labelSize="s"
+         />
+         <ListItem alignH="center">
+           <Button type="submit">Create my account</Button>
+         </ListItem>
+       </List>
+     </Card>
+   </Form>
+</SimpleLayout>
+</View>
+</ThemeProvider>
 </ResourceProvider>
 ```
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
-|children|node|
-|method|string|<br>Default: 'POST'
-|onSubmit|func|<br>Default: _ => _
+|method|"POST", "GET"|<br>Default: POST
+|onSubmit **(required)**||

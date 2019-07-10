@@ -1,34 +1,17 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/atoms/Text.jsx" and run build:docs to update this file.
+You can change it in "src/atoms/Text.tsx" and run build:docs to update this file.
 -->
-# Text
-Text will be used for everywhere a text appears.
-The only exception is in molecules that already provide the
-text component for you.
+# createTextStyles
 
-```example
-<Text>
-  Text will be used for everywhere a text appears. The only exception
-  is in molecules that already provide the text component for you.
-</Text>
-```
-
-```example
-<Text autoBreak={true}>
-  Textwillbeusedforeverywhereatextappears.Theonlyexceptionisinmoleculesthatalreadyprovidethetextcomponentforyou.Textwillbeusedforeverywhereatextappears.Theonlyexceptionisinmoleculesthatalreadyprovidethetextcomponentforyou.
- </Text>
- ```
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
-|align|enum|
-|autoBreak|bool|
-|block|bool|<br>Default: true
-|children|node|
-|color|string|<br>Default: 'text'
-|italic|bool|
-|size|enum|<br>Default: 'l'
-|strong|bool|
-|underline|bool|
-|lineThrough|bool|
+|size|"xs", "s", "m", "l", "xl", "xxl", "giant"|
+|block|boolean|
+|italic|boolean|
+|strong|boolean|
+|underline|boolean|
+|lineThrough|boolean|
+|align|"left", "center", "right"|
+|autoBreak|boolean|

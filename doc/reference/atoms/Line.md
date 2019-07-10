@@ -1,10 +1,18 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/atoms/Line.jsx" and run build:docs to update this file.
+You can change it in "src/atoms/Line.tsx" and run build:docs to update this file.
 -->
 # Line
-Hello, I'm a Line
+Everything in elements is view! It's the component to align and layout things.
+
+```example
+<ThemeProvider>
+   <View fill direction="row" alignH="end">
+     <Text>Say Hello!</Text>
+   </View>
+</ThemeProvider>
+```
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
-|color|custom|Color of the Circle
+|color **(required)**||Color of the Line

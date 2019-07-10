@@ -1,4 +1,4 @@
-import React, { Component, HTMLProps, MouseEvent } from 'react'
+import React, { HTMLProps, MouseEvent, FunctionComponent } from 'react'
 import { css } from 'glamor'
 import { createTextStyles } from '../atoms/Text'
 import { color } from '../propTypes/color'
@@ -118,44 +118,38 @@ interface IButtonProps extends HTMLProps<HTMLButtonElement> {
  *  </Button>
  * ```
  */
-class Button extends Component<IButtonProps> {
-  render() {
-    const {
-      children,
-      type = 'button',
-      disabled = false,
-      backgroundColor = 'primary',
-      color = 'white',
-      secondary = false,
-      onClick,
-      name,
-      ...restProps
-    } = this.props
-
-    return (
-      <Theme>
-        {({ colorize }) => (
-          <button
-            type={type}
-            {...css(
-              styles(
-                colorize(backgroundColor),
-                colorize(color),
-                disabled,
-                secondary,
-              ),
-            )}
-            {...restProps}
-            {...createTextStyles({ size: 'l' })}
-            name={name || type}
-            onClick={disabled ? undefined : onClick}
-          >
-            {children}
-          </button>
+const Button: FunctionComponent<IButtonProps> = ({
+  children,
+  type = 'button',
+  disabled = false,
+  backgroundColor = 'primary',
+  color = 'white',
+  secondary = false,
+  onClick,
+  name,
+  ...restProps
+}) => (
+  <Theme>
+    {({ colorize }) => (
+      <button
+        type={type}
+        {...css(
+          styles(
+            colorize(backgroundColor),
+            colorize(color),
+            disabled,
+            secondary,
+          ),
         )}
-      </Theme>
-    )
-  }
-}
+        {...restProps}
+        {...createTextStyles({ size: 'l' })}
+        name={name || type}
+        onClick={disabled ? undefined : onClick}
+      >
+        {children}
+      </button>
+    )}
+  </Theme>
+)
 
 export default Button

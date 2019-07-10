@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/atoms/Icon.jsx" and run build:docs to update this file.
+You can change it in "src/atoms/Icon.tsx" and run build:docs to update this file.
 -->
 # Icon
 Icons are used to visually communicate core parts of the product and
@@ -12,7 +12,6 @@ patterns that are available.
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
-|name **(required)**|enum|The name of the icon
-|color|string|The color of the icon<br>Default: 'primary'
-|size|union|Can be xs, s, m, l<br>Default: 'm'
-|children|node|
+|name **(required)**||The name of the icon
+|color|string|The color of the icon
+|size|number, "xs", "s", "m", "l"|Can be xs, s, m, l

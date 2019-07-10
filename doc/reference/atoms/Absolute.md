@@ -1,14 +1,13 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/atoms/Absolute.jsx" and run build:docs to update this file.
+You can change it in "src/atoms/Absolute.tsx" and run build:docs to update this file.
 -->
 # Absolute
 
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
-|children|node|Absolute children
-|top|union|Top offset
-|bottom|union|Bottom offset
-|left|union|Left offset
-|right|union|Right offset
+|top|string, number|Top offset
+|bottom|string, number|Bottom offset
+|left|string, number|Left offset
+|right|string, number|Right offset

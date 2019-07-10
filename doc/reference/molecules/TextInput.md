@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/molecules/TextInput.jsx" and run build:docs to update this file.
+You can change it in "src/molecules/TextInput.tsx" and run build:docs to update this file.
 -->
 # TextInput
 TextInputs are used to allow users to enter information like names, numbers, urls, email addresses or passwords.
@@ -12,4 +12,4 @@ TextInputs are used to allow users to enter information like names, numbers, url
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
-|backgroundColor|string|Background color of the form item
+|backgroundColor|string|

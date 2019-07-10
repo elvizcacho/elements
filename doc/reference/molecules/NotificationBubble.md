@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/molecules/NotificationBubble.jsx" and run build:docs to update this file.
+You can change it in "src/molecules/NotificationBubble.tsx" and run build:docs to update this file.
 -->
 # NotificationBubble
 NotificationBubbles are used to inform users about important
@@ -21,18 +21,17 @@ import NotificationBubbleManager, { sendSuccess } from '@allthings/elements/beha
 import { Button } from '@allthings/elements'
 
 const ShowNotification = () => (
-  <NotificationBubbleManager>
-    <View>
-      <Button onClick={() => sendSuccess('Congratulations, you clicked the Button')}>
-        Click me!
-      </Button>
-    </View>
-  </NotificationBubbleManager>
+   <NotificationBubbleManager>
+     <View>
+       <Button onClick={() => sendSuccess('Congratulations, you clicked the Button')}>
+         Click me!
+       </Button>
+     </View>
+   </NotificationBubbleManager>
 )
 ```
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
-|color|string|<br>Default: 'primary'
-|children **(required)**|node|
-|onTimeout|func|<br>Default: _ => _
+|color|string|<br>Default: primary
+|onTimeout|(() => void)|

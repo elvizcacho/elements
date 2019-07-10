@@ -1,8 +1,8 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/behaviour/Theme.tsx" and run build:docs to update this file.
+You can change it in "src/layouts/ColumnLayout.tsx" and run build:docs to update this file.
 -->
-# Theme
+# Column
 
 ## Usage
 | Name        | Type           | Description  |

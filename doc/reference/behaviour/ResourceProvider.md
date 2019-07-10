@@ -1,14 +1,13 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/behaviour/ResourceProvider.jsx" and run build:docs to update this file.
+You can change it in "src/behaviour/ResourceProvider.tsx" and run build:docs to update this file.
 -->
-# ResourceProvider
+# ResourceProviderContext
 Elements uses a set of static resources like images or icons.
 In order to benefit from caching across all apps, these resources are provided by a static asset CDN.
 
-Whenever you like to use Icons or Illustrations, you need to use the ResouceProvider to let the components know where they are.
+Whenever you like to use Icons or Illustrations, you need to use the ResourceProvider to let the components know where they are.
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
-|resourcePath|string|<br>Default: 'https://static.allthings.me'
-|children **(required)**|node|
+

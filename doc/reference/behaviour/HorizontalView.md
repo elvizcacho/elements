@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/behaviour/HorizontalView.jsx" and run build:docs to update this file.
+You can change it in "src/behaviour/HorizontalView.tsx" and run build:docs to update this file.
 -->
 # HorizontalView
 HorizontalView is used to Views in a horizontal row, and will do smooth transitions between them.
@@ -9,8 +9,8 @@ The HorizontalView will always show the latest item that get's passed in as a ch
 So for this, it will only show the SecondItem.
 ```
 <HorizontalView>
- <FirstItem />
- <SecondItem />
+  <FirstItem />
+  <SecondItem />
 </HorizontalView>
 ```
 
@@ -19,7 +19,7 @@ to be like this, it will transition from the SecondItem to the FirstItem:
 
 ```
 <HorizontalView>
- <FirstItem />
+  <FirstItem />
 </HorizontalView>
 ```
 
@@ -39,12 +39,12 @@ render `TacosList` and `TacosDetail` and HorizontalView do a smooth transition f
 
 ```
 <HorizontalView>
- <Route path="/tacos" component={TacosList}/>
- <Route path="/tacos/:id" component={TacosDetail}/>
- <Route path="/tacos/:id/dips" component={TacosDipsView}/>
+  <Route path="/tacos" component={TacosList}/>
+  <Route path="/tacos/:id" component={TacosDetail}/>
+  <Route path="/tacos/:id/dips" component={TacosDipsView}/>
 </HorizontalView>
 ```
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
-|children **(required)**|array|
+

@@ -1,8 +1,8 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/behaviour/Theme.tsx" and run build:docs to update this file.
+You can change it in "src/molecules/List/index.tsx" and run build:docs to update this file.
 -->
-# Theme
+# ForwardRefExoticComponent
 
 ## Usage
 | Name        | Type           | Description  |

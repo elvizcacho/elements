@@ -1,11 +1,10 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/behaviour/NotificationBubbleManager.jsx" and run build:docs to update this file.
+You can change it in "src/behaviour/NotificationBubbleManager.tsx" and run build:docs to update this file.
 -->
-# NotificationBubbleManager
+# sendSuccess
 
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
-|children|node|
-|renderBubble|func|
+

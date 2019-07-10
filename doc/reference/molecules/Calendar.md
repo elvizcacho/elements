@@ -1,11 +1,11 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/molecules/Calendar.jsx" and run build:docs to update this file.
+You can change it in "src/molecules/Calendar.tsx" and run build:docs to update this file.
 -->
 # Calendar
 The `Calendar` component is a thin wrapper around https://github.com/wojtekmaj/react-calendar.
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
-|isBlockedDay|func|Indicates if a day is blocked. Expects a function which is invoked with a `Date` object and should return a boolean *<br>Default: () => false
-|tileDisabled|func|Proxied from `react-calendar` prop types *<br>Default: () => false
+|isBlockedDay|((date: Date) => boolean)|Indicates if a day is blocked. Expects a function which is invoked with a `Date` object and should return a boolean *
+|tileDisabled|((date: { activeStartDate: Date; }) => boolean)|Proxied from `react-calendar` prop types *

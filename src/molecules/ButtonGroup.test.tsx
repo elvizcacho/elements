@@ -10,7 +10,7 @@ describe('ButtonGroup', () => {
         <ButtonGroup>
           <Button secondary>Cancel</Button>
           <Button>Accept</Button>
-        </ButtonGroup>
+        </ButtonGroup>,
       )
       .toJSON()
 

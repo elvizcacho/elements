@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/atoms/Image.jsx" and run build:docs to update this file.
+You can change it in "src/atoms/Image.tsx" and run build:docs to update this file.
 -->
 # Image
 Images make thing more interesting. They can be used
@@ -10,24 +10,23 @@ be shown instead.
 
 ```example
 <Image
-  style={{width: 225, height: 225}}
-  size="cover"
-  src={'https://placeimg.com/225/225/people'}
+   style={{width: 225, height: 225}}
+   size="cover"
+   src="https://placeimg.com/225/225/people"
 />
 ```
 
 ```example
 <Image
-style={{width: 225, height: 225}}
-src={'https://placeimg.com/nothing'}
+   style={{width: 225, height: 225}}
+   src="https://placeimg.com/nothing"
 />
 ```
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
 |alt|string|Alternative image to use
-|onClick|func|Will be called when the image is clicked
-|src **(required)**|string|The URL of the image
+|src **(required)**||The URL of the image
 |srcFallback|string|The URL of the fallback image
-|size|enum|The behaviour behavior of image within the container
-|position|enum|The position of image
+|size|"contain", "cover"|The behaviour behavior of image within the container
+|position|"center", "left", "right", "top", "bottom"|The position of image

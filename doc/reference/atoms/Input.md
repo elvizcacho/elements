@@ -1,31 +1,29 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/atoms/Input.jsx" and run build:docs to update this file.
+You can change it in "src/atoms/Input.tsx" and run build:docs to update this file.
 -->
 # Input
-TextInputs are used to allow users to enter information like names, numbers, urls, email addresses or passwords.
 
-```example
-<TextInput name="email" type="email" placeholder="Your email" required />
-<TextInput name="inquiry" lines={5} placeholder="Your question" maxLength={255} minLength={50} />
-```
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
-|defaultValue|string|The default value to put into the component, without making it controlled
-|required|bool|Indicates that this field is required<br>Default: false
-|icon|enum|Icon shown on the left of the input field (See `Icon` component for all possible values) *
-|name **(required)**|string|The name of this input field
+|defaultValue|string, string[]|The default value to put into the component, without making it controlled
+|required|boolean|Indicates that this field is required
+|icon|"download", "alarm", "alarm-filled", "armchair", "armchair-filled", "arrow-down", "arrow-down-filled", "arrow-left", "arrow-left-filled", "arrow-right", "arrow-right-filled", ... 146 more ...|Icon shown on the left of the input field (See `Icon` component for all possible values) *
+|name|string|The name of this input field
 |label|string|The label of the input
-|type|enum|Type, can be: 'tel', 'number', 'text', 'url', 'email'<br>Default: 'text'
-|onChange|func|Called, when the user changes something
-|value|string|The value, makes this component a controlled component
-|lines|number|Can only be used with type=text. Increase to enable multi-line input<br>Default: 1
-|hasRightIcon|bool|Used when there is an icon to the right of input field
+|type|string|Type, can be: 'tel', 'number', 'text', 'url', 'email'
+|onChange|any|Called, when the user changes something
+|value|string, number, string[]|The value, makes this component a controlled component
+|lines|number|Can only be used with type=text. Increase to enable multi-line input
+|hasRightIcon|boolean|Used when there is an icon to the right of input field
 |pattern|string|Regular expression to validate against
 |minLength|number|Min number of characters that must be provided
 |maxLength|number|Max number of characters that can be provided
-|onInputRef|func|Called with the input field a reference<br>Default: _ => _
+|onInputRef|any|Called with the input field a reference
+|readOnly|boolean|
+|disabled|boolean|
+|forwardedRef|any|
 |badInput|string|Error message for bad input
 |customError|string|Error message for customError
 |patternMismatch|string|Error message for patternMismatch

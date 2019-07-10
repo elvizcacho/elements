@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "src/behaviour/ThemeProvider.jsx" and run build:docs to update this file.
+You can change it in "src/behaviour/ThemeProvider.tsx" and run build:docs to update this file.
 -->
 # ThemeProvider
 All elements support theming by default, and therefore every element must be wrapped inside a ThemeProvider.
@@ -10,5 +10,4 @@ The ThemeProvider allows you to define the default colors for most elements.
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
-|theme|shape|
-|children|node|
+|theme|Partial<ITheme>|
