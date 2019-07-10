@@ -118,6 +118,13 @@ exports[`ButtonGroup should render button group 1`] = `
   <div
     data-css-2=""
   >
+    <a>
+      asd
+    </a>
+  </div>
+  <div
+    data-css-2=""
+  >
     <button
       data-css-6=""
       data-css-3=""
