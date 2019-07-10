@@ -11,14 +11,10 @@ const line = (color: string) =>
   })
 
 /**
- * Everything in elements is view! It's the component to align and layout things.
+ * Just walking the line.
  *
  * ```example
- * <ThemeProvider>
- *   <View fill direction="row" alignH="end">
- *     <Text>Say Hello!</Text>
- *   </View>
- * </ThemeProvider>
+ * <Line color="primary" />
  * ```
  */
 const Line = ({
