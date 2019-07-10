@@ -10,11 +10,12 @@ const { parse } = withCustomConfig('./tsconfig.json')
 
 const FILE_TYPE = '.tsx'
 
-const [_, __, arg1] = process.argv
+const [_, __, ...files] = process.argv
+
+console.log(files)
 
 const propToRow = prop => {
   const { name, required, description, defaultValue, type } = prop
-  console.log(type)
   return `|${name}${required ? ' **(required)**' : ''}|${type.name
     .split('|')
     .map(value => value.trim())
@@ -25,18 +26,17 @@ const propToRow = prop => {
 }
 
 async function main() {
-  try {
-    const files = (await globber(arg1 || `src/**/*${FILE_TYPE}`)).filter(
+  const fileList =
+    files ||
+    (await globber(`src/**/*${FILE_TYPE}`)).filter(
       path => path.indexOf(`test${FILE_TYPE}`) === -1,
     )
-    await Promise.all(
-      files.map(async file => {
-        try {
-          const [docs] = parse(file)
-          console.log(docs)
-          docs.displayName = docs.displayName || path.basename(file, FILE_TYPE)
+  await Promise.all(
+    fileList.map(file => {
+      const [docs] = parse(file)
+      docs.displayName = docs.displayName || path.basename(file, FILE_TYPE)
 
-          const docMarkdown = `<!-- 
+      const docMarkdown = `<!-- 
 This is an auto-generated markdown. 
 You can change it in "${file}" and run build:docs to update this file.
 -->
@@ -58,26 +58,20 @@ ${
     : '*No properties to pass*'
 }
 `
-
-          return writeFile(
-            path.join(
-              __dirname,
-              '..',
-              file.replace('src/', 'doc/reference/').replace(FILE_TYPE, '.md'),
-            ),
-            docMarkdown,
-            { flag: 'w+' },
-          )
-        } catch (e) {
-          console.log(e)
-          console.log('Could not find React in ' + file)
-          return null
-        }
-      }),
-    )
-  } catch (e) {
-    console.log(e)
-  }
+      console.log(
+        file.replace('src/', 'doc/reference/').replace(FILE_TYPE, '.md'),
+      )
+      return writeFile(
+        path.join(
+          __dirname,
+          '..',
+          file.replace('src/', 'doc/reference/').replace(FILE_TYPE, '.md'),
+        ),
+        docMarkdown,
+        { flag: 'w+' },
+      )
+    }),
+  )
 }
 
 main()
