@@ -33,6 +33,7 @@ import ButtonStory from './ButtonStory'
 import CheckboxStory from './CheckboxStory'
 import ProfileImageStackStory from './ProfileImageStackStory'
 import FilterStory from './FilterStory'
+import SearchableDropdownStory from './SearchableDropdownStory'
 
 storiesOf('Containers', module)
   .addDecorator(createViewportDecorator())
@@ -70,6 +71,7 @@ storiesOf('Forms', module)
   })
   .add('Typeahead', () => <TypeaheadStory />)
   .add('Dropdown', () => <DropdownStory />)
+  .add('SearchableDropdown', () => <SearchableDropdownStory />)
   .add('Button', () => <ButtonStory />)
 
 storiesOf('Button', module)
