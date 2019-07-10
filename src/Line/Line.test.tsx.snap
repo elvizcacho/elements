@@ -36,7 +36,7 @@ exports[`Line renders correctly 1`] = `
   data-css-0=""
   data-css-1=""
 />
-`
+`;
 
 exports[`Line renders in different color 1`] = `
 .css-0,
@@ -74,4 +74,4 @@ exports[`Line renders in different color 1`] = `
   data-css-1=""
   data-css-0=""
 />
-`
+`;

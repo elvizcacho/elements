@@ -55,7 +55,7 @@ exports[`HorizontalView behaviors should render non-arrays 1`] = `
     </ForwardRef>
   </ForwardRef>
 </ForwardRef>
-`
+`;
 
 exports[`HorizontalView behaviors should render with array too 1`] = `
 .css-0,
@@ -111,4 +111,4 @@ exports[`HorizontalView behaviors should render with array too 1`] = `
     </ForwardRef>
   </ForwardRef>
 </ForwardRef>
-`
+`;

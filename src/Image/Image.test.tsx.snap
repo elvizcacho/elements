@@ -17,7 +17,7 @@ exports[`Image renders correctly 1`] = `
   data-css-1=""
   data-css-0=""
 />
-`
+`;
 
 exports[`Image should set position 1`] = `
 .css-0,
@@ -37,4 +37,4 @@ exports[`Image should set position 1`] = `
   data-css-0=""
   data-css-1=""
 />
-`
+`;

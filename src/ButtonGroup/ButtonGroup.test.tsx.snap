@@ -140,4 +140,4 @@ exports[`ButtonGroup should render button group 1`] = `
     </button>
   </div>
 </div>
-`
+`;

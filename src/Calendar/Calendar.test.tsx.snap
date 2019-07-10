@@ -1002,4 +1002,4 @@ exports[`Calendar should render calendar 1`] = `
     </div>
   </div>
 </div>
-`
+`;

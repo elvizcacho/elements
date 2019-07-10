@@ -121,11 +121,9 @@ exports[`Test the editable text component should be editable 1`] = `
     </ForwardRef>
   </div>
 </ForwardRef>
-`
+`;
 
-exports[
-  `Test the editable text component should be using a custom decoration color 1`
-] = `
+exports[`Test the editable text component should be using a custom decoration color 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -225,7 +223,7 @@ Snapshot Diff:
       />
     </div>
   </div>
-`
+`;
 
 exports[`Test the editable text component should be using a custom icon 1`] = `
 .css-0,
@@ -266,11 +264,9 @@ exports[`Test the editable text component should be using a custom icon 1`] = `
     />
   </ForwardRef>
 </ForwardRef>
-`
+`;
 
-exports[
-  `Test the editable text component should be using a custom icon color 1`
-] = `
+exports[`Test the editable text component should be using a custom icon color 1`] = `
 .css-0,
 [data-css-0] {
   margin-left: 4px;
@@ -309,4 +305,4 @@ exports[
     />
   </ForwardRef>
 </ForwardRef>
-`
+`;

@@ -54,7 +54,7 @@ exports[`Profile image with source renders correctly 1`] = `
     data-css-4=""
   />
 </div>
-`
+`;
 
 exports[`Profile image without source renders correctly 1`] = `
 .css-0,
@@ -112,4 +112,4 @@ exports[`Profile image without source renders correctly 1`] = `
     />
   </svg>
 </div>
-`
+`;

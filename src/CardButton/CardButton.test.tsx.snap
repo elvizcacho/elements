@@ -51,7 +51,7 @@ exports[`CardButton renders custom color 1`] = `
 >
   Click me
 </button>
-`
+`;
 
 exports[`CardButton renders without error 1`] = `
 .css-0,
@@ -106,4 +106,4 @@ exports[`CardButton renders without error 1`] = `
 >
   Click me
 </button>
-`
+`;

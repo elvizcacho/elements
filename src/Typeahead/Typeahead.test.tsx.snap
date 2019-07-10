@@ -1,8 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[
-  `Test the typeahead component Test typeahead component with jsx labels should be a simple static one - in depth testing of the core behavior with JSX labels 1`
-] = `
+exports[`Test the typeahead component Test typeahead component with jsx labels should be a simple static one - in depth testing of the core behavior with JSX labels 1`] = `
 .css-0,
 [data-css-0] {
   position: relative;
@@ -390,11 +388,9 @@ exports[
     />
   </ForwardRef>
 </div>
-`
+`;
 
-exports[
-  `Test the typeahead component should be a simple static one - in depth testing of the core behavior 1`
-] = `
+exports[`Test the typeahead component should be a simple static one - in depth testing of the core behavior 1`] = `
 .css-0,
 [data-css-0] {
   position: relative;
@@ -782,11 +778,9 @@ exports[
     />
   </ForwardRef>
 </div>
-`
+`;
 
-exports[
-  `Test the typeahead component should be a simple static one which auto open on click 1`
-] = `
+exports[`Test the typeahead component should be a simple static one which auto open on click 1`] = `
 .css-0,
 [data-css-0] {
   position: relative;
@@ -1730,11 +1724,9 @@ exports[
     </div>
   </ForwardRef>
 </div>
-`
+`;
 
-exports[
-  `Test the typeahead component should render differently when loading 1`
-] = `
+exports[`Test the typeahead component should render differently when loading 1`] = `
 .css-0,
 [data-css-0] {
   position: relative;
@@ -2124,11 +2116,9 @@ exports[
     />
   </ForwardRef>
 </div>
-`
+`;
 
-exports[
-  `Test the typeahead component should render differently when loading 2`
-] = `
+exports[`Test the typeahead component should render differently when loading 2`] = `
 .css-0,
 [data-css-0] {
   position: relative;
@@ -2566,11 +2556,9 @@ exports[
     />
   </ForwardRef>
 </div>
-`
+`;
 
-exports[
-  `Test the typeahead component should use the defaultValue property (uncontrolled component) 1`
-] = `
+exports[`Test the typeahead component should use the defaultValue property (uncontrolled component) 1`] = `
 .css-0,
 [data-css-0] {
   position: relative;
@@ -3025,7 +3013,7 @@ exports[
     />
   </ForwardRef>
 </div>
-`
+`;
 
 exports[`Test the typeahead component should use the limit property 1`] = `
 .css-0,
@@ -3627,11 +3615,9 @@ exports[`Test the typeahead component should use the limit property 1`] = `
     </div>
   </ForwardRef>
 </div>
-`
+`;
 
-exports[
-  `Test the typeahead component should use the top placement property 1`
-] = `
+exports[`Test the typeahead component should use the top placement property 1`] = `
 .css-0,
 [data-css-0] {
   position: relative;
@@ -4576,4 +4562,4 @@ exports[
     </div>
   </ForwardRef>
 </div>
-`
+`;

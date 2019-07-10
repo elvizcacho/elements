@@ -237,7 +237,7 @@ exports[`Input component should render with all props 1`] = `
     </div>
   </div>
 </div>
-`
+`;
 
 exports[`Input component should render with required props only 1`] = `
 .css-0,
@@ -340,4 +340,4 @@ exports[`Input component should render with required props only 1`] = `
     />
   </div>
 </div>
-`
+`;

@@ -47,7 +47,7 @@ exports[`Button component Change color to green 1`] = `
   onClick={[Function]}
   type="button"
 />
-`
+`;
 
 exports[`Button component Renders a callback anything 1`] = `
 .css-0,
@@ -98,7 +98,7 @@ exports[`Button component Renders a callback anything 1`] = `
 >
   Hi
 </button>
-`
+`;
 
 exports[`Button component Renders in different colors 1`] = `
 .css-0,
@@ -147,7 +147,7 @@ exports[`Button component Renders in different colors 1`] = `
   onClick={[Function]}
   type="button"
 />
-`
+`;
 
 exports[`Button component Renders without anything 1`] = `
 .css-0,
@@ -197,7 +197,7 @@ exports[`Button component Renders without anything 1`] = `
 >
   Hi
 </button>
-`
+`;
 
 exports[`Button component doesnt render the callback if disabled 1`] = `
 .css-0,
@@ -247,4 +247,4 @@ exports[`Button component doesnt render the callback if disabled 1`] = `
 >
   Hi
 </button>
-`
+`;

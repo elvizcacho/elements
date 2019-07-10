@@ -39,7 +39,7 @@ exports[`Pill renders with custom color 1`] = `
     Important message
   </div>
 </div>
-`
+`;
 
 exports[`Pill renders without error 1`] = `
 .css-0,
@@ -80,4 +80,4 @@ exports[`Pill renders without error 1`] = `
     Important message
   </div>
 </div>
-`
+`;

@@ -196,4 +196,4 @@ exports[`Profile image stack renders correctly 1`] = `
     />
   </div>
 </div>
-`
+`;

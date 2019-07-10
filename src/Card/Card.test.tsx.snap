@@ -159,7 +159,7 @@ exports[`Card renders as full example 1`] = `
     </button>
   </div>
 </div>
-`
+`;
 
 exports[`Card renders without error 1`] = `
 .css-0,
@@ -180,4 +180,4 @@ exports[`Card renders without error 1`] = `
   data-css-0=""
   data-css-1=""
 />
-`
+`;

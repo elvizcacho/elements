@@ -22,4 +22,4 @@ exports[`Text renders correctly 1`] = `
   data-css-0=""
   data-css-1=""
 />
-`
+`;

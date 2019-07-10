@@ -79,11 +79,9 @@ exports[`ReadMore component ReadMore extends a large text 1`] = `
     </div>
   </div>
 </div>
-`
+`;
 
-exports[
-  `ReadMore component ReadMore renders properly width a px height of 20 1`
-] = `
+exports[`ReadMore component ReadMore renders properly width a px height of 20 1`] = `
 .css-0,
 [data-css-0] {
   width: 100%;
@@ -162,11 +160,9 @@ exports[
     </div>
   </div>
 </div>
-`
+`;
 
-exports[
-  `ReadMore component ReadMore renders properly width a vh height of 10vh 1`
-] = `
+exports[`ReadMore component ReadMore renders properly width a vh height of 10vh 1`] = `
 .css-0,
 [data-css-0] {
   width: 100%;
@@ -245,4 +241,4 @@ exports[
     </div>
   </div>
 </div>
-`
+`;

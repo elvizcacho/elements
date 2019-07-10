@@ -191,7 +191,7 @@ exports[`Test the FormCheckbox component should tick it 1`] = `
     </label>
   </div>
 </ForwardRef>
-`
+`;
 
 exports[`Test the FormCheckbox component should tick it 2`] = `
 .css-0,
@@ -427,7 +427,7 @@ exports[`Test the FormCheckbox component should tick it 2`] = `
     </label>
   </div>
 </ForwardRef>
-`
+`;
 
 exports[`Test the FormCheckbox component should work with children 1`] = `
 .css-0,
@@ -622,4 +622,4 @@ exports[`Test the FormCheckbox component should work with children 1`] = `
     </label>
   </div>
 </ForwardRef>
-`
+`;

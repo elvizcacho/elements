@@ -249,7 +249,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
     data-css-6=""
   />
 </div>
-`
+`;
 
 exports[`Dropdown should render with placement top 1`] = `
 .css-0,
@@ -500,4 +500,4 @@ exports[`Dropdown should render with placement top 1`] = `
     data-css-6=""
   />
 </div>
-`
+`;

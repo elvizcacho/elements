@@ -20,4 +20,4 @@ exports[`Absolute renders without error 1`] = `
   data-css-0=""
   data-css-1=""
 />
-`
+`;

@@ -27,13 +27,15 @@ const propToRow = prop => {
 
 async function main() {
   const fileList =
-    files ||
-    (await globber(`src/**/*${FILE_TYPE}`)).filter(
-      path => path.indexOf(`test${FILE_TYPE}`) === -1,
-    )
+    files.length > 0
+      ? files
+      : (await globber(`src/**/*${FILE_TYPE}`)).filter(
+          path => path.indexOf(`test${FILE_TYPE}`) === -1,
+        )
   await Promise.all(
     fileList.map(file => {
-      const [docs] = parse(file)
+      const parsed = parse(file)
+      const [docs] = parsed
       docs.displayName = docs.displayName || path.basename(file, FILE_TYPE)
 
       const docMarkdown = `<!-- 
@@ -58,9 +60,7 @@ ${
     : '*No properties to pass*'
 }
 `
-      console.log(
-        file.replace('src/', 'doc/reference/').replace(FILE_TYPE, '.md'),
-      )
+
       return writeFile(
         path.join(
           __dirname,

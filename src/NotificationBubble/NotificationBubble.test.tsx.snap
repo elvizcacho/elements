@@ -165,4 +165,4 @@ exports[`NotificationBubble renders without error 1`] = `
     </div>
   </div>
 </div>
-`
+`;
