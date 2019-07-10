@@ -110,6 +110,7 @@
     "jest": "24.8.0",
     "jest-fetch-mock": "2.1.2",
     "jest-glamor-react": "4.3.1",
+    "lint-staged": "9.1.0",
     "markdown-extract": "1.0.2",
     "path": "0.12.7",
     "prettier": "1.18.2",
@@ -136,8 +137,11 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && yarn build:docs && git add doc  "
+      "pre-commit": "lint-staged && pretty-quick --staged && git add doc"
     }
+  },
+  "lint-staged": {
+    "*": "yarn build:docs"
   },
   "jest": {
     "roots": [
