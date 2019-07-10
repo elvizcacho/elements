@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/HorizontalView/HorizontalView.tsx" and run build:docs to update this file.
+You can change it in "src/HorizontalView/HorizontalView.tsx" and run build:docs to update this file.
 -->
 # HorizontalView
 HorizontalView is used to Views in a horizontal row, and will do smooth transitions between them.

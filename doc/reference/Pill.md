@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/Pill/Pill.tsx" and run build:docs to update this file.
+You can change it in "src/Pill/Pill.tsx" and run build:docs to update this file.
 -->
 # Pill
 Pills 💊 are used to show status or to highlight a piece of information.

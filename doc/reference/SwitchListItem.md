@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/SwitchListItem/SwitchListItem.tsx" and run build:docs to update this file.
+You can change it in "src/SwitchListItem/SwitchListItem.tsx" and run build:docs to update this file.
 -->
 # SwitchListItem
 

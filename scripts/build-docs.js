@@ -34,9 +34,10 @@ async function main() {
     const [docs] = parse(file)
     docs.displayName = docs.displayName || path.basename(file, FILE_TYPE)
 
+    const relativeFilePath = path.relative(path.join(__dirname, '/..'), file)
     const docMarkdown = `<!-- 
 This is an auto-generated markdown. 
-You can change it in "${file}" and run build:docs to update this file.
+You can change it in "${relativeFilePath}" and run build:docs to update this file.
 -->
 # ${docs.displayName || ''}
 ${docs.description || ''}

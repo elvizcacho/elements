@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/TimeInput/TimeInput.tsx" and run build:docs to update this file.
+You can change it in "src/TimeInput/TimeInput.tsx" and run build:docs to update this file.
 -->
 # getTimeRange
 

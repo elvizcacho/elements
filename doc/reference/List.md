@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/List/List.tsx" and run build:docs to update this file.
+You can change it in "src/List/List.tsx" and run build:docs to update this file.
 -->
 # ForwardRefExoticComponent
 

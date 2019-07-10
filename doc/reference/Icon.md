@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/Icon/Icon.tsx" and run build:docs to update this file.
+You can change it in "src/Icon/Icon.tsx" and run build:docs to update this file.
 -->
 # Icon
 Icons are used to visually communicate core parts of the product and

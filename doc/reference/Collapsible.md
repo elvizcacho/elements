@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/Collapsible/Collapsible.tsx" and run build:docs to update this file.
+You can change it in "src/Collapsible/Collapsible.tsx" and run build:docs to update this file.
 -->
 # Collapsible
 A Collapsible is a simple container, that makes it possible to change between collapsed and extended states, and this way hiding and showing the children passed in.

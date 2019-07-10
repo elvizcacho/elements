@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/Hero/Hero.tsx" and run build:docs to update this file.
+You can change it in "src/Hero/Hero.tsx" and run build:docs to update this file.
 -->
 # Hero
 Heros are used to give users an introduction and quickly explain features.

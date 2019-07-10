@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/RadioButton/RadioButton.tsx" and run build:docs to update this file.
+You can change it in "src/RadioButton/RadioButton.tsx" and run build:docs to update this file.
 -->
 # RadioButton
 RadioButtonSet can be used to render a set of RadioButtons to allow users to select exactly one item from a set.

@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/ButtonGroup.tsx" and run build:docs to update this file.
+You can change it in "src/ButtonGroup/ButtonGroup.tsx" and run build:docs to update this file.
 -->
 # ButtonGroup
 ButtonGroup groups multiple buttons and keeps the spacing consistent.
@@ -14,8 +14,6 @@ ButtonGroup groups multiple buttons and keeps the spacing consistent.
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
-
---------:|
 |htmlElement|string|
 |alignH|"none", "start", "center", "end", "space-around", "space-between"|horizontal alignment
 |alignV|"none", "start", "center", "end", "stretch"|vertical alignment

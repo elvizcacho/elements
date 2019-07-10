@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/TitleBar/TitleBar.tsx" and run build:docs to update this file.
+You can change it in "src/TitleBar/TitleBar.tsx" and run build:docs to update this file.
 -->
 # TitleBar
 Title bar is used to give user control and information about navigation.

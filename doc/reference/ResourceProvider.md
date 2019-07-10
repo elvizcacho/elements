@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/ResourceProvider/ResourceProvider.tsx" and run build:docs to update this file.
+You can change it in "src/ResourceProvider/ResourceProvider.tsx" and run build:docs to update this file.
 -->
 # ResourceProviderContext
 Elements uses a set of static resources like images or icons.

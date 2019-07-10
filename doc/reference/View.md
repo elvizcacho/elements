@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/View/View.tsx" and run build:docs to update this file.
+You can change it in "src/View/View.tsx" and run build:docs to update this file.
 -->
 # View
 Everything in elements is view! It's the component to align and layout things.

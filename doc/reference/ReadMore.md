@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/ReadMore/ReadMore.tsx" and run build:docs to update this file.
+You can change it in "src/ReadMore/ReadMore.tsx" and run build:docs to update this file.
 -->
 # ReadMore
 A ReadMore is a simple container, to show / (hide) content. It will automatically decide whether to show the `read more` link or not.

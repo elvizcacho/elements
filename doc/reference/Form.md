@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/Form/Form.tsx" and run build:docs to update this file.
+You can change it in "src/Form/Form.tsx" and run build:docs to update this file.
 -->
 # Form
 Forms are used to allow the user to submit information to the app. The form component provides a very simple,

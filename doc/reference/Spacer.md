@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/Spacer/Spacer.tsx" and run build:docs to update this file.
+You can change it in "src/Spacer/Spacer.tsx" and run build:docs to update this file.
 -->
 # Spacer
 The vertical spacer is used to visually separate or create space between elements.

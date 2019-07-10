@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/ChatBubble/ChatBubble.tsx" and run build:docs to update this file.
+You can change it in "src/ChatBubble/ChatBubble.tsx" and run build:docs to update this file.
 -->
 # ChatBubble
 ChatBubbles are used to show conversations between two or more users.

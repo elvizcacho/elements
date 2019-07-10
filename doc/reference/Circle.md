@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/Circle/Circle.tsx" and run build:docs to update this file.
+You can change it in "src/Circle/Circle.tsx" and run build:docs to update this file.
 -->
 # Circle
 Simple circle element that is used to build other things...

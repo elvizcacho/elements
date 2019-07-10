@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/Button/Button.tsx" and run build:docs to update this file.
+You can change it in "src/Button/Button.tsx" and run build:docs to update this file.
 -->
 # Button
 Buttons make common actions immediately visible and easy to perform with one

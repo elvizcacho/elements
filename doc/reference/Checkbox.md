@@ -1,6 +1,6 @@
 <!-- 
 This is an auto-generated markdown. 
-You can change it in "/Users/daniel/Dev/allthings/elements/src/Checkbox/Checkbox.tsx" and run build:docs to update this file.
+You can change it in "src/Checkbox/Checkbox.tsx" and run build:docs to update this file.
 -->
 # Checkbox
 Checkbox are used to give users a way to select or deselect options.
