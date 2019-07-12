@@ -172,21 +172,25 @@ const SearchableDropdown = ({
     return changes
   }
 
+  const renderSearch = () => (
+    <List>
+      <ListItem padded={false}>
+        <Input
+          ref={searchRef}
+          hasRightIcon={false}
+          name={`search-${Date.now()}`}
+          onChange={onSearch}
+          placeholder="Search"
+          value={searchTerm}
+          type="text"
+        />
+      </ListItem>
+    </List>
+  )
+
   const renderListItems = (getItemProps: (options: object) => void) => (
     <Relative {...styles.searchInput}>
-      <List>
-        <ListItem padded={false}>
-          <Input
-            ref={searchRef}
-            hasRightIcon={false}
-            name={`search-${Date.now()}`}
-            onChange={onSearch}
-            placeholder="Search"
-            value={searchTerm}
-            type="text"
-          />
-        </ListItem>
-      </List>
+      {renderSearch()}
       <List
         direction={placement === Placement.top ? 'column-reverse' : 'column'}
         onScroll={handleListScroll}
