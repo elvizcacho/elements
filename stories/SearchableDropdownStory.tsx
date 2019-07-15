@@ -7,6 +7,7 @@ import {
   Text,
 } from '../src'
 import { css } from 'glamor'
+import { EDropdownDirection } from '../src/enums'
 
 const styles = {
   title: css({
@@ -222,12 +223,11 @@ const SearchableDropdownStory = () => {
       <ResourceProvider>
         <View direction="column" {...css({ padding: '10px 20px' })}>
           <Text strong {...styles.title}>
-            Simple dropdown:
+            Simple dropdown
           </Text>
           <SearchableDropdown
             items={items}
             loadMoreText={loadMore}
-            menuHeight={200}
             name="searchable-dropdown-simple"
             noResultsText="No results found"
             onLoadMore={handleLoadMore}
@@ -238,15 +238,13 @@ const SearchableDropdownStory = () => {
           />
 
           <Text strong {...styles.title}>
-            Dropdown with icon and label:
+            Dropdown with icon and label
           </Text>
           <SearchableDropdown
-            clearable={true}
             icon="user"
             items={items}
             label="Some label"
             loadMoreText={loadMore}
-            menuHeight={200}
             name="searchable-dropdown-icon-label"
             noResultsText="No results found"
             onLoadMore={handleLoadMore}
@@ -257,7 +255,7 @@ const SearchableDropdownStory = () => {
           />
 
           <Text strong {...styles.title}>
-            Initially selected item:
+            Initially selected item (clearable)
           </Text>
           <SearchableDropdown
             clearable={true}
@@ -265,7 +263,6 @@ const SearchableDropdownStory = () => {
             items={items}
             label="Some label"
             loadMoreText={loadMore}
-            menuHeight={200}
             name="searchable-dropdown-selected"
             noResultsText="No results found"
             onLoadMore={handleLoadMore}
@@ -274,6 +271,38 @@ const SearchableDropdownStory = () => {
             placeholder="Some label"
             searchTerm={searchQuery}
             initialSelectedItem={{ label: 'darkgoldenrod', value: '#b8860b' }}
+          />
+
+          <Text strong {...styles.title}>
+            Dropdown with placement=top
+          </Text>
+          <SearchableDropdown
+            clearable={true}
+            icon="user"
+            items={items}
+            label="Some label"
+            loadMoreText={loadMore}
+            name="searchable-dropdown-icon-label"
+            noResultsText="No results found"
+            onLoadMore={handleLoadMore}
+            onSearch={handleSearch}
+            onSelect={handleSelect}
+            placeholder="Some label"
+            placement={EDropdownDirection.TOP}
+            searchTerm={searchQuery}
+          />
+
+          <Text strong {...styles.title}>
+            Dropdown with loading spinner
+          </Text>
+          <SearchableDropdown
+            isLoading={true}
+            items={items}
+            label="Some label"
+            name="searchable-dropdown-loading"
+            onSelect={handleSelect}
+            placeholder="Some label"
+            searchTerm={searchQuery}
           />
         </View>
       </ResourceProvider>
