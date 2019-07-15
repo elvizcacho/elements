@@ -1,4 +1,4 @@
-import React, { createRef, useState, SyntheticEvent } from 'react'
+import React, { createRef, SyntheticEvent } from 'react'
 import Downshift, { StateChangeOptions, DownshiftState } from 'downshift'
 import { css } from 'glamor'
 import Relative from '../Relative/index'
@@ -11,20 +11,23 @@ import Input from '../Input/index'
 import { alpha, ColorPalette } from '@allthings/colors'
 import Icon, { IconType } from '../Icon/index'
 import { noop } from '@babel/types'
-
-const Placement = {
-  top: 'top',
-  bottom: 'bottom',
-}
+import { EDropdownDirection } from '../enums'
+import { Spinner } from '../index'
 
 const INPUT_FIELD_HEIGHT = 50
 
 const styles = {
-  area: css({
-    width: '100%',
-    height: INPUT_FIELD_HEIGHT,
-    position: 'relative',
-    backgroundColor: ColorPalette.white,
+  area: (isLoading: boolean) =>
+    css({
+      backgroundColor: ColorPalette.white,
+      cursor: !isLoading && 'pointer',
+      height: INPUT_FIELD_HEIGHT,
+      position: 'relative',
+      width: '100%',
+    }),
+  clearIcon: css({
+    marginRight: 10,
+    display: 'inline-block',
   }),
   disabledInput: css({
     backgroundColor: 'white',
@@ -37,32 +40,34 @@ const styles = {
     whiteSpace: 'nowrap',
     width: 'calc(100% - 5px)',
   }),
-  iconWrapper: css({
-    cursor: 'pointer',
-    height: '100%',
-    padding: '16px 16px 16px 20px',
-  }),
+  iconWrapper: (isLoading: boolean) =>
+    css({
+      cursor: !isLoading && 'pointer',
+      height: '100%',
+      padding: '16px 16px 16px 20px',
+    }),
   label: css({
     width: '100%',
   }),
-  list: (menuHeight: number, placement: EDirection) =>
-    css({
-      bottom: placement === Placement.top && INPUT_FIELD_HEIGHT,
-      boxShadow: '1px 1px 3px rgba(29, 29, 29, 0.125)',
-      maxHeight: menuHeight,
-      overflowX: 'hidden',
-      overflowY: 'auto',
-      width: '100%',
-      zIndex: 9999,
-    }),
   listItem: css({
     ':hover': {
       backgroundColor: alpha(ColorPalette.background.bright, 0.5, true),
     },
   }),
-  searchInput: css({
-    borderTop: `1px solid ${ColorPalette.lightGrey}`,
-  }),
+  listItems: (menuHeight: number) =>
+    css({
+      borderTop: `1px solid ${ColorPalette.lightGrey}`,
+      maxHeight: menuHeight - INPUT_FIELD_HEIGHT,
+      overflowY: 'auto',
+    }),
+  listWrapper: (menuHeight: number) =>
+    css({
+      boxShadow: '1px 1px 3px rgba(29, 29, 29, 0.125)',
+      maxHeight: menuHeight,
+      overflow: 'hidden',
+      width: '100%',
+      zIndex: 9999,
+    }),
   wrapper: (isOpen: boolean) =>
     css({
       alignItems: 'stretch',
@@ -76,16 +81,6 @@ const styles = {
     }),
 }
 
-export interface IDropdownItem {
-  label: string
-  value: string
-}
-
-enum EDirection {
-  TOP = 'top',
-  BOTTOM = 'bottom',
-}
-
 interface ISearchableDropdownProps {
   /** If true, than the field can be cleared */
   clearable?: boolean
@@ -95,11 +90,13 @@ interface ISearchableDropdownProps {
   items: IDropdownItem[]
   /** Initially selected item - this value is uncontrolled */
   initialSelectedItem?: IDropdownItem
+  /** The loading state of the component, e.g fetching data. */
+  isLoading?: boolean
   /** A floating label */
   label?: string
   /** The "Load more" text */
   loadMoreText?: string
-  /** The height of the menu in pixels. */
+  /** The height of the menu in pixels. By default: Search input and 3 items */
   menuHeight?: number
   /** For forms */
   name?: string
@@ -108,13 +105,13 @@ interface ISearchableDropdownProps {
   /** Callback triggered when clicking on "Load more" in items list */
   onLoadMore?: () => void
   /** Callback triggered when clearing the selection. */
-  onSelect?: (item: IDropdownItem) => void
+  onSelect: (item: IDropdownItem) => void
   /** Callback triggered when search value changes */
   onSearch?: (event: SyntheticEvent) => void
   /** The placeholder displayed in the input field. */
   placeholder?: string
   /** If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards */
-  placement?: EDirection
+  placement?: EDropdownDirection
   /** The search term */
   searchTerm?: string
   /** Selected item - this item can be controlled */
@@ -126,28 +123,21 @@ const SearchableDropdown = ({
   icon,
   items,
   initialSelectedItem,
+  isLoading = false,
   label = '',
   loadMoreText = '',
-  menuHeight = INPUT_FIELD_HEIGHT,
+  menuHeight = INPUT_FIELD_HEIGHT * 4,
   name = '',
   noResultsText = '',
   onLoadMore = noop,
-  onSearch = noop,
-  onSelect = noop,
+  onSearch,
+  onSelect,
   placeholder = '',
-  placement = EDirection.BOTTOM,
+  placement = EDropdownDirection.BOTTOM,
   searchTerm = '',
   selectedItem,
 }: ISearchableDropdownProps) => {
-  const [showScrollArrow, setShowScrollArrow] = useState(false)
-
   const searchRef: any = createRef()
-
-  const handleListScroll = (e: SyntheticEvent) => {
-    if (showScrollArrow && (e.target as any).scrollTop > 0) {
-      setShowScrollArrow(false)
-    }
-  }
 
   const handleClearIconClick = (
     event: SyntheticEvent,
@@ -172,59 +162,100 @@ const SearchableDropdown = ({
     return changes
   }
 
-  const renderSearch = () => (
-    <List>
-      <ListItem padded={false}>
-        <Input
-          ref={searchRef}
-          hasRightIcon={false}
-          name={`search-${Date.now()}`}
-          onChange={onSearch}
-          placeholder="Search"
-          value={searchTerm}
-          type="text"
+  const renderIcons = (
+    isLoading: boolean,
+    showClearIcon: boolean,
+    clearSelection: () => void,
+  ) => {
+    if (isLoading) {
+      return <Spinner size={16} />
+    }
+
+    return (
+      <React.Fragment>
+        {showClearIcon && (
+          <Icon
+            color="black"
+            name="remove-light"
+            size={10}
+            onClick={event => handleClearIconClick(event, clearSelection)}
+            {...styles.clearIcon}
+          />
+        )}
+
+        <Icon
+          color="black"
+          name={
+            placement === EDropdownDirection.TOP ? 'arrow-up' : 'arrow-down'
+          }
+          size={10}
         />
-      </ListItem>
-    </List>
+      </React.Fragment>
+    )
+  }
+
+  const renderSearchInput = () => (
+    <Input
+      ref={searchRef}
+      hasRightIcon={false}
+      name={`search-${Date.now()}`}
+      onChange={onSearch}
+      placeholder="Search"
+      value={searchTerm}
+      type="text"
+    />
   )
 
-  const renderListItems = (getItemProps: (options: object) => void) => (
-    <Relative {...styles.searchInput}>
-      {renderSearch()}
-      <List
-        direction={placement === Placement.top ? 'column-reverse' : 'column'}
-        onScroll={handleListScroll}
-        {...styles.list(menuHeight, placement)}
+  const renderList = (getItemProps: (options: object) => void) => (
+    <Relative>
+      <Absolute
+        bottom={
+          placement === EDropdownDirection.TOP ? INPUT_FIELD_HEIGHT : undefined
+        }
+        {...styles.listWrapper(menuHeight)}
       >
-        {items.map((item, index) => (
-          <ListItem
-            {...getItemProps({
-              index,
-              item,
-              key: item.value,
-            })}
-            {...styles.listItem}
-          >
-            <Text size="l" {...styles.label}>
-              {item.label}
-            </Text>
-          </ListItem>
-        ))}
-        {noResultsText && items.length === 0 && (
-          <ListItem>
-            <Text size="l" {...styles.label}>
-              {noResultsText}
-            </Text>
-          </ListItem>
-        )}
-        {loadMoreText && items.length && (
-          <ListItem onClick={onLoadMore} {...styles.listItem}>
-            <Text size="l" {...styles.label}>
-              {loadMoreText}
-            </Text>
-          </ListItem>
-        )}
-      </List>
+        <View
+          direction={
+            placement === EDropdownDirection.TOP ? 'column-reverse' : 'column'
+          }
+        >
+          <View>{renderSearchInput()}</View>
+          <View {...styles.listItems(menuHeight)}>
+            <List>
+              {items.map((item, index) => (
+                <ListItem
+                  {...getItemProps({
+                    index,
+                    item,
+                    key: item.value,
+                  })}
+                  {...styles.listItem}
+                >
+                  <Text size="l" {...styles.label}>
+                    {item.label}
+                  </Text>
+                </ListItem>
+              ))}
+
+              {noResultsText && items.length === 0 && (
+                <ListItem>
+                  <Text size="l" {...styles.label}>
+                    {noResultsText}
+                  </Text>
+                </ListItem>
+              )}
+
+              {loadMoreText && items.length && (
+                <ListItem onClick={onLoadMore} {...styles.listItem}>
+                  <Text strong={true} size="l" {...styles.label}>
+                    {loadMoreText}
+                  </Text>
+                </ListItem>
+              )}
+            </List>
+          </View>
+        </View>
+      </Absolute>
     </Relative>
   )
 
@@ -242,7 +273,10 @@ const SearchableDropdown = ({
         return (
           <div {...styles.wrapper(isOpen)}>
             <Relative>
-              <View onClick={() => toggleMenu()} {...styles.area}>
+              <View
+                onClick={() => !isLoading && toggleMenu()}
+                {...styles.area(isLoading)}
+              >
                 <Input
                   disabled
                   icon={icon}
@@ -255,33 +289,15 @@ const SearchableDropdown = ({
                   {...styles.disabledInput}
                 />
 
-                <Absolute top={0} right={0} {...styles.iconWrapper}>
+                <Absolute top={0} right={0} {...styles.iconWrapper(isLoading)}>
                   <View direction="row">
-                    {showClearIcon && (
-                      <Icon
-                        color="black"
-                        name="remove-light"
-                        size={10}
-                        onClick={event =>
-                          handleClearIconClick(event, clearSelection)
-                        }
-                        {...css({ marginRight: 10, display: 'inline-block' })}
-                      />
-                    )}
-
-                    <Icon
-                      color="black"
-                      name={
-                        placement === Placement.top ? 'arrow-up' : 'arrow-down'
-                      }
-                      size={10}
-                    />
+                    {renderIcons(isLoading, showClearIcon, clearSelection)}
                   </View>
                 </Absolute>
               </View>
             </Relative>
 
-            {isOpen && renderListItems(getItemProps)}
+            {isOpen && renderList(getItemProps)}
           </div>
         )
       }}
