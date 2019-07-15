@@ -44,6 +44,9 @@ const styles = {
       height: '100%',
       padding: '16px 16px 16px 20px',
     }),
+  searchWrapper: css({
+    borderTop: `1px solid ${ColorPalette.lightGrey}`,
+  }),
   label: css({
     width: '100%',
   }),
@@ -131,7 +134,7 @@ const SearchableDropdown = ({
   loadMoreText = '',
   menuHeight = INPUT_FIELD_HEIGHT * 4,
   name = '',
-  noResultsText = '',
+  noResultsText,
   onLoadMore = noop,
   onSearch,
   onSelect,
@@ -174,11 +177,15 @@ const SearchableDropdown = ({
       return <Spinner size={16} />
     }
 
+    const arrowDirection =
+      placement === EDropdownDirection.TOP ? 'arrow-up' : 'arrow-down'
+
     return (
       <React.Fragment>
         {showClearIcon && (
           <Icon
             color="black"
+            data-testid="searchable-dropdown-clear-icon"
             name="remove-light"
             size={10}
             onClick={event => handleClearIconClick(event, clearSelection)}
@@ -188,9 +195,8 @@ const SearchableDropdown = ({
 
         <Icon
           color="black"
-          name={
-            placement === EDropdownDirection.TOP ? 'arrow-up' : 'arrow-down'
-          }
+          data-testid={`searchable-dropdown-${arrowDirection}`}
+          name={arrowDirection}
           size={10}
         />
       </React.Fragment>
@@ -222,7 +228,7 @@ const SearchableDropdown = ({
             placement === EDropdownDirection.TOP ? 'column-reverse' : 'column'
           }
         >
-          <View>{renderSearchInput()}</View>
+          <View {...styles.searchWrapper}>{renderSearchInput()}</View>
           <View {...styles.listItems(menuHeight)}>
             <List>
               {items.map((item, index) => (
@@ -242,7 +248,11 @@ const SearchableDropdown = ({
 
               {noResultsText && items.length === 0 && (
                 <ListItem>
-                  <Text size="l" {...styles.label}>
+                  <Text
+                    size="l"
+                    data-testid="searchable-dropdown-no-results"
+                    {...styles.label}
+                  >
                     {noResultsText}
                   </Text>
                 </ListItem>
@@ -250,7 +260,12 @@ const SearchableDropdown = ({
 
               {loadMoreText && items.length && (
                 <ListItem onClick={onLoadMore} {...styles.listItem}>
-                  <Text strong={true} size="l" {...styles.label}>
+                  <Text
+                    strong={true}
+                    size="l"
+                    data-testid="searchable-dropdown-load-more"
+                    {...styles.label}
+                  >
                     {loadMoreText}
                   </Text>
                 </ListItem>
@@ -276,7 +291,11 @@ const SearchableDropdown = ({
         return (
           <div {...styles.wrapper(isOpen, disabled, isLoading)}>
             <Relative>
-              <View onClick={() => !isLoading && toggleMenu()} {...styles.area}>
+              <View
+                onClick={() => !isLoading && toggleMenu()}
+                {...styles.area}
+                data-testid="searchable-dropdown"
+              >
                 <Input
                   disabled
                   icon={icon}
