@@ -16,7 +16,7 @@ const ListSpinner: FunctionComponent<IListSpinnerProps> = ({
 )
 
 interface IListSpinnerProps {
-  radius: number
+  radius?: number
 }
 
 export default ListSpinner

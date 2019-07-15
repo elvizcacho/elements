@@ -39,7 +39,7 @@ const Placement = {
 
 type Placement = 'top' | 'bottom'
 
-interface TypeaheadItem {
+export interface ITypeaheadItem {
   label: string
   value: string | number
   icon?: ReactNode
@@ -59,7 +59,7 @@ interface ITypeaheadProps {
    * data. */
   isLoading?: boolean
   /** The itebooleanomponent as an array of objects. (icon is optional) */
-  items: TypeaheadItem[]
+  items: ITypeaheadItem[]
   /** The maximum number of items displayed in the menu. */
   limit?: number
   /** The height of the menu in pixels. */
@@ -73,7 +73,7 @@ interface ITypeaheadProps {
   /** Callback triggered when the menu is opened. */
   onOpen?: () => void
   /** Callback triggered when selecting an item. */
-  onSelect?: (item: TypeaheadItem) => void
+  onSelect?: (item: ITypeaheadItem) => void
   /** The placeholder displayed in the input field. */
   placeholder?: string
   /** The value of the component, makes this a controlled component. */
@@ -150,8 +150,8 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
   }
 
   stateReducer = (
-    state: DownshiftState<TypeaheadItem>,
-    changes: StateChangeOptions<TypeaheadItem>,
+    state: DownshiftState<ITypeaheadItem>,
+    changes: StateChangeOptions<ITypeaheadItem>,
   ) => {
     const { clearOnSelect, placement } = this.props
     const minOfLimits = Math.min(
@@ -225,9 +225,9 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
     highlightedIndex,
   }: {
     clearSelection: () => void
-    getItemProps: (options: GetItemPropsOptions<TypeaheadItem>) => any
+    getItemProps: (options: GetItemPropsOptions<ITypeaheadItem>) => any
     highlightedIndex: null | number
-  }) => (item: TypeaheadItem, index: number) => (
+  }) => (item: ITypeaheadItem, index: number) => (
     <ListItem
       {...getItemProps({
         index,

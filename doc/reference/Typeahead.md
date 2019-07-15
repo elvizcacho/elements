@@ -21,6 +21,6 @@ data.
 |onClose **(required)**||Callback triggered when the menu is closed.
 |onInputValueChange|((inputValue: string) => void)|Callback triggered when the input value is modified.
 |onOpen **(required)**||Callback triggered when the menu is opened.
-|onSelect|((item: TypeaheadItem) => void)|Callback triggered when selecting an item.
+|onSelect|((item: ITypeaheadItem) => void)|Callback triggered when selecting an item.
 |placeholder|string|The placeholder displayed in the input field.
 |value|string|The value of the component, makes this a controlled component.

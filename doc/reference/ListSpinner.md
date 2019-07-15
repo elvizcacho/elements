@@ -7,4 +7,4 @@ It's a spinner for a list *
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
-|radius **(required)**||
+|radius|number|
