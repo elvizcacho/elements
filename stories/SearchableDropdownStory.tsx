@@ -293,7 +293,7 @@ const SearchableDropdownStory = () => {
           />
 
           <Text strong {...styles.title}>
-            Dropdown with loading spinner
+            Dropdown in loading state
           </Text>
           <SearchableDropdown
             isLoading={true}
