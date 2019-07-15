@@ -1,113 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dropdown should render with placement bottom (default) 1`] = `
+exports[`SearchableDropdown should render with icon 1`] = `
 .css-0,
 [data-css-0] {
-  width: 100%;
+  background-color: #ffffff;
   height: 50px;
   position: relative;
-  background-color: #ffffff;
+  width: 100%;
 }
 
 .css-1,
 [data-css-1] {
-  position: absolute;
-  left: 15px;
-  font-size: 10px;
-  opacity: 0;
-  transition: all .225s ease-out;
-  -webkit-transition: all .225s ease-out;
-  -moz-transition: all .225s ease-out;
+  background-color: #ffffff;
+  color: black;
+  cursor: pointer;
+  overflow: hidden;
+  padding-right: 30px;
+  pointer-events: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: calc(100% - 5px);
 }
 
 .css-2,
 [data-css-2] {
-  position: relative;
+  border-top: 1px solid #ecf0f1;
 }
 
 .css-3,
 [data-css-3] {
-  align-items: stretch;
-  border: none;
-  box-shadow: ;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
-  padding: 0;
   width: 100%;
-  background-color: #ffffff;
-  -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
 }
 
 .css-4,
-[data-css-4] {
-  width: calc(100% - 5px);
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  cursor: pointer;
-  padding-right: 30px;
-  color: black;
-  background-color: white;
-  pointer-events: none;
-}
-
-.css-5,
-[data-css-5] {
-  cursor: pointer;
-  height: 100%;
-  width: 50px;
-  padding: 16px 16px 16px 20px;
+[data-css-5]:hover {
+  background-color: #f9fafb;
 }
 
 .css-6,
 [data-css-6] {
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  -webkit-flex: 0 0 auto;
+  position: relative;
 }
 
 .css-7,
 [data-css-7] {
-  display: inline;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
+  height: 100%;
+  padding: 16px 16px 16px 20px;
+}
+
+.css-8,
+[data-css-8] {
   box-sizing: border-box;
-  height: 50px;
-  width: 100%;
-  padding: 0 15px;
-  padding-top: 10px;
-  padding-right: 50px;
-  transition: padding-top .225s ease-out;
-  border: 0;
-  -webkit-transition: padding-top .225s ease-out;
-  -moz-transition: padding-top .225s ease-out;
-}
-
-.css-7:-webkit-autofill ~ .label,
-[data-css-7]:-webkit-autofill ~ .label {
-  opacity: 1 !important;
-  top: 8px !important;
-}
-
-.css-7:-webkit-autofill ~ .checkmark,
-[data-css-7]:-webkit-autofill ~ .checkmark {
-  opacity: 1 !important;
-  top: 8px;
-}
-
-.css-7:-webkit-autofill,
-[data-css-7]:-webkit-autofill {
-  padding-top: 10px !important;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
 }
 
 .css-9,
@@ -148,120 +94,469 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
 
 .css-13,
 [data-css-13] {
+  box-sizing: border-box;
+  align-content: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-14,
+[data-css-14] {
   width: 10px;
   height: 10px;
   stroke: black;
 }
 
-<div
-  aria-expanded={false}
-  aria-haspopup="listbox"
-  aria-labelledby="downshift-0-label"
-  aria-owns={null}
-  data-css-3=""
-  role="combobox"
->
+.css-15,
+[data-css-15] {
+  align-items: stretch;
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+}
+
+.css-16,
+[data-css-16] {
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  max-height: 200px;
+  overflow: hidden;
+  width: 100%;
+  z-index: 9999;
+}
+
+.css-17,
+[data-css-17] {
+  border-top: 1px solid #ecf0f1;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.css-18,
+[data-css-18] {
+  position: absolute;
+}
+
+.css-19,
+[data-css-19] {
+  box-sizing: border-box;
+  align-content: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-20,
+[data-css-20] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  padding-top: 0;
+  padding-right: 15px;
+  transition: padding-top .225s ease-out;
+  border: 0;
+  -webkit-transition: padding-top .225s ease-out;
+  -moz-transition: padding-top .225s ease-out;
+}
+
+.css-20:-webkit-autofill ~ .label,
+[data-css-20]:-webkit-autofill ~ .label {
+  opacity: 1 !important;
+  top: 8px !important;
+}
+
+.css-20:-webkit-autofill ~ .checkmark,
+[data-css-20]:-webkit-autofill ~ .checkmark {
+  opacity: 1 !important;
+  top: 8px;
+}
+
+.css-20:-webkit-autofill,
+[data-css-20]:-webkit-autofill {
+  padding-top: 10px !important;
+}
+
+.css-22,
+[data-css-22] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  cursor: pointer;
+  background-color: white;
+}
+
+.css-23,
+[data-css-23] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  cursor: pointer;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-24,
+[data-css-24] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
+}
+
+.css-25,
+[data-css-25] {
+  pointer-events: none;
+}
+
+.css-26,
+[data-css-26] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-right: 50px;
+  transition: padding-top .225s ease-out;
+  border: 0;
+  -webkit-transition: padding-top .225s ease-out;
+  -moz-transition: padding-top .225s ease-out;
+}
+
+.css-26:-webkit-autofill ~ .label,
+[data-css-26]:-webkit-autofill ~ .label {
+  opacity: 1 !important;
+  top: 8px !important;
+}
+
+.css-26:-webkit-autofill ~ .checkmark,
+[data-css-26]:-webkit-autofill ~ .checkmark {
+  opacity: 1 !important;
+  top: 8px;
+}
+
+.css-26:-webkit-autofill,
+[data-css-26]:-webkit-autofill {
+  padding-top: 10px !important;
+}
+
+.css-28,
+[data-css-28] {
+  position: absolute;
+  left: 40px;
+  font-size: 10px;
+  opacity: 0;
+  transition: all .225s ease-out;
+  -webkit-transition: all .225s ease-out;
+  -moz-transition: all .225s ease-out;
+}
+
+.css-29,
+[data-css-29] {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  bottom: 0;
+}
+
+.css-30,
+[data-css-30] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-31,
+[data-css-31] {
+  width: 16px;
+  height: 16px;
+  stroke: #626262;
+}
+
+<div>
   <div
-    data-css-2=""
-    data-css-6=""
+    aria-expanded="true"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-2-label"
+    aria-owns="downshift-2-menu"
+    data-css-15=""
+    role="combobox"
   >
     <div
       data-css-6=""
-      data-css-0=""
-      onClick={[Function]}
+      data-css-8=""
     >
       <div
-        data-css-2=""
-        data-css-6=""
-        style={
-          Object {
-            "width": "100%",
-          }
-        }
+        data-css-0=""
+        data-css-8=""
+        data-testid="searchable-dropdown"
       >
-        <input
-          aria-required={false}
-          data-css-4=""
-          data-css-7=""
-          disabled={true}
-          onChange={[Function]}
-          placeholder="select something..."
-          readOnly={true}
-          required={false}
-          type="text"
-          value="dog"
-        />
         <div
-          className="label"
           data-css-6=""
-          data-css-1=""
-          style={
-            Object {
-              "opacity": 1,
-              "top": 8,
-            }
-          }
+          data-css-8=""
+          style="width: 100%;"
         >
           <div
-            data-css-6=""
-            data-css-10=""
+            data-css-25=""
+            data-css-30=""
+            data-css-29=""
           >
-            some label
-             
+            <div
+              data-css-8=""
+              data-css-31=""
+            />
+          </div>
+          <input
+            aria-required="false"
+            data-css-26=""
+            data-css-1=""
+            disabled=""
+            name=""
+            placeholder="select something..."
+            readonly=""
+            type="text"
+            value="dog"
+          />
+          <div
+            class="label"
+            data-css-28=""
+            data-css-8=""
+            style="opacity: 1; top: 8px;"
+          >
+            <div
+              data-css-8=""
+              data-css-10=""
+            >
+              some label
+               
+            </div>
+          </div>
+          <div
+            class="checkmark"
+            data-css-9=""
+            data-css-8=""
+          >
+            <div
+              data-css-8=""
+              data-css-11=""
+            />
           </div>
         </div>
         <div
-          className="checkmark"
-          data-css-9=""
-          data-css-6=""
+          data-css-12=""
+          data-css-8=""
+          data-css-7=""
         >
           <div
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "",
-              }
-            }
-            data-css-6=""
-            data-css-11=""
-          />
+            data-css-13=""
+          >
+            <div
+              data-css-14=""
+              data-css-8=""
+              data-testid="searchable-dropdown-arrow-down"
+            />
+          </div>
         </div>
       </div>
+    </div>
+    <div
+      data-css-6=""
+      data-css-8=""
+    >
       <div
-        data-css-5=""
-        data-css-12=""
-        data-css-6=""
-        onClick={[Function]}
+        data-css-16=""
+        data-css-18=""
+        data-css-8=""
       >
         <div
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "",
-            }
-          }
-          data-css-13=""
-          data-css-6=""
-        />
+          data-css-19=""
+        >
+          <div
+            data-css-8=""
+            data-css-2=""
+          >
+            <div
+              data-css-6=""
+              data-css-8=""
+              style="width: 100%;"
+            >
+              <input
+                aria-required="false"
+                data-css-20=""
+                name="search-1563202649051"
+                placeholder="Search"
+                type="text"
+                value=""
+              />
+              <div
+                class="checkmark"
+                data-css-9=""
+                data-css-8=""
+              >
+                <div
+                  data-css-8=""
+                  data-css-11=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            data-css-17=""
+            data-css-8=""
+          >
+            <div
+              data-css-19=""
+            >
+              <div
+                aria-selected="false"
+                data-css-23=""
+                data-css-22=""
+                data-css-5=""
+                id="downshift-2-item-0"
+                role="option"
+              >
+                <div
+                  data-css-24=""
+                  data-css-8=""
+                  data-css-3=""
+                >
+                  dog
+                </div>
+              </div>
+              <div
+                aria-selected="false"
+                data-css-23=""
+                data-css-22=""
+                data-css-5=""
+                id="downshift-2-item-1"
+                role="option"
+              >
+                <div
+                  data-css-24=""
+                  data-css-8=""
+                  data-css-3=""
+                >
+                  cat
+                </div>
+              </div>
+              <div
+                aria-selected="false"
+                data-css-23=""
+                data-css-22=""
+                data-css-5=""
+                id="downshift-2-item-2"
+                role="option"
+              >
+                <div
+                  data-css-24=""
+                  data-css-8=""
+                  data-css-3=""
+                >
+                  apple
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div
-    data-css-2=""
-    data-css-6=""
-  />
 </div>
 `;
 
-exports[`Dropdown should render with placement top 1`] = `
+exports[`SearchableDropdown should render with load more 1`] = `
 .css-0,
 [data-css-0] {
-  width: 100%;
-  height: 50px;
-  position: relative;
-  background-color: #ffffff;
-}
-
-.css-1,
-[data-css-1] {
   position: absolute;
   left: 15px;
   font-size: 10px;
@@ -271,16 +566,135 @@ exports[`Dropdown should render with placement top 1`] = `
   -moz-transition: all .225s ease-out;
 }
 
+.css-1,
+[data-css-1] {
+  background-color: #ffffff;
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
 .css-2,
 [data-css-2] {
-  position: relative;
+  background-color: #ffffff;
+  color: black;
+  cursor: pointer;
+  overflow: hidden;
+  padding-right: 30px;
+  pointer-events: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: calc(100% - 5px);
 }
 
 .css-3,
 [data-css-3] {
+  border-top: 1px solid #ecf0f1;
+}
+
+.css-4,
+[data-css-4] {
+  width: 100%;
+}
+
+.css-5,
+[data-css-6]:hover {
+  background-color: #f9fafb;
+}
+
+.css-7,
+[data-css-7] {
+  position: relative;
+}
+
+.css-8,
+[data-css-8] {
+  cursor: pointer;
+  height: 100%;
+  padding: 16px 16px 16px 20px;
+}
+
+.css-9,
+[data-css-9] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-10,
+[data-css-10] {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  pointer-events: none;
+  transition: opacity .225s;
+  opacity: 0;
+  -webkit-transition: opacity .225s;
+  -moz-transition: opacity .225s;
+}
+
+.css-11,
+[data-css-11] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #626262;
+}
+
+.css-12,
+[data-css-12] {
+  width: 16px;
+  height: 16px;
+  fill: lightGrey;
+}
+
+.css-13,
+[data-css-13] {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.css-14,
+[data-css-14] {
+  box-sizing: border-box;
+  align-content: stretch;
   align-items: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-15,
+[data-css-15] {
+  width: 10px;
+  height: 10px;
+  stroke: black;
+}
+
+.css-16,
+[data-css-16] {
+  align-items: stretch;
+  background-color: #ffffff;
   border: none;
-  box-shadow: ;
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  cursor: pointer;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -289,7 +703,6 @@ exports[`Dropdown should render with placement top 1`] = `
   flex-direction: column;
   padding: 0;
   width: 100%;
-  background-color: #ffffff;
   -webkit-box-align: stretch;
   -webkit-align-items: stretch;
   -webkit-box-orient: vertical;
@@ -297,36 +710,899 @@ exports[`Dropdown should render with placement top 1`] = `
   -webkit-flex-direction: column;
 }
 
+.css-17,
+[data-css-17] {
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  max-height: 200px;
+  overflow: hidden;
+  width: 100%;
+  z-index: 9999;
+}
+
+.css-18,
+[data-css-18] {
+  border-top: 1px solid #ecf0f1;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.css-19,
+[data-css-19] {
+  position: absolute;
+}
+
+.css-20,
+[data-css-20] {
+  box-sizing: border-box;
+  align-content: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-21,
+[data-css-21] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  padding-top: 0;
+  padding-right: 15px;
+  transition: padding-top .225s ease-out;
+  border: 0;
+  -webkit-transition: padding-top .225s ease-out;
+  -moz-transition: padding-top .225s ease-out;
+}
+
+.css-21:-webkit-autofill ~ .label,
+[data-css-21]:-webkit-autofill ~ .label {
+  opacity: 1 !important;
+  top: 8px !important;
+}
+
+.css-21:-webkit-autofill ~ .checkmark,
+[data-css-21]:-webkit-autofill ~ .checkmark {
+  opacity: 1 !important;
+  top: 8px;
+}
+
+.css-21:-webkit-autofill,
+[data-css-21]:-webkit-autofill {
+  padding-top: 10px !important;
+}
+
+.css-23,
+[data-css-23] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  cursor: pointer;
+  background-color: white;
+}
+
+.css-24,
+[data-css-24] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  cursor: pointer;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-25,
+[data-css-25] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
+}
+
+.css-26,
+[data-css-26] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  padding-top: 0;
+  padding-right: 50px;
+  transition: padding-top .225s ease-out;
+  border: 0;
+  -webkit-transition: padding-top .225s ease-out;
+  -moz-transition: padding-top .225s ease-out;
+}
+
+.css-26:-webkit-autofill ~ .label,
+[data-css-26]:-webkit-autofill ~ .label {
+  opacity: 1 !important;
+  top: 8px !important;
+}
+
+.css-26:-webkit-autofill ~ .checkmark,
+[data-css-26]:-webkit-autofill ~ .checkmark {
+  opacity: 1 !important;
+  top: 8px;
+}
+
+.css-26:-webkit-autofill,
+[data-css-26]:-webkit-autofill {
+  padding-top: 10px !important;
+}
+
+.css-28,
+[data-css-28] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
+}
+
+<div>
+  <div
+    aria-expanded="true"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-4-label"
+    aria-owns="downshift-4-menu"
+    data-css-16=""
+    role="combobox"
+  >
+    <div
+      data-css-7=""
+      data-css-9=""
+    >
+      <div
+        data-css-1=""
+        data-css-9=""
+        data-testid="searchable-dropdown"
+      >
+        <div
+          data-css-7=""
+          data-css-9=""
+          style="width: 100%;"
+        >
+          <input
+            aria-required="false"
+            data-css-26=""
+            data-css-2=""
+            disabled=""
+            name=""
+            placeholder="select something..."
+            readonly=""
+            type="text"
+            value=""
+          />
+          <div
+            class="label"
+            data-css-9=""
+            data-css-0=""
+            style="opacity: 0; top: 12px;"
+          >
+            <div
+              data-css-9=""
+              data-css-11=""
+            >
+              some label
+               
+            </div>
+          </div>
+          <div
+            class="checkmark"
+            data-css-10=""
+            data-css-9=""
+          >
+            <div
+              data-css-9=""
+              data-css-12=""
+            />
+          </div>
+        </div>
+        <div
+          data-css-13=""
+          data-css-9=""
+          data-css-8=""
+        >
+          <div
+            data-css-14=""
+          >
+            <div
+              data-css-15=""
+              data-css-9=""
+              data-testid="searchable-dropdown-arrow-down"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      data-css-7=""
+      data-css-9=""
+    >
+      <div
+        data-css-17=""
+        data-css-19=""
+        data-css-9=""
+      >
+        <div
+          data-css-20=""
+        >
+          <div
+            data-css-9=""
+            data-css-3=""
+          >
+            <div
+              data-css-7=""
+              data-css-9=""
+              style="width: 100%;"
+            >
+              <input
+                aria-required="false"
+                data-css-21=""
+                name="search-1563202649110"
+                placeholder="Search"
+                type="text"
+                value=""
+              />
+              <div
+                class="checkmark"
+                data-css-10=""
+                data-css-9=""
+              >
+                <div
+                  data-css-9=""
+                  data-css-12=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            data-css-18=""
+            data-css-9=""
+          >
+            <div
+              data-css-20=""
+            >
+              <div
+                aria-selected="false"
+                data-css-24=""
+                data-css-23=""
+                data-css-6=""
+                id="downshift-4-item-0"
+                role="option"
+              >
+                <div
+                  data-css-25=""
+                  data-css-9=""
+                  data-css-4=""
+                >
+                  dog
+                </div>
+              </div>
+              <div
+                aria-selected="false"
+                data-css-24=""
+                data-css-23=""
+                data-css-6=""
+                id="downshift-4-item-1"
+                role="option"
+              >
+                <div
+                  data-css-25=""
+                  data-css-9=""
+                  data-css-4=""
+                >
+                  cat
+                </div>
+              </div>
+              <div
+                aria-selected="false"
+                data-css-24=""
+                data-css-23=""
+                data-css-6=""
+                id="downshift-4-item-2"
+                role="option"
+              >
+                <div
+                  data-css-25=""
+                  data-css-9=""
+                  data-css-4=""
+                >
+                  apple
+                </div>
+              </div>
+              <div
+                data-css-24=""
+                data-css-23=""
+                data-css-6=""
+              >
+                <div
+                  data-css-9=""
+                  data-css-4=""
+                  data-css-28=""
+                  data-testid="searchable-dropdown-load-more"
+                >
+                  Load more
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SearchableDropdown should render with no results 1`] = `
+.css-0,
+[data-css-0] {
+  position: absolute;
+  left: 15px;
+  font-size: 10px;
+  opacity: 0;
+  transition: all .225s ease-out;
+  -webkit-transition: all .225s ease-out;
+  -moz-transition: all .225s ease-out;
+}
+
+.css-1,
+[data-css-1] {
+  background-color: #ffffff;
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.css-2,
+[data-css-2] {
+  background-color: #ffffff;
+  color: black;
+  cursor: pointer;
+  overflow: hidden;
+  padding-right: 30px;
+  pointer-events: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: calc(100% - 5px);
+}
+
+.css-3,
+[data-css-3] {
+  border-top: 1px solid #ecf0f1;
+}
+
 .css-4,
 [data-css-4] {
-  width: calc(100% - 5px);
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  cursor: pointer;
-  padding-right: 30px;
-  color: black;
-  background-color: white;
-  pointer-events: none;
+  width: 100%;
 }
 
 .css-5,
 [data-css-5] {
-  cursor: pointer;
-  height: 100%;
-  width: 50px;
-  padding: 16px 16px 16px 20px;
+  position: relative;
 }
 
 .css-6,
 [data-css-6] {
+  cursor: pointer;
+  height: 100%;
+  padding: 16px 16px 16px 20px;
+}
+
+.css-7,
+[data-css-7] {
   box-sizing: border-box;
   flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
 }
 
+.css-8,
+[data-css-8] {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  pointer-events: none;
+  transition: opacity .225s;
+  opacity: 0;
+  -webkit-transition: opacity .225s;
+  -moz-transition: opacity .225s;
+}
+
+.css-9,
+[data-css-9] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #626262;
+}
+
+.css-10,
+[data-css-10] {
+  width: 16px;
+  height: 16px;
+  fill: lightGrey;
+}
+
+.css-11,
+[data-css-11] {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.css-12,
+[data-css-12] {
+  box-sizing: border-box;
+  align-content: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-13,
+[data-css-13] {
+  width: 10px;
+  height: 10px;
+  stroke: black;
+}
+
+.css-14,
+[data-css-14] {
+  align-items: stretch;
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+}
+
+.css-15,
+[data-css-15] {
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  max-height: 200px;
+  overflow: hidden;
+  width: 100%;
+  z-index: 9999;
+}
+
+.css-16,
+[data-css-16] {
+  border-top: 1px solid #ecf0f1;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.css-17,
+[data-css-17] {
+  position: absolute;
+}
+
+.css-18,
+[data-css-18] {
+  box-sizing: border-box;
+  align-content: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-19,
+[data-css-19] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  padding-top: 0;
+  padding-right: 15px;
+  transition: padding-top .225s ease-out;
+  border: 0;
+  -webkit-transition: padding-top .225s ease-out;
+  -moz-transition: padding-top .225s ease-out;
+}
+
+.css-19:-webkit-autofill ~ .label,
+[data-css-19]:-webkit-autofill ~ .label {
+  opacity: 1 !important;
+  top: 8px !important;
+}
+
+.css-19:-webkit-autofill ~ .checkmark,
+[data-css-19]:-webkit-autofill ~ .checkmark {
+  opacity: 1 !important;
+  top: 8px;
+}
+
+.css-19:-webkit-autofill,
+[data-css-19]:-webkit-autofill {
+  padding-top: 10px !important;
+}
+
+.css-21,
+[data-css-21] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
+}
+
+.css-22,
+[data-css-22] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-23,
+[data-css-23] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  padding-top: 0;
+  padding-right: 50px;
+  transition: padding-top .225s ease-out;
+  border: 0;
+  -webkit-transition: padding-top .225s ease-out;
+  -moz-transition: padding-top .225s ease-out;
+}
+
+.css-23:-webkit-autofill ~ .label,
+[data-css-23]:-webkit-autofill ~ .label {
+  opacity: 1 !important;
+  top: 8px !important;
+}
+
+.css-23:-webkit-autofill ~ .checkmark,
+[data-css-23]:-webkit-autofill ~ .checkmark {
+  opacity: 1 !important;
+  top: 8px;
+}
+
+.css-23:-webkit-autofill,
+[data-css-23]:-webkit-autofill {
+  padding-top: 10px !important;
+}
+
+.css-25,
+[data-css-25] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: white;
+}
+
+<div>
+  <div
+    aria-expanded="true"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-3-label"
+    aria-owns="downshift-3-menu"
+    data-css-14=""
+    role="combobox"
+  >
+    <div
+      data-css-5=""
+      data-css-7=""
+    >
+      <div
+        data-css-1=""
+        data-css-7=""
+        data-testid="searchable-dropdown"
+      >
+        <div
+          data-css-5=""
+          data-css-7=""
+          style="width: 100%;"
+        >
+          <input
+            aria-required="false"
+            data-css-23=""
+            data-css-2=""
+            disabled=""
+            name=""
+            placeholder="select something..."
+            readonly=""
+            type="text"
+            value=""
+          />
+          <div
+            class="label"
+            data-css-7=""
+            data-css-0=""
+            style="opacity: 0; top: 12px;"
+          >
+            <div
+              data-css-7=""
+              data-css-9=""
+            >
+              some label
+               
+            </div>
+          </div>
+          <div
+            class="checkmark"
+            data-css-8=""
+            data-css-7=""
+          >
+            <div
+              data-css-7=""
+              data-css-10=""
+            />
+          </div>
+        </div>
+        <div
+          data-css-11=""
+          data-css-7=""
+          data-css-6=""
+        >
+          <div
+            data-css-12=""
+          >
+            <div
+              data-css-13=""
+              data-css-7=""
+              data-testid="searchable-dropdown-arrow-down"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      data-css-5=""
+      data-css-7=""
+    >
+      <div
+        data-css-15=""
+        data-css-17=""
+        data-css-7=""
+      >
+        <div
+          data-css-18=""
+        >
+          <div
+            data-css-7=""
+            data-css-3=""
+          >
+            <div
+              data-css-5=""
+              data-css-7=""
+              style="width: 100%;"
+            >
+              <input
+                aria-required="false"
+                data-css-19=""
+                name="search-1563202649083"
+                placeholder="Search"
+                type="text"
+                value=""
+              />
+              <div
+                class="checkmark"
+                data-css-8=""
+                data-css-7=""
+              >
+                <div
+                  data-css-7=""
+                  data-css-10=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            data-css-16=""
+            data-css-7=""
+          >
+            <div
+              data-css-18=""
+            >
+              <div
+                data-css-25=""
+                data-css-22=""
+              >
+                <div
+                  data-css-21=""
+                  data-css-7=""
+                  data-css-4=""
+                  data-testid="searchable-dropdown-no-results"
+                >
+                  No results found
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SearchableDropdown should render with placement bottom (default) 1`] = `
+.css-0,
+[data-css-0] {
+  position: absolute;
+  left: 15px;
+  font-size: 10px;
+  opacity: 0;
+  transition: all .225s ease-out;
+  -webkit-transition: all .225s ease-out;
+  -moz-transition: all .225s ease-out;
+}
+
+.css-1,
+[data-css-1] {
+  background-color: #ffffff;
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.css-2,
+[data-css-2] {
+  background-color: #ffffff;
+  color: black;
+  cursor: pointer;
+  overflow: hidden;
+  padding-right: 30px;
+  pointer-events: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: calc(100% - 5px);
+}
+
+.css-3,
+[data-css-3] {
+  border-top: 1px solid #ecf0f1;
+}
+
+.css-4,
+[data-css-4] {
+  width: 100%;
+}
+
+.css-5,
+[data-css-6]:hover {
+  background-color: #f9fafb;
+}
+
 .css-7,
 [data-css-7] {
+  position: relative;
+}
+
+.css-8,
+[data-css-8] {
+  cursor: pointer;
+  height: 100%;
+  padding: 16px 16px 16px 20px;
+}
+
+.css-9,
+[data-css-9] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-10,
+[data-css-10] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -344,25 +1620,25 @@ exports[`Dropdown should render with placement top 1`] = `
   -moz-transition: padding-top .225s ease-out;
 }
 
-.css-7:-webkit-autofill ~ .label,
-[data-css-7]:-webkit-autofill ~ .label {
+.css-10:-webkit-autofill ~ .label,
+[data-css-10]:-webkit-autofill ~ .label {
   opacity: 1 !important;
   top: 8px !important;
 }
 
-.css-7:-webkit-autofill ~ .checkmark,
-[data-css-7]:-webkit-autofill ~ .checkmark {
+.css-10:-webkit-autofill ~ .checkmark,
+[data-css-10]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
   top: 8px;
 }
 
-.css-7:-webkit-autofill,
-[data-css-7]:-webkit-autofill {
+.css-10:-webkit-autofill,
+[data-css-10]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
-.css-9,
-[data-css-9] {
+.css-12,
+[data-css-12] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -373,8 +1649,8 @@ exports[`Dropdown should render with placement top 1`] = `
   -moz-transition: opacity .225s;
 }
 
-.css-10,
-[data-css-10] {
+.css-13,
+[data-css-13] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 10px;
@@ -383,121 +1659,900 @@ exports[`Dropdown should render with placement top 1`] = `
   color: #626262;
 }
 
-.css-11,
-[data-css-11] {
+.css-14,
+[data-css-14] {
   width: 16px;
   height: 16px;
   fill: lightGrey;
 }
 
-.css-12,
-[data-css-12] {
+.css-15,
+[data-css-15] {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.css-13,
-[data-css-13] {
+.css-16,
+[data-css-16] {
+  box-sizing: border-box;
+  align-content: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-17,
+[data-css-17] {
   width: 10px;
   height: 10px;
   stroke: black;
 }
 
-<div
-  aria-expanded={false}
-  aria-haspopup="listbox"
-  aria-labelledby="downshift-1-label"
-  aria-owns={null}
-  data-css-3=""
-  role="combobox"
->
+.css-18,
+[data-css-18] {
+  align-items: stretch;
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+}
+
+.css-19,
+[data-css-19] {
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  max-height: 200px;
+  overflow: hidden;
+  width: 100%;
+  z-index: 9999;
+}
+
+.css-20,
+[data-css-20] {
+  border-top: 1px solid #ecf0f1;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.css-21,
+[data-css-21] {
+  position: absolute;
+}
+
+.css-22,
+[data-css-22] {
+  box-sizing: border-box;
+  align-content: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-23,
+[data-css-23] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  padding-top: 0;
+  padding-right: 15px;
+  transition: padding-top .225s ease-out;
+  border: 0;
+  -webkit-transition: padding-top .225s ease-out;
+  -moz-transition: padding-top .225s ease-out;
+}
+
+.css-23:-webkit-autofill ~ .label,
+[data-css-23]:-webkit-autofill ~ .label {
+  opacity: 1 !important;
+  top: 8px !important;
+}
+
+.css-23:-webkit-autofill ~ .checkmark,
+[data-css-23]:-webkit-autofill ~ .checkmark {
+  opacity: 1 !important;
+  top: 8px;
+}
+
+.css-23:-webkit-autofill,
+[data-css-23]:-webkit-autofill {
+  padding-top: 10px !important;
+}
+
+.css-25,
+[data-css-25] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  cursor: pointer;
+  background-color: white;
+}
+
+.css-26,
+[data-css-26] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  cursor: pointer;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-27,
+[data-css-27] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
+}
+
+<div>
   <div
-    data-css-2=""
-    data-css-6=""
+    aria-expanded="true"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-0-label"
+    aria-owns="downshift-0-menu"
+    data-css-18=""
+    role="combobox"
   >
     <div
-      data-css-6=""
-      data-css-0=""
-      onClick={[Function]}
+      data-css-7=""
+      data-css-9=""
     >
       <div
-        data-css-2=""
-        data-css-6=""
-        style={
-          Object {
-            "width": "100%",
-          }
-        }
+        data-css-1=""
+        data-css-9=""
+        data-testid="searchable-dropdown"
       >
-        <input
-          aria-required={false}
-          data-css-4=""
-          data-css-7=""
-          disabled={true}
-          onChange={[Function]}
-          placeholder="select something..."
-          readOnly={true}
-          required={false}
-          type="text"
-          value="dog"
-        />
         <div
-          className="label"
-          data-css-6=""
-          data-css-1=""
-          style={
-            Object {
-              "opacity": 1,
-              "top": 8,
-            }
-          }
+          data-css-7=""
+          data-css-9=""
+          style="width: 100%;"
         >
-          <div
-            data-css-6=""
+          <input
+            aria-required="false"
+            data-css-2=""
             data-css-10=""
+            disabled=""
+            name="searchable-dropdown-form-name"
+            placeholder="select something..."
+            readonly=""
+            type="text"
+            value="dog"
+          />
+          <div
+            class="label"
+            data-css-9=""
+            data-css-0=""
+            style="opacity: 1; top: 8px;"
           >
-            some label
-             
+            <div
+              data-css-9=""
+              data-css-13=""
+            >
+              some label
+               
+            </div>
+          </div>
+          <div
+            class="checkmark"
+            data-css-12=""
+            data-css-9=""
+          >
+            <div
+              data-css-9=""
+              data-css-14=""
+            />
           </div>
         </div>
         <div
-          className="checkmark"
+          data-css-15=""
           data-css-9=""
-          data-css-6=""
+          data-css-8=""
         >
           <div
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "",
-              }
-            }
-            data-css-6=""
-            data-css-11=""
-          />
+            data-css-16=""
+          >
+            <div
+              data-css-17=""
+              data-css-9=""
+              data-testid="searchable-dropdown-arrow-down"
+            />
+          </div>
         </div>
       </div>
+    </div>
+    <div
+      data-css-7=""
+      data-css-9=""
+    >
       <div
-        data-css-5=""
-        data-css-12=""
-        data-css-6=""
-        onClick={[Function]}
+        data-css-19=""
+        data-css-21=""
+        data-css-9=""
       >
         <div
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "",
-            }
-          }
-          data-css-13=""
-          data-css-6=""
-        />
+          data-css-22=""
+        >
+          <div
+            data-css-9=""
+            data-css-3=""
+          >
+            <div
+              data-css-7=""
+              data-css-9=""
+              style="width: 100%;"
+            >
+              <input
+                aria-required="false"
+                data-css-23=""
+                name="search-1563202648945"
+                placeholder="Search"
+                type="text"
+                value=""
+              />
+              <div
+                class="checkmark"
+                data-css-12=""
+                data-css-9=""
+              >
+                <div
+                  data-css-9=""
+                  data-css-14=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            data-css-20=""
+            data-css-9=""
+          >
+            <div
+              data-css-22=""
+            >
+              <div
+                aria-selected="false"
+                data-css-26=""
+                data-css-25=""
+                data-css-6=""
+                id="downshift-0-item-0"
+                role="option"
+              >
+                <div
+                  data-css-27=""
+                  data-css-9=""
+                  data-css-4=""
+                >
+                  dog
+                </div>
+              </div>
+              <div
+                aria-selected="false"
+                data-css-26=""
+                data-css-25=""
+                data-css-6=""
+                id="downshift-0-item-1"
+                role="option"
+              >
+                <div
+                  data-css-27=""
+                  data-css-9=""
+                  data-css-4=""
+                >
+                  cat
+                </div>
+              </div>
+              <div
+                aria-selected="false"
+                data-css-26=""
+                data-css-25=""
+                data-css-6=""
+                id="downshift-0-item-2"
+                role="option"
+              >
+                <div
+                  data-css-27=""
+                  data-css-9=""
+                  data-css-4=""
+                >
+                  apple
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
+`;
+
+exports[`SearchableDropdown should render with placement top 1`] = `
+.css-0,
+[data-css-0] {
+  position: absolute;
+  left: 15px;
+  font-size: 10px;
+  opacity: 0;
+  transition: all .225s ease-out;
+  -webkit-transition: all .225s ease-out;
+  -moz-transition: all .225s ease-out;
+}
+
+.css-1,
+[data-css-1] {
+  background-color: #ffffff;
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.css-2,
+[data-css-2] {
+  background-color: #ffffff;
+  color: black;
+  cursor: pointer;
+  overflow: hidden;
+  padding-right: 30px;
+  pointer-events: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: calc(100% - 5px);
+}
+
+.css-3,
+[data-css-3] {
+  border-top: 1px solid #ecf0f1;
+}
+
+.css-4,
+[data-css-4] {
+  width: 100%;
+}
+
+.css-5,
+[data-css-6]:hover {
+  background-color: #f9fafb;
+}
+
+.css-7,
+[data-css-7] {
+  position: relative;
+}
+
+.css-8,
+[data-css-8] {
+  cursor: pointer;
+  height: 100%;
+  padding: 16px 16px 16px 20px;
+}
+
+.css-9,
+[data-css-9] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-10,
+[data-css-10] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  padding-top: 10px;
+  padding-right: 50px;
+  transition: padding-top .225s ease-out;
+  border: 0;
+  -webkit-transition: padding-top .225s ease-out;
+  -moz-transition: padding-top .225s ease-out;
+}
+
+.css-10:-webkit-autofill ~ .label,
+[data-css-10]:-webkit-autofill ~ .label {
+  opacity: 1 !important;
+  top: 8px !important;
+}
+
+.css-10:-webkit-autofill ~ .checkmark,
+[data-css-10]:-webkit-autofill ~ .checkmark {
+  opacity: 1 !important;
+  top: 8px;
+}
+
+.css-10:-webkit-autofill,
+[data-css-10]:-webkit-autofill {
+  padding-top: 10px !important;
+}
+
+.css-12,
+[data-css-12] {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  pointer-events: none;
+  transition: opacity .225s;
+  opacity: 0;
+  -webkit-transition: opacity .225s;
+  -moz-transition: opacity .225s;
+}
+
+.css-13,
+[data-css-13] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #626262;
+}
+
+.css-14,
+[data-css-14] {
+  width: 16px;
+  height: 16px;
+  fill: lightGrey;
+}
+
+.css-15,
+[data-css-15] {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.css-16,
+[data-css-16] {
+  box-sizing: border-box;
+  align-content: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-17,
+[data-css-17] {
+  width: 10px;
+  height: 10px;
+  stroke: black;
+}
+
+.css-18,
+[data-css-18] {
+  align-items: stretch;
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+}
+
+.css-19,
+[data-css-19] {
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  max-height: 200px;
+  overflow: hidden;
+  width: 100%;
+  z-index: 9999;
+}
+
+.css-20,
+[data-css-20] {
+  border-top: 1px solid #ecf0f1;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.css-21,
+[data-css-21] {
+  box-sizing: border-box;
+  align-content: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-22,
+[data-css-22] {
+  display: inline;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding: 0 15px;
+  padding-top: 0;
+  padding-right: 15px;
+  transition: padding-top .225s ease-out;
+  border: 0;
+  -webkit-transition: padding-top .225s ease-out;
+  -moz-transition: padding-top .225s ease-out;
+}
+
+.css-22:-webkit-autofill ~ .label,
+[data-css-22]:-webkit-autofill ~ .label {
+  opacity: 1 !important;
+  top: 8px !important;
+}
+
+.css-22:-webkit-autofill ~ .checkmark,
+[data-css-22]:-webkit-autofill ~ .checkmark {
+  opacity: 1 !important;
+  top: 8px;
+}
+
+.css-22:-webkit-autofill,
+[data-css-22]:-webkit-autofill {
+  padding-top: 10px !important;
+}
+
+.css-24,
+[data-css-24] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  cursor: pointer;
+  background-color: white;
+}
+
+.css-25,
+[data-css-25] {
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  cursor: pointer;
+  flex: 0 0 auto;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-26,
+[data-css-26] {
+  display: block;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
+}
+
+.css-27,
+[data-css-27] {
+  position: absolute;
+  bottom: 50px;
+}
+
+.css-28,
+[data-css-28] {
+  box-sizing: border-box;
+  align-content: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  -webkit-align-content: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: column-reverse;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+}
+
+<div>
   <div
-    data-css-2=""
-    data-css-6=""
-  />
+    aria-expanded="true"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-1-label"
+    aria-owns="downshift-1-menu"
+    data-css-18=""
+    role="combobox"
+  >
+    <div
+      data-css-7=""
+      data-css-9=""
+    >
+      <div
+        data-css-1=""
+        data-css-9=""
+        data-testid="searchable-dropdown"
+      >
+        <div
+          data-css-7=""
+          data-css-9=""
+          style="width: 100%;"
+        >
+          <input
+            aria-required="false"
+            data-css-2=""
+            data-css-10=""
+            disabled=""
+            name=""
+            placeholder="select something..."
+            readonly=""
+            type="text"
+            value="dog"
+          />
+          <div
+            class="label"
+            data-css-9=""
+            data-css-0=""
+            style="opacity: 1; top: 8px;"
+          >
+            <div
+              data-css-9=""
+              data-css-13=""
+            >
+              some label
+               
+            </div>
+          </div>
+          <div
+            class="checkmark"
+            data-css-12=""
+            data-css-9=""
+          >
+            <div
+              data-css-9=""
+              data-css-14=""
+            />
+          </div>
+        </div>
+        <div
+          data-css-15=""
+          data-css-9=""
+          data-css-8=""
+        >
+          <div
+            data-css-16=""
+          >
+            <div
+              data-css-17=""
+              data-css-9=""
+              data-testid="searchable-dropdown-arrow-up"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      data-css-7=""
+      data-css-9=""
+    >
+      <div
+        data-css-19=""
+        data-css-27=""
+        data-css-9=""
+      >
+        <div
+          data-css-28=""
+        >
+          <div
+            data-css-9=""
+            data-css-3=""
+          >
+            <div
+              data-css-7=""
+              data-css-9=""
+              style="width: 100%;"
+            >
+              <input
+                aria-required="false"
+                data-css-22=""
+                name="search-1563202649005"
+                placeholder="Search"
+                type="text"
+                value=""
+              />
+              <div
+                class="checkmark"
+                data-css-12=""
+                data-css-9=""
+              >
+                <div
+                  data-css-9=""
+                  data-css-14=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            data-css-20=""
+            data-css-9=""
+          >
+            <div
+              data-css-21=""
+            >
+              <div
+                aria-selected="false"
+                data-css-25=""
+                data-css-24=""
+                data-css-6=""
+                id="downshift-1-item-0"
+                role="option"
+              >
+                <div
+                  data-css-26=""
+                  data-css-9=""
+                  data-css-4=""
+                >
+                  dog
+                </div>
+              </div>
+              <div
+                aria-selected="false"
+                data-css-25=""
+                data-css-24=""
+                data-css-6=""
+                id="downshift-1-item-1"
+                role="option"
+              >
+                <div
+                  data-css-26=""
+                  data-css-9=""
+                  data-css-4=""
+                >
+                  cat
+                </div>
+              </div>
+              <div
+                aria-selected="false"
+                data-css-25=""
+                data-css-24=""
+                data-css-6=""
+                id="downshift-1-item-2"
+                role="option"
+              >
+                <div
+                  data-css-26=""
+                  data-css-9=""
+                  data-css-4=""
+                >
+                  apple
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
