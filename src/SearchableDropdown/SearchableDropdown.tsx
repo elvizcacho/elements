@@ -17,20 +17,18 @@ import { Spinner } from '../index'
 const INPUT_FIELD_HEIGHT = 50
 
 const styles = {
-  area: (isLoading: boolean) =>
-    css({
-      backgroundColor: ColorPalette.white,
-      cursor: !isLoading && 'pointer',
-      height: INPUT_FIELD_HEIGHT,
-      position: 'relative',
-      width: '100%',
-    }),
+  area: css({
+    backgroundColor: ColorPalette.white,
+    height: INPUT_FIELD_HEIGHT,
+    position: 'relative',
+    width: '100%',
+  }),
   clearIcon: css({
     marginRight: 10,
     display: 'inline-block',
   }),
   disabledInput: css({
-    backgroundColor: 'white',
+    backgroundColor: ColorPalette.white,
     color: 'black',
     cursor: 'pointer',
     overflow: 'hidden',
@@ -68,14 +66,16 @@ const styles = {
       width: '100%',
       zIndex: 9999,
     }),
-  wrapper: (isOpen: boolean) =>
+  wrapper: (isOpen: boolean, disabled: boolean, isLoading: boolean) =>
     css({
       alignItems: 'stretch',
       backgroundColor: ColorPalette.white,
       border: 'none',
-      boxShadow: isOpen ? '1px 1px 3px rgba(29, 29, 29, 0.125)' : '',
+      boxShadow: isOpen && '1px 1px 3px rgba(29, 29, 29, 0.125)',
+      cursor: disabled ? 'not-allowed' : !isLoading && 'pointer',
       display: 'flex',
       flexDirection: 'column',
+      opacity: disabled && 0.85,
       padding: 0,
       width: '100%',
     }),
@@ -84,6 +84,8 @@ const styles = {
 interface ISearchableDropdownProps {
   /** If true, than the field can be cleared */
   clearable?: boolean
+  /** Set dropdown into disabled state */
+  disabled?: boolean
   /** Icon on the left of the input field */
   icon?: IconType
   /** The dropdown items to show */
@@ -120,6 +122,7 @@ interface ISearchableDropdownProps {
 
 const SearchableDropdown = ({
   clearable = false,
+  disabled = false,
   icon,
   items,
   initialSelectedItem,
@@ -271,12 +274,9 @@ const SearchableDropdown = ({
         const showClearIcon = clearable && selectedItem && selectedItem.value
 
         return (
-          <div {...styles.wrapper(isOpen)}>
+          <div {...styles.wrapper(isOpen, disabled, isLoading)}>
             <Relative>
-              <View
-                onClick={() => !isLoading && toggleMenu()}
-                {...styles.area(isLoading)}
-              >
+              <View onClick={() => !isLoading && toggleMenu()} {...styles.area}>
                 <Input
                   disabled
                   icon={icon}

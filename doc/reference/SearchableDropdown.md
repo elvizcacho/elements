@@ -8,6 +8,7 @@ You can change it in "src/SearchableDropdown/SearchableDropdown.tsx" and run bui
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
 |clearable|boolean|If true, than the field can be cleared
+|disabled|boolean|Set dropdown into disabled state
 |icon|"alarm", "alarm-filled", "armchair", "armchair-filled", "arrow-down", "arrow-down-filled", "arrow-left", "arrow-left-filled", "arrow-right", "arrow-right-filled", ... 147 more ...|Icon on the left of the input field
 |items **(required)**||The dropdown items to show
 |initialSelectedItem|any|Initially selected item - this value is uncontrolled

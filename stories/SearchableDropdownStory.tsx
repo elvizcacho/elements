@@ -304,6 +304,19 @@ const SearchableDropdownStory = () => {
             placeholder="Some label"
             searchTerm={searchQuery}
           />
+
+          <Text strong {...styles.title}>
+            Disabled Dropdown
+          </Text>
+          <SearchableDropdown
+            disabled={true}
+            items={items}
+            label="Some label"
+            name="searchable-dropdown-disabled"
+            onSelect={handleSelect}
+            placeholder="Some label"
+            searchTerm={searchQuery}
+          />
         </View>
       </ResourceProvider>
     </ThemeProvider>
