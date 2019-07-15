@@ -1,11 +1,8 @@
 {
   "name": "@allthings/elements",
-  "version": "5.0.0-beta.11",
+  "version": "5.0.0-beta.12",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
-  "files": [
-    "dist"
-  ],
   "types": "dist/es/index.d.ts",
   "repository": "https://github.com/allthings/elements",
   "author": "Moritz Schwörer <moritz.schwoerer@allthings.me>",
@@ -37,7 +34,7 @@
     "react-intl": "^2.4.0"
   },
   "scripts": {
-    "preversion": "yarn lint && yarn test && yarn build",
+    "preversion": "yarn lint && yarn test",
     "postversion": "git push --tags origin HEAD",
     "prebuild": "rimraf dist",
     "build:es": "tsc -p tsconfig.json --target ESNext --module ESNext --outDir dist/es",
