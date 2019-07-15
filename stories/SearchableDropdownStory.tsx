@@ -255,6 +255,21 @@ const SearchableDropdownStory = () => {
           />
 
           <Text strong {...styles.title}>
+            Dropdown with no results
+          </Text>
+          <SearchableDropdown
+            items={[]}
+            label="Some label"
+            name="searchable-dropdown-no-results"
+            noResultsText="No results found"
+            onLoadMore={handleLoadMore}
+            onSearch={handleSearch}
+            onSelect={handleSelect}
+            placeholder="Some label"
+            searchTerm={searchQuery}
+          />
+
+          <Text strong {...styles.title}>
             Initially selected item (clearable)
           </Text>
           <SearchableDropdown
