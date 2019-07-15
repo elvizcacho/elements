@@ -274,7 +274,7 @@ const SearchableDropdownStory = () => {
           />
 
           <Text strong {...styles.title}>
-            Dropdown with placement=top
+            Dropdown with top placement
           </Text>
           <SearchableDropdown
             clearable={true}
