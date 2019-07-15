@@ -136,11 +136,6 @@ storiesOf('FloatingButton', module)
     </ThemeProvider>
   ))
 
-storiesOf('Containers', module)
-  .addDecorator(createViewportDecorator())
-  .add('Collapsible', CollapsibleStory)
-  .add('Filters', () => <FilterStory />)
-
 storiesOf('Icons', module)
   .addDecorator(createViewportDecorator())
   .add('List', () => (
