@@ -1,4 +1,4 @@
-import React, { createRef, SyntheticEvent } from 'react'
+import React, { createRef, SyntheticEvent, RefObject } from 'react'
 import Downshift, { StateChangeOptions, DownshiftState } from 'downshift'
 import { css } from 'glamor'
 import Relative from '../Relative/index'
@@ -143,7 +143,7 @@ const SearchableDropdown = ({
   searchTerm = '',
   selectedItem,
 }: ISearchableDropdownProps) => {
-  const searchRef: any = createRef()
+  const searchRef: RefObject<HTMLInputElement> = createRef()
 
   const handleClearIconClick = (
     event: SyntheticEvent,
