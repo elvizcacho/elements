@@ -1,55 +1,81 @@
+/* eslint-disable no-console */
 import path from 'path'
 import fse from 'fs-extra'
+import glob from 'glob'
 
-function copyFile(file) {
-  const buildPath = path.resolve(__dirname, '../build/', path.basename(file))
-  return new Promise(resolve => {
-    fse.copy(file, buildPath, err => {
-      if (err) throw err
-      resolve()
-    })
-  }).then(() => console.log(`Copied ${file} to ${buildPath}`))
-}
+const packagePath = process.cwd()
+const srcPath = path.join(packagePath, './src')
+const buildPath = path.join(packagePath, './dist')
 
-function createPackageFile() {
-  return new Promise(resolve => {
-    fse.readFile(
-      path.resolve(__dirname, '../package.json'),
-      'utf8',
-      (err, data) => {
-        if (err) {
-          throw err
-        }
+async function createModulePackages({ from, to }) {
+  const directoryPackages = glob
+    .sync('*/index.ts', { cwd: from })
+    .map(path.dirname)
 
-        resolve(data)
+  await Promise.all(
+    directoryPackages.map(async directoryPackage => {
+      const packageJson = {
+        sideEffects: false,
+        module: path.join('../esm', directoryPackage, 'index.js'),
+        typings: './index.d.ts',
       }
-    )
-  })
-    .then(data => JSON.parse(data))
-    .then(packageData => {
-      const { nyc, ...packageDataOther } = packageData
+      const packageJsonPath = path.join(to, directoryPackage, 'package.json')
 
-      const minimalPackage = {
-        ...packageDataOther,
-        name: '@allthings/elements',
-        main: './index.js',
-        module: './index.es.js',
-        'jsnext:main': './index.es.js',
-        private: false,
+      const [typingsExist] = await Promise.all([
+        fse.exists(path.join(to, directoryPackage, 'index.d.ts')),
+        fse.writeFile(packageJsonPath, JSON.stringify(packageJson, null, 2)),
+      ])
+
+      if (!typingsExist) {
+        throw new Error(`index.d.ts for ${directoryPackage} is missing`)
       }
 
-      return new Promise(resolve => {
-        const buildPath = path.resolve(__dirname, '../build/package.json')
-        const data = JSON.stringify(minimalPackage, null, 2)
-        fse.writeFile(buildPath, data, err => {
-          if (err) throw err
-          console.log(`Created package.json in ${buildPath}`)
-          resolve()
-        })
-      })
-    })
+      return packageJsonPath
+    }),
+  )
 }
 
-const files = ['README.md']
+async function createPackageFile() {
+  const packageData = await fse.readFile(
+    path.resolve(__dirname, '../package.json'),
+    'utf8',
+  )
 
-Promise.all(files.map(file => copyFile(file))).then(() => createPackageFile())
+  const { nyc, ...packageDataOther } = JSON.parse(packageData)
+
+  const minimalPackage = {
+    ...packageDataOther,
+    name: '@allthings/elements',
+    main: './index.js',
+    module: './esm/index.js',
+    typings: './index.d.ts',
+    'jsnext:main': './index.es.js',
+    private: false,
+    scripts: {},
+  }
+
+  const buildPath = path.resolve(__dirname, '../dist/package.json')
+  const data = JSON.stringify(minimalPackage, null, 2)
+  await fse.writeFile(buildPath, data)
+
+  console.log(`Created package.json in ${buildPath}`)
+}
+
+async function copyFiles(to) {
+  const files = ['README.md']
+  await Promise.all(files.map(file => fse.copy(file, to + '/' + file)))
+}
+
+async function run() {
+  try {
+    await copyFiles(buildPath)
+    await createPackageFile()
+    await createModulePackages({ from: srcPath, to: buildPath })
+  } catch (err) {
+    console.log('fail')
+    console.error(err)
+    process.exit(1)
+  }
+}
+
+run()

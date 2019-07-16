@@ -19,7 +19,7 @@ const circle = (
     transition: 'background-color 120ms linear',
   })
 
-interface IProps {
+interface ICircleProps extends IViewProps {
   /** Content of the Circle will be always centered */
   children?: React.ReactNode
   /** Color of the Circle. Allows theme names (like 'primary') or hex colors  */
@@ -54,7 +54,7 @@ interface IProps {
  * </ThemeProvider>
  * ```
  **/
-const Circle: FunctionComponent<IProps & IViewProps> = ({
+const Circle: FunctionComponent<ICircleProps> = ({
   fill = true,
   color = 'primary',
   outline = false,

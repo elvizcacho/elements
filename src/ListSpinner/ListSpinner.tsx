@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react'
-import View from '../View'
+import View, { IViewProps } from '../View'
 import Spinner from '../Spinner'
 import Circle from '../Circle'
 
@@ -15,7 +15,7 @@ const ListSpinner: FunctionComponent<IListSpinnerProps> = ({
   </View>
 )
 
-interface IListSpinnerProps {
+interface IListSpinnerProps extends IViewProps {
   radius?: number
 }
 
