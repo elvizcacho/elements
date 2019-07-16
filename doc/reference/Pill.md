@@ -19,6 +19,7 @@ It could be used on cards to indicate that this card contains important informat
 | ----------- |:--------------:| ------------:|
 |label **(required)**||Text that shows on the pill *
 |color|string|Themed color of the pill *
+|onRemoveClick|(() => void)|Themed color of the pill *
 |htmlElement|string|
 |alignH|"none", "start", "center", "end", "space-around", "space-between"|horizontal alignment
 |alignV|"none", "start", "center", "end", "stretch"|vertical alignment

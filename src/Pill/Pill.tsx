@@ -2,16 +2,21 @@ import React, { FunctionComponent } from 'react'
 import { css } from 'glamor'
 
 import Text from '../Text'
-import View, { IViewProps } from '../View'
+import Icon from '../Icon'
+import { IViewProps } from '../View'
 import Theme from '../Theme'
+import Absolute from '../Absolute'
+import Relative from '../Relative'
 
-const styles = (backgroundColor: string) =>
+const styles = (backgroundColor: string, hasRemoveIcon: boolean) =>
   css({
     backgroundColor,
-    display: 'inline-block',
-    borderRadius: 10,
-    padding: '2px 15px',
+    borderRadius: hasRemoveIcon ? 10 : 10,
     cursor: 'default',
+    height: 21,
+    padding: '0 10px',
+    paddingLeft: 10,
+    paddingRight: hasRemoveIcon ? 25 : 10,
   })
 
 /**
@@ -30,16 +35,38 @@ const styles = (backgroundColor: string) =>
 const Pill: FunctionComponent<IPillProps> = ({
   color = 'primary',
   label,
+  onRemoveClick,
   ...props
 }) => {
   return (
     <Theme>
       {({ colorize }) => (
-        <View {...styles(colorize(color))} {...props}>
-          <Text size="s" color="textOnBackground" strong>
+        <Relative
+          alignH="center"
+          alignV="center"
+          direction="column"
+          {...styles(colorize(color), !!onRemoveClick)}
+          {...props}
+        >
+          <Text size="s" color="textOnBackground" strong block>
             {label}
           </Text>
-        </View>
+          {onRemoveClick && (
+            <Absolute
+              right={6}
+              top={-2}
+              {...css({ padding: 2 })}
+              onClick={onRemoveClick}
+            >
+              <Icon
+                {...css({ margin: '0px 0px 5px 7px' })}
+                name="remove-light-filled"
+                color={colorize('white')}
+                size={8}
+              />
+            </Absolute>
+          )}
+        </Relative>
       )}
     </Theme>
   )
@@ -50,6 +77,8 @@ interface IPillProps extends IViewProps {
   label: string
   /** Themed color of the pill **/
   color?: string
+  /** Themed color of the pill **/
+  onRemoveClick?: () => void
 }
 
 export default Pill

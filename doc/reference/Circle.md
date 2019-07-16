@@ -30,7 +30,6 @@ Check out ProfileImage to see it in action.
 |outline|boolean|If true it will only render the outline
 |outlineColor|string|If passed outline will use as outline color instead of color
 |fill|boolean|If true it will fill the circle
-Passing true, will make the view fill out available space
 |htmlElement|string|
 |alignH|"none", "start", "center", "end", "space-around", "space-between"|horizontal alignment
 |alignV|"none", "start", "center", "end", "stretch"|vertical alignment

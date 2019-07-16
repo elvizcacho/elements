@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
-import View, { IViewProps } from '../View'
+import View from '../View'
 import Spinner from '../Spinner'
-import Circle from '../Circle'
+import Circle, { ICircleProps } from '../Circle'
 
 /** It's a spinner for a list **/
 const ListSpinner: FunctionComponent<IListSpinnerProps> = ({
@@ -15,7 +15,7 @@ const ListSpinner: FunctionComponent<IListSpinnerProps> = ({
   </View>
 )
 
-interface IListSpinnerProps extends IViewProps {
+interface IListSpinnerProps extends ICircleProps {
   radius?: number
 }
 
