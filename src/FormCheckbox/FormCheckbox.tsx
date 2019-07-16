@@ -1,5 +1,5 @@
 import React, { Component, ReactNode, ChangeEvent } from 'react'
-import Text, { sizeType } from '../Text'
+import Text, { TextSizeType } from '../Text'
 import ListItem from '../ListItem'
 import Theme from '../Theme'
 import Checkbox, { ICheckboxProps } from '../Checkbox'
@@ -11,7 +11,7 @@ interface IFormCheckboxProps extends Omit<ICheckboxProps, 'label'> {
   /** Label of Checkbox */
   label?: string | ReactNode
   /** Text size of the label */
-  labelSize?: sizeType
+  labelSize?: TextSizeType
   name: string
   onChange: (e: ChangeEvent) => void
   /** Background color of the form item */

@@ -1,11 +1,8 @@
 {
   "name": "@allthings/elements",
-  "version": "5.0.0-beta.8",
+  "version": "5.0.0-beta.14",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
-  "files": [
-    "dist"
-  ],
   "types": "dist/es/index.d.ts",
   "repository": "https://github.com/allthings/elements",
   "author": "Moritz Schwörer <moritz.schwoerer@allthings.me>",
@@ -37,13 +34,14 @@
     "react-intl": "^2.4.0"
   },
   "scripts": {
-    "preversion": "yarn lint && yarn test && yarn build",
+    "preversion": "yarn lint && yarn test",
     "postversion": "git push --tags origin HEAD",
     "prebuild": "rimraf dist",
     "build:es": "tsc -p tsconfig.json --target ESNext --module ESNext --outDir dist/es",
-    "build:cjs": "tsc -p tsconfig.json --target ES5 --module CommonJS --outDir dist/cjs",
-    "build": "NODE_ENV=production yarn build:es && yarn build:cjs",
+    "build:cjs": "tsc -p tsconfig.json --target ES5 --module CommonJS --outDir dist/",
+    "build": "NODE_ENV=production yarn build:es && yarn build:cjs && node -r esm scripts/copy-files.js",
     "build:docs": "node -r esm ./scripts/build-docs.js",
+    "release": "yarn build && npm publish dist --tag latest",
     "test:example": "jest ./scripts/example.test.js",
     "prepublishOnly": "echo 'To publish this, go to build/ and run 'yarn publish''",
     "watch:test": "yarn test --watch",

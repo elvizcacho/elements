@@ -3,8 +3,10 @@ import { ThemeConsumer, ITheme, defaultTheme } from '../ThemeProvider'
 
 type Colorizor = (color: string) => string
 
-const createColorizor = (theme: ITheme): Colorizor => (color: string) =>
-  theme[color] || defaultTheme[color] || color
+const createColorizor = (theme: ITheme): Colorizor => (color: string) => {
+  console.log('looking for ', color, theme, defaultTheme)
+  return theme[color] || defaultTheme[color] || color
+}
 
 type ThemeChildrenType = ({
   theme,

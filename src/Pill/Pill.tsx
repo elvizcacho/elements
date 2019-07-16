@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 import { css } from 'glamor'
 
 import Text from '../Text'
-import View from '../View'
+import View, { IViewProps } from '../View'
 import Theme from '../Theme'
 
 const styles = (backgroundColor: string) =>
@@ -45,7 +45,7 @@ const Pill: FunctionComponent<IPillProps> = ({
   )
 }
 
-interface IPillProps {
+interface IPillProps extends IViewProps {
   /** Text that shows on the pill **/
   label: string
   /** Themed color of the pill **/

@@ -7,7 +7,7 @@ Title bar is used to give user control and information about navigation.
 
 ```example
 <ThemeProvider>
-   <TitleBar alignH="space-between" color="blueIntense">
+   <TitleBar alignH="space-between" color="primary">
      <View direction="row" alignV="center">
        <SquareIconButton icon="armchair-filled" iconColor="white" />
        <Text color="white" strong>
@@ -22,7 +22,7 @@ Title bar is used to give user control and information about navigation.
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
 |onClick|(() => void)|Callback when title bar is clicked
-|color|string|Color of the title bar<br>Default: grey
+|color|string|Color of the title bar
 |htmlElement|string|
 |alignH|"none", "start", "center", "end", "space-around", "space-between"|horizontal alignment
 |alignV|"none", "start", "center", "end", "stretch"|vertical alignment

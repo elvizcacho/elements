@@ -13,7 +13,7 @@ if (typeof window !== `undefined`) {
   ])
 }
 
-export type sizeType = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'giant'
+export type TextSizeType = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'giant'
 
 const availableSizes = {
   xs: 10,
@@ -26,7 +26,7 @@ const availableSizes = {
 }
 
 interface ITextStyles {
-  size?: sizeType
+  size?: TextSizeType
   block?: boolean
   italic?: boolean
   strong?: boolean
