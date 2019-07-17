@@ -19,6 +19,7 @@ const styles = {
 interface IExpandingTextareaProps {
   autoFocus?: boolean
   placeholder?: string
+  name?: string
   onHeightChange?: (height: number) => void
   containerStyle?: any
   onChange?: (e: ChangeEvent<HTMLTextAreaElement>) => void
@@ -43,6 +44,7 @@ export default class ExpandingTextarea extends Component<
   static defaultProps = {
     autoFocus: false,
   }
+
   private textarea = createRef<HTMLTextAreaElement>()
 
   componentDidMount() {

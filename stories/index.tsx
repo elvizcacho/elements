@@ -33,12 +33,17 @@ import ButtonStory from './ButtonStory'
 import CheckboxStory from './CheckboxStory'
 import ProfileImageStackStory from './ProfileImageStackStory'
 import FilterStory from './FilterStory'
+import PillStory from './PillStory'
 import SearchableDropdownStory from './SearchableDropdownStory'
 
 storiesOf('Containers', module)
   .addDecorator(createViewportDecorator())
   .add('Collapsible', CollapsibleStory)
   .add('Filters', () => <FilterStory />)
+
+storiesOf('Information', module)
+  .addDecorator(createViewportDecorator())
+  .add('Pill', () => <PillStory />)
 
 storiesOf('ProfleImage', module)
   .addDecorator(createViewportDecorator())

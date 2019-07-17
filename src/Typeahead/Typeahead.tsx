@@ -16,8 +16,6 @@ import View from '../View'
 import escapeRegex from '../utils/escapeRegex'
 import Spinner from '../Spinner'
 
-const NOOP = (_: any) => undefined
-
 const INPUT_FIELD_HEIGHT = '50px'
 
 const bounceDownwardsAnim = keyframes('bounce', {
@@ -41,7 +39,7 @@ type Placement = 'top' | 'bottom'
 
 export interface ITypeaheadItem {
   label: string
-  value: string | number
+  value: string
   icon?: ReactNode
 }
 
@@ -59,7 +57,7 @@ interface ITypeaheadProps {
    * data. */
   isLoading?: boolean
   /** The itebooleanomponent as an array of objects. (icon is optional) */
-  items: ITypeaheadItem[]
+  items: readonly ITypeaheadItem[]
   /** The maximum number of items displayed in the menu. */
   limit?: number
   /** The height of the menu in pixels. */
@@ -87,12 +85,10 @@ interface IState {
 const defaultProps = {
   limit: 20,
   menuHeight: 300,
-  onClose: NOOP,
-  onOpen: NOOP,
   placement: Placement.bottom,
 }
 
-type MyProps = ITypeaheadProps & typeof defaultProps
+type MyProps = typeof defaultProps & ITypeaheadProps
 
 export default class Typeahead extends PureComponent<MyProps, IState> {
   static defaultProps = defaultProps
@@ -103,8 +99,9 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
       process &&
       process.env &&
       process.env.NODE_ENV !== 'production' &&
-      props.hasOwnProperty('clearOnSelect') &&
-      (props.hasOwnProperty('defaultValue') || props.hasOwnProperty('value'))
+      Object.prototype.hasOwnProperty.call(props, 'clearOnSelect') &&
+      (Object.prototype.hasOwnProperty.call(props, 'defaultValue') ||
+        Object.prototype.hasOwnProperty.call(props, 'value'))
     ) {
       console.warn(
         [
@@ -214,9 +211,10 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
   }
 
   handleStateChange = (changes: StateChangeOptions<string>) => {
-    if (changes.isOpen === true) this.props.onOpen()
-    if (changes.isOpen === false) this.props.onClose()
-    if (changes.hasOwnProperty('inputValue')) this.showArrowIfNecessary()
+    if (changes.isOpen === true) this.props.onOpen && this.props.onOpen()
+    if (changes.isOpen === false) this.props.onClose && this.props.onClose()
+    if (Object.prototype.hasOwnProperty.call(changes, 'inputValue'))
+      this.showArrowIfNecessary()
   }
 
   createRenderListItem = ({
