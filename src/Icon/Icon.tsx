@@ -212,7 +212,8 @@ const loadIcon = async (name: string, resourcePath: string) => {
 
 const getIconName = (name: string) => {
   // Transforms from my-icon-name to myIconName
-  let iconName = name.replace(/-([a-z])/g, g => g[1].toUpperCase())
+  const iconName = name.replace(/-([a-z])/g, g => g[1].toUpperCase())
+
   // Transforms from MyIconNameIcon to myIconName
   return (iconName.charAt(0).toLowerCase() + iconName.substr(1)).replace(
     'Icon',

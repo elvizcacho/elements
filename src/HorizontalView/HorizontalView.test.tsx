@@ -5,7 +5,7 @@ import { shallow } from 'enzyme'
 
 describe('HorizontalView behaviors', () => {
   it('should render non-arrays', () => {
-    let condition = false
+    const condition = false
     const wrapper = shallow(
       <HorizontalView id="horizontal">
         <Text id="first" key="first">
@@ -28,7 +28,7 @@ describe('HorizontalView behaviors', () => {
     wrapper.unmount()
   })
   it('should render with array too', () => {
-    let condition = false
+    const condition = false
     const wrapper = shallow(
       <HorizontalView>
         {[

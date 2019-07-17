@@ -99,8 +99,9 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
       process &&
       process.env &&
       process.env.NODE_ENV !== 'production' &&
-      props.hasOwnProperty('clearOnSelect') &&
-      (props.hasOwnProperty('defaultValue') || props.hasOwnProperty('value'))
+      Object.prototype.hasOwnProperty.call(props, 'clearOnSelect') &&
+      (Object.prototype.hasOwnProperty.call(props, 'defaultValue') ||
+        Object.prototype.hasOwnProperty.call(props, 'value'))
     ) {
       console.warn(
         [
@@ -212,7 +213,8 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
   handleStateChange = (changes: StateChangeOptions<string>) => {
     if (changes.isOpen === true) this.props.onOpen && this.props.onOpen()
     if (changes.isOpen === false) this.props.onClose && this.props.onClose()
-    if (changes.hasOwnProperty('inputValue')) this.showArrowIfNecessary()
+    if (Object.prototype.hasOwnProperty.call(changes, 'inputValue'))
+      this.showArrowIfNecessary()
   }
 
   createRenderListItem = ({

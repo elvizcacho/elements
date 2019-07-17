@@ -16,16 +16,16 @@ const INPUT_HINT = 'input[name="hint"]'
 const SELECTED_ITEM_ICON = 'strong'
 
 const ITEMS = [
-  { value: 1, label: DEFAULT_VALUE },
-  { value: 2, label: 'Abra' },
-  { value: 3, label: 'Absol' },
-  { value: 4, label: 'Accelgor' },
-  { value: 5, label: 'Aegislash' },
-  { value: 6, label: 'Aerodactyl' },
-  { value: 7, label: 'Aggron' },
-  { value: 8, label: 'Aipom' },
-  { value: 9, label: 'Alakazam' },
-  { value: 10, label: 'Alomomola' },
+  { value: '1', label: DEFAULT_VALUE },
+  { value: '2', label: 'Abra' },
+  { value: '3', label: 'Absol' },
+  { value: '4', label: 'Accelgor' },
+  { value: '5', label: 'Aegislash' },
+  { value: '6', label: 'Aerodactyl' },
+  { value: '7', label: 'Aggron' },
+  { value: '8', label: 'Aipom' },
+  { value: '9', label: 'Alakazam' },
+  { value: '10', label: 'Alomomola' },
 ]
 
 const NICK = 'nick'
