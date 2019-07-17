@@ -205,7 +205,7 @@ const SearchableDropdown = ({
 
   const renderSearchInput = () => (
     <Input
-      ref={searchRef}
+      ref={searchRef as any}
       hasRightIcon={false}
       name={`search-${Date.now()}`}
       onChange={onSearch}
