@@ -3,11 +3,16 @@
 exports[`Test the typeahead component Test typeahead component with jsx labels should be a simple static one - in depth testing of the core behavior with JSX labels 1`] = `
 .css-0,
 [data-css-0] {
-  position: relative;
+  width: 100%;
 }
 
 .css-1,
 [data-css-1] {
+  position: relative;
+}
+
+.css-2,
+[data-css-2] {
   align-items: stretch;
   background: transparent;
   border: none;
@@ -26,8 +31,8 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
   -webkit-flex-direction: column;
 }
 
-.css-2,
-[data-css-2] {
+.css-3,
+[data-css-3] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -38,11 +43,6 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
   background-color: #FFF;
   -webkit-box-align: center;
   -webkit-align-items: center;
-}
-
-.css-3,
-[data-css-3] {
-  width: 100%;
 }
 
 .css-4,
@@ -176,32 +176,32 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
   aria-haspopup="listbox"
   aria-labelledby="downshift-19-label"
   aria-owns={null}
-  data-css-1=""
+  data-css-2=""
   role="combobox"
 >
   <ForwardRef
-    data-css-2=""
+    data-css-3=""
   >
     <div
       data-css-7=""
-      data-css-2=""
+      data-css-3=""
     >
       <ForwardRef
+        data-css-1=""
         data-css-0=""
-        data-css-3=""
       >
         <div
-          data-css-0=""
+          data-css-1=""
           data-css-7=""
-          data-css-3=""
+          data-css-0=""
         >
           <ForwardRef
-            data-css-3=""
+            data-css-0=""
             data-css-8=""
           >
             <div
               data-css-7=""
-              data-css-3=""
+              data-css-0=""
               data-css-8=""
             >
               <ForwardRef
@@ -213,7 +213,7 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
                 value=""
               >
                 <ForwardRef
-                  data-css-0=""
+                  data-css-1=""
                   style={
                     Object {
                       "width": "100%",
@@ -221,7 +221,7 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
                   }
                 >
                   <div
-                    data-css-0=""
+                    data-css-1=""
                     data-css-7=""
                     style={
                       Object {
@@ -294,7 +294,7 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
             value=""
           >
             <ForwardRef
-              data-css-0=""
+              data-css-1=""
               style={
                 Object {
                   "width": "100%",
@@ -302,7 +302,7 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
               }
             >
               <div
-                data-css-0=""
+                data-css-1=""
                 data-css-7=""
                 style={
                   Object {
@@ -380,10 +380,10 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
     </div>
   </ForwardRef>
   <ForwardRef
-    data-css-0=""
+    data-css-1=""
   >
     <div
-      data-css-0=""
+      data-css-1=""
       data-css-7=""
     />
   </ForwardRef>
@@ -393,11 +393,16 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
 exports[`Test the typeahead component should be a simple static one - in depth testing of the core behavior 1`] = `
 .css-0,
 [data-css-0] {
-  position: relative;
+  width: 100%;
 }
 
 .css-1,
 [data-css-1] {
+  position: relative;
+}
+
+.css-2,
+[data-css-2] {
   align-items: stretch;
   background: transparent;
   border: none;
@@ -416,8 +421,8 @@ exports[`Test the typeahead component should be a simple static one - in depth t
   -webkit-flex-direction: column;
 }
 
-.css-2,
-[data-css-2] {
+.css-3,
+[data-css-3] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -428,11 +433,6 @@ exports[`Test the typeahead component should be a simple static one - in depth t
   background-color: #FFF;
   -webkit-box-align: center;
   -webkit-align-items: center;
-}
-
-.css-3,
-[data-css-3] {
-  width: 100%;
 }
 
 .css-4,
@@ -566,32 +566,32 @@ exports[`Test the typeahead component should be a simple static one - in depth t
   aria-haspopup="listbox"
   aria-labelledby="downshift-0-label"
   aria-owns={null}
-  data-css-1=""
+  data-css-2=""
   role="combobox"
 >
   <ForwardRef
-    data-css-2=""
+    data-css-3=""
   >
     <div
       data-css-7=""
-      data-css-2=""
+      data-css-3=""
     >
       <ForwardRef
+        data-css-1=""
         data-css-0=""
-        data-css-3=""
       >
         <div
-          data-css-0=""
+          data-css-1=""
           data-css-7=""
-          data-css-3=""
+          data-css-0=""
         >
           <ForwardRef
-            data-css-3=""
+            data-css-0=""
             data-css-8=""
           >
             <div
               data-css-7=""
-              data-css-3=""
+              data-css-0=""
               data-css-8=""
             >
               <ForwardRef
@@ -603,7 +603,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
                 value=""
               >
                 <ForwardRef
-                  data-css-0=""
+                  data-css-1=""
                   style={
                     Object {
                       "width": "100%",
@@ -611,7 +611,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
                   }
                 >
                   <div
-                    data-css-0=""
+                    data-css-1=""
                     data-css-7=""
                     style={
                       Object {
@@ -684,7 +684,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
             value=""
           >
             <ForwardRef
-              data-css-0=""
+              data-css-1=""
               style={
                 Object {
                   "width": "100%",
@@ -692,7 +692,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
               }
             >
               <div
-                data-css-0=""
+                data-css-1=""
                 data-css-7=""
                 style={
                   Object {
@@ -770,10 +770,10 @@ exports[`Test the typeahead component should be a simple static one - in depth t
     </div>
   </ForwardRef>
   <ForwardRef
-    data-css-0=""
+    data-css-1=""
   >
     <div
-      data-css-0=""
+      data-css-1=""
       data-css-7=""
     />
   </ForwardRef>
@@ -783,11 +783,16 @@ exports[`Test the typeahead component should be a simple static one - in depth t
 exports[`Test the typeahead component should be a simple static one which auto open on click 1`] = `
 .css-0,
 [data-css-0] {
-  position: relative;
+  width: 100%;
 }
 
 .css-1,
 [data-css-1] {
+  position: relative;
+}
+
+.css-2,
+[data-css-2] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -798,11 +803,6 @@ exports[`Test the typeahead component should be a simple static one which auto o
   background-color: #FFF;
   -webkit-box-align: center;
   -webkit-align-items: center;
-}
-
-.css-2,
-[data-css-2] {
-  width: 100%;
 }
 
 .css-3,
@@ -1048,28 +1048,28 @@ exports[`Test the typeahead component should be a simple static one which auto o
   role="combobox"
 >
   <ForwardRef
-    data-css-1=""
+    data-css-2=""
   >
     <div
       data-css-5=""
-      data-css-1=""
+      data-css-2=""
     >
       <ForwardRef
+        data-css-1=""
         data-css-0=""
-        data-css-2=""
       >
         <div
-          data-css-0=""
+          data-css-1=""
           data-css-5=""
-          data-css-2=""
+          data-css-0=""
         >
           <ForwardRef
-            data-css-2=""
+            data-css-0=""
             data-css-6=""
           >
             <div
               data-css-5=""
-              data-css-2=""
+              data-css-0=""
               data-css-6=""
             >
               <ForwardRef
@@ -1081,7 +1081,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
                 value=""
               >
                 <ForwardRef
-                  data-css-0=""
+                  data-css-1=""
                   style={
                     Object {
                       "width": "100%",
@@ -1089,7 +1089,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
                   }
                 >
                   <div
-                    data-css-0=""
+                    data-css-1=""
                     data-css-5=""
                     style={
                       Object {
@@ -1163,7 +1163,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
             value=""
           >
             <ForwardRef
-              data-css-0=""
+              data-css-1=""
               style={
                 Object {
                   "width": "100%",
@@ -1171,7 +1171,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
               }
             >
               <div
-                data-css-0=""
+                data-css-1=""
                 data-css-5=""
                 style={
                   Object {
@@ -1250,10 +1250,10 @@ exports[`Test the typeahead component should be a simple static one which auto o
     </div>
   </ForwardRef>
   <ForwardRef
-    data-css-0=""
+    data-css-1=""
   >
     <div
-      data-css-0=""
+      data-css-1=""
       data-css-5=""
     >
       <ForwardRef
@@ -1729,11 +1729,16 @@ exports[`Test the typeahead component should be a simple static one which auto o
 exports[`Test the typeahead component should render differently when loading 1`] = `
 .css-0,
 [data-css-0] {
-  position: relative;
+  width: 100%;
 }
 
 .css-1,
 [data-css-1] {
+  position: relative;
+}
+
+.css-2,
+[data-css-2] {
   align-items: stretch;
   background: transparent;
   border: none;
@@ -1752,8 +1757,8 @@ exports[`Test the typeahead component should render differently when loading 1`]
   -webkit-flex-direction: column;
 }
 
-.css-2,
-[data-css-2] {
+.css-3,
+[data-css-3] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -1764,11 +1769,6 @@ exports[`Test the typeahead component should render differently when loading 1`]
   background-color: #FFF;
   -webkit-box-align: center;
   -webkit-align-items: center;
-}
-
-.css-3,
-[data-css-3] {
-  width: 100%;
 }
 
 .css-4,
@@ -1902,32 +1902,32 @@ exports[`Test the typeahead component should render differently when loading 1`]
   aria-haspopup="listbox"
   aria-labelledby="downshift-7-label"
   aria-owns={null}
-  data-css-1=""
+  data-css-2=""
   role="combobox"
 >
   <ForwardRef
-    data-css-2=""
+    data-css-3=""
   >
     <div
       data-css-7=""
-      data-css-2=""
+      data-css-3=""
     >
       <ForwardRef
+        data-css-1=""
         data-css-0=""
-        data-css-3=""
       >
         <div
-          data-css-0=""
+          data-css-1=""
           data-css-7=""
-          data-css-3=""
+          data-css-0=""
         >
           <ForwardRef
-            data-css-3=""
+            data-css-0=""
             data-css-8=""
           >
             <div
               data-css-7=""
-              data-css-3=""
+              data-css-0=""
               data-css-8=""
             >
               <ForwardRef
@@ -1939,7 +1939,7 @@ exports[`Test the typeahead component should render differently when loading 1`]
                 value=""
               >
                 <ForwardRef
-                  data-css-0=""
+                  data-css-1=""
                   style={
                     Object {
                       "width": "100%",
@@ -1947,7 +1947,7 @@ exports[`Test the typeahead component should render differently when loading 1`]
                   }
                 >
                   <div
-                    data-css-0=""
+                    data-css-1=""
                     data-css-7=""
                     style={
                       Object {
@@ -2021,7 +2021,7 @@ exports[`Test the typeahead component should render differently when loading 1`]
             value=""
           >
             <ForwardRef
-              data-css-0=""
+              data-css-1=""
               style={
                 Object {
                   "width": "100%",
@@ -2029,7 +2029,7 @@ exports[`Test the typeahead component should render differently when loading 1`]
               }
             >
               <div
-                data-css-0=""
+                data-css-1=""
                 data-css-7=""
                 style={
                   Object {
@@ -2108,10 +2108,10 @@ exports[`Test the typeahead component should render differently when loading 1`]
     </div>
   </ForwardRef>
   <ForwardRef
-    data-css-0=""
+    data-css-1=""
   >
     <div
-      data-css-0=""
+      data-css-1=""
       data-css-7=""
     />
   </ForwardRef>
@@ -2121,11 +2121,16 @@ exports[`Test the typeahead component should render differently when loading 1`]
 exports[`Test the typeahead component should render differently when loading 2`] = `
 .css-0,
 [data-css-0] {
-  position: relative;
+  width: 100%;
 }
 
 .css-1,
 [data-css-1] {
+  position: relative;
+}
+
+.css-2,
+[data-css-2] {
   align-items: stretch;
   background: transparent;
   border: none;
@@ -2144,8 +2149,8 @@ exports[`Test the typeahead component should render differently when loading 2`]
   -webkit-flex-direction: column;
 }
 
-.css-2,
-[data-css-2] {
+.css-3,
+[data-css-3] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -2156,11 +2161,6 @@ exports[`Test the typeahead component should render differently when loading 2`]
   background-color: #FFF;
   -webkit-box-align: center;
   -webkit-align-items: center;
-}
-
-.css-3,
-[data-css-3] {
-  width: 100%;
 }
 
 .css-4,
@@ -2294,32 +2294,32 @@ exports[`Test the typeahead component should render differently when loading 2`]
   aria-haspopup="listbox"
   aria-labelledby="downshift-7-label"
   aria-owns={null}
-  data-css-1=""
+  data-css-2=""
   role="combobox"
 >
   <ForwardRef
-    data-css-2=""
+    data-css-3=""
   >
     <div
       data-css-7=""
-      data-css-2=""
+      data-css-3=""
     >
       <ForwardRef
+        data-css-1=""
         data-css-0=""
-        data-css-3=""
       >
         <div
-          data-css-0=""
+          data-css-1=""
           data-css-7=""
-          data-css-3=""
+          data-css-0=""
         >
           <ForwardRef
-            data-css-3=""
+            data-css-0=""
             data-css-8=""
           >
             <div
               data-css-7=""
-              data-css-3=""
+              data-css-0=""
               data-css-8=""
             >
               <ForwardRef
@@ -2331,7 +2331,7 @@ exports[`Test the typeahead component should render differently when loading 2`]
                 value=""
               >
                 <ForwardRef
-                  data-css-0=""
+                  data-css-1=""
                   style={
                     Object {
                       "width": "100%",
@@ -2339,7 +2339,7 @@ exports[`Test the typeahead component should render differently when loading 2`]
                   }
                 >
                   <div
-                    data-css-0=""
+                    data-css-1=""
                     data-css-7=""
                     style={
                       Object {
@@ -2413,7 +2413,7 @@ exports[`Test the typeahead component should render differently when loading 2`]
             value=""
           >
             <ForwardRef
-              data-css-0=""
+              data-css-1=""
               style={
                 Object {
                   "width": "100%",
@@ -2421,7 +2421,7 @@ exports[`Test the typeahead component should render differently when loading 2`]
               }
             >
               <div
-                data-css-0=""
+                data-css-1=""
                 data-css-7=""
                 style={
                   Object {
@@ -2548,10 +2548,10 @@ exports[`Test the typeahead component should render differently when loading 2`]
     </div>
   </ForwardRef>
   <ForwardRef
-    data-css-0=""
+    data-css-1=""
   >
     <div
-      data-css-0=""
+      data-css-1=""
       data-css-7=""
     />
   </ForwardRef>
@@ -2561,11 +2561,16 @@ exports[`Test the typeahead component should render differently when loading 2`]
 exports[`Test the typeahead component should use the defaultValue property (uncontrolled component) 1`] = `
 .css-0,
 [data-css-0] {
-  position: relative;
+  width: 100%;
 }
 
 .css-1,
 [data-css-1] {
+  position: relative;
+}
+
+.css-2,
+[data-css-2] {
   align-items: stretch;
   background: transparent;
   border: none;
@@ -2584,8 +2589,8 @@ exports[`Test the typeahead component should use the defaultValue property (unco
   -webkit-flex-direction: column;
 }
 
-.css-2,
-[data-css-2] {
+.css-3,
+[data-css-3] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -2596,11 +2601,6 @@ exports[`Test the typeahead component should use the defaultValue property (unco
   background-color: #FFF;
   -webkit-box-align: center;
   -webkit-align-items: center;
-}
-
-.css-3,
-[data-css-3] {
-  width: 100%;
 }
 
 .css-4,
@@ -2769,32 +2769,32 @@ exports[`Test the typeahead component should use the defaultValue property (unco
   aria-haspopup="listbox"
   aria-labelledby="downshift-5-label"
   aria-owns={null}
-  data-css-1=""
+  data-css-2=""
   role="combobox"
 >
   <ForwardRef
-    data-css-2=""
+    data-css-3=""
   >
     <div
       data-css-7=""
-      data-css-2=""
+      data-css-3=""
     >
       <ForwardRef
-        data-css-0=""
+        data-css-1=""
         data-css-13=""
       >
         <div
-          data-css-0=""
+          data-css-1=""
           data-css-13=""
           data-css-7=""
         >
           <ForwardRef
-            data-css-3=""
+            data-css-0=""
             data-css-8=""
           >
             <div
               data-css-7=""
-              data-css-3=""
+              data-css-0=""
               data-css-8=""
             >
               <ForwardRef
@@ -2806,7 +2806,7 @@ exports[`Test the typeahead component should use the defaultValue property (unco
                 value="Abomasnow"
               >
                 <ForwardRef
-                  data-css-0=""
+                  data-css-1=""
                   style={
                     Object {
                       "width": "100%",
@@ -2814,7 +2814,7 @@ exports[`Test the typeahead component should use the defaultValue property (unco
                   }
                 >
                   <div
-                    data-css-0=""
+                    data-css-1=""
                     data-css-7=""
                     style={
                       Object {
@@ -2887,7 +2887,7 @@ exports[`Test the typeahead component should use the defaultValue property (unco
             value="Abomasnow"
           >
             <ForwardRef
-              data-css-0=""
+              data-css-1=""
               style={
                 Object {
                   "width": "100%",
@@ -2895,7 +2895,7 @@ exports[`Test the typeahead component should use the defaultValue property (unco
               }
             >
               <div
-                data-css-0=""
+                data-css-1=""
                 data-css-7=""
                 style={
                   Object {
@@ -3005,10 +3005,10 @@ exports[`Test the typeahead component should use the defaultValue property (unco
     </div>
   </ForwardRef>
   <ForwardRef
-    data-css-0=""
+    data-css-1=""
   >
     <div
-      data-css-0=""
+      data-css-1=""
       data-css-7=""
     />
   </ForwardRef>
@@ -3018,11 +3018,16 @@ exports[`Test the typeahead component should use the defaultValue property (unco
 exports[`Test the typeahead component should use the limit property 1`] = `
 .css-0,
 [data-css-0] {
-  position: relative;
+  width: 100%;
 }
 
 .css-1,
 [data-css-1] {
+  position: relative;
+}
+
+.css-2,
+[data-css-2] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -3033,11 +3038,6 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   background-color: #FFF;
   -webkit-box-align: center;
   -webkit-align-items: center;
-}
-
-.css-2,
-[data-css-2] {
-  width: 100%;
 }
 
 .css-3,
@@ -3283,28 +3283,28 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   role="combobox"
 >
   <ForwardRef
-    data-css-1=""
+    data-css-2=""
   >
     <div
       data-css-5=""
-      data-css-1=""
+      data-css-2=""
     >
       <ForwardRef
+        data-css-1=""
         data-css-0=""
-        data-css-2=""
       >
         <div
-          data-css-0=""
+          data-css-1=""
           data-css-5=""
-          data-css-2=""
+          data-css-0=""
         >
           <ForwardRef
-            data-css-2=""
+            data-css-0=""
             data-css-6=""
           >
             <div
               data-css-5=""
-              data-css-2=""
+              data-css-0=""
               data-css-6=""
             >
               <ForwardRef
@@ -3316,7 +3316,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
                 value=""
               >
                 <ForwardRef
-                  data-css-0=""
+                  data-css-1=""
                   style={
                     Object {
                       "width": "100%",
@@ -3324,7 +3324,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
                   }
                 >
                   <div
-                    data-css-0=""
+                    data-css-1=""
                     data-css-5=""
                     style={
                       Object {
@@ -3398,7 +3398,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
             value=""
           >
             <ForwardRef
-              data-css-0=""
+              data-css-1=""
               style={
                 Object {
                   "width": "100%",
@@ -3406,7 +3406,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
               }
             >
               <div
-                data-css-0=""
+                data-css-1=""
                 data-css-5=""
                 style={
                   Object {
@@ -3485,10 +3485,10 @@ exports[`Test the typeahead component should use the limit property 1`] = `
     </div>
   </ForwardRef>
   <ForwardRef
-    data-css-0=""
+    data-css-1=""
   >
     <div
-      data-css-0=""
+      data-css-1=""
       data-css-5=""
     >
       <ForwardRef
@@ -3620,11 +3620,16 @@ exports[`Test the typeahead component should use the limit property 1`] = `
 exports[`Test the typeahead component should use the top placement property 1`] = `
 .css-0,
 [data-css-0] {
-  position: relative;
+  width: 100%;
 }
 
 .css-1,
 [data-css-1] {
+  position: relative;
+}
+
+.css-2,
+[data-css-2] {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -3635,11 +3640,6 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   background-color: #FFF;
   -webkit-box-align: center;
   -webkit-align-items: center;
-}
-
-.css-2,
-[data-css-2] {
-  width: 100%;
 }
 
 .css-3,
@@ -3886,28 +3886,28 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   role="combobox"
 >
   <ForwardRef
-    data-css-1=""
+    data-css-2=""
   >
     <div
       data-css-5=""
-      data-css-1=""
+      data-css-2=""
     >
       <ForwardRef
+        data-css-1=""
         data-css-0=""
-        data-css-2=""
       >
         <div
-          data-css-0=""
+          data-css-1=""
           data-css-5=""
-          data-css-2=""
+          data-css-0=""
         >
           <ForwardRef
-            data-css-2=""
+            data-css-0=""
             data-css-6=""
           >
             <div
               data-css-5=""
-              data-css-2=""
+              data-css-0=""
               data-css-6=""
             >
               <ForwardRef
@@ -3919,7 +3919,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
                 value=""
               >
                 <ForwardRef
-                  data-css-0=""
+                  data-css-1=""
                   style={
                     Object {
                       "width": "100%",
@@ -3927,7 +3927,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
                   }
                 >
                   <div
-                    data-css-0=""
+                    data-css-1=""
                     data-css-5=""
                     style={
                       Object {
@@ -4001,7 +4001,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
             value=""
           >
             <ForwardRef
-              data-css-0=""
+              data-css-1=""
               style={
                 Object {
                   "width": "100%",
@@ -4009,7 +4009,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
               }
             >
               <div
-                data-css-0=""
+                data-css-1=""
                 data-css-5=""
                 style={
                   Object {
@@ -4088,10 +4088,10 @@ exports[`Test the typeahead component should use the top placement property 1`] 
     </div>
   </ForwardRef>
   <ForwardRef
-    data-css-0=""
+    data-css-1=""
   >
     <div
-      data-css-0=""
+      data-css-1=""
       data-css-5=""
     >
       <ForwardRef
