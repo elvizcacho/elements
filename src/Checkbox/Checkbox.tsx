@@ -26,7 +26,7 @@ export interface ICheckboxProps extends IInputProps {
   checked?: boolean
   /** Label of Checkbox */
   name: string
-  onChange: (e: ChangeEvent) => void
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 /**
