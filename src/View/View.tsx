@@ -111,11 +111,11 @@ function createStyles({
         minHeight: '100%',
         width: '100%',
       }),
-      ...(hasClick && {
-        cursor: 'pointer',
-      }),
     }),
     flex,
+    ...(hasClick && {
+      cursor: 'pointer',
+    }),
     ...(flex && { flex: getCssFlexValue(flex) }),
   })
 }
