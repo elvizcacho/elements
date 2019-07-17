@@ -15,8 +15,8 @@ Checkbox are used to give users a way to select or deselect options.
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
 |checked|boolean|True to make it checked
-|name **(required)**||Label of Checkbox
-|onChange **(required)**||Called, when the user changes something
+|name|string|Label of Checkbox
+|onChange|((e: ChangeEvent<HTMLInputElement>) => void)|Called, when the user changes something
 |defaultValue|string, string[]|The default value to put into the component, without making it controlled
 |required|boolean|Indicates that this field is required
 |icon|"download", "alarm", "alarm-filled", "armchair", "armchair-filled", "arrow-down", "arrow-down-filled", "arrow-left", "arrow-left-filled", "arrow-right", "arrow-right-filled", ... 146 more ...|Icon shown on the left of the input field (See `Icon` component for all possible values) *
