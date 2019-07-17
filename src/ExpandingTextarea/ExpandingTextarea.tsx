@@ -44,6 +44,7 @@ export default class ExpandingTextarea extends Component<
   static defaultProps = {
     autoFocus: false,
   }
+
   private textarea = createRef<HTMLTextAreaElement>()
 
   componentDidMount() {
