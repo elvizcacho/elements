@@ -49,7 +49,7 @@ const Checkbox: FunctionComponent<ICheckboxProps> = ({
 
   const [isChecked, setIsChecked] = useState(checked)
 
-  const handleChange = (e: ChangeEvent) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (!isControlled) {
       setIsChecked(checked => !checked)
     }
