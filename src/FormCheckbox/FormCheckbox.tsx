@@ -13,7 +13,6 @@ interface IFormCheckboxProps extends Omit<ICheckboxProps, 'label'> {
   /** Text size of the label */
   labelSize?: TextSizeType
   name: string
-  onChange: (e: ChangeEvent) => void
   /** Background color of the form item */
   backgroundColor?: string
 }

@@ -18,8 +18,8 @@ FormCheckbox are used to give users a way to select or deselect options.
 |label|ReactNode|Label of Checkbox
 |labelSize|"l", "xs", "s", "m", "xl", "xxl", "giant"|Text size of the label<br>Default: l
 |name **(required)**||Label of Checkbox
-|onChange **(required)**||Called, when the user changes something
 |backgroundColor|string|Background color of the form item
+|onChange|((e: ChangeEvent<HTMLInputElement>) => void)|Called, when the user changes something
 |defaultValue|string, string[]|The default value to put into the component, without making it controlled
 |required|boolean|Indicates that this field is required
 |icon|"download", "alarm", "alarm-filled", "armchair", "armchair-filled", "arrow-down", "arrow-down-filled", "arrow-left", "arrow-left-filled", "arrow-right", "arrow-right-filled", ... 146 more ...|Icon shown on the left of the input field (See `Icon` component for all possible values) *
