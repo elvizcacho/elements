@@ -207,7 +207,6 @@ const SearchableDropdown = ({
     <Input
       ref={searchRef as any}
       hasRightIcon={false}
-      name={`search-${Date.now()}`}
       onChange={onSearch}
       placeholder="Search"
       value={searchTerm}
