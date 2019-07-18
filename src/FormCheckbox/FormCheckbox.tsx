@@ -1,4 +1,4 @@
-import React, { Component, ReactNode, ChangeEvent } from 'react'
+import React, { Component, ReactNode } from 'react'
 import Text, { TextSizeType } from '../Text'
 import ListItem from '../ListItem'
 import Theme from '../Theme'
