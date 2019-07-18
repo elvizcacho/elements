@@ -1009,8 +1009,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  cursor: pointer;
   flex: 0 0 auto;
+  cursor: pointer;
   -webkit-align-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -1298,8 +1298,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
             >
               <div
                 aria-selected={true}
-                data-css-18=""
                 data-css-17=""
+                data-css-18=""
                 id="downshift-1-item-0"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -1341,8 +1341,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
             >
               <div
                 aria-selected={false}
-                data-css-18=""
                 data-css-17=""
+                data-css-18=""
                 id="downshift-1-item-1"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -1384,8 +1384,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
             >
               <div
                 aria-selected={false}
-                data-css-18=""
                 data-css-17=""
+                data-css-18=""
                 id="downshift-1-item-2"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -1427,8 +1427,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
             >
               <div
                 aria-selected={false}
-                data-css-18=""
                 data-css-17=""
+                data-css-18=""
                 id="downshift-1-item-3"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -1470,8 +1470,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
             >
               <div
                 aria-selected={false}
-                data-css-18=""
                 data-css-17=""
+                data-css-18=""
                 id="downshift-1-item-4"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -1513,8 +1513,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
             >
               <div
                 aria-selected={false}
-                data-css-18=""
                 data-css-17=""
+                data-css-18=""
                 id="downshift-1-item-5"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -1556,8 +1556,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
             >
               <div
                 aria-selected={false}
-                data-css-18=""
                 data-css-17=""
+                data-css-18=""
                 id="downshift-1-item-6"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -1599,8 +1599,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
             >
               <div
                 aria-selected={false}
-                data-css-18=""
                 data-css-17=""
+                data-css-18=""
                 id="downshift-1-item-7"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -1642,8 +1642,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
             >
               <div
                 aria-selected={false}
-                data-css-18=""
                 data-css-17=""
+                data-css-18=""
                 id="downshift-1-item-8"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -1685,8 +1685,8 @@ exports[`Test the typeahead component should be a simple static one which auto o
             >
               <div
                 aria-selected={false}
-                data-css-18=""
                 data-css-17=""
+                data-css-18=""
                 id="downshift-1-item-9"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -2759,6 +2759,14 @@ exports[`Test the typeahead component should use the defaultValue property (unco
 
 .css-18,
 [data-css-18] {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  cursor: pointer;
+  -webkit-flex: 0 0 auto;
+}
+
+.css-19,
+[data-css-19] {
   width: 10px;
   height: 10px;
   fill: black;
@@ -2972,7 +2980,7 @@ exports[`Test the typeahead component should use the defaultValue property (unco
                 onClick={[Function]}
               >
                 <div
-                  data-css-7=""
+                  data-css-18=""
                   data-css-15=""
                   onClick={[Function]}
                 >
@@ -2984,7 +2992,7 @@ exports[`Test the typeahead component should use the defaultValue property (unco
                         "__html": "",
                       }
                     }
-                    data-css-18=""
+                    data-css-19=""
                   >
                     <div
                       dangerouslySetInnerHTML={
@@ -2993,7 +3001,7 @@ exports[`Test the typeahead component should use the defaultValue property (unco
                         }
                       }
                       data-css-7=""
-                      data-css-18=""
+                      data-css-19=""
                     />
                   </ForwardRef>
                 </div>
@@ -3244,8 +3252,8 @@ exports[`Test the typeahead component should use the limit property 1`] = `
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  cursor: pointer;
   flex: 0 0 auto;
+  cursor: pointer;
   -webkit-align-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -3533,8 +3541,8 @@ exports[`Test the typeahead component should use the limit property 1`] = `
             >
               <div
                 aria-selected={true}
-                data-css-18=""
                 data-css-17=""
+                data-css-18=""
                 id="downshift-2-item-0"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -3576,8 +3584,8 @@ exports[`Test the typeahead component should use the limit property 1`] = `
             >
               <div
                 aria-selected={false}
-                data-css-18=""
                 data-css-17=""
+                data-css-18=""
                 id="downshift-2-item-1"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -3811,8 +3819,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  cursor: pointer;
   flex: 0 0 auto;
+  cursor: pointer;
   -webkit-align-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -4136,8 +4144,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
             >
               <div
                 aria-selected={true}
-                data-css-16=""
                 data-css-15=""
+                data-css-16=""
                 id="downshift-3-item-0"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -4179,8 +4187,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
             >
               <div
                 aria-selected={false}
-                data-css-16=""
                 data-css-15=""
+                data-css-16=""
                 id="downshift-3-item-1"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -4222,8 +4230,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
             >
               <div
                 aria-selected={false}
-                data-css-16=""
                 data-css-15=""
+                data-css-16=""
                 id="downshift-3-item-2"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -4265,8 +4273,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
             >
               <div
                 aria-selected={false}
-                data-css-16=""
                 data-css-15=""
+                data-css-16=""
                 id="downshift-3-item-3"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -4308,8 +4316,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
             >
               <div
                 aria-selected={false}
-                data-css-16=""
                 data-css-15=""
+                data-css-16=""
                 id="downshift-3-item-4"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -4351,8 +4359,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
             >
               <div
                 aria-selected={false}
-                data-css-16=""
                 data-css-15=""
+                data-css-16=""
                 id="downshift-3-item-5"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -4394,8 +4402,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
             >
               <div
                 aria-selected={false}
-                data-css-16=""
                 data-css-15=""
+                data-css-16=""
                 id="downshift-3-item-6"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -4437,8 +4445,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
             >
               <div
                 aria-selected={false}
-                data-css-16=""
                 data-css-15=""
+                data-css-16=""
                 id="downshift-3-item-7"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -4480,8 +4488,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
             >
               <div
                 aria-selected={false}
-                data-css-16=""
                 data-css-15=""
+                data-css-16=""
                 id="downshift-3-item-8"
                 onClick={[Function]}
                 onMouseDown={[Function]}
@@ -4523,8 +4531,8 @@ exports[`Test the typeahead component should use the top placement property 1`] 
             >
               <div
                 aria-selected={false}
-                data-css-16=""
                 data-css-15=""
+                data-css-16=""
                 id="downshift-3-item-9"
                 onClick={[Function]}
                 onMouseDown={[Function]}

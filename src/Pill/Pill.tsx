@@ -75,9 +75,9 @@ const Pill: FunctionComponent<IPillProps> = ({
 interface IPillProps extends IViewProps {
   /** Text that shows on the pill **/
   label: string
-  /** Themed color of the pill **/
+  /** Color of the pill **/
   color?: string
-  /** Themed color of the pill **/
+  /** Passing the callback will show a remove icon **/
   onRemoveClick?: () => void
 }
 
