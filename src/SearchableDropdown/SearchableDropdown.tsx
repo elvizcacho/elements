@@ -235,8 +235,8 @@ const SearchableDropdown = ({
                   {...getItemProps({
                     index,
                     item,
-                    key: item.value,
                   })}
+                  key={item.value}
                   {...styles.listItem}
                 >
                   <Text size="l" {...styles.label}>
