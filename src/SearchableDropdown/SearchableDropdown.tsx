@@ -11,7 +11,6 @@ import Input from '../Input/index'
 import { alpha, ColorPalette } from '@allthings/colors'
 import Icon, { IconType } from '../Icon/index'
 import { noop } from '@babel/types'
-import { EDropdownDirection } from '../enums'
 import { Spinner } from '../index'
 
 const INPUT_FIELD_HEIGHT = 50
@@ -84,6 +83,8 @@ const styles = {
     }),
 }
 
+type Placement = 'top' | 'bottom'
+
 interface ISearchableDropdownProps {
   /** If true, than the field can be cleared */
   clearable?: boolean
@@ -116,7 +117,7 @@ interface ISearchableDropdownProps {
   /** The placeholder displayed in the input field. */
   placeholder?: string
   /** If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards */
-  placement?: EDropdownDirection
+  placement?: Placement
   /** The search term */
   searchTerm?: string
   /** Selected item - this item can be controlled */
@@ -139,7 +140,7 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   onSearch,
   onSelect,
   placeholder = '',
-  placement = EDropdownDirection.BOTTOM,
+  placement = 'bottom',
   searchTerm = '',
   selectedItem,
 }) => {
@@ -177,8 +178,7 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
       return <Spinner size={16} />
     }
 
-    const arrowDirection =
-      placement === EDropdownDirection.TOP ? 'arrow-up' : 'arrow-down'
+    const arrowDirection = placement === 'top' ? 'arrow-up' : 'arrow-down'
 
     return (
       <React.Fragment>
@@ -217,16 +217,10 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   const renderList = (getItemProps: (options: object) => void) => (
     <Relative>
       <Absolute
-        bottom={
-          placement === EDropdownDirection.TOP ? INPUT_FIELD_HEIGHT : undefined
-        }
+        bottom={placement === 'top' ? INPUT_FIELD_HEIGHT : undefined}
         {...styles.listWrapper(menuHeight)}
       >
-        <View
-          direction={
-            placement === EDropdownDirection.TOP ? 'column-reverse' : 'column'
-          }
-        >
+        <View direction={placement === 'top' ? 'column-reverse' : 'column'}>
           <View {...styles.searchWrapper}>{renderSearchInput()}</View>
           <View {...styles.listItems(menuHeight)}>
             <List>

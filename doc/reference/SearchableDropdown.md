@@ -22,6 +22,6 @@ You can change it in "src/SearchableDropdown/SearchableDropdown.tsx" and run bui
 |onSelect **(required)**||Callback triggered when clearing the selection.
 |onSearch|((event: SyntheticEvent<Element, Event>) => void)|Callback triggered when search value changes
 |placeholder|string|The placeholder displayed in the input field.
-|placement|EDropdownDirection|If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards
+|placement|"top", "bottom"|If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards
 |searchTerm|string|The search term
 |selectedItem|any|Selected item - this item can be controlled
