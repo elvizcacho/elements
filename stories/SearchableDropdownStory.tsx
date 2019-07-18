@@ -184,10 +184,6 @@ const SearchableDropdownStory = () => {
   const [itemCount, setItemCount] = useState(ITEMS_LIMIT)
 
   useEffect(() => {
-    queryItems()
-  }, [searchQuery, itemCount])
-
-  const queryItems = () => {
     const filteredItems = Object.keys(colors).filter(
       item => searchQuery === '' || item.includes(searchQuery),
     )
@@ -204,7 +200,7 @@ const SearchableDropdownStory = () => {
         ? `Load more (${totalItems - slicedItems.length})`
         : '',
     )
-  }
+  }, [searchQuery, itemCount])
 
   const handleLoadMore = () => setItemCount(itemCount + ITEMS_LIMIT)
 
