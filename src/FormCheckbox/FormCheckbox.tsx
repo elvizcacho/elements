@@ -35,18 +35,16 @@ class FormCheckbox extends Component<IFormCheckboxProps> {
   }
 
   render() {
-    const {
-      label,
-      labelSize,
-      name,
-      backgroundColor = 'background',
-      ...props
-    } = this.props
+    const { label, labelSize, name, backgroundColor, ...props } = this.props
 
     return (
       <Theme>
         {({ colorize }) => (
-          <ListItem backgroundColor={colorize(backgroundColor)}>
+          <ListItem
+            backgroundColor={
+              backgroundColor ? colorize(backgroundColor) : undefined
+            }
+          >
             <Checkbox name={name} {...props} />
             <label htmlFor={name}>
               <Inset horizontal>

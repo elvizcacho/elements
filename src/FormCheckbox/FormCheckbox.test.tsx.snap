@@ -6,7 +6,7 @@ exports[`Test the FormCheckbox component should tick it 1`] = `
   padding: 10px 15px;
   min-height: 50px;
   border-bottom: 1px solid #ecf0f1;
-  background-color: darkMarco;
+  background-color: white;
 }
 
 .css-1,
@@ -114,8 +114,8 @@ exports[`Test the FormCheckbox component should tick it 1`] = `
   direction="row"
 >
   <div
-    data-css-1=""
     data-css-0=""
+    data-css-1=""
   >
     <ForwardRef
       alignV="center"
@@ -199,7 +199,7 @@ exports[`Test the FormCheckbox component should tick it 2`] = `
   padding: 10px 15px;
   min-height: 50px;
   border-bottom: 1px solid #ecf0f1;
-  background-color: darkMarco;
+  background-color: white;
 }
 
 .css-1,
@@ -321,8 +321,8 @@ exports[`Test the FormCheckbox component should tick it 2`] = `
   direction="row"
 >
   <div
-    data-css-1=""
     data-css-0=""
+    data-css-1=""
   >
     <ForwardRef
       alignV="center"
@@ -432,14 +432,6 @@ exports[`Test the FormCheckbox component should tick it 2`] = `
 exports[`Test the FormCheckbox component should work with children 1`] = `
 .css-0,
 [data-css-0] {
-  padding: 10px 15px;
-  min-height: 50px;
-  border-bottom: 1px solid #ecf0f1;
-  background-color: darkMarco;
-}
-
-.css-1,
-[data-css-1] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -462,8 +454,8 @@ exports[`Test the FormCheckbox component should work with children 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-2,
-[data-css-2] {
+.css-1,
+[data-css-1] {
   border-radius: 3px;
   height: 25px;
   width: 25px;
@@ -476,13 +468,13 @@ exports[`Test the FormCheckbox component should work with children 1`] = `
   -moz-transition: 250ms;
 }
 
-.css-3,
-[data-css-3] {
+.css-2,
+[data-css-2] {
   position: relative;
 }
 
-.css-4,
-[data-css-4] {
+.css-3,
+[data-css-3] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -505,8 +497,8 @@ exports[`Test the FormCheckbox component should work with children 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-5,
-[data-css-5] {
+.css-4,
+[data-css-4] {
   position: absolute;
   top: 0;
   right: 0;
@@ -514,21 +506,21 @@ exports[`Test the FormCheckbox component should work with children 1`] = `
   bottom: 0;
 }
 
-.css-6,
-[data-css-6] {
+.css-5,
+[data-css-5] {
   box-sizing: border-box;
   flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
 }
 
-.css-7,
-[data-css-7] {
+.css-6,
+[data-css-6] {
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.css-8,
-[data-css-8] {
+.css-7,
+[data-css-7] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -537,40 +529,48 @@ exports[`Test the FormCheckbox component should work with children 1`] = `
   color: #333333;
 }
 
+.css-8,
+[data-css-8] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: darkMarco;
+}
+
 <ForwardRef
   alignV="center"
-  data-css-0=""
+  data-css-8=""
   direction="row"
 >
   <div
-    data-css-1=""
     data-css-0=""
+    data-css-8=""
   >
     <ForwardRef
       alignV="center"
       direction="row"
     >
       <div
-        data-css-1=""
+        data-css-0=""
       >
         <ForwardRef
           alignH="center"
           alignV="center"
-          data-css-3=""
           data-css-2=""
+          data-css-1=""
           direction="row"
         >
           <div
-            data-css-3=""
             data-css-2=""
-            data-css-4=""
+            data-css-1=""
+            data-css-3=""
           >
             <ForwardRef
-              data-css-5=""
+              data-css-4=""
             >
               <div
-                data-css-6=""
                 data-css-5=""
+                data-css-4=""
               >
                 <input
                   checked={false}
@@ -599,18 +599,18 @@ exports[`Test the FormCheckbox component should work with children 1`] = `
       htmlFor="a"
     >
       <ForwardRef
-        data-css-7=""
+        data-css-6=""
       >
         <div
+          data-css-5=""
           data-css-6=""
-          data-css-7=""
         >
           <ForwardRef
-            data-css-8=""
+            data-css-7=""
           >
             <div
-              data-css-8=""
-              data-css-6=""
+              data-css-7=""
+              data-css-5=""
             >
               <h1>
                 test
