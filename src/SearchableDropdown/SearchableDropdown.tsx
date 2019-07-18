@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useRef } from 'react'
+import React, { SyntheticEvent, useRef, FunctionComponent } from 'react'
 import Downshift, { StateChangeOptions, DownshiftState } from 'downshift'
 import { css } from 'glamor'
 import Relative from '../Relative/index'
@@ -123,7 +123,7 @@ interface ISearchableDropdownProps {
   selectedItem?: IDropdownItem
 }
 
-const SearchableDropdown = ({
+const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   clearable = false,
   disabled = false,
   icon,
@@ -142,8 +142,8 @@ const SearchableDropdown = ({
   placement = EDropdownDirection.BOTTOM,
   searchTerm = '',
   selectedItem,
-}: ISearchableDropdownProps) => {
-  const searchRef = useRef<HTMLInputElement>()
+}) => {
+  const searchRef = useRef<HTMLInputElement>(null)
 
   const handleClearIconClick = (
     event: SyntheticEvent,
@@ -205,7 +205,7 @@ const SearchableDropdown = ({
 
   const renderSearchInput = () => (
     <Input
-      ref={searchRef as any}
+      ref={searchRef}
       hasRightIcon={false}
       onChange={onSearch}
       placeholder="Search"
