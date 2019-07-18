@@ -24,7 +24,10 @@
     "jest/**/handlebars": ">=4.1.2",
     "js-yaml": ">=3.13.0",
     "marked": ">=0.6.2",
-    "terser": "3.14"
+    "terser": "3.14",
+    "lodash": ">=4.17.2",
+    "set-value": ">=3.0.1",
+    "mixin-deep": ">=2.0.1"
   },
   "peerDependencies": {
     "react": "^16.3",
