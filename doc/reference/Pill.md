@@ -18,8 +18,8 @@ It could be used on cards to indicate that this card contains important informat
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
 |label **(required)**||Text that shows on the pill *
-|color|string|Themed color of the pill *
-|onRemoveClick|(() => void)|Themed color of the pill *
+|color|string|Color of the pill *
+|onRemoveClick|(() => void)|Passing the callback will show a remove icon *
 |htmlElement|string|
 |alignH|"none", "start", "center", "end", "space-around", "space-between"|horizontal alignment
 |alignV|"none", "start", "center", "end", "stretch"|vertical alignment
