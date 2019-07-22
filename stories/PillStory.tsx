@@ -43,7 +43,6 @@ export default function PillStory() {
               style={{ marginBottom: 5, marginRight: 5 }}
               onRemoveClick={() => {
                 setItems(items.filter((_, index) => index !== itemIndex))
-                return
               }}
             />
           ))}

@@ -34,6 +34,7 @@ import CheckboxStory from './CheckboxStory'
 import ProfileImageStackStory from './ProfileImageStackStory'
 import FilterStory from './FilterStory'
 import PillStory from './PillStory'
+import SearchableDropdownStory from './SearchableDropdownStory'
 
 storiesOf('Containers', module)
   .addDecorator(createViewportDecorator())
@@ -75,6 +76,7 @@ storiesOf('Forms', module)
   })
   .add('Typeahead', () => <TypeaheadStory />)
   .add('Dropdown', () => <DropdownStory />)
+  .add('SearchableDropdown', () => <SearchableDropdownStory />)
   .add('Button', () => <ButtonStory />)
 
 storiesOf('Button', module)
@@ -138,11 +140,6 @@ storiesOf('FloatingButton', module)
       </SimpleLayout>
     </ThemeProvider>
   ))
-
-storiesOf('Containers', module)
-  .addDecorator(createViewportDecorator())
-  .add('Collapsible', CollapsibleStory)
-  .add('Filters', () => <FilterStory />)
 
 storiesOf('Icons', module)
   .addDecorator(createViewportDecorator())
