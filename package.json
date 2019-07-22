@@ -43,7 +43,7 @@
     "build:cjs": "tsc -p tsconfig.json --target ES5 --module CommonJS --outDir dist/",
     "build": "NODE_ENV=production yarn build:es && yarn build:cjs && node -r esm scripts/copy-files.js",
     "build:docs": "node -r esm ./scripts/build-docs.js",
-    "release": "yarn build && npm publish dist --tag latest && git push --tags origin HEAD",
+    "release": "yarn build && yarn publish dist --tag latest --access public && git push --tags origin HEAD",
     "test:example": "jest ./scripts/example.test.js",
     "watch:test": "yarn test --watch",
     "test": "yarn jest src/ scripts/",
