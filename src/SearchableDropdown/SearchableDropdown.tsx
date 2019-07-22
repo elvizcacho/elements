@@ -13,6 +13,17 @@ import Icon, { IconType } from '../Icon/index'
 import { noop } from '@babel/types'
 import { Spinner } from '../index'
 
+/**
+ * TODO
+ * - manage search state internal
+ * - clearValueOnClose default: true
+ * - onSearch return string value only
+ * - onOpen event
+ * - onClose event
+ * - fix disabled state
+ * - search icon in input?
+ */
+
 const INPUT_FIELD_HEIGHT = 50
 
 const styles = {
@@ -45,6 +56,7 @@ const styles = {
     }),
   searchWrapper: css({
     borderTop: `1px solid ${ColorPalette.lightGrey}`,
+    marginBottom: -1,
   }),
   label: css({
     width: '100%',
@@ -57,7 +69,7 @@ const styles = {
   listItems: (menuHeight: number) =>
     css({
       borderTop: `1px solid ${ColorPalette.lightGrey}`,
-      maxHeight: menuHeight - INPUT_FIELD_HEIGHT,
+      maxHeight: menuHeight - INPUT_FIELD_HEIGHT + 1,
       overflowY: 'auto',
     }),
   listWrapper: (menuHeight: number) =>
