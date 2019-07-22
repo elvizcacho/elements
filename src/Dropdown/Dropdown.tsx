@@ -48,7 +48,7 @@ const styles = {
 
 type ItemType = {
   label: ReactNode
-  value: string
+  value: any
 }
 
 interface IDropdownProps {
