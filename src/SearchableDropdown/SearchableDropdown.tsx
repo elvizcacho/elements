@@ -58,7 +58,6 @@ const styles = {
     }),
   searchWrapper: css({
     borderTop: `1px solid ${ColorPalette.lightGrey}`,
-    marginBottom: -1,
   }),
   label: css({
     width: '100%',
