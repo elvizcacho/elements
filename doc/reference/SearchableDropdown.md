@@ -23,7 +23,7 @@ You can change it in "src/SearchableDropdown/SearchableDropdown.tsx" and run bui
 |onLoadMore|(() => void)|Callback triggered when clicking on "Load more" in items list
 |onOpen|(() => void)|Callback triggered when dropdown was opened
 |onSelect **(required)**||Callback triggered when clearing the selection.
-|onSearch|((event: SyntheticEvent<Element, Event>) => void)|Callback triggered when search value changes
+|onSearch|((value: string) => void)|Callback triggered when search value changes
 |placeholder|string|The placeholder displayed in the input field.
 |placement|"top", "bottom"|If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards
 |searchTerm|string|The search term

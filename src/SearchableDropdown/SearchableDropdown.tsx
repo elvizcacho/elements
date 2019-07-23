@@ -1,4 +1,9 @@
-import React, { SyntheticEvent, useRef, FunctionComponent } from 'react'
+import React, {
+  SyntheticEvent,
+  useRef,
+  FunctionComponent,
+  useState,
+} from 'react'
 import Downshift, { StateChangeOptions, DownshiftState } from 'downshift'
 import { css } from 'glamor'
 import Relative from '../Relative/index'
@@ -15,8 +20,6 @@ import { Spinner } from '../index'
 
 /**
  * TODO
- * - manage search state internal
- * - onSearch return string value only
  * - fix disabled state
  * - search icon in input?
  */
@@ -128,7 +131,7 @@ interface ISearchableDropdownProps {
   /** Callback triggered when clearing the selection. */
   onSelect: (item: IDropdownItem) => void
   /** Callback triggered when search value changes */
-  onSearch?: (event: SyntheticEvent) => void
+  onSearch?: (value: string) => void
   /** The placeholder displayed in the input field. */
   placeholder?: string
   /** If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards */
@@ -163,6 +166,7 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   selectedItem,
 }) => {
   const searchRef = useRef<HTMLInputElement>(null)
+  const [internalSearchTerm, setInternalSearchTerm] = useState(searchTerm)
 
   const handleClearIconClick = (
     event: SyntheticEvent,
@@ -184,13 +188,22 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
         0,
       )
     } else {
-      if (clearSearchValueOnClose && searchTerm !== '') {
-        searchTerm = ''
+      if (clearSearchValueOnClose && internalSearchTerm !== '') {
+        setInternalSearchTerm('')
         onClose()
       }
     }
 
     return changes
+  }
+
+  const handleSearchChange = (event: SyntheticEvent) => {
+    const value = (event.target as HTMLInputElement).value
+
+    if (value !== internalSearchTerm) {
+      setInternalSearchTerm(value)
+      onSearch && onSearch(value)
+    }
   }
 
   const renderIcons = (
@@ -231,9 +244,9 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
     <Input
       ref={searchRef}
       hasRightIcon={false}
-      onChange={onSearch}
+      onChange={handleSearchChange}
       placeholder="Search"
-      value={searchTerm}
+      value={internalSearchTerm}
       type="text"
     />
   )
