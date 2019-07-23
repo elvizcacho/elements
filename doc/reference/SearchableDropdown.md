@@ -8,6 +8,7 @@ You can change it in "src/SearchableDropdown/SearchableDropdown.tsx" and run bui
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
 |clearable|boolean|If true, than the field can be cleared
+|clearSearchValueOnClose|boolean|Clear the search input value on dropdown close
 |disabled|boolean|Set dropdown into disabled state
 |icon|"alarm", "alarm-filled", "armchair", "armchair-filled", "arrow-down", "arrow-down-filled", "arrow-left", "arrow-left-filled", "arrow-right", "arrow-right-filled", ... 147 more ...|Icon on the left of the input field
 |items **(required)**||The dropdown items to show
@@ -18,7 +19,9 @@ You can change it in "src/SearchableDropdown/SearchableDropdown.tsx" and run bui
 |menuHeight|number|The height of the menu in pixels. By default: Search input and 3 items
 |name|string|For forms
 |noResultsText|string|The text is shown if no result was found
+|onClose|(() => void)|Callback triggered when dropdown was closed
 |onLoadMore|(() => void)|Callback triggered when clicking on "Load more" in items list
+|onOpen|(() => void)|Callback triggered when dropdown was opened
 |onSelect **(required)**||Callback triggered when clearing the selection.
 |onSearch|((event: SyntheticEvent<Element, Event>) => void)|Callback triggered when search value changes
 |placeholder|string|The placeholder displayed in the input field.

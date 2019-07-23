@@ -16,10 +16,7 @@ import { Spinner } from '../index'
 /**
  * TODO
  * - manage search state internal
- * - clearValueOnClose default: true
  * - onSearch return string value only
- * - onOpen event
- * - onClose event
  * - fix disabled state
  * - search icon in input?
  */
@@ -100,6 +97,8 @@ type Placement = 'top' | 'bottom'
 interface ISearchableDropdownProps {
   /** If true, than the field can be cleared */
   clearable?: boolean
+  /** Clear the search input value on dropdown close */
+  clearSearchValueOnClose?: boolean
   /** Set dropdown into disabled state */
   disabled?: boolean
   /** Icon on the left of the input field */
@@ -120,8 +119,12 @@ interface ISearchableDropdownProps {
   name?: string
   /** The text is shown if no result was found */
   noResultsText?: string
+  /** Callback triggered when dropdown was closed */
+  onClose?: () => void
   /** Callback triggered when clicking on "Load more" in items list */
   onLoadMore?: () => void
+  /** Callback triggered when dropdown was opened */
+  onOpen?: () => void
   /** Callback triggered when clearing the selection. */
   onSelect: (item: IDropdownItem) => void
   /** Callback triggered when search value changes */
@@ -138,6 +141,7 @@ interface ISearchableDropdownProps {
 
 const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   clearable = false,
+  clearSearchValueOnClose = true,
   disabled = false,
   icon,
   items,
@@ -148,7 +152,9 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   menuHeight = INPUT_FIELD_HEIGHT * 4,
   name = '',
   noResultsText,
+  onClose = noop,
   onLoadMore = noop,
+  onOpen = noop,
   onSearch,
   onSelect,
   placeholder = '',
@@ -170,12 +176,18 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
     _: DownshiftState<any>,
     changes: StateChangeOptions<any>,
   ) => {
-    if (changes && changes.isOpen) {
+    if (changes.isOpen) {
+      onOpen()
       setTimeout(
         () =>
           searchRef.current && (searchRef.current as HTMLInputElement).focus(),
         0,
       )
+    } else {
+      if (clearSearchValueOnClose && searchTerm !== '') {
+        searchTerm = ''
+        onClose()
+      }
     }
 
     return changes
