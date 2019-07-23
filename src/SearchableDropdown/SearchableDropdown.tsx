@@ -1,4 +1,10 @@
-import React, { SyntheticEvent, useRef, FunctionComponent } from 'react'
+import React, {
+  SyntheticEvent,
+  useRef,
+  FunctionComponent,
+  useState,
+  RefObject,
+} from 'react'
 import Downshift, { StateChangeOptions, DownshiftState } from 'downshift'
 import { css } from 'glamor'
 import Relative from '../Relative/index'
@@ -13,33 +19,40 @@ import Icon, { IconType } from '../Icon/index'
 import { noop } from '@babel/types'
 import { Spinner } from '../index'
 
-const INPUT_FIELD_HEIGHT = 50
+const INPUT_FIELD_HEIGHT_PX = 50
+const DISBALED_BACKGROUND_COLOR = ColorPalette.whiteIntense
 
 const styles = {
-  area: css({
-    backgroundColor: ColorPalette.white,
-    height: INPUT_FIELD_HEIGHT,
-    position: 'relative',
-    width: '100%',
-  }),
+  area: (disabled: boolean) =>
+    css({
+      backgroundColor: disabled
+        ? DISBALED_BACKGROUND_COLOR
+        : ColorPalette.white,
+      cursor: disabled && 'not-allowed',
+      height: INPUT_FIELD_HEIGHT_PX,
+      position: 'relative',
+      width: '100%',
+    }),
   clearIcon: css({
     marginRight: 10,
     display: 'inline-block',
   }),
-  disabledInput: css({
-    backgroundColor: ColorPalette.white,
-    color: 'black',
-    cursor: 'pointer',
-    overflow: 'hidden',
-    paddingRight: '30px',
-    pointerEvents: 'none',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
-    width: 'calc(100% - 5px)',
-  }),
-  iconWrapper: (isLoading: boolean) =>
+  disabledInput: (disabled: boolean) =>
     css({
-      cursor: !isLoading && 'pointer',
+      backgroundColor: disabled
+        ? DISBALED_BACKGROUND_COLOR
+        : ColorPalette.white,
+      color: 'black',
+      overflow: 'hidden',
+      paddingRight: '30px',
+      pointerEvents: 'none',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+      width: 'calc(100% - 5px)',
+    }),
+  iconWrapper: (isLoading: boolean, disabled: boolean) =>
+    css({
+      cursor: disabled ? 'not-allowed' : !isLoading && 'pointer',
       height: '100%',
       padding: '16px 16px 16px 20px',
     }),
@@ -57,7 +70,7 @@ const styles = {
   listItems: (menuHeight: number) =>
     css({
       borderTop: `1px solid ${ColorPalette.lightGrey}`,
-      maxHeight: menuHeight - INPUT_FIELD_HEIGHT,
+      maxHeight: menuHeight - INPUT_FIELD_HEIGHT_PX + 1,
       overflowY: 'auto',
     }),
   listWrapper: (menuHeight: number) =>
@@ -71,13 +84,11 @@ const styles = {
   wrapper: (isOpen: boolean, disabled: boolean, isLoading: boolean) =>
     css({
       alignItems: 'stretch',
-      backgroundColor: ColorPalette.white,
       border: 'none',
       boxShadow: isOpen && '1px 1px 3px rgba(29, 29, 29, 0.125)',
       cursor: disabled ? 'not-allowed' : !isLoading && 'pointer',
       display: 'flex',
       flexDirection: 'column',
-      opacity: disabled && 0.85,
       padding: 0,
       width: '100%',
     }),
@@ -88,12 +99,16 @@ type Placement = 'top' | 'bottom'
 interface ISearchableDropdownProps {
   /** If true, than the field can be cleared */
   clearable?: boolean
+  /** Clear the search input value on dropdown close */
+  clearSearchValueOnClose?: boolean
   /** Set dropdown into disabled state */
   disabled?: boolean
   /** Icon on the left of the input field */
   icon?: IconType
   /** The dropdown items to show */
   items: IDropdownItem[]
+  /** The initial search term when dropdown opens first time */
+  initialSearchTerm?: string
   /** Initially selected item - this value is uncontrolled */
   initialSelectedItem?: IDropdownItem
   /** The loading state of the component, e.g fetching data. */
@@ -104,28 +119,31 @@ interface ISearchableDropdownProps {
   loadMoreText?: string
   /** The height of the menu in pixels. By default: Search input and 3 items */
   menuHeight?: number
-  /** For forms */
+  /** The name for forms */
   name?: string
   /** The text is shown if no result was found */
   noResultsText?: string
+  /** Callback triggered when dropdown was closed */
+  onClose?: () => void
   /** Callback triggered when clicking on "Load more" in items list */
   onLoadMore?: () => void
+  /** Callback triggered when dropdown was opened */
+  onOpen?: () => void
   /** Callback triggered when clearing the selection. */
   onSelect: (item: IDropdownItem) => void
   /** Callback triggered when search value changes */
-  onSearch?: (event: SyntheticEvent) => void
+  onSearch?: (value: string) => void
   /** The placeholder displayed in the input field. */
   placeholder?: string
   /** If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards */
   placement?: Placement
-  /** The search term */
-  searchTerm?: string
   /** Selected item - this item can be controlled */
   selectedItem?: IDropdownItem
 }
 
 const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   clearable = false,
+  clearSearchValueOnClose = true,
   disabled = false,
   icon,
   items,
@@ -133,18 +151,21 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   isLoading = false,
   label = '',
   loadMoreText = '',
-  menuHeight = INPUT_FIELD_HEIGHT * 4,
+  menuHeight = INPUT_FIELD_HEIGHT_PX * 4,
   name = '',
   noResultsText,
+  onClose = noop,
   onLoadMore = noop,
+  onOpen = noop,
   onSearch,
   onSelect,
   placeholder = '',
   placement = 'bottom',
-  searchTerm = '',
+  initialSearchTerm = '',
   selectedItem,
 }) => {
-  const searchRef = useRef<HTMLInputElement>(null)
+  const searchRef: RefObject<HTMLInputElement> = useRef(null)
+  const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
 
   const handleClearIconClick = (
     event: SyntheticEvent,
@@ -158,15 +179,30 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
     _: DownshiftState<any>,
     changes: StateChangeOptions<any>,
   ) => {
-    if (changes && changes.isOpen) {
-      setTimeout(
-        () =>
-          searchRef.current && (searchRef.current as HTMLInputElement).focus(),
-        0,
-      )
+    if (Object.prototype.hasOwnProperty.call(changes, 'isOpen')) {
+      if (changes.isOpen) {
+        setTimeout(() => searchRef.current && searchRef.current.focus(), 0)
+
+        onOpen()
+      } else {
+        if (clearSearchValueOnClose && searchTerm !== '') {
+          setSearchTerm('')
+        }
+
+        onClose()
+      }
     }
 
     return changes
+  }
+
+  const handleSearchChange = (event: SyntheticEvent) => {
+    const value = (event.target as HTMLInputElement).value
+
+    if (value !== searchTerm) {
+      setSearchTerm(value)
+      onSearch && onSearch(value)
+    }
   }
 
   const renderIcons = (
@@ -205,19 +241,20 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
 
   const renderSearchInput = () => (
     <Input
-      ref={searchRef}
       hasRightIcon={false}
-      onChange={onSearch}
+      icon="search"
+      onChange={handleSearchChange}
       placeholder="Search"
-      value={searchTerm}
+      ref={searchRef}
       type="text"
+      value={searchTerm}
     />
   )
 
   const renderList = (getItemProps: (options: object) => void) => (
     <Relative>
       <Absolute
-        bottom={placement === 'top' ? INPUT_FIELD_HEIGHT : undefined}
+        bottom={placement === 'top' ? INPUT_FIELD_HEIGHT_PX : undefined}
         {...styles.listWrapper(menuHeight)}
       >
         <View direction={placement === 'top' ? 'column-reverse' : 'column'}>
@@ -285,12 +322,12 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
           <div {...styles.wrapper(isOpen, disabled, isLoading)}>
             <Relative>
               <View
-                onClick={() => !isLoading && toggleMenu()}
-                {...styles.area}
+                onClick={() => !isLoading && !disabled && toggleMenu()}
                 data-testid="searchable-dropdown"
+                {...styles.area(disabled)}
               >
                 <Input
-                  disabled
+                  disabled={true}
                   icon={icon}
                   label={label}
                   placeholder={placeholder}
@@ -298,10 +335,14 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
                   readOnly
                   name={name}
                   hasRightIcon
-                  {...styles.disabledInput}
+                  {...styles.disabledInput(disabled)}
                 />
 
-                <Absolute top={0} right={0} {...styles.iconWrapper(isLoading)}>
+                <Absolute
+                  top={0}
+                  right={0}
+                  {...styles.iconWrapper(isLoading, disabled)}
+                >
                   <View direction="row">
                     {renderIcons(isLoading, showClearIcon, clearSelection)}
                   </View>
