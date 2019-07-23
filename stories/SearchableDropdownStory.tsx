@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   View,
   ThemeProvider,
@@ -204,15 +204,12 @@ const SearchableDropdownStory = () => {
 
   const handleLoadMore = () => setItemCount(itemCount + ITEMS_LIMIT)
 
-  const resetSearch = (query = '') => {
+  const handleSearch = (value: string) => {
     setItemCount(ITEMS_LIMIT)
-    setSearchQuery(query)
+    setSearchQuery(value)
   }
 
-  const handleSearch = (event: SyntheticEvent) =>
-    resetSearch((event.target as HTMLInputElement).value)
-
-  const handleSelect = () => resetSearch()
+  const handleSelect = () => handleSearch('')
 
   return (
     <ThemeProvider>
@@ -230,7 +227,6 @@ const SearchableDropdownStory = () => {
             onSearch={handleSearch}
             onSelect={handleSelect}
             placeholder="Some label"
-            searchTerm={searchQuery}
           />
 
           <Text strong {...styles.title}>
@@ -247,7 +243,6 @@ const SearchableDropdownStory = () => {
             onSearch={handleSearch}
             onSelect={handleSelect}
             placeholder="Some label"
-            searchTerm={searchQuery}
           />
 
           <Text strong {...styles.title}>
@@ -262,7 +257,6 @@ const SearchableDropdownStory = () => {
             onSearch={handleSearch}
             onSelect={handleSelect}
             placeholder="Some label"
-            searchTerm={searchQuery}
           />
 
           <Text strong {...styles.title}>
@@ -280,7 +274,6 @@ const SearchableDropdownStory = () => {
             onSearch={handleSearch}
             onSelect={handleSelect}
             placeholder="Some label"
-            searchTerm={searchQuery}
             initialSelectedItem={{ label: 'darkgoldenrod', value: '#b8860b' }}
           />
 
@@ -300,7 +293,6 @@ const SearchableDropdownStory = () => {
             onSelect={handleSelect}
             placeholder="Some label"
             placement={EDropdownDirection.TOP}
-            searchTerm={searchQuery}
           />
 
           <Text strong {...styles.title}>
@@ -313,7 +305,6 @@ const SearchableDropdownStory = () => {
             name="searchable-dropdown-loading"
             onSelect={handleSelect}
             placeholder="Some label"
-            searchTerm={searchQuery}
           />
 
           <Text strong {...styles.title}>
@@ -321,12 +312,11 @@ const SearchableDropdownStory = () => {
           </Text>
           <SearchableDropdown
             disabled={true}
-            items={items}
+            items={[]}
             label="Some label"
             name="searchable-dropdown-disabled"
             onSelect={handleSelect}
             placeholder="Some label"
-            searchTerm={searchQuery}
           />
         </View>
       </ResourceProvider>
