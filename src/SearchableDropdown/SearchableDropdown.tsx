@@ -20,32 +20,39 @@ import { noop } from '@babel/types'
 import { Spinner } from '../index'
 
 const INPUT_FIELD_HEIGHT_PX = 50
+const DISBALED_BACKGROUND_COLOR = ColorPalette.whiteIntense
 
 const styles = {
-  area: css({
-    backgroundColor: ColorPalette.white,
-    height: INPUT_FIELD_HEIGHT_PX,
-    position: 'relative',
-    width: '100%',
-  }),
+  area: (disabled: boolean) =>
+    css({
+      backgroundColor: disabled
+        ? DISBALED_BACKGROUND_COLOR
+        : ColorPalette.white,
+      cursor: disabled && 'not-allowed',
+      height: INPUT_FIELD_HEIGHT_PX,
+      position: 'relative',
+      width: '100%',
+    }),
   clearIcon: css({
     marginRight: 10,
     display: 'inline-block',
   }),
-  disabledInput: css({
-    backgroundColor: ColorPalette.white,
-    color: 'black',
-    cursor: 'pointer',
-    overflow: 'hidden',
-    paddingRight: '30px',
-    pointerEvents: 'none',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
-    width: 'calc(100% - 5px)',
-  }),
-  iconWrapper: (isLoading: boolean) =>
+  disabledInput: (disabled: boolean) =>
     css({
-      cursor: !isLoading && 'pointer',
+      backgroundColor: disabled
+        ? DISBALED_BACKGROUND_COLOR
+        : ColorPalette.white,
+      color: 'black',
+      overflow: 'hidden',
+      paddingRight: '30px',
+      pointerEvents: 'none',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+      width: 'calc(100% - 5px)',
+    }),
+  iconWrapper: (isLoading: boolean, disabled: boolean) =>
+    css({
+      cursor: disabled ? 'not-allowed' : !isLoading && 'pointer',
       height: '100%',
       padding: '16px 16px 16px 20px',
     }),
@@ -78,13 +85,11 @@ const styles = {
   wrapper: (isOpen: boolean, disabled: boolean, isLoading: boolean) =>
     css({
       alignItems: 'stretch',
-      backgroundColor: ColorPalette.white,
       border: 'none',
       boxShadow: isOpen && '1px 1px 3px rgba(29, 29, 29, 0.125)',
       cursor: disabled ? 'not-allowed' : !isLoading && 'pointer',
       display: 'flex',
       flexDirection: 'column',
-      opacity: disabled && 0.85,
       padding: 0,
       width: '100%',
     }),
@@ -318,12 +323,12 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
           <div {...styles.wrapper(isOpen, disabled, isLoading)}>
             <Relative>
               <View
-                onClick={() => !isLoading && toggleMenu()}
-                {...styles.area}
+                onClick={() => !isLoading && !disabled && toggleMenu()}
                 data-testid="searchable-dropdown"
+                {...styles.area(disabled)}
               >
                 <Input
-                  disabled
+                  disabled={true}
                   icon={icon}
                   label={label}
                   placeholder={placeholder}
@@ -331,10 +336,14 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
                   readOnly
                   name={name}
                   hasRightIcon
-                  {...styles.disabledInput}
+                  {...styles.disabledInput(disabled)}
                 />
 
-                <Absolute top={0} right={0} {...styles.iconWrapper(isLoading)}>
+                <Absolute
+                  top={0}
+                  right={0}
+                  {...styles.iconWrapper(isLoading, disabled)}
+                >
                   <View direction="row">
                     {renderIcons(isLoading, showClearIcon, clearSelection)}
                   </View>
