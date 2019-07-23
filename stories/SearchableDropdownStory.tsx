@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   View,
   ThemeProvider,
@@ -204,15 +204,12 @@ const SearchableDropdownStory = () => {
 
   const handleLoadMore = () => setItemCount(itemCount + ITEMS_LIMIT)
 
-  const resetSearch = (query = '') => {
+  const handleSearch = (value: string) => {
     setItemCount(ITEMS_LIMIT)
-    setSearchQuery(query)
+    setSearchQuery(value)
   }
 
-  const handleSearch = (event: SyntheticEvent) =>
-    resetSearch((event.target as HTMLInputElement).value)
-
-  const handleSelect = () => resetSearch()
+  const handleSelect = () => handleSearch('')
 
   return (
     <ThemeProvider>
