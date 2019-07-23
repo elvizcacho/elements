@@ -57,7 +57,7 @@ interface ITypeaheadProps {
    * data. */
   readonly isLoading?: boolean
   /** The itebooleanomponent as an array of objects. (icon is optional) */
-  readonly items: ITypeaheadItem[]
+  readonly items: ReadonlyArray<ITypeaheadItem>
   /** The maximum number of items displayed in the menu. */
   readonly limit?: number
   /** The height of the menu in pixels. */

@@ -54,7 +54,7 @@ type ItemType = {
 interface IDropdownProps {
   /** If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards */
   readonly placement?: 'top' | 'bottom'
-  readonly items: ItemType[]
+  readonly items: ReadonlyArray<ItemType>
   /** Initially selected item - this value is uncontrolled */
   readonly initialSelectedItem?: ItemType
   /** Selected item - this item can be controlled */
