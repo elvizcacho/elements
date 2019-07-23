@@ -31,6 +31,5 @@ ChatBubbles are used to show conversations between two or more users.
 |userImage **(required)**||
 |date **(required)**||
 |text **(required)**||
-|background **(required)**||<br>Default: white
-|direction **(required)**||<br>Default: left
-|fontColor **(required)**||<br>Default: text
+|background **(required)**||
+|direction **(required)**||

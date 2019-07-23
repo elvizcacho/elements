@@ -16,7 +16,7 @@ const ListSpinner: FunctionComponent<IListSpinnerProps> = ({
 )
 
 interface IListSpinnerProps extends ICircleProps {
-  radius?: number
+  readonly radius?: number
 }
 
 export default ListSpinner

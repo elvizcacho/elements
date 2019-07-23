@@ -6,9 +6,9 @@ import { color } from '../utils/propTypes/color'
 import { IViewProps } from '../View'
 
 interface ICheckmarkProps {
-  checked: boolean
-  disabled: boolean
-  color: color
+  readonly checked: boolean
+  readonly disabled: boolean
+  readonly color: color
 }
 
 const Checkmark: FunctionComponent<ICheckmarkProps & IViewProps> = ({

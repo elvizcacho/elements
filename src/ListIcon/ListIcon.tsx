@@ -5,9 +5,9 @@ import { color } from '../utils/propTypes/color'
 import Theme from '../Theme'
 
 interface IListIconProps {
-  name: IconType
-  iconColor?: color
-  backgroundColor?: color
+  readonly name: IconType
+  readonly iconColor?: color
+  readonly backgroundColor?: color
 }
 
 /**

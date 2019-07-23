@@ -22,17 +22,17 @@ const styles = {
 }
 
 export interface IRadioButtonProps {
-  id?: string
+  readonly id?: string
   /** Set to true to controll radio button */
-  checked?: boolean
+  readonly checked?: boolean
   /** The name of this input field */
-  name?: string
+  readonly name?: string
   /** Called when a radio button is clicked */
-  onChange?: (e: ChangeEvent) => void
+  readonly onChange?: (e: ChangeEvent) => void
   /** Mark if the RadioButton is required */
-  required?: boolean
+  readonly required?: boolean
   /** The value the checkbox will have */
-  value: string
+  readonly value: string
 }
 
 interface IState {
