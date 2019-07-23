@@ -12,7 +12,7 @@ You can change it in "src/SearchableDropdown/SearchableDropdown.tsx" and run bui
 |disabled|boolean|Set dropdown into disabled state
 |icon|"alarm", "alarm-filled", "armchair", "armchair-filled", "arrow-down", "arrow-down-filled", "arrow-left", "arrow-left-filled", "arrow-right", "arrow-right-filled", ... 147 more ...|Icon on the left of the input field
 |items **(required)**||The dropdown items to show
-|initialSearchTerm|string|The initial search term when droopdown opens first time
+|initialSearchTerm|string|The initial search term when dropdown opens first time
 |initialSelectedItem|any|Initially selected item - this value is uncontrolled
 |isLoading|boolean|The loading state of the component, e.g fetching data.
 |label|string|A floating label

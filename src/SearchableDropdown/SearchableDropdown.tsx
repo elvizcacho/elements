@@ -107,7 +107,7 @@ interface ISearchableDropdownProps {
   icon?: IconType
   /** The dropdown items to show */
   items: IDropdownItem[]
-  /** The initial search term when droopdown opens first time */
+  /** The initial search term when dropdown opens first time */
   initialSearchTerm?: string
   /** Initially selected item - this value is uncontrolled */
   initialSelectedItem?: IDropdownItem
