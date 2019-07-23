@@ -106,23 +106,23 @@ const timePropTypeValidator = (value: string, propName: string) => {
 
 interface ITimeInputProps extends IInputProps {
   /** Name picked up by a form **/
-  name: string
+  readonly name: string
   /** Label shown above the time picker **/
-  label?: string
+  readonly label?: string
   /** Indicates if this field is required **/
-  required?: boolean
+  readonly required?: boolean
   /** The default value formatted as `hh:mm` **/
-  defaultValue?: string
+  readonly defaultValue?: string
   /** The step between the hours **/
-  hourStep?: number
+  readonly hourStep?: number
   /** The step between the minutes **/
-  minuteStep?: number
+  readonly minuteStep?: number
   /** The minimum time which can be selected. Formatted as `hh:mm` **/
-  minTime?: string
+  readonly minTime?: string
   /** The maximum time which can be selected. Formatted as `hh:mm` **/
-  maxTime?: string
+  readonly maxTime?: string
   /** Callback when a new time has been selected **/
-  onChange?: (time: string) => void
+  readonly onChange?: (time: string) => void
 }
 
 interface IState {

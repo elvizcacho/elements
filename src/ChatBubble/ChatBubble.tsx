@@ -76,17 +76,17 @@ const styles = {
 
 interface IChatBubbleProps {
   /* Name of the person who wrote the message */
-  userName: string
+  readonly userName: string
   /* Profile image of person who wrote the message */
-  userImage: string
+  readonly userImage: string
   /* Date when the message was send */
-  date: ReactNode
+  readonly date: ReactNode
   /* Text of the message */
-  text: ReactNode
+  readonly text: ReactNode
   /* Background color of chat message */
-  background: string
+  readonly background: string
   /* Position of profile image and name */
-  direction: 'left' | 'right'
+  readonly direction: 'left' | 'right'
 }
 
 /**

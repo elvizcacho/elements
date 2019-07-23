@@ -23,8 +23,8 @@ const style = (backgroundColor: string) =>
   })
 
 interface ICardButtonProps extends IViewProps {
-  backgroundColor?: color
-  autoFocus?: boolean
+  readonly backgroundColor?: color
+  readonly autoFocus?: boolean
 }
 
 /**

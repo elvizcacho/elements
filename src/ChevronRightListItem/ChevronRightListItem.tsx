@@ -11,8 +11,8 @@ const style = css({
 })
 
 interface ChevronRightListItem extends IListItemProps {
-  flex?: flexType
-  innerStyle?: any
+  readonly flex?: flexType
+  readonly innerStyle?: any
 }
 
 const ChevronRightListItem: FunctionComponent<ChevronRightListItem> = ({

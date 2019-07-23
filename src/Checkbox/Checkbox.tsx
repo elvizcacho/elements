@@ -23,10 +23,10 @@ const styles = {
 }
 export interface ICheckboxProps extends IInputProps {
   /** True to make it checked */
-  checked?: boolean
+  readonly checked?: boolean
   /** Label of Checkbox */
-  name?: string
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+  readonly name?: string
+  readonly onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 /**

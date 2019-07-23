@@ -19,9 +19,9 @@ const styles = (
   })
 
 export interface IListItemProps extends IViewProps {
-  backgroundColor?: color
-  hideLine?: boolean
-  padded?: boolean
+  readonly backgroundColor?: color
+  readonly hideLine?: boolean
+  readonly padded?: boolean
 }
 
 const ListItem: FunctionComponent<IListItemProps> = ({

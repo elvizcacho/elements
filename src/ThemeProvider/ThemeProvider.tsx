@@ -14,16 +14,16 @@ export const defaultTheme: ITheme = {
 }
 
 export interface ITheme {
-  primary: string
-  text: string
-  secondaryText: string
-  titleColor: string
-  contrast: string
-  warn: string
-  disabled: string
-  background: string
-  textOnBackground: string
-  [key: string]: string
+  readonly primary: string
+  readonly text: string
+  readonly secondaryText: string
+  readonly titleColor: string
+  readonly contrast: string
+  readonly warn: string
+  readonly disabled: string
+  readonly background: string
+  readonly textOnBackground: string
+  readonly [key: string]: string
 }
 
 /**

@@ -11,11 +11,11 @@ const Spacer = ({
   background,
 }: {
   /** The width of space it should create **/
-  width?: number | string
+  readonly width?: number | string
   /** The height of space it should create **/
-  height?: number | string
+  readonly height?: number | string
   /** Background color, default will be transparent **/
-  background?: string
+  readonly background?: string
 }) => <View {...css({ width, height, background })} />
 
 export default Spacer

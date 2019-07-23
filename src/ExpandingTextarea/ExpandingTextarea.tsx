@@ -17,14 +17,14 @@ const styles = {
 }
 
 interface IExpandingTextareaProps {
-  autoFocus?: boolean
-  placeholder?: string
-  name?: string
-  onHeightChange?: (height: number) => void
-  containerStyle?: any
-  onChange?: (e: ChangeEvent<HTMLTextAreaElement>) => void
-  value?: string
-  onFocus?: () => void
+  readonly autoFocus?: boolean
+  readonly placeholder?: string
+  readonly name?: string
+  readonly onHeightChange?: (height: number) => void
+  readonly containerStyle?: any
+  readonly onChange?: (e: ChangeEvent<HTMLTextAreaElement>) => void
+  readonly value?: string
+  readonly onFocus?: () => void
 }
 
 /**

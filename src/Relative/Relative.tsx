@@ -15,13 +15,13 @@ type IRelativeProps = IRelative & IViewProps
 
 interface IRelative {
   /** Top offset */
-  top?: number
+  readonly top?: number
   /** Bottom offset */
-  bottom?: number
+  readonly bottom?: number
   /** Left offset */
-  left?: number
+  readonly left?: number
   /** Right offset */
-  right?: number
+  readonly right?: number
 }
 
 const Relative: FunctionComponent<IRelativeProps> = ({

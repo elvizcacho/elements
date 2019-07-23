@@ -21,12 +21,12 @@ const box = (background: string, onClick: boolean) =>
   })
 
 interface ISquareIconButtonProps {
-  icon: IconType
-  color?: color
+  readonly icon: IconType
+  readonly color?: color
   /** Size of the icon child component (check <Icon />) **/
-  iconSize?: IconSizeType
-  iconColor?: string
-  onClick?: () => void
+  readonly iconSize?: IconSizeType
+  readonly iconColor?: string
+  readonly onClick?: () => void
 }
 
 /**

@@ -15,7 +15,7 @@ type ThemeChildrenType = ({
 }) => React.ReactNode
 
 interface IThemeProps {
-  children: ThemeChildrenType
+  readonly children: ThemeChildrenType
 }
 
 const Theme: FunctionComponent<IThemeProps> = ({ children }) => (
