@@ -21,7 +21,7 @@ const Line = ({
   color,
 }: {
   /** Color of the Line */
-  readonly color: string
+  color: string
 }) => (
   <View
     {...line(colorCode(color))}

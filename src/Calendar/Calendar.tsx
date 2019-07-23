@@ -143,9 +143,9 @@ const Calendar: FunctionComponent<ICalendarProps> = ({
 
 export interface ICalendarProps extends CalendarProps {
   /** Indicates if a day is blocked. Expects a function which is invoked with a `Date` object and should return a boolean **/
-  readonly isBlockedDay?: (date: Date) => boolean
+  isBlockedDay?: (date: Date) => boolean
   /** Proxied from `react-calendar` prop types **/
-  readonly tileDisabled?: (date: { activeStartDate: Date }) => boolean
+  tileDisabled?: (date: { activeStartDate: Date }) => boolean
 }
 
 export default Calendar

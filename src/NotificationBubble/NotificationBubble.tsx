@@ -26,8 +26,8 @@ const styles = {
 }
 
 interface INotificationBubble {
-  readonly color?: string
-  readonly onTimeout?: () => void
+  color?: string
+  onTimeout?: () => void
 }
 interface INotificationBubbleState {
   visible: boolean

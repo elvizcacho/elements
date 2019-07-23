@@ -77,9 +77,9 @@ interface IDimensions {
   height: number
 }
 interface IProfileImageProps {
-  readonly image?: string
-  readonly showBorder?: boolean
-  readonly size?: ProfileImageSizeType
+  image?: string
+  showBorder?: boolean
+  size?: ProfileImageSizeType
 }
 
 /**

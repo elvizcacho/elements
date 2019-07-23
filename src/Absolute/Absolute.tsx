@@ -13,13 +13,13 @@ const absolute = ({ left, right, top, bottom }: IAbsoluteProps) =>
 
 export interface IAbsoluteProps {
   /** Top offset */
-  readonly top?: string | number
+  top?: string | number
   /** Bottom offset */
-  readonly bottom?: string | number
+  bottom?: string | number
   /** Left offset */
-  readonly left?: string | number
+  left?: string | number
   /** Right offset */
-  readonly right?: string | number
+  right?: string | number
 }
 
 const Absolute: FunctionComponent<IAbsoluteProps & IViewProps> = ({

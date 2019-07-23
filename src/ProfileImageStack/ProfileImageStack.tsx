@@ -55,10 +55,10 @@ const ProfileImageStack = ({
   </View>
 )
 interface IProfileImageStackProps {
-  readonly images: string[]
-  readonly moreText?: string
-  readonly showBorder?: boolean
-  readonly size?: ProfileImageSizeType
+  images: string[]
+  moreText?: string
+  showBorder?: boolean
+  size?: ProfileImageSizeType
 }
 
 export default ProfileImageStack

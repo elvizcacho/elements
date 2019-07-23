@@ -49,11 +49,11 @@ const styles = {
  */
 
 interface ISwitchListProps {
-  readonly disabled?: boolean
-  readonly onChange: (optionKey: string) => void
-  readonly options: { [key: string]: string }
-  readonly initialActive?: string
-  readonly showSpinner?: boolean
+  disabled?: boolean
+  onChange: (optionKey: string) => void
+  options: { [key: string]: string }
+  initialActive?: string
+  showSpinner?: boolean
 }
 
 interface IState {

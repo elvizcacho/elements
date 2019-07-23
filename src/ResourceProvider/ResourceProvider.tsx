@@ -13,7 +13,7 @@ export const ResourceProviderContext = React.createContext({
 })
 
 export interface IResourceProviderProps {
-  readonly resourcePath?: string
+  resourcePath?: string
 }
 
 /**

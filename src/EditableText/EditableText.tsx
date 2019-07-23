@@ -60,13 +60,13 @@ const EditableText: FunctionComponent<IEditableTextProps> = ({
 
 interface IEditableTextProps extends IViewProps {
   /** Text content passed to the component as children */
-  readonly children?: string
+  children?: string
   /** Color of the emulated text decoration (border bottom) */
-  readonly decorationColor?: string
+  decorationColor?: string
   /** Icon displayed on the right side of the text */
-  readonly icon?: IconType
+  icon?: IconType
   /** Color of the icon */
-  readonly iconColor?: string
+  iconColor?: string
 }
 
 export default EditableText

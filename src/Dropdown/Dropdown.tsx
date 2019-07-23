@@ -53,28 +53,28 @@ type ItemType = {
 
 interface IDropdownProps {
   /** If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards */
-  readonly placement?: 'top' | 'bottom'
-  readonly items: ItemType[]
+  placement?: 'top' | 'bottom'
+  items: ItemType[]
   /** Initially selected item - this value is uncontrolled */
-  readonly initialSelectedItem?: ItemType
+  initialSelectedItem?: ItemType
   /** Selected item - this item can be controlled */
-  readonly selectedItem?: ItemType
+  selectedItem?: ItemType
   /** The maximum number of items displayed in the menu. */
-  readonly limit?: number
+  limit?: number
   /** The height of the menu in pixels. */
-  readonly menuHeight?: number
+  menuHeight?: number
   /** Callback triggered when clearing the selection. */
-  readonly onSelect?: (item: ItemType) => void
+  onSelect?: (item: ItemType) => void
   /** The placeholder displayed in the input field. */
-  readonly placeholder?: string
+  placeholder?: string
   /** A floating label */
-  readonly label?: string
+  label?: string
   /** Icon on the left of the input field */
-  readonly icon?: IconType
+  icon?: IconType
   /** If true, than the field can be cleared */
-  readonly clearable?: boolean
+  clearable?: boolean
   /** For forms */
-  readonly name?: string
+  name?: string
 }
 
 export default class Dropdown extends PureComponent<IDropdownProps> {

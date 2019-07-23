@@ -17,12 +17,12 @@ export const loadLanguage = async (
 }
 
 interface IBasicProps {
-  readonly project: string
-  readonly locale: string
-  readonly onDone?: () => void
-  readonly messages?: object
-  readonly stage: 'prerelease' | 'production' | 'staging'
-  readonly variation?: string
+  project: string
+  locale: string
+  onDone?: () => void
+  messages?: object
+  stage: 'prerelease' | 'production' | 'staging'
+  variation?: string
 }
 
 const defaultProps = {

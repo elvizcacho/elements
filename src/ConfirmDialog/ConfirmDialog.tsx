@@ -33,11 +33,11 @@ const styles = {
 }
 
 export interface IConfirmDialogProps {
-  readonly acceptButtonLabel: string
-  readonly cancelButtonLabel: string
-  readonly message: string
-  readonly onCancel: () => void
-  readonly onSuccess: () => void
+  acceptButtonLabel: string
+  cancelButtonLabel: string
+  message: string
+  onCancel: () => void
+  onSuccess: () => void
 }
 
 class ConfirmDialog extends Component<IConfirmDialogProps> {

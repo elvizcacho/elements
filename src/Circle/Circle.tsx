@@ -21,17 +21,17 @@ const circle = (
 
 export interface ICircleProps extends IViewProps {
   /** Content of the Circle will be always centered */
-  readonly children?: React.ReactNode
+  children?: React.ReactNode
   /** Color of the Circle. Allows theme names (like 'primary') or hex colors  */
-  readonly color?: string
+  color?: string
   /** Radius of Circle, defaults to 40 */
-  readonly radius?: number
+  radius?: number
   /** If true it will only render the outline */
-  readonly outline?: boolean
+  outline?: boolean
   /** If passed outline will use as outline color instead of color */
-  readonly outlineColor?: string
+  outlineColor?: string
   /** If true it will fill the circle */
-  readonly fill?: boolean
+  fill?: boolean
 }
 
 /**

@@ -26,10 +26,10 @@ const paddedCss = (paddedVertical: boolean, paddedHorizontal: boolean) =>
   })
 
 interface ISimpleLayout {
-  readonly backgroundColor: color
-  readonly padded?: boolean | 'horizontal' | 'vertical'
-  readonly onScrollEnd?: () => void
-  readonly onPullDown?: () => void
+  backgroundColor: color
+  padded?: boolean | 'horizontal' | 'vertical'
+  onScrollEnd?: () => void
+  onPullDown?: () => void
 }
 
 interface IState {

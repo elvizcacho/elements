@@ -111,15 +111,15 @@ const styles = {
 
 interface ISliderProps extends IViewProps {
   /** Minimum selectable value **/
-  readonly min: number
+  min: number
   /** Maximum selectable value **/
-  readonly max: number
+  max: number
   /** Step interval **/
-  readonly step?: number
+  step?: number
   /** Current value to show **/
-  readonly value?: number
+  value?: number
   /** Callback when the users changes the value **/
-  readonly onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 const Slider: FunctionComponent<ISliderProps> = ({

@@ -38,9 +38,9 @@ const CountIndicator: FunctionComponent<ICountIndicatorProps> = ({
 
 interface ICountIndicatorProps extends IAbsoluteProps {
   /** Number to display */
-  readonly count: number
+  count: number
   /** Color */
-  readonly color?: string
+  color?: string
 }
 
 export default CountIndicator

@@ -45,37 +45,37 @@ export interface ITypeaheadItem {
 
 interface ITypeaheadProps {
   /** Forces the menu to be opened when clicking in the input. */
-  readonly autoOpen?: boolean
+  autoOpen?: boolean
   /** Automatically clears the selection. Must not be used with controlled
    * and uncontrolled components. */
-  readonly clearOnSelect?: boolean
+  clearOnSelect?: boolean
   /** The defaultbooleancomponent, without making it controlled. */
-  readonly defaultValue?: string
+  defaultValue?: string
   /** If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards */
-  readonly placement?: Placement
+  placement?: Placement
   /** The loading state of the component, e.g when externally fetching some
    * data. */
-  readonly isLoading?: boolean
+  isLoading?: boolean
   /** The itebooleanomponent as an array of objects. (icon is optional) */
-  readonly items: ITypeaheadItem[]
+  items: readonly ITypeaheadItem[]
   /** The maximum number of items displayed in the menu. */
-  readonly limit?: number
+  limit?: number
   /** The height of the menu in pixels. */
-  readonly menuHeight?: number
+  menuHeight?: number
   /** Callback triggered when clearing the selection. */
-  readonly onClearSelection?: () => void
+  onClearSelection?: () => void
   /** Callback triggered when the menu is closed. */
-  readonly onClose?: () => void
+  onClose?: () => void
   /** Callback triggered when the input value is modified. */
-  readonly onInputValueChange?: (inputValue: string) => void
+  onInputValueChange?: (inputValue: string) => void
   /** Callback triggered when the menu is opened. */
-  readonly onOpen?: () => void
+  onOpen?: () => void
   /** Callback triggered when selecting an item. */
-  readonly onSelect?: (item: ITypeaheadItem) => void
+  onSelect?: (item: ITypeaheadItem) => void
   /** The placeholder displayed in the input field. */
-  readonly placeholder?: string
+  placeholder?: string
   /** The value of the component, makes this a controlled component. */
-  readonly value?: string
+  value?: string
 }
 
 interface IState {

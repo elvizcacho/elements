@@ -5,10 +5,10 @@ import Text from '../Text'
 import { ThemeContext } from '../ThemeProvider'
 
 interface ISwitchListItem {
-  readonly optionKey: string
-  readonly value: string
-  readonly isActive: boolean
-  readonly onClick: (optionKey: string) => void
+  optionKey: string
+  value: string
+  isActive: boolean
+  onClick: (optionKey: string) => void
 }
 
 const SwitchListItem: FunctionComponent<ISwitchListItem> = ({

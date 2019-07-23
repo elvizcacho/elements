@@ -4,11 +4,11 @@ import View from '../View'
 import Text from '../Text'
 
 interface IReadMoreProps {
-  readonly initiallyCollapsed: boolean
-  readonly readMoreLabel: string
-  readonly cropAtHeight: string | number
-  readonly threshold: number
-  readonly onToggle: (on: boolean) => void
+  initiallyCollapsed: boolean
+  readMoreLabel: string
+  cropAtHeight: string | number
+  threshold: number
+  onToggle: (on: boolean) => void
 }
 
 /**

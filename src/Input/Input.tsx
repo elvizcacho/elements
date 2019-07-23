@@ -113,17 +113,17 @@ export interface IInputProps
   extends IValidityStates,
     AllHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
   /** The default value to put into the component, without making it controlled */
-  readonly defaultValue?: string | string[]
+  defaultValue?: string | string[]
   /** Indicates that this field is required */
-  readonly required?: boolean
+  required?: boolean
   /** Icon shown on the left of the input field (See `Icon` component for all possible values) **/
-  readonly icon?: IconType
+  icon?: IconType
   /** The name of this input field */
-  readonly name?: string
+  name?: string
   /** The label of the input */
-  readonly label?: string
+  label?: string
   /** Type, can be: 'tel', 'number', 'text', 'url', 'email' */
-  readonly type?:
+  type?:
     | 'tel'
     | 'number'
     | 'text'
@@ -134,47 +134,47 @@ export interface IInputProps
     | 'datetime-local'
     | string
   /** Called, when the user changes something */
-  readonly onChange?: any
+  onChange?: any
   /** The value, makes this component a controlled component */
-  readonly value?: string | string[] | number
+  value?: string | string[] | number
   /** Can only be used with type=text. Increase to enable multi-line input */
-  readonly lines?: number
+  lines?: number
   /** Used when there is an icon to the right of input field */
-  readonly hasRightIcon?: boolean
+  hasRightIcon?: boolean
   /** Regular expression to validate against */
-  readonly pattern?: string
+  pattern?: string
   /** Min number of characters that must be provided */
-  readonly minLength?: number
+  minLength?: number
   /** Max number of characters that can be provided */
-  readonly maxLength?: number
+  maxLength?: number
   /** Called with the input field a reference */
-  readonly onInputRef?: any
-  readonly readOnly?: boolean
-  readonly disabled?: boolean
-  readonly forwardedRef?: any
+  onInputRef?: any
+  readOnly?: boolean
+  disabled?: boolean
+  forwardedRef?: any
 }
 
 interface IValidityStates {
   /** Error message for bad input */
-  readonly badInput?: string
+  badInput?: string
   /** Error message for customError */
-  readonly customError?: string
+  customError?: string
   /** Error message for patternMismatch */
-  readonly patternMismatch?: string
+  patternMismatch?: string
   /** Error message for rangeOverflow */
-  readonly rangeOverflow?: string
+  rangeOverflow?: string
   /** Error message for rangeUnderflow */
-  readonly rangeUnderflow?: string
+  rangeUnderflow?: string
   /** Error message for stepMismatch */
-  readonly stepMismatch?: string
+  stepMismatch?: string
   /** Error message for tooLong */
-  readonly tooLong?: string
+  tooLong?: string
   /** Error message for tooShort */
-  readonly tooShort?: string
+  tooShort?: string
   /** Error message for typeMismatch */
-  readonly typeMismatch?: string
+  typeMismatch?: string
   /** Error message for valueMissing */
-  readonly valueMissing?: string
+  valueMissing?: string
 }
 
 const setValidity = (

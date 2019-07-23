@@ -12,19 +12,19 @@ interface IState {
 }
 interface IDateInputProps extends ICalendarProps {
   /** Name of the input for a form **/
-  readonly name: string
+  name: string
   /** The label of the input */
-  readonly label?: string
+  label?: string
   /** The locale decides on how to render date strings. Falls back to user locale if no value is provided **/
-  readonly locale?: string
+  locale?: string
   /** Called when a day is selected **/
-  readonly onChange?: (date?: Date | Date[]) => void
+  onChange?: (date?: Date | Date[]) => void
   /** If a date should not be a changeable **/
-  readonly readOnly?: boolean
+  readOnly?: boolean
   /** Set the default value which is shown on the first render **/
-  readonly defaultValue?: Date
+  defaultValue?: Date
   /** The placeholder for the input field */
-  readonly placeholder?: string
+  placeholder?: string
 }
 
 /**

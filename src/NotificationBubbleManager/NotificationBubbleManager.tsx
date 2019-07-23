@@ -21,7 +21,7 @@ export const sendWarning = (message: string) => send(message, 'warning')
 export const sendInfo = (message: string) => send(message, 'info')
 
 interface INotificationBubbleManager {
-  readonly renderBubble?: ({
+  renderBubble?: ({
     key,
     onTimeout,
     children,

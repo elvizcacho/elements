@@ -21,12 +21,12 @@ const styles = {
 }
 
 interface ICardOverlayEditorProps {
-  readonly initialText?: string
-  readonly confirmText: string
-  readonly cancelText: string
-  readonly submitText: string
-  readonly onSave: (text: string | undefined) => void
-  readonly onRequestClose?: () => void
+  initialText?: string
+  confirmText: string
+  cancelText: string
+  submitText: string
+  onSave: (text: string | undefined) => void
+  onRequestClose?: () => void
 }
 
 interface IState {

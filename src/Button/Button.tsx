@@ -79,16 +79,16 @@ function styles(
 
 interface IButtonProps extends HTMLProps<HTMLButtonElement> {
   /** If the button is used for a secondary option */
-  readonly secondary?: boolean
-  readonly onClick?: (event: MouseEvent) => void
+  secondary?: boolean
+  onClick?: (event: MouseEvent) => void
   /** Type of the button (deprecated) */
-  readonly type?: 'reset' | 'button' | 'submit'
-  readonly color?: color
-  readonly disabled?: boolean
+  type?: 'reset' | 'button' | 'submit'
+  color?: color
+  disabled?: boolean
   /** Color of the button, theme primary color by default */
-  readonly backgroundColor?: string
+  backgroundColor?: string
   /** Name of the */
-  readonly name?: string
+  name?: string
 }
 
 /**

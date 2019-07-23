@@ -94,7 +94,7 @@ const Spinner: FunctionComponent<ISpinnerProps> = ({
 )
 
 interface ISpinnerProps {
-  readonly color?: string
-  readonly size?: number
+  color?: string
+  size?: number
 }
 export default Spinner

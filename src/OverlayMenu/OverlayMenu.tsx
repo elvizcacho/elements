@@ -23,7 +23,7 @@ const menuStyle = css({
 })
 
 interface IOverlayMenuProps {
-  readonly onRequestClose: (e: MouseEvent) => void
+  onRequestClose: (e: MouseEvent) => void
 }
 
 const OverlayMenu: FunctionComponent<IOverlayMenuProps> = ({

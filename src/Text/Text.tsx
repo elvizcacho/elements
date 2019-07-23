@@ -63,7 +63,7 @@ export const createTextStyles = ({
 }
 
 export interface IText {
-  readonly color?: string
+  color?: string
 }
 
 /**

@@ -8,11 +8,11 @@ import { ColorPalette, alpha } from '@allthings/colors'
 const tick = () => new Promise(resolve => setTimeout(resolve, 0))
 
 interface ICollapsibleProps {
-  readonly title?: string
-  readonly initiallyCollapsed?: boolean
-  readonly hasBottomBorder?: boolean
-  readonly tabIndex?: number
-  readonly onToggle?: (on: boolean) => void
+  title?: string
+  initiallyCollapsed?: boolean
+  hasBottomBorder?: boolean
+  tabIndex?: number
+  onToggle?: (on: boolean) => void
 }
 interface IState {}
 

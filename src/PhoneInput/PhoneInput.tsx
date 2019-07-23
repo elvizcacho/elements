@@ -3,15 +3,15 @@ import Input, { IInputProps } from '../Input'
 
 interface PhoneInputProps extends IInputProps {
   /** Indicates that this field is required */
-  readonly required?: boolean
+  required?: boolean
   /** The name of this input field */
-  readonly name: string
+  name: string
   /** Called, when the users changes something */
-  readonly onChange?: () => void
+  onChange?: () => void
   /** Prefilled default value (optional) */
-  readonly defaultValue?: string
+  defaultValue?: string
   /** Value of placeholder */
-  readonly placeholder?: string
+  placeholder?: string
 }
 
 const PhoneInput: FunctionComponent<PhoneInputProps> = props => (

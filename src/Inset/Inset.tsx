@@ -11,8 +11,8 @@ const styles = ({ horizontal = false, vertical = false }) =>
   })
 
 interface IInsetProps extends IViewProps {
-  readonly horizontal?: boolean
-  readonly vertical?: boolean
+  horizontal?: boolean
+  vertical?: boolean
 }
 
 const Inset: FunctionComponent<IViewProps & IInsetProps> = ({
