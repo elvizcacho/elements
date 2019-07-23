@@ -18,7 +18,7 @@ You can change it in "src/SearchableDropdown/SearchableDropdown.tsx" and run bui
 |label|string|A floating label
 |loadMoreText|string|The "Load more" text
 |menuHeight|number|The height of the menu in pixels. By default: Search input and 3 items
-|name|string|For forms
+|name|string|The name for forms
 |noResultsText|string|The text is shown if no result was found
 |onClose|(() => void)|Callback triggered when dropdown was closed
 |onLoadMore|(() => void)|Callback triggered when clicking on "Load more" in items list

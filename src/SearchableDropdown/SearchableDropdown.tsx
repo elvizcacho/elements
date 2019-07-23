@@ -3,6 +3,7 @@ import React, {
   useRef,
   FunctionComponent,
   useState,
+  RefObject,
 } from 'react'
 import Downshift, { StateChangeOptions, DownshiftState } from 'downshift'
 import { css } from 'glamor'
@@ -18,17 +19,12 @@ import Icon, { IconType } from '../Icon/index'
 import { noop } from '@babel/types'
 import { Spinner } from '../index'
 
-/**
- * TODO
- * - search icon in input?
- */
-
-const INPUT_FIELD_HEIGHT = 50
+const INPUT_FIELD_HEIGHT_PX = 50
 
 const styles = {
   area: css({
     backgroundColor: ColorPalette.white,
-    height: INPUT_FIELD_HEIGHT,
+    height: INPUT_FIELD_HEIGHT_PX,
     position: 'relative',
     width: '100%',
   }),
@@ -68,7 +64,7 @@ const styles = {
   listItems: (menuHeight: number) =>
     css({
       borderTop: `1px solid ${ColorPalette.lightGrey}`,
-      maxHeight: menuHeight - INPUT_FIELD_HEIGHT + 1,
+      maxHeight: menuHeight - INPUT_FIELD_HEIGHT_PX + 1,
       overflowY: 'auto',
     }),
   listWrapper: (menuHeight: number) =>
@@ -119,7 +115,7 @@ interface ISearchableDropdownProps {
   loadMoreText?: string
   /** The height of the menu in pixels. By default: Search input and 3 items */
   menuHeight?: number
-  /** For forms */
+  /** The name for forms */
   name?: string
   /** The text is shown if no result was found */
   noResultsText?: string
@@ -151,7 +147,7 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   isLoading = false,
   label = '',
   loadMoreText = '',
-  menuHeight = INPUT_FIELD_HEIGHT * 4,
+  menuHeight = INPUT_FIELD_HEIGHT_PX * 4,
   name = '',
   noResultsText,
   onClose = noop,
@@ -164,7 +160,7 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   initialSearchTerm = '',
   selectedItem,
 }) => {
-  const searchRef = useRef<HTMLInputElement>(null)
+  const searchRef: RefObject<HTMLInputElement> = useRef(null)
   const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
 
   const handleClearIconClick = (
@@ -179,19 +175,18 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
     _: DownshiftState<any>,
     changes: StateChangeOptions<any>,
   ) => {
-    if (changes.isOpen) {
-      onOpen()
-      setTimeout(
-        () =>
-          searchRef.current && (searchRef.current as HTMLInputElement).focus(),
-        0,
-      )
-    } else {
-      if (clearSearchValueOnClose && searchTerm !== '') {
-        setSearchTerm('')
-      }
+    if (Object.prototype.hasOwnProperty.call(changes, 'isOpen')) {
+      if (changes.isOpen) {
+        setTimeout(() => searchRef.current && searchRef.current.focus(), 0)
 
-      onClose()
+        onOpen()
+      } else {
+        if (clearSearchValueOnClose && searchTerm !== '') {
+          setSearchTerm('')
+        }
+
+        onClose()
+      }
     }
 
     return changes
@@ -255,7 +250,7 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   const renderList = (getItemProps: (options: object) => void) => (
     <Relative>
       <Absolute
-        bottom={placement === 'top' ? INPUT_FIELD_HEIGHT : undefined}
+        bottom={placement === 'top' ? INPUT_FIELD_HEIGHT_PX : undefined}
         {...styles.listWrapper(menuHeight)}
       >
         <View direction={placement === 'top' ? 'column-reverse' : 'column'}>
