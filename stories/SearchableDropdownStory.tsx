@@ -227,7 +227,6 @@ const SearchableDropdownStory = () => {
             onSearch={handleSearch}
             onSelect={handleSelect}
             placeholder="Some label"
-            searchTerm={searchQuery}
           />
 
           <Text strong {...styles.title}>
@@ -244,7 +243,6 @@ const SearchableDropdownStory = () => {
             onSearch={handleSearch}
             onSelect={handleSelect}
             placeholder="Some label"
-            searchTerm={searchQuery}
           />
 
           <Text strong {...styles.title}>
@@ -259,7 +257,6 @@ const SearchableDropdownStory = () => {
             onSearch={handleSearch}
             onSelect={handleSelect}
             placeholder="Some label"
-            searchTerm={searchQuery}
           />
 
           <Text strong {...styles.title}>
@@ -277,7 +274,6 @@ const SearchableDropdownStory = () => {
             onSearch={handleSearch}
             onSelect={handleSelect}
             placeholder="Some label"
-            searchTerm={searchQuery}
             initialSelectedItem={{ label: 'darkgoldenrod', value: '#b8860b' }}
           />
 
@@ -297,7 +293,6 @@ const SearchableDropdownStory = () => {
             onSelect={handleSelect}
             placeholder="Some label"
             placement={EDropdownDirection.TOP}
-            searchTerm={searchQuery}
           />
 
           <Text strong {...styles.title}>
@@ -310,7 +305,6 @@ const SearchableDropdownStory = () => {
             name="searchable-dropdown-loading"
             onSelect={handleSelect}
             placeholder="Some label"
-            searchTerm={searchQuery}
           />
 
           <Text strong {...styles.title}>
@@ -318,12 +312,11 @@ const SearchableDropdownStory = () => {
           </Text>
           <SearchableDropdown
             disabled={true}
-            items={items}
+            items={[]}
             label="Some label"
             name="searchable-dropdown-disabled"
             onSelect={handleSelect}
             placeholder="Some label"
-            searchTerm={searchQuery}
           />
         </View>
       </ResourceProvider>

@@ -20,7 +20,6 @@ import { Spinner } from '../index'
 
 /**
  * TODO
- * - fix disabled state
  * - search icon in input?
  */
 
@@ -108,6 +107,8 @@ interface ISearchableDropdownProps {
   icon?: IconType
   /** The dropdown items to show */
   items: IDropdownItem[]
+  /** The initial search term when droopdown opens first time */
+  initialSearchTerm?: string
   /** Initially selected item - this value is uncontrolled */
   initialSelectedItem?: IDropdownItem
   /** The loading state of the component, e.g fetching data. */
@@ -136,8 +137,6 @@ interface ISearchableDropdownProps {
   placeholder?: string
   /** If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards */
   placement?: Placement
-  /** The search term */
-  searchTerm?: string
   /** Selected item - this item can be controlled */
   selectedItem?: IDropdownItem
 }
@@ -162,11 +161,11 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   onSelect,
   placeholder = '',
   placement = 'bottom',
-  searchTerm = '',
+  initialSearchTerm = '',
   selectedItem,
 }) => {
   const searchRef = useRef<HTMLInputElement>(null)
-  const [internalSearchTerm, setInternalSearchTerm] = useState(searchTerm)
+  const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
 
   const handleClearIconClick = (
     event: SyntheticEvent,
@@ -188,10 +187,11 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
         0,
       )
     } else {
-      if (clearSearchValueOnClose && internalSearchTerm !== '') {
-        setInternalSearchTerm('')
-        onClose()
+      if (clearSearchValueOnClose && searchTerm !== '') {
+        setSearchTerm('')
       }
+
+      onClose()
     }
 
     return changes
@@ -200,8 +200,8 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   const handleSearchChange = (event: SyntheticEvent) => {
     const value = (event.target as HTMLInputElement).value
 
-    if (value !== internalSearchTerm) {
-      setInternalSearchTerm(value)
+    if (value !== searchTerm) {
+      setSearchTerm(value)
       onSearch && onSearch(value)
     }
   }
@@ -246,7 +246,7 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
       hasRightIcon={false}
       onChange={handleSearchChange}
       placeholder="Search"
-      value={internalSearchTerm}
+      value={searchTerm}
       type="text"
     />
   )
