@@ -242,12 +242,13 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
 
   const renderSearchInput = () => (
     <Input
-      ref={searchRef}
       hasRightIcon={false}
+      icon="search"
       onChange={handleSearchChange}
       placeholder="Search"
-      value={searchTerm}
+      ref={searchRef}
       type="text"
+      value={searchTerm}
     />
   )
 
