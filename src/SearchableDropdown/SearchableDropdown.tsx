@@ -96,7 +96,7 @@ const styles = {
 
 type Placement = 'top' | 'bottom'
 
-interface ISearchableDropdownProps {
+export interface ISearchableDropdownProps {
   /** If true, than the field can be cleared */
   clearable?: boolean
   /** Clear the search input value on dropdown close */
