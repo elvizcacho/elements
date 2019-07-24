@@ -183,9 +183,9 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
     if (Object.prototype.hasOwnProperty.call(changes, 'isOpen')) {
       if (changes.isOpen) {
         setTimeout(() => {
-          searchRef.current && searchRef.current.focus(), 0
+          searchRef.current && searchRef.current.focus()
           onOpen()
-        })
+        }, 0)
       } else {
         if (clearSearchValueOnClose && searchTerm !== '') {
           setSearchTerm('')
