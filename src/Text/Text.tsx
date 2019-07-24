@@ -45,8 +45,8 @@ export const createTextStyles = ({
   lineThrough = false,
   align,
   autoBreak,
-}: ITextStyles) => {
-  return css({
+}: ITextStyles = {}) =>
+  css({
     display: block ? 'block' : 'inline',
     fontFamily: '"Open Sans", Helvetica, Arial, sans-serif',
     fontStyle: italic && 'italic',
@@ -60,7 +60,6 @@ export const createTextStyles = ({
     WebkitFontSmoothing: 'antialiased',
     MozOsxFontSmoothing: 'grayscale',
   })
-}
 
 export interface IText {
   readonly color?: string

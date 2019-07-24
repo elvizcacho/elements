@@ -1,22 +1,32 @@
-import React, { ChangeEvent, Component, createRef } from 'react'
+import React, {
+  AllHTMLAttributes,
+  ChangeEvent,
+  Component,
+  createRef,
+} from 'react'
 import { css } from 'glamor'
 import View from '../View'
+import { createTextStyles } from '../Text'
 
 const styles = {
-  textarea: css({
-    outline: 'none',
-    border: 0,
-    fontSize: 13,
-    resize: 'none',
-    flex: 1,
-    minHeight: 20,
-    maxHeight: '25vh',
-    width: '100%',
-    paddingLeft: 15,
-  }),
+  textarea: css(
+    {
+      outline: 'none',
+      border: 0,
+      fontSize: 13,
+      resize: 'none',
+      flex: 1,
+      minHeight: 20,
+      maxHeight: '25vh',
+      width: '100%',
+      padding: '12px 0 6px 15px',
+    },
+    createTextStyles(),
+  ),
 }
 
-interface IExpandingTextareaProps {
+interface IExpandingTextareaProps
+  extends AllHTMLAttributes<HTMLTextAreaElement> {
   readonly autoFocus?: boolean
   readonly placeholder?: string
   readonly name?: string
@@ -41,10 +51,6 @@ interface IExpandingTextareaProps {
 export default class ExpandingTextarea extends Component<
   IExpandingTextareaProps
 > {
-  static defaultProps = {
-    autoFocus: false,
-  }
-
   private textarea = createRef<HTMLTextAreaElement>()
 
   componentDidMount() {
@@ -54,14 +60,6 @@ export default class ExpandingTextarea extends Component<
   componentDidUpdate(prevProps: IExpandingTextareaProps) {
     if (this.props.value !== prevProps.value) {
       this.adjustTextareaHeight()
-    }
-    if (
-      this.props.autoFocus === true &&
-      prevProps.autoFocus === false &&
-      this.textarea.current
-    ) {
-      this.textarea.current.focus()
-      this.props.onFocus && this.props.onFocus()
     }
   }
 

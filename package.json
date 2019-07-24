@@ -8,7 +8,7 @@
   "author": "Moritz Schwörer <moritz.schwoerer@allthings.me>",
   "license": "MIT",
   "dependencies": {
-    "@allthings/colors": "3.2.0",
+    "@allthings/colors": "4.0.1",
     "core-js": "3",
     "downshift": "3.2.10",
     "glamor": "2.20.40",

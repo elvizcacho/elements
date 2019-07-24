@@ -34,6 +34,7 @@ import CheckboxStory from './CheckboxStory'
 import ProfileImageStackStory from './ProfileImageStackStory'
 import FilterStory from './FilterStory'
 import PillStory from './PillStory'
+import ChatStory from './ChatStory'
 import SearchableDropdownStory from './SearchableDropdownStory'
 
 storiesOf('Containers', module)
@@ -140,6 +141,12 @@ storiesOf('FloatingButton', module)
       </SimpleLayout>
     </ThemeProvider>
   ))
+
+storiesOf('Containers', module)
+  .addDecorator(createViewportDecorator())
+  .add('Collapsible', CollapsibleStory)
+  .add('Filters', () => <FilterStory />)
+  .add('Chat with ExpandingTextarea', () => <ChatStory />)
 
 storiesOf('Icons', module)
   .addDecorator(createViewportDecorator())

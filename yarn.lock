@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@allthings/colors@3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@allthings/colors/-/colors-3.2.0.tgz#cb969adf5edfd86603c9395dd5c203da58aa29be"
-  integrity sha512-3/OPwxwe1pGGlJM7cpEfNTohYpTmFoHfXiPkZ6aI+MeGWM23Q7I8ZO6A1aZG4Dhz8MWgAcQDB7lb0Fg8wE+FSQ==
+"@allthings/colors@4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@allthings/colors/-/colors-4.0.1.tgz#bb34b6644b0944c251c18ff04c16755cb486402b"
+  integrity sha512-KmnoEmtRa66ja4//YQbtqwadSCUXSQvPQCAisQ2ucfgcT5HtTQIJ9ggeGVA7DFYYxHJRM7M6rn/HZne5k1zyMA==
 
 "@babel/cli@7.5.0":
   version "7.5.0"
