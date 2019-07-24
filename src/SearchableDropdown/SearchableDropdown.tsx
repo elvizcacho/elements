@@ -174,7 +174,6 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   ) => {
     event.stopPropagation()
     clearSelection()
-    onSelect()
   }
 
   const stateReducer = (
