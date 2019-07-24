@@ -50,8 +50,10 @@ describe('Test the editable text component', () => {
     const wrapperWithDecoration = renderer(
       <EditableText decorationColor={ICON_COLOR}>{TEXT}</EditableText>,
     )
-    ;(expect(fromDOMNode(wrapper)) as any).toMatchDiffSnapshot(
-      fromDOMNode(wrapperWithDecoration),
-    )
+    // workaround for probably a linter bug
+    // if we inlined the expect expression the linter would fail with
+    // > TypeError: Cannot read property 'name' of undefined
+    const exp = expect(fromDOMNode(wrapper)) as any
+    exp.toMatchDiffSnapshot(fromDOMNode(wrapperWithDecoration))
   })
 })
