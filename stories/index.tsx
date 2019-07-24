@@ -41,6 +41,7 @@ storiesOf('Containers', module)
   .addDecorator(createViewportDecorator())
   .add('Collapsible', CollapsibleStory)
   .add('Filters', () => <FilterStory />)
+  .add('Chat with ExpandingTextarea', () => <ChatStory />)
 
 storiesOf('Information', module)
   .addDecorator(createViewportDecorator())
@@ -141,12 +142,6 @@ storiesOf('FloatingButton', module)
       </SimpleLayout>
     </ThemeProvider>
   ))
-
-storiesOf('Containers', module)
-  .addDecorator(createViewportDecorator())
-  .add('Collapsible', CollapsibleStory)
-  .add('Filters', () => <FilterStory />)
-  .add('Chat with ExpandingTextarea', () => <ChatStory />)
 
 storiesOf('Icons', module)
   .addDecorator(createViewportDecorator())
