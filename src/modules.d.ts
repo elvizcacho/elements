@@ -14,8 +14,3 @@ declare module 'neue'
 interface Window {
   Image: typeof Image
 }
-
-interface IDropdownItem {
-  label: string
-  value: string
-}

@@ -18,6 +18,7 @@ import { alpha, ColorPalette } from '@allthings/colors'
 import Icon, { IconType } from '../Icon/index'
 import { noop } from '@babel/types'
 import { Spinner } from '../index'
+import { IDropdownItem } from '../Dropdown/index'
 
 const INPUT_FIELD_HEIGHT_PX = 50
 const DISBALED_BACKGROUND_COLOR = ColorPalette.whiteIntense

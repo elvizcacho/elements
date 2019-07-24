@@ -46,7 +46,7 @@ const styles = {
   }),
 }
 
-type ItemType = {
+export interface IDropdownItem {
   label: ReactNode
   value: any
 }
@@ -54,17 +54,17 @@ type ItemType = {
 interface IDropdownProps {
   /** If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards */
   readonly placement?: 'top' | 'bottom'
-  readonly items: ReadonlyArray<ItemType>
+  readonly items: ReadonlyArray<IDropdownItem>
   /** Initially selected item - this value is uncontrolled */
-  readonly initialSelectedItem?: ItemType
+  readonly initialSelectedItem?: IDropdownItem
   /** Selected item - this item can be controlled */
-  readonly selectedItem?: ItemType
+  readonly selectedItem?: IDropdownItem
   /** The maximum number of items displayed in the menu. */
   readonly limit?: number
   /** The height of the menu in pixels. */
   readonly menuHeight?: number
   /** Callback triggered when clearing the selection. */
-  readonly onSelect?: (item: ItemType) => void
+  readonly onSelect?: (item: IDropdownItem) => void
   /** The placeholder displayed in the input field. */
   readonly placeholder?: string
   /** A floating label */
