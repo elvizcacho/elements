@@ -129,8 +129,8 @@ interface ISearchableDropdownProps {
   onLoadMore?: () => void
   /** Callback triggered when dropdown was opened */
   onOpen?: () => void
-  /** Callback triggered when clearing the selection. */
-  onSelect: (item: IDropdownItem) => void
+  /** Callback triggered when value was selected or cleared */
+  onSelect: (item?: IDropdownItem) => void
   /** Callback triggered when search value changes */
   onSearch?: (value: string) => void
   /** The placeholder displayed in the input field. */
@@ -173,6 +173,7 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   ) => {
     event.stopPropagation()
     clearSelection()
+    onSelect()
   }
 
   const stateReducer = (
@@ -181,9 +182,10 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   ) => {
     if (Object.prototype.hasOwnProperty.call(changes, 'isOpen')) {
       if (changes.isOpen) {
-        setTimeout(() => searchRef.current && searchRef.current.focus(), 0)
-
-        onOpen()
+        setTimeout(() => {
+          searchRef.current && searchRef.current.focus(), 0
+          onOpen()
+        })
       } else {
         if (clearSearchValueOnClose && searchTerm !== '') {
           setSearchTerm('')
