@@ -250,6 +250,7 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
       ref={searchRef}
       type="text"
       value={searchTerm}
+      data-e2e="searchable-dropdown-search-input"
     />
   )
 
