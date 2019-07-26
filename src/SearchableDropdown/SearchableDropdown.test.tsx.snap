@@ -489,6 +489,7 @@ exports[`SearchableDropdown should render with icon 1`] = `
               <input
                 aria-required="false"
                 data-css-22=""
+                data-e2e="searchable-dropdown-search-input"
                 placeholder="Search"
                 type="text"
                 value=""
@@ -1059,6 +1060,7 @@ exports[`SearchableDropdown should render with load more 1`] = `
               <input
                 aria-required="false"
                 data-css-23=""
+                data-e2e="searchable-dropdown-search-input"
                 placeholder="Search"
                 type="text"
                 value=""
@@ -1600,6 +1602,7 @@ exports[`SearchableDropdown should render with no results 1`] = `
               <input
                 aria-required="false"
                 data-css-21=""
+                data-e2e="searchable-dropdown-search-input"
                 placeholder="Search"
                 type="text"
                 value=""
@@ -2124,6 +2127,7 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
               <input
                 aria-required="false"
                 data-css-25=""
+                data-e2e="searchable-dropdown-search-input"
                 placeholder="Search"
                 type="text"
                 value=""
@@ -2708,6 +2712,7 @@ exports[`SearchableDropdown should render with placement top 1`] = `
               <input
                 aria-required="false"
                 data-css-24=""
+                data-e2e="searchable-dropdown-search-input"
                 placeholder="Search"
                 type="text"
                 value=""
