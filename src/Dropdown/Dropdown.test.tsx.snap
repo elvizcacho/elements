@@ -248,6 +248,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
           }
           data-css-14=""
           data-css-6=""
+          data-testid="dropdown-clear-icon"
         />
       </div>
     </div>
@@ -507,6 +508,7 @@ exports[`Dropdown should render with placement top 1`] = `
           }
           data-css-14=""
           data-css-6=""
+          data-testid="dropdown-clear-icon"
         />
       </div>
     </div>

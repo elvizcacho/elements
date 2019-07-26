@@ -190,7 +190,12 @@ export default class Dropdown extends PureComponent<IDropdownProps> {
                     }
                   >
                     {showClearIcon ? (
-                      <Icon color="black" name="remove-light" size={10} />
+                      <Icon
+                        color="black"
+                        name="remove-light"
+                        size={10}
+                        data-testid="dropdown-clear-icon"
+                      />
                     ) : (
                       <Icon
                         color="black"
