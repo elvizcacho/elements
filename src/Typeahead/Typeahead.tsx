@@ -463,6 +463,7 @@ export default class Typeahead extends PureComponent<MyProps, IState> {
                             color="black"
                             name="remove-light-filled"
                             size={10}
+                            data-testid="typeahead-clear-icon"
                           />
                         </View>
                       )
