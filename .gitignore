@@ -4,6 +4,7 @@ build
 docs/elements
 .eslintcache
 .cache
+.idea
 /coverage
 /storybook-static
 /docs

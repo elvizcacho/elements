@@ -19,6 +19,9 @@ const styles = {
       paddingRight: paddingRight ? 50 : 15,
       transition: 'padding-top .225s ease-out',
       border: 0,
+      ':required': {
+        boxShadow: 'none',
+      },
       '&:-webkit-autofill ~ .label': {
         opacity: '1 !important',
         top: '8px !important',
@@ -138,7 +141,7 @@ class Input extends React.Component {
     /** Used when there is an icon to the right of input field */
     hasRightIcon: PropTypes.bool,
     /** Regular expression to validate against */
-    pattern: PropTypes.string,
+    pattern: PropTypes.oneOf([PropTypes.string, PropTypes.instanceOf(RegExp)]),
     /** Min number of characters that must be provided */
     minLength: PropTypes.number,
     /** Max number of characters that can be provided */

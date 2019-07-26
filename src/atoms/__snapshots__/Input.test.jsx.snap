@@ -33,6 +33,11 @@ exports[`Input component should render with all props 1`] = `
   -moz-transition: padding-top .225s ease-out;
 }
 
+.css-2:required,
+[data-css-2]:required {
+  box-shadow: none;
+}
+
 .css-2:-webkit-autofill ~ .label,
 [data-css-2]:-webkit-autofill ~ .label {
   opacity: 1 !important;
@@ -50,8 +55,8 @@ exports[`Input component should render with all props 1`] = `
   padding-top: 10px !important;
 }
 
-.css-4,
-[data-css-4] {
+.css-5,
+[data-css-5] {
   position: absolute;
   left: 40px;
   font-size: 10px;
@@ -61,8 +66,8 @@ exports[`Input component should render with all props 1`] = `
   -moz-transition: all .225s ease-out;
 }
 
-.css-5,
-[data-css-5] {
+.css-6,
+[data-css-6] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -73,28 +78,28 @@ exports[`Input component should render with all props 1`] = `
   -moz-transition: opacity .225s;
 }
 
-.css-6,
-[data-css-6] {
+.css-7,
+[data-css-7] {
   position: relative;
 }
 
-.css-7,
-[data-css-7] {
+.css-8,
+[data-css-8] {
   box-sizing: border-box;
   flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
 }
 
-.css-8,
-[data-css-8] {
+.css-9,
+[data-css-9] {
   position: absolute;
   top: 0;
   left: 15px;
   bottom: 0;
 }
 
-.css-9,
-[data-css-9] {
+.css-10,
+[data-css-10] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -117,8 +122,8 @@ exports[`Input component should render with all props 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-10,
-[data-css-10] {
+.css-11,
+[data-css-11] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 10px;
@@ -127,8 +132,8 @@ exports[`Input component should render with all props 1`] = `
   color: #626262;
 }
 
-.css-11,
-[data-css-11] {
+.css-12,
+[data-css-12] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -138,8 +143,8 @@ exports[`Input component should render with all props 1`] = `
 }
 
 <div
-  data-css-6=""
   data-css-7=""
+  data-css-8=""
   style={
     Object {
       "width": "100%",
@@ -148,8 +153,8 @@ exports[`Input component should render with all props 1`] = `
 >
   <div
     data-css-1=""
+    data-css-10=""
     data-css-9=""
-    data-css-8=""
   >
     <div
       dangerouslySetInnerHTML={
@@ -157,7 +162,7 @@ exports[`Input component should render with all props 1`] = `
           "__html": undefined,
         }
       }
-      data-css-7=""
+      data-css-8=""
       style={
         Object {
           "fill": false,
@@ -176,15 +181,15 @@ exports[`Input component should render with all props 1`] = `
     minLength={1}
     name="name"
     onChange={[Function]}
-    pattern="pattern"
+    pattern={[Function]}
     required={true}
     type="tel"
     value="value"
   />
   <div
     className="label"
-    data-css-4=""
-    data-css-7=""
+    data-css-5=""
+    data-css-8=""
     style={
       Object {
         "opacity": 1,
@@ -193,8 +198,8 @@ exports[`Input component should render with all props 1`] = `
     }
   >
     <div
-      data-css-7=""
-      data-css-10=""
+      data-css-8=""
+      data-css-11=""
     >
       label
        
@@ -203,8 +208,8 @@ exports[`Input component should render with all props 1`] = `
   </div>
   <div
     className="checkmark"
-    data-css-5=""
-    data-css-7=""
+    data-css-6=""
+    data-css-8=""
   >
     <div
       dangerouslySetInnerHTML={
@@ -212,7 +217,7 @@ exports[`Input component should render with all props 1`] = `
           "__html": undefined,
         }
       }
-      data-css-7=""
+      data-css-8=""
       style={
         Object {
           "fill": "lightGrey",
@@ -224,12 +229,12 @@ exports[`Input component should render with all props 1`] = `
     />
   </div>
   <div
-    data-css-7=""
+    data-css-8=""
     data-css-0=""
   >
     <div
-      data-css-11=""
-      data-css-7=""
+      data-css-12=""
+      data-css-8=""
     >
       5
       /
@@ -281,6 +286,11 @@ exports[`Input component should render with required props only 1`] = `
   border: 0;
   -webkit-transition: padding-top .225s ease-out;
   -moz-transition: padding-top .225s ease-out;
+}
+
+.css-3:required,
+[data-css-3]:required {
+  box-shadow: none;
 }
 
 .css-3:-webkit-autofill ~ .label,
