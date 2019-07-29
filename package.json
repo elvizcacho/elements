@@ -1,7 +1,7 @@
 {
   "name": "@allthings/elements",
   "version": "5.0.0-beta.33",
-  "main": "dist/cjs/index.js",
+  "main": "dist/index.js",
   "module": "dist/es/index.js",
   "types": "dist/es/index.d.ts",
   "repository": "https://github.com/allthings/elements",
