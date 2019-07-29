@@ -49,6 +49,7 @@ const styles = {
 export interface IDropdownItem {
   label: ReactNode
   value: any
+  key?: string
 }
 
 interface IDropdownProps {
@@ -232,7 +233,7 @@ export default class Dropdown extends PureComponent<IDropdownProps> {
                   >
                     {items.map((item, index) => (
                       <ListItem
-                        key={item.value}
+                        key={item.key || item.value}
                         {...getItemProps({
                           index,
                           item,

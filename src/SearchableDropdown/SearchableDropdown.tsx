@@ -270,7 +270,7 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
                     index,
                     item,
                   })}
-                  key={item.value}
+                  key={item.key || item.value}
                   {...styles.listItem}
                 >
                   <Text size="l" {...styles.label}>
