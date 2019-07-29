@@ -49,7 +49,8 @@ async function createPackageFile() {
     main: './index.js',
     module: './esm/index.js',
     typings: './index.d.ts',
-    'jsnext:main': './index.es.js',
+    types: './index.d.ts',
+    'jsnext:main': './esm/index.js',
     private: false,
     scripts: {},
   }
