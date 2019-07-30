@@ -16,19 +16,15 @@ import ListItem from '../ListItem/index'
 import Input from '../Input/index'
 import { alpha, ColorPalette } from '@allthings/colors'
 import Icon, { IconType } from '../Icon/index'
-import { noop } from '@babel/types'
 import { Spinner } from '../index'
 import { IDropdownItem } from '../Dropdown/index'
 
 const INPUT_FIELD_HEIGHT_PX = 50
-const DISBALED_BACKGROUND_COLOR = ColorPalette.whiteIntense
 
 const styles = {
   area: (disabled: boolean) =>
     css({
-      backgroundColor: disabled
-        ? DISBALED_BACKGROUND_COLOR
-        : ColorPalette.white,
+      backgroundColor: ColorPalette.white,
       cursor: disabled && 'not-allowed',
       height: INPUT_FIELD_HEIGHT_PX,
       position: 'relative',
@@ -38,19 +34,16 @@ const styles = {
     marginRight: 10,
     display: 'inline-block',
   }),
-  disabledInput: (disabled: boolean) =>
-    css({
-      backgroundColor: disabled
-        ? DISBALED_BACKGROUND_COLOR
-        : ColorPalette.white,
-      color: 'black',
-      overflow: 'hidden',
-      paddingRight: '30px',
-      pointerEvents: 'none',
-      textOverflow: 'ellipsis',
-      whiteSpace: 'nowrap',
-      width: 'calc(100% - 5px)',
-    }),
+  disabledInput: css({
+    backgroundColor: ColorPalette.white,
+    color: ColorPalette.black,
+    overflow: 'hidden',
+    paddingRight: '30px',
+    pointerEvents: 'none',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    width: 'calc(100% - 5px)',
+  }),
   iconWrapper: (isLoading: boolean, disabled: boolean) =>
     css({
       cursor: disabled ? 'not-allowed' : !isLoading && 'pointer',
@@ -77,6 +70,7 @@ const styles = {
   listWrapper: (menuHeight: number) =>
     css({
       boxShadow: '1px 1px 3px rgba(29, 29, 29, 0.125)',
+      backgroundColor: ColorPalette.white,
       maxHeight: menuHeight,
       overflow: 'hidden',
       width: '100%',
@@ -155,9 +149,9 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   menuHeight = INPUT_FIELD_HEIGHT_PX * 4,
   name = '',
   noResultsText,
-  onClose = noop,
-  onLoadMore = noop,
-  onOpen = noop,
+  onClose,
+  onOpen,
+  onLoadMore,
   onSearch,
   onSelect,
   placeholder = '',
@@ -182,16 +176,15 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   ) => {
     if (Object.prototype.hasOwnProperty.call(changes, 'isOpen')) {
       if (changes.isOpen) {
-        setTimeout(() => {
-          searchRef.current && searchRef.current.focus()
-          onOpen()
-        }, 0)
+        setTimeout(() => searchRef.current && searchRef.current.focus(), 0)
+
+        onOpen && onOpen()
       } else {
         if (clearSearchValueOnClose && searchTerm !== '') {
           setSearchTerm('')
         }
 
-        onClose()
+        onClose && onClose()
       }
     }
 
@@ -338,7 +331,7 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
                   readOnly
                   name={name}
                   hasRightIcon
-                  {...styles.disabledInput(disabled)}
+                  {...styles.disabledInput}
                 />
 
                 <Absolute

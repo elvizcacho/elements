@@ -1,8 +1,10 @@
-<!-- 
-This is an auto-generated markdown. 
+<!--
+This is an auto-generated markdown.
 You can change it in "src/ChatBubble/ChatBubble.tsx" and run build:docs to update this file.
 -->
+
 # ChatBubble
+
 ChatBubbles are used to show conversations between two or more users.
 
 ```example
@@ -24,12 +26,14 @@ ChatBubbles are used to show conversations between two or more users.
    </View>
 </ThemeProvider>
 ```
+
 ## Usage
-| Name        | Type           | Description  |
-| ----------- |:--------------:| ------------:|
-|userName **(required)**||
-|userImage **(required)**||
-|date **(required)**||
-|text **(required)**||
-|background **(required)**||
-|direction **(required)**||
+
+| Name                      | Type | Description |
+| ------------------------- | :--: | ----------: |
+| userName **(required)**   |      |
+| userImage **(required)**  |      |
+| date **(required)**       |      |
+| text **(required)**       |      |
+| background **(required)** |      |
+| direction **(required)**  |      |

@@ -195,11 +195,7 @@ const SearchableDropdownStory = () => {
     }))
 
     setItems(slicedItems)
-    setLoadMore(
-      totalItems > slicedItems.length
-        ? `Load more (${totalItems - slicedItems.length})`
-        : '',
-    )
+    setLoadMore(totalItems > slicedItems.length ? 'Load more' : '')
   }, [searchQuery, itemCount])
 
   const handleLoadMore = () => setItemCount(itemCount + ITEMS_LIMIT)

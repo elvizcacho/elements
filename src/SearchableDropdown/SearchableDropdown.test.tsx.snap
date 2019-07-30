@@ -3,42 +3,42 @@
 exports[`SearchableDropdown should render with icon 1`] = `
 .css-0,
 [data-css-0] {
-  border-top: 1px solid #ecf0f1;
-}
-
-.css-1,
-[data-css-1] {
-  width: 100%;
-}
-
-.css-2,
-[data-css-3]:hover {
-  background-color: #f9fafb;
-}
-
-.css-4,
-[data-css-4] {
-  position: relative;
-}
-
-.css-5,
-[data-css-5] {
   background-color: #ffffff;
-  height: 50px;
-  position: relative;
-  width: 100%;
-}
-
-.css-6,
-[data-css-6] {
-  background-color: #ffffff;
-  color: black;
+  color: #000000;
   overflow: hidden;
   padding-right: 30px;
   pointer-events: none;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: calc(100% - 5px);
+}
+
+.css-1,
+[data-css-1] {
+  border-top: 1px solid #ecf0f1;
+}
+
+.css-2,
+[data-css-2] {
+  width: 100%;
+}
+
+.css-3,
+[data-css-4]:hover {
+  background-color: #f9fafb;
+}
+
+.css-5,
+[data-css-5] {
+  position: relative;
+}
+
+.css-6,
+[data-css-6] {
+  background-color: #ffffff;
+  height: 50px;
+  position: relative;
+  width: 100%;
 }
 
 .css-7,
@@ -154,6 +154,7 @@ exports[`SearchableDropdown should render with icon 1`] = `
 .css-17,
 [data-css-17] {
   box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  background-color: #ffffff;
   max-height: 200px;
   overflow: hidden;
   width: 100%;
@@ -379,16 +380,16 @@ exports[`SearchableDropdown should render with icon 1`] = `
     role="combobox"
   >
     <div
-      data-css-4=""
+      data-css-5=""
       data-css-8=""
     >
       <div
-        data-css-5=""
+        data-css-6=""
         data-css-9=""
         data-testid="searchable-dropdown"
       >
         <div
-          data-css-4=""
+          data-css-5=""
           data-css-8=""
           style="width: 100%;"
         >
@@ -404,8 +405,8 @@ exports[`SearchableDropdown should render with icon 1`] = `
           </div>
           <input
             aria-required="false"
-            data-css-6=""
             data-css-30=""
+            data-css-0=""
             disabled=""
             name=""
             placeholder="select something..."
@@ -456,12 +457,12 @@ exports[`SearchableDropdown should render with icon 1`] = `
       </div>
     </div>
     <div
-      data-css-4=""
+      data-css-5=""
       data-css-8=""
     >
       <div
-        data-css-17=""
         data-css-19=""
+        data-css-17=""
         data-css-8=""
       >
         <div
@@ -469,10 +470,10 @@ exports[`SearchableDropdown should render with icon 1`] = `
         >
           <div
             data-css-8=""
-            data-css-0=""
+            data-css-1=""
           >
             <div
-              data-css-4=""
+              data-css-5=""
               data-css-8=""
               style="width: 100%;"
             >
@@ -516,7 +517,7 @@ exports[`SearchableDropdown should render with icon 1`] = `
               <div
                 aria-selected="false"
                 data-css-27=""
-                data-css-3=""
+                data-css-4=""
                 data-css-28=""
                 id="downshift-2-item-0"
                 role="option"
@@ -524,7 +525,7 @@ exports[`SearchableDropdown should render with icon 1`] = `
                 <div
                   data-css-29=""
                   data-css-8=""
-                  data-css-1=""
+                  data-css-2=""
                 >
                   dog
                 </div>
@@ -532,7 +533,7 @@ exports[`SearchableDropdown should render with icon 1`] = `
               <div
                 aria-selected="false"
                 data-css-27=""
-                data-css-3=""
+                data-css-4=""
                 data-css-28=""
                 id="downshift-2-item-1"
                 role="option"
@@ -540,7 +541,7 @@ exports[`SearchableDropdown should render with icon 1`] = `
                 <div
                   data-css-29=""
                   data-css-8=""
-                  data-css-1=""
+                  data-css-2=""
                 >
                   cat
                 </div>
@@ -548,7 +549,7 @@ exports[`SearchableDropdown should render with icon 1`] = `
               <div
                 aria-selected="false"
                 data-css-27=""
-                data-css-3=""
+                data-css-4=""
                 data-css-28=""
                 id="downshift-2-item-2"
                 role="option"
@@ -556,7 +557,7 @@ exports[`SearchableDropdown should render with icon 1`] = `
                 <div
                   data-css-29=""
                   data-css-8=""
-                  data-css-1=""
+                  data-css-2=""
                 >
                   apple
                 </div>
@@ -585,42 +586,42 @@ exports[`SearchableDropdown should render with load more 1`] = `
 
 .css-1,
 [data-css-1] {
-  border-top: 1px solid #ecf0f1;
-}
-
-.css-2,
-[data-css-2] {
-  width: 100%;
-}
-
-.css-3,
-[data-css-4]:hover {
-  background-color: #f9fafb;
-}
-
-.css-5,
-[data-css-5] {
-  position: relative;
-}
-
-.css-6,
-[data-css-6] {
   background-color: #ffffff;
-  height: 50px;
-  position: relative;
-  width: 100%;
-}
-
-.css-7,
-[data-css-7] {
-  background-color: #ffffff;
-  color: black;
+  color: #000000;
   overflow: hidden;
   padding-right: 30px;
   pointer-events: none;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: calc(100% - 5px);
+}
+
+.css-2,
+[data-css-2] {
+  border-top: 1px solid #ecf0f1;
+}
+
+.css-3,
+[data-css-3] {
+  width: 100%;
+}
+
+.css-4,
+[data-css-5]:hover {
+  background-color: #f9fafb;
+}
+
+.css-6,
+[data-css-6] {
+  position: relative;
+}
+
+.css-7,
+[data-css-7] {
+  background-color: #ffffff;
+  height: 50px;
+  position: relative;
+  width: 100%;
 }
 
 .css-8,
@@ -736,6 +737,7 @@ exports[`SearchableDropdown should render with load more 1`] = `
 .css-18,
 [data-css-18] {
   box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  background-color: #ffffff;
   max-height: 200px;
   overflow: hidden;
   width: 100%;
@@ -941,6 +943,14 @@ exports[`SearchableDropdown should render with load more 1`] = `
 
 .css-33,
 [data-css-33] {
+  padding: 10px 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #ecf0f1;
+  background-color: white;
+}
+
+.css-34,
+[data-css-34] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 600;
@@ -960,23 +970,23 @@ exports[`SearchableDropdown should render with load more 1`] = `
     role="combobox"
   >
     <div
-      data-css-5=""
+      data-css-6=""
       data-css-9=""
     >
       <div
-        data-css-6=""
+        data-css-7=""
         data-css-10=""
         data-testid="searchable-dropdown"
       >
         <div
-          data-css-5=""
+          data-css-6=""
           data-css-9=""
           style="width: 100%;"
         >
           <input
             aria-required="false"
             data-css-31=""
-            data-css-7=""
+            data-css-1=""
             disabled=""
             name=""
             placeholder="select something..."
@@ -1027,12 +1037,12 @@ exports[`SearchableDropdown should render with load more 1`] = `
       </div>
     </div>
     <div
-      data-css-5=""
+      data-css-6=""
       data-css-9=""
     >
       <div
-        data-css-18=""
         data-css-20=""
+        data-css-18=""
         data-css-9=""
       >
         <div
@@ -1040,10 +1050,10 @@ exports[`SearchableDropdown should render with load more 1`] = `
         >
           <div
             data-css-9=""
-            data-css-1=""
+            data-css-2=""
           >
             <div
-              data-css-5=""
+              data-css-6=""
               data-css-9=""
               style="width: 100%;"
             >
@@ -1087,7 +1097,7 @@ exports[`SearchableDropdown should render with load more 1`] = `
               <div
                 aria-selected="false"
                 data-css-28=""
-                data-css-4=""
+                data-css-5=""
                 data-css-29=""
                 id="downshift-4-item-0"
                 role="option"
@@ -1095,7 +1105,7 @@ exports[`SearchableDropdown should render with load more 1`] = `
                 <div
                   data-css-30=""
                   data-css-9=""
-                  data-css-2=""
+                  data-css-3=""
                 >
                   dog
                 </div>
@@ -1103,7 +1113,7 @@ exports[`SearchableDropdown should render with load more 1`] = `
               <div
                 aria-selected="false"
                 data-css-28=""
-                data-css-4=""
+                data-css-5=""
                 data-css-29=""
                 id="downshift-4-item-1"
                 role="option"
@@ -1111,7 +1121,7 @@ exports[`SearchableDropdown should render with load more 1`] = `
                 <div
                   data-css-30=""
                   data-css-9=""
-                  data-css-2=""
+                  data-css-3=""
                 >
                   cat
                 </div>
@@ -1119,7 +1129,7 @@ exports[`SearchableDropdown should render with load more 1`] = `
               <div
                 aria-selected="false"
                 data-css-28=""
-                data-css-4=""
+                data-css-5=""
                 data-css-29=""
                 id="downshift-4-item-2"
                 role="option"
@@ -1127,20 +1137,20 @@ exports[`SearchableDropdown should render with load more 1`] = `
                 <div
                   data-css-30=""
                   data-css-9=""
-                  data-css-2=""
+                  data-css-3=""
                 >
                   apple
                 </div>
               </div>
               <div
-                data-css-28=""
-                data-css-4=""
-                data-css-29=""
+                data-css-33=""
+                data-css-5=""
+                data-css-26=""
               >
                 <div
                   data-css-9=""
-                  data-css-2=""
-                  data-css-33=""
+                  data-css-3=""
+                  data-css-34=""
                   data-testid="searchable-dropdown-load-more"
                 >
                   Load more
@@ -1169,37 +1179,37 @@ exports[`SearchableDropdown should render with no results 1`] = `
 
 .css-1,
 [data-css-1] {
-  border-top: 1px solid #ecf0f1;
-}
-
-.css-2,
-[data-css-2] {
-  width: 100%;
-}
-
-.css-3,
-[data-css-3] {
-  position: relative;
-}
-
-.css-4,
-[data-css-4] {
   background-color: #ffffff;
-  height: 50px;
-  position: relative;
-  width: 100%;
-}
-
-.css-5,
-[data-css-5] {
-  background-color: #ffffff;
-  color: black;
+  color: #000000;
   overflow: hidden;
   padding-right: 30px;
   pointer-events: none;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: calc(100% - 5px);
+}
+
+.css-2,
+[data-css-2] {
+  border-top: 1px solid #ecf0f1;
+}
+
+.css-3,
+[data-css-3] {
+  width: 100%;
+}
+
+.css-4,
+[data-css-4] {
+  position: relative;
+}
+
+.css-5,
+[data-css-5] {
+  background-color: #ffffff;
+  height: 50px;
+  position: relative;
+  width: 100%;
 }
 
 .css-6,
@@ -1315,6 +1325,7 @@ exports[`SearchableDropdown should render with no results 1`] = `
 .css-16,
 [data-css-16] {
   box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  background-color: #ffffff;
   max-height: 200px;
   overflow: hidden;
   width: 100%;
@@ -1502,23 +1513,23 @@ exports[`SearchableDropdown should render with no results 1`] = `
     role="combobox"
   >
     <div
-      data-css-3=""
+      data-css-4=""
       data-css-7=""
     >
       <div
-        data-css-4=""
+        data-css-5=""
         data-css-8=""
         data-testid="searchable-dropdown"
       >
         <div
-          data-css-3=""
+          data-css-4=""
           data-css-7=""
           style="width: 100%;"
         >
           <input
             aria-required="false"
             data-css-27=""
-            data-css-5=""
+            data-css-1=""
             disabled=""
             name=""
             placeholder="select something..."
@@ -1569,12 +1580,12 @@ exports[`SearchableDropdown should render with no results 1`] = `
       </div>
     </div>
     <div
-      data-css-3=""
+      data-css-4=""
       data-css-7=""
     >
       <div
-        data-css-16=""
         data-css-18=""
+        data-css-16=""
         data-css-7=""
       >
         <div
@@ -1582,10 +1593,10 @@ exports[`SearchableDropdown should render with no results 1`] = `
         >
           <div
             data-css-7=""
-            data-css-1=""
+            data-css-2=""
           >
             <div
-              data-css-3=""
+              data-css-4=""
               data-css-7=""
               style="width: 100%;"
             >
@@ -1633,7 +1644,7 @@ exports[`SearchableDropdown should render with no results 1`] = `
                 <div
                   data-css-26=""
                   data-css-7=""
-                  data-css-2=""
+                  data-css-3=""
                   data-testid="searchable-dropdown-no-results"
                 >
                   No results found
@@ -1663,42 +1674,42 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
 
 .css-1,
 [data-css-1] {
-  border-top: 1px solid #ecf0f1;
-}
-
-.css-2,
-[data-css-2] {
-  width: 100%;
-}
-
-.css-3,
-[data-css-4]:hover {
-  background-color: #f9fafb;
-}
-
-.css-5,
-[data-css-5] {
-  position: relative;
-}
-
-.css-6,
-[data-css-6] {
   background-color: #ffffff;
-  height: 50px;
-  position: relative;
-  width: 100%;
-}
-
-.css-7,
-[data-css-7] {
-  background-color: #ffffff;
-  color: black;
+  color: #000000;
   overflow: hidden;
   padding-right: 30px;
   pointer-events: none;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: calc(100% - 5px);
+}
+
+.css-2,
+[data-css-2] {
+  border-top: 1px solid #ecf0f1;
+}
+
+.css-3,
+[data-css-3] {
+  width: 100%;
+}
+
+.css-4,
+[data-css-5]:hover {
+  background-color: #f9fafb;
+}
+
+.css-6,
+[data-css-6] {
+  position: relative;
+}
+
+.css-7,
+[data-css-7] {
+  background-color: #ffffff;
+  height: 50px;
+  position: relative;
+  width: 100%;
 }
 
 .css-8,
@@ -1850,6 +1861,7 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
 .css-20,
 [data-css-20] {
   box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  background-color: #ffffff;
   max-height: 200px;
   overflow: hidden;
   width: 100%;
@@ -2027,22 +2039,22 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
     role="combobox"
   >
     <div
-      data-css-5=""
+      data-css-6=""
       data-css-9=""
     >
       <div
-        data-css-6=""
+        data-css-7=""
         data-css-10=""
         data-testid="searchable-dropdown"
       >
         <div
-          data-css-5=""
+          data-css-6=""
           data-css-9=""
           style="width: 100%;"
         >
           <input
             aria-required="false"
-            data-css-7=""
+            data-css-1=""
             data-css-11=""
             disabled=""
             name="searchable-dropdown-form-name"
@@ -2094,12 +2106,12 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
       </div>
     </div>
     <div
-      data-css-5=""
+      data-css-6=""
       data-css-9=""
     >
       <div
-        data-css-20=""
         data-css-22=""
+        data-css-20=""
         data-css-9=""
       >
         <div
@@ -2107,10 +2119,10 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
         >
           <div
             data-css-9=""
-            data-css-1=""
+            data-css-2=""
           >
             <div
-              data-css-5=""
+              data-css-6=""
               data-css-9=""
               style="width: 100%;"
             >
@@ -2154,7 +2166,7 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
               <div
                 aria-selected="false"
                 data-css-30=""
-                data-css-4=""
+                data-css-5=""
                 data-css-31=""
                 id="downshift-0-item-0"
                 role="option"
@@ -2162,7 +2174,7 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
                 <div
                   data-css-32=""
                   data-css-9=""
-                  data-css-2=""
+                  data-css-3=""
                 >
                   dog
                 </div>
@@ -2170,7 +2182,7 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
               <div
                 aria-selected="false"
                 data-css-30=""
-                data-css-4=""
+                data-css-5=""
                 data-css-31=""
                 id="downshift-0-item-1"
                 role="option"
@@ -2178,7 +2190,7 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
                 <div
                   data-css-32=""
                   data-css-9=""
-                  data-css-2=""
+                  data-css-3=""
                 >
                   cat
                 </div>
@@ -2186,7 +2198,7 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
               <div
                 aria-selected="false"
                 data-css-30=""
-                data-css-4=""
+                data-css-5=""
                 data-css-31=""
                 id="downshift-0-item-2"
                 role="option"
@@ -2194,7 +2206,7 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
                 <div
                   data-css-32=""
                   data-css-9=""
-                  data-css-2=""
+                  data-css-3=""
                 >
                   apple
                 </div>
@@ -2223,42 +2235,42 @@ exports[`SearchableDropdown should render with placement top 1`] = `
 
 .css-1,
 [data-css-1] {
-  border-top: 1px solid #ecf0f1;
-}
-
-.css-2,
-[data-css-2] {
-  width: 100%;
-}
-
-.css-3,
-[data-css-4]:hover {
-  background-color: #f9fafb;
-}
-
-.css-5,
-[data-css-5] {
-  position: relative;
-}
-
-.css-6,
-[data-css-6] {
   background-color: #ffffff;
-  height: 50px;
-  position: relative;
-  width: 100%;
-}
-
-.css-7,
-[data-css-7] {
-  background-color: #ffffff;
-  color: black;
+  color: #000000;
   overflow: hidden;
   padding-right: 30px;
   pointer-events: none;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: calc(100% - 5px);
+}
+
+.css-2,
+[data-css-2] {
+  border-top: 1px solid #ecf0f1;
+}
+
+.css-3,
+[data-css-3] {
+  width: 100%;
+}
+
+.css-4,
+[data-css-5]:hover {
+  background-color: #f9fafb;
+}
+
+.css-6,
+[data-css-6] {
+  position: relative;
+}
+
+.css-7,
+[data-css-7] {
+  background-color: #ffffff;
+  height: 50px;
+  position: relative;
+  width: 100%;
 }
 
 .css-8,
@@ -2410,6 +2422,7 @@ exports[`SearchableDropdown should render with placement top 1`] = `
 .css-20,
 [data-css-20] {
   box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
+  background-color: #ffffff;
   max-height: 200px;
   overflow: hidden;
   width: 100%;
@@ -2612,22 +2625,22 @@ exports[`SearchableDropdown should render with placement top 1`] = `
     role="combobox"
   >
     <div
-      data-css-5=""
+      data-css-6=""
       data-css-9=""
     >
       <div
-        data-css-6=""
+        data-css-7=""
         data-css-10=""
         data-testid="searchable-dropdown"
       >
         <div
-          data-css-5=""
+          data-css-6=""
           data-css-9=""
           style="width: 100%;"
         >
           <input
             aria-required="false"
-            data-css-7=""
+            data-css-1=""
             data-css-11=""
             disabled=""
             name=""
@@ -2679,12 +2692,12 @@ exports[`SearchableDropdown should render with placement top 1`] = `
       </div>
     </div>
     <div
-      data-css-5=""
+      data-css-6=""
       data-css-9=""
     >
       <div
-        data-css-20=""
         data-css-32=""
+        data-css-20=""
         data-css-9=""
       >
         <div
@@ -2692,10 +2705,10 @@ exports[`SearchableDropdown should render with placement top 1`] = `
         >
           <div
             data-css-9=""
-            data-css-1=""
+            data-css-2=""
           >
             <div
-              data-css-5=""
+              data-css-6=""
               data-css-9=""
               style="width: 100%;"
             >
@@ -2739,7 +2752,7 @@ exports[`SearchableDropdown should render with placement top 1`] = `
               <div
                 aria-selected="false"
                 data-css-29=""
-                data-css-4=""
+                data-css-5=""
                 data-css-30=""
                 id="downshift-1-item-0"
                 role="option"
@@ -2747,7 +2760,7 @@ exports[`SearchableDropdown should render with placement top 1`] = `
                 <div
                   data-css-31=""
                   data-css-9=""
-                  data-css-2=""
+                  data-css-3=""
                 >
                   dog
                 </div>
@@ -2755,7 +2768,7 @@ exports[`SearchableDropdown should render with placement top 1`] = `
               <div
                 aria-selected="false"
                 data-css-29=""
-                data-css-4=""
+                data-css-5=""
                 data-css-30=""
                 id="downshift-1-item-1"
                 role="option"
@@ -2763,7 +2776,7 @@ exports[`SearchableDropdown should render with placement top 1`] = `
                 <div
                   data-css-31=""
                   data-css-9=""
-                  data-css-2=""
+                  data-css-3=""
                 >
                   cat
                 </div>
@@ -2771,7 +2784,7 @@ exports[`SearchableDropdown should render with placement top 1`] = `
               <div
                 aria-selected="false"
                 data-css-29=""
-                data-css-4=""
+                data-css-5=""
                 data-css-30=""
                 id="downshift-1-item-2"
                 role="option"
@@ -2779,7 +2792,7 @@ exports[`SearchableDropdown should render with placement top 1`] = `
                 <div
                   data-css-31=""
                   data-css-9=""
-                  data-css-2=""
+                  data-css-3=""
                 >
                   apple
                 </div>
