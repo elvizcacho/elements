@@ -10,6 +10,7 @@ import ListItem from '../ListItem'
 import Input from '../Input'
 import { alpha, ColorPalette } from '@allthings/colors'
 import Icon, { IconType } from '../Icon'
+import { webkitScrollbar } from '../utils/webkitScrollbar'
 
 const bounceDownwardsAnim = keyframes('bounce', {
   '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
@@ -219,6 +220,7 @@ export default class Dropdown extends PureComponent<IDropdownProps> {
                       placement === Placement.top ? 'column-reverse' : 'column'
                     }
                     {...css({
+                      backgroundColor: ColorPalette.white,
                       boxShadow:
                         isOpen && '1px 1px 3px rgba(29, 29, 29, 0.125)',
                       maxHeight: menuHeight,
@@ -228,6 +230,7 @@ export default class Dropdown extends PureComponent<IDropdownProps> {
                       bottom: placement === Placement.top && INPUT_FIELD_HEIGHT,
                       width: '100%',
                       zIndex: 9999,
+                      ...webkitScrollbar,
                     })}
                     onScroll={this.handleListScroll}
                   >

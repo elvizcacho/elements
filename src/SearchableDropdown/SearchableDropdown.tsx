@@ -18,6 +18,7 @@ import { alpha, ColorPalette } from '@allthings/colors'
 import Icon, { IconType } from '../Icon/index'
 import { Spinner } from '../index'
 import { IDropdownItem } from '../Dropdown/index'
+import { webkitScrollbar } from '../utils/webkitScrollbar'
 
 const INPUT_FIELD_HEIGHT_PX = 50
 
@@ -66,6 +67,8 @@ const styles = {
       borderTop: `1px solid ${ColorPalette.lightGrey}`,
       maxHeight: menuHeight - INPUT_FIELD_HEIGHT_PX + 1,
       overflowY: 'auto',
+      overflowX: 'hidden',
+      ...webkitScrollbar,
     }),
   listWrapper: (menuHeight: number) =>
     css({
