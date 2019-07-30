@@ -42,6 +42,9 @@ const styles = {
       '&:-webkit-autofill': {
         paddingTop: '10px !important',
       },
+      ':-ms-clear': {
+        display: 'none',
+      },
     }),
   area: (lines: number, showLabel: boolean) =>
     css(createTextStyles({ size: 'm' }), {
