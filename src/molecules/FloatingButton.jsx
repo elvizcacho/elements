@@ -10,7 +10,7 @@ import ListSpinner from './List/ListSpinner'
 const buttonStyle = css({
   width: '100%',
   display: 'flex',
-  alignItem: 'center',
+  alignItems: 'center',
   justifyContent: 'center',
   height: '100%',
   background: 'transparent',
