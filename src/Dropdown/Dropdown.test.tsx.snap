@@ -123,8 +123,13 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   padding-top: 10px !important;
 }
 
-.css-11,
-[data-css-11] {
+.css-8:-ms-clear,
+[data-css-8]:-ms-clear {
+  display: none;
+}
+
+.css-12,
+[data-css-12] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -135,8 +140,8 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   -moz-transition: opacity .225s;
 }
 
-.css-12,
-[data-css-12] {
+.css-13,
+[data-css-13] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 10px;
@@ -145,22 +150,22 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   color: #626262;
 }
 
-.css-13,
-[data-css-13] {
+.css-14,
+[data-css-14] {
   width: 16px;
   height: 16px;
   fill: lightGrey;
 }
 
-.css-14,
-[data-css-14] {
+.css-15,
+[data-css-15] {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.css-15,
-[data-css-15] {
+.css-16,
+[data-css-16] {
   width: 10px;
   height: 10px;
   stroke: black;
@@ -217,7 +222,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
         >
           <div
             data-css-6=""
-            data-css-12=""
+            data-css-13=""
           >
             some label
              
@@ -225,7 +230,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
         </div>
         <div
           className="checkmark"
-          data-css-11=""
+          data-css-12=""
           data-css-6=""
         >
           <div
@@ -235,14 +240,14 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
               }
             }
             data-css-6=""
-            data-css-13=""
+            data-css-14=""
           />
         </div>
       </div>
       <div
         data-css-5=""
         data-css-7=""
-        data-css-14=""
+        data-css-15=""
         onClick={[Function]}
       >
         <div
@@ -251,7 +256,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
               "__html": "",
             }
           }
-          data-css-15=""
+          data-css-16=""
           data-css-6=""
           data-testid="dropdown-clear-icon"
         />
@@ -388,8 +393,13 @@ exports[`Dropdown should render with placement top 1`] = `
   padding-top: 10px !important;
 }
 
-.css-11,
-[data-css-11] {
+.css-8:-ms-clear,
+[data-css-8]:-ms-clear {
+  display: none;
+}
+
+.css-12,
+[data-css-12] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -400,8 +410,8 @@ exports[`Dropdown should render with placement top 1`] = `
   -moz-transition: opacity .225s;
 }
 
-.css-12,
-[data-css-12] {
+.css-13,
+[data-css-13] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 10px;
@@ -410,22 +420,22 @@ exports[`Dropdown should render with placement top 1`] = `
   color: #626262;
 }
 
-.css-13,
-[data-css-13] {
+.css-14,
+[data-css-14] {
   width: 16px;
   height: 16px;
   fill: lightGrey;
 }
 
-.css-14,
-[data-css-14] {
+.css-15,
+[data-css-15] {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.css-15,
-[data-css-15] {
+.css-16,
+[data-css-16] {
   width: 10px;
   height: 10px;
   stroke: black;
@@ -482,7 +492,7 @@ exports[`Dropdown should render with placement top 1`] = `
         >
           <div
             data-css-6=""
-            data-css-12=""
+            data-css-13=""
           >
             some label
              
@@ -490,7 +500,7 @@ exports[`Dropdown should render with placement top 1`] = `
         </div>
         <div
           className="checkmark"
-          data-css-11=""
+          data-css-12=""
           data-css-6=""
         >
           <div
@@ -500,14 +510,14 @@ exports[`Dropdown should render with placement top 1`] = `
               }
             }
             data-css-6=""
-            data-css-13=""
+            data-css-14=""
           />
         </div>
       </div>
       <div
         data-css-5=""
         data-css-7=""
-        data-css-14=""
+        data-css-15=""
         onClick={[Function]}
       >
         <div
@@ -516,7 +526,7 @@ exports[`Dropdown should render with placement top 1`] = `
               "__html": "",
             }
           }
-          data-css-15=""
+          data-css-16=""
           data-css-6=""
           data-testid="dropdown-clear-icon"
         />
