@@ -55,8 +55,8 @@ exports[`Input component should render with all props 1`] = `
   padding-top: 10px !important;
 }
 
-.css-2:-ms-clear,
-[data-css-2]:-ms-clear {
+.css-2::-ms-clear,
+[data-css-2]::-ms-clear {
   display: none;
 }
 
@@ -322,8 +322,8 @@ exports[`Input component should render with required props only 1`] = `
   padding-top: 10px !important;
 }
 
-.css-4:-ms-clear,
-[data-css-4]:-ms-clear {
+.css-4::-ms-clear,
+[data-css-4]::-ms-clear {
   display: none;
 }
 

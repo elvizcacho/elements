@@ -42,7 +42,7 @@ const styles = {
       '&:-webkit-autofill': {
         paddingTop: '10px !important',
       },
-      ':-ms-clear': {
+      '::-ms-clear': {
         display: 'none',
       },
     }),

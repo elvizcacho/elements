@@ -259,8 +259,8 @@ exports[`SearchableDropdown should render with icon 1`] = `
   padding-top: 10px !important;
 }
 
-.css-24:-ms-clear,
-[data-css-24]:-ms-clear {
+.css-24::-ms-clear,
+[data-css-24]::-ms-clear {
   display: none;
 }
 
@@ -389,8 +389,8 @@ exports[`SearchableDropdown should render with icon 1`] = `
   padding-top: 10px !important;
 }
 
-.css-34:-ms-clear,
-[data-css-34]:-ms-clear {
+.css-34::-ms-clear,
+[data-css-34]::-ms-clear {
   display: none;
 }
 
@@ -877,8 +877,8 @@ exports[`SearchableDropdown should render with load more 1`] = `
   padding-top: 10px !important;
 }
 
-.css-25:-ms-clear,
-[data-css-25]:-ms-clear {
+.css-25::-ms-clear,
+[data-css-25]::-ms-clear {
   display: none;
 }
 
@@ -1006,8 +1006,8 @@ exports[`SearchableDropdown should render with load more 1`] = `
   padding-top: 10px !important;
 }
 
-.css-35:-ms-clear,
-[data-css-35]:-ms-clear {
+.css-35::-ms-clear,
+[data-css-35]::-ms-clear {
   display: none;
 }
 
@@ -1500,8 +1500,8 @@ exports[`SearchableDropdown should render with no results 1`] = `
   padding-top: 10px !important;
 }
 
-.css-23:-ms-clear,
-[data-css-23]:-ms-clear {
+.css-23::-ms-clear,
+[data-css-23]::-ms-clear {
   display: none;
 }
 
@@ -1595,8 +1595,8 @@ exports[`SearchableDropdown should render with no results 1`] = `
   padding-top: 10px !important;
 }
 
-.css-31:-ms-clear,
-[data-css-31]:-ms-clear {
+.css-31::-ms-clear,
+[data-css-31]::-ms-clear {
   display: none;
 }
 
@@ -1880,8 +1880,8 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
   padding-top: 10px !important;
 }
 
-.css-11:-ms-clear,
-[data-css-11]:-ms-clear {
+.css-11::-ms-clear,
+[data-css-11]::-ms-clear {
   display: none;
 }
 
@@ -2081,8 +2081,8 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
   padding-top: 10px !important;
 }
 
-.css-29:-ms-clear,
-[data-css-29]:-ms-clear {
+.css-29::-ms-clear,
+[data-css-29]::-ms-clear {
   display: none;
 }
 
@@ -2476,8 +2476,8 @@ exports[`SearchableDropdown should render with placement top 1`] = `
   padding-top: 10px !important;
 }
 
-.css-11:-ms-clear,
-[data-css-11]:-ms-clear {
+.css-11::-ms-clear,
+[data-css-11]::-ms-clear {
   display: none;
 }
 
@@ -2672,8 +2672,8 @@ exports[`SearchableDropdown should render with placement top 1`] = `
   padding-top: 10px !important;
 }
 
-.css-28:-ms-clear,
-[data-css-28]:-ms-clear {
+.css-28::-ms-clear,
+[data-css-28]::-ms-clear {
   display: none;
 }
 
