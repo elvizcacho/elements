@@ -49,7 +49,7 @@ const styles = {
     css({
       cursor: disabled ? 'not-allowed' : !isLoading && 'pointer',
       height: '100%',
-      padding: '16px 16px 16px 20px',
+      padding: '16px 20px',
     }),
   searchWrapper: css({
     borderTop: `1px solid ${ColorPalette.lightGrey}`,
