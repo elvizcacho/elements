@@ -28,6 +28,9 @@ const styles = {
       paddingRight: paddingRight ? 50 : 15,
       transition: 'padding-top .225s ease-out',
       border: 0,
+      ':required': {
+        boxShadow: 'none',
+      },
       '&:-webkit-autofill ~ .label': {
         opacity: '1 !important',
         top: '8px !important',
