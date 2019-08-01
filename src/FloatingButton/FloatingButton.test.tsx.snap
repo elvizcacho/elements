@@ -9,11 +9,13 @@ exports[`Floating button renders without error 1`] = `
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-item: center;
+  align-items: center;
   justify-content: center;
   height: 100%;
   background: transparent;
   border: 0;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
 }

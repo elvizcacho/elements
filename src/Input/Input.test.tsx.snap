@@ -33,6 +33,11 @@ exports[`Input component should render with all props 1`] = `
   -moz-transition: padding-top .225s ease-out;
 }
 
+.css-2:required,
+[data-css-2]:required {
+  box-shadow: none;
+}
+
 .css-2:-webkit-autofill ~ .label,
 [data-css-2]:-webkit-autofill ~ .label {
   opacity: 1 !important;
@@ -50,8 +55,8 @@ exports[`Input component should render with all props 1`] = `
   padding-top: 10px !important;
 }
 
-.css-4,
-[data-css-4] {
+.css-5,
+[data-css-5] {
   position: absolute;
   left: 40px;
   font-size: 10px;
@@ -61,8 +66,8 @@ exports[`Input component should render with all props 1`] = `
   -moz-transition: all .225s ease-out;
 }
 
-.css-5,
-[data-css-5] {
+.css-6,
+[data-css-6] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -73,28 +78,28 @@ exports[`Input component should render with all props 1`] = `
   -moz-transition: opacity .225s;
 }
 
-.css-6,
-[data-css-6] {
+.css-7,
+[data-css-7] {
   position: relative;
 }
 
-.css-7,
-[data-css-7] {
+.css-8,
+[data-css-8] {
   box-sizing: border-box;
   flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
 }
 
-.css-8,
-[data-css-8] {
+.css-9,
+[data-css-9] {
   position: absolute;
   top: 0;
   left: 15px;
   bottom: 0;
 }
 
-.css-9,
-[data-css-9] {
+.css-10,
+[data-css-10] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -117,15 +122,15 @@ exports[`Input component should render with all props 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-10,
-[data-css-10] {
+.css-11,
+[data-css-11] {
   width: 16px;
   height: 16px;
   stroke: #626262;
 }
 
-.css-11,
-[data-css-11] {
+.css-12,
+[data-css-12] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 10px;
@@ -134,15 +139,15 @@ exports[`Input component should render with all props 1`] = `
   color: #626262;
 }
 
-.css-12,
-[data-css-12] {
+.css-13,
+[data-css-13] {
   width: 16px;
   height: 16px;
   fill: lightGrey;
 }
 
-.css-13,
-[data-css-13] {
+.css-14,
+[data-css-14] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -152,8 +157,8 @@ exports[`Input component should render with all props 1`] = `
 }
 
 <div
-  data-css-6=""
   data-css-7=""
+  data-css-8=""
   style={
     Object {
       "width": "100%",
@@ -162,8 +167,8 @@ exports[`Input component should render with all props 1`] = `
 >
   <div
     data-css-1=""
+    data-css-10=""
     data-css-9=""
-    data-css-8=""
   >
     <div
       dangerouslySetInnerHTML={
@@ -171,8 +176,8 @@ exports[`Input component should render with all props 1`] = `
           "__html": "",
         }
       }
-      data-css-7=""
-      data-css-10=""
+      data-css-8=""
+      data-css-11=""
     />
   </div>
   <input
@@ -190,8 +195,8 @@ exports[`Input component should render with all props 1`] = `
   />
   <div
     className="label"
-    data-css-4=""
-    data-css-7=""
+    data-css-5=""
+    data-css-8=""
     style={
       Object {
         "opacity": 1,
@@ -200,8 +205,8 @@ exports[`Input component should render with all props 1`] = `
     }
   >
     <div
-      data-css-7=""
-      data-css-11=""
+      data-css-8=""
+      data-css-12=""
     >
       label
        
@@ -210,8 +215,8 @@ exports[`Input component should render with all props 1`] = `
   </div>
   <div
     className="checkmark"
-    data-css-5=""
-    data-css-7=""
+    data-css-6=""
+    data-css-8=""
   >
     <div
       dangerouslySetInnerHTML={
@@ -219,17 +224,17 @@ exports[`Input component should render with all props 1`] = `
           "__html": "",
         }
       }
-      data-css-7=""
-      data-css-12=""
+      data-css-8=""
+      data-css-13=""
     />
   </div>
   <div
-    data-css-7=""
+    data-css-8=""
     data-css-0=""
   >
     <div
-      data-css-13=""
-      data-css-7=""
+      data-css-14=""
+      data-css-8=""
     >
       5
       /
@@ -288,6 +293,11 @@ exports[`Input component should render with required props only 1`] = `
   border: 0;
   -webkit-transition: padding-top .225s ease-out;
   -moz-transition: padding-top .225s ease-out;
+}
+
+.css-4:required,
+[data-css-4]:required {
+  box-shadow: none;
 }
 
 .css-4:-webkit-autofill ~ .label,
