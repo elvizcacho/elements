@@ -24,6 +24,9 @@
     "esModuleInterop": true,
     "resolveJsonModule": true
   },
+  "awesomeTypescriptLoaderOptions": {
+    "target": "es5"
+  },
   "exclude": [
     "public",
     "node_modules",
