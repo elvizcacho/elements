@@ -118,6 +118,8 @@ export const Icons = [
   'power-filled',
   'present-box',
   'present-box-filled',
+  'print',
+  'print-filled',
   'remove',
   'remove-filled',
   'remove-light',
