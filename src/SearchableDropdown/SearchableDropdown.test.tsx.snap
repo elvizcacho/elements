@@ -259,16 +259,21 @@ exports[`SearchableDropdown should render with icon 1`] = `
   padding-top: 10px !important;
 }
 
-.css-27,
-[data-css-27] {
+.css-24::-ms-clear,
+[data-css-24]::-ms-clear {
+  display: none;
+}
+
+.css-28,
+[data-css-28] {
   position: absolute;
   top: 0;
   left: 15px;
   bottom: 0;
 }
 
-.css-28,
-[data-css-28] {
+.css-29,
+[data-css-29] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -291,15 +296,15 @@ exports[`SearchableDropdown should render with icon 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-29,
-[data-css-29] {
+.css-30,
+[data-css-30] {
   width: 16px;
   height: 16px;
   stroke: #626262;
 }
 
-.css-30,
-[data-css-30] {
+.css-31,
+[data-css-31] {
   padding: 10px 15px;
   min-height: 50px;
   border-bottom: 1px solid #ecf0f1;
@@ -307,8 +312,8 @@ exports[`SearchableDropdown should render with icon 1`] = `
   background-color: white;
 }
 
-.css-31,
-[data-css-31] {
+.css-32,
+[data-css-32] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -332,8 +337,8 @@ exports[`SearchableDropdown should render with icon 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-32,
-[data-css-32] {
+.css-33,
+[data-css-33] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -342,8 +347,8 @@ exports[`SearchableDropdown should render with icon 1`] = `
   color: #333333;
 }
 
-.css-33,
-[data-css-33] {
+.css-34,
+[data-css-34] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -362,30 +367,35 @@ exports[`SearchableDropdown should render with icon 1`] = `
   -moz-transition: padding-top .225s ease-out;
 }
 
-.css-33:required,
-[data-css-33]:required {
+.css-34:required,
+[data-css-34]:required {
   box-shadow: none;
 }
 
-.css-33:-webkit-autofill ~ .label,
-[data-css-33]:-webkit-autofill ~ .label {
+.css-34:-webkit-autofill ~ .label,
+[data-css-34]:-webkit-autofill ~ .label {
   opacity: 1 !important;
   top: 8px !important;
 }
 
-.css-33:-webkit-autofill ~ .checkmark,
-[data-css-33]:-webkit-autofill ~ .checkmark {
+.css-34:-webkit-autofill ~ .checkmark,
+[data-css-34]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
   top: 8px;
 }
 
-.css-33:-webkit-autofill,
-[data-css-33]:-webkit-autofill {
+.css-34:-webkit-autofill,
+[data-css-34]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
-.css-36,
-[data-css-36] {
+.css-34::-ms-clear,
+[data-css-34]::-ms-clear {
+  display: none;
+}
+
+.css-38,
+[data-css-38] {
   position: absolute;
   left: 40px;
   font-size: 10px;
@@ -420,17 +430,17 @@ exports[`SearchableDropdown should render with icon 1`] = `
         >
           <div
             data-css-23=""
+            data-css-29=""
             data-css-28=""
-            data-css-27=""
           >
             <div
               data-css-8=""
-              data-css-29=""
+              data-css-30=""
             />
           </div>
           <input
             aria-required="false"
-            data-css-33=""
+            data-css-34=""
             data-css-0=""
             disabled=""
             name=""
@@ -441,7 +451,7 @@ exports[`SearchableDropdown should render with icon 1`] = `
           />
           <div
             class="label"
-            data-css-36=""
+            data-css-38=""
             data-css-8=""
             style="opacity: 1; top: 8px;"
           >
@@ -504,12 +514,12 @@ exports[`SearchableDropdown should render with icon 1`] = `
             >
               <div
                 data-css-23=""
+                data-css-29=""
                 data-css-28=""
-                data-css-27=""
               >
                 <div
                   data-css-8=""
-                  data-css-29=""
+                  data-css-30=""
                 />
               </div>
               <input
@@ -541,14 +551,14 @@ exports[`SearchableDropdown should render with icon 1`] = `
             >
               <div
                 aria-selected="false"
-                data-css-30=""
-                data-css-4=""
                 data-css-31=""
+                data-css-4=""
+                data-css-32=""
                 id="downshift-2-item-0"
                 role="option"
               >
                 <div
-                  data-css-32=""
+                  data-css-33=""
                   data-css-8=""
                   data-css-2=""
                 >
@@ -557,14 +567,14 @@ exports[`SearchableDropdown should render with icon 1`] = `
               </div>
               <div
                 aria-selected="false"
-                data-css-30=""
-                data-css-4=""
                 data-css-31=""
+                data-css-4=""
+                data-css-32=""
                 id="downshift-2-item-1"
                 role="option"
               >
                 <div
-                  data-css-32=""
+                  data-css-33=""
                   data-css-8=""
                   data-css-2=""
                 >
@@ -573,14 +583,14 @@ exports[`SearchableDropdown should render with icon 1`] = `
               </div>
               <div
                 aria-selected="false"
-                data-css-30=""
-                data-css-4=""
                 data-css-31=""
+                data-css-4=""
+                data-css-32=""
                 id="downshift-2-item-2"
                 role="option"
               >
                 <div
-                  data-css-32=""
+                  data-css-33=""
                   data-css-8=""
                   data-css-2=""
                 >
@@ -867,16 +877,21 @@ exports[`SearchableDropdown should render with load more 1`] = `
   padding-top: 10px !important;
 }
 
-.css-28,
-[data-css-28] {
+.css-25::-ms-clear,
+[data-css-25]::-ms-clear {
+  display: none;
+}
+
+.css-29,
+[data-css-29] {
   position: absolute;
   top: 0;
   left: 15px;
   bottom: 0;
 }
 
-.css-29,
-[data-css-29] {
+.css-30,
+[data-css-30] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -899,15 +914,15 @@ exports[`SearchableDropdown should render with load more 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-30,
-[data-css-30] {
+.css-31,
+[data-css-31] {
   width: 16px;
   height: 16px;
   stroke: #626262;
 }
 
-.css-31,
-[data-css-31] {
+.css-32,
+[data-css-32] {
   padding: 10px 15px;
   min-height: 50px;
   border-bottom: 1px solid #ecf0f1;
@@ -915,8 +930,8 @@ exports[`SearchableDropdown should render with load more 1`] = `
   background-color: white;
 }
 
-.css-32,
-[data-css-32] {
+.css-33,
+[data-css-33] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -940,8 +955,8 @@ exports[`SearchableDropdown should render with load more 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-33,
-[data-css-33] {
+.css-34,
+[data-css-34] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -950,8 +965,8 @@ exports[`SearchableDropdown should render with load more 1`] = `
   color: #333333;
 }
 
-.css-34,
-[data-css-34] {
+.css-35,
+[data-css-35] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -969,38 +984,43 @@ exports[`SearchableDropdown should render with load more 1`] = `
   -moz-transition: padding-top .225s ease-out;
 }
 
-.css-34:required,
-[data-css-34]:required {
+.css-35:required,
+[data-css-35]:required {
   box-shadow: none;
 }
 
-.css-34:-webkit-autofill ~ .label,
-[data-css-34]:-webkit-autofill ~ .label {
+.css-35:-webkit-autofill ~ .label,
+[data-css-35]:-webkit-autofill ~ .label {
   opacity: 1 !important;
   top: 8px !important;
 }
 
-.css-34:-webkit-autofill ~ .checkmark,
-[data-css-34]:-webkit-autofill ~ .checkmark {
+.css-35:-webkit-autofill ~ .checkmark,
+[data-css-35]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
   top: 8px;
 }
 
-.css-34:-webkit-autofill,
-[data-css-34]:-webkit-autofill {
+.css-35:-webkit-autofill,
+[data-css-35]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
-.css-37,
-[data-css-37] {
+.css-35::-ms-clear,
+[data-css-35]::-ms-clear {
+  display: none;
+}
+
+.css-39,
+[data-css-39] {
   padding: 10px 15px;
   min-height: 50px;
   border-bottom: 1px solid #ecf0f1;
   background-color: white;
 }
 
-.css-38,
-[data-css-38] {
+.css-40,
+[data-css-40] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 600;
@@ -1035,7 +1055,7 @@ exports[`SearchableDropdown should render with load more 1`] = `
         >
           <input
             aria-required="false"
-            data-css-34=""
+            data-css-35=""
             data-css-1=""
             disabled=""
             name=""
@@ -1109,12 +1129,12 @@ exports[`SearchableDropdown should render with load more 1`] = `
             >
               <div
                 data-css-24=""
+                data-css-30=""
                 data-css-29=""
-                data-css-28=""
               >
                 <div
                   data-css-9=""
-                  data-css-30=""
+                  data-css-31=""
                 />
               </div>
               <input
@@ -1146,14 +1166,14 @@ exports[`SearchableDropdown should render with load more 1`] = `
             >
               <div
                 aria-selected="false"
-                data-css-31=""
-                data-css-5=""
                 data-css-32=""
+                data-css-5=""
+                data-css-33=""
                 id="downshift-4-item-0"
                 role="option"
               >
                 <div
-                  data-css-33=""
+                  data-css-34=""
                   data-css-9=""
                   data-css-3=""
                 >
@@ -1162,14 +1182,14 @@ exports[`SearchableDropdown should render with load more 1`] = `
               </div>
               <div
                 aria-selected="false"
-                data-css-31=""
-                data-css-5=""
                 data-css-32=""
+                data-css-5=""
+                data-css-33=""
                 id="downshift-4-item-1"
                 role="option"
               >
                 <div
-                  data-css-33=""
+                  data-css-34=""
                   data-css-9=""
                   data-css-3=""
                 >
@@ -1178,14 +1198,14 @@ exports[`SearchableDropdown should render with load more 1`] = `
               </div>
               <div
                 aria-selected="false"
-                data-css-31=""
-                data-css-5=""
                 data-css-32=""
+                data-css-5=""
+                data-css-33=""
                 id="downshift-4-item-2"
                 role="option"
               >
                 <div
-                  data-css-33=""
+                  data-css-34=""
                   data-css-9=""
                   data-css-3=""
                 >
@@ -1193,14 +1213,14 @@ exports[`SearchableDropdown should render with load more 1`] = `
                 </div>
               </div>
               <div
-                data-css-37=""
+                data-css-39=""
                 data-css-5=""
-                data-css-29=""
+                data-css-30=""
               >
                 <div
                   data-css-9=""
                   data-css-3=""
-                  data-css-38=""
+                  data-css-40=""
                   data-testid="searchable-dropdown-load-more"
                 >
                   Load more
@@ -1480,16 +1500,21 @@ exports[`SearchableDropdown should render with no results 1`] = `
   padding-top: 10px !important;
 }
 
-.css-26,
-[data-css-26] {
+.css-23::-ms-clear,
+[data-css-23]::-ms-clear {
+  display: none;
+}
+
+.css-27,
+[data-css-27] {
   position: absolute;
   top: 0;
   left: 15px;
   bottom: 0;
 }
 
-.css-27,
-[data-css-27] {
+.css-28,
+[data-css-28] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -1512,15 +1537,15 @@ exports[`SearchableDropdown should render with no results 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-28,
-[data-css-28] {
+.css-29,
+[data-css-29] {
   width: 16px;
   height: 16px;
   stroke: #626262;
 }
 
-.css-29,
-[data-css-29] {
+.css-30,
+[data-css-30] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -1529,8 +1554,8 @@ exports[`SearchableDropdown should render with no results 1`] = `
   color: #333333;
 }
 
-.css-30,
-[data-css-30] {
+.css-31,
+[data-css-31] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -1548,30 +1573,35 @@ exports[`SearchableDropdown should render with no results 1`] = `
   -moz-transition: padding-top .225s ease-out;
 }
 
-.css-30:required,
-[data-css-30]:required {
+.css-31:required,
+[data-css-31]:required {
   box-shadow: none;
 }
 
-.css-30:-webkit-autofill ~ .label,
-[data-css-30]:-webkit-autofill ~ .label {
+.css-31:-webkit-autofill ~ .label,
+[data-css-31]:-webkit-autofill ~ .label {
   opacity: 1 !important;
   top: 8px !important;
 }
 
-.css-30:-webkit-autofill ~ .checkmark,
-[data-css-30]:-webkit-autofill ~ .checkmark {
+.css-31:-webkit-autofill ~ .checkmark,
+[data-css-31]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
   top: 8px;
 }
 
-.css-30:-webkit-autofill,
-[data-css-30]:-webkit-autofill {
+.css-31:-webkit-autofill,
+[data-css-31]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
-.css-33,
-[data-css-33] {
+.css-31::-ms-clear,
+[data-css-31]::-ms-clear {
+  display: none;
+}
+
+.css-35,
+[data-css-35] {
   padding: 10px 15px;
   min-height: 50px;
   border-bottom: 1px solid #ecf0f1;
@@ -1603,7 +1633,7 @@ exports[`SearchableDropdown should render with no results 1`] = `
         >
           <input
             aria-required="false"
-            data-css-30=""
+            data-css-31=""
             data-css-1=""
             disabled=""
             name=""
@@ -1677,12 +1707,12 @@ exports[`SearchableDropdown should render with no results 1`] = `
             >
               <div
                 data-css-22=""
+                data-css-28=""
                 data-css-27=""
-                data-css-26=""
               >
                 <div
                   data-css-7=""
-                  data-css-28=""
+                  data-css-29=""
                 />
               </div>
               <input
@@ -1713,11 +1743,11 @@ exports[`SearchableDropdown should render with no results 1`] = `
               data-css-21=""
             >
               <div
-                data-css-33=""
-                data-css-27=""
+                data-css-35=""
+                data-css-28=""
               >
                 <div
-                  data-css-29=""
+                  data-css-30=""
                   data-css-7=""
                   data-css-3=""
                   data-testid="searchable-dropdown-no-results"
@@ -1850,8 +1880,13 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
   padding-top: 10px !important;
 }
 
-.css-14,
-[data-css-14] {
+.css-11::-ms-clear,
+[data-css-11]::-ms-clear {
+  display: none;
+}
+
+.css-15,
+[data-css-15] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -1862,8 +1897,8 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
   -moz-transition: opacity .225s;
 }
 
-.css-15,
-[data-css-15] {
+.css-16,
+[data-css-16] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 10px;
@@ -1872,22 +1907,22 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
   color: #626262;
 }
 
-.css-16,
-[data-css-16] {
+.css-17,
+[data-css-17] {
   width: 16px;
   height: 16px;
   fill: lightGrey;
 }
 
-.css-17,
-[data-css-17] {
+.css-18,
+[data-css-18] {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.css-18,
-[data-css-18] {
+.css-19,
+[data-css-19] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -1910,15 +1945,15 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
   -webkit-flex: 0 0 auto;
 }
 
-.css-19,
-[data-css-19] {
+.css-20,
+[data-css-20] {
   width: 10px;
   height: 10px;
   stroke: black;
 }
 
-.css-20,
-[data-css-20] {
+.css-21,
+[data-css-21] {
   align-items: stretch;
   border: none;
   box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
@@ -1938,8 +1973,8 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
   -webkit-flex-direction: column;
 }
 
-.css-21,
-[data-css-21] {
+.css-22,
+[data-css-22] {
   box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
   background-color: #ffffff;
   max-height: 200px;
@@ -1948,35 +1983,35 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
   z-index: 9999;
 }
 
-.css-22,
-[data-css-22] {
+.css-23,
+[data-css-23] {
   border-top: 1px solid #ecf0f1;
   max-height: 151px;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
-.css-22::-webkit-scrollbar,
-[data-css-22]::-webkit-scrollbar {
+.css-23::-webkit-scrollbar,
+[data-css-23]::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 10px;
 }
 
-.css-22::-webkit-scrollbar-thumb,
-[data-css-22]::-webkit-scrollbar-thumb {
+.css-23::-webkit-scrollbar-thumb,
+[data-css-23]::-webkit-scrollbar-thumb {
   border-radius: 6px;
   border: 2px solid white;
   background-color: rgba(0,0,0,.3);
   box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
 
-.css-25,
-[data-css-25] {
+.css-26,
+[data-css-26] {
   position: absolute;
 }
 
-.css-26,
-[data-css-26] {
+.css-27,
+[data-css-27] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -1999,13 +2034,13 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
   -webkit-flex: 0 0 auto;
 }
 
-.css-27,
-[data-css-27] {
+.css-28,
+[data-css-28] {
   pointer-events: none;
 }
 
-.css-28,
-[data-css-28] {
+.css-29,
+[data-css-29] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -2024,38 +2059,43 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
   -moz-transition: padding-top .225s ease-out;
 }
 
-.css-28:required,
-[data-css-28]:required {
+.css-29:required,
+[data-css-29]:required {
   box-shadow: none;
 }
 
-.css-28:-webkit-autofill ~ .label,
-[data-css-28]:-webkit-autofill ~ .label {
+.css-29:-webkit-autofill ~ .label,
+[data-css-29]:-webkit-autofill ~ .label {
   opacity: 1 !important;
   top: 8px !important;
 }
 
-.css-28:-webkit-autofill ~ .checkmark,
-[data-css-28]:-webkit-autofill ~ .checkmark {
+.css-29:-webkit-autofill ~ .checkmark,
+[data-css-29]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
   top: 8px;
 }
 
-.css-28:-webkit-autofill,
-[data-css-28]:-webkit-autofill {
+.css-29:-webkit-autofill,
+[data-css-29]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
-.css-31,
-[data-css-31] {
+.css-29::-ms-clear,
+[data-css-29]::-ms-clear {
+  display: none;
+}
+
+.css-33,
+[data-css-33] {
   position: absolute;
   top: 0;
   left: 15px;
   bottom: 0;
 }
 
-.css-32,
-[data-css-32] {
+.css-34,
+[data-css-34] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -2078,15 +2118,15 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
   -webkit-flex: 0 0 auto;
 }
 
-.css-33,
-[data-css-33] {
+.css-35,
+[data-css-35] {
   width: 16px;
   height: 16px;
   stroke: #626262;
 }
 
-.css-34,
-[data-css-34] {
+.css-36,
+[data-css-36] {
   padding: 10px 15px;
   min-height: 50px;
   border-bottom: 1px solid #ecf0f1;
@@ -2094,8 +2134,8 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
   background-color: white;
 }
 
-.css-35,
-[data-css-35] {
+.css-37,
+[data-css-37] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -2119,8 +2159,8 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
   -webkit-flex: 0 0 auto;
 }
 
-.css-36,
-[data-css-36] {
+.css-38,
+[data-css-38] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -2135,7 +2175,7 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
     aria-haspopup="listbox"
     aria-labelledby="downshift-0-label"
     aria-owns="downshift-0-menu"
-    data-css-20=""
+    data-css-21=""
     role="combobox"
   >
     <div
@@ -2171,7 +2211,7 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
           >
             <div
               data-css-9=""
-              data-css-15=""
+              data-css-16=""
             >
               some label
                
@@ -2179,25 +2219,25 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
           </div>
           <div
             class="checkmark"
-            data-css-14=""
+            data-css-15=""
             data-css-9=""
           >
             <div
               data-css-9=""
-              data-css-16=""
+              data-css-17=""
             />
           </div>
         </div>
         <div
-          data-css-17=""
+          data-css-18=""
           data-css-9=""
           data-css-8=""
         >
           <div
-            data-css-18=""
+            data-css-19=""
           >
             <div
-              data-css-19=""
+              data-css-20=""
               data-css-9=""
               data-testid="searchable-dropdown-arrow-down"
             />
@@ -2210,12 +2250,12 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
       data-css-9=""
     >
       <div
-        data-css-25=""
-        data-css-21=""
+        data-css-26=""
+        data-css-22=""
         data-css-9=""
       >
         <div
-          data-css-26=""
+          data-css-27=""
         >
           <div
             data-css-9=""
@@ -2227,18 +2267,18 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
               style="width: 100%;"
             >
               <div
-                data-css-27=""
-                data-css-32=""
-                data-css-31=""
+                data-css-28=""
+                data-css-34=""
+                data-css-33=""
               >
                 <div
                   data-css-9=""
-                  data-css-33=""
+                  data-css-35=""
                 />
               </div>
               <input
                 aria-required="false"
-                data-css-28=""
+                data-css-29=""
                 data-e2e="searchable-dropdown-search-input"
                 placeholder="Search"
                 type="text"
@@ -2246,33 +2286,33 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
               />
               <div
                 class="checkmark"
-                data-css-14=""
+                data-css-15=""
                 data-css-9=""
               >
                 <div
                   data-css-9=""
-                  data-css-16=""
+                  data-css-17=""
                 />
               </div>
             </div>
           </div>
           <div
-            data-css-22=""
+            data-css-23=""
             data-css-9=""
           >
             <div
-              data-css-26=""
+              data-css-27=""
             >
               <div
                 aria-selected="false"
-                data-css-34=""
+                data-css-36=""
                 data-css-5=""
-                data-css-35=""
+                data-css-37=""
                 id="downshift-0-item-0"
                 role="option"
               >
                 <div
-                  data-css-36=""
+                  data-css-38=""
                   data-css-9=""
                   data-css-3=""
                 >
@@ -2281,14 +2321,14 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
               </div>
               <div
                 aria-selected="false"
-                data-css-34=""
+                data-css-36=""
                 data-css-5=""
-                data-css-35=""
+                data-css-37=""
                 id="downshift-0-item-1"
                 role="option"
               >
                 <div
-                  data-css-36=""
+                  data-css-38=""
                   data-css-9=""
                   data-css-3=""
                 >
@@ -2297,14 +2337,14 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
               </div>
               <div
                 aria-selected="false"
-                data-css-34=""
+                data-css-36=""
                 data-css-5=""
-                data-css-35=""
+                data-css-37=""
                 id="downshift-0-item-2"
                 role="option"
               >
                 <div
-                  data-css-36=""
+                  data-css-38=""
                   data-css-9=""
                   data-css-3=""
                 >
@@ -2436,8 +2476,13 @@ exports[`SearchableDropdown should render with placement top 1`] = `
   padding-top: 10px !important;
 }
 
-.css-14,
-[data-css-14] {
+.css-11::-ms-clear,
+[data-css-11]::-ms-clear {
+  display: none;
+}
+
+.css-15,
+[data-css-15] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -2448,8 +2493,8 @@ exports[`SearchableDropdown should render with placement top 1`] = `
   -moz-transition: opacity .225s;
 }
 
-.css-15,
-[data-css-15] {
+.css-16,
+[data-css-16] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 10px;
@@ -2458,22 +2503,22 @@ exports[`SearchableDropdown should render with placement top 1`] = `
   color: #626262;
 }
 
-.css-16,
-[data-css-16] {
+.css-17,
+[data-css-17] {
   width: 16px;
   height: 16px;
   fill: lightGrey;
 }
 
-.css-17,
-[data-css-17] {
+.css-18,
+[data-css-18] {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.css-18,
-[data-css-18] {
+.css-19,
+[data-css-19] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -2496,15 +2541,15 @@ exports[`SearchableDropdown should render with placement top 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-19,
-[data-css-19] {
+.css-20,
+[data-css-20] {
   width: 10px;
   height: 10px;
   stroke: black;
 }
 
-.css-20,
-[data-css-20] {
+.css-21,
+[data-css-21] {
   align-items: stretch;
   border: none;
   box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
@@ -2524,8 +2569,8 @@ exports[`SearchableDropdown should render with placement top 1`] = `
   -webkit-flex-direction: column;
 }
 
-.css-21,
-[data-css-21] {
+.css-22,
+[data-css-22] {
   box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.125);
   background-color: #ffffff;
   max-height: 200px;
@@ -2534,30 +2579,30 @@ exports[`SearchableDropdown should render with placement top 1`] = `
   z-index: 9999;
 }
 
-.css-22,
-[data-css-22] {
+.css-23,
+[data-css-23] {
   border-top: 1px solid #ecf0f1;
   max-height: 151px;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
-.css-22::-webkit-scrollbar,
-[data-css-22]::-webkit-scrollbar {
+.css-23::-webkit-scrollbar,
+[data-css-23]::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 10px;
 }
 
-.css-22::-webkit-scrollbar-thumb,
-[data-css-22]::-webkit-scrollbar-thumb {
+.css-23::-webkit-scrollbar-thumb,
+[data-css-23]::-webkit-scrollbar-thumb {
   border-radius: 6px;
   border: 2px solid white;
   background-color: rgba(0,0,0,.3);
   box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
 
-.css-25,
-[data-css-25] {
+.css-26,
+[data-css-26] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -2580,13 +2625,13 @@ exports[`SearchableDropdown should render with placement top 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-26,
-[data-css-26] {
+.css-27,
+[data-css-27] {
   pointer-events: none;
 }
 
-.css-27,
-[data-css-27] {
+.css-28,
+[data-css-28] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -2605,38 +2650,43 @@ exports[`SearchableDropdown should render with placement top 1`] = `
   -moz-transition: padding-top .225s ease-out;
 }
 
-.css-27:required,
-[data-css-27]:required {
+.css-28:required,
+[data-css-28]:required {
   box-shadow: none;
 }
 
-.css-27:-webkit-autofill ~ .label,
-[data-css-27]:-webkit-autofill ~ .label {
+.css-28:-webkit-autofill ~ .label,
+[data-css-28]:-webkit-autofill ~ .label {
   opacity: 1 !important;
   top: 8px !important;
 }
 
-.css-27:-webkit-autofill ~ .checkmark,
-[data-css-27]:-webkit-autofill ~ .checkmark {
+.css-28:-webkit-autofill ~ .checkmark,
+[data-css-28]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
   top: 8px;
 }
 
-.css-27:-webkit-autofill,
-[data-css-27]:-webkit-autofill {
+.css-28:-webkit-autofill,
+[data-css-28]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
-.css-30,
-[data-css-30] {
+.css-28::-ms-clear,
+[data-css-28]::-ms-clear {
+  display: none;
+}
+
+.css-32,
+[data-css-32] {
   position: absolute;
   top: 0;
   left: 15px;
   bottom: 0;
 }
 
-.css-31,
-[data-css-31] {
+.css-33,
+[data-css-33] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -2659,15 +2709,15 @@ exports[`SearchableDropdown should render with placement top 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-32,
-[data-css-32] {
+.css-34,
+[data-css-34] {
   width: 16px;
   height: 16px;
   stroke: #626262;
 }
 
-.css-33,
-[data-css-33] {
+.css-35,
+[data-css-35] {
   padding: 10px 15px;
   min-height: 50px;
   border-bottom: 1px solid #ecf0f1;
@@ -2675,8 +2725,8 @@ exports[`SearchableDropdown should render with placement top 1`] = `
   background-color: white;
 }
 
-.css-34,
-[data-css-34] {
+.css-36,
+[data-css-36] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -2700,8 +2750,8 @@ exports[`SearchableDropdown should render with placement top 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-35,
-[data-css-35] {
+.css-37,
+[data-css-37] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -2710,14 +2760,14 @@ exports[`SearchableDropdown should render with placement top 1`] = `
   color: #333333;
 }
 
-.css-36,
-[data-css-36] {
+.css-38,
+[data-css-38] {
   position: absolute;
   bottom: 50px;
 }
 
-.css-37,
-[data-css-37] {
+.css-39,
+[data-css-39] {
   box-sizing: border-box;
   align-content: stretch;
   align-items: stretch;
@@ -2746,7 +2796,7 @@ exports[`SearchableDropdown should render with placement top 1`] = `
     aria-haspopup="listbox"
     aria-labelledby="downshift-1-label"
     aria-owns="downshift-1-menu"
-    data-css-20=""
+    data-css-21=""
     role="combobox"
   >
     <div
@@ -2782,7 +2832,7 @@ exports[`SearchableDropdown should render with placement top 1`] = `
           >
             <div
               data-css-9=""
-              data-css-15=""
+              data-css-16=""
             >
               some label
                
@@ -2790,25 +2840,25 @@ exports[`SearchableDropdown should render with placement top 1`] = `
           </div>
           <div
             class="checkmark"
-            data-css-14=""
+            data-css-15=""
             data-css-9=""
           >
             <div
               data-css-9=""
-              data-css-16=""
+              data-css-17=""
             />
           </div>
         </div>
         <div
-          data-css-17=""
+          data-css-18=""
           data-css-9=""
           data-css-8=""
         >
           <div
-            data-css-18=""
+            data-css-19=""
           >
             <div
-              data-css-19=""
+              data-css-20=""
               data-css-9=""
               data-testid="searchable-dropdown-arrow-up"
             />
@@ -2821,12 +2871,12 @@ exports[`SearchableDropdown should render with placement top 1`] = `
       data-css-9=""
     >
       <div
-        data-css-36=""
-        data-css-21=""
+        data-css-38=""
+        data-css-22=""
         data-css-9=""
       >
         <div
-          data-css-37=""
+          data-css-39=""
         >
           <div
             data-css-9=""
@@ -2838,18 +2888,18 @@ exports[`SearchableDropdown should render with placement top 1`] = `
               style="width: 100%;"
             >
               <div
-                data-css-26=""
-                data-css-31=""
-                data-css-30=""
+                data-css-27=""
+                data-css-33=""
+                data-css-32=""
               >
                 <div
                   data-css-9=""
-                  data-css-32=""
+                  data-css-34=""
                 />
               </div>
               <input
                 aria-required="false"
-                data-css-27=""
+                data-css-28=""
                 data-e2e="searchable-dropdown-search-input"
                 placeholder="Search"
                 type="text"
@@ -2857,33 +2907,33 @@ exports[`SearchableDropdown should render with placement top 1`] = `
               />
               <div
                 class="checkmark"
-                data-css-14=""
+                data-css-15=""
                 data-css-9=""
               >
                 <div
                   data-css-9=""
-                  data-css-16=""
+                  data-css-17=""
                 />
               </div>
             </div>
           </div>
           <div
-            data-css-22=""
+            data-css-23=""
             data-css-9=""
           >
             <div
-              data-css-25=""
+              data-css-26=""
             >
               <div
                 aria-selected="false"
-                data-css-33=""
+                data-css-35=""
                 data-css-5=""
-                data-css-34=""
+                data-css-36=""
                 id="downshift-1-item-0"
                 role="option"
               >
                 <div
-                  data-css-35=""
+                  data-css-37=""
                   data-css-9=""
                   data-css-3=""
                 >
@@ -2892,14 +2942,14 @@ exports[`SearchableDropdown should render with placement top 1`] = `
               </div>
               <div
                 aria-selected="false"
-                data-css-33=""
+                data-css-35=""
                 data-css-5=""
-                data-css-34=""
+                data-css-36=""
                 id="downshift-1-item-1"
                 role="option"
               >
                 <div
-                  data-css-35=""
+                  data-css-37=""
                   data-css-9=""
                   data-css-3=""
                 >
@@ -2908,14 +2958,14 @@ exports[`SearchableDropdown should render with placement top 1`] = `
               </div>
               <div
                 aria-selected="false"
-                data-css-33=""
+                data-css-35=""
                 data-css-5=""
-                data-css-34=""
+                data-css-36=""
                 id="downshift-1-item-2"
                 role="option"
               >
                 <div
-                  data-css-35=""
+                  data-css-37=""
                   data-css-9=""
                   data-css-3=""
                 >
