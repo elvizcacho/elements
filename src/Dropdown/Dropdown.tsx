@@ -53,7 +53,7 @@ export interface IDropdownItem {
   key?: string
 }
 
-interface IDropdownProps {
+export interface IDropdownProps {
   /** If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards */
   readonly placement?: 'top' | 'bottom'
   readonly items: ReadonlyArray<IDropdownItem>
