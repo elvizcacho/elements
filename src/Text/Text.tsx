@@ -65,6 +65,8 @@ export interface IText {
   readonly color?: string
 }
 
+export type ITextProps = IText & ITextStyles & IViewProps
+
 /**
  * Text will be used for everywhere a text appears.
  * The only exception is in molecules that already provide the
@@ -83,7 +85,7 @@ export interface IText {
  *  </Text>
  *  ```
  */
-const Text: FunctionComponent<IText & ITextStyles & IViewProps> = ({
+const Text: FunctionComponent<ITextProps> = ({
   color = 'text',
   block = true,
   children,
