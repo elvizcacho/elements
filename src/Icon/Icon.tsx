@@ -118,6 +118,8 @@ export const Icons = [
   'power-filled',
   'present-box',
   'present-box-filled',
+  'print',
+  'print-filled',
   'remove',
   'remove-filled',
   'remove-light',
@@ -196,7 +198,7 @@ const loadIcon = async (name: string, resourcePath: string) => {
   if (!resourcePath) {
     !hasWarnedBefore &&
       console.warn(
-        'In order to use icons, you need to wrap everything into a ResourceProvider',
+        'In order to use icons, you need to wrap everything into a ResourceProvider'
       )
     hasWarnedBefore = true
   }
@@ -217,7 +219,7 @@ const getIconName = (name: string) => {
   // Transforms from MyIconNameIcon to myIconName
   return (iconName.charAt(0).toLowerCase() + iconName.substr(1)).replace(
     'Icon',
-    '',
+    ''
   )
 }
 
