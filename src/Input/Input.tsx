@@ -17,9 +17,15 @@ import Absolute from '../Absolute'
 import { useCombinedRefs } from '../utils/hooks/useCombinedRefs'
 
 const styles = {
-  input: (showLabel: boolean, translated: boolean, paddingRight: boolean) =>
+  input: (
+    showLabel: boolean,
+    translated: boolean,
+    paddingRight: boolean,
+    disabled: boolean,
+  ) =>
     css(createTextStyles({ size: 'm' }), {
       boxSizing: 'border-box',
+      cursor: disabled && 'not-allowed',
       height: 50,
       width: '100%',
       padding: '0 15px',
@@ -216,6 +222,7 @@ const Input: FunctionComponent<IInputProps> = ({
   lines = 1,
   label,
   pattern,
+  disabled,
   badInput,
   customError,
   hasRightIcon,
@@ -306,9 +313,11 @@ const Input: FunctionComponent<IInputProps> = ({
               showLabel,
               !!icon,
               Boolean(isCheckmarkActive || hasRightIcon),
+              !!disabled,
             )}
             required={required}
             aria-required={required}
+            disabled={disabled}
             {...props}
             onChange={handleChange}
             pattern={pattern}
@@ -319,6 +328,7 @@ const Input: FunctionComponent<IInputProps> = ({
           ref={combinedRef}
           {...styles.area(lines, showLabel)}
           required={required}
+          disabled={disabled}
           {...props}
           onChange={handleChange}
         />

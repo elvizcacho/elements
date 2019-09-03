@@ -42,6 +42,13 @@ export default class FormStory extends React.Component {
                       placeholder="What's your first name?"
                       required
                     />
+                    <TextInput
+                      label="First- and last name"
+                      name="name"
+                      disabled
+                      placeholder="What's your first name?"
+                      required
+                    />
                     <PhoneInput
                       label="Phone"
                       name="firstname"

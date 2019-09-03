@@ -32,12 +32,14 @@ const Placement = {
 const INPUT_FIELD_HEIGHT = 50
 
 const styles = {
-  area: css({
-    width: '100%',
-    height: INPUT_FIELD_HEIGHT,
-    position: 'relative',
-    backgroundColor: ColorPalette.white,
-  }),
+  area: (disabled: boolean) =>
+    css({
+      width: '100%',
+      cursor: disabled && 'not-allowed',
+      height: INPUT_FIELD_HEIGHT,
+      position: 'relative',
+      backgroundColor: ColorPalette.white,
+    }),
   label: css({
     position: 'absolute',
     left: 15,
@@ -54,6 +56,8 @@ export interface IDropdownItem {
 }
 
 export interface IDropdownProps {
+  /** Disable the dropdown */
+  readonly disabled?: boolean
   /** If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards */
   readonly placement?: 'top' | 'bottom'
   readonly items: ReadonlyArray<IDropdownItem>
@@ -107,6 +111,7 @@ export default class Dropdown extends PureComponent<IDropdownProps> {
   render() {
     const {
       placement,
+      disabled = false,
       menuHeight,
       label,
       icon,
@@ -150,7 +155,10 @@ export default class Dropdown extends PureComponent<IDropdownProps> {
               })}
             >
               <Relative>
-                <View onClick={() => toggleMenu()} {...styles.area}>
+                <View
+                  onClick={() => !disabled && toggleMenu()}
+                  {...styles.area(disabled)}
+                >
                   <Input
                     disabled
                     icon={icon}
@@ -177,7 +185,7 @@ export default class Dropdown extends PureComponent<IDropdownProps> {
                     top={0}
                     right={0}
                     {...css({
-                      cursor: 'pointer',
+                      cursor: disabled ? 'not-allowed' : 'pointer',
                       height: '100%',
                       width: INPUT_FIELD_HEIGHT,
                       padding: '16px 16px 16px 20px',

@@ -112,7 +112,19 @@ class DropdownStory extends React.Component {
               placement="top"
               items={this.state.items}
             />
+            <Text strong {...styles.title}>
+              Disabled dropdown:
+            </Text>
 
+            <Dropdown
+              name="dropdown-controlled"
+              disabled
+              initialSelectedItem={this.state.controlledDropdown}
+              selectedItem={this.state.controlledDropdown}
+              menuHeight={200}
+              onSelect={item => this.setState({ controlledDropdown: item })}
+              items={this.state.items}
+            />
             <Text strong {...styles.title}>
               Controlled dropdown item:
             </Text>

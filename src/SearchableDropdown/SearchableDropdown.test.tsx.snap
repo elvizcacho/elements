@@ -355,6 +355,7 @@ exports[`SearchableDropdown should render with icon 1`] = `
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  cursor: not-allowed;
   height: 50px;
   width: 100%;
   padding: 0 15px;
@@ -973,6 +974,7 @@ exports[`SearchableDropdown should render with load more 1`] = `
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  cursor: not-allowed;
   height: 50px;
   width: 100%;
   padding: 0 15px;
@@ -1055,8 +1057,8 @@ exports[`SearchableDropdown should render with load more 1`] = `
         >
           <input
             aria-required="false"
-            data-css-35=""
             data-css-1=""
+            data-css-35=""
             disabled=""
             name=""
             placeholder="select something..."
@@ -1562,6 +1564,7 @@ exports[`SearchableDropdown should render with no results 1`] = `
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  cursor: not-allowed;
   height: 50px;
   width: 100%;
   padding: 0 15px;
@@ -1633,8 +1636,8 @@ exports[`SearchableDropdown should render with no results 1`] = `
         >
           <input
             aria-required="false"
-            data-css-31=""
             data-css-1=""
+            data-css-31=""
             disabled=""
             name=""
             placeholder="select something..."
@@ -1847,6 +1850,7 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  cursor: not-allowed;
   height: 50px;
   width: 100%;
   padding: 0 15px;
@@ -2194,8 +2198,8 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
         >
           <input
             aria-required="false"
-            data-css-11=""
             data-css-1=""
+            data-css-11=""
             disabled=""
             name="searchable-dropdown-form-name"
             placeholder="select something..."
@@ -2443,6 +2447,7 @@ exports[`SearchableDropdown should render with placement top 1`] = `
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  cursor: not-allowed;
   height: 50px;
   width: 100%;
   padding: 0 15px;
@@ -2815,8 +2820,8 @@ exports[`SearchableDropdown should render with placement top 1`] = `
         >
           <input
             aria-required="false"
-            data-css-11=""
             data-css-1=""
+            data-css-11=""
             disabled=""
             name=""
             placeholder="select something..."

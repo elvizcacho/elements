@@ -3,14 +3,6 @@
 exports[`Dropdown should render with placement bottom (default) 1`] = `
 .css-0,
 [data-css-0] {
-  width: 100%;
-  height: 50px;
-  position: relative;
-  background-color: #ffffff;
-}
-
-.css-1,
-[data-css-1] {
   position: absolute;
   left: 15px;
   font-size: 10px;
@@ -20,13 +12,13 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   -moz-transition: all .225s ease-out;
 }
 
-.css-2,
-[data-css-2] {
+.css-1,
+[data-css-1] {
   position: relative;
 }
 
-.css-3,
-[data-css-3] {
+.css-2,
+[data-css-2] {
   align-items: stretch;
   border: none;
   box-shadow: ;
@@ -44,6 +36,14 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
+}
+
+.css-3,
+[data-css-3] {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  background-color: #ffffff;
 }
 
 .css-4,
@@ -90,6 +90,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  cursor: not-allowed;
   height: 50px;
   width: 100%;
   padding: 0 15px;
@@ -176,20 +177,20 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   aria-haspopup="listbox"
   aria-labelledby="downshift-0-label"
   aria-owns={null}
-  data-css-3=""
+  data-css-2=""
   role="combobox"
 >
   <div
-    data-css-2=""
+    data-css-1=""
     data-css-6=""
   >
     <div
       data-css-7=""
-      data-css-0=""
+      data-css-3=""
       onClick={[Function]}
     >
       <div
-        data-css-2=""
+        data-css-1=""
         data-css-6=""
         style={
           Object {
@@ -212,7 +213,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
         <div
           className="label"
           data-css-6=""
-          data-css-1=""
+          data-css-0=""
           style={
             Object {
               "opacity": 1,
@@ -264,7 +265,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
     </div>
   </div>
   <div
-    data-css-2=""
+    data-css-1=""
     data-css-6=""
   />
 </div>
@@ -273,14 +274,6 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
 exports[`Dropdown should render with placement top 1`] = `
 .css-0,
 [data-css-0] {
-  width: 100%;
-  height: 50px;
-  position: relative;
-  background-color: #ffffff;
-}
-
-.css-1,
-[data-css-1] {
   position: absolute;
   left: 15px;
   font-size: 10px;
@@ -290,13 +283,13 @@ exports[`Dropdown should render with placement top 1`] = `
   -moz-transition: all .225s ease-out;
 }
 
-.css-2,
-[data-css-2] {
+.css-1,
+[data-css-1] {
   position: relative;
 }
 
-.css-3,
-[data-css-3] {
+.css-2,
+[data-css-2] {
   align-items: stretch;
   border: none;
   box-shadow: ;
@@ -314,6 +307,14 @@ exports[`Dropdown should render with placement top 1`] = `
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
+}
+
+.css-3,
+[data-css-3] {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  background-color: #ffffff;
 }
 
 .css-4,
@@ -360,6 +361,7 @@ exports[`Dropdown should render with placement top 1`] = `
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  cursor: not-allowed;
   height: 50px;
   width: 100%;
   padding: 0 15px;
@@ -446,20 +448,20 @@ exports[`Dropdown should render with placement top 1`] = `
   aria-haspopup="listbox"
   aria-labelledby="downshift-1-label"
   aria-owns={null}
-  data-css-3=""
+  data-css-2=""
   role="combobox"
 >
   <div
-    data-css-2=""
+    data-css-1=""
     data-css-6=""
   >
     <div
       data-css-7=""
-      data-css-0=""
+      data-css-3=""
       onClick={[Function]}
     >
       <div
-        data-css-2=""
+        data-css-1=""
         data-css-6=""
         style={
           Object {
@@ -482,7 +484,7 @@ exports[`Dropdown should render with placement top 1`] = `
         <div
           className="label"
           data-css-6=""
-          data-css-1=""
+          data-css-0=""
           style={
             Object {
               "opacity": 1,
@@ -534,7 +536,7 @@ exports[`Dropdown should render with placement top 1`] = `
     </div>
   </div>
   <div
-    data-css-2=""
+    data-css-1=""
     data-css-6=""
   />
 </div>
