@@ -122,6 +122,7 @@ export default class Dropdown extends PureComponent<IDropdownProps> {
       placeholder,
       onSelect,
       name,
+      ...props
     } = this.props
     const { showScrollArrow } = this.state
 
@@ -179,6 +180,7 @@ export default class Dropdown extends PureComponent<IDropdownProps> {
                       backgroundColor: 'white',
                       pointerEvents: 'none',
                     })}
+                    {...props}
                   />
 
                   <Absolute

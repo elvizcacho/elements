@@ -7,6 +7,7 @@ You can change it in "src/Dropdown/Dropdown.tsx" and run build:docs to update th
 ## Usage
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
+|disabled|boolean|Disable the dropdown
 |placement|"top", "bottom"|If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards
 |items **(required)**||
 |initialSelectedItem|IDropdownItem|Initially selected item - this value is uncontrolled
