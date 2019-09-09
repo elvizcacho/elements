@@ -2,7 +2,7 @@
 
 <img alt="npm version" src="https://badge.fury.io/js/%40allthings%2Felements.svg"> [![Build Status](https://travis-ci.org/allthings/elements.svg?branch=master)](https://travis-ci.org/allthings/elements) [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovateapp.com/)
 
-Elements is a set of **carefully crafted, high quality React UI components,** that [Allthings](https://www.allthings.me) uses to build their mobile app.
+Elements is a set of **carefully crafted, composable React UI components,** that [Allthings](https://www.allthings.me) uses to build their mobile app.
 
 ## Content
 
