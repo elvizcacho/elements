@@ -27,7 +27,8 @@
     "terser": "3.14",
     "lodash": ">=4.17.2",
     "set-value": ">=3.0.1",
-    "mixin-deep": ">=2.0.1"
+    "mixin-deep": ">=2.0.1",
+    "eslint-utils": ">=1.4.1"
   },
   "peerDependencies": {
     "react": "^16.3",
