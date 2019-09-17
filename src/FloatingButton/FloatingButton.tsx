@@ -1,4 +1,4 @@
-import React, { FunctionComponent, HTMLAttributes } from 'react'
+import * as React from 'react'
 import Absolute from '../Absolute'
 import Theme from '../Theme'
 import { css } from 'glamor'
@@ -22,7 +22,7 @@ const buttonStyle = css({
   },
 })
 
-interface IFloatingButtonProps extends HTMLAttributes<HTMLButtonElement> {
+interface IFloatingButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   color?: string
   type?: 'submit' | 'button' | 'reset'
   disabled?: boolean
@@ -31,7 +31,7 @@ interface IFloatingButtonProps extends HTMLAttributes<HTMLButtonElement> {
   disabledColor?: string
 }
 
-const FloatingButton: FunctionComponent<IFloatingButtonProps> = ({
+const FloatingButton: React.FC<IFloatingButtonProps> = ({
   color = 'primary',
   disabled,
   disabledColor = 'lightGrey',

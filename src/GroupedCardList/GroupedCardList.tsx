@@ -1,9 +1,9 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import CardList from '../CardList'
 import View, { IViewProps } from '../View'
 import GroupTitle from '../GroupTitle'
 
-const GroupedCardList: FunctionComponent<IGroupedCardListProps> = ({
+const GroupedCardList: React.FC<IGroupedCardListProps> = ({
   title,
   children,
   ...rest

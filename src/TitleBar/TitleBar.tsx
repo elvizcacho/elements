@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import { css } from 'glamor'
 import View, { IViewProps } from '../View'
 import Theme from '../Theme'
@@ -35,7 +35,7 @@ interface ITitleBarProps extends IViewProps {
  * </ThemeProvider>
  * ```
  */
-class TitleBar extends Component<ITitleBarProps> {
+class TitleBar extends React.Component<ITitleBarProps> {
   render() {
     const { children, color = 'primary', ...props } = this.props
     return (

@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import Typeahead from './Typeahead'
 import { shallow, mount } from 'enzyme'
 // TODO: we should having to test within those instances but Enzyme unmount()

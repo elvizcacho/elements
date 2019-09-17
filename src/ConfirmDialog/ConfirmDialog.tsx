@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import { css } from 'glamor'
 import CardButton from '../CardButton'
 import CardFooter from '../CardFooter'
@@ -40,7 +40,7 @@ export interface IConfirmDialogProps {
   readonly onSuccess: () => void
 }
 
-class ConfirmDialog extends Component<IConfirmDialogProps> {
+class ConfirmDialog extends React.Component<IConfirmDialogProps> {
   wrapperRef = React.createRef<HTMLDivElement>()
 
   componentDidMount() {

@@ -1,6 +1,5 @@
-import React, { Component, ChangeEvent } from 'react'
+import * as React from 'react'
 import { css } from 'glamor'
-
 import Input, { IInputProps } from '../Input'
 import View from '../View'
 import Absolute from '../Absolute'
@@ -137,7 +136,7 @@ interface IState {
 /**
  * This component offers to select a time in a `hh:mm` (24hrs) format.
  */
-class TimeInput extends Component<ITimeInputProps, IState> {
+class TimeInput extends React.Component<ITimeInputProps, IState> {
   static defaultProps = {
     hourStep: 1,
     minuteStep: 1,
@@ -211,7 +210,7 @@ class TimeInput extends Component<ITimeInputProps, IState> {
     }
   }
 
-  handleSelectHour = (e: ChangeEvent<HTMLSelectElement>) => {
+  handleSelectHour = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = parseFloat(e.target.value)
     const selectedHour = value >= 0 ? value : undefined
 
@@ -224,7 +223,7 @@ class TimeInput extends Component<ITimeInputProps, IState> {
     this.hourRef.current && this.hourRef.current.blur()
   }
 
-  handleSelectMinute = (e: ChangeEvent<HTMLSelectElement>) => {
+  handleSelectMinute = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = parseFloat(e.target.value)
     const selectedMinute = value >= 0 ? value : undefined
     this.setState({ selectedMinute }, this.setHiddenFormValue)

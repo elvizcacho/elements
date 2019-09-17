@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { renderToString } from 'react-dom/server'
 import { hydrate } from 'react-dom'
 import renderer, { ReactTestRenderer } from 'react-test-renderer'

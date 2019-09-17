@@ -1,6 +1,5 @@
-import React from 'react'
+import * as React from 'react'
 import { render, fireEvent } from '@testing-library/react'
-
 import TimeInput, { getTimeRange } from './TimeInput'
 import ResourceProvider from '../ResourceProvider'
 

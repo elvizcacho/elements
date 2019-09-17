@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import json2mq from 'json2mq'
 import { css } from 'glamor'
 import Media from 'react-media'

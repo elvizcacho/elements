@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import { css } from 'glamor'
 import View, { IViewProps } from '../View'
 import { createMQ } from '../Responsive'
@@ -60,7 +60,7 @@ interface IHeroProps extends IViewProps {
  * </ThemeProvider>
  * ```
  */
-const Hero: FunctionComponent<IHeroProps> = ({
+const Hero: React.FC<IHeroProps> = ({
   img,
   text,
   children,

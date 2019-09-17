@@ -1,4 +1,4 @@
-import React, { Component, KeyboardEvent } from 'react'
+import * as React from 'react'
 import { css } from 'glamor'
 import Icon from '../Icon'
 import Text from '../Text'
@@ -44,7 +44,7 @@ interface IState {}
  * </ThemeProvider>
  * ```
  **/
-class Collapsible extends Component<ICollapsibleProps, IState> {
+class Collapsible extends React.Component<ICollapsibleProps, IState> {
   static defaultProps = {
     initiallyCollapsed: true,
     hasBottomBorder: false,
@@ -101,7 +101,8 @@ class Collapsible extends Component<ICollapsibleProps, IState> {
     }
   }
 
-  onKeyPress = (e: KeyboardEvent) => e.key === 'Enter' && this.toggleCollapse()
+  onKeyPress = (e: React.KeyboardEvent) =>
+    e.key === 'Enter' && this.toggleCollapse()
 
   render() {
     const { title, children, hasBottomBorder, tabIndex } = this.props

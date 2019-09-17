@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import View, { IViewProps } from '../View'
 import { css } from 'glamor'
 import { color as col, lightness } from 'kewler'
@@ -31,7 +31,7 @@ interface ICardButtonProps extends IViewProps {
  * CardButton can to enable users to do actions directly related to content on
  * on cards. It should always go into a [CardFooter](CardFooter.md).
  */
-const CardButton: FunctionComponent<ICardButtonProps> = ({
+const CardButton: React.FC<ICardButtonProps> = ({
   backgroundColor = '#ffffff',
   ...props
 }) => (

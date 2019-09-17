@@ -1,4 +1,4 @@
-import React, { TouchEvent } from 'react'
+import * as React from 'react'
 import View from '../View'
 import { css } from 'glamor'
 import { color } from '../utils/propTypes/color'
@@ -76,7 +76,7 @@ class SimpleLayout extends React.PureComponent<ISimpleLayout, IState> {
     }
   }
 
-  handleTouchMove = (e: TouchEvent<HTMLDivElement>) => {
+  handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     if (this.props.onPullDown && this.scrollTop === 0) {
       let y = 0
       const touches = e.touches && e.touches.length ? e.touches : [e]

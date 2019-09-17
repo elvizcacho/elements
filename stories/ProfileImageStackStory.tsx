@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import {
   ThemeProvider,
   ResourceProvider,
@@ -6,7 +6,6 @@ import {
   Card,
   ProfileImageStack,
 } from '../src/'
-
 import { css } from 'glamor'
 
 export default () => (

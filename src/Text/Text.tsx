@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import { css } from 'glamor'
 import View, { IViewProps } from '../View'
 import Theme from '../Theme'
@@ -85,7 +85,7 @@ export type ITextProps = IText & ITextStyles & IViewProps
  *  </Text>
  *  ```
  */
-const Text: FunctionComponent<ITextProps> = ({
+const Text: React.FC<ITextProps> = ({
   color = 'text',
   block = true,
   children,

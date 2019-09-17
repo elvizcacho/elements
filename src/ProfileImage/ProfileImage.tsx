@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import Image from '../Image'
 import View, { IViewProps } from '../View'
 import { css } from 'glamor'
@@ -46,10 +46,7 @@ export type ProfileImageSizeType = 'xs' | 's' | 'm' | 'l' | number
 export const resolveSize = (size: ProfileImageSizeType) =>
   typeof size === 'number' ? size : sizeMap[size]
 
-const DefaultProfileImage: FunctionComponent<IDimensions> = ({
-  width,
-  height,
-}) => {
+const DefaultProfileImage: React.FC<IDimensions> = ({ width, height }) => {
   return (
     <svg
       viewBox="0 0 500 500"
@@ -91,7 +88,7 @@ interface IProfileImageProps {
  * </Card>
  * ```
  */
-const ProfileImage: FunctionComponent<IProfileImageProps & IViewProps> = ({
+const ProfileImage: React.FC<IProfileImageProps & IViewProps> = ({
   size = 'm',
   showBorder = true,
   image,

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import { css } from 'glamor'
 import View from '../View'
 import Text from '../Text'
@@ -37,7 +37,7 @@ interface IReadMoreProps {
 </Card>
  *  ```
  **/
-class ReadMore extends Component<IReadMoreProps> {
+class ReadMore extends React.Component<IReadMoreProps> {
   static defaultProps = {
     initiallyCollapsed: true,
     readMoreLabel: 'Read more...',

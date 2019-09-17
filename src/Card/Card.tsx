@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import View, { IViewProps } from '../View'
 import { css } from 'glamor'
 
@@ -25,8 +25,6 @@ const style = css({
  * </Card>
  * ```
  */
-const Card: FunctionComponent<IViewProps> = props => (
-  <View {...style} {...props} />
-)
+const Card: React.FC<IViewProps> = props => <View {...style} {...props} />
 
 export default Card

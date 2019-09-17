@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext } from 'react'
+import * as React from 'react'
 import View from '../View'
 import { css } from 'glamor'
 import Text from '../Text'
@@ -11,7 +11,7 @@ interface ISwitchListItem {
   readonly onClick: (optionKey: string) => void
 }
 
-const SwitchListItem: FunctionComponent<ISwitchListItem> = ({
+const SwitchListItem: React.FC<ISwitchListItem> = ({
   optionKey,
   value,
   isActive,
@@ -19,7 +19,7 @@ const SwitchListItem: FunctionComponent<ISwitchListItem> = ({
   children,
   ...props
 }) => {
-  const theme = useContext(ThemeContext)
+  const theme = React.useContext(ThemeContext)
   const activeStyle = isActive && {
     backgroundColor: theme.primary,
   }

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import { css } from 'glamor'
 import { ColorPalette } from '@allthings/colors'
 import View, { IViewProps } from '../View'
@@ -24,7 +24,7 @@ export interface IListItemProps extends IViewProps {
   readonly padded?: boolean
 }
 
-const ListItem: FunctionComponent<IListItemProps> = ({
+const ListItem: React.FC<IListItemProps> = ({
   backgroundColor = 'white',
   hideLine = false,
   padded = true,

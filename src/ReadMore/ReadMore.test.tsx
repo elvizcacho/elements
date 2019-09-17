@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import ReadMore from './ReadMore'
 import Text from '../Text'
 import { render } from '@testing-library/react'

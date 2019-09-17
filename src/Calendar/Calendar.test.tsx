@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import Calendar from './Calendar'
 import ThemeProvider from '../ThemeProvider'
 import ResourceProvider from '../ResourceProvider'

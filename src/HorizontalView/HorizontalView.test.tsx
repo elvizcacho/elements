@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import HorizontalView from './HorizontalView'
 import Text from '../Text'
 import { shallow } from 'enzyme'

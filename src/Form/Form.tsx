@@ -1,8 +1,8 @@
-import React, { FormEvent, FunctionComponent } from 'react'
+import * as React from 'react'
 
 interface IFormProps {
   method?: 'POST' | 'GET'
-  onSubmit: (e: FormEvent, data: { [key: string]: string }) => void
+  onSubmit: (e: React.FormEvent, data: { [key: string]: string }) => void
 }
 
 /**
@@ -112,12 +112,12 @@ Also see the <a href="/molecules/TextInput/">TextInput</a> for allowed props.
 </ResourceProvider>
 ```
  */
-const Form: FunctionComponent<IFormProps> = ({
+const Form: React.FC<IFormProps> = ({
   children,
   onSubmit,
   method = 'POST',
 }) => {
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     const { target } = e as any
     const data = {} as { [key: string]: string }

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import Circle from '../Circle'
 import { Motion, spring } from 'react-motion'
 import Icon from '../Icon'
@@ -11,7 +11,7 @@ interface ICheckmarkProps {
   readonly color: color
 }
 
-const Checkmark: FunctionComponent<ICheckmarkProps & IViewProps> = ({
+const Checkmark: React.FC<ICheckmarkProps & IViewProps> = ({
   checked = false,
   disabled,
   color,

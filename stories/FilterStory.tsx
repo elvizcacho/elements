@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import {
   Inset,
   Input,
@@ -13,7 +13,6 @@ import {
   Button,
   Form,
 } from '../src/'
-
 import { ColorPalette } from '@allthings/colors'
 
 export default class FilterStory extends React.Component {

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import { css, merge } from 'glamor'
 import Icon from '../Icon'
 import View, { flexType } from '../View'
@@ -15,7 +15,7 @@ interface ChevronRightListItem extends IListItemProps {
   readonly innerStyle?: any
 }
 
-const ChevronRightListItem: FunctionComponent<ChevronRightListItem> = ({
+const ChevronRightListItem: React.FC<ChevronRightListItem> = ({
   innerStyle,
   children,
   flex = 'grow',

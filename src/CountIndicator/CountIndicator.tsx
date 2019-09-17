@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import Circle from '../Circle'
 import Text from '../Text'
 import Absolute, { IAbsoluteProps } from '../Absolute'
@@ -17,7 +17,7 @@ import Theme from '../Theme'
  * </ThemeProvider>
  * ```
  **/
-const CountIndicator: FunctionComponent<ICountIndicatorProps> = ({
+const CountIndicator: React.FC<ICountIndicatorProps> = ({
   count,
   color = 'warn',
   ...props

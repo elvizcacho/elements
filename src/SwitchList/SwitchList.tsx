@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import View from '../View'
 import { css } from 'glamor'
 import { ColorPalette } from '@allthings/colors'
@@ -60,7 +60,10 @@ interface IState {
   active?: string
 }
 
-export default class SwitchList extends Component<ISwitchListProps, IState> {
+export default class SwitchList extends React.Component<
+  ISwitchListProps,
+  IState
+> {
   state = {
     active: this.props.initialActive,
   }

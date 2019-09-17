@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useState } from 'react'
+import * as React from 'react'
 
 export const RESOURCE_PATH = 'https://static.allthings.me'
 
@@ -22,14 +22,14 @@ export interface IResourceProviderProps {
  *
  * **Example**: If you want all you buttons to be red, instead of writing <Button color="red" /> all the time, you might want to set the "primary" color of your theme to red.
  **/
-const ResourceProvider: FunctionComponent<IResourceProviderProps> = ({
+const ResourceProvider: React.FC<IResourceProviderProps> = ({
   children,
   resourcePath = RESOURCE_PATH,
 }) => {
   // this is to prevent unintentional re-renders in consumers
   // see https://reactjs.org/docs/context.html#caveats
-  const [value, setValue] = useState({ resourcePath })
-  useEffect(() => {
+  const [value, setValue] = React.useState({ resourcePath })
+  React.useEffect(() => {
     setValue({ resourcePath })
   }, [resourcePath])
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import Theme from '../Theme'
 import ListItem from '../ListItem'
 import Input, { IInputProps } from '../Input'
@@ -11,7 +11,7 @@ import Input, { IInputProps } from '../Input'
  * <TextInput name="inquiry" lines={5} placeholder="Your question" maxLength={255} minLength={50} />
  * ```
  */
-class TextInput extends Component<
+class TextInput extends React.Component<
   IInputProps & { backgroundColor?: string } & React.HTMLAttributes<HTMLElement>
 > {
   render() {

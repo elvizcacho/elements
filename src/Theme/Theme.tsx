@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import { ThemeConsumer, ITheme, defaultTheme } from '../ThemeProvider'
 
 type Colorizor = (color: string) => string
@@ -18,7 +18,7 @@ interface IThemeProps {
   readonly children: ThemeChildrenType
 }
 
-const Theme: FunctionComponent<IThemeProps> = ({ children }) => (
+const Theme: React.FC<IThemeProps> = ({ children }) => (
   <ThemeConsumer>
     {theme =>
       children({

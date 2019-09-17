@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import ButtonGroup from './ButtonGroup'
 import Button from '../Button'
 import renderer from 'react-test-renderer'

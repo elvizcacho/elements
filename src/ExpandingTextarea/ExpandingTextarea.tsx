@@ -1,9 +1,4 @@
-import React, {
-  AllHTMLAttributes,
-  ChangeEvent,
-  Component,
-  createRef,
-} from 'react'
+import * as React from 'react'
 import { css } from 'glamor'
 import View from '../View'
 import { createTextStyles } from '../Text'
@@ -26,13 +21,13 @@ const styles = {
 }
 
 interface IExpandingTextareaProps
-  extends AllHTMLAttributes<HTMLTextAreaElement> {
+  extends React.AllHTMLAttributes<HTMLTextAreaElement> {
   readonly autoFocus?: boolean
   readonly placeholder?: string
   readonly name?: string
   readonly onHeightChange?: (height: number) => void
   readonly containerStyle?: any
-  readonly onChange?: (e: ChangeEvent<HTMLTextAreaElement>) => void
+  readonly onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
   readonly value?: string
   readonly onFocus?: () => void
 }
@@ -48,10 +43,10 @@ interface IExpandingTextareaProps
  * />
  * ```
  */
-export default class ExpandingTextarea extends Component<
+export default class ExpandingTextarea extends React.Component<
   IExpandingTextareaProps
 > {
-  private textarea = createRef<HTMLTextAreaElement>()
+  private textarea = React.createRef<HTMLTextAreaElement>()
 
   componentDidMount() {
     this.adjustTextareaHeight()
@@ -63,7 +58,7 @@ export default class ExpandingTextarea extends Component<
     }
   }
 
-  handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+  handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     this.props.onChange && this.props.onChange(e)
     this.adjustTextareaHeight()
   }

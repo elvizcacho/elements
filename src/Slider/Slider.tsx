@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ChangeEvent } from 'react'
+import * as React from 'react'
 import View, { IViewProps } from '../View'
 import { css } from 'glamor'
 
@@ -119,10 +119,10 @@ interface ISliderProps extends IViewProps {
   /** Current value to show **/
   readonly value?: number
   /** Callback when the users changes the value **/
-  readonly onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+  readonly onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const Slider: FunctionComponent<ISliderProps> = ({
+const Slider: React.FC<ISliderProps> = ({
   min,
   max,
   step = 0.1,

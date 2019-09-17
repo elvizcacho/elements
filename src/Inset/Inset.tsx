@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import View, { IViewProps } from '../View'
 import { css } from 'glamor'
 
@@ -15,7 +15,7 @@ interface IInsetProps extends IViewProps {
   readonly vertical?: boolean
 }
 
-const Inset: FunctionComponent<IViewProps & IInsetProps> = ({
+const Inset: React.FC<IViewProps & IInsetProps> = ({
   horizontal = true,
   vertical,
   ...props

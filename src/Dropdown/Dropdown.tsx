@@ -1,4 +1,4 @@
-import React, { PureComponent, ReactNode, createRef, MouseEvent } from 'react'
+import * as React from 'react'
 import Downshift from 'downshift'
 import { css, keyframes } from 'glamor'
 import Relative from '../Relative'
@@ -50,7 +50,7 @@ const styles = {
 }
 
 export interface IDropdownItem {
-  label: ReactNode
+  label: React.ReactNode
   value: any
   key?: string
 }
@@ -83,12 +83,12 @@ export interface IDropdownProps {
   readonly name?: string
 }
 
-export default class Dropdown extends PureComponent<IDropdownProps> {
+export default class Dropdown extends React.PureComponent<IDropdownProps> {
   state = {
     showScrollArrow: false,
   }
 
-  listRef = createRef<HTMLDivElement>()
+  listRef = React.createRef<HTMLDivElement>()
 
   handleListScroll = (e: any) => {
     if (this.state.showScrollArrow && e.target.scrollTop > 0) {
@@ -194,7 +194,7 @@ export default class Dropdown extends PureComponent<IDropdownProps> {
                     })}
                     onClick={
                       showClearIcon
-                        ? (e: MouseEvent<HTMLElement>) => {
+                        ? (e: React.MouseEvent<HTMLElement>) => {
                             e.stopPropagation()
                             clearSelection()
                           }

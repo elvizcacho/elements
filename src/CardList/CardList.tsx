@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import List from '../List'
 import Card from '../Card'
 import { IViewProps } from '../View'
@@ -24,7 +24,7 @@ import { IViewProps } from '../View'
  *   </CardList>
  * </ThemeProvider>
  **/
-const CardList: FunctionComponent<IViewProps> = props => (
+const CardList: React.FC<IViewProps> = props => (
   <Card>
     <List {...props} />
   </Card>

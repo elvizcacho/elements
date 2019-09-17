@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import View, { IViewProps } from '../View'
 import { css } from 'glamor'
 import Theme from '../Theme'
@@ -54,7 +54,7 @@ export interface ICircleProps extends IViewProps {
  * </ThemeProvider>
  * ```
  **/
-const Circle: FunctionComponent<ICircleProps> = ({
+const Circle: React.FC<ICircleProps> = ({
   fill = true,
   color = 'primary',
   outline = false,

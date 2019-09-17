@@ -1,4 +1,4 @@
-import React, { HTMLProps, MouseEvent, FunctionComponent } from 'react'
+import * as React from 'react'
 import { css } from 'glamor'
 import { createTextStyles } from '../Text'
 import { color } from '../utils/propTypes/color'
@@ -77,10 +77,10 @@ function styles(
   })
 }
 
-interface IButtonProps extends HTMLProps<HTMLButtonElement> {
+interface IButtonProps extends React.HTMLProps<HTMLButtonElement> {
   /** If the button is used for a secondary option */
   readonly secondary?: boolean
-  readonly onClick?: (event: MouseEvent) => void
+  readonly onClick?: (event: React.MouseEvent) => void
   /** Type of the button (deprecated) */
   readonly type?: 'reset' | 'button' | 'submit'
   readonly color?: color
@@ -118,7 +118,7 @@ interface IButtonProps extends HTMLProps<HTMLButtonElement> {
  *  </Button>
  * ```
  */
-const Button: FunctionComponent<IButtonProps> = ({
+const Button: React.FC<IButtonProps> = ({
   children,
   type = 'button',
   disabled = false,

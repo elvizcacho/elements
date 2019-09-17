@@ -1,14 +1,14 @@
-import React, { Component, ReactNode } from 'react'
+import * as React from 'react'
 import View, { IViewProps } from '../View'
 import { css } from 'glamor'
 
 interface IHorizontalViewProps {
-  children: ReactNode[]
+  children: React.ReactNode[]
 }
 interface IState {
-  children?: ReactNode[]
+  children?: React.ReactNode[]
   currentChild: number
-  nextChildren?: ReactNode[]
+  nextChildren?: React.ReactNode[]
   waitForTransitionEnd: boolean
 }
 
@@ -55,7 +55,7 @@ interface IState {
  * </HorizontalView>
  * ```
  **/
-class HorizontalView extends Component<
+class HorizontalView extends React.Component<
   IViewProps & IHorizontalViewProps,
   IState
 > {
@@ -121,7 +121,7 @@ class HorizontalView extends Component<
           onTransitionEnd={this.handleTransitionEnd}
           {...props}
         >
-          {React.Children.map(children, (child: ReactNode, i: number) => (
+          {React.Children.map(children, (child: React.ReactNode, i: number) => (
             <View
               // eslint-disable-next-line
               key={i}

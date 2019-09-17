@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react'
+import * as React from 'react'
 import { css } from 'glamor'
 import Text from '../Text'
 import ProfileImage from '../ProfileImage'
@@ -80,9 +80,9 @@ interface IChatBubbleProps {
   /* Profile image of person who wrote the message */
   readonly userImage: string
   /* Date when the message was send */
-  readonly date: ReactNode
+  readonly date: React.ReactNode
   /* Text of the message */
-  readonly text: ReactNode
+  readonly text: React.ReactNode
   /* Background color of chat message */
   readonly background: string
   /* Position of profile image and name */
@@ -112,7 +112,7 @@ interface IChatBubbleProps {
  * </ThemeProvider>
  * ```
  */
-const ChatBubble: FunctionComponent<IChatBubbleProps> = ({
+const ChatBubble: React.FC<IChatBubbleProps> = ({
   userName,
   userImage,
   date,

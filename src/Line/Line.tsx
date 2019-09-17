@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import View from '../View'
 import { css } from 'glamor'
 import { colorCode } from '../utils/propTypes/color'

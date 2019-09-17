@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from 'react'
+import * as React from 'react'
 import Text, { TextSizeType } from '../Text'
 import ListItem from '../ListItem'
 import Theme from '../Theme'
@@ -9,7 +9,7 @@ export interface IFormCheckboxProps extends Omit<ICheckboxProps, 'label'> {
   /** True to make it checked */
   checked?: boolean
   /** Label of Checkbox */
-  label?: string | ReactNode
+  label?: string | React.ReactNode
   /** Text size of the label */
   labelSize?: TextSizeType
   name: string
@@ -27,7 +27,7 @@ export interface IFormCheckboxProps extends Omit<ICheckboxProps, 'label'> {
  * </View>
  * ```
  */
-class FormCheckbox extends Component<IFormCheckboxProps> {
+class FormCheckbox extends React.Component<IFormCheckboxProps> {
   static defaultProps = {
     labelSize: 'l',
     onChange: () => {},

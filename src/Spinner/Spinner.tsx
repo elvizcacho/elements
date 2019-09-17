@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import { css, keyframes } from 'glamor'
 import { isIE11 } from '../utils/viewport'
 import Theme from '../Theme'
@@ -38,10 +38,7 @@ const styles = (color: string, size: number) => ({
  * <Spinner />
  * ```
  */
-const Spinner: FunctionComponent<ISpinnerProps> = ({
-  color = 'primary',
-  size = 30,
-}) => (
+const Spinner: React.FC<ISpinnerProps> = ({ color = 'primary', size = 30 }) => (
   <Theme>
     {({ colorize }) =>
       typeof window !== 'undefined' && isIE11(window.navigator.userAgent) ? (

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import { css } from 'glamor'
 import View, { IViewProps } from '../View'
 
@@ -13,7 +13,7 @@ const style = css({
   },
 })
 
-const CardFooter: FunctionComponent<IViewProps> = props => (
+const CardFooter: React.FC<IViewProps> = props => (
   <View
     direction="row"
     alignV="center"

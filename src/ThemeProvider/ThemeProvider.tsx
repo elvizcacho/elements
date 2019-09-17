@@ -1,4 +1,4 @@
-import React, { FunctionComponent, createContext } from 'react'
+import * as React from 'react'
 import { ColorPalette } from '@allthings/colors'
 
 export const defaultTheme: ITheme = {
@@ -32,7 +32,7 @@ export interface ITheme {
  *
  * **Example**: If you want all you buttons to be red, instead of writing <Button color="red" /> all the time, you might want to set the "primary" color of your theme to red.
  **/
-const ThemeProvider: FunctionComponent<{ theme?: Partial<ITheme> }> = ({
+const ThemeProvider: React.FC<{ theme?: Partial<ITheme> }> = ({
   children,
   theme = defaultTheme,
 }) => (
@@ -46,5 +46,5 @@ const ThemeProvider: FunctionComponent<{ theme?: Partial<ITheme> }> = ({
 )
 
 export default ThemeProvider
-export const ThemeContext = createContext<ITheme>(defaultTheme)
+export const ThemeContext = React.createContext<ITheme>(defaultTheme)
 export const ThemeConsumer = ThemeContext.Consumer

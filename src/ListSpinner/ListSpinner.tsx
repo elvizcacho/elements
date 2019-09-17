@@ -1,10 +1,10 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import View from '../View'
 import Spinner from '../Spinner'
 import Circle, { ICircleProps } from '../Circle'
 
 /** It's a spinner for a list **/
-const ListSpinner: FunctionComponent<IListSpinnerProps> = ({
+const ListSpinner: React.FC<IListSpinnerProps> = ({
   radius = 40,
   ...props
 }) => (

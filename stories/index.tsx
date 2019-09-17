@@ -1,9 +1,8 @@
-import React from 'react'
+import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import createViewportDecorator from './createViewportDecorator'
 import CollapsibleStory from './CollapsibleStory'
 import { action } from '@storybook/addon-actions'
-
 import {
   Card,
   FloatingButton,

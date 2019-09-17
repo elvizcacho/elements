@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import CardOverlayEditor from './CardOverlayEditor'
 import CardButton from '../CardButton'
 import { mount } from 'enzyme'

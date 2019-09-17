@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import * as React from 'react'
 import View, { IViewProps, ViewRef } from '../View'
 
 /**
@@ -54,7 +54,7 @@ import View, { IViewProps, ViewRef } from '../View'
  * </View>
  * ```
  */
-const List = forwardRef<ViewRef, IViewProps>((props, ref) => (
+const List = React.forwardRef<ViewRef, IViewProps>((props, ref) => (
   <View direction="column" ref={ref} {...props} />
 ))
 

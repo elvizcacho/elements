@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import Icon, { IconSizeType, IconType } from '../Icon'
 import { css } from 'glamor'
 import View from '../View'
@@ -37,7 +37,7 @@ interface ISquareIconButtonProps {
  * <SquareIconButton icon="armchair-filled" color="red" iconColor="white" />
  * ```
  */
-class SquareIconButton extends Component<ISquareIconButtonProps> {
+class SquareIconButton extends React.Component<ISquareIconButtonProps> {
   static defaultProps = {
     color: 'transparent',
     iconColor: 'lightBlack',

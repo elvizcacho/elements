@@ -1,9 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useState,
-  useEffect,
-} from 'react'
+import * as React from 'react'
 import View, { IViewProps } from '../View'
 import { ResourceProviderContext } from '../ResourceProvider'
 import Theme from '../Theme'
@@ -198,7 +193,7 @@ const loadIcon = async (name: string, resourcePath: string) => {
   if (!resourcePath) {
     !hasWarnedBefore &&
       console.warn(
-        'In order to use icons, you need to wrap everything into a ResourceProvider'
+        'In order to use icons, you need to wrap everything into a ResourceProvider',
       )
     hasWarnedBefore = true
   }
@@ -219,7 +214,7 @@ const getIconName = (name: string) => {
   // Transforms from MyIconNameIcon to myIconName
   return (iconName.charAt(0).toLowerCase() + iconName.substr(1)).replace(
     'Icon',
-    ''
+    '',
   )
 }
 
@@ -240,7 +235,7 @@ interface IIconProps extends IViewProps {
  *
  * *Note:* To use Icons, you need to wrap everything in a **ResourceProvider**
  */
-const Icon: FunctionComponent<IIconProps> = ({
+const Icon: React.FC<IIconProps> = ({
   color = 'primary',
   name,
   size = 'm',
@@ -253,11 +248,11 @@ const Icon: FunctionComponent<IIconProps> = ({
     height: getSize(size),
   }
 
-  const [html, setHtml] = useState('')
+  const [html, setHtml] = React.useState('')
 
-  const { resourcePath } = useContext(ResourceProviderContext)
+  const { resourcePath } = React.useContext(ResourceProviderContext)
 
-  useEffect(() => {
+  React.useEffect(() => {
     loadIcon(iconName, resourcePath).then(setHtml)
   }, [iconName, resourcePath])
 

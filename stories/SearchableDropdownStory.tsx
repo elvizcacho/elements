@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import * as React from 'react'
 import {
   View,
   ThemeProvider,
@@ -178,14 +178,14 @@ const colors: any = {
 }
 
 const SearchableDropdownStory = () => {
-  const [items, setItems] = useState()
-  const [searchQuery, setSearchQuery] = useState('')
-  const [loadMore, setLoadMore] = useState('')
-  const [itemCount, setItemCount] = useState(ITEMS_LIMIT)
+  const [items, setItems] = React.useState()
+  const [searchQuery, setSearchQuery] = React.useState('')
+  const [loadMore, setLoadMore] = React.useState('')
+  const [itemCount, setItemCount] = React.useState(ITEMS_LIMIT)
 
-  useEffect(() => {
+  React.useEffect(() => {
     const filteredItems = Object.keys(colors).filter(
-      item => searchQuery === '' || item.includes(searchQuery),
+      item => searchQuery === '' || item.includes(searchQuery)
     )
 
     const totalItems = filteredItems.length

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FunctionComponent, useState } from 'react'
+import * as React from 'react'
 import View from '../View'
 import Icon from '../Icon'
 import Relative from '../Relative'
@@ -26,7 +26,7 @@ export interface ICheckboxProps extends IInputProps {
   readonly checked?: boolean
   /** Label of Checkbox */
   readonly name?: string
-  readonly onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+  readonly onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 /**
@@ -39,7 +39,7 @@ export interface ICheckboxProps extends IInputProps {
  * </View>
  * ```
  */
-const Checkbox: FunctionComponent<ICheckboxProps> = ({
+const Checkbox: React.FC<ICheckboxProps> = ({
   checked,
   name,
   onChange,
@@ -47,9 +47,9 @@ const Checkbox: FunctionComponent<ICheckboxProps> = ({
 }) => {
   const isControlled = typeof checked !== 'undefined'
 
-  const [isChecked, setIsChecked] = useState(checked)
+  const [isChecked, setIsChecked] = React.useState(checked)
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!isControlled) {
       setIsChecked(checked => !checked)
     }

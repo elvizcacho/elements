@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import View from '../View'
 import { css } from 'glamor'
 import Icon from '../Icon'
@@ -63,7 +63,7 @@ interface INotificationBubbleState {
  * ```
  *
  */
-class NotificationBubble extends Component<
+class NotificationBubble extends React.Component<
   INotificationBubble,
   INotificationBubbleState
 > {

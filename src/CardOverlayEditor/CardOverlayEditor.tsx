@@ -1,11 +1,9 @@
-import React, { Component, ChangeEvent } from 'react'
+import * as React from 'react'
 import View from '../View'
 import { css } from 'glamor'
 import { between } from '../Card/utils/math'
-
 import ExpandingTextarea from '../ExpandingTextarea'
 import Text from '../Text'
-
 import CardButton from '../CardButton'
 import CardFooter from '../CardFooter'
 
@@ -33,7 +31,7 @@ interface IState {
   text?: string
 }
 
-export default class CardOverlayEditor extends Component<
+export default class CardOverlayEditor extends React.Component<
   ICardOverlayEditorProps,
   IState
 > {
@@ -101,7 +99,7 @@ export default class CardOverlayEditor extends Component<
 
   handleSave = () => this.props.onSave(this.state.text)
 
-  handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+  handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const text = e.target.value
     this.setState(() => ({ text }))
   }

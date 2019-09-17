@@ -1,6 +1,5 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import { css } from 'glamor'
-
 import Text from '../Text'
 import Icon from '../Icon'
 import { IViewProps } from '../View'
@@ -32,7 +31,7 @@ const styles = (backgroundColor: string, hasRemoveIcon: boolean) =>
  * </ThemeProvider>
  * ```
  */
-const Pill: FunctionComponent<IPillProps> = ({
+const Pill: React.FC<IPillProps> = ({
   color = 'primary',
   label,
   onRemoveClick,

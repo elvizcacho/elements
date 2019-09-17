@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import RadioButton from './RadioButton'
 import renderer from 'react-test-renderer'
 import { render, fireEvent } from '@testing-library/react'

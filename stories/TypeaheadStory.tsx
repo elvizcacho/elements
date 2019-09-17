@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import {
   Button,
   View,
@@ -9,7 +9,6 @@ import {
 import { css } from 'glamor'
 import Text from '../src/Text'
 import { ColorPalette } from '@allthings/colors'
-
 import Names from './data/names.json'
 import Movies from './data/movies.json'
 

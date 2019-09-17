@@ -1,4 +1,4 @@
-import React, { createElement, forwardRef, FunctionComponent, Ref } from 'react'
+import * as React from 'react'
 import { css } from 'glamor'
 
 function getCssAlignValue(alignment: 'start' | 'end' | string) {
@@ -76,7 +76,7 @@ export interface IView extends React.HTMLAttributes<HTMLElement> {
   /** Flex values, can be 5, 10, 15 ... 100 or 33, 66 */
   flex?: flexType
 
-  forwardedRef?: Ref<HTMLDivElement>
+  forwardedRef?: React.Ref<HTMLDivElement>
 }
 
 function createStyles({
@@ -120,7 +120,7 @@ function createStyles({
   })
 }
 
-const View: FunctionComponent<IView> = ({
+const View: React.FC<IView> = ({
   alignH = 'start',
   alignV = 'stretch',
   children,
@@ -132,7 +132,7 @@ const View: FunctionComponent<IView> = ({
   wrap,
   ...props
 }) => {
-  return createElement(
+  return React.createElement(
     htmlElement,
     {
       ref: forwardedRef,
@@ -164,6 +164,6 @@ export type ViewRef = HTMLDivElement
  * </ThemeProvider>
  * ```
  */
-export default forwardRef<ViewRef, IViewProps>((props, ref) => (
+export default React.forwardRef<ViewRef, IViewProps>((props, ref) => (
   <View {...props} forwardedRef={ref} />
 ))

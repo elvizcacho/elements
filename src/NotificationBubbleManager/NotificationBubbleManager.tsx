@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useState,
-} from 'react'
+import * as React from 'react'
 import View, { IViewProps } from '../View'
 import Mitt, { Handler } from 'mitt'
 import NotificationBubble from '../NotificationBubble'
@@ -29,26 +23,26 @@ interface INotificationBubbleManager {
     key: number
     onTimeout: () => void
     children: string
-  }) => ReactNode
+  }) => React.ReactNode
 }
 
-const NotificationBubbleManager: FunctionComponent<
+const NotificationBubbleManager: React.FC<
   INotificationBubbleManager & IViewProps
 > = ({ children, renderBubble, ...props }) => {
-  const [messages, setMessages] = useState<Message[]>([])
+  const [messages, setMessages] = React.useState<Message[]>([])
 
-  const handleEvent = useCallback(
+  const handleEvent = React.useCallback(
     (type, message) =>
       setMessages(messages => [...messages, new Message(type, message)]),
     [],
   )
 
-  const handleTimeout = useCallback(
+  const handleTimeout = React.useCallback(
     () => setMessages(messages => messages.slice(1)),
     [],
   )
 
-  const doRenderBubble = useCallback(
+  const doRenderBubble = React.useCallback(
     (message: Message) =>
       renderBubble ? (
         renderBubble({
@@ -64,7 +58,7 @@ const NotificationBubbleManager: FunctionComponent<
     [handleTimeout, renderBubble],
   )
 
-  useEffect(() => {
+  React.useEffect(() => {
     emitter.on('*', handleEvent as Handler)
 
     return () => emitter.off('*', handleEvent as Handler)

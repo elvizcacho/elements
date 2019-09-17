@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useRef } from 'react'
+import * as React from 'react'
 import { css } from 'glamor'
 import { between } from '../Card/utils/math'
 
@@ -26,12 +26,12 @@ interface IOverlayMenuProps {
   readonly onRequestClose: (e: MouseEvent) => void
 }
 
-const OverlayMenu: FunctionComponent<IOverlayMenuProps> = ({
+const OverlayMenu: React.FC<IOverlayMenuProps> = ({
   onRequestClose,
   children,
 }) => {
-  const menuRef = useRef<HTMLDivElement>(null)
-  useEffect(() => {
+  const menuRef = React.useRef<HTMLDivElement>(null)
+  React.useEffect(() => {
     const handleDocumentClick = (e: MouseEvent) => {
       if (menuRef.current) {
         const {

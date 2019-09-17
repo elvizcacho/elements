@@ -1,16 +1,12 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import View, { IViewProps } from '../View'
 import { css } from 'glamor'
 
-export const Column: FunctionComponent<IViewProps> = ({
-  children,
-  ...props
-}) => (
+export const Column: React.FC<IViewProps> = ({ children, ...props }) => (
   <View flex="flex" {...props} direction="column">
     {children}
   </View>
 )
-
 
 const layout = (columnNumber: number) =>
   css({
@@ -21,7 +17,7 @@ const layout = (columnNumber: number) =>
     boxShadow: columnNumber === 1 && '-2px 0px 5px 0px rgba(0,0,0,0.2)',
   })
 
-const ColumnLayout: FunctionComponent = ({ children }) => (
+const ColumnLayout: React.FC = ({ children }) => (
   <View flex="flex" direction="row" {...css({ minHeight: 0 })}>
     {React.Children.map(children, (child, i) => (
       // eslint-disable-next-line

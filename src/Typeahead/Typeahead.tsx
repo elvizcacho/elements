@@ -1,4 +1,4 @@
-import React, { PureComponent, ReactNode } from 'react'
+import * as React from 'react'
 import Downshift, {
   StateChangeOptions,
   GetItemPropsOptions,
@@ -7,7 +7,6 @@ import Downshift, {
 import matchSorter from 'match-sorter'
 import { alpha, ColorPalette } from '@allthings/colors'
 import { css, keyframes } from 'glamor'
-
 import Relative from '../Relative'
 import Absolute from '../Absolute'
 import { Input, List, ListItem, Text } from '../index'
@@ -40,7 +39,7 @@ type Placement = 'top' | 'bottom'
 export interface ITypeaheadItem {
   label: string
   value: string
-  icon?: ReactNode
+  icon?: React.ReactNode
 }
 
 interface ITypeaheadProps {
@@ -90,7 +89,7 @@ const defaultProps = {
 
 type MyProps = typeof defaultProps & ITypeaheadProps
 
-export default class Typeahead extends PureComponent<MyProps, IState> {
+export default class Typeahead extends React.PureComponent<MyProps, IState> {
   static defaultProps = defaultProps
 
   constructor(props: MyProps) {

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import Input, { IInputProps } from '../Input'
 
 interface PhoneInputProps extends IInputProps {
@@ -14,7 +14,7 @@ interface PhoneInputProps extends IInputProps {
   readonly placeholder?: string
 }
 
-const PhoneInput: FunctionComponent<PhoneInputProps> = props => (
+const PhoneInput: React.FC<PhoneInputProps> = props => (
   <Input type="tel" {...props} />
 )
 

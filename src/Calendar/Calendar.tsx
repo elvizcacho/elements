@@ -1,5 +1,4 @@
-import React, { FunctionComponent } from 'react'
-
+import * as React from 'react'
 import UnstyledCalendar, {
   CalendarProps,
 } from 'react-calendar/dist/entry.nostyle'
@@ -128,7 +127,7 @@ const notDisabled = (_: { activeStartDate: Date }) => false
 /**
  * The `Calendar` component is a thin wrapper around https://github.com/wojtekmaj/react-calendar.
  */
-const Calendar: FunctionComponent<ICalendarProps> = ({
+const Calendar: React.FC<ICalendarProps> = ({
   isBlockedDay = notBlocked,
   tileDisabled = notDisabled,
   ...props

@@ -1,13 +1,4 @@
-import React, {
-  useEffect,
-  useState,
-  Fragment,
-  AllHTMLAttributes,
-  FunctionComponent,
-  forwardRef,
-  useCallback,
-  useRef,
-} from 'react'
+import * as React from 'react'
 import View from '../View'
 import { css } from 'glamor'
 import Relative from '../Relative'
@@ -123,7 +114,7 @@ type validityStateType = typeof validityStates[number]
 
 export interface IInputProps
   extends IValidityStates,
-    AllHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
+    React.AllHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
   /** The default value to put into the component, without making it controlled */
   readonly defaultValue?: string | string[]
   /** Indicates that this field is required */
@@ -216,7 +207,7 @@ const setValidity = (
  * ```
  */
 
-const Input: FunctionComponent<IInputProps> = ({
+const Input: React.FC<IInputProps> = ({
   required = false,
   forwardedRef,
   lines = 1,
@@ -238,10 +229,10 @@ const Input: FunctionComponent<IInputProps> = ({
   icon,
   ...props
 }) => {
-  const internalRef = useRef<any>(null)
+  const internalRef = React.useRef<any>(null)
   const isTextArea = lines !== 1
-  const [value, setValue] = useState('')
-  const [length, setLength] = useState(
+  const [value, setValue] = React.useState('')
+  const [length, setLength] = React.useState(
     (typeof props.value === 'string' && props.value.length) || 0,
   )
   const currentValue = (props.value || value) as string
@@ -266,7 +257,7 @@ const Input: FunctionComponent<IInputProps> = ({
     valueMissing,
   }
 
-  const handleChange = useCallback(
+  const handleChange = React.useCallback(
     (
       e:
         | React.ChangeEvent<HTMLInputElement>
@@ -280,7 +271,7 @@ const Input: FunctionComponent<IInputProps> = ({
     [customValidity, props],
   )
 
-  useEffect(() => {
+  React.useEffect(() => {
     const input = internalRef.current
     if (input) {
       setLength(input.value && input.value.length ? input.value.length : 0)
@@ -293,7 +284,7 @@ const Input: FunctionComponent<IInputProps> = ({
   return (
     <Relative style={{ width: '100%' }}>
       {!isTextArea ? (
-        <Fragment>
+        <React.Fragment>
           {icon && (
             <Absolute
               {...css({ pointerEvents: 'none' })}
@@ -322,7 +313,7 @@ const Input: FunctionComponent<IInputProps> = ({
             onChange={handleChange}
             pattern={pattern}
           />
-        </Fragment>
+        </React.Fragment>
       ) : (
         <textarea
           ref={combinedRef}
@@ -363,6 +354,6 @@ const Input: FunctionComponent<IInputProps> = ({
   )
 }
 
-export default forwardRef<HTMLInputElement, IInputProps>((props, ref) => (
+export default React.forwardRef<HTMLInputElement, IInputProps>((props, ref) => (
   <Input {...props} forwardedRef={ref} />
 ))

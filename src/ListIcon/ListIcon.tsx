@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import Icon, { IconType } from '../Icon'
 import Circle from '../Circle'
 import { color } from '../utils/propTypes/color'
@@ -23,7 +23,7 @@ interface IListIconProps {
  * </ResourceProvider>
  * ```
  */
-class ListIcon extends Component<IListIconProps> {
+class ListIcon extends React.Component<IListIconProps> {
   render() {
     const {
       name,

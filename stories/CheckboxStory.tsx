@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import * as React from 'react'
 import ResourceProvider from '../src/ResourceProvider'
 import Inset from '../src/Inset'
 import FormCheckbox from '../src/FormCheckbox'
@@ -7,8 +7,8 @@ import Button from '../src/Button'
 import Spacer from '../src/Spacer'
 
 export default function CheckboxStory() {
-  const [checked, setChecked] = useState(false)
-  const [blocked, setBlocked] = useState(false)
+  const [checked, setChecked] = React.useState(false)
+  const [blocked, setBlocked] = React.useState(false)
 
   return (
     <ResourceProvider>

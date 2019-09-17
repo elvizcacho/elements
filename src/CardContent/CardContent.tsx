@@ -1,5 +1,4 @@
-import React, { FunctionComponent } from 'react'
-
+import * as React from 'react'
 import View, { IViewProps } from '../View'
 import { css } from 'glamor'
 
@@ -8,7 +7,7 @@ const styles = css({
   position: 'relative',
 })
 
-const CardContent: FunctionComponent<IViewProps> = props => (
+const CardContent: React.FC<IViewProps> = props => (
   <View {...styles} {...props} />
 )
 

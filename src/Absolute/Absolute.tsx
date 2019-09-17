@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import * as React from 'react'
 import View, { IViewProps } from '../View'
 import { css } from 'glamor'
 
@@ -22,7 +22,7 @@ export interface IAbsoluteProps {
   readonly right?: string | number
 }
 
-const Absolute: FunctionComponent<IAbsoluteProps & IViewProps> = ({
+const Absolute: React.FC<IAbsoluteProps & IViewProps> = ({
   top,
   left,
   right,

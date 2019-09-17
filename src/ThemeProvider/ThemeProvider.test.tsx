@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import ThemeProvider, { ThemeConsumer } from './ThemeProvider'
 import { render } from '@testing-library/react'
 

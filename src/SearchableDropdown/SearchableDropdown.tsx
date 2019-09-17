@@ -1,10 +1,4 @@
-import React, {
-  SyntheticEvent,
-  useRef,
-  FunctionComponent,
-  useState,
-  RefObject,
-} from 'react'
+import * as React from 'react'
 import Downshift, { StateChangeOptions, DownshiftState } from 'downshift'
 import { css } from 'glamor'
 import Relative from '../Relative/index'
@@ -139,7 +133,7 @@ export interface ISearchableDropdownProps {
   selectedItem?: IDropdownItem
 }
 
-const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
+const SearchableDropdown: React.FC<ISearchableDropdownProps> = ({
   clearable = false,
   clearSearchValueOnClose = true,
   disabled = false,
@@ -162,11 +156,11 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
   initialSearchTerm = '',
   selectedItem,
 }) => {
-  const searchRef: RefObject<HTMLInputElement> = useRef(null)
-  const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
+  const searchRef: React.RefObject<HTMLInputElement> = React.useRef(null)
+  const [searchTerm, setSearchTerm] = React.useState(initialSearchTerm)
 
   const handleClearIconClick = (
-    event: SyntheticEvent,
+    event: React.SyntheticEvent,
     clearSelection: () => void,
   ) => {
     event.stopPropagation()
@@ -194,7 +188,7 @@ const SearchableDropdown: FunctionComponent<ISearchableDropdownProps> = ({
     return changes
   }
 
-  const handleSearchChange = (event: SyntheticEvent) => {
+  const handleSearchChange = (event: React.SyntheticEvent) => {
     const value = (event.target as HTMLInputElement).value
 
     if (value !== searchTerm) {

@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { Button, confirm, ThemeProvider, View } from '../src'
 import { css } from 'glamor'
 
