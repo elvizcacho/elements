@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { css, keyframes } from 'glamor'
 import { withTheme } from '../behaviour/ThemeProvider'
 import { isIE11 } from '../utils/viewport'
+import Theme from '../behaviour/Theme'
 
 const spin = keyframes('load', {
   '0%': {
@@ -43,49 +44,57 @@ const styles = (color, size) => ({
 
 const Spinner = ({ color = ColorPalette.blue, size = 30 }) =>
   isIE11(typeof window !== 'undefined' && window.navigator.userAgent) ? (
-    <div {...css(styles(color, size).spinner)} />
+    <Theme>
+      {({ colorize }) => (
+        <div {...css(styles(colorize(color), size).spinner)} />
+      )}
+    </Theme>
   ) : (
-    <svg
-      width={size}
-      height={size}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 100 100"
-      preserveAspectRatio="xMidYMid"
-    >
-      <rect x="0" y="0" width="100" height="100" fill="none" />
-      <circle
-        cx="50"
-        cy="50"
-        r="40"
-        stroke="#ffffff"
-        fill="none"
-        strokeWidth="10"
-        strokeLinecap="round"
-      />
-      <circle
-        cx="50"
-        cy="50"
-        r="40"
-        stroke={color}
-        fill="none"
-        strokeWidth="8"
-        strokeLinecap="round"
-      >
-        <animate
-          attributeName="stroke-dashoffset"
-          dur="2s"
-          repeatCount="indefinite"
-          from="0"
-          to="502"
-        />
-        <animate
-          attributeName="stroke-dasharray"
-          dur="2s"
-          repeatCount="indefinite"
-          values="125.5 125.5;1 250;125.5 125.5"
-        />
-      </circle>
-    </svg>
+    <Theme>
+      {({ colorize }) => (
+        <svg
+          width={size}
+          height={size}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="xMidYMid"
+        >
+          <rect x="0" y="0" width="100" height="100" fill="none" />
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            stroke="#ffffff"
+            fill="none"
+            strokeWidth="10"
+            strokeLinecap="round"
+          />
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            stroke={colorize(color)}
+            fill="none"
+            strokeWidth="8"
+            strokeLinecap="round"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              dur="2s"
+              repeatCount="indefinite"
+              from="0"
+              to="502"
+            />
+            <animate
+              attributeName="stroke-dasharray"
+              dur="2s"
+              repeatCount="indefinite"
+              values="125.5 125.5;1 250;125.5 125.5"
+            />
+          </circle>
+        </svg>
+      )}
+    </Theme>
   )
 
 Spinner.propTypes = {

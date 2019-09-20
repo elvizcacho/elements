@@ -1,13 +1,13 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import ListSpinner from './ListSpinner'
-import ThemeProvider from '../../behaviour/ThemeProvider'
+import Spinner from './Spinner'
+import ThemeProvider from '../behaviour/ThemeProvider'
 
-test('color passed down to ListSpinner correctly', () => {
+test('colorize Spinner correctly', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={{ primary: '#000000' }}>
-        <ListSpinner radius={50} />
+        <Spinner />
       </ThemeProvider>
     )
     .toJSON()
