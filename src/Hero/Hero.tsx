@@ -40,11 +40,11 @@ const styles = {
 
 interface IHeroProps extends IViewProps {
   /** Color of the hero, will be primary color by default */
-  color: string
+  color?: string
   /** Text that will be announced with the Hero */
   text: string
   /** URL to image that will be rendered */
-  img: string
+  img?: string
 }
 
 /**
@@ -83,7 +83,7 @@ const Hero = ({
           {children}
         </Inset>
         <View {...styles.heroImageContainer}>
-          <img {...styles.heroImage} src={img} />
+          {img && <img {...styles.heroImage} src={img} />}
         </View>
       </View>
     )}

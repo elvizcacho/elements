@@ -14,7 +14,7 @@ class Message {
 }
 
 const ChatStory = () => {
-  const [messages, setMessages] = useState([
+  const [messages, setMessages] = useState<readonly Message[]>([
     new Message('Hey, how may I help you? 😎'),
   ])
   const [currentMessage, setCurrentMessage] = useState('')
