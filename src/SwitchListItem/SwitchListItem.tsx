@@ -1,8 +1,8 @@
-import * as React from 'react'
-import View from '../View'
 import { css } from 'glamor'
+import React, { PropsWithChildren, useContext } from 'react'
 import Text from '../Text'
 import { ThemeContext } from '../ThemeProvider'
+import View from '../View'
 
 interface ISwitchListItem {
   readonly optionKey: string
@@ -11,15 +11,15 @@ interface ISwitchListItem {
   readonly onClick: (optionKey: string) => void
 }
 
-const SwitchListItem: React.FC<ISwitchListItem> = ({
+const SwitchListItem = ({
   optionKey,
   value,
   isActive,
   onClick,
   children,
   ...props
-}) => {
-  const theme = React.useContext(ThemeContext)
+}: PropsWithChildren<ISwitchListItem>) => {
+  const theme = useContext(ThemeContext)
   const activeStyle = isActive && {
     backgroundColor: theme.primary,
   }

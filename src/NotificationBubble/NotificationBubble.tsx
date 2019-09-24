@@ -1,10 +1,10 @@
-import * as React from 'react'
-import View from '../View'
 import { css } from 'glamor'
+import React, { Component } from 'react'
+import { Motion, spring } from 'react-motion'
 import Icon from '../Icon'
 import Text from '../Text'
-import { Motion, spring } from 'react-motion'
 import Theme from '../Theme'
+import View from '../View'
 
 const styles = {
   bubble: css({
@@ -63,7 +63,7 @@ interface INotificationBubbleState {
  * ```
  *
  */
-class NotificationBubble extends React.Component<
+class NotificationBubble extends Component<
   INotificationBubble,
   INotificationBubbleState
 > {

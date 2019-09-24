@@ -1,7 +1,7 @@
-import * as React from 'react'
-import ReadMore from './ReadMore'
-import Text from '../Text'
 import { render } from '@testing-library/react'
+import React from 'react'
+import Text from '../Text'
+import ReadMore from './ReadMore'
 
 describe('ReadMore component', () => {
   test('ReadMore renders properly width a px height of 20', () => {

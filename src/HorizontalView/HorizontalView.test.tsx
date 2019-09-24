@@ -1,7 +1,7 @@
-import * as React from 'react'
-import HorizontalView from './HorizontalView'
-import Text from '../Text'
 import { shallow } from 'enzyme'
+import React from 'react'
+import Text from '../Text'
+import HorizontalView from './HorizontalView'
 
 describe('HorizontalView behaviors', () => {
   it('should render non-arrays', () => {

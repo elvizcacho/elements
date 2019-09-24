@@ -1,7 +1,7 @@
-import * as React from 'react'
-import View from '../View'
-import Spinner from '../Spinner'
 import { css } from 'glamor'
+import React from 'react'
+import Spinner from '../Spinner'
+import View from '../View'
 
 const spinner = css({
   height: 'auto',

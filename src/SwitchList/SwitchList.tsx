@@ -1,9 +1,9 @@
-import * as React from 'react'
-import View from '../View'
-import { css } from 'glamor'
 import { ColorPalette } from '@allthings/colors'
+import { css } from 'glamor'
+import React, { Component } from 'react'
 import SwitchListItem from '../SwitchListItem'
 import SwitchListSpinner from '../SwitchListSpinner'
+import View from '../View'
 
 const switchListRadius = '2px'
 
@@ -60,10 +60,7 @@ interface IState {
   active?: string
 }
 
-export default class SwitchList extends React.Component<
-  ISwitchListProps,
-  IState
-> {
+export default class SwitchList extends Component<ISwitchListProps, IState> {
   state = {
     active: this.props.initialActive,
   }

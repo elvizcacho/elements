@@ -1,13 +1,13 @@
-import * as React from 'react'
+import React from 'react'
 import CardList from '../CardList'
-import View, { IViewProps } from '../View'
 import GroupTitle from '../GroupTitle'
+import View, { IViewProps } from '../View'
 
-const GroupedCardList: React.FC<IGroupedCardListProps> = ({
+const GroupedCardList = ({
   title,
   children,
   ...rest
-}) => {
+}: IGroupedCardListProps) => {
   return (
     <View {...rest}>
       <GroupTitle>{title}</GroupTitle>

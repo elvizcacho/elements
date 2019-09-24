@@ -1,9 +1,9 @@
-import * as React from 'react'
+import { fireEvent, render } from '@testing-library/react'
+import React from 'react'
 import renderer from 'react-test-renderer'
-import { render, fireEvent } from '@testing-library/react'
 import RadioButton from '../RadioButton'
-import RadioButtonSet from './RadioButtonSet'
 import ThemeProvider from '../ThemeProvider'
+import RadioButtonSet from './RadioButtonSet'
 
 describe('<RadioButtonSet />', () => {
   it('should render without error', () => {

@@ -1,23 +1,23 @@
-import * as React from 'react'
+import React, { Component } from 'react'
 import {
-  ThemeProvider,
   Button,
   Card,
-  View,
-  TitleBar,
-  SquareIconButton,
-  Text,
-  SimpleLayout,
+  Form,
   List,
   ListItem,
-  TextInput,
-  ResourceProvider,
-  Form,
-  RadioButtonSet,
   RadioButton,
+  RadioButtonSet,
+  ResourceProvider,
+  SimpleLayout,
+  SquareIconButton,
+  Text,
+  TextInput,
+  ThemeProvider,
+  TitleBar,
+  View,
 } from '../src'
 
-export default class RadioButtonStory extends React.Component {
+export default class RadioButtonStory extends Component {
   render() {
     return (
       <ResourceProvider>

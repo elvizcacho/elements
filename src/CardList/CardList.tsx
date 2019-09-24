@@ -1,6 +1,6 @@
-import * as React from 'react'
-import List from '../List'
+import React from 'react'
 import Card from '../Card'
+import List from '../List'
 import { IViewProps } from '../View'
 
 /**
@@ -24,7 +24,7 @@ import { IViewProps } from '../View'
  *   </CardList>
  * </ThemeProvider>
  **/
-const CardList: React.FC<IViewProps> = props => (
+const CardList = (props: IViewProps) => (
   <Card>
     <List {...props} />
   </Card>

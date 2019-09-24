@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Input, { IInputProps } from '../Input'
 
 interface PhoneInputProps extends IInputProps {
@@ -14,8 +14,6 @@ interface PhoneInputProps extends IInputProps {
   readonly placeholder?: string
 }
 
-const PhoneInput: React.FC<PhoneInputProps> = props => (
-  <Input type="tel" {...props} />
-)
+const PhoneInput = (props: PhoneInputProps) => <Input type="tel" {...props} />
 
 export default PhoneInput

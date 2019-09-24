@@ -3,31 +3,31 @@
 exports[`Card renders as full example 1`] = `
 .css-0,
 [data-css-0] {
-  width: 100%;
-  background: white;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
-}
-
-.css-1,
-[data-css-1] {
   padding: 15px;
   position: relative;
 }
 
-.css-2,
-[data-css-2] {
+.css-1,
+[data-css-1] {
   border-top: 1px solid #e7ecee;
 }
 
-.css-2> *,
-[data-css-2]> * {
+.css-1> *,
+[data-css-1]> * {
   padding: 10px 13px;
   text-align: center;
 }
 
-.css-2> :not(:last-child),
-[data-css-2]> :not(:last-child) {
+.css-1> :not(:last-child),
+[data-css-1]> :not(:last-child) {
   border-right: 1px solid #e7ecee;
+}
+
+.css-2,
+[data-css-2] {
+  width: 100%;
+  background: white;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
 }
 
 .css-3,
@@ -127,11 +127,11 @@ exports[`Card renders as full example 1`] = `
 }
 
 <div
-  data-css-0=""
+  data-css-2=""
   data-css-3=""
 >
   <div
-    data-css-1=""
+    data-css-0=""
     data-css-3=""
   >
     <div
@@ -148,7 +148,7 @@ exports[`Card renders as full example 1`] = `
     </div>
   </div>
   <div
-    data-css-2=""
+    data-css-1=""
     data-css-6=""
   >
     <button

@@ -1,7 +1,7 @@
-import * as React from 'react'
+import React from 'react'
 import renderer from 'react-test-renderer'
-import FloatingButton from './FloatingButton'
 import ThemeProvider from '../ThemeProvider'
+import FloatingButton from './FloatingButton'
 
 test('Floating button renders without error', () => {
   const tree = renderer

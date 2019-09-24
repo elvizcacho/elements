@@ -1,10 +1,10 @@
-import * as React from 'react'
-import View from '../View'
 import { css } from 'glamor'
-import { color } from '../utils/propTypes/color'
-import { createMQ } from '../Responsive'
+import React, { PureComponent, TouchEvent } from 'react'
 import { Motion, spring } from 'react-motion'
+import { createMQ } from '../Responsive'
 import Theme from '../Theme'
+import { color } from '../utils/propTypes/color'
+import View from '../View'
 
 const simple = (backgroundColor: string) =>
   css({
@@ -36,7 +36,7 @@ interface IState {
   pullDownOffset: number
 }
 
-class SimpleLayout extends React.PureComponent<ISimpleLayout, IState> {
+class SimpleLayout extends PureComponent<ISimpleLayout, IState> {
   static defaultProps = {
     backgroundColor: 'background',
   }
@@ -76,7 +76,7 @@ class SimpleLayout extends React.PureComponent<ISimpleLayout, IState> {
     }
   }
 
-  handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+  handleTouchMove = (e: TouchEvent<HTMLDivElement>) => {
     if (this.props.onPullDown && this.scrollTop === 0) {
       let y = 0
       const touches = e.touches && e.touches.length ? e.touches : [e]

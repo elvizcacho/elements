@@ -1,7 +1,7 @@
-import * as React from 'react'
+import React from 'react'
 import renderer from 'react-test-renderer'
-import Button from './Button'
 import ThemeProvider from '../ThemeProvider'
+import Button from './Button'
 
 describe('Button component', () => {
   test('Renders without anything', () => {

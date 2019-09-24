@@ -1,18 +1,18 @@
-import * as React from 'react'
+import React, { Component } from 'react'
 import {
-  ThemeProvider,
-  TitleBar,
-  SquareIconButton,
-  Text,
   Button,
-  View,
   CardList,
   ListItem,
   ResourceProvider,
+  SquareIconButton,
+  Text,
+  ThemeProvider,
+  TitleBar,
+  View,
 } from '../src'
 import HorizontalView from '../src/HorizontalView'
 
-export default class HorizontalViewStory extends React.Component<
+export default class HorizontalViewStory extends Component<
   {},
   { level: number }
 > {

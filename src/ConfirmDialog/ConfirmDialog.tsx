@@ -1,10 +1,10 @@
-import * as React from 'react'
+import { ColorPalette } from '@allthings/colors'
 import { css } from 'glamor'
+import React, { Component, createRef } from 'react'
 import CardButton from '../CardButton'
 import CardFooter from '../CardFooter'
 import Text from '../Text'
 import View from '../View'
-import { ColorPalette } from '@allthings/colors'
 
 const styles = {
   insideView: css({
@@ -40,8 +40,8 @@ export interface IConfirmDialogProps {
   readonly onSuccess: () => void
 }
 
-class ConfirmDialog extends React.Component<IConfirmDialogProps> {
-  wrapperRef = React.createRef<HTMLDivElement>()
+class ConfirmDialog extends Component<IConfirmDialogProps> {
+  wrapperRef = createRef<HTMLDivElement>()
 
   componentDidMount() {
     document.addEventListener('mousedown', this.handleClickOutside)

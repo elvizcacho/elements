@@ -1,7 +1,7 @@
-import * as React from 'react'
+import React from 'react'
 import renderer from 'react-test-renderer'
-import Pill from './Pill'
 import ThemeProvider from '../ThemeProvider'
+import Pill from './Pill'
 
 test('Pill renders without error', () => {
   const tree = renderer

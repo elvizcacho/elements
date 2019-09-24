@@ -1,9 +1,9 @@
-import * as React from 'react'
+import { alpha, ColorPalette } from '@allthings/colors'
 import { css } from 'glamor'
+import React, { Component, createRef, KeyboardEvent } from 'react'
 import Icon from '../Icon'
 import Text from '../Text'
 import View from '../View'
-import { ColorPalette, alpha } from '@allthings/colors'
 
 const tick = () => new Promise(resolve => setTimeout(resolve, 0))
 
@@ -44,7 +44,7 @@ interface IState {}
  * </ThemeProvider>
  * ```
  **/
-class Collapsible extends React.Component<ICollapsibleProps, IState> {
+class Collapsible extends Component<ICollapsibleProps, IState> {
   static defaultProps = {
     initiallyCollapsed: true,
     hasBottomBorder: false,
@@ -69,7 +69,7 @@ class Collapsible extends React.Component<ICollapsibleProps, IState> {
     }
   }
 
-  childRef = React.createRef<HTMLDivElement>()
+  childRef = createRef<HTMLDivElement>()
 
   toggleCollapse = async () => {
     const { current } = this.childRef
@@ -101,7 +101,7 @@ class Collapsible extends React.Component<ICollapsibleProps, IState> {
     }
   }
 
-  onKeyPress = (e: React.KeyboardEvent) =>
+  onKeyPress = (e: KeyboardEvent) =>
     e.key === 'Enter' && this.toggleCollapse()
 
   render() {

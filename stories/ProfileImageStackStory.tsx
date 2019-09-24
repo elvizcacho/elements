@@ -1,12 +1,12 @@
-import * as React from 'react'
+import { css } from 'glamor'
+import React from 'react'
 import {
-  ThemeProvider,
-  ResourceProvider,
-  Text,
   Card,
   ProfileImageStack,
+  ResourceProvider,
+  Text,
+  ThemeProvider,
 } from '../src/'
-import { css } from 'glamor'
 
 export default () => (
   <ThemeProvider>

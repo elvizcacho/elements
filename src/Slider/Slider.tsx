@@ -1,6 +1,6 @@
-import * as React from 'react'
-import View, { IViewProps } from '../View'
 import { css } from 'glamor'
+import React, { ChangeEvent } from 'react'
+import View, { IViewProps } from '../View'
 
 const styles = {
   container: css({
@@ -119,17 +119,17 @@ interface ISliderProps extends IViewProps {
   /** Current value to show **/
   readonly value?: number
   /** Callback when the users changes the value **/
-  readonly onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+  readonly onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-const Slider: React.FC<ISliderProps> = ({
+const Slider = ({
   min,
   max,
   step = 0.1,
   value,
   onChange,
   ...props
-}) => (
+}: ISliderProps) => (
   <View {...props}>
     <input
       max={max}

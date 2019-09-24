@@ -1,5 +1,5 @@
-import * as React from 'react'
 import { css } from 'glamor'
+import React, { ChangeEvent, Component } from 'react'
 import Absolute from '../Absolute'
 import Circle from '../Circle'
 import Relative from '../Relative'
@@ -28,7 +28,7 @@ export interface IRadioButtonProps {
   /** The name of this input field */
   readonly name?: string
   /** Called when a radio button is clicked */
-  readonly onChange?: (e: React.ChangeEvent) => void
+  readonly onChange?: (e: ChangeEvent) => void
   /** Mark if the RadioButton is required */
   readonly required?: boolean
   /** The value the checkbox will have */
@@ -50,7 +50,7 @@ interface IState {
  * </RadioButtonSet>
  * ```
  */
-class RadioButton extends React.Component<IRadioButtonProps, IState> {
+class RadioButton extends Component<IRadioButtonProps, IState> {
   static defaultProps = {
     required: false,
   }
@@ -75,7 +75,7 @@ class RadioButton extends React.Component<IRadioButtonProps, IState> {
     }
   }
 
-  handleChange = (e: React.ChangeEvent) => {
+  handleChange = (e: ChangeEvent) => {
     this.props.onChange && this.props.onChange(e)
     this.setState(({ checked }) => ({ checked: !checked }))
   }

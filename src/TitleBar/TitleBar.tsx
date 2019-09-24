@@ -1,7 +1,7 @@
-import * as React from 'react'
 import { css } from 'glamor'
-import View, { IViewProps } from '../View'
+import React, { Component } from 'react'
 import Theme from '../Theme'
+import View, { IViewProps } from '../View'
 
 const box = (background: string) =>
   css({
@@ -35,7 +35,7 @@ interface ITitleBarProps extends IViewProps {
  * </ThemeProvider>
  * ```
  */
-class TitleBar extends React.Component<ITitleBarProps> {
+class TitleBar extends Component<ITitleBarProps> {
   render() {
     const { children, color = 'primary', ...props } = this.props
     return (

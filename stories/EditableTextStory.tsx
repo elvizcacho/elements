@@ -1,4 +1,5 @@
-import * as React from 'react'
+import { css } from 'glamor'
+import React, { Component } from 'react'
 import {
   EditableText,
   ResourceProvider,
@@ -6,7 +7,6 @@ import {
   ThemeProvider,
   View,
 } from '../src/'
-import { css } from 'glamor'
 
 const DEFAULT_TEXT = 'Edit me!'
 const MARGIN = 15 // px
@@ -24,7 +24,7 @@ const STYLES = {
     }),
 }
 
-class EditableTextStory extends React.Component<
+class EditableTextStory extends Component<
   {},
   { status: string; text: string }
 > {

@@ -1,8 +1,8 @@
-import * as React from 'react'
+import React, { FormEvent, PropsWithChildren } from 'react'
 
 interface IFormProps {
   method?: 'POST' | 'GET'
-  onSubmit: (e: React.FormEvent, data: { [key: string]: string }) => void
+  onSubmit: (e: FormEvent, data: { [key: string]: string }) => void
 }
 
 /**
@@ -26,7 +26,7 @@ The HTTP method that the browser uses to submit the form defaults to <strong>POS
 
 ```jsx
 import { Form, TextInput } from '@allthings/elements'
-class MyForm extends React.Component {
+class MyForm extends Component {
 
   handleSubmit = (e, data) => {
     exampleLoginRequest(data.username, data.password)
@@ -112,12 +112,12 @@ Also see the <a href="/molecules/TextInput/">TextInput</a> for allowed props.
 </ResourceProvider>
 ```
  */
-const Form: React.FC<IFormProps> = ({
+const Form = ({
   children,
   onSubmit,
   method = 'POST',
-}) => {
-  const handleSubmit = (e: React.FormEvent) => {
+}: PropsWithChildren<IFormProps>) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     const { target } = e as any
     const data = {} as { [key: string]: string }

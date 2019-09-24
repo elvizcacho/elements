@@ -1,5 +1,5 @@
-import * as React from 'react'
 import { css } from 'glamor'
+import React from 'react'
 import View, { IViewProps } from '../View'
 
 const style = css({
@@ -13,7 +13,7 @@ const style = css({
   },
 })
 
-const CardFooter: React.FC<IViewProps> = props => (
+const CardFooter = (props: IViewProps) => (
   <View
     direction="row"
     alignV="center"

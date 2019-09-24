@@ -1,7 +1,7 @@
-import * as React from 'react'
-import ButtonGroup from './ButtonGroup'
-import Button from '../Button'
+import React from 'react'
 import renderer from 'react-test-renderer'
+import Button from '../Button'
+import ButtonGroup from './ButtonGroup'
 
 describe('ButtonGroup', () => {
   it('should render button group', () => {

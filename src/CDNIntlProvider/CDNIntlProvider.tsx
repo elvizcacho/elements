@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { Component } from 'react'
 import { IntlProvider } from 'react-intl'
 import { ResourceProviderContext } from '../ResourceProvider'
 
@@ -37,7 +37,7 @@ interface IState {
   messages?: object
 }
 
-class CDNIntlProvider extends React.Component<IProps, IState> {
+class CDNIntlProvider extends Component<IProps, IState> {
   static defaultProps = defaultProps
 
   static contextType = ResourceProviderContext
@@ -98,10 +98,10 @@ class CDNIntlProvider extends React.Component<IProps, IState> {
 
     return (
       <IntlProvider locale={countryCode} messages={messages}>
-        <React.Fragment>
+        <>
           {this.renderSideEffect(messages)}
           {messages && this.props.children}
-        </React.Fragment>
+        </>
       </IntlProvider>
     )
   }

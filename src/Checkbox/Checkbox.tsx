@@ -1,11 +1,11 @@
-import * as React from 'react'
-import View from '../View'
-import Icon from '../Icon'
-import Relative from '../Relative'
 import { css } from 'glamor'
-import Theme from '../Theme'
+import React, { ChangeEvent, useState } from 'react'
 import Absolute from '../Absolute'
+import Icon from '../Icon'
 import { IInputProps } from '../Input'
+import Relative from '../Relative'
+import Theme from '../Theme'
+import View from '../View'
 
 const styles = {
   checkbox: (background: string, checked: boolean) =>
@@ -26,7 +26,7 @@ export interface ICheckboxProps extends IInputProps {
   readonly checked?: boolean
   /** Label of Checkbox */
   readonly name?: string
-  readonly onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+  readonly onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 /**
@@ -39,17 +39,12 @@ export interface ICheckboxProps extends IInputProps {
  * </View>
  * ```
  */
-const Checkbox: React.FC<ICheckboxProps> = ({
-  checked,
-  name,
-  onChange,
-  ...props
-}) => {
+const Checkbox = ({ checked, name, onChange, ...props }: ICheckboxProps) => {
   const isControlled = typeof checked !== 'undefined'
 
-  const [isChecked, setIsChecked] = React.useState(checked)
+  const [isChecked, setIsChecked] = useState(checked)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (!isControlled) {
       setIsChecked(checked => !checked)
     }

@@ -1,8 +1,8 @@
-import * as React from 'react'
+import React from 'react'
 import renderer from 'react-test-renderer'
-import NotificationBubble from './NotificationBubble'
-import ThemeProvider from '../ThemeProvider'
 import ResourceProvider from '../ResourceProvider'
+import ThemeProvider from '../ThemeProvider'
+import NotificationBubble from './NotificationBubble'
 
 test('NotificationBubble renders without error', () => {
   const tree = renderer

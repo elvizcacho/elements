@@ -1,9 +1,9 @@
-import * as React from 'react'
-import Form from './Form'
-import ThemeProvider from '../ThemeProvider'
 import { mount } from 'enzyme'
+import React from 'react'
 import Button from '../Button'
 import FormCheckbox from '../FormCheckbox'
+import ThemeProvider from '../ThemeProvider'
+import Form from './Form'
 
 describe('Test the Form component', () => {
   it('should submit and default to method post', () => {

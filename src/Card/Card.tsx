@@ -1,6 +1,6 @@
-import * as React from 'react'
-import View, { IViewProps } from '../View'
 import { css } from 'glamor'
+import React from 'react'
+import View, { IViewProps } from '../View'
 
 const style = css({
   width: '100%',
@@ -25,6 +25,6 @@ const style = css({
  * </Card>
  * ```
  */
-const Card: React.FC<IViewProps> = props => <View {...style} {...props} />
+const Card = (props: IViewProps) => <View {...style} {...props} />
 
 export default Card

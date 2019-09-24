@@ -1,18 +1,18 @@
-import * as React from 'react'
-import Downshift, { StateChangeOptions, DownshiftState } from 'downshift'
-import { css } from 'glamor'
-import Relative from '../Relative/index'
-import Absolute from '../Absolute/index'
-import View from '../View/index'
-import Text from '../Text/index'
-import List from '../List/index'
-import ListItem from '../ListItem/index'
-import Input from '../Input/index'
 import { alpha, ColorPalette } from '@allthings/colors'
+import Downshift, { DownshiftState, StateChangeOptions } from 'downshift'
+import { css } from 'glamor'
+import React, { RefObject, SyntheticEvent, useRef, useState } from 'react'
+import Absolute from '../Absolute/index'
+import { IDropdownItem } from '../Dropdown/index'
 import Icon, { IconType } from '../Icon/index'
 import { Spinner } from '../index'
-import { IDropdownItem } from '../Dropdown/index'
+import Input from '../Input/index'
+import List from '../List/index'
+import ListItem from '../ListItem/index'
+import Relative from '../Relative/index'
+import Text from '../Text/index'
 import { webkitScrollbar } from '../utils/webkitScrollbar'
+import View from '../View/index'
 
 const INPUT_FIELD_HEIGHT_PX = 50
 
@@ -133,7 +133,7 @@ export interface ISearchableDropdownProps {
   selectedItem?: IDropdownItem
 }
 
-const SearchableDropdown: React.FC<ISearchableDropdownProps> = ({
+const SearchableDropdown = ({
   clearable = false,
   clearSearchValueOnClose = true,
   disabled = false,
@@ -155,12 +155,12 @@ const SearchableDropdown: React.FC<ISearchableDropdownProps> = ({
   placement = 'bottom',
   initialSearchTerm = '',
   selectedItem,
-}) => {
-  const searchRef: React.RefObject<HTMLInputElement> = React.useRef(null)
-  const [searchTerm, setSearchTerm] = React.useState(initialSearchTerm)
+}: ISearchableDropdownProps) => {
+  const searchRef: RefObject<HTMLInputElement> = useRef(null)
+  const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
 
   const handleClearIconClick = (
-    event: React.SyntheticEvent,
+    event: SyntheticEvent,
     clearSelection: () => void,
   ) => {
     event.stopPropagation()
@@ -188,7 +188,7 @@ const SearchableDropdown: React.FC<ISearchableDropdownProps> = ({
     return changes
   }
 
-  const handleSearchChange = (event: React.SyntheticEvent) => {
+  const handleSearchChange = (event: SyntheticEvent) => {
     const value = (event.target as HTMLInputElement).value
 
     if (value !== searchTerm) {
@@ -209,7 +209,7 @@ const SearchableDropdown: React.FC<ISearchableDropdownProps> = ({
     const arrowDirection = placement === 'top' ? 'arrow-up' : 'arrow-down'
 
     return (
-      <React.Fragment>
+      <>
         {showClearIcon && (
           <Icon
             color="black"
@@ -227,7 +227,7 @@ const SearchableDropdown: React.FC<ISearchableDropdownProps> = ({
           name={arrowDirection}
           size={10}
         />
-      </React.Fragment>
+      </>
     )
   }
 

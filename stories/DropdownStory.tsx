@@ -1,13 +1,13 @@
-import * as React from 'react'
+import { css } from 'glamor'
+import React, { Component } from 'react'
 import {
-  View,
-  ThemeProvider,
+  Button,
   Dropdown,
   ResourceProvider,
-  Button,
   Text,
+  ThemeProvider,
+  View,
 } from '../src/'
-import { css } from 'glamor'
 
 const styles = {
   title: css({
@@ -21,7 +21,7 @@ const styles = {
   }),
 }
 
-class DropdownStory extends React.Component {
+class DropdownStory extends Component {
   state = {
     simpleDropdown: {
       label: 'dog',

@@ -1,7 +1,7 @@
-import * as React from 'react'
+import React from 'react'
+import Absolute, { IAbsoluteProps } from '../Absolute'
 import Circle from '../Circle'
 import Text from '../Text'
-import Absolute, { IAbsoluteProps } from '../Absolute'
 import Theme from '../Theme'
 
 /**
@@ -17,11 +17,11 @@ import Theme from '../Theme'
  * </ThemeProvider>
  * ```
  **/
-const CountIndicator: React.FC<ICountIndicatorProps> = ({
+const CountIndicator = ({
   count,
   color = 'warn',
   ...props
-}) =>
+}: ICountIndicatorProps) =>
   count === 0 ? null : (
     <Theme>
       {({ colorize }) => (

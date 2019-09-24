@@ -1,9 +1,9 @@
-import * as React from 'react'
-import Calendar from './Calendar'
-import ThemeProvider from '../ThemeProvider'
-import ResourceProvider from '../ResourceProvider'
-import renderer from 'react-test-renderer'
 import { render } from '@testing-library/react'
+import React from 'react'
+import renderer from 'react-test-renderer'
+import ResourceProvider from '../ResourceProvider'
+import ThemeProvider from '../ThemeProvider'
+import Calendar from './Calendar'
 
 describe('Calendar', () => {
   it('should be able to block days', () => {

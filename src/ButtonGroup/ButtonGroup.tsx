@@ -1,6 +1,6 @@
-import * as React from 'react'
-import View, { IViewProps } from '../View'
 import { css } from 'glamor'
+import React, { Children } from 'react'
+import View, { IViewProps } from '../View'
 
 const style = css({
   '> *': {
@@ -21,9 +21,9 @@ const style = css({
  * </ButtonGroup>
  * ```
  */
-const ButtonGroup: React.FC<IViewProps> = ({ children, ...props }) => (
+const ButtonGroup = ({ children, ...props }: IViewProps) => (
   <View direction="row" {...style} {...props}>
-    {React.Children.map(children, child => (
+    {Children.map(children, child => (
       <View>{child}</View>
     ))}
   </View>

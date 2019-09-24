@@ -1,5 +1,5 @@
-import * as React from 'react'
 import { css } from 'glamor'
+import React, { KeyboardEvent, PropsWithChildren, useState } from 'react'
 
 const styles = {
   wrapper: css({
@@ -28,13 +28,13 @@ const styles = {
   }),
 }
 
-export const Viewport: React.FC = ({ children }) => {
-  const [width, setWidth] = React.useState(320)
-  const [height, setHeight] = React.useState(568)
-  const [showPadding, setShowPadding] = React.useState(false)
-  const [shiftPressed, setShiftPressed] = React.useState(false)
+export const Viewport = ({ children }: PropsWithChildren<{}>) => {
+  const [width, setWidth] = useState(320)
+  const [height, setHeight] = useState(568)
+  const [showPadding, setShowPadding] = useState(false)
+  const [shiftPressed, setShiftPressed] = useState(false)
 
-  const toggleShiftPressed = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const toggleShiftPressed = (e: KeyboardEvent<HTMLInputElement>) => {
     const { shiftKey } = e
     if ((!shiftPressed && shiftKey) || (shiftPressed && !shiftKey)) {
       setShiftPressed(shiftKey)

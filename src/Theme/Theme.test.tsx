@@ -1,7 +1,7 @@
-import * as React from 'react'
-import Theme, { useTheme } from './Theme'
-import ThemeProvider from '../ThemeProvider'
 import { render } from '@testing-library/react'
+import React from 'react'
+import ThemeProvider from '../ThemeProvider'
+import Theme, { useTheme } from './Theme'
 
 describe('Theme consumer', () => {
   test('Theme component should render correct color', () => {

@@ -1,15 +1,15 @@
-import * as React from 'react'
+import React, { Component } from 'react'
 import {
-  Text,
-  ThemeProvider,
+  Inset,
   ResourceProvider,
   SimpleLayout,
   Spinner,
+  Text,
+  ThemeProvider,
   View,
-  Inset,
 } from '../src/'
 
-class SimpleLayoutStory extends React.Component<
+class SimpleLayoutStory extends Component<
   {},
   { loading: boolean; text: string }
 > {
@@ -25,7 +25,7 @@ class SimpleLayoutStory extends React.Component<
   fetchText = async () => {
     this.setState({ loading: true })
     const response = await fetch(
-      'https://baconipsum.com/api/?type=meat-and-filler'
+      'https://baconipsum.com/api/?type=meat-and-filler',
     )
     const text = await response.json()
     setTimeout(() => {

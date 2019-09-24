@@ -1,11 +1,11 @@
-import * as React from 'react'
 import { css } from 'glamor'
-import Text from '../Text'
-import Icon from '../Icon'
-import { IViewProps } from '../View'
-import Theme from '../Theme'
+import React from 'react'
 import Absolute from '../Absolute'
+import Icon from '../Icon'
 import Relative from '../Relative'
+import Text from '../Text'
+import Theme from '../Theme'
+import { IViewProps } from '../View'
 
 const styles = (backgroundColor: string, hasRemoveIcon: boolean) =>
   css({
@@ -31,12 +31,12 @@ const styles = (backgroundColor: string, hasRemoveIcon: boolean) =>
  * </ThemeProvider>
  * ```
  */
-const Pill: React.FC<IPillProps> = ({
+const Pill = ({
   color = 'primary',
   label,
   onRemoveClick,
   ...props
-}) => {
+}: IPillProps) => {
   return (
     <Theme>
       {({ colorize }) => (

@@ -1,6 +1,6 @@
-import * as React from 'react'
-import json2mq from 'json2mq'
 import { css } from 'glamor'
+import json2mq from 'json2mq'
+import React, { Component } from 'react'
 import Media from 'react-media'
 import View from '../View'
 
@@ -38,7 +38,7 @@ interface IResponsiveProps {
   onlyRenderOnMatch?: boolean
 }
 
-export default class Responsive extends React.Component<IResponsiveProps> {
+export default class Responsive extends Component<IResponsiveProps> {
   renderChildrenFn = () => this.props.children
 
   render() {

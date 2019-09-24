@@ -1,8 +1,8 @@
-import * as React from 'react'
-import View, { IViewProps } from '../View'
+import { css } from 'glamor'
+import React, { useContext, useEffect, useState } from 'react'
 import { ResourceProviderContext } from '../ResourceProvider'
 import Theme from '../Theme'
-import { css } from 'glamor'
+import View, { IViewProps } from '../View'
 
 export const Icons = [
   'alarm',
@@ -235,12 +235,12 @@ interface IIconProps extends IViewProps {
  *
  * *Note:* To use Icons, you need to wrap everything in a **ResourceProvider**
  */
-const Icon: React.FC<IIconProps> = ({
+const Icon = ({
   color = 'primary',
   name,
   size = 'm',
   ...props
-}) => {
+}: IIconProps) => {
   const iconName = getIconName(name)
   const isFilled = iconName.indexOf('Filled') !== -1
   const { width, height } = {
@@ -248,11 +248,11 @@ const Icon: React.FC<IIconProps> = ({
     height: getSize(size),
   }
 
-  const [html, setHtml] = React.useState('')
+  const [html, setHtml] = useState('')
 
-  const { resourcePath } = React.useContext(ResourceProviderContext)
+  const { resourcePath } = useContext(ResourceProviderContext)
 
-  React.useEffect(() => {
+  useEffect(() => {
     loadIcon(iconName, resourcePath).then(setHtml)
   }, [iconName, resourcePath])
 

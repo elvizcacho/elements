@@ -1,8 +1,8 @@
-import * as React from 'react'
-import Icon, { IconType } from '../Icon'
+import React, { Component } from 'react'
 import Circle from '../Circle'
-import { color } from '../utils/propTypes/color'
+import Icon, { IconType } from '../Icon'
 import Theme from '../Theme'
+import { color } from '../utils/propTypes/color'
 
 interface IListIconProps {
   readonly name: IconType
@@ -23,7 +23,7 @@ interface IListIconProps {
  * </ResourceProvider>
  * ```
  */
-class ListIcon extends React.Component<IListIconProps> {
+class ListIcon extends Component<IListIconProps> {
   render() {
     const {
       name,

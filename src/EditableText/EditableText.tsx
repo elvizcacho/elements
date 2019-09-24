@@ -1,6 +1,6 @@
 import { ColorPalette } from '@allthings/colors'
 import { css } from 'glamor'
-import * as React from 'react'
+import React, { KeyboardEvent } from 'react'
 import Icon, { IconType } from '../Icon'
 import Text from '../Text'
 import View, { IViewProps } from '../View'
@@ -23,19 +23,19 @@ const STYLES = {
   }),
 }
 
-const EditableText: React.FC<IEditableTextProps> = ({
+const EditableText = ({
   children,
   decorationColor = DEFAULT_DECORATION_COLOR,
   icon = DEFAULT_ICON,
   iconColor = DEFAULT_ICON_COLOR,
   ...props
-}) => (
+}: IEditableTextProps) => (
   <View alignV="center" direction="row">
     <Text
       block
       contentEditable
       // Disable multi-line editing.
-      onKeyPress={(event: React.KeyboardEvent<HTMLElement>) =>
+      onKeyPress={(event: KeyboardEvent<HTMLElement>) =>
         event.key === ENTER && event.preventDefault()
       }
       spellCheck={false}

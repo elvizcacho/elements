@@ -1,7 +1,7 @@
-import * as React from 'react'
-import View, { IViewProps } from '../View'
 import { css } from 'glamor'
+import React, { Component, ImgHTMLAttributes } from 'react'
 import { ResourceProviderContext } from '../ResourceProvider'
+import View, { IViewProps } from '../View'
 
 interface IImage {
   /** Alternative image to use */
@@ -16,7 +16,7 @@ interface IImage {
   position?: 'center' | 'left' | 'right' | 'top' | 'bottom'
 }
 
-type IImageProps = IImage & IViewProps & React.ImgHTMLAttributes<HTMLElement>
+type IImageProps = IImage & IViewProps & ImgHTMLAttributes<HTMLElement>
 
 /**
  * Images make thing more interesting. They can be used
@@ -39,7 +39,7 @@ type IImageProps = IImage & IViewProps & React.ImgHTMLAttributes<HTMLElement>
  * />
  * ```
  */
-export default class ImageElement extends React.Component<IImageProps, {}> {
+export default class ImageElement extends Component<IImageProps, {}> {
   state = {
     useFallback: false,
   }

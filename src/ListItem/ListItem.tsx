@@ -1,8 +1,8 @@
-import * as React from 'react'
-import { css } from 'glamor'
 import { ColorPalette } from '@allthings/colors'
-import View, { IViewProps } from '../View'
+import { css } from 'glamor'
+import React from 'react'
 import { color } from '../utils/propTypes/color'
+import View, { IViewProps } from '../View'
 
 const styles = (
   backgroundColor: string,
@@ -24,12 +24,12 @@ export interface IListItemProps extends IViewProps {
   readonly padded?: boolean
 }
 
-const ListItem: React.FC<IListItemProps> = ({
+const ListItem = ({
   backgroundColor = 'white',
   hideLine = false,
   padded = true,
   ...props
-}) => (
+}: IListItemProps) => (
   <View
     direction="row"
     alignV="center"

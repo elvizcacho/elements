@@ -1,16 +1,16 @@
-import * as React from 'react'
+import { ColorPalette } from '@allthings/colors'
+import { css } from 'glamor'
+import React, { Component } from 'react'
 import {
   Button,
-  View,
+  ResourceProvider,
   ThemeProvider,
   Typeahead,
-  ResourceProvider,
+  View,
 } from '../src/'
-import { css } from 'glamor'
 import Text from '../src/Text'
-import { ColorPalette } from '@allthings/colors'
-import Names from './data/names.json'
 import Movies from './data/movies.json'
+import Names from './data/names.json'
 
 const DEFAULT_VALUE = 'Danielle Lilleman'
 const MARGIN = 15 // px
@@ -44,7 +44,7 @@ const LabelIcon = ({ color }: { color: string }) => {
   )
 }
 
-class TypeaheadStory extends React.Component {
+class TypeaheadStory extends Component {
   state = {
     clearOnSelectValue: '',
     forcedValue: DEFAULT_VALUE,

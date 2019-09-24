@@ -1,11 +1,11 @@
-import * as React from 'react'
-import Text from '../Text'
-import ProfileImage, {
-  resolveSize,
-  ProfileImageSizeType,
-} from '../ProfileImage'
-import View from '../View'
 import { css } from 'glamor'
+import React from 'react'
+import ProfileImage, {
+  ProfileImageSizeType,
+  resolveSize,
+} from '../ProfileImage'
+import Text from '../Text'
+import View from '../View'
 
 const TIGHTNESS_FACTOR = 3
 

@@ -1,8 +1,8 @@
-import * as React from 'react'
-import { Button, confirm, ThemeProvider, View } from '../src'
 import { css } from 'glamor'
+import React, { Component } from 'react'
+import { Button, confirm, ThemeProvider, View } from '../src'
 
-export default class FormStory extends React.Component {
+export default class FormStory extends Component {
   state = {
     backgroundColor: 'white',
   }

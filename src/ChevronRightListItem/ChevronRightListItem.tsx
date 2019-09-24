@@ -1,9 +1,9 @@
-import * as React from 'react'
-import { css, merge } from 'glamor'
-import Icon from '../Icon'
-import View, { flexType } from '../View'
 import { ColorPalette } from '@allthings/colors'
+import { css, merge } from 'glamor'
+import React from 'react'
+import Icon from '../Icon'
 import ListItem, { IListItemProps } from '../ListItem'
+import View, { flexType } from '../View'
 
 const style = css({
   width: 12,
@@ -15,12 +15,12 @@ interface ChevronRightListItem extends IListItemProps {
   readonly innerStyle?: any
 }
 
-const ChevronRightListItem: React.FC<ChevronRightListItem> = ({
+const ChevronRightListItem = ({
   innerStyle,
   children,
   flex = 'grow',
   ...props
-}) => (
+}: ChevronRightListItem) => (
   <ListItem {...props} flex={flex}>
     <View
       direction="column"

@@ -1,7 +1,7 @@
-import * as React from 'react'
+import React from 'react'
 import renderer from 'react-test-renderer'
-import Text from './Text'
 import ThemeProvider from '../ThemeProvider'
+import Text from './Text'
 
 test('Text renders correctly', () => {
   const tree = renderer

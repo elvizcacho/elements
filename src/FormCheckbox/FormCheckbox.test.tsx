@@ -1,8 +1,8 @@
-import * as React from 'react'
-import { render, fireEvent } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import { mount } from 'enzyme'
-import FormCheckbox from './FormCheckbox'
+import React from 'react'
 import ThemeProvider from '../ThemeProvider'
+import FormCheckbox from './FormCheckbox'
 
 const THEME = {
   background: 'darkMarco',

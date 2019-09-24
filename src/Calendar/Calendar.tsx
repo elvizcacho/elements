@@ -1,10 +1,10 @@
-import * as React from 'react'
+import { ColorPalette } from '@allthings/colors'
+import { color, lightness } from 'kewler'
+import React from 'react'
 import UnstyledCalendar, {
   CalendarProps,
 } from 'react-calendar/dist/entry.nostyle'
-import { ColorPalette } from '@allthings/colors'
 import insertCSS from '../utils/insertCSS'
-import { color, lightness } from 'kewler'
 
 insertCSS(`
 .react-calendar {
@@ -127,11 +127,11 @@ const notDisabled = (_: { activeStartDate: Date }) => false
 /**
  * The `Calendar` component is a thin wrapper around https://github.com/wojtekmaj/react-calendar.
  */
-const Calendar: React.FC<ICalendarProps> = ({
+const Calendar = ({
   isBlockedDay = notBlocked,
   tileDisabled = notDisabled,
   ...props
-}) => (
+}: ICalendarProps) => (
   <UnstyledCalendar
     {...props}
     // Add functionality for `isBlockedDay` to disable and color dates differently

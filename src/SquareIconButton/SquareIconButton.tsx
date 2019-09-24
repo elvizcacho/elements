@@ -1,9 +1,9 @@
-import * as React from 'react'
-import Icon, { IconSizeType, IconType } from '../Icon'
 import { css } from 'glamor'
-import View from '../View'
-import { color, colorCode } from '../utils/propTypes/color'
+import React, { Component } from 'react'
+import Icon, { IconSizeType, IconType } from '../Icon'
 import { createMQ } from '../Responsive'
+import { color, colorCode } from '../utils/propTypes/color'
+import View from '../View'
 
 const box = (background: string, onClick: boolean) =>
   css({
@@ -37,7 +37,7 @@ interface ISquareIconButtonProps {
  * <SquareIconButton icon="armchair-filled" color="red" iconColor="white" />
  * ```
  */
-class SquareIconButton extends React.Component<ISquareIconButtonProps> {
+class SquareIconButton extends Component<ISquareIconButtonProps> {
   static defaultProps = {
     color: 'transparent',
     iconColor: 'lightBlack',

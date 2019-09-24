@@ -1,14 +1,14 @@
-import * as React from 'react'
-import View, { IViewProps } from '../View'
 import { css } from 'glamor'
+import React, { Children, Component, isValidElement, ReactNode } from 'react'
+import View, { IViewProps } from '../View'
 
 interface IHorizontalViewProps {
-  children: React.ReactNode[]
+  children: ReactNode[]
 }
 interface IState {
-  children?: React.ReactNode[]
+  children?: ReactNode[]
   currentChild: number
-  nextChildren?: React.ReactNode[]
+  nextChildren?: ReactNode[]
   waitForTransitionEnd: boolean
 }
 
@@ -55,7 +55,7 @@ interface IState {
  * </HorizontalView>
  * ```
  **/
-class HorizontalView extends React.Component<
+class HorizontalView extends Component<
   IViewProps & IHorizontalViewProps,
   IState
 > {
@@ -63,7 +63,7 @@ class HorizontalView extends React.Component<
     super(props)
 
     const children = props.children
-    const currentChild = React.Children.count(children)
+    const currentChild = Children.count(children)
 
     this.state = {
       children,
@@ -78,7 +78,7 @@ class HorizontalView extends React.Component<
     { children: previousState }: IState,
   ) {
     const [oldChildren, nextChildren] = [previousState, nextProps].map(
-      (children = []) => children.filter(child => React.isValidElement(child)),
+      (children = []) => children.filter(child => isValidElement(child)),
     )
 
     return nextChildren.length < oldChildren.length
@@ -121,7 +121,7 @@ class HorizontalView extends React.Component<
           onTransitionEnd={this.handleTransitionEnd}
           {...props}
         >
-          {React.Children.map(children, (child: React.ReactNode, i: number) => (
+          {Children.map(children, (child: ReactNode, i: number) => (
             <View
               // eslint-disable-next-line
               key={i}

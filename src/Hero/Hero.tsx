@@ -1,11 +1,11 @@
-import * as React from 'react'
 import { css } from 'glamor'
-import View, { IViewProps } from '../View'
-import { createMQ } from '../Responsive'
-import { colorCode } from '../utils/propTypes/color'
+import React from 'react'
 import Inset from '../Inset'
+import { createMQ } from '../Responsive'
 import Text from '../Text'
 import Theme from '../Theme'
+import { colorCode } from '../utils/propTypes/color'
+import View, { IViewProps } from '../View'
 
 const heroStyle = (background: string) =>
   css({
@@ -60,13 +60,13 @@ interface IHeroProps extends IViewProps {
  * </ThemeProvider>
  * ```
  */
-const Hero: React.FC<IHeroProps> = ({
+const Hero = ({
   img,
   text,
   children,
   color = 'primary',
   ...props
-}) => (
+}: IHeroProps) => (
   <Theme>
     {({ colorize }) => (
       <View

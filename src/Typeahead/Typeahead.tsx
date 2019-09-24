@@ -1,19 +1,19 @@
-import * as React from 'react'
-import Downshift, {
-  StateChangeOptions,
-  GetItemPropsOptions,
-  DownshiftState,
-} from 'downshift'
-import matchSorter from 'match-sorter'
 import { alpha, ColorPalette } from '@allthings/colors'
+import Downshift, {
+  DownshiftState,
+  GetItemPropsOptions,
+  StateChangeOptions,
+} from 'downshift'
 import { css, keyframes } from 'glamor'
-import Relative from '../Relative'
+import matchSorter from 'match-sorter'
+import React, { createRef, PureComponent, ReactNode } from 'react'
 import Absolute from '../Absolute'
-import { Input, List, ListItem, Text } from '../index'
 import Icon from '../Icon'
-import View from '../View'
-import escapeRegex from '../utils/escapeRegex'
+import { Input, List, ListItem, Text } from '../index'
+import Relative from '../Relative'
 import Spinner from '../Spinner'
+import escapeRegex from '../utils/escapeRegex'
+import View from '../View'
 
 const INPUT_FIELD_HEIGHT = '50px'
 
@@ -39,7 +39,7 @@ type Placement = 'top' | 'bottom'
 export interface ITypeaheadItem {
   label: string
   value: string
-  icon?: React.ReactNode
+  icon?: ReactNode
 }
 
 interface ITypeaheadProps {
@@ -89,7 +89,7 @@ const defaultProps = {
 
 type MyProps = typeof defaultProps & ITypeaheadProps
 
-export default class Typeahead extends React.PureComponent<MyProps, IState> {
+export default class Typeahead extends PureComponent<MyProps, IState> {
   static defaultProps = defaultProps
 
   constructor(props: MyProps) {
@@ -114,8 +114,8 @@ export default class Typeahead extends React.PureComponent<MyProps, IState> {
     }
   }
 
-  inputRef = React.createRef<HTMLInputElement>()
-  listRef = React.createRef<HTMLDivElement>()
+  inputRef = createRef<HTMLInputElement>()
+  listRef = createRef<HTMLDivElement>()
 
   componentDidMount() {
     if (this.listRef.current) {

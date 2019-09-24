@@ -1,6 +1,6 @@
-import * as React from 'react'
-import View, { IViewProps } from '../View'
 import { css } from 'glamor'
+import React from 'react'
+import View, { IViewProps } from '../View'
 
 const relative = ({ left, right, top, bottom }: IRelative) =>
   css({
@@ -24,14 +24,14 @@ interface IRelative {
   readonly right?: number
 }
 
-const Relative: React.FC<IRelativeProps> = ({
+const Relative = ({
   top,
   left,
   right,
   bottom,
   children,
   ...props
-}) => (
+}: IRelativeProps) => (
   <View {...relative({ top, left, right, bottom })} {...props}>
     {children}
   </View>

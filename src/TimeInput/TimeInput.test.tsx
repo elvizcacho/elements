@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { render, fireEvent } from '@testing-library/react'
-import TimeInput, { getTimeRange } from './TimeInput'
+import { fireEvent, render } from '@testing-library/react'
+import React from 'react'
 import ResourceProvider from '../ResourceProvider'
+import TimeInput, { getTimeRange } from './TimeInput'
 
 const first = (a: number[]) => a[0]
 const last = (a: number[]) => a[a.length - 1]

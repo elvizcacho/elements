@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { ExpandingTextarea, Icon, View, ChatBubble } from '../src'
-import { ColorPalette, alpha } from '@allthings/colors'
+import { alpha, ColorPalette } from '@allthings/colors'
 import { css } from 'glamor'
+import React, { useEffect, useRef, useState } from 'react'
+import { ChatBubble, ExpandingTextarea, Icon, View } from '../src'
 
 class Message {
   text: string
@@ -14,12 +14,12 @@ class Message {
 }
 
 const ChatStory = () => {
-  const [messages, setMessages] = React.useState<Message[]>([
+  const [messages, setMessages] = useState([
     new Message('Hey, how may I help you? 😎'),
   ])
-  const [currentMessage, setCurrentMessage] = React.useState('')
-  const scrollRef = React.useRef<HTMLDivElement>(null)
-  const [textareaHeight, setTextareaHeight] = React.useState(0)
+  const [currentMessage, setCurrentMessage] = useState('')
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [textareaHeight, setTextareaHeight] = useState(0)
 
   const addMessage = () => {
     const message = new Message(currentMessage.trim())
@@ -27,7 +27,7 @@ const ChatStory = () => {
     setCurrentMessage('')
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     scrollRef.current!.scrollTop = scrollRef.current!.scrollHeight
   }, [messages, textareaHeight])
 

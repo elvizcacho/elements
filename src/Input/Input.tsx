@@ -1,11 +1,19 @@
-import * as React from 'react'
-import View from '../View'
 import { css } from 'glamor'
+import React, {
+  AllHTMLAttributes,
+  ChangeEvent,
+  forwardRef,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
+import Absolute from '../Absolute'
+import Icon, { IconType } from '../Icon'
 import Relative from '../Relative'
 import Text, { createTextStyles } from '../Text'
-import Icon, { IconType } from '../Icon'
-import Absolute from '../Absolute'
 import { useCombinedRefs } from '../utils/hooks/useCombinedRefs'
+import View from '../View'
 
 const styles = {
   input: (
@@ -114,7 +122,7 @@ type validityStateType = typeof validityStates[number]
 
 export interface IInputProps
   extends IValidityStates,
-    React.AllHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
+    AllHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
   /** The default value to put into the component, without making it controlled */
   readonly defaultValue?: string | string[]
   /** Indicates that this field is required */
@@ -207,7 +215,7 @@ const setValidity = (
  * ```
  */
 
-const Input: React.FC<IInputProps> = ({
+const Input = ({
   required = false,
   forwardedRef,
   lines = 1,
@@ -228,11 +236,11 @@ const Input: React.FC<IInputProps> = ({
   valueMissing,
   icon,
   ...props
-}) => {
-  const internalRef = React.useRef<any>(null)
+}: IInputProps) => {
+  const internalRef = useRef<any>(null)
   const isTextArea = lines !== 1
-  const [value, setValue] = React.useState('')
-  const [length, setLength] = React.useState(
+  const [value, setValue] = useState('')
+  const [length, setLength] = useState(
     (typeof props.value === 'string' && props.value.length) || 0,
   )
   const currentValue = (props.value || value) as string
@@ -257,12 +265,8 @@ const Input: React.FC<IInputProps> = ({
     valueMissing,
   }
 
-  const handleChange = React.useCallback(
-    (
-      e:
-        | React.ChangeEvent<HTMLInputElement>
-        | React.ChangeEvent<HTMLTextAreaElement>,
-    ) => {
+  const handleChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
       setValidity(e.target, customValidity)
       setLength(e.target.value.length)
       setValue(e.target.value)
@@ -271,7 +275,7 @@ const Input: React.FC<IInputProps> = ({
     [customValidity, props],
   )
 
-  React.useEffect(() => {
+  useEffect(() => {
     const input = internalRef.current
     if (input) {
       setLength(input.value && input.value.length ? input.value.length : 0)
@@ -284,7 +288,7 @@ const Input: React.FC<IInputProps> = ({
   return (
     <Relative style={{ width: '100%' }}>
       {!isTextArea ? (
-        <React.Fragment>
+        <>
           {icon && (
             <Absolute
               {...css({ pointerEvents: 'none' })}
@@ -313,7 +317,7 @@ const Input: React.FC<IInputProps> = ({
             onChange={handleChange}
             pattern={pattern}
           />
-        </React.Fragment>
+        </>
       ) : (
         <textarea
           ref={combinedRef}
@@ -354,6 +358,6 @@ const Input: React.FC<IInputProps> = ({
   )
 }
 
-export default React.forwardRef<HTMLInputElement, IInputProps>((props, ref) => (
+export default forwardRef<HTMLInputElement, IInputProps>((props, ref) => (
   <Input {...props} forwardedRef={ref} />
 ))

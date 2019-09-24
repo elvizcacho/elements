@@ -1,6 +1,6 @@
-import * as React from 'react'
-import View, { IViewProps } from '../View'
 import { css } from 'glamor'
+import React from 'react'
+import View, { IViewProps } from '../View'
 
 const absolute = ({ left, right, top, bottom }: IAbsoluteProps) =>
   css({
@@ -22,14 +22,14 @@ export interface IAbsoluteProps {
   readonly right?: string | number
 }
 
-const Absolute: React.FC<IAbsoluteProps & IViewProps> = ({
+const Absolute = ({
   top,
   left,
   right,
   bottom,
   children,
   ...props
-}) => (
+}: IAbsoluteProps & IViewProps) => (
   <View {...absolute({ top, left, right, bottom })} {...props}>
     {children}
   </View>

@@ -1,11 +1,11 @@
-import * as React from 'react'
-import View from '../View'
 import { css } from 'glamor'
+import React, { ChangeEvent, Component, createRef } from 'react'
 import { between } from '../Card/utils/math'
-import ExpandingTextarea from '../ExpandingTextarea'
-import Text from '../Text'
 import CardButton from '../CardButton'
 import CardFooter from '../CardFooter'
+import ExpandingTextarea from '../ExpandingTextarea'
+import Text from '../Text'
+import View from '../View'
 
 const styles = {
   wrapper: css({
@@ -31,11 +31,11 @@ interface IState {
   text?: string
 }
 
-export default class CardOverlayEditor extends React.Component<
+export default class CardOverlayEditor extends Component<
   ICardOverlayEditorProps,
   IState
 > {
-  public element = React.createRef<HTMLDivElement>()
+  public element = createRef<HTMLDivElement>()
 
   constructor(props: ICardOverlayEditorProps) {
     super(props)
@@ -99,7 +99,7 @@ export default class CardOverlayEditor extends React.Component<
 
   handleSave = () => this.props.onSave(this.state.text)
 
-  handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const text = e.target.value
     this.setState(() => ({ text }))
   }

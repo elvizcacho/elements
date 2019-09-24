@@ -1,4 +1,9 @@
-import * as React from 'react'
+import React, {
+  createContext,
+  PropsWithChildren,
+  useEffect,
+  useState,
+} from 'react'
 
 export const RESOURCE_PATH = 'https://static.allthings.me'
 
@@ -8,7 +13,7 @@ export const RESOURCE_PATH = 'https://static.allthings.me'
  *
  * Whenever you like to use Icons or Illustrations, you need to use the ResourceProvider to let the components know where they are.
  */
-export const ResourceProviderContext = React.createContext({
+export const ResourceProviderContext = createContext({
   resourcePath: RESOURCE_PATH,
 })
 
@@ -22,14 +27,14 @@ export interface IResourceProviderProps {
  *
  * **Example**: If you want all you buttons to be red, instead of writing <Button color="red" /> all the time, you might want to set the "primary" color of your theme to red.
  **/
-const ResourceProvider: React.FC<IResourceProviderProps> = ({
+const ResourceProvider = ({
   children,
   resourcePath = RESOURCE_PATH,
-}) => {
+}: PropsWithChildren<IResourceProviderProps>) => {
   // this is to prevent unintentional re-renders in consumers
   // see https://reactjs.org/docs/context.html#caveats
-  const [value, setValue] = React.useState({ resourcePath })
-  React.useEffect(() => {
+  const [value, setValue] = useState({ resourcePath })
+  useEffect(() => {
     setValue({ resourcePath })
   }, [resourcePath])
 

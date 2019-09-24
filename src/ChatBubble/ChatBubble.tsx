@@ -1,7 +1,7 @@
-import * as React from 'react'
 import { css } from 'glamor'
-import Text from '../Text'
+import React, { ReactNode } from 'react'
 import ProfileImage from '../ProfileImage'
+import Text from '../Text'
 import Theme from '../Theme'
 
 const styles = {
@@ -80,9 +80,9 @@ interface IChatBubbleProps {
   /* Profile image of person who wrote the message */
   readonly userImage: string
   /* Date when the message was send */
-  readonly date: React.ReactNode
+  readonly date: ReactNode
   /* Text of the message */
-  readonly text: React.ReactNode
+  readonly text: ReactNode
   /* Background color of chat message */
   readonly background: string
   /* Position of profile image and name */
@@ -112,14 +112,14 @@ interface IChatBubbleProps {
  * </ThemeProvider>
  * ```
  */
-const ChatBubble: React.FC<IChatBubbleProps> = ({
+const ChatBubble = ({
   userName,
   userImage,
   date,
   background = 'white',
   direction = 'left',
   text,
-}) => {
+}: IChatBubbleProps) => {
   const isReversed = direction === 'right'
 
   return (

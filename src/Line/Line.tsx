@@ -1,7 +1,7 @@
-import * as React from 'react'
-import View from '../View'
 import { css } from 'glamor'
+import React from 'react'
 import { colorCode } from '../utils/propTypes/color'
+import View from '../View'
 
 const line = (color: string) =>
   css({

@@ -1,7 +1,7 @@
-import * as React from 'react'
-import CardOverlayEditor from './CardOverlayEditor'
-import CardButton from '../CardButton'
 import { mount } from 'enzyme'
+import React from 'react'
+import CardButton from '../CardButton'
+import CardOverlayEditor from './CardOverlayEditor'
 
 test('Component sends confirm when cancel button is clicked', () => {
   const log = jest.fn()

@@ -1,8 +1,16 @@
-import * as React from 'react'
 import { css } from 'glamor'
+import React, {
+  ChangeEvent,
+  Children,
+  cloneElement,
+  Component,
+  Fragment,
+  isValidElement,
+  ReactElement,
+} from 'react'
+import { IRadioButtonProps } from '../RadioButton'
 import Text from '../Text'
 import View from '../View'
-import { IRadioButtonProps } from '../RadioButton'
 
 const styles = {
   label: css({
@@ -27,7 +35,7 @@ interface IRadioButtonSetProps {
   /** The name of this input field */
   name: string
   /** Called when a radio button is clicked */
-  onChange?: (e: React.ChangeEvent) => void
+  onChange?: (e: ChangeEvent) => void
   /** Pass true to mark the field as required */
   required?: boolean
 }
@@ -51,7 +59,7 @@ interface IState {
  * </RadioButtonSet>
  * ```
  */
-class RadioButtonSet extends React.Component<IRadioButtonSetProps, IState> {
+class RadioButtonSet extends Component<IRadioButtonSetProps, IState> {
   static DIRECTION_HORIZONTAL = DIRECTION_HORIZONTAL
   static DIRECTION_VERTICAL = DIRECTION_VERTICAL
   static DIRECTION_AUTO = DIRECTION_AUTO
@@ -66,13 +74,13 @@ class RadioButtonSet extends React.Component<IRadioButtonSetProps, IState> {
 
   radios = []
 
-  handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     this.props.onChange && this.props.onChange(e)
     this.setState({ value: e.target.value })
   }
 
   getAutoDirection = () =>
-    React.Children.count(this.props.children) > 2 ? 'column' : 'row'
+    Children.count(this.props.children) > 2 ? 'column' : 'row'
 
   getDirection = () =>
     this.props.direction === DIRECTION_HORIZONTAL ? 'row' : 'column'
@@ -116,29 +124,26 @@ class RadioButtonSet extends React.Component<IRadioButtonSetProps, IState> {
           }
           {...props}
         >
-          {React.Children.map(
-            children,
-            (child: React.ReactElement<IRadioButtonProps>) => {
-              if (React.isValidElement(child)) {
-                if (child.type === React.Fragment) {
-                  console.log(
-                    [
-                      "Elements: the RadioButtonSet component doesn't accept a React.Fragment as a child.",
-                      'Consider providing an array instead.',
-                    ].join('\n'),
-                  )
-                }
-
-                return React.cloneElement(child, {
-                  name,
-                  checked: value === child.props.value,
-                  onChange: this.handleChange,
-                })
+          {Children.map(children, (child: ReactElement<IRadioButtonProps>) => {
+            if (isValidElement(child)) {
+              if (child.type === Fragment) {
+                console.log(
+                  [
+                    "Elements: the RadioButtonSet component doesn't accept a Fragment as a child.",
+                    'Consider providing an array instead.',
+                  ].join('\n'),
+                )
               }
 
-              return null
-            },
-          )}
+              return cloneElement(child, {
+                name,
+                checked: value === child.props.value,
+                onChange: this.handleChange,
+              })
+            }
+
+            return null
+          })}
         </View>
       </View>
     )

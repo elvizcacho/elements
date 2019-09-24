@@ -1,13 +1,13 @@
-import * as React from 'react'
-import {
-  ThemeProvider,
-  ResourceProvider,
-  List,
-  Card,
-  ListItem,
-  Button,
-} from '../src/'
 import { css } from 'glamor'
+import React from 'react'
+import {
+  Button,
+  Card,
+  List,
+  ListItem,
+  ResourceProvider,
+  ThemeProvider,
+} from '../src/'
 
 const CollapsibleStory = () => (
   <ThemeProvider>

@@ -1,7 +1,7 @@
-import * as React from 'react'
+import React from 'react'
 import renderer from 'react-test-renderer'
-import CardButton from './CardButton'
 import { ThemeProvider } from '../index'
+import CardButton from './CardButton'
 
 test('CardButton renders without error', () => {
   const tree = renderer

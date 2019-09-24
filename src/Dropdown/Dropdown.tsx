@@ -1,16 +1,16 @@
-import * as React from 'react'
+import { alpha, ColorPalette } from '@allthings/colors'
 import Downshift from 'downshift'
 import { css, keyframes } from 'glamor'
-import Relative from '../Relative'
+import React, { createRef, MouseEvent, PureComponent, ReactNode } from 'react'
 import Absolute from '../Absolute'
-import View from '../View'
-import Text from '../Text'
+import Icon, { IconType } from '../Icon'
+import Input from '../Input'
 import List from '../List'
 import ListItem from '../ListItem'
-import Input from '../Input'
-import { alpha, ColorPalette } from '@allthings/colors'
-import Icon, { IconType } from '../Icon'
+import Relative from '../Relative'
+import Text from '../Text'
 import { webkitScrollbar } from '../utils/webkitScrollbar'
+import View from '../View'
 
 const bounceDownwardsAnim = keyframes('bounce', {
   '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
@@ -50,7 +50,7 @@ const styles = {
 }
 
 export interface IDropdownItem {
-  label: React.ReactNode
+  label: ReactNode
   value: any
   key?: string
 }
@@ -83,12 +83,12 @@ export interface IDropdownProps {
   readonly name?: string
 }
 
-export default class Dropdown extends React.PureComponent<IDropdownProps> {
+export default class Dropdown extends PureComponent<IDropdownProps> {
   state = {
     showScrollArrow: false,
   }
 
-  listRef = React.createRef<HTMLDivElement>()
+  listRef = createRef<HTMLDivElement>()
 
   handleListScroll = (e: any) => {
     if (this.state.showScrollArrow && e.target.scrollTop > 0) {
@@ -194,7 +194,7 @@ export default class Dropdown extends React.PureComponent<IDropdownProps> {
                     })}
                     onClick={
                       showClearIcon
-                        ? (e: React.MouseEvent<HTMLElement>) => {
+                        ? (e: MouseEvent<HTMLElement>) => {
                             e.stopPropagation()
                             clearSelection()
                           }

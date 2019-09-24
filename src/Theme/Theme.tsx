@@ -1,8 +1,8 @@
-import * as React from 'react'
+import React, { ReactNode, useContext } from 'react'
 import {
-  ThemeConsumer,
-  ITheme,
   defaultTheme,
+  ITheme,
+  ThemeConsumer,
   ThemeContext,
 } from '../ThemeProvider'
 
@@ -17,14 +17,14 @@ type ThemeChildrenType = ({
 }: {
   theme: ITheme
   colorize: (color: string) => string
-}) => React.ReactNode
+}) => ReactNode
 
 interface IThemeProps {
   readonly children: ThemeChildrenType
 }
 
 export const useTheme = () => {
-  const theme = React.useContext(ThemeContext)
+  const theme = useContext(ThemeContext)
 
   return {
     theme,
@@ -32,7 +32,7 @@ export const useTheme = () => {
   }
 }
 
-const Theme: React.FC<IThemeProps> = ({ children }) => (
+const Theme = ({ children }: IThemeProps) => (
   <ThemeConsumer>
     {theme =>
       children({

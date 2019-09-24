@@ -1,10 +1,10 @@
-import * as React from 'react'
 import { css } from 'glamor'
-import Input from '../Input'
-import Calendar, { ICalendarProps } from '../Calendar'
-import Relative from '../Relative'
+import React, { Component } from 'react'
 import Absolute from '../Absolute'
+import Calendar, { ICalendarProps } from '../Calendar'
 import Icon from '../Icon'
+import Input from '../Input'
+import Relative from '../Relative'
 
 interface IState {
   date?: Date
@@ -30,7 +30,7 @@ interface IDateInputProps extends ICalendarProps {
 /**
  * `DateInput` shows a calendar on click and provides to select a single day.
  */
-class DateInput extends React.Component<IDateInputProps, IState> {
+class DateInput extends Component<IDateInputProps, IState> {
   static defaultProps = {
     readOnly: false,
     placeholder: '',

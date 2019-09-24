@@ -1,17 +1,17 @@
-import * as React from 'react'
+import { css } from 'glamor'
+import React, { Component } from 'react'
 import {
+  Button,
+  Card,
+  Collapsible,
+  Icon,
+  ResourceProvider,
   Text,
   ThemeProvider,
-  Collapsible,
-  ResourceProvider,
   View,
-  Card,
-  Icon,
-  Button,
 } from '../src/'
-import { css } from 'glamor'
 
-class DynamicCollapsible extends React.Component<any, any> {
+class DynamicCollapsible extends Component<any, any> {
   state = {
     items: ['Item 1', 'Item 2'],
   }

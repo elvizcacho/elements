@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { render, fireEvent } from '@testing-library/react'
-import { ThemeProvider, ResourceProvider, SearchableDropdown } from '../index'
+import { fireEvent, render } from '@testing-library/react'
+import React from 'react'
 import { EDropdownDirection } from '../enums'
+import { ResourceProvider, SearchableDropdown, ThemeProvider } from '../index'
 
 const items = [
   {

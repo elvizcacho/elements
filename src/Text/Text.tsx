@@ -1,8 +1,8 @@
-import * as React from 'react'
 import { css } from 'glamor'
-import View, { IViewProps } from '../View'
-import Theme from '../Theme'
 import neue from 'neue'
+import React from 'react'
+import Theme from '../Theme'
+import View, { IViewProps } from '../View'
 
 if (typeof window !== `undefined`) {
   neue.load([
@@ -85,7 +85,7 @@ export type ITextProps = IText & ITextStyles & IViewProps
  *  </Text>
  *  ```
  */
-const Text: React.FC<ITextProps> = ({
+const Text = ({
   color = 'text',
   block = true,
   children,
@@ -97,7 +97,7 @@ const Text: React.FC<ITextProps> = ({
   autoBreak,
   lineThrough,
   ...props
-}) => (
+}: ITextProps) => (
   <Theme>
     {({ colorize }) => (
       <View

@@ -1,6 +1,6 @@
-import * as React from 'react'
-import View from '../View'
 import { css } from 'glamor'
+import React from 'react'
+import View from '../View'
 
 /**
  * The vertical spacer is used to visually separate or create space between elements.

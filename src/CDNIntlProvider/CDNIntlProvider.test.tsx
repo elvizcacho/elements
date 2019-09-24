@@ -1,13 +1,13 @@
-import * as React from 'react'
-import { renderToString } from 'react-dom/server'
-import { hydrate } from 'react-dom'
-import renderer, { ReactTestRenderer } from 'react-test-renderer'
-import { FormattedMessage } from 'react-intl'
-import CDNIntlProvider from './CDNIntlProvider'
-import ResourceProvider from '../ResourceProvider'
+import { render } from '@testing-library/react'
 import { mount } from 'enzyme'
 import fetch from 'jest-fetch-mock'
-import { render } from '@testing-library/react'
+import React from 'react'
+import { hydrate } from 'react-dom'
+import { renderToString } from 'react-dom/server'
+import { FormattedMessage } from 'react-intl'
+import renderer, { ReactTestRenderer } from 'react-test-renderer'
+import ResourceProvider from '../ResourceProvider'
+import CDNIntlProvider from './CDNIntlProvider'
 
 describe('Check the CDNIntlProvider component', () => {
   beforeEach(fetch.resetMocks)

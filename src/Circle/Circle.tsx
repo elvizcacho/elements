@@ -1,7 +1,7 @@
-import * as React from 'react'
-import View, { IViewProps } from '../View'
 import { css } from 'glamor'
+import React from 'react'
 import Theme from '../Theme'
+import View, { IViewProps } from '../View'
 
 const circle = (
   backgroundColor: string,
@@ -20,8 +20,6 @@ const circle = (
   })
 
 export interface ICircleProps extends IViewProps {
-  /** Content of the Circle will be always centered */
-  readonly children?: React.ReactNode
   /** Color of the Circle. Allows theme names (like 'primary') or hex colors  */
   readonly color?: string
   /** Radius of Circle, defaults to 40 */
@@ -54,7 +52,7 @@ export interface ICircleProps extends IViewProps {
  * </ThemeProvider>
  * ```
  **/
-const Circle: React.FC<ICircleProps> = ({
+const Circle = ({
   fill = true,
   color = 'primary',
   outline = false,
@@ -62,7 +60,7 @@ const Circle: React.FC<ICircleProps> = ({
   radius = 40,
   children,
   ...props
-}) => (
+}: ICircleProps) => (
   <Theme>
     {({ colorize }) => (
       <View

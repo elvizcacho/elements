@@ -1,6 +1,6 @@
-import * as React from 'react'
+import { mount, shallow } from 'enzyme'
+import React from 'react'
 import Typeahead from './Typeahead'
-import { shallow, mount } from 'enzyme'
 // TODO: we should having to test within those instances but Enzyme unmount()
 // method is buggy!
 // See https://github.com/airbnb/enzyme/issues/941

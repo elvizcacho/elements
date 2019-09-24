@@ -1,11 +1,11 @@
-import * as React from 'react'
+import React from 'react'
 import renderer from 'react-test-renderer'
-import Card from './Card'
-import CardContent from '../CardContent'
-import Text from '../Text'
-import CardFooter from '../CardFooter'
 import CardButton from '../CardButton'
+import CardContent from '../CardContent'
+import CardFooter from '../CardFooter'
+import Text from '../Text'
 import ThemeProvider from '../ThemeProvider'
+import Card from './Card'
 
 test('Card renders without error', () => {
   const tree = renderer.create(<Card />).toJSON()

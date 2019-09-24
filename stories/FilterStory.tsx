@@ -1,21 +1,21 @@
-import * as React from 'react'
+import { ColorPalette } from '@allthings/colors'
+import React, { Component } from 'react'
 import {
-  Inset,
-  Input,
-  Spacer,
+  Button,
+  Collapsible,
   DateInput,
   Dropdown,
-  Collapsible,
-  ThemeProvider,
+  Form,
+  Input,
+  Inset,
   ResourceProvider,
+  Spacer,
+  ThemeProvider,
   TimeInput,
   View,
-  Button,
-  Form,
 } from '../src/'
-import { ColorPalette } from '@allthings/colors'
 
-export default class FilterStory extends React.Component {
+export default class FilterStory extends Component {
   state = {
     selectedDate: undefined,
     fromTime: undefined,

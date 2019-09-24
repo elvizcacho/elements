@@ -1,15 +1,15 @@
-import * as React from 'react'
-import { Pill, View, Collapsible, Inset, Spacer } from '../src'
 import { css } from 'glamor'
+import React, { useState } from 'react'
+import { Collapsible, Inset, Pill, Spacer, View } from '../src'
 
 export default function PillStory() {
-  const [items, setItems] = React.useState([
+  const [items, setItems] = useState([
     'Pens and Paper',
     'Cars and Planes',
     'Humans and Animals',
     '🦉',
   ])
-  const [fixedItems] = React.useState([
+  const [fixedItems] = useState([
     'Girls and Boys',
     'Black and White',
     'Free and Chained',

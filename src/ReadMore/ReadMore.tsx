@@ -1,7 +1,7 @@
-import * as React from 'react'
 import { css } from 'glamor'
-import View from '../View'
+import React, { Component, createRef } from 'react'
 import Text from '../Text'
+import View from '../View'
 
 interface IReadMoreProps {
   readonly initiallyCollapsed: boolean
@@ -37,7 +37,7 @@ interface IReadMoreProps {
 </Card>
  *  ```
  **/
-class ReadMore extends React.Component<IReadMoreProps> {
+class ReadMore extends Component<IReadMoreProps> {
   static defaultProps = {
     initiallyCollapsed: true,
     readMoreLabel: 'Read more...',
@@ -80,7 +80,7 @@ class ReadMore extends React.Component<IReadMoreProps> {
     this.observer && this.observer.disconnect()
   }
 
-  protected childRef = React.createRef<HTMLDivElement>()
+  protected childRef = createRef<HTMLDivElement>()
   private observer: MutationObserver
 
   toggleCollapse = () => {

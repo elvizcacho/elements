@@ -1,7 +1,7 @@
-import * as React from 'react'
+import { css } from 'glamor'
+import React from 'react'
 import Image from '../Image'
 import View, { IViewProps } from '../View'
-import { css } from 'glamor'
 
 const styles = {
   wrapper: css({
@@ -46,7 +46,7 @@ export type ProfileImageSizeType = 'xs' | 's' | 'm' | 'l' | number
 export const resolveSize = (size: ProfileImageSizeType) =>
   typeof size === 'number' ? size : sizeMap[size]
 
-const DefaultProfileImage: React.FC<IDimensions> = ({ width, height }) => {
+const DefaultProfileImage = ({ width, height }: IDimensions) => {
   return (
     <svg
       viewBox="0 0 500 500"
@@ -88,14 +88,14 @@ interface IProfileImageProps {
  * </Card>
  * ```
  */
-const ProfileImage: React.FC<IProfileImageProps & IViewProps> = ({
+const ProfileImage = ({
   size = 'm',
   showBorder = true,
   image,
   onClick,
   children,
   ...restProps
-}) => {
+}: IProfileImageProps & IViewProps) => {
   const width = resolveSize(size)
   const height = resolveSize(size)
   const pointerStyle = onClick ? { ':hover': { cursor: 'pointer' } } : {}

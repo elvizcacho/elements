@@ -1,7 +1,7 @@
-import * as React from 'react'
+import React from 'react'
 import renderer from 'react-test-renderer'
-import ThemeProvider from '../ThemeProvider'
 import ResourceProvider from '../ResourceProvider'
+import ThemeProvider from '../ThemeProvider'
 import Collapsible from './Collapsible'
 
 describe('Input component', () => {

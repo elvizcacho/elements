@@ -1,12 +1,12 @@
-import * as React from 'react'
-import {
-  View,
-  ThemeProvider,
-  SearchableDropdown,
-  ResourceProvider,
-  Text,
-} from '../src'
 import { css } from 'glamor'
+import React, { useEffect, useState } from 'react'
+import {
+  ResourceProvider,
+  SearchableDropdown,
+  Text,
+  ThemeProvider,
+  View,
+} from '../src'
 import { EDropdownDirection } from '../src/enums'
 
 const styles = {
@@ -178,14 +178,14 @@ const colors: any = {
 }
 
 const SearchableDropdownStory = () => {
-  const [items, setItems] = React.useState()
-  const [searchQuery, setSearchQuery] = React.useState('')
-  const [loadMore, setLoadMore] = React.useState('')
-  const [itemCount, setItemCount] = React.useState(ITEMS_LIMIT)
+  const [items, setItems] = useState()
+  const [searchQuery, setSearchQuery] = useState('')
+  const [loadMore, setLoadMore] = useState('')
+  const [itemCount, setItemCount] = useState(ITEMS_LIMIT)
 
-  React.useEffect(() => {
+  useEffect(() => {
     const filteredItems = Object.keys(colors).filter(
-      item => searchQuery === '' || item.includes(searchQuery)
+      item => searchQuery === '' || item.includes(searchQuery),
     )
 
     const totalItems = filteredItems.length

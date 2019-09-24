@@ -1,6 +1,6 @@
-import * as React from 'react'
+import React from 'react'
 import renderer from 'react-test-renderer'
-import { ThemeProvider, ResourceProvider, Dropdown } from '../index'
+import { Dropdown, ResourceProvider, ThemeProvider } from '../index'
 
 describe('Dropdown', () => {
   it('should render with placement bottom (default)', () => {

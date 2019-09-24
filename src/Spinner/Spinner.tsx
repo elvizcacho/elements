@@ -1,7 +1,7 @@
-import * as React from 'react'
 import { css, keyframes } from 'glamor'
-import { isIE11 } from '../utils/viewport'
+import React from 'react'
 import Theme from '../Theme'
+import { isIE11 } from '../utils/viewport'
 
 const spin = keyframes('load', {
   '0%': {
@@ -38,7 +38,7 @@ const styles = (color: string, size: number) => ({
  * <Spinner />
  * ```
  */
-const Spinner: React.FC<ISpinnerProps> = ({ color = 'primary', size = 30 }) => (
+const Spinner = ({ color = 'primary', size = 30 }: ISpinnerProps) => (
   <Theme>
     {({ colorize }) =>
       typeof window !== 'undefined' && isIE11(window.navigator.userAgent) ? (

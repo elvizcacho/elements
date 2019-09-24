@@ -1,9 +1,9 @@
-import * as React from 'react'
 import { css } from 'glamor'
-import { createTextStyles } from '../Text'
-import { color } from '../utils/propTypes/color'
 import { color as col, lightness } from 'kewler'
+import React, { HTMLProps, MouseEvent } from 'react'
+import { createTextStyles } from '../Text'
 import Theme from '../Theme'
+import { color } from '../utils/propTypes/color'
 
 const baseStyle = {
   position: 'relative',
@@ -77,10 +77,10 @@ function styles(
   })
 }
 
-interface IButtonProps extends React.HTMLProps<HTMLButtonElement> {
+interface IButtonProps extends HTMLProps<HTMLButtonElement> {
   /** If the button is used for a secondary option */
   readonly secondary?: boolean
-  readonly onClick?: (event: React.MouseEvent) => void
+  readonly onClick?: (event: MouseEvent) => void
   /** Type of the button (deprecated) */
   readonly type?: 'reset' | 'button' | 'submit'
   readonly color?: color
@@ -118,7 +118,7 @@ interface IButtonProps extends React.HTMLProps<HTMLButtonElement> {
  *  </Button>
  * ```
  */
-const Button: React.FC<IButtonProps> = ({
+const Button = ({
   children,
   type = 'button',
   disabled = false,
@@ -128,7 +128,7 @@ const Button: React.FC<IButtonProps> = ({
   onClick,
   name,
   ...restProps
-}) => (
+}: IButtonProps) => (
   <Theme>
     {({ colorize }) => (
       <button

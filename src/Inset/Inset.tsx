@@ -1,6 +1,6 @@
-import * as React from 'react'
-import View, { IViewProps } from '../View'
 import { css } from 'glamor'
+import React from 'react'
+import View, { IViewProps } from '../View'
 
 const styles = ({ horizontal = false, vertical = false }) =>
   css({
@@ -15,10 +15,12 @@ interface IInsetProps extends IViewProps {
   readonly vertical?: boolean
 }
 
-const Inset: React.FC<IViewProps & IInsetProps> = ({
+const Inset = ({
   horizontal = true,
   vertical,
   ...props
-}) => <View {...styles({ horizontal, vertical })} {...props} />
+}: IViewProps & IInsetProps) => (
+  <View {...styles({ horizontal, vertical })} {...props} />
+)
 
 export default Inset

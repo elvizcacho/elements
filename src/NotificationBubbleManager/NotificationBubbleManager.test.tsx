@@ -1,10 +1,10 @@
-import * as React from 'react'
+import { act, render } from '@testing-library/react'
+import React from 'react'
+import NotificationBubble from '../NotificationBubble'
+import ResourceProvider from '../ResourceProvider'
 import NotificationBubbleManager, {
   sendSuccess,
 } from './NotificationBubbleManager'
-import NotificationBubble from '../NotificationBubble'
-import ResourceProvider from '../ResourceProvider'
-import { act, render } from '@testing-library/react'
 
 test('NotificationBubbleManager renders the bubble', () => {
   const renderBubble = jest.fn(props => (

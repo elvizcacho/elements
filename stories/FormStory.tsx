@@ -1,5 +1,5 @@
-import * as React from 'react'
 import { action } from '@storybook/addon-actions'
+import React, { Component } from 'react'
 import {
   Button,
   Card,
@@ -8,19 +8,19 @@ import {
   List,
   ListItem,
   PhoneInput,
-  ResourceProvider,
-  RadioButtonSet,
   RadioButton,
+  RadioButtonSet,
+  ResourceProvider,
   SimpleLayout,
   SquareIconButton,
   Text,
   TextInput,
-  TitleBar,
   ThemeProvider,
+  TitleBar,
   View,
 } from '../src'
 
-export default class FormStory extends React.Component {
+export default class FormStory extends Component {
   render() {
     return (
       <ResourceProvider>

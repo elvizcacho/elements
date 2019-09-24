@@ -1,13 +1,10 @@
-import * as React from 'react'
-import View from '../View'
-import Spinner from '../Spinner'
+import React from 'react'
 import Circle, { ICircleProps } from '../Circle'
+import Spinner from '../Spinner'
+import View from '../View'
 
 /** It's a spinner for a list **/
-const ListSpinner: React.FC<IListSpinnerProps> = ({
-  radius = 40,
-  ...props
-}) => (
+const ListSpinner = ({ radius = 40, ...props }: IListSpinnerProps) => (
   <View direction="row" alignH="center">
     <Circle radius={radius} color="white" {...props}>
       <Spinner size={radius - 10} />

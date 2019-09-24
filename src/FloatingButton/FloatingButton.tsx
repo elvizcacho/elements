@@ -1,10 +1,10 @@
-import * as React from 'react'
-import Absolute from '../Absolute'
-import Theme from '../Theme'
 import { css } from 'glamor'
 import { color as col, lightness } from 'kewler'
-import View from '../View'
+import React, { HTMLAttributes } from 'react'
+import Absolute from '../Absolute'
 import ListSpinner from '../ListSpinner'
+import Theme from '../Theme'
+import View from '../View'
 
 const buttonStyle = css({
   width: '100%',
@@ -22,7 +22,7 @@ const buttonStyle = css({
   },
 })
 
-interface IFloatingButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+interface IFloatingButtonProps extends HTMLAttributes<HTMLButtonElement> {
   color?: string
   type?: 'submit' | 'button' | 'reset'
   disabled?: boolean
@@ -31,14 +31,14 @@ interface IFloatingButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   disabledColor?: string
 }
 
-const FloatingButton: React.FC<IFloatingButtonProps> = ({
+const FloatingButton = ({
   color = 'primary',
   disabled,
   disabledColor = 'lightGrey',
   inProgress = false,
   children,
   ...props
-}) => {
+}: IFloatingButtonProps) => {
   const isDisabled = disabled || inProgress
 
   return (

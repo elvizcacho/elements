@@ -1,5 +1,5 @@
-import * as React from 'react'
 import { css } from 'glamor'
+import React, { PropsWithChildren, useEffect, useRef } from 'react'
 import { between } from '../Card/utils/math'
 
 const menuStyle = css({
@@ -26,12 +26,12 @@ interface IOverlayMenuProps {
   readonly onRequestClose: (e: MouseEvent) => void
 }
 
-const OverlayMenu: React.FC<IOverlayMenuProps> = ({
+const OverlayMenu = ({
   onRequestClose,
   children,
-}) => {
-  const menuRef = React.useRef<HTMLDivElement>(null)
-  React.useEffect(() => {
+}: PropsWithChildren<IOverlayMenuProps>) => {
+  const menuRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
     const handleDocumentClick = (e: MouseEvent) => {
       if (menuRef.current) {
         const {
