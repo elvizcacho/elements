@@ -4,7 +4,7 @@ import { Motion, spring } from 'react-motion'
 import { createMQ } from '../Responsive'
 import Theme from '../Theme'
 import { color } from '../utils/propTypes/color'
-import View from '../View'
+import View, { IViewProps } from '../View'
 
 const simple = (backgroundColor: string) =>
   css({
@@ -25,7 +25,7 @@ const paddedCss = (paddedVertical: boolean, paddedHorizontal: boolean) =>
     },
   })
 
-interface ISimpleLayout {
+interface ISimpleLayout extends IViewProps {
   readonly backgroundColor: color
   readonly padded?: boolean | 'horizontal' | 'vertical'
   readonly onScrollEnd?: () => void
