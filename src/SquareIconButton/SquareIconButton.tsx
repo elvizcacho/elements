@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Icon, { IconSizeType, IconType } from '../Icon'
 import { createMQ } from '../Responsive'
 import { color, colorCode } from '../utils/propTypes/color'
-import View from '../View'
+import View, { IViewProps } from '../View'
 
 const box = (background: string, onClick: boolean) =>
   css({
@@ -20,13 +20,12 @@ const box = (background: string, onClick: boolean) =>
     },
   })
 
-interface ISquareIconButtonProps {
+interface ISquareIconButtonProps extends IViewProps {
   readonly icon: IconType
   readonly color?: color
   /** Size of the icon child component (check <Icon />) **/
   readonly iconSize?: IconSizeType
   readonly iconColor?: string
-  readonly onClick?: () => void
 }
 
 /**

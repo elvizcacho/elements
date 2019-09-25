@@ -11,7 +11,7 @@ const box = (background: string) =>
     zIndex: 2,
   })
 
-interface ITitleBarProps extends IViewProps {
+export interface ITitleBarProps extends IViewProps {
   /** Callback when title bar is clicked */
   readonly onClick?: () => void
   /** Color of the title bar */
