@@ -1,10 +1,8 @@
-<!--
-This is an auto-generated markdown.
+<!-- 
+This is an auto-generated markdown. 
 You can change it in "src/Form/Form.tsx" and run build:docs to update this file.
 -->
-
 # Form
-
 Forms are used to allow the user to submit information to the app. The form component provides a very simple,
 yet powerful way how to handle them.
 
@@ -15,7 +13,6 @@ are collected and get pass them as second argument to the onSubmit callback.
 To learn more, check out [controlled components section](https://reactjs.org/docs/forms.html#controlled-components) in the React docs.
 
 ## Getting started with 'Form'
-
 The Form component just <strong>does one simple thing</strong>:
 It intercepts the onSubmit Event and collects all data that the user entered and passes it as <strong>second parameter</strong> to the onSubmit callback,
 so you can work with it.
@@ -26,19 +23,19 @@ The HTTP method that the browser uses to submit the form defaults to <strong>POS
 
 ```jsx
 import { Form, TextInput } from '@allthings/elements'
-class MyForm extends React.Component {
-  handleSubmit = (e, data) => {
-    exampleLoginRequest(data.username, data.password)
-  }
+class MyForm extends Component {
 
-  render() {
-    return (
-      <Form onSubmit={this.handleSubmit}>
-        <TextInput name="username" required defaultValue="test" />
-        <TextInput type="password" name="password" required />
-      </Form>
-    )
-  }
+handleSubmit = (e, data) => {
+exampleLoginRequest(data.username, data.password)
+}
+
+render () {
+return (
+   <Form onSubmit={this.handleSubmit}>
+       <TextInput name="username" required defaultValue="test"/>
+       <TextInput type="password" name="password" required />
+   </Form>)
+}
 }
 ```
 
@@ -111,10 +108,8 @@ Also see the <a href="/molecules/TextInput/">TextInput</a> for allowed props.
 </ThemeProvider>
 </ResourceProvider>
 ```
-
 ## Usage
-
-| Name                    |     Type      | Description |
-| ----------------------- | :-----------: | ----------: |
-| method                  | "POST", "GET" |
-| onSubmit **(required)** |               |
+| Name        | Type           | Description  |
+| ----------- |:--------------:| ------------:|
+|method|"POST", "GET"|
+|onSubmit **(required)**||

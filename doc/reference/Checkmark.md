@@ -9,7 +9,7 @@ You can change it in "src/Checkmark/Checkmark.tsx" and run build:docs to update 
 | ----------- |:--------------:| ------------:|
 |checked **(required)**||
 |disabled **(required)**||
-|color **(required)**||
+|color|string|
 |htmlElement|string|
 |alignH|"none", "start", "center", "end", "space-around", "space-between"|horizontal alignment
 |alignV|"none", "start", "center", "end", "stretch"|vertical alignment

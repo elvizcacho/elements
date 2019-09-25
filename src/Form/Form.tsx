@@ -2,7 +2,7 @@ import React, { FormEvent, PropsWithChildren } from 'react'
 
 interface IFormProps {
   method?: 'POST' | 'GET'
-  onSubmit: (e: FormEvent, data: { [key: string]: string }) => void
+  onSubmit: (e: FormEvent, data: object) => void
 }
 
 /**

@@ -8,17 +8,17 @@ import { IViewProps } from '../View'
 interface ICheckmarkProps {
   readonly checked: boolean
   readonly disabled: boolean
-  readonly color: color
+  readonly color?: color
 }
 
 const Checkmark = ({
   checked = false,
   disabled,
-  color,
+  color = 'primary',
   onClick,
   ...props
 }: ICheckmarkProps & IViewProps) => {
-  const currentColor = disabled ? 'grey' : color || 'primary'
+  const currentColor = disabled ? 'grey' : color
   return (
     <Motion
       defaultStyle={{ size: 21.5 }}
