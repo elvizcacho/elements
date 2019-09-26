@@ -49,18 +49,6 @@ render(<App />, document.querySelector('#app'))
 import 'cross-fetch/polyfill'
 ```
 
-**i18n**
-
-The `CDNIntlProvider` fetches translations from the Allthings CDN.
-
-If you want to use the component make sure to also install the peer dependency [`react-intl`](https://github.com/yahoo/react-intl).
-
-We don't export the `CDNIntlProvider` from the index file, so it's necessary to import it directly from its destination:
-
-```
-import CDNIntlProvider from '@allthings/elements/behaviour/CDNIntlProvider'
-```
-
 ## Examples
 
 Are you looking for some full example projects to get started?
