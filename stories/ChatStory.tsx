@@ -19,12 +19,18 @@ const ChatStory = () => {
   ])
   const [currentMessage, setCurrentMessage] = useState('')
   const scrollRef = useRef<HTMLDivElement>(null)
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
   const [textareaHeight, setTextareaHeight] = useState(0)
 
   const addMessage = () => {
     const message = new Message(currentMessage.trim())
     setMessages(messages => [...messages, message])
     setCurrentMessage('')
+  }
+
+  const handleClickMessage = (text: string) => {
+    setCurrentMessage(`> ${text}\n`)
+    textareaRef.current && textareaRef.current.focus()
   }
 
   useEffect(() => {
@@ -61,11 +67,18 @@ const ChatStory = () => {
               minute: '2-digit',
               second: '2-digit',
             })}
-            text={message.text}
+            text={
+              <View
+                title="Click to quote this message"
+                onClick={() => handleClickMessage(message.text)}
+              >
+                {message.text}
+              </View>
+            }
             background={
               index === 0
                 ? alpha(ColorPalette.blueIntense, 0.5, true)
-                : alpha(ColorPalette.yellow, 0.5, true)
+                : alpha(ColorPalette.white, 0.5, true)
             }
             direction={index === 0 ? 'right' : 'left'}
           />
@@ -77,6 +90,7 @@ const ChatStory = () => {
         alignV="stretch"
       >
         <ExpandingTextarea
+          ref={textareaRef}
           placeholder={`Enter your message`}
           autoFocus
           value={currentMessage}
@@ -92,10 +106,7 @@ const ChatStory = () => {
           alignV="center"
           alignH="center"
           direction="row"
-          {...css({
-            minWidth: 40,
-            background: alpha(ColorPalette.yellow, 0.5, true),
-          })}
+          {...css({ minWidth: 40 })}
           onClick={addMessage}
         >
           <Icon name="arrow-right" size="xs" color="grey" />
