@@ -1,8 +1,8 @@
 import { css } from 'glamor'
-import React, { PureComponent, TouchEvent } from 'react'
+import React, { TouchEvent, useCallback, useRef, useState } from 'react'
 import { Motion, spring } from 'react-motion'
 import { createMQ } from '../Responsive'
-import Theme from '../Theme'
+import { useTheme } from '../Theme'
 import { color } from '../utils/propTypes/color'
 import View, { IViewProps } from '../View'
 
@@ -25,134 +25,121 @@ const paddedCss = (paddedVertical: boolean, paddedHorizontal: boolean) =>
     },
   })
 
-interface ISimpleLayout extends IViewProps {
-  readonly backgroundColor: color
+export interface ISimpleLayoutProps extends IViewProps {
+  readonly backgroundColor?: color
   readonly padded?: boolean | 'horizontal' | 'vertical'
   readonly onScrollEnd?: () => void
   readonly onPullDown?: () => void
+  readonly tolerance?: number
 }
 
-interface IState {
-  pullDownOffset: number
-}
-
-class SimpleLayout extends PureComponent<ISimpleLayout, IState> {
-  static defaultProps = {
-    backgroundColor: 'background',
-  }
-
-  state = {
-    pullDownOffset: 0,
-  }
-
-  trigger: boolean = true
-  scrollTop: number = 0
-  pullDown?: number
-
-  handleScroll = (e: MouseEvent) => {
-    e.preventDefault()
-    const target = e.target as HTMLDivElement
-    this.scrollTop = target.scrollTop
-    if (this.props.onScrollEnd) {
-      const thresholdReached =
-        target.scrollTop + target.clientHeight + 75 > target.scrollHeight
-
-      // Trigger the callback with a tolerance of 75 px.
-      if (thresholdReached) {
-        if (this.trigger) {
-          this.props.onScrollEnd()
-          this.trigger = false
-        }
-      } else {
-        this.trigger = true
-      }
-    }
-  }
-
-  handleTouchStart = () => {
-    if (this.props.onPullDown && this.scrollTop === 0) {
-      this.pullDown = undefined
-      this.setState({ pullDownOffset: 0 })
-    }
-  }
-
-  handleTouchMove = (e: TouchEvent<HTMLDivElement>) => {
-    if (this.props.onPullDown && this.scrollTop === 0) {
-      let y = 0
-      const touches = e.touches && e.touches.length ? e.touches : [e]
-      const event = (e.changedTouches && e.changedTouches[0]) || touches[0]
-      if (event) {
-        y = event.clientY || event.pageY || 0
-      }
-      if (this.pullDown !== undefined && y > this.pullDown) {
-        this.setState({
-          pullDownOffset: Math.min(Math.abs(this.pullDown - y), 60),
-        })
-      } else {
-        this.pullDown = y
-      }
-    }
-  }
-
-  handleTouchEnd = () => {
-    if (this.state.pullDownOffset === 60) {
-      this.props.onPullDown && this.props.onPullDown()
-    }
-    if (this.props.onPullDown && this.scrollTop === 0) {
-      this.pullDown = undefined
-      this.setState({ pullDownOffset: 0 })
-    }
-  }
-
-  render() {
-    const {
+const SimpleLayout = React.forwardRef<HTMLDivElement, ISimpleLayoutProps>(
+  (
+    {
       children,
-      backgroundColor,
       padded,
       onScrollEnd,
       onPullDown,
+      backgroundColor = 'background',
+      tolerance = 75,
       ...props
-    } = this.props
+    },
+    ref,
+  ) => {
+    const trigger = useRef(true)
+    const scrollTop = useRef(0)
+    const pullDown = useRef<number | undefined>()
+    const [pullDownOffset, setPullDownOffset] = useState(0)
+
+    const { colorize } = useTheme()
+
+    const handleScroll = useCallback(
+      (e: React.UIEvent<HTMLDivElement>) => {
+        e.preventDefault()
+        const target = e.target as HTMLDivElement
+        scrollTop.current = target.scrollTop
+        if (onScrollEnd) {
+          const thresholdReached =
+            target.scrollTop + target.clientHeight + tolerance >
+            target.scrollHeight
+
+          // Trigger the callback with a tolerance
+          if (thresholdReached) {
+            if (trigger.current) {
+              onScrollEnd()
+              trigger.current = false
+            }
+          } else {
+            trigger.current = true
+          }
+        }
+      },
+      [onScrollEnd, tolerance],
+    )
+
+    const handleTouchStart = useCallback(() => {
+      if (onPullDown && scrollTop.current === 0) {
+        pullDown.current = undefined
+        setPullDownOffset(0)
+      }
+    }, [onPullDown])
+
+    const handleTouchMove = useCallback(
+      (e: TouchEvent<HTMLDivElement>) => {
+        if (onPullDown && scrollTop.current === 0) {
+          let y = 0
+          const touches = e.touches && e.touches.length ? e.touches : [e]
+          const event = (e.changedTouches && e.changedTouches[0]) || touches[0]
+          if (event) {
+            y = event.clientY || event.pageY || 0
+          }
+          if (pullDown.current !== undefined && y > pullDown.current) {
+            setPullDownOffset(Math.min(Math.abs(pullDown.current - y), 60))
+          } else {
+            pullDown.current = y
+          }
+        }
+      },
+      [onPullDown],
+    )
+
+    const handleTouchEnd = useCallback(() => {
+      if (pullDownOffset === 60) {
+        onPullDown && onPullDown()
+      }
+      if (onPullDown && scrollTop.current === 0) {
+        pullDown.current = undefined
+        setPullDownOffset(0)
+      }
+    }, [onPullDown, pullDownOffset])
 
     return (
-      <Theme>
-        {({ colorize }) => (
-          <Motion
-            defaultStyle={{ x: 0 }}
-            style={{ x: spring(this.state.pullDownOffset) }}
-          >
-            {value => (
-              <View
-                direction="column"
-                flex="flex"
-                onTouchStart={this.handleTouchStart}
-                onTouchMove={this.handleTouchMove}
-                onTouchEnd={this.handleTouchEnd}
-                {...simple(colorize(backgroundColor))}
-                {...paddedCss(
-                  padded === true || padded === 'vertical',
-                  padded === true || padded === 'horizontal',
-                )}
-                style={
-                  value && value.x
-                    ? { transform: `translateY(${value.x}px)` }
-                    : {}
-                }
-                // workaround for
-                // TS2322: Type '(e: MouseEvent) => void' is not assignable to type '(event: UIEvent<HTMLElement>) => void'.
-                onScroll={this.handleScroll as any}
-                // for e2e-tests, to scroll down on pages (id is taken for cross browser selector compat)
-                id="scroll-container"
-                {...props}
-              >
-                {children}
-              </View>
+      <Motion defaultStyle={{ x: 0 }} style={{ x: spring(pullDownOffset) }}>
+        {value => (
+          <View
+            direction="column"
+            flex="flex"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            ref={ref}
+            {...simple(colorize(backgroundColor))}
+            {...paddedCss(
+              padded === true || padded === 'vertical',
+              padded === true || padded === 'horizontal',
             )}
-          </Motion>
+            style={
+              value && value.x ? { transform: `translateY(${value.x}px)` } : {}
+            }
+            onScroll={handleScroll}
+            {...props}
+          >
+            {children}
+          </View>
         )}
-      </Theme>
+      </Motion>
     )
-  }
-}
+  },
+)
 
-export default SimpleLayout
+export default React.memo(SimpleLayout)
