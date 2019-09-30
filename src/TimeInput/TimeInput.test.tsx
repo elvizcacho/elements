@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react'
+import { wait, fireEvent, render } from '@testing-library/react'
 import React from 'react'
 import ResourceProvider from '../ResourceProvider'
 import TimeInput, { getTimeRange } from './TimeInput'
@@ -126,7 +126,7 @@ describe('TimeInput', () => {
     expect((getByTestId('time-input') as HTMLSelectElement).value).toBe('10:15')
   })
 
-  it('should reset input value when hour is unset', () => {
+  it('should reset input value when hour is unset', async () => {
     const { getByTestId, getByDisplayValue } = render(
       <ResourceProvider>
         <TimeInput defaultValue="10:30" name="time" data-testid="time-input" />
@@ -136,7 +136,10 @@ describe('TimeInput', () => {
     const hourSelect = getByDisplayValue('10')
 
     fireEvent.change(hourSelect, { target: { value: '' } })
-    expect((getByTestId('time-input') as HTMLSelectElement).value).toBe('')
+
+    await wait(() => {
+      expect((getByTestId('time-input') as HTMLSelectElement).value).toBe('')
+    })
   })
 
   it('propTypes should complain about wrong time format', () => {
