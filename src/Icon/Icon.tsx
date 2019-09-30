@@ -1,7 +1,7 @@
 import { css } from 'glamor'
 import React, { useContext, useEffect, useState } from 'react'
 import { ResourceProviderContext } from '../ResourceProvider'
-import Theme from '../Theme'
+import { useTheme } from '../Theme'
 import View, { IViewProps } from '../View'
 
 export const Icons = [
@@ -251,28 +251,25 @@ const Icon = ({
   const [html, setHtml] = useState('')
 
   const { resourcePath } = useContext(ResourceProviderContext)
+  const { colorize } = useTheme()
 
   useEffect(() => {
     loadIcon(iconName, resourcePath).then(setHtml)
   }, [iconName, resourcePath])
 
   return (
-    <Theme>
-      {({ colorize }) => (
-        <View
-          {...props}
-          {...css({
-            width: width,
-            height: height,
-            fill: isFilled && colorize(color),
-            stroke: !isFilled && colorize(color),
-          })}
-          alignH="center"
-          alignV="center"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      )}
-    </Theme>
+    <View
+      {...props}
+      {...css({
+        width: width,
+        height: height,
+        fill: isFilled && colorize(color),
+        stroke: !isFilled && colorize(color),
+      })}
+      alignH="center"
+      alignV="center"
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
   )
 }
 

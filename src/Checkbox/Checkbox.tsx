@@ -4,7 +4,7 @@ import Absolute from '../Absolute'
 import Icon from '../Icon'
 import { IInputProps } from '../Input'
 import Relative from '../Relative'
-import Theme from '../Theme'
+import { useTheme } from '../Theme'
 import View from '../View'
 
 const styles = {
@@ -52,44 +52,41 @@ const Checkbox = ({ checked, name, onChange, ...props }: ICheckboxProps) => {
   }
 
   const checkedValue = Boolean(isControlled ? checked : isChecked)
+  const { colorize } = useTheme()
 
   return (
-    <Theme>
-      {({ colorize }) => (
-        <View direction="row" alignV="center">
-          <Relative
-            direction="row"
-            alignV="center"
-            alignH="center"
-            {...styles.checkbox(colorize('primary'), checkedValue)}
-          >
-            {checkedValue && (
-              <Relative bottom={1}>
-                <Icon name="check-filled" size={14} color="#fff" />
-              </Relative>
-            )}
-            <Absolute top={0} left={0} right={0} bottom={0}>
-              <input
-                type="checkbox"
-                checked={checkedValue}
-                id={name}
-                name={name}
-                value={String(checkedValue)}
-                style={{
-                  opacity: 0,
-                  width: '25px',
-                  height: '25px',
-                  margin: 0,
-                  cursor: 'pointer',
-                }}
-                onChange={handleChange}
-                {...props}
-              />
-            </Absolute>
+    <View direction="row" alignV="center">
+      <Relative
+        direction="row"
+        alignV="center"
+        alignH="center"
+        {...styles.checkbox(colorize('primary'), checkedValue)}
+      >
+        {checkedValue && (
+          <Relative bottom={1}>
+            <Icon name="check-filled" size={14} color="#fff" />
           </Relative>
-        </View>
-      )}
-    </Theme>
+        )}
+        <Absolute top={0} left={0} right={0} bottom={0}>
+          <input
+            type="checkbox"
+            checked={checkedValue}
+            id={name}
+            name={name}
+            value={String(checkedValue)}
+            style={{
+              opacity: 0,
+              width: '25px',
+              height: '25px',
+              margin: 0,
+              cursor: 'pointer',
+            }}
+            onChange={handleChange}
+            {...props}
+          />
+        </Absolute>
+      </Relative>
+    </View>
   )
 }
 

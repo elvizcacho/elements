@@ -4,7 +4,7 @@ import Absolute from '../Absolute'
 import Icon from '../Icon'
 import Relative from '../Relative'
 import Text from '../Text'
-import Theme from '../Theme'
+import { useTheme } from '../Theme'
 import { IViewProps } from '../View'
 
 const styles = (backgroundColor: string, hasRemoveIcon: boolean) =>
@@ -37,37 +37,34 @@ const Pill = ({
   onRemoveClick,
   ...props
 }: IPillProps) => {
+  const { colorize } = useTheme()
   return (
-    <Theme>
-      {({ colorize }) => (
-        <Relative
-          alignH="center"
-          alignV="center"
-          direction="column"
-          {...styles(colorize(color), !!onRemoveClick)}
-          {...props}
+    <Relative
+      alignH="center"
+      alignV="center"
+      direction="column"
+      {...styles(colorize(color), !!onRemoveClick)}
+      {...props}
+    >
+      <Text size="s" color="textOnBackground" strong block>
+        {label}
+      </Text>
+      {onRemoveClick && (
+        <Absolute
+          right={6}
+          top={-2}
+          {...css({ padding: 2 })}
+          onClick={onRemoveClick}
         >
-          <Text size="s" color="textOnBackground" strong block>
-            {label}
-          </Text>
-          {onRemoveClick && (
-            <Absolute
-              right={6}
-              top={-2}
-              {...css({ padding: 2 })}
-              onClick={onRemoveClick}
-            >
-              <Icon
-                {...css({ margin: '0px 0px 5px 7px' })}
-                name="remove-light-filled"
-                color={colorize('white')}
-                size={8}
-              />
-            </Absolute>
-          )}
-        </Relative>
+          <Icon
+            {...css({ margin: '0px 0px 5px 7px' })}
+            name="remove-light-filled"
+            color={colorize('white')}
+            size={8}
+          />
+        </Absolute>
       )}
-    </Theme>
+    </Relative>
   )
 }
 

@@ -1,9 +1,9 @@
-import React, { Component, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import Checkbox, { ICheckboxProps } from '../Checkbox'
 import Inset from '../Inset'
 import ListItem from '../ListItem'
 import Text, { TextSizeType } from '../Text'
-import Theme from '../Theme'
+import { useTheme } from '../Theme'
 
 export interface IFormCheckboxProps extends Omit<ICheckboxProps, 'label'> {
   /** True to make it checked */
@@ -27,34 +27,27 @@ export interface IFormCheckboxProps extends Omit<ICheckboxProps, 'label'> {
  * </View>
  * ```
  */
-class FormCheckbox extends Component<IFormCheckboxProps> {
-  static defaultProps = {
-    labelSize: 'l',
-    onChange: () => {},
-  }
+const FormCheckbox = ({
+  label,
+  labelSize = 'l',
+  name,
+  backgroundColor,
+  ...props
+}: IFormCheckboxProps) => {
+  const { colorize } = useTheme()
 
-  render() {
-    const { label, labelSize, name, backgroundColor, ...props } = this.props
-
-    return (
-      <Theme>
-        {({ colorize }) => (
-          <ListItem
-            backgroundColor={
-              backgroundColor ? colorize(backgroundColor) : undefined
-            }
-          >
-            <Checkbox name={name} {...props} />
-            <label htmlFor={name}>
-              <Inset horizontal>
-                <Text size={labelSize}>{label}</Text>
-              </Inset>
-            </label>
-          </ListItem>
-        )}
-      </Theme>
-    )
-  }
+  return (
+    <ListItem
+      backgroundColor={backgroundColor ? colorize(backgroundColor) : undefined}
+    >
+      <Checkbox name={name} {...props} />
+      <label htmlFor={name}>
+        <Inset horizontal>
+          <Text size={labelSize}>{label}</Text>
+        </Inset>
+      </label>
+    </ListItem>
+  )
 }
 
 export default FormCheckbox

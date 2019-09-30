@@ -1,6 +1,6 @@
 import { css } from 'glamor'
-import React, { Component } from 'react'
-import Theme from '../Theme'
+import React from 'react'
+import { useTheme } from '../Theme'
 import View, { IViewProps } from '../View'
 
 const box = (background: string) =>
@@ -35,24 +35,18 @@ export interface ITitleBarProps extends IViewProps {
  * </ThemeProvider>
  * ```
  */
-class TitleBar extends Component<ITitleBarProps> {
-  render() {
-    const { children, color = 'primary', ...props } = this.props
-    return (
-      <Theme>
-        {({ colorize }) => (
-          <View
-            direction="row"
-            alignV="center"
-            {...props}
-            {...box(colorize(color))}
-          >
-            {children}
-          </View>
-        )}
-      </Theme>
-    )
-  }
+const TitleBar = ({
+  children,
+  color = 'primary',
+  ...props
+}: ITitleBarProps) => {
+  const { colorize } = useTheme()
+
+  return (
+    <View direction="row" alignV="center" {...props} {...box(colorize(color))}>
+      {children}
+    </View>
+  )
 }
 
 export default TitleBar

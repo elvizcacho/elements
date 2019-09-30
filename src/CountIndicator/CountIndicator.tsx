@@ -2,7 +2,7 @@ import React from 'react'
 import Absolute, { IAbsoluteProps } from '../Absolute'
 import Circle from '../Circle'
 import Text from '../Text'
-import Theme from '../Theme'
+import { useTheme } from '../Theme'
 
 /**
  * CountIndicator are used to indicated changes or updates. They can also be
@@ -21,21 +21,19 @@ const CountIndicator = ({
   count,
   color = 'warn',
   ...props
-}: ICountIndicatorProps) =>
-  count === 0 ? null : (
-    <Theme>
-      {({ colorize }) => (
-        <Absolute {...props}>
-          <Circle color={color ? colorize(color) : color} radius={18}>
-            <Text size="xs" color="white">
-              {count > 9 ? '9+' : count}
-            </Text>
-          </Circle>
-        </Absolute>
-      )}
-    </Theme>
-  )
+}: ICountIndicatorProps) => {
+  const { colorize } = useTheme()
 
+  return count === 0 ? null : (
+    <Absolute {...props}>
+      <Circle color={color ? colorize(color) : color} radius={18}>
+        <Text size="xs" color="white">
+          {count > 9 ? '9+' : count}
+        </Text>
+      </Circle>
+    </Absolute>
+  )
+}
 interface ICountIndicatorProps extends IAbsoluteProps {
   /** Number to display */
   readonly count: number

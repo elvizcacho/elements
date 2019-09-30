@@ -1,9 +1,9 @@
 import { css } from 'glamor'
-import React, { Component } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 import { Motion, spring } from 'react-motion'
 import Icon from '../Icon'
 import Text from '../Text'
-import Theme from '../Theme'
+import { useTheme } from '../Theme'
 import View from '../View'
 
 const styles = {
@@ -25,12 +25,10 @@ const styles = {
   }),
 }
 
-interface INotificationBubble {
+interface INotificationBubbleProps {
   readonly color?: string
   readonly onTimeout?: () => void
-}
-interface INotificationBubbleState {
-  visible: boolean
+  readonly children?: ReactNode
 }
 
 /**
@@ -63,80 +61,60 @@ interface INotificationBubbleState {
  * ```
  *
  */
-class NotificationBubble extends Component<
-  INotificationBubble,
-  INotificationBubbleState
-> {
-  state = {
-    visible: true,
-  }
+const NotificationBubble = ({
+  color = 'primary',
+  onTimeout,
+  children,
+  ...props
+}: INotificationBubbleProps) => {
+  const [isVisible, setIsVisible] = useState(true)
+  useEffect(() => {
+    setTimeout(() => setIsVisible(false), 2750)
+  }, [])
+  const { colorize } = useTheme()
 
-  static defaultProps = {
-    color: 'primary',
-  }
+  const handleRest = () => !isVisible && onTimeout && onTimeout()
 
-  componentDidMount() {
-    setTimeout(() => this.setState({ visible: false }), 2750)
-  }
-
-  handleRest = () =>
-    this.state.visible === false &&
-    this.props.onTimeout &&
-    this.props.onTimeout()
-
-  render() {
-    const { color = 'primary', onTimeout, ...props } = this.props
-
-    return (
-      <Theme>
-        {({ colorize }) => (
-          <Motion
-            defaultStyle={{ position: -50 }}
-            onRest={this.handleRest}
+  return (
+    <Motion
+      defaultStyle={{ position: -50 }}
+      onRest={handleRest}
+      style={{
+        position: spring(isVisible ? 50 : -100, {
+          stiffness: 180,
+          damping: 12,
+        }),
+      }}
+    >
+      {style => (
+        <View {...props}>
+          <View
+            {...styles.bubble}
             style={{
-              position: spring(this.state.visible ? 50 : -100, {
-                stiffness: 180,
-                damping: 12,
-              }),
+              backgroundColor: colorize(color),
+              bottom: style.position,
             }}
+            direction="row"
+            alignV="center"
           >
-            {style => (
-              <View {...props}>
-                <View
-                  {...styles.bubble}
-                  style={{
-                    backgroundColor: colorize(color),
-                    bottom: style.position,
-                  }}
-                  direction="row"
-                  alignV="center"
-                >
-                  <View flex={70} direction="row" {...styles.text}>
-                    <Text
-                      color="textOnBackground"
-                      align="center"
-                      autoBreak
-                      style={{ width: '100%' }}
-                    >
-                      {this.props.children}
-                    </Text>
-                  </View>
-                  <View
-                    flex={30}
-                    alignH="center"
-                    alignV="center"
-                    direction="row"
-                  >
-                    <Icon name="check-filled" color="white" />
-                  </View>
-                </View>
-              </View>
-            )}
-          </Motion>
-        )}
-      </Theme>
-    )
-  }
+            <View flex={70} direction="row" {...styles.text}>
+              <Text
+                color="textOnBackground"
+                align="center"
+                autoBreak
+                style={{ width: '100%' }}
+              >
+                {children}
+              </Text>
+            </View>
+            <View flex={30} alignH="center" alignV="center" direction="row">
+              <Icon name="check-filled" color="white" />
+            </View>
+          </View>
+        </View>
+      )}
+    </Motion>
+  )
 }
 
 export default NotificationBubble

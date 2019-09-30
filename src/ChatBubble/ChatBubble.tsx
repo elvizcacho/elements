@@ -2,7 +2,7 @@ import { css } from 'glamor'
 import React, { ReactNode } from 'react'
 import ProfileImage from '../ProfileImage'
 import Text from '../Text'
-import Theme from '../Theme'
+import { useTheme } from '../Theme'
 
 const styles = {
   reply: css({ padding: '0 15px 15px 15px' }),
@@ -121,47 +121,44 @@ const ChatBubble = ({
   text,
 }: IChatBubbleProps) => {
   const isReversed = direction === 'right'
+  const { colorize } = useTheme()
 
   return (
-    <Theme>
-      {({ colorize }) => (
-        <div {...styles.reply}>
+    <div {...styles.reply}>
+      <div
+        className="info"
+        {...css(styles.title, isReversed && styles.titleReversed)}
+      >
+        <Text size="s" {...styles.user}>
+          {userName}
+        </Text>
+        <Text size="s" {...styles.time}>
+          {date}
+        </Text>
+      </div>
+      <div
+        className="content"
+        {...css(styles.content, isReversed && styles.contentReversed)}
+      >
+        <div className="image" {...styles.image}>
+          <ProfileImage size="m" image={userImage} />
+        </div>
+        <div
+          {...css(
+            styles.outerText(background),
+            isReversed && styles.outerTextReversed(background),
+          )}
+        >
           <div
-            className="info"
-            {...css(styles.title, isReversed && styles.titleReversed)}
+            {...css(styles.textContainer, {
+              background: colorize(background),
+            })}
           >
-            <Text size="s" {...styles.user}>
-              {userName}
-            </Text>
-            <Text size="s" {...styles.time}>
-              {date}
-            </Text>
-          </div>
-          <div
-            className="content"
-            {...css(styles.content, isReversed && styles.contentReversed)}
-          >
-            <div className="image" {...styles.image}>
-              <ProfileImage size="m" image={userImage} />
-            </div>
-            <div
-              {...css(
-                styles.outerText(background),
-                isReversed && styles.outerTextReversed(background),
-              )}
-            >
-              <div
-                {...css(styles.textContainer, {
-                  background: colorize(background),
-                })}
-              >
-                <Text {...css(styles.text)}>{text}</Text>
-              </div>
-            </div>
+            <Text {...css(styles.text)}>{text}</Text>
           </div>
         </div>
-      )}
-    </Theme>
+      </div>
+    </div>
   )
 }
 

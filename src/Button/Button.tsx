@@ -2,7 +2,7 @@ import { css } from 'glamor'
 import { color as col, lightness } from 'kewler'
 import React, { HTMLProps, MouseEvent } from 'react'
 import { createTextStyles } from '../Text'
-import Theme from '../Theme'
+import { useTheme } from '../Theme'
 import { color } from '../utils/propTypes/color'
 
 const baseStyle = {
@@ -128,28 +128,23 @@ const Button = ({
   onClick,
   name,
   ...restProps
-}: IButtonProps) => (
-  <Theme>
-    {({ colorize }) => (
-      <button
-        type={type}
-        {...css(
-          styles(
-            colorize(backgroundColor),
-            colorize(color),
-            disabled,
-            secondary,
-          ),
-        )}
-        {...restProps}
-        {...createTextStyles({ size: 'l' })}
-        name={name || type}
-        onClick={disabled ? undefined : onClick}
-      >
-        {children}
-      </button>
-    )}
-  </Theme>
-)
+}: IButtonProps) => {
+  const { colorize } = useTheme()
+
+  return (
+    <button
+      type={type}
+      {...css(
+        styles(colorize(backgroundColor), colorize(color), disabled, secondary),
+      )}
+      {...restProps}
+      {...createTextStyles({ size: 'l' })}
+      name={name || type}
+      onClick={disabled ? undefined : onClick}
+    >
+      {children}
+    </button>
+  )
+}
 
 export default Button

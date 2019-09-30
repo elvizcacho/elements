@@ -3,7 +3,7 @@ import React from 'react'
 import Inset from '../Inset'
 import { createMQ } from '../Responsive'
 import Text from '../Text'
-import Theme from '../Theme'
+import { useTheme } from '../Theme'
 import { colorCode } from '../utils/propTypes/color'
 import View, { IViewProps } from '../View'
 
@@ -66,28 +66,28 @@ const Hero = ({
   children,
   color = 'primary',
   ...props
-}: IHeroProps) => (
-  <Theme>
-    {({ colorize }) => (
-      <View
-        direction="row"
-        alignV="center"
-        alignH="space-around"
-        {...heroStyle(colorize(color))}
-        {...props}
-      >
-        <Inset direction="column" alignH="start" {...styles.textContainer}>
-          <Text color="white" size="l" strong>
-            {text}
-          </Text>
-          {children}
-        </Inset>
-        <View {...styles.heroImageContainer}>
-          {img && <img {...styles.heroImage} src={img} />}
-        </View>
+}: IHeroProps) => {
+  const { colorize } = useTheme()
+
+  return (
+    <View
+      direction="row"
+      alignV="center"
+      alignH="space-around"
+      {...heroStyle(colorize(color))}
+      {...props}
+    >
+      <Inset direction="column" alignH="start" {...styles.textContainer}>
+        <Text color="white" size="l" strong>
+          {text}
+        </Text>
+        {children}
+      </Inset>
+      <View {...styles.heroImageContainer}>
+        {img && <img {...styles.heroImage} src={img} />}
       </View>
-    )}
-  </Theme>
-)
+    </View>
+  )
+}
 
 export default Hero

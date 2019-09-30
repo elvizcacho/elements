@@ -1,6 +1,6 @@
 import { css } from 'glamor'
 import React from 'react'
-import Theme from '../Theme'
+import { useTheme } from '../Theme'
 import View, { IViewProps } from '../View'
 
 const circle = (
@@ -60,26 +60,26 @@ const Circle = ({
   radius = 40,
   children,
   ...props
-}: ICircleProps) => (
-  <Theme>
-    {({ colorize }) => (
-      <View
-        {...circle(
-          colorize(color),
-          outline,
-          colorize(outlineColor),
-          fill,
-          radius,
-        )}
-        alignV="center"
-        alignH="center"
-        direction="column"
-        {...props}
-      >
-        {children}
-      </View>
-    )}
-  </Theme>
-)
+}: ICircleProps) => {
+  const { colorize } = useTheme()
+
+  return (
+    <View
+      {...circle(
+        colorize(color),
+        outline,
+        colorize(outlineColor),
+        fill,
+        radius,
+      )}
+      alignV="center"
+      alignH="center"
+      direction="column"
+      {...props}
+    >
+      {children}
+    </View>
+  )
+}
 
 export default Circle

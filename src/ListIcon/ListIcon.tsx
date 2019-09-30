@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Circle from '../Circle'
 import Icon, { IconType } from '../Icon'
-import Theme from '../Theme'
+import { useTheme } from '../Theme'
 import { color } from '../utils/propTypes/color'
 
 interface IListIconProps {
@@ -23,23 +23,18 @@ interface IListIconProps {
  * </ResourceProvider>
  * ```
  */
-class ListIcon extends Component<IListIconProps> {
-  render() {
-    const {
-      name,
-      backgroundColor = 'primary',
-      iconColor = 'textOnBackground',
-    } = this.props
-    return (
-      <Theme>
-        {({ colorize }) => (
-          <Circle color={colorize(backgroundColor)} fill radius={40}>
-            <Icon color={iconColor} size="s" name={name} />
-          </Circle>
-        )}
-      </Theme>
-    )
-  }
+const ListIcon = ({
+  name,
+  backgroundColor = 'primary',
+  iconColor = 'textOnBackground',
+}: IListIconProps) => {
+  const { colorize } = useTheme()
+
+  return (
+    <Circle color={colorize(backgroundColor)} fill radius={40}>
+      <Icon color={iconColor} size="s" name={name} />
+    </Circle>
+  )
 }
 
 export default ListIcon

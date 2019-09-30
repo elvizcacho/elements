@@ -1,7 +1,7 @@
 import { css } from 'glamor'
 import neue from 'neue'
 import React from 'react'
-import Theme from '../Theme'
+import { useTheme } from '../Theme'
 import View, { IViewProps } from '../View'
 
 if (typeof window !== `undefined`) {
@@ -97,29 +97,28 @@ const Text = ({
   autoBreak,
   lineThrough,
   ...props
-}: ITextProps) => (
-  <Theme>
-    {({ colorize }) => (
-      <View
-        {...css(
-          createTextStyles({
-            block,
-            italic,
-            strong,
-            size,
-            underline,
-            lineThrough,
-            align,
-            autoBreak,
-          }),
-          { color: colorize(color) },
-        )}
-        {...props}
-      >
-        {children}
-      </View>
-    )}
-  </Theme>
-)
+}: ITextProps) => {
+  const { colorize } = useTheme()
+  return (
+    <View
+      {...css(
+        createTextStyles({
+          block,
+          italic,
+          strong,
+          size,
+          underline,
+          lineThrough,
+          align,
+          autoBreak,
+        }),
+        { color: colorize(color) },
+      )}
+      {...props}
+    >
+      {children}
+    </View>
+  )
+}
 
 export default Text

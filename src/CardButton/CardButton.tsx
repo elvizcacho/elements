@@ -1,7 +1,7 @@
 import { css } from 'glamor'
 import { color as col, lightness } from 'kewler'
 import React from 'react'
-import Theme from '../Theme'
+import { useTheme } from '../Theme'
 import { color } from '../utils/propTypes/color'
 import View, { IViewProps } from '../View'
 
@@ -34,20 +34,19 @@ interface ICardButtonProps extends IViewProps {
 const CardButton = ({
   backgroundColor = '#ffffff',
   ...props
-}: ICardButtonProps) => (
-  <Theme>
-    {({ colorize }) => (
-      <View
-        alignH="center"
-        flex="flex"
-        alignV="center"
-        direction="row"
-        htmlElement="button"
-        {...style(colorize(backgroundColor))}
-        {...props}
-      />
-    )}
-  </Theme>
-)
+}: ICardButtonProps) => {
+  const { colorize } = useTheme()
+  return (
+    <View
+      alignH="center"
+      flex="flex"
+      alignV="center"
+      direction="row"
+      htmlElement="button"
+      {...style(colorize(backgroundColor))}
+      {...props}
+    />
+  )
+}
 
 export default CardButton

@@ -1,7 +1,7 @@
-import React, { Component, HTMLAttributes } from 'react'
+import React, { HTMLAttributes } from 'react'
 import Input, { IInputProps } from '../Input'
 import ListItem from '../ListItem'
-import Theme from '../Theme'
+import { useTheme } from '../Theme'
 
 /**
  * TextInputs are used to allow users to enter information like names, numbers, urls, email addresses or passwords.
@@ -11,22 +11,19 @@ import Theme from '../Theme'
  * <TextInput name="inquiry" lines={5} placeholder="Your question" maxLength={255} minLength={50} />
  * ```
  */
-class TextInput extends Component<
-  IInputProps & { backgroundColor?: string } & HTMLAttributes<HTMLElement>
-> {
-  render() {
-    const { backgroundColor = 'background', ...props } = this.props
+const TextInput = ({
+  backgroundColor = 'background',
+  ...props
+}: IInputProps & { backgroundColor?: string } & HTMLAttributes<
+    HTMLElement
+  >) => {
+  const { colorize } = useTheme()
 
-    return (
-      <Theme>
-        {({ colorize }) => (
-          <ListItem padded={false} backgroundColor={colorize(backgroundColor)}>
-            <Input {...props} />
-          </ListItem>
-        )}
-      </Theme>
-    )
-  }
+  return (
+    <ListItem padded={false} backgroundColor={colorize(backgroundColor)}>
+      <Input {...props} />
+    </ListItem>
+  )
 }
 
 export default TextInput
