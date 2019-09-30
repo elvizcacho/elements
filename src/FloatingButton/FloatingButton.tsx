@@ -9,7 +9,7 @@ import View from '../View'
 const buttonStyle = css({
   width: '100%',
   display: 'flex',
-  alignItems: 'center',
+  alignItems: 'flex-start',
   justifyContent: 'center',
   height: '100%',
   background: 'transparent',
