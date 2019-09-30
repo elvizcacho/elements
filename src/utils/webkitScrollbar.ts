@@ -1,6 +1,6 @@
 export const webkitScrollbar = {
   '::-webkit-scrollbar': {
-    '-webkit-appearance': 'none',
+    WebkitAppearance: 'none',
     width: 10,
   },
   '::-webkit-scrollbar-thumb': {

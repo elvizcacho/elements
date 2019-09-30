@@ -254,7 +254,13 @@ const Icon = ({
   const { colorize } = useTheme()
 
   useEffect(() => {
-    loadIcon(iconName, resourcePath).then(setHtml)
+    let didCancel = true
+    loadIcon(iconName, resourcePath).then((html: string) => {
+      didCancel && setHtml(html)
+    })
+    return () => {
+      didCancel = false
+    }
   }, [iconName, resourcePath])
 
   return (

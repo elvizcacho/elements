@@ -1,6 +1,5 @@
-import { render } from '@testing-library/react'
 import React from 'react'
-import renderer from 'react-test-renderer'
+import { render } from '@testing-library/react'
 import ResourceProvider from '../ResourceProvider'
 import ThemeProvider from '../ThemeProvider'
 import Calendar from './Calendar'
@@ -25,16 +24,14 @@ describe('Calendar', () => {
   })
 
   it('should render calendar', () => {
-    const tree = renderer
-      .create(
-        <ThemeProvider>
-          <ResourceProvider>
-            <Calendar value={new Date(2020, 0, 1)} />
-          </ResourceProvider>
-        </ThemeProvider>,
-      )
-      .toJSON()
+    const { container } = render(
+      <ThemeProvider>
+        <ResourceProvider>
+          <Calendar value={new Date(2020, 0, 1)} />
+        </ResourceProvider>
+      </ThemeProvider>,
+    )
 
-    expect(tree).toMatchSnapshot()
+    expect(container).toMatchSnapshot()
   })
 })
