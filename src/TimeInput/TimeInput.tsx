@@ -267,7 +267,7 @@ class TimeInput extends Component<ITimeInputProps, IState> {
           value={value}
         />
         <Absolute
-          left={15}
+          left={props.icon ? 40 : 15}
           top={0}
           bottom={0}
           right={0}

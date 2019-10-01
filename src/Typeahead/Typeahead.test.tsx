@@ -278,10 +278,8 @@ describe('Test the typeahead component', () => {
     expect(handleOnSelect.mock.calls.length).toBe(1)
   })
   it('should handle warn the user if the clearOnSelect property is used on a controlled or uncontrolled component', () => {
-    const hasWarned = jest
-      .spyOn(console, 'warn')
-      .mockImplementationOnce(() => true)
-    expect(hasWarned.mock.calls.length).toBe(0)
+    console.warn = jest.fn()
+
     shallow(
       <Typeahead
         autoOpen
@@ -291,7 +289,7 @@ describe('Test the typeahead component', () => {
         placeholder={PLACEHOLDER}
       />,
     )
-    expect(hasWarned.mock.calls.length).toBe(1)
+    expect(console.warn).toBeCalled()
     shallow(
       <Typeahead
         autoOpen
@@ -301,7 +299,8 @@ describe('Test the typeahead component', () => {
         value={NICK}
       />,
     )
-    expect(hasWarned.mock.calls.length).toBe(2)
+    expect(console.warn).toBeCalledTimes(2)
+    ;(console.warn as any).mockRestore()
   })
   it('should use autocomplete="off" for both inputs', () => {
     const wrapper = mount(<Typeahead items={ITEMS} placeholder={PLACEHOLDER} />)

@@ -544,8 +544,8 @@ exports[`SearchableDropdown should render with icon 1`] = `
             </div>
           </div>
           <div
-            data-css-18=""
             data-css-8=""
+            data-css-18=""
           >
             <div
               data-css-22=""
@@ -1160,8 +1160,8 @@ exports[`SearchableDropdown should render with load more 1`] = `
             </div>
           </div>
           <div
-            data-css-19=""
             data-css-9=""
+            data-css-19=""
           >
             <div
               data-css-23=""
@@ -1739,8 +1739,8 @@ exports[`SearchableDropdown should render with no results 1`] = `
             </div>
           </div>
           <div
-            data-css-17=""
             data-css-7=""
+            data-css-17=""
           >
             <div
               data-css-21=""
@@ -2301,8 +2301,8 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
             </div>
           </div>
           <div
-            data-css-23=""
             data-css-9=""
+            data-css-23=""
           >
             <div
               data-css-27=""
@@ -2923,8 +2923,8 @@ exports[`SearchableDropdown should render with placement top 1`] = `
             </div>
           </div>
           <div
-            data-css-23=""
             data-css-9=""
+            data-css-23=""
           >
             <div
               data-css-26=""
