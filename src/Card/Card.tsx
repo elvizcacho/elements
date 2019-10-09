@@ -14,7 +14,7 @@ const style = css({
  * ```example
  * <Card>
  *  <CardContent>
- *    <Text size="xl" strong>
+ *    <Text size="xl" weight="semi-bold">
  *      Cards
  *    </Text>
  *    <Text>

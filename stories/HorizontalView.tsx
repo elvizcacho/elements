@@ -38,7 +38,7 @@ export default class HorizontalViewStory extends Component<
             <TitleBar alignH="space-between">
               <View direction="row" alignV="center">
                 <SquareIconButton icon="armchair-filled" iconColor="white" />
-                <Text color="white" strong>
+                <Text color="white" weight="semi-bold">
                   Get Relaxed
                 </Text>
               </View>

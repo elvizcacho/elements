@@ -26,7 +26,7 @@ export interface ITitleBarProps extends IViewProps {
  *   <TitleBar alignH="space-between" color="primary">
  *     <View direction="row" alignV="center">
  *       <SquareIconButton icon="armchair-filled" iconColor="white" />
- *       <Text color="white" strong>
+ *       <Text color="white" weight="semi-bold">
  *         Get Relaxed
  *       </Text>
  *     </View>

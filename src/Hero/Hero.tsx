@@ -78,7 +78,7 @@ const Hero = ({
       {...props}
     >
       <Inset direction="column" alignH="start" {...styles.textContainer}>
-        <Text color="white" size="l" strong>
+        <Text color="white" size="l" weight="semi-bold">
           {text}
         </Text>
         {children}

@@ -50,9 +50,7 @@ class SimpleLayoutStory extends Component<
               </View>
             )}
             {text && (
-              <Text strong block>
-                Pull down to load a new Text.{' '}
-              </Text>
+              <Text weight="semi-bold">Pull down to load a new Text. </Text>
             )}
             {text && <Text>{text}</Text>}
           </SimpleLayout>

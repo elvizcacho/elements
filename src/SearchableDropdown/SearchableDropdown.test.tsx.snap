@@ -1220,9 +1220,9 @@ exports[`SearchableDropdown should render with load more 1`] = `
                 data-css-30=""
               >
                 <div
+                  data-css-40=""
                   data-css-9=""
                   data-css-3=""
-                  data-css-40=""
                   data-testid="searchable-dropdown-load-more"
                 >
                   Load more

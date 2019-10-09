@@ -46,7 +46,7 @@ const Pill = ({
       {...styles(colorize(color), !!onRemoveClick)}
       {...props}
     >
-      <Text size="s" color="textOnBackground" strong block>
+      <Text size="s" color="textOnBackground" weight="semi-bold" block>
         {label}
       </Text>
       {onRemoveClick && (

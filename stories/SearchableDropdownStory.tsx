@@ -211,7 +211,7 @@ const SearchableDropdownStory = () => {
     <ThemeProvider>
       <ResourceProvider>
         <View direction="column" {...css({ padding: '10px 20px' })}>
-          <Text strong {...styles.title}>
+          <Text weight="semi-bold" {...styles.title}>
             Simple dropdown
           </Text>
           <SearchableDropdown
@@ -225,7 +225,7 @@ const SearchableDropdownStory = () => {
             placeholder="Some label"
           />
 
-          <Text strong {...styles.title}>
+          <Text weight="semi-bold" {...styles.title}>
             Dropdown with icon and label
           </Text>
           <SearchableDropdown
@@ -241,7 +241,7 @@ const SearchableDropdownStory = () => {
             placeholder="Some label"
           />
 
-          <Text strong {...styles.title}>
+          <Text weight="semi-bold" {...styles.title}>
             Dropdown with no results
           </Text>
           <SearchableDropdown
@@ -255,7 +255,7 @@ const SearchableDropdownStory = () => {
             placeholder="Some label"
           />
 
-          <Text strong {...styles.title}>
+          <Text weight="semi-bold" {...styles.title}>
             Initially selected item (clearable)
           </Text>
           <SearchableDropdown
@@ -273,7 +273,7 @@ const SearchableDropdownStory = () => {
             initialSelectedItem={{ label: 'darkgoldenrod', value: '#b8860b' }}
           />
 
-          <Text strong {...styles.title}>
+          <Text weight="semi-bold" {...styles.title}>
             Dropdown with top placement
           </Text>
           <SearchableDropdown
@@ -291,7 +291,7 @@ const SearchableDropdownStory = () => {
             placement={EDropdownDirection.TOP}
           />
 
-          <Text strong {...styles.title}>
+          <Text weight="semi-bold" {...styles.title}>
             Dropdown in loading state
           </Text>
           <SearchableDropdown
@@ -303,7 +303,7 @@ const SearchableDropdownStory = () => {
             placeholder="Some label"
           />
 
-          <Text strong {...styles.title}>
+          <Text weight="semi-bold" {...styles.title}>
             Disabled Dropdown
           </Text>
           <SearchableDropdown
