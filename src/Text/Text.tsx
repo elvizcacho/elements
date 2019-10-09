@@ -13,7 +13,15 @@ if (typeof window !== `undefined`) {
   ])
 }
 
-export type TextSizeType = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'giant'
+export type TextSizeType =
+  | number
+  | 'xs'
+  | 's'
+  | 'm'
+  | 'l'
+  | 'xl'
+  | 'xxl'
+  | 'giant'
 
 const availableSizes = {
   xs: 10,
@@ -40,7 +48,7 @@ export const createTextStyles = ({
   block = false,
   italic = false,
   strong = false,
-  size = 'm',
+  size = 'l',
   underline = false,
   lineThrough = false,
   align,
@@ -51,7 +59,7 @@ export const createTextStyles = ({
     fontFamily: '"Open Sans", Helvetica, Arial, sans-serif',
     fontStyle: italic && 'italic',
     fontWeight: strong && '600',
-    fontSize: availableSizes[size],
+    fontSize: typeof size === 'number' ? size : availableSizes[size],
     textDecoration:
       (underline && 'underline') || (lineThrough && 'line-through'),
     textAlign: align,
