@@ -7,24 +7,12 @@ import View, { IViewProps } from '../View'
 if (typeof window !== `undefined`) {
   neue.load([
     {
-      families: ['Open Sans:n4,n4i,n6,n6i,n7,n7i'],
+      families: ['Open Sans:n3,n3i,n4,n4i,n6,n6i,n7,n7i'],
       css:
-        '//fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i',
+        '//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i',
     },
   ])
 }
-
-export type TextSizeType =
-  | number
-  | 'xs'
-  | 's'
-  | 'm'
-  | 'l'
-  | 'xl'
-  | 'xxl'
-  | 'giant'
-
-export type TextWeightType = 'regular' | 'semi-bold' | 'bold'
 
 const availableSizes = {
   xs: 10,
@@ -36,11 +24,16 @@ const availableSizes = {
   giant: 24,
 }
 
+export type TextSizeType = number | keyof typeof availableSizes
+
 const textWeightMap = {
+  light: 300,
   regular: 400,
   'semi-bold': 600,
   bold: 700,
 }
+
+export type TextWeightType = keyof typeof textWeightMap
 
 interface ITextStyles {
   size?: TextSizeType
