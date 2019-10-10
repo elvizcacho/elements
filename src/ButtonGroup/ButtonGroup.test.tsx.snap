@@ -76,6 +76,7 @@ exports[`ButtonGroup should render button group 1`] = `
 [data-css-6] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -131,8 +132,8 @@ exports[`ButtonGroup should render button group 1`] = `
     data-css-2=""
   >
     <button
-      data-css-7=""
       data-css-6=""
+      data-css-7=""
       name="button"
       type="button"
     >

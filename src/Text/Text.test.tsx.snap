@@ -5,6 +5,7 @@ exports[`Text renders correctly 1`] = `
 [data-css-0] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -19,7 +20,7 @@ exports[`Text renders correctly 1`] = `
 }
 
 <div
-  data-css-0=""
   data-css-1=""
+  data-css-0=""
 />
 `;

@@ -54,6 +54,7 @@ exports[`ReadMore component ReadMore extends a large text 1`] = `
 [data-css-4] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -71,8 +72,8 @@ exports[`ReadMore component ReadMore extends a large text 1`] = `
       style="height: 0px;"
     >
       <div
-        data-css-4=""
         data-css-3=""
+        data-css-4=""
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dignissim sem in elit mollis consequat. Suspendisse potenti. Maecenas a velit vel dolor mollis viverra. Praesent ex diam, ultricies ac ultricies ut, efficitur sit amet leo. Vivamus ex ante, dapibus a elementum vel, ultrices in erat. Vestibulum eget ante turpis. Donec dapibus, purus vel euismod egestas
       </div>
@@ -135,6 +136,7 @@ exports[`ReadMore component ReadMore renders properly width a px height of 20 1`
 [data-css-4] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -152,8 +154,8 @@ exports[`ReadMore component ReadMore renders properly width a px height of 20 1`
       style="height: 0px;"
     >
       <div
-        data-css-4=""
         data-css-3=""
+        data-css-4=""
       >
         Testing a short text...
       </div>
@@ -216,6 +218,7 @@ exports[`ReadMore component ReadMore renders properly width a vh height of 10vh 
 [data-css-4] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -233,8 +236,8 @@ exports[`ReadMore component ReadMore renders properly width a vh height of 10vh 
       style="height: 0px;"
     >
       <div
-        data-css-4=""
         data-css-3=""
+        data-css-4=""
       >
         Testing a short text with 10vh...
       </div>

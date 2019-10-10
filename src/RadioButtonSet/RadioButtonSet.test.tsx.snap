@@ -146,6 +146,7 @@ exports[`<RadioButtonSet /> should render without error 1`] = `
 [data-css-12] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

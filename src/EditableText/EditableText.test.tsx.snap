@@ -44,6 +44,7 @@ exports[`Test the editable text component should be editable 1`] = `
 [data-css-4] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -82,8 +83,8 @@ exports[`Test the editable text component should be editable 1`] = `
       <div
         contentEditable={true}
         data-css-1=""
-        data-css-4=""
         data-css-5=""
+        data-css-4=""
         onKeyPress={[Function]}
         spellCheck={false}
         suppressContentEditableWarning={true}
@@ -149,7 +150,7 @@ Snapshot Diff:
     align-items: center;
     display: -webkit-box;
     display: -moz-box;
-@@ -35,51 +25,61 @@
+@@ -35,52 +25,62 @@
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
     -webkit-flex: 0 0 auto;
@@ -161,6 +162,7 @@ Snapshot Diff:
 + [data-css-2] {
     display: block;
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-weight: 400;
     font-size: 14px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -202,10 +204,10 @@ Snapshot Diff:
     <div
       contenteditable="true"
 -     data-css-1=""
--     data-css-4=""
-+     data-css-2=""
       data-css-5=""
+-     data-css-4=""
 +     data-css-3=""
++     data-css-2=""
       spellcheck="false"
     >
       Edit me!

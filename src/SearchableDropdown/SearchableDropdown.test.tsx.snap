@@ -79,6 +79,7 @@ exports[`SearchableDropdown should render with icon 1`] = `
 [data-css-11] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 10px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -221,6 +222,7 @@ exports[`SearchableDropdown should render with icon 1`] = `
 [data-css-24] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -341,6 +343,7 @@ exports[`SearchableDropdown should render with icon 1`] = `
 [data-css-33] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -351,6 +354,7 @@ exports[`SearchableDropdown should render with icon 1`] = `
 [data-css-34] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -559,9 +563,9 @@ exports[`SearchableDropdown should render with icon 1`] = `
                 role="option"
               >
                 <div
-                  data-css-33=""
                   data-css-8=""
                   data-css-2=""
+                  data-css-33=""
                 >
                   dog
                 </div>
@@ -575,9 +579,9 @@ exports[`SearchableDropdown should render with icon 1`] = `
                 role="option"
               >
                 <div
-                  data-css-33=""
                   data-css-8=""
                   data-css-2=""
+                  data-css-33=""
                 >
                   cat
                 </div>
@@ -591,9 +595,9 @@ exports[`SearchableDropdown should render with icon 1`] = `
                 role="option"
               >
                 <div
-                  data-css-33=""
                   data-css-8=""
                   data-css-2=""
+                  data-css-33=""
                 >
                   apple
                 </div>
@@ -698,6 +702,7 @@ exports[`SearchableDropdown should render with load more 1`] = `
 [data-css-12] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 10px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -840,6 +845,7 @@ exports[`SearchableDropdown should render with load more 1`] = `
 [data-css-25] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -960,6 +966,7 @@ exports[`SearchableDropdown should render with load more 1`] = `
 [data-css-34] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -970,6 +977,7 @@ exports[`SearchableDropdown should render with load more 1`] = `
 [data-css-35] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1057,8 +1065,8 @@ exports[`SearchableDropdown should render with load more 1`] = `
         >
           <input
             aria-required="false"
-            data-css-1=""
             data-css-35=""
+            data-css-1=""
             disabled=""
             name=""
             placeholder="select something..."
@@ -1175,9 +1183,9 @@ exports[`SearchableDropdown should render with load more 1`] = `
                 role="option"
               >
                 <div
-                  data-css-34=""
                   data-css-9=""
                   data-css-3=""
+                  data-css-34=""
                 >
                   dog
                 </div>
@@ -1191,9 +1199,9 @@ exports[`SearchableDropdown should render with load more 1`] = `
                 role="option"
               >
                 <div
-                  data-css-34=""
                   data-css-9=""
                   data-css-3=""
+                  data-css-34=""
                 >
                   cat
                 </div>
@@ -1207,9 +1215,9 @@ exports[`SearchableDropdown should render with load more 1`] = `
                 role="option"
               >
                 <div
-                  data-css-34=""
                   data-css-9=""
                   data-css-3=""
+                  data-css-34=""
                 >
                   apple
                 </div>
@@ -1322,6 +1330,7 @@ exports[`SearchableDropdown should render with no results 1`] = `
 [data-css-10] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 10px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1464,6 +1473,7 @@ exports[`SearchableDropdown should render with no results 1`] = `
 [data-css-23] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1550,6 +1560,7 @@ exports[`SearchableDropdown should render with no results 1`] = `
 [data-css-30] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1560,6 +1571,7 @@ exports[`SearchableDropdown should render with no results 1`] = `
 [data-css-31] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1636,8 +1648,8 @@ exports[`SearchableDropdown should render with no results 1`] = `
         >
           <input
             aria-required="false"
-            data-css-1=""
             data-css-31=""
+            data-css-1=""
             disabled=""
             name=""
             placeholder="select something..."
@@ -1750,9 +1762,9 @@ exports[`SearchableDropdown should render with no results 1`] = `
                 data-css-28=""
               >
                 <div
-                  data-css-30=""
                   data-css-7=""
                   data-css-3=""
+                  data-css-30=""
                   data-testid="searchable-dropdown-no-results"
                 >
                   No results found
@@ -1846,6 +1858,7 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
 [data-css-11] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1905,6 +1918,7 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
 [data-css-16] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 10px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2047,6 +2061,7 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
 [data-css-29] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2167,6 +2182,7 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
 [data-css-38] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2198,8 +2214,8 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
         >
           <input
             aria-required="false"
-            data-css-1=""
             data-css-11=""
+            data-css-1=""
             disabled=""
             name="searchable-dropdown-form-name"
             placeholder="select something..."
@@ -2316,9 +2332,9 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
                 role="option"
               >
                 <div
-                  data-css-38=""
                   data-css-9=""
                   data-css-3=""
+                  data-css-38=""
                 >
                   dog
                 </div>
@@ -2332,9 +2348,9 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
                 role="option"
               >
                 <div
-                  data-css-38=""
                   data-css-9=""
                   data-css-3=""
+                  data-css-38=""
                 >
                   cat
                 </div>
@@ -2348,9 +2364,9 @@ exports[`SearchableDropdown should render with placement bottom (default) 1`] = 
                 role="option"
               >
                 <div
-                  data-css-38=""
                   data-css-9=""
                   data-css-3=""
+                  data-css-38=""
                 >
                   apple
                 </div>
@@ -2443,6 +2459,7 @@ exports[`SearchableDropdown should render with placement top 1`] = `
 [data-css-11] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2502,6 +2519,7 @@ exports[`SearchableDropdown should render with placement top 1`] = `
 [data-css-16] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 10px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2639,6 +2657,7 @@ exports[`SearchableDropdown should render with placement top 1`] = `
 [data-css-28] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2759,6 +2778,7 @@ exports[`SearchableDropdown should render with placement top 1`] = `
 [data-css-37] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2820,8 +2840,8 @@ exports[`SearchableDropdown should render with placement top 1`] = `
         >
           <input
             aria-required="false"
-            data-css-1=""
             data-css-11=""
+            data-css-1=""
             disabled=""
             name=""
             placeholder="select something..."
@@ -2938,9 +2958,9 @@ exports[`SearchableDropdown should render with placement top 1`] = `
                 role="option"
               >
                 <div
-                  data-css-37=""
                   data-css-9=""
                   data-css-3=""
+                  data-css-37=""
                 >
                   dog
                 </div>
@@ -2954,9 +2974,9 @@ exports[`SearchableDropdown should render with placement top 1`] = `
                 role="option"
               >
                 <div
-                  data-css-37=""
                   data-css-9=""
                   data-css-3=""
+                  data-css-37=""
                 >
                   cat
                 </div>
@@ -2970,9 +2990,9 @@ exports[`SearchableDropdown should render with placement top 1`] = `
                 role="option"
               >
                 <div
-                  data-css-37=""
                   data-css-9=""
                   data-css-3=""
+                  data-css-37=""
                 >
                   apple
                 </div>

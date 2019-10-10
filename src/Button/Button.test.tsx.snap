@@ -5,6 +5,7 @@ exports[`Button component Change color to green 1`] = `
 [data-css-0] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -41,8 +42,8 @@ exports[`Button component Change color to green 1`] = `
 }
 
 <button
-  data-css-1=""
   data-css-0=""
+  data-css-1=""
   name="asd"
   onClick={[Function]}
   type="button"
@@ -84,14 +85,15 @@ exports[`Button component Renders a callback anything 1`] = `
 [data-css-3] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 <button
-  data-css-0=""
   data-css-3=""
+  data-css-0=""
   name="button"
   onClick={[Function]}
   type="button"
@@ -105,6 +107,7 @@ exports[`Button component Renders in different colors 1`] = `
 [data-css-0] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -141,8 +144,8 @@ exports[`Button component Renders in different colors 1`] = `
 }
 
 <button
-  data-css-1=""
   data-css-0=""
+  data-css-1=""
   name="asd"
   onClick={[Function]}
   type="button"
@@ -184,14 +187,15 @@ exports[`Button component Renders without anything 1`] = `
 [data-css-3] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 <button
-  data-css-0=""
   data-css-3=""
+  data-css-0=""
   name="button"
   type="button"
 >
@@ -204,6 +208,7 @@ exports[`Button component doesnt render the callback if disabled 1`] = `
 [data-css-0] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -240,8 +245,8 @@ exports[`Button component doesnt render the callback if disabled 1`] = `
 }
 
 <button
-  data-css-1=""
   data-css-0=""
+  data-css-1=""
   name="button"
   type="button"
 >
