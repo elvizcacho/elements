@@ -284,7 +284,7 @@ const SearchableDropdown = ({
               {loadMoreText && items.length && (
                 <ListItem onClick={onLoadMore} {...styles.listItem}>
                   <Text
-                    strong={true}
+                    weight="semi-bold"
                     size="l"
                     data-testid="searchable-dropdown-load-more"
                     {...styles.label}

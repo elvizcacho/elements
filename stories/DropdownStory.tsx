@@ -60,7 +60,7 @@ class DropdownStory extends Component {
       <ThemeProvider>
         <ResourceProvider>
           <View direction="column" {...css({ padding: '10px 20px' })}>
-            <Text strong {...styles.title}>
+            <Text weight="semi-bold" {...styles.title}>
               Simple dropdown:
             </Text>
             <Dropdown
@@ -71,7 +71,7 @@ class DropdownStory extends Component {
               items={this.state.items}
             />
 
-            <Text strong {...styles.title}>
+            <Text weight="semi-bold" {...styles.title}>
               Dropdown with icon and label:
             </Text>
             <Dropdown
@@ -84,7 +84,7 @@ class DropdownStory extends Component {
               items={this.state.items}
             />
 
-            <Text strong {...styles.title}>
+            <Text weight="semi-bold" {...styles.title}>
               Clearable dropdown:
             </Text>
             <Dropdown
@@ -98,7 +98,7 @@ class DropdownStory extends Component {
               items={this.state.items}
             />
 
-            <Text strong {...styles.title}>
+            <Text weight="semi-bold" {...styles.title}>
               Drop up:
             </Text>
             <Dropdown
@@ -112,7 +112,7 @@ class DropdownStory extends Component {
               placement="top"
               items={this.state.items}
             />
-            <Text strong {...styles.title}>
+            <Text weight="semi-bold" {...styles.title}>
               Disabled dropdown:
             </Text>
 
@@ -125,7 +125,7 @@ class DropdownStory extends Component {
               onSelect={item => this.setState({ controlledDropdown: item })}
               items={this.state.items}
             />
-            <Text strong {...styles.title}>
+            <Text weight="semi-bold" {...styles.title}>
               Controlled dropdown item:
             </Text>
             <Dropdown

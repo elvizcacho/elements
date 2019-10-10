@@ -17,6 +17,7 @@ exports[`Input component should render with all props 1`] = `
 [data-css-2] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -138,6 +139,7 @@ exports[`Input component should render with all props 1`] = `
 [data-css-13] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 10px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -155,6 +157,7 @@ exports[`Input component should render with all props 1`] = `
 [data-css-15] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 12px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -285,6 +288,7 @@ exports[`Input component should render with required props only 1`] = `
 [data-css-4] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

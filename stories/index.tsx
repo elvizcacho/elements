@@ -93,7 +93,7 @@ storiesOf('FloatingButton', module)
     <ThemeProvider>
       <Form onSubmit={_ => _}>
         <FloatingButton type="submit" onClick={action('clicked')}>
-          <Text strong size="s" color="white">
+          <Text weight="semi-bold" size="s" color="white">
             Hello Button
           </Text>
         </FloatingButton>
@@ -110,7 +110,7 @@ storiesOf('FloatingButton', module)
     <ThemeProvider>
       <Form onSubmit={_ => _}>
         <FloatingButton disabled type="submit" onClick={action('clicked')}>
-          <Text strong size="s" color="white">
+          <Text weight="semi-bold" size="s" color="white">
             Hello Button
           </Text>
         </FloatingButton>
@@ -128,12 +128,17 @@ storiesOf('FloatingButton', module)
       <SimpleLayout>
         <Form onSubmit={_ => _}>
           {new Array(50).fill(1).map(() => (
-            <Text key={Math.random()} align="center" strong size="xxl">
+            <Text
+              key={Math.random()}
+              align="center"
+              weight="semi-bold"
+              size="xxl"
+            >
               Scroll Down!
             </Text>
           ))}
           <FloatingButton inProgress type="submit" onClick={action('clicked')}>
-            <Text strong size="s" color="white">
+            <Text weight="semi-bold" size="s" color="white">
               Hello Button
             </Text>
           </FloatingButton>
@@ -216,7 +221,9 @@ storiesOf('ReadMore', module)
             </ListItem>
             <ListItem>
               <ReadMore>
-                <Text strong>Works also with content blocks...</Text>
+                <Text weight="semi-bold">
+                  Works also with content blocks...
+                </Text>
                 <img
                   src="https://picsum.photos/200/300"
                   style={{ width: '100%' }}

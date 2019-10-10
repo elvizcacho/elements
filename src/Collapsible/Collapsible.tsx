@@ -101,8 +101,7 @@ class Collapsible extends Component<ICollapsibleProps, IState> {
     }
   }
 
-  onKeyPress = (e: KeyboardEvent) =>
-    e.key === 'Enter' && this.toggleCollapse()
+  onKeyPress = (e: KeyboardEvent) => e.key === 'Enter' && this.toggleCollapse()
 
   render() {
     const { title, children, hasBottomBorder, tabIndex } = this.props
@@ -136,7 +135,7 @@ class Collapsible extends Component<ICollapsibleProps, IState> {
             })}
           >
             <Text
-              strong
+              weight="semi-bold"
               style={{
                 width: '100%',
                 whiteSpace: 'nowrap',

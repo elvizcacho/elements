@@ -7,21 +7,12 @@ import View, { IViewProps } from '../View'
 if (typeof window !== `undefined`) {
   neue.load([
     {
-      families: ['Open Sans:n4,n4i,n6,n6i'],
-      css: '//fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i',
+      families: ['Open Sans:n3,n3i,n4,n4i,n6,n6i,n7,n7i'],
+      css:
+        '//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i',
     },
   ])
 }
-
-export type TextSizeType =
-  | number
-  | 'xs'
-  | 's'
-  | 'm'
-  | 'l'
-  | 'xl'
-  | 'xxl'
-  | 'giant'
 
 const availableSizes = {
   xs: 10,
@@ -33,13 +24,28 @@ const availableSizes = {
   giant: 24,
 }
 
+export type TextSizeType = number | keyof typeof availableSizes
+
+const textWeightMap = {
+  light: 300,
+  regular: 400,
+  'semi-bold': 600,
+  bold: 700,
+}
+
+export type TextWeightType = keyof typeof textWeightMap
+
 interface ITextStyles {
   size?: TextSizeType
   block?: boolean
   italic?: boolean
+  /**
+   * @deprecated
+   */
   strong?: boolean
   underline?: boolean
   lineThrough?: boolean
+  weight?: TextWeightType
   align?: 'left' | 'center' | 'right'
   autoBreak?: boolean
 }
@@ -49,6 +55,7 @@ export const createTextStyles = ({
   italic = false,
   strong = false,
   size = 'l',
+  weight,
   underline = false,
   lineThrough = false,
   align,
@@ -58,7 +65,7 @@ export const createTextStyles = ({
     display: block ? 'block' : 'inline',
     fontFamily: '"Open Sans", Helvetica, Arial, sans-serif',
     fontStyle: italic && 'italic',
-    fontWeight: strong && '600',
+    fontWeight: weight ? textWeightMap[weight] : strong ? 600 : 400,
     fontSize: typeof size === 'number' ? size : availableSizes[size],
     textDecoration:
       (underline && 'underline') || (lineThrough && 'line-through'),
@@ -104,9 +111,17 @@ const Text = ({
   underline,
   autoBreak,
   lineThrough,
+  weight,
   ...props
 }: ITextProps) => {
   const { colorize } = useTheme()
+
+  if (strong === true && process.env.NODE_ENV !== 'production') {
+    console.warn(
+      "The property `strong` is deprecated. Please use `weight` instead. (`strong` now corresponds to weight: 'semi-bold')",
+    )
+  }
+
   return (
     <View
       {...css(
@@ -119,6 +134,7 @@ const Text = ({
           lineThrough,
           align,
           autoBreak,
+          weight,
         }),
         { color: colorize(color) },
       )}

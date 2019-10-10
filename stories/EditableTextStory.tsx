@@ -44,12 +44,12 @@ class EditableTextStory extends Component<
       <ThemeProvider>
         <ResourceProvider>
           <View direction="column" {...css({ padding: '10px 20px' })}>
-            <Text strong {...STYLES.title(true)}>
+            <Text weight="semi-bold" {...STYLES.title(true)}>
               Default editable text
             </Text>
             <EditableText {...STYLES.editable}>{DEFAULT_TEXT}</EditableText>
 
-            <Text strong {...STYLES.title()}>
+            <Text weight="semi-bold" {...STYLES.title()}>
               Editable text with a custom icon and icon color
             </Text>
             <EditableText
@@ -60,14 +60,14 @@ class EditableTextStory extends Component<
               {DEFAULT_TEXT}
             </EditableText>
 
-            <Text strong {...STYLES.title()}>
+            <Text weight="semi-bold" {...STYLES.title()}>
               Editable text with a custom decoration color
             </Text>
             <EditableText decorationColor="purpleIntense" {...STYLES.editable}>
               {DEFAULT_TEXT}
             </EditableText>
 
-            <Text strong {...STYLES.title()}>
+            <Text weight="semi-bold" {...STYLES.title()}>
               Editable text reacting on the onBlur event (fake request)
             </Text>
             <EditableText

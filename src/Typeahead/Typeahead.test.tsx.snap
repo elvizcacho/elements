@@ -89,6 +89,7 @@ exports[`Test the typeahead component Test typeahead component with jsx labels s
 [data-css-9] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -489,6 +490,7 @@ exports[`Test the typeahead component should be a simple static one - in depth t
 [data-css-9] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -858,6 +860,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
 [data-css-7] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1056,6 +1059,7 @@ exports[`Test the typeahead component should be a simple static one which auto o
 [data-css-21] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1845,6 +1849,7 @@ exports[`Test the typeahead component should render differently when loading 1`]
 [data-css-9] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2247,6 +2252,7 @@ exports[`Test the typeahead component should render differently when loading 2`]
 [data-css-9] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2775,6 +2781,7 @@ exports[`Test the typeahead component should use the defaultValue property (unco
 [data-css-16] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -3143,6 +3150,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
 [data-css-7] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -3341,6 +3349,7 @@ exports[`Test the typeahead component should use the limit property 1`] = `
 [data-css-21] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -3755,6 +3764,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
 [data-css-7] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -3918,6 +3928,7 @@ exports[`Test the typeahead component should use the top placement property 1`] 
 [data-css-19] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

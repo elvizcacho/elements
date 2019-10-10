@@ -52,6 +52,7 @@ exports[`Card renders as full example 1`] = `
 [data-css-5] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -141,8 +142,8 @@ exports[`Card renders as full example 1`] = `
       Cards
     </div>
     <div
-      data-css-5=""
       data-css-3=""
+      data-css-5=""
     >
       Cards are the basic elements to fit content in. They can may contain any kind of content.
     </div>

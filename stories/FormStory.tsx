@@ -28,7 +28,7 @@ export default class FormStory extends Component {
           <View direction="column" flex="flex">
             <TitleBar>
               <SquareIconButton icon="login-key" iconColor="white" />
-              <Text strong color="white">
+              <Text weight="semi-bold" color="white">
                 Create new account!
               </Text>
             </TitleBar>

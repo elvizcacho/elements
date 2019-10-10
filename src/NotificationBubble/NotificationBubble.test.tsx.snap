@@ -81,6 +81,7 @@ exports[`NotificationBubble renders without error 1`] = `
 [data-css-5] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   text-align: center;
   white-space: pre-wrap;

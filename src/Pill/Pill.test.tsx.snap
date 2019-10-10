@@ -65,8 +65,8 @@ exports[`Pill renders with custom color 1`] = `
   data-css-1=""
 >
   <div
-    data-css-3=""
     data-css-2=""
+    data-css-3=""
   >
     Important message
   </div>
@@ -138,8 +138,8 @@ exports[`Pill renders without error 1`] = `
   data-css-2=""
 >
   <div
-    data-css-4=""
     data-css-3=""
+    data-css-4=""
   >
     Important message
   </div>

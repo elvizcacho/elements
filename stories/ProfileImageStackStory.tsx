@@ -17,7 +17,7 @@ export default () => (
           margin: '10px 10px 10px 10px',
         })}
       >
-        <Text strong>XS</Text>
+        <Text weight="semi-bold">XS</Text>
         <ProfileImageStack
           size="xs"
           images={[
@@ -30,7 +30,7 @@ export default () => (
           ]}
           moreText={'+ 1 other'}
         />
-        <Text strong>S</Text>
+        <Text weight="semi-bold">S</Text>
         <ProfileImageStack
           size="s"
           images={[
@@ -43,7 +43,7 @@ export default () => (
           ]}
           moreText={'+ 2 others'}
         />
-        <Text strong>M </Text>
+        <Text weight="semi-bold">M </Text>
         <ProfileImageStack
           size="m"
           images={[
@@ -56,7 +56,7 @@ export default () => (
           ]}
           moreText={'+ 3 others'}
         />
-        <Text strong>M (without border)</Text>
+        <Text weight="semi-bold">M (without border)</Text>
         <ProfileImageStack
           size="m"
           showBorder={false}

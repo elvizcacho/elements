@@ -102,6 +102,7 @@ exports[`Test the FormCheckbox component should tick it 1`] = `
 [data-css-8] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -180,8 +181,8 @@ exports[`Test the FormCheckbox component should tick it 1`] = `
             data-css-8=""
           >
             <div
-              data-css-8=""
               data-css-6=""
+              data-css-8=""
             >
               I am a nice FormCheckbox!
             </div>
@@ -281,6 +282,7 @@ exports[`Test the FormCheckbox component should tick it 2`] = `
 [data-css-7] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -416,8 +418,8 @@ exports[`Test the FormCheckbox component should tick it 2`] = `
             data-css-7=""
           >
             <div
-              data-css-7=""
               data-css-5=""
+              data-css-7=""
             >
               I am a nice FormCheckbox!
             </div>
@@ -523,6 +525,7 @@ exports[`Test the FormCheckbox component should work with children 1`] = `
 [data-css-7] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -609,8 +612,8 @@ exports[`Test the FormCheckbox component should work with children 1`] = `
             data-css-7=""
           >
             <div
-              data-css-7=""
               data-css-5=""
+              data-css-7=""
             >
               <h1>
                 test

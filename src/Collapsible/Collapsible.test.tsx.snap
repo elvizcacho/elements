@@ -187,8 +187,8 @@ exports[`Input component Collapsible renders properly 1`] = `
       data-css-9=""
     >
       <div
-        data-css-11=""
         data-css-10=""
+        data-css-11=""
         style={
           Object {
             "overflow": "hidden",

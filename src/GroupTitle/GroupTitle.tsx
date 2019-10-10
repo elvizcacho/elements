@@ -4,7 +4,7 @@ import Text from '../Text'
 
 const GroupTitle = ({ children }: PropsWithChildren<{}>) => (
   <Inset horizontal vertical>
-    <Text size="l" strong color="titleColor">
+    <Text size="l" weight="semi-bold" color="titleColor">
       {children}
     </Text>
   </Inset>

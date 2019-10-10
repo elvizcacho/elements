@@ -92,11 +92,11 @@ class TypeaheadStory extends Component {
       <ThemeProvider>
         <ResourceProvider>
           <View direction="column" {...css({ padding: '10px 20px' })}>
-            <Text strong {...STYLES.title(true)}>
+            <Text weight="semi-bold" {...STYLES.title(true)}>
               Static:
             </Text>
             <Typeahead autoOpen items={Names} placeholder="Select an agent." />
-            <Text strong {...STYLES.title(true)}>
+            <Text weight="semi-bold" {...STYLES.title(true)}>
               Static with component as label:
             </Text>
             <Typeahead
@@ -104,7 +104,7 @@ class TypeaheadStory extends Component {
               items={this.getAllthingsColors()}
               placeholder="Select a color."
             />
-            <Text strong {...STYLES.title()}>
+            <Text weight="semi-bold" {...STYLES.title()}>
               Uncontrolled component:
             </Text>
             <Typeahead
@@ -114,7 +114,7 @@ class TypeaheadStory extends Component {
               placeholder="Select an agent."
             />
 
-            <Text strong {...STYLES.title()}>
+            <Text weight="semi-bold" {...STYLES.title()}>
               Controlled component:
             </Text>
             <Typeahead
@@ -135,7 +135,7 @@ class TypeaheadStory extends Component {
               {`Set it to ${DEFAULT_VALUE}`}
             </Button>
 
-            <Text strong {...STYLES.title()}>
+            <Text weight="semi-bold" {...STYLES.title()}>
               Clear on select:
             </Text>
             <Typeahead
@@ -154,7 +154,7 @@ class TypeaheadStory extends Component {
               Last selection: <em>{clearOnSelectValue}</em>
             </Text>
 
-            <Text strong {...STYLES.title()}>
+            <Text weight="semi-bold" {...STYLES.title()}>
               Fetch from (fake) remote, and place the list top:
             </Text>
             <Typeahead
