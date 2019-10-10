@@ -65,7 +65,7 @@ export const createTextStyles = ({
     display: block ? 'block' : 'inline',
     fontFamily: '"Open Sans", Helvetica, Arial, sans-serif',
     fontStyle: italic && 'italic',
-    fontWeight: weight ? textWeightMap[weight] : strong && '600',
+    fontWeight: weight ? textWeightMap[weight] : strong ? 600 : 400,
     fontSize: typeof size === 'number' ? size : availableSizes[size],
     textDecoration:
       (underline && 'underline') || (lineThrough && 'line-through'),
