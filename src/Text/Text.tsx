@@ -82,6 +82,8 @@ export interface IText {
 
 export type ITextProps = IText & ITextStyles & IViewProps
 
+let hasWarnedBefore = false
+
 /**
  * Text will be used for everywhere a text appears.
  * The only exception is in molecules that already provide the
@@ -117,9 +119,11 @@ const Text = ({
   const { colorize } = useTheme()
 
   if (strong === true && process.env.NODE_ENV !== 'production') {
-    console.warn(
-      "The property `strong` is deprecated. Please use `weight` instead. (`strong` now corresponds to weight: 'semi-bold')",
-    )
+    !hasWarnedBefore &&
+      console.warn(
+        "The property `strong` is deprecated. Please use `weight` instead. (`strong` now corresponds to weight: 'semi-bold')",
+      )
+    hasWarnedBefore = true
   }
 
   return (
