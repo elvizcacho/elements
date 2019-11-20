@@ -1,10 +1,10 @@
-import Mitt, { Handler } from 'mitt'
+import mitt, { Handler } from 'mitt'
 import React, { ReactNode, useCallback, useEffect, useState } from 'react'
 import Message from '../Message'
 import NotificationBubble from '../NotificationBubble'
 import View, { IViewProps } from '../View'
 
-const emitter = new Mitt()
+const emitter = mitt()
 
 const send = (message: string, type: string) => {
   emitter.emit(type, message)
