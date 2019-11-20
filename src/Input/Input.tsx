@@ -124,7 +124,7 @@ export interface IInputProps
   extends IValidityStates,
     AllHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
   /** The default value to put into the component, without making it controlled */
-  readonly defaultValue?: string | string[]
+  readonly defaultValue?: string | number | string[]
   /** Indicates that this field is required */
   readonly required?: boolean
   /** Icon shown on the left of the input field (See `Icon` component for all possible values) **/
