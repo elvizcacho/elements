@@ -95,11 +95,16 @@ class ConfirmDialog extends Component<IConfirmDialogProps> {
             {message}
           </Text>
           <CardFooter>
-            <CardButton backgroundColor={ColorPalette.white} onClick={onCancel}>
+            <CardButton
+              backgroundColor={ColorPalette.white}
+              data-e2e="alert-dialog-cancel"
+              onClick={onCancel}
+            >
               <Text>{cancelButtonLabel}</Text>
             </CardButton>
             <CardButton
               backgroundColor={ColorPalette.white}
+              data-e2e="alert-dialog-confirm"
               onClick={onSuccess}
               autoFocus
             >
