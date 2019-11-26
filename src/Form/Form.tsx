@@ -124,7 +124,9 @@ const Form = ({
     const elements = target.elements as HTMLFormControlsCollection
     for (let i = 0; i < elements.length; i++) {
       const element = elements.item(i) as HTMLInputElement
-      data[element.name] = element.value
+      if (element.name) {
+        data[element.name] = element.value
+      }
     }
     onSubmit(e, data)
   }

@@ -3,11 +3,13 @@ import React, { Component } from 'react'
 import {
   Button,
   Dropdown,
+  Form,
   ResourceProvider,
   Text,
   ThemeProvider,
   View,
 } from '../src/'
+import { IDropdownItem } from '../src/Dropdown'
 
 const styles = {
   title: css({
@@ -24,12 +26,12 @@ const styles = {
 class DropdownStory extends Component {
   state = {
     simpleDropdown: {
-      label: 'dog',
-      value: 'dog',
+      label: 'Dog',
+      value: 'dog-ed31ac',
     },
     controlledDropdown: {
-      label: 'dog',
-      value: 'dog',
+      label: 'Dog',
+      value: 'dog-f0cc72',
     },
     withLabel: 'cat',
     clearable: '',
@@ -37,22 +39,22 @@ class DropdownStory extends Component {
       {
         label:
           'this is a long text to see ellipsis and what is coming after doesnt matter that much',
-        value:
-          'this is a long text to see ellipsis and what is coming after doesnt matter that much',
+        value: 'very-long-text-af7e7c',
       },
       {
-        label: 'dog',
-        value: 'dog',
+        label: 'Dog',
+        value: 'dog-625995',
       },
       {
-        label: 'cat',
-        value: 'cat',
+        label: 'Cat',
+        value: 'cat-5f7915',
       },
       {
-        label: 'apple',
-        value: 'apple',
+        label: 'Apple',
+        value: 'apple-c8eb3c',
       },
     ],
+    form: undefined,
   }
 
   render() {
@@ -144,6 +146,34 @@ class DropdownStory extends Component {
             >
               Set item to &quot;Cat&quot;
             </Button>
+            <Text weight="semi-bold" {...styles.title}>
+              Form required dropdown:
+            </Text>
+            <Form
+              onSubmit={(_, data: { selected: IDropdownItem }) =>
+                this.setState({ form: data.selected })
+              }
+            >
+              <Dropdown
+                name="selected"
+                placeholder="Select your player"
+                label="Select your player"
+                placement="top"
+                required
+                menuHeight={200}
+                items={[
+                  { label: 'Mario', value: 'mario-b3ce6e' },
+                  { label: 'Luigi', value: 'luigi-a4f42a' },
+                  { label: 'Yoshi', value: 'yoshi-79a5c8' },
+                  { label: 'Bowser', value: 'bowser-28f58c' },
+                ]}
+              />
+              <br />
+              <View direction="row" alignV="center" alignH="space-between">
+                <Button type="submit">{`Let's go`}</Button>
+                {this.state.form && <Text>Selected {this.state.form}</Text>}
+              </View>
+            </Form>
           </View>
         </ResourceProvider>
       </ThemeProvider>

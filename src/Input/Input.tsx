@@ -158,6 +158,8 @@ export interface IInputProps
   readonly minLength?: number
   /** Max number of characters that can be provided */
   readonly maxLength?: number
+  /** Force hide checkmark even if value is valid **/
+  readonly forceHideCheckmark?: boolean
   /** Called with the input field a reference */
   readonly onInputRef?: any
   readonly readOnly?: boolean
@@ -235,6 +237,7 @@ const Input = ({
   typeMismatch,
   valueMissing,
   icon,
+  forceHideCheckmark = false,
   ...props
 }: IInputProps) => {
   const internalRef = useRef<any>(null)
@@ -247,13 +250,15 @@ const Input = ({
   const labelVisible = currentValue.length > 0
   const showLabel = !!(label && currentValue.length > 0)
 
-  const isCheckmarkActive = Boolean(
-    (pattern || props.minLength || props.maxLength || required) &&
-      internalRef &&
-      internalRef.current &&
-      internalRef.current.validity &&
-      internalRef.current.validity.valid,
-  )
+  const isCheckmarkActive = forceHideCheckmark
+    ? false
+    : Boolean(
+        (pattern || props.minLength || props.maxLength || required) &&
+          internalRef &&
+          internalRef.current &&
+          internalRef.current.validity &&
+          internalRef.current.validity.valid,
+      )
 
   const customValidity = {
     rangeOverflow,

@@ -48,6 +48,7 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
 
 .css-4,
 [data-css-4] {
+  caret-color: transparent !important;
   width: calc(100% - 5px);
   text-overflow: ellipsis;
   overflow: hidden;
@@ -91,7 +92,6 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
-  cursor: not-allowed;
   height: 50px;
   width: 100%;
   padding: 0 15px;
@@ -197,11 +197,10 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
         >
           <input
             aria-required="false"
+            autocomplete="off"
             data-css-4=""
             data-css-8=""
-            disabled=""
             placeholder="select something..."
-            readonly=""
             type="text"
             value="dog"
           />
@@ -230,6 +229,11 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
             />
           </div>
         </div>
+        <input
+          hidden=""
+          type="hidden"
+          value="dog"
+        />
         <div
           data-css-5=""
           data-css-7=""

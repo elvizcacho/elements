@@ -27,7 +27,7 @@ const bounceUpwardsAnim = keyframes('bounce', {
 const Placement = {
   top: 'top',
   bottom: 'bottom',
-}
+} as const
 
 const INPUT_FIELD_HEIGHT = 50
 
@@ -59,8 +59,8 @@ export interface IDropdownProps {
   /** Disable the dropdown */
   readonly disabled?: boolean
   /** If "top", then the list should be reversed and extended upwards, if "bottom" (default) then downwards */
-  readonly placement?: 'top' | 'bottom'
-  readonly items: ReadonlyArray<IDropdownItem>
+  readonly placement?: keyof typeof Placement
+  readonly items: readonly IDropdownItem[]
   /** Initially selected item - this value is uncontrolled */
   readonly initialSelectedItem?: IDropdownItem
   /** Selected item - this item can be controlled */
@@ -81,6 +81,7 @@ export interface IDropdownProps {
   readonly clearable?: boolean
   /** For forms */
   readonly name?: string
+  readonly required?: boolean
 }
 
 export default class Dropdown extends PureComponent<IDropdownProps> {
@@ -122,6 +123,7 @@ export default class Dropdown extends PureComponent<IDropdownProps> {
       placeholder,
       onSelect,
       name,
+      required,
       ...props
     } = this.props
     const { showScrollArrow } = this.state
@@ -142,6 +144,7 @@ export default class Dropdown extends PureComponent<IDropdownProps> {
           selectedItem,
         }) => {
           const showClearIcon = clearable && selectedItem && selectedItem.value
+
           return (
             <div
               {...css({
@@ -161,15 +164,19 @@ export default class Dropdown extends PureComponent<IDropdownProps> {
                   {...styles.area(disabled)}
                 >
                   <Input
-                    disabled
                     icon={icon}
                     label={label}
                     placeholder={placeholder}
-                    value={(selectedItem && selectedItem.label) || ''}
-                    readOnly
-                    name={name}
+                    value={selectedItem ? selectedItem.label : ''}
+                    required={required}
+                    autoComplete="off"
                     hasRightIcon
+                    forceHideCheckmark
+                    // Emulate readOnly/disabled so the form validation still triggers
+                    onKeyDown={e => e.preventDefault()}
+                    onPaste={e => e.preventDefault()}
                     {...css({
+                      caretColor: 'transparent !important',
                       width: 'calc(100% - 5px)',
                       textOverflow: 'ellipsis',
                       overflow: 'hidden',
@@ -181,6 +188,12 @@ export default class Dropdown extends PureComponent<IDropdownProps> {
                       pointerEvents: 'none',
                     })}
                     {...props}
+                  />
+                  <input
+                    type="hidden"
+                    name={name}
+                    hidden
+                    value={selectedItem ? selectedItem.value : ''}
                   />
 
                   <Absolute

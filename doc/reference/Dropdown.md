@@ -17,6 +17,7 @@ You can change it in "src/Dropdown/Dropdown.tsx" and run build:docs to update th
 |onSelect|((item: IDropdownItem) => void)|Callback triggered when clearing the selection.
 |placeholder|string|The placeholder displayed in the input field.
 |label|string|A floating label
-|icon|"alarm", "alarm-filled", "armchair", "armchair-filled", "arrow-down", "arrow-down-filled", "arrow-left", "arrow-left-filled", "arrow-right", "arrow-right-filled", ... 147 more ...|Icon on the left of the input field
+|icon|"alarm", "alarm-filled", "armchair", "armchair-filled", "arrow-down", "arrow-down-filled", "arrow-left", "arrow-left-filled", "arrow-right", "arrow-right-filled", ... 149 more ...|Icon on the left of the input field
 |clearable|boolean|If true, than the field can be cleared
 |name|string|For forms
+|required|boolean|
