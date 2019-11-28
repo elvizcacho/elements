@@ -95,7 +95,7 @@
     "pretty-quick": "2.0.1",
     "react": "16.12.0",
     "react-docgen": "4.1.1",
-    "react-docgen-typescript": "1.16.0",
+    "react-docgen-typescript": "1.16.1",
     "react-dom": "16.12.0",
     "react-test-renderer": "16.12.0",
     "rimraf": "3.0.0",
