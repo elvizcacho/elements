@@ -240,15 +240,22 @@ const Input = ({
   forceHideCheckmark = false,
   ...props
 }: IInputProps) => {
-  const internalRef = useRef<any>(null)
+  const internalRef = useRef<HTMLTextAreaElement & HTMLInputElement>(null)
   const isTextArea = lines !== 1
-  const [value, setValue] = useState('')
-  const [length, setLength] = useState(
-    (typeof props.value === 'string' && props.value.length) || 0,
-  )
-  const currentValue = (props.value || value) as string
-  const labelVisible = currentValue.length > 0
-  const showLabel = !!(label && currentValue.length > 0)
+  const [changedValue, setChangedValue] = useState<
+    string | string[] | undefined
+  >(undefined)
+
+  const currentValue =
+    typeof changedValue !== 'undefined'
+      ? changedValue
+      : typeof props.value !== 'undefined'
+      ? props.value
+      : props.defaultValue
+
+  const length = typeof currentValue === 'string' ? currentValue.length : 0
+  const labelVisible = length > 0
+  const showLabel = !!(label && labelVisible)
 
   const isCheckmarkActive = forceHideCheckmark
     ? false
@@ -273,8 +280,7 @@ const Input = ({
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
       setValidity(e.target, customValidity)
-      setLength(e.target.value.length)
-      setValue(e.target.value)
+      setChangedValue(e.target.value)
       props.onChange && props.onChange(e)
     },
     [customValidity, props],
@@ -283,7 +289,6 @@ const Input = ({
   useEffect(() => {
     const input = internalRef.current
     if (input) {
-      setLength(input.value && input.value.length ? input.value.length : 0)
       setValidity(input, customValidity)
     }
   }, [isTextArea, customValidity])
