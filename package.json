@@ -50,7 +50,7 @@
     "@storybook/addon-actions": "5.2.8",
     "@storybook/addon-links": "5.2.8",
     "@storybook/react": "5.2.8",
-    "@testing-library/react": "9.3.2",
+    "@testing-library/react": "9.4.0",
     "@types/enzyme": "3.10.4",
     "@types/jest": "24.0.23",
     "@types/json2mq": "0.2.0",
