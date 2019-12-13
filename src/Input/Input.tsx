@@ -242,18 +242,17 @@ const Input = ({
 }: IInputProps) => {
   const internalRef = useRef<HTMLTextAreaElement & HTMLInputElement>(null)
   const isTextArea = lines !== 1
-  const [changedValue, setChangedValue] = useState<
-    string | string[] | undefined
-  >(undefined)
+  const [value, setValue] = useState(
+    typeof props.value !== 'undefined' ? props.value : props.defaultValue,
+  )
 
-  const currentValue =
-    typeof changedValue !== 'undefined'
-      ? changedValue
-      : typeof props.value !== 'undefined'
-      ? props.value
-      : props.defaultValue
+  useEffect(() => {
+    if (typeof props.value !== 'undefined') {
+      setValue(props.value)
+    }
+  }, [props.value])
 
-  const length = typeof currentValue === 'string' ? currentValue.length : 0
+  const length = typeof value === 'string' ? value.length : 0
   const labelVisible = length > 0
   const showLabel = !!(label && labelVisible)
 
@@ -280,7 +279,7 @@ const Input = ({
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
       setValidity(e.target, customValidity)
-      setChangedValue(e.target.value)
+      setValue(e.target.value)
       props.onChange && props.onChange(e)
     },
     [customValidity, props],
