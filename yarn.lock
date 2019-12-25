@@ -5389,10 +5389,10 @@ eslint-config-postcss@3.0.7:
   resolved "https://registry.yarnpkg.com/eslint-config-postcss/-/eslint-config-postcss-3.0.7.tgz#390d97d5ac08db9dc57630153cc0c1821559659b"
   integrity sha512-5SCkmybZjQhOiFX8FNuqBo9SvCWH6inGXLHQ+BigXUiOGDhBNJuHp6JaF2qKMv+ti6kdk3J1ZFM3NurLww7Nxw==
 
-eslint-config-prettier@6.7.0:
-  version "6.7.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.7.0.tgz#9a876952e12df2b284adbd3440994bf1f39dfbb9"
-  integrity sha512-FamQVKM3jjUVwhG4hEMnbtsq7xOIDm+SY5iBPfR8gKsJoAB2IQnNF+bk1+8Fy44Nq7PPJaLvkRxILYdJWoguKQ==
+eslint-config-prettier@6.8.0:
+  version "6.8.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.8.0.tgz#36bd7559dcef9f97d7596779b38e6a879abb89d3"
+  integrity sha512-aq4M7mjjVregZ2l45O9qz6Mv6f5zVMl/IqfmUL8hNOoDAzVKYMhYPJytbqE/lPIVO1iMDXIFqjiEE59BfJZpZw==
   dependencies:
     get-stdin "^6.0.0"
 
