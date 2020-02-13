@@ -3,22 +3,11 @@
 exports[`Dropdown should render with placement bottom (default) 1`] = `
 .css-0,
 [data-css-0] {
-  position: absolute;
-  left: 15px;
-  font-size: 10px;
-  opacity: 0;
-  transition: all .225s ease-out;
-  -webkit-transition: all .225s ease-out;
-  -moz-transition: all .225s ease-out;
+  position: relative;
 }
 
 .css-1,
 [data-css-1] {
-  position: relative;
-}
-
-.css-2,
-[data-css-2] {
   align-items: stretch;
   border: none;
   box-shadow: ;
@@ -38,16 +27,16 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   -webkit-flex-direction: column;
 }
 
-.css-3,
-[data-css-3] {
+.css-2,
+[data-css-2] {
   width: 100%;
   height: 50px;
   position: relative;
   background-color: #ffffff;
 }
 
-.css-4,
-[data-css-4] {
+.css-3,
+[data-css-3] {
   caret-color: transparent !important;
   width: calc(100% - 5px);
   text-overflow: ellipsis;
@@ -60,31 +49,31 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   pointer-events: none;
 }
 
-.css-5,
-[data-css-5] {
+.css-4,
+[data-css-4] {
   cursor: pointer;
   height: 100%;
   width: 50px;
   padding: 16px 16px 16px 20px;
 }
 
-.css-6,
-[data-css-6] {
+.css-5,
+[data-css-5] {
   box-sizing: border-box;
   flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
 }
 
-.css-7,
-[data-css-7] {
+.css-6,
+[data-css-6] {
   box-sizing: border-box;
   flex: 0 0 auto;
   cursor: pointer;
   -webkit-flex: 0 0 auto;
 }
 
-.css-8,
-[data-css-8] {
+.css-7,
+[data-css-7] {
   display: inline;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -103,35 +92,62 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   -moz-transition: padding-top .225s ease-out;
 }
 
-.css-8:required,
-[data-css-8]:required {
+.css-7:required,
+[data-css-7]:required {
   box-shadow: none;
 }
 
-.css-8:-webkit-autofill ~ .label,
-[data-css-8]:-webkit-autofill ~ .label {
+.css-7:-webkit-autofill ~ .label,
+[data-css-7]:-webkit-autofill ~ .label {
   opacity: 1 !important;
   top: 8px !important;
 }
 
-.css-8:-webkit-autofill ~ .checkmark,
-[data-css-8]:-webkit-autofill ~ .checkmark {
+.css-7:-webkit-autofill ~ .checkmark,
+[data-css-7]:-webkit-autofill ~ .checkmark {
   opacity: 1 !important;
   top: 8px;
 }
 
-.css-8:-webkit-autofill,
-[data-css-8]:-webkit-autofill {
+.css-7:-webkit-autofill,
+[data-css-7]:-webkit-autofill {
   padding-top: 10px !important;
 }
 
-.css-8::-ms-clear,
-[data-css-8]::-ms-clear {
+.css-7::-ms-clear,
+[data-css-7]::-ms-clear {
   display: none;
+}
+
+.css-11,
+[data-css-11] {
+  position: absolute;
+  padding: 0 15px 0 15px;
+  width: 100%;
+  font-size: 10px;
+  opacity: 0;
+  transition: all .225s ease-out;
+  -webkit-transition: all .225s ease-out;
+  -moz-transition: all .225s ease-out;
 }
 
 .css-12,
 [data-css-12] {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.css-12:hover,
+[data-css-12]:hover {
+  text-overflow: clip;
+  white-space: normal;
+  background-color: #ffffff;
+}
+
+.css-14,
+[data-css-14] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -142,8 +158,8 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   -moz-transition: opacity .225s;
 }
 
-.css-13,
-[data-css-13] {
+.css-15,
+[data-css-15] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -153,22 +169,22 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
   color: #626262;
 }
 
-.css-14,
-[data-css-14] {
+.css-16,
+[data-css-16] {
   width: 16px;
   height: 16px;
   fill: lightGrey;
 }
 
-.css-15,
-[data-css-15] {
+.css-17,
+[data-css-17] {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.css-16,
-[data-css-16] {
+.css-18,
+[data-css-18] {
   width: 10px;
   height: 10px;
   stroke: black;
@@ -179,40 +195,41 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-labelledby="downshift-0-label"
-    data-css-2=""
+    data-css-1=""
     role="combobox"
   >
     <div
-      data-css-1=""
-      data-css-6=""
+      data-css-0=""
+      data-css-5=""
     >
       <div
-        data-css-7=""
-        data-css-3=""
+        data-css-6=""
+        data-css-2=""
       >
         <div
-          data-css-1=""
-          data-css-6=""
+          data-css-0=""
+          data-css-5=""
           style="width: 100%;"
         >
           <input
             aria-required="false"
             autocomplete="off"
-            data-css-4=""
-            data-css-8=""
+            data-css-3=""
+            data-css-7=""
             placeholder="select something..."
             type="text"
             value="dog"
           />
           <div
             class="label"
-            data-css-6=""
-            data-css-0=""
+            data-css-5=""
+            data-css-11=""
             style="opacity: 1; top: 8px;"
           >
             <div
-              data-css-6=""
-              data-css-13=""
+              data-css-12=""
+              data-css-5=""
+              data-css-15=""
             >
               some label
                
@@ -220,12 +237,12 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
           </div>
           <div
             class="checkmark"
-            data-css-12=""
-            data-css-6=""
+            data-css-14=""
+            data-css-5=""
           >
             <div
-              data-css-6=""
-              data-css-14=""
+              data-css-5=""
+              data-css-16=""
             />
           </div>
         </div>
@@ -235,21 +252,21 @@ exports[`Dropdown should render with placement bottom (default) 1`] = `
           value="dog"
         />
         <div
-          data-css-5=""
-          data-css-7=""
-          data-css-15=""
+          data-css-4=""
+          data-css-6=""
+          data-css-17=""
         >
           <div
-            data-css-16=""
-            data-css-6=""
+            data-css-18=""
+            data-css-5=""
             data-testid="dropdown-clear-icon"
           />
         </div>
       </div>
     </div>
     <div
-      data-css-1=""
-      data-css-6=""
+      data-css-0=""
+      data-css-5=""
     />
   </div>
 </div>
