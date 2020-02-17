@@ -1,3 +1,4 @@
+import { ColorPalette } from '@allthings/colors'
 import { css } from 'glamor'
 import React, {
   AllHTMLAttributes,
@@ -93,10 +94,23 @@ const styles = {
   label: (translated: boolean) =>
     css({
       position: 'absolute',
-      left: translated ? 40 : 15,
+      padding: `0 15px 0 ${translated ? 40 : 15}px`,
+      width: '100%',
       fontSize: 10,
       opacity: 0,
       transition: 'all .225s ease-out',
+    }),
+  labelText: (labelVisible: boolean) =>
+    css({
+      minWidth: 0,
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+      ':hover': {
+        textOverflow: 'clip',
+        whiteSpace: 'normal',
+        backgroundColor: labelVisible ? ColorPalette.white : null,
+      },
     }),
   placeholder: css({
     position: 'absolute',
@@ -346,7 +360,11 @@ const Input = ({
             top: labelVisible ? 8 : 12,
           }}
         >
-          <Text color="secondaryText" size="xs">
+          <Text
+            color="secondaryText"
+            size="xs"
+            {...styles.labelText(labelVisible)}
+          >
             {label} {required && '*'}
           </Text>
         </View>

@@ -64,7 +64,8 @@ exports[`Input component should render with all props 1`] = `
 .css-6,
 [data-css-6] {
   position: absolute;
-  left: 40px;
+  padding: 0 15px 0 40px;
+  width: 100%;
   font-size: 10px;
   opacity: 0;
   transition: all .225s ease-out;
@@ -74,6 +75,21 @@ exports[`Input component should render with all props 1`] = `
 
 .css-7,
 [data-css-7] {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.css-7:hover,
+[data-css-7]:hover {
+  text-overflow: clip;
+  white-space: normal;
+  background-color: #ffffff;
+}
+
+.css-9,
+[data-css-9] {
   position: absolute;
   top: 16px;
   right: 15px;
@@ -84,28 +100,28 @@ exports[`Input component should render with all props 1`] = `
   -moz-transition: opacity .225s;
 }
 
-.css-8,
-[data-css-8] {
+.css-10,
+[data-css-10] {
   position: relative;
 }
 
-.css-9,
-[data-css-9] {
+.css-11,
+[data-css-11] {
   box-sizing: border-box;
   flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
 }
 
-.css-10,
-[data-css-10] {
+.css-12,
+[data-css-12] {
   position: absolute;
   top: 0;
   left: 15px;
   bottom: 0;
 }
 
-.css-11,
-[data-css-11] {
+.css-13,
+[data-css-13] {
   box-sizing: border-box;
   align-content: center;
   align-items: center;
@@ -128,15 +144,15 @@ exports[`Input component should render with all props 1`] = `
   -webkit-flex: 0 0 auto;
 }
 
-.css-12,
-[data-css-12] {
+.css-14,
+[data-css-14] {
   width: 16px;
   height: 16px;
   stroke: #626262;
 }
 
-.css-13,
-[data-css-13] {
+.css-15,
+[data-css-15] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -146,15 +162,15 @@ exports[`Input component should render with all props 1`] = `
   color: #626262;
 }
 
-.css-14,
-[data-css-14] {
+.css-16,
+[data-css-16] {
   width: 16px;
   height: 16px;
   fill: lightGrey;
 }
 
-.css-15,
-[data-css-15] {
+.css-17,
+[data-css-17] {
   display: block;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -165,8 +181,8 @@ exports[`Input component should render with all props 1`] = `
 }
 
 <div
-  data-css-8=""
-  data-css-9=""
+  data-css-10=""
+  data-css-11=""
   style={
     Object {
       "width": "100%",
@@ -175,8 +191,8 @@ exports[`Input component should render with all props 1`] = `
 >
   <div
     data-css-1=""
-    data-css-11=""
-    data-css-10=""
+    data-css-13=""
+    data-css-12=""
   >
     <div
       dangerouslySetInnerHTML={
@@ -184,8 +200,8 @@ exports[`Input component should render with all props 1`] = `
           "__html": "",
         }
       }
-      data-css-9=""
-      data-css-12=""
+      data-css-11=""
+      data-css-14=""
     />
   </div>
   <input
@@ -203,8 +219,8 @@ exports[`Input component should render with all props 1`] = `
   />
   <div
     className="label"
+    data-css-11=""
     data-css-6=""
-    data-css-9=""
     style={
       Object {
         "opacity": 1,
@@ -213,8 +229,9 @@ exports[`Input component should render with all props 1`] = `
     }
   >
     <div
-      data-css-9=""
-      data-css-13=""
+      data-css-7=""
+      data-css-11=""
+      data-css-15=""
     >
       label
        
@@ -223,8 +240,8 @@ exports[`Input component should render with all props 1`] = `
   </div>
   <div
     className="checkmark"
-    data-css-7=""
     data-css-9=""
+    data-css-11=""
   >
     <div
       dangerouslySetInnerHTML={
@@ -232,17 +249,17 @@ exports[`Input component should render with all props 1`] = `
           "__html": "",
         }
       }
-      data-css-9=""
-      data-css-14=""
+      data-css-11=""
+      data-css-16=""
     />
   </div>
   <div
-    data-css-9=""
+    data-css-11=""
     data-css-0=""
   >
     <div
-      data-css-15=""
-      data-css-9=""
+      data-css-17=""
+      data-css-11=""
     >
       5
       /
