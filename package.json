@@ -47,9 +47,9 @@
     "security-check": "yarn audit"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "5.3.13",
-    "@storybook/addon-links": "5.3.13",
-    "@storybook/react": "5.3.13",
+    "@storybook/addon-actions": "5.3.14",
+    "@storybook/addon-links": "5.3.14",
+    "@storybook/react": "5.3.14",
     "@testing-library/react": "9.4.1",
     "@types/enzyme": "3.10.5",
     "@types/jest": "24.9.1",
