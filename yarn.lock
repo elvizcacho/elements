@@ -9971,10 +9971,10 @@ react-dev-utils@^9.0.0:
     strip-ansi "5.2.0"
     text-table "0.2.0"
 
-react-docgen-typescript@1.16.1:
-  version "1.16.1"
-  resolved "https://registry.yarnpkg.com/react-docgen-typescript/-/react-docgen-typescript-1.16.1.tgz#3c4570601b2e765280adf570a0f344b35111604d"
-  integrity sha512-r2FyrOa9ynupwKzufHn8IqhWt8aYts3TZz/LWzJGFMyH8AaHQ/Z4LY+fbaI5Gs46DmeyNJvzg2dDELV2k/bL0A==
+react-docgen-typescript@1.16.2:
+  version "1.16.2"
+  resolved "https://registry.yarnpkg.com/react-docgen-typescript/-/react-docgen-typescript-1.16.2.tgz#d5f26ba6591ac4bc61628c514d492de461ae7c2c"
+  integrity sha512-nECrg2qih81AKp0smkxXebF72/2EjmEn7gXSlWLDHLbpGcbw2yIorol24fw1FWqvndIY82sfSd0x/SyfMKY1Jw==
 
 react-docgen@4.1.1:
   version "4.1.1"
