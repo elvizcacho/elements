@@ -132,17 +132,17 @@ Snapshot Diff:
 @@ -3,20 +3,10 @@
     margin-left: 4px;
   }
-  
+
   .css-1,
   [data-css-1] {
 -   border-bottom: 1px dashed #95a5a5;
 - }
-- 
+-
 - .css-1:focus,
 - [data-css-1]:focus {
 -   border-bottom: 1px solid #95a5a5;
 - }
-- 
+-
 - .css-3,
 - [data-css-3] {
     box-sizing: border-box;
@@ -155,7 +155,7 @@ Snapshot Diff:
     -webkit-justify-content: flex-start;
     -webkit-flex: 0 0 auto;
   }
-  
+
 - .css-4,
 - [data-css-4] {
 + .css-2,
@@ -168,7 +168,7 @@ Snapshot Diff:
     -moz-osx-font-smoothing: grayscale;
     color: #333333;
   }
-  
+
 - .css-5,
 - [data-css-5] {
 + .css-3,
@@ -177,7 +177,7 @@ Snapshot Diff:
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
   }
-  
+
 - .css-6,
 - [data-css-6] {
 + .css-4,
@@ -186,17 +186,17 @@ Snapshot Diff:
     height: 12px;
     stroke: #000000;
 + }
-+ 
++
 + .css-5,
 + [data-css-5] {
 +   border-bottom: 1px dashed #e84c3d;
 + }
-+ 
++
 + .css-5:focus,
 + [data-css-5]:focus {
 +   border-bottom: 1px solid #e84c3d;
   }
-  
+
   <div
 -   data-css-3=""
 +   data-css-1=""

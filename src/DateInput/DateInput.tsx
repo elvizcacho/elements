@@ -44,7 +44,6 @@ class DateInput extends Component<IDateInputProps, IState> {
   handleChange = (date: Date | Date[]) => {
     this.setState({ date: date as Date, showCalendar: false })
     this.props.onChange && this.props.onChange(date)
-    this.props.onChange && this.props.onChange(date)
   }
 
   handleClear = () => {
