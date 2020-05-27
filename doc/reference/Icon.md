@@ -13,8 +13,8 @@ patterns that are available.
 | Name        | Type           | Description  |
 | ----------- |:--------------:| ------------:|
 |name **(required)**||The name of the icon
-|color|string|The color of the icon
-|size|number, "xs", "s", "m", "l"|Can be xs, s, m, l
+|color|string|The color of the icon<br>Default: primary
+|size|number, "xs", "s", "m", "l"|Can be xs, s, m, l<br>Default: m
 |htmlElement|string|
 |alignH|"none", "start", "center", "end", "space-around", "space-between"|horizontal alignment
 |alignV|"none", "start", "center", "end", "stretch"|vertical alignment
