@@ -31,6 +31,8 @@ export const Icons = [
   'book-open-filled',
   'box-line',
   'box-filled',
+  'bus-line',
+  'bus-filled',
   'calendar-check',
   'calendar-check-filled',
   'camera',
